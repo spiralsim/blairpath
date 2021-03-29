@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<%-include("../partials/header.ejs")%>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+		<script src="/scripts/map-main.js" defer></script>
+		<script src="/scripts/map-sketch.js"></script>
+	</head>
+	<body>
+		<%-include("../partials/menu.ejs")%>
+		<section class="main">
+			<div class="left" style="width: auto; overflow: hidden">
+				<h1>Map</h1>
+
+				<p>Select any sequence of rooms and press "Calculate Route" to find the shortest route.</p>
+				<p>For more detailed instructions, see the About tab.</p>
+
+				<table id="points">
+					<tr id="head">
+						<th>#</th>
+						<th style="width: 405px">Point</th>
+						<th>...</th>
+					</tr>
+					<tr id="last">
+						<td></td>
+						<td><img src="/images/loading-spinner.gif" id="pointsLoadingMessage" style="display: block; height: 24px; margin-left: auto; margin-right: auto"/></td>
+						<td><button class="square add-point" onclick="addPoint()"></button></td>
+					</tr>
+				</table>
+
+				<p style="margin-bottom: 0"><b>Options</b></p>
+				<p style="margin: 0px 5px 0px 5px"><input type="checkbox" id="allowElevator"> Allow the path to use the elevator</p>
+				
+				<div id="outputDiv" style="border: 1px solid; padding: 5px; margin-top: 5px; width: fit-content" hidden>
+					<!-- Calling this "roomData" causes errors with p5.js for some reason -->
+					<b>Data Output Window</b>
+					<br>
+					<p style="margin: 0">If you are contributing a room object, please add your name to the <code>authors</code> attribute if it is not already there.</p>
+
+					<hr>
+
+					<textarea id="outputField" rows="12" cols="90" style="font-family: Source Code Pro"></textarea>
+					<p>Contributor token: <input id="tokenField" style="width: 300px"/></p>
+					<button onclick="copyData()">Copy to clipboard</button>
+					<button onclick="alert('Data received')">Submit changes</button>
+					<button onclick="document.getElementById('outputDiv').setAttribute('hidden', true)">Close</button>
+
+					<script>
+						function copyData () {
+							var copyTextarea = document.querySelector("#outputField");
+							copyTextarea.focus();
+							copyTextarea.select();
+
+							document.execCommand("copy");
+						}
+					</script>
+				</div>
+
+				<button id="calcButton" class="smooth" onclick="calculate()">Calculate Route</button>
+				<button id="clearButton" class="smooth" onclick="clearCalc()">Clear</button>
+
+				<hr>
+
+				<div id="calcResult"></div>
+			</div>
+
+			<div class="right" style="width: 600px; height: 600px; float: right" oncontextmenu="return false;">
+				<div id="processingCanvas">
+					<div id="pjsLoadingMessage">
+						<img src="/images/loading-spinner.gif" style="margin: 200px 0 0 200px; width: 200px; height: 200px"/>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,9815 @@
+{
+	"constants": {
+		"FEET_PER_FLOOR": 14.416010498687664,
+		"FEET_PER_PIXEL": 1.0666666666666667
+	},
+	"rooms": [
+		{
+			"Fine Arts Wing": [
+				{
+					"id": "001",
+					"floor": 1,
+					"use": "Child Development",
+					"section": "Fine Arts Wing",
+					"center": [
+						45.625,
+						149.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 17:36:15 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "002",
+					"floor": 1,
+					"use": "Art",
+					"section": "Fine Arts Wing",
+					"center": [
+						77.625,
+						133.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 18:41:58 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "003",
+					"floor": 1,
+					"use": "Personal/Family Living",
+					"section": "Fine Arts Wing",
+					"center": [
+						28.125,
+						123.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 17:36:15 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "004",
+					"floor": 1,
+					"use": "Photography",
+					"section": "Fine Arts Wing",
+					"center": [
+						103.625,
+						107.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 18:41:58 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "005",
+					"floor": 1,
+					"use": "Multi-Purpose",
+					"section": "Fine Arts Wing",
+					"center": [
+						42.625,
+						100.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 18:41:58 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "006",
+					"floor": 1,
+					"use": "Drama",
+					"section": "Fine Arts Wing",
+					"center": [
+						151.125,
+						75.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 18:41:58 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "007",
+					"floor": 1,
+					"use": "Studio Art",
+					"section": "Fine Arts Wing",
+					"center": [
+						68.125,
+						83.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 18:41:58 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "008",
+					"floor": 1,
+					"use": "Studio Art",
+					"section": "Fine Arts Wing",
+					"center": [
+						94.625,
+						53.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 18:46:38 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "011",
+					"floor": 1,
+					"use": "Studio Art",
+					"section": "Fine Arts Wing",
+					"center": [
+						134.625,
+						42.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 18:47:40 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "013",
+					"floor": 1,
+					"use": "Ceramics/Sculpture",
+					"section": "Fine Arts Wing",
+					"center": [
+						158.625,
+						25.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 18:49:01 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "014",
+					"floor": 1,
+					"use": "Instrumental Room",
+					"section": "Fine Arts Wing",
+					"center": [
+						119.915,
+						150.302
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 18:50:24 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "016A",
+					"floor": 1,
+					"use": "Choral",
+					"section": "Fine Arts Wing",
+					"center": [
+						156.625,
+						188.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 17:36:15 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "016B",
+					"floor": 1,
+					"use": "Keyboard Lab",
+					"section": "Fine Arts Wing",
+					"center": [
+						139.125,
+						201.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 17:36:15 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Auditorium",
+					"floor": 1,
+					"use": "Auditorium",
+					"section": "Fine Arts Wing",
+					"center": [
+						208.125,
+						126.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 18:53:28 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Kiln",
+					"floor": 1,
+					"use": "Kiln",
+					"section": "Fine Arts Wing",
+					"center": [
+						182.25,
+						24.6355
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 18:49:35 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Stage Shop",
+					"floor": 1,
+					"use": "Stage Shop",
+					"section": "Fine Arts Wing",
+					"center": [
+						205.625,
+						41.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 18:45:24 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				}
+			],
+			"Media/Reference Complex": [
+				{
+					"id": "101",
+					"floor": 1,
+					"use": "Communications/Technology",
+					"section": "Media/Reference Complex",
+					"center": [
+						361.125,
+						196.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:03:57 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "102",
+					"floor": 1,
+					"use": "Multi-Media Studio",
+					"section": "Media/Reference Complex",
+					"center": [
+						397.125,
+						181.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:04:21 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "103",
+					"floor": 1,
+					"use": "TV Studio",
+					"section": "Media/Reference Complex",
+					"center": [
+						423.125,
+						219.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:05:37 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "106 !",
+					"floor": 1,
+					"use": "Interactive Studio",
+					"section": "Media/Reference Complex",
+					"center": [
+						397.125,
+						214.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:06:44 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					],
+					"notes": "The room number for this one was illegible, so it was guessed to be 106."
+				},
+				{
+					"id": "Computer/Work Room",
+					"floor": 1,
+					"use": "Computer/Work Room",
+					"section": "Media/Reference Complex",
+					"center": [
+						455.125,
+						226.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:09:34 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Conference A",
+					"floor": 1,
+					"use": "Conference",
+					"section": "Media/Reference Complex",
+					"center": [
+						552.625,
+						267.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:07:55 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Conference B",
+					"floor": 1,
+					"use": "Conference",
+					"section": "Media/Reference Complex",
+					"center": [
+						542.625,
+						239.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:08:52 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Equipment Storage",
+					"floor": 1,
+					"use": "Storage",
+					"section": "Media/Reference Complex",
+					"center": [
+						450.125,
+						178.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:12:15 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "General Storage",
+					"floor": 1,
+					"use": "Storage",
+					"section": "Media/Reference Complex",
+					"center": [
+						451.625,
+						203.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:13:05 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Head-in Room",
+					"floor": 1,
+					"use": "Head-in Room",
+					"section": "Media/Reference Complex",
+					"center": [
+						472.3125,
+						174.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:27:35 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Media Center",
+					"floor": 1,
+					"use": "Media Center",
+					"section": "Media/Reference Complex",
+					"center": [
+						503.125,
+						233.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:07:20 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				}
+			],
+			"Gymnasium Complex": [
+				{
+					"id": "110",
+					"floor": 1,
+					"use": "Weight Room",
+					"section": "Gymnasium Complex",
+					"center": [
+						92.125,
+						376.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 17:45:02 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "111",
+					"floor": 1,
+					"use": "Dance",
+					"section": "Gymnasium Complex",
+					"center": [
+						131.625,
+						318.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 17:48:39 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "112",
+					"floor": 1,
+					"use": "Team Room",
+					"section": "Gymnasium Complex",
+					"center": [
+						128.125,
+						354.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 17:48:15 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "112, Storage",
+					"floor": 1,
+					"use": "Storage",
+					"section": "Gymnasium Complex",
+					"center": [
+						165.625,
+						358.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 17:50:39 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "113",
+					"floor": 1,
+					"use": "Wrestling",
+					"section": "Gymnasium Complex",
+					"center": [
+						113.625,
+						318.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 17:51:13 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "114",
+					"floor": 1,
+					"use": "Physical Education / PE",
+					"section": "Gymnasium Complex",
+					"center": [
+						190.625,
+						361.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 17:52:05 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "114, Storage",
+					"floor": 1,
+					"use": "Storage",
+					"section": "Gymnasium Complex",
+					"center": [
+						178.125,
+						359.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 17:52:27 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "116",
+					"floor": 1,
+					"use": "Physical Education / PE",
+					"section": "Gymnasium Complex",
+					"center": [
+						222.625,
+						361.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 17:53:13 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "118",
+					"floor": 1,
+					"use": "Team Room",
+					"section": "Gymnasium Complex",
+					"center": [
+						264.625,
+						356.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 17:57:59 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "118, Storage",
+					"floor": 1,
+					"use": "Storage",
+					"section": "Gymnasium Complex",
+					"center": [
+						244.625,
+						356.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 17:58:37 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Boys' Locker Room",
+					"floor": 1,
+					"use": "Locker Room",
+					"section": "Gymnasium Complex",
+					"center": [
+						245.625,
+						385.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 17:56:30 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Girls' Locker Room",
+					"floor": 1,
+					"use": "Locker Room",
+					"section": "Gymnasium Complex",
+					"center": [
+						169.125,
+						388.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 17:56:59 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Large Gymnasium",
+					"floor": 1,
+					"use": "Gymnasium",
+					"section": "Gymnasium Complex",
+					"center": [
+						237.125,
+						291.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 19:51:14 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Small Gymnasium",
+					"floor": 1,
+					"use": "Gymnasium",
+					"section": "Gymnasium Complex",
+					"center": [
+						171.125,
+						291.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 17:59:40 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				}
+			],
+			"Academic Classrooms": [
+				{
+					"id": "117",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						301.8125,
+						327.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:34:10 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "119",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						302.0625,
+						358.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:35:36 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "122",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						298.125,
+						305.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:37:25 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "122, Office",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						312.3125,
+						307.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:14:58 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "123",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						340.3125,
+						360.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:38:17 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "124",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						301.8125,
+						381.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:38:48 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "126",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						301.8125,
+						398.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:39:05 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "128",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						301.8125,
+						409.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:39:32 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "130",
+					"floor": 1,
+					"use": "Description illegible [!]",
+					"section": "Academic Classrooms",
+					"center": [
+						351.5625,
+						418.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:41:53 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "131",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						340.0625,
+						384.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:40:04 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "132",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						371.5625,
+						418.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:40:55 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "133",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						366.5625,
+						379.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:42:22 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "134",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						395.0625,
+						418.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:42:52 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "135",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						389.3125,
+						379.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:43:22 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "136",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						418.3125,
+						418.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:46:58 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "137",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						411.8125,
+						379.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:44:01 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "138",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						440.5625,
+						418.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:47:40 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "138, Storage",
+					"floor": 1,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						470.8125,
+						437.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:48:11 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "141",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						477.3125,
+						331.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:49:19 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "141, English",
+					"floor": 1,
+					"use": "English",
+					"section": "Academic Classrooms",
+					"center": [
+						498.5625,
+						311.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:49:54 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "141, Storage",
+					"floor": 1,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						474.0625,
+						303.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:50:57 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "142",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						438.3125,
+						325.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:51:28 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "143",
+					"floor": 1,
+					"use": "SPARC",
+					"section": "Academic Classrooms",
+					"center": [
+						476.8125,
+						350.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:52:01 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "144",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						438.3125,
+						349.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:52:23 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "145",
+					"floor": 1,
+					"use": "CAP",
+					"section": "Academic Classrooms",
+					"center": [
+						476.8125,
+						363.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:53:03 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "146",
+					"floor": 1,
+					"use": "Social Studies",
+					"section": "Academic Classrooms",
+					"center": [
+						438.5625,
+						379.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:54:16 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "147",
+					"floor": 1,
+					"use": "Social Studies",
+					"section": "Academic Classrooms",
+					"center": [
+						477.0625,
+						382.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:54:44 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "148",
+					"floor": 1,
+					"use": "Social Studies",
+					"section": "Academic Classrooms",
+					"center": [
+						438.5625,
+						443.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:55:20 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "151",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						482.5625,
+						408.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:56:45 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "152",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						502.8125,
+						446.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:57:41 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "152, Work Room",
+					"floor": 1,
+					"use": "Work Room",
+					"section": "Academic Classrooms",
+					"center": [
+						485.3125,
+						446.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:58:06 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "153",
+					"floor": 1,
+					"use": "ESOL",
+					"section": "Academic Classrooms",
+					"center": [
+						513.5625,
+						408.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:58:34 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "154",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						526.5625,
+						446.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:59:10 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "155",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						530.8125,
+						408.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:59:32 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "156",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						548.5625,
+						446.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:00:29 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "157",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						548.8125,
+						408.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:00:04 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "158",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						575.3125,
+						443.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:00:46 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "160",
+					"floor": 1,
+					"use": "ISS",
+					"section": "Academic Classrooms",
+					"center": [
+						575.0625,
+						363.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:01:25 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "161",
+					"floor": 1,
+					"use": "SGA",
+					"section": "Academic Classrooms",
+					"center": [
+						613.5625,
+						364.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:01:51 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "162",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						574.8125,
+						383.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:02:30 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "163",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						613.5625,
+						383.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:02:53 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "164",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						574.3125,
+						408.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:03:23 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "165",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						613.3125,
+						409.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:03:46 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "166",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						575.0625,
+						465.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:04:29 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "167",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						616.5625,
+						436.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:05:42 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "168",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						575.0625,
+						488.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:04:46 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "170",
+					"floor": 1,
+					"use": "Foreign Langugage",
+					"section": "Academic Classrooms",
+					"center": [
+						613.3125,
+						474.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:07:21 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "170, Office",
+					"floor": 1,
+					"use": "Foreign Langugage",
+					"section": "Academic Classrooms",
+					"center": [
+						623.3125,
+						483.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:07:03 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "171",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						639.8125,
+						436.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:07:43 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "172",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						638.8125,
+						474.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:08:00 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "173",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						662.5625,
+						436.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:08:15 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "174",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						663.3125,
+						474.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:08:46 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "176",
+					"floor": 1,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						679.8125,
+						474.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:10:15 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "177",
+					"floor": 1,
+					"section": "Academic Classrooms",
+					"center": [
+						685.3125,
+						436.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:11:12 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				}
+			],
+			"Administration Complex": [
+				{
+					"id": "120",
+					"floor": 1,
+					"use": "Vocational Support",
+					"section": "Administration Complex",
+					"center": [
+						298.5625,
+						285.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:37:39 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "121",
+					"floor": 1,
+					"use": "Career Center",
+					"section": "Administration Complex",
+					"center": [
+						340.125,
+						335.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:01:17 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "AP Office",
+					"floor": 1,
+					"use": "AP Office",
+					"section": "Administration Complex",
+					"center": [
+						340.125,
+						167.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:02:46 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Athletic Director",
+					"floor": 1,
+					"use": "Athletic Director",
+					"section": "Administration Complex",
+					"center": [
+						279.3125,
+						240.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:05:40 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Attendance Office",
+					"floor": 1,
+					"use": "Attendance Office",
+					"section": "Administration Complex",
+					"center": [
+						331.5625,
+						222.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:18:23 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Concessions",
+					"floor": 1,
+					"use": "Concessions",
+					"section": "Administration Complex",
+					"center": [
+						261.0625,
+						239.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:06:19 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Guidance [main room]",
+					"floor": 1,
+					"use": "Counseling",
+					"section": "Administration Complex",
+					"center": [
+						356.125,
+						274.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 17:55:43 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Main Office",
+					"floor": 1,
+					"use": "Main Office",
+					"section": "Administration Complex",
+					"center": [
+						288.125,
+						198.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 19:52:33 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Principal's Office",
+					"floor": 1,
+					"use": "Principal's Office",
+					"section": "Administration Complex",
+					"center": [
+						320.125,
+						163.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:03:10 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Registrar",
+					"floor": 1,
+					"use": "Counseling",
+					"section": "Administration Complex",
+					"center": [
+						331.625,
+						251.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 17:56:48 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				}
+			],
+			"Bathrooms / Building Services": [
+				{
+					"id": "Boys' Bathroom 1L",
+					"floor": 1,
+					"use": "Bathroom",
+					"section": "Bathrooms / Building Services",
+					"center": [
+						223.3125,
+						204.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:13:17 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Boys' Bathroom 1R",
+					"floor": 1,
+					"use": "Bathroom",
+					"section": "Bathrooms / Building Services",
+					"center": [
+						575.3125,
+						335.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:14:57 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Building Services",
+					"floor": 1,
+					"use": "Building Services",
+					"section": "Bathrooms / Building Services",
+					"center": [
+						226.0625,
+						212.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:14:13 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Girls' Bathroom 1L",
+					"floor": 1,
+					"use": "Bathroom",
+					"section": "Bathrooms / Building Services",
+					"center": [
+						228.8125,
+						221.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:13:33 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Girls' Bathroom 1R",
+					"floor": 1,
+					"use": "Bathroom",
+					"section": "Bathrooms / Building Services",
+					"center": [
+						575.3125,
+						347.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:15:23 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				}
+			],
+			"Dining Facilities": [
+				{
+					"id": "Kitchen",
+					"floor": 1,
+					"use": "Kitchen",
+					"section": "Dining Facilities",
+					"center": [
+						726.125,
+						286.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:18:11 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Main Mechanical Room",
+					"floor": 1,
+					"use": "Mechanical",
+					"section": "Dining Facilities",
+					"center": [
+						755.125,
+						301.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:17:28 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "PAC Serving Table",
+					"floor": 1,
+					"use": "Serving",
+					"section": "Dining Facilities",
+					"center": [
+						698.625,
+						339.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:16:41 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "SAC",
+					"floor": 1,
+					"use": "Student Activity Center / Cafeteria",
+					"section": "Dining Facilities",
+					"center": [
+						630.625,
+						269.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 14 2019 19:50:36 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Serving Table 1",
+					"floor": 1,
+					"use": "Serving",
+					"section": "Dining Facilities",
+					"center": [
+						704.125,
+						280.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:15:42 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Serving Table 2",
+					"floor": 1,
+					"use": "Serving",
+					"section": "Dining Facilities",
+					"center": [
+						704.125,
+						294.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 16 2019 18:16:13 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				}
+			],
+			"Outdoor Areas": [
+				{
+					"id": "P1",
+					"floor": 1,
+					"section": "Outdoor Areas",
+					"center": [
+						977.8125,
+						317.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:23:53 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "P10",
+					"floor": 1,
+					"section": "Outdoor Areas",
+					"center": [
+						925.3125,
+						361.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:21:33 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "P2",
+					"floor": 1,
+					"section": "Outdoor Areas",
+					"center": [
+						967.8125,
+						338.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:23:32 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "P3",
+					"floor": 1,
+					"section": "Outdoor Areas",
+					"center": [
+						967.5625,
+						361.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:22:45 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "P4",
+					"floor": 1,
+					"section": "Outdoor Areas",
+					"center": [
+						967.8125,
+						383.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:22:13 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "P5",
+					"floor": 1,
+					"section": "Outdoor Areas",
+					"center": [
+						1038.8125,
+						384.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:24:21 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "P6",
+					"floor": 1,
+					"section": "Outdoor Areas",
+					"center": [
+						1038.5625,
+						362.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:24:37 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "P7",
+					"floor": 1,
+					"section": "Outdoor Areas",
+					"center": [
+						1038.5625,
+						340.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:24:57 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "P8",
+					"floor": 1,
+					"section": "Outdoor Areas",
+					"center": [
+						1038.5625,
+						318.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:25:13 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "P9",
+					"floor": 1,
+					"section": "Outdoor Areas",
+					"center": [
+						1038.5625,
+						278.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 18:25:35 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Senior Courtyard",
+					"floor": 1,
+					"use": "Courtyard",
+					"section": "Outdoor Areas",
+					"center": [
+						527.0625,
+						362.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:17:25 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Staff Courtyard",
+					"floor": 1,
+					"use": "Courtyard",
+					"section": "Outdoor Areas",
+					"center": [
+						390.0625,
+						331.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Thu Dec 19 2019 19:17:06 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				}
+			]
+		},
+		{
+			"Academic Classrooms": [
+				{
+					"id": "208",
+					"floor": 2,
+					"use": "Greenhouse",
+					"section": "Academic Classrooms",
+					"center": [
+						93.5625,
+						391.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:12:22 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "210",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						140.0625,
+						388.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:13:25 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "211",
+					"floor": 2,
+					"use": "Magnet Technology Education",
+					"section": "Academic Classrooms",
+					"center": [
+						137.5625,
+						351.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:14:23 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "211, Computer Lab",
+					"floor": 2,
+					"use": "Computer Lab",
+					"section": "Academic Classrooms",
+					"center": [
+						110.8125,
+						354.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:14:57 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "211, Office",
+					"floor": 2,
+					"use": "Office",
+					"section": "Academic Classrooms",
+					"center": [
+						154.8125,
+						340.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 22:31:47 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "211, Storage",
+					"floor": 2,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						164.0625,
+						345.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:15:28 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "212",
+					"floor": 2,
+					"use": "Earth Science",
+					"section": "Academic Classrooms",
+					"center": [
+						171.3125,
+						388.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:16:07 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "213",
+					"floor": 2,
+					"use": "Magnet Physics",
+					"section": "Academic Classrooms",
+					"center": [
+						188.5625,
+						350.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:16:56 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "214",
+					"floor": 2,
+					"use": "Magnet Earth Science",
+					"section": "Academic Classrooms",
+					"center": [
+						224.3125,
+						388.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:20:17 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "215",
+					"floor": 2,
+					"use": "Physics",
+					"section": "Academic Classrooms",
+					"center": [
+						245.8125,
+						350.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:21:17 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "216",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						255.5625,
+						388.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:22:25 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "217",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						300.8125,
+						351.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:23:33 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "218",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						278.5625,
+						388.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:24:04 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "219",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						301.0625,
+						387.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:24:51 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "220",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						303.8125,
+						292.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:25:40 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "221",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						342.0625,
+						280.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:28:32 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "221, Biology",
+					"floor": 2,
+					"use": "Biology",
+					"section": "Academic Classrooms",
+					"center": [
+						341.5625,
+						317.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:29:07 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "222",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						303.5625,
+						321.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:26:28 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "223",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						341.5625,
+						338.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:29:47 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "223, Computer Science",
+					"floor": 2,
+					"use": "Computer Science",
+					"section": "Academic Classrooms",
+					"center": [
+						341.5625,
+						358.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:30:23 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "225",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						341.5625,
+						378.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:31:02 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "226",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						303.8125,
+						411.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:27:21 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "227",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						340.8125,
+						416.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:32:10 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "231",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						367.5625,
+						378.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:34:10 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "232",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						365.5625,
+						416.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:38:32 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "233",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						391.0625,
+						378.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:34:37 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "234",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						388.8125,
+						416.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:38:48 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "235",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						414.0625,
+						378.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:34:57 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "236",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						411.8125,
+						416.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:39:10 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "238",
+					"floor": 2,
+					"use": "Math",
+					"section": "Academic Classrooms",
+					"center": [
+						439.8125,
+						426.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:06:37 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "238, Storage",
+					"floor": 2,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						429.5625,
+						411.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:06:53 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "240",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						442.8125,
+						296.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:07:32 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "241",
+					"floor": 2,
+					"use": "CISCO",
+					"section": "Academic Classrooms",
+					"center": [
+						491.8125,
+						318.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:08:09 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "241, Storage",
+					"floor": 2,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						468.5625,
+						331.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:08:24 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "242",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						439.5625,
+						330.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:08:43 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "243",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						478.3125,
+						350.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:08:59 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "244",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						439.8125,
+						354.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:09:10 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "245",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						477.8125,
+						373.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:09:34 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "246",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						440.3125,
+						379.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:09:56 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "247",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						478.3125,
+						396.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:10:20 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "249",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						478.5625,
+						446.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:11:46 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "250",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						503.8125,
+						444.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:11:14 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "250, Storage",
+					"floor": 2,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						475.5625,
+						432.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:11:25 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "251",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						504.5625,
+						406.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:13:53 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "251W",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						481.8125,
+						414.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:10:41 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "252",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						527.3125,
+						444.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:12:08 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "253",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						527.3125,
+						406.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:13:10 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "254",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						549.5625,
+						444.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:12:30 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "255",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						550.0625,
+						406.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:14:19 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "256",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						576.5625,
+						441.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:14:40 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "260",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						575.8125,
+						358.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:15:03 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "261",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						614.3125,
+						368.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:16:24 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "261, Storage",
+					"floor": 2,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						603.5625,
+						346.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:16:41 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "262",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						575.8125,
+						381.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:15:21 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "263",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						614.0625,
+						391.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:17:28 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "264",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						576.3125,
+						463.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:17:47 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "265",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						614.3125,
+						414.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:18:16 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "266",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						580.3125,
+						486.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:18:47 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "267",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						614.5625,
+						436.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:19:13 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "269",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						607.0625,
+						478.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:19:34 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "270",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						627.0625,
+						472.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:20:11 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "271",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						640.5625,
+						434.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:20:29 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "272",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						650.3125,
+						472.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:20:46 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "273",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						663.0625,
+						433.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:21:14 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "274",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						672.8125,
+						472.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:21:00 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "275",
+					"floor": 2,
+					"section": "Academic Classrooms",
+					"center": [
+						685.5625,
+						433.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:21:25 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Floor 2, Storage 1",
+					"floor": 2,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						198.0625,
+						388.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:18:24 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Floor 2, Storage 2",
+					"floor": 2,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						217.8125,
+						350.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 13:19:09 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				}
+			],
+			"Bathrooms / Building Services": [
+				{
+					"id": "Boys' Bathroom 2L",
+					"floor": 2,
+					"use": "Bathroom",
+					"section": "Bathrooms / Building Services",
+					"center": [
+						283.3125,
+						351.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 23:34:39 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Boys' Bathroom 2R",
+					"floor": 2,
+					"use": "Bathroom",
+					"section": "Bathrooms / Building Services",
+					"center": [
+						579.3125,
+						407.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:23:16 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Girls' Bathroom 2L",
+					"floor": 2,
+					"use": "Bathroom",
+					"section": "Bathrooms / Building Services",
+					"center": [
+						272.0625,
+						351.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Fri Dec 20 2019 23:36:32 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Girls' Bathroom 2R",
+					"floor": 2,
+					"use": "Bathroom",
+					"section": "Bathrooms / Building Services",
+					"center": [
+						567.3125,
+						407.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Dec 21 2019 17:23:32 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				}
+			]
+		},
+		{
+			"Academic Classrooms": [
+				{
+					"id": "309",
+					"floor": 3,
+					"section": "Academic Classrooms",
+					"center": [
+						116.8125,
+						351.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:20:40 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "310",
+					"floor": 3,
+					"section": "Academic Classrooms",
+					"center": [
+						146.5625,
+						388.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:21:17 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "310, Office",
+					"floor": 3,
+					"use": "Office",
+					"section": "Academic Classrooms",
+					"center": [
+						132.8125,
+						396.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:22:06 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "311",
+					"floor": 3,
+					"section": "Academic Classrooms",
+					"center": [
+						140.0625,
+						351.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:21:33 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "312",
+					"floor": 3,
+					"section": "Academic Classrooms",
+					"center": [
+						171.3125,
+						388.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:23:45 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "313",
+					"floor": 3,
+					"section": "Academic Classrooms",
+					"center": [
+						162.5625,
+						351.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:23:07 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "314",
+					"floor": 3,
+					"section": "Academic Classrooms",
+					"center": [
+						197.5625,
+						389.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:24:58 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "315",
+					"floor": 3,
+					"section": "Academic Classrooms",
+					"center": [
+						185.3125,
+						351.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:24:23 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "316",
+					"floor": 3,
+					"section": "Academic Classrooms",
+					"center": [
+						233.5625,
+						393.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:26:29 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "317",
+					"floor": 3,
+					"section": "Academic Classrooms",
+					"center": [
+						208.5625,
+						351.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:27:24 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "318",
+					"floor": 3,
+					"section": "Academic Classrooms",
+					"center": [
+						273.8125,
+						393.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:27:04 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "319",
+					"floor": 3,
+					"use": "INST LAB",
+					"section": "Academic Classrooms",
+					"center": [
+						252.3125,
+						349.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:29:22 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "319, Storage",
+					"floor": 3,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						230.3125,
+						352.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:28:42 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "321",
+					"floor": 3,
+					"use": "Chemistry",
+					"section": "Academic Classrooms",
+					"center": [
+						341.0625,
+						296.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:44:02 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "323",
+					"floor": 3,
+					"use": "Chemistry",
+					"section": "Academic Classrooms",
+					"center": [
+						313.0625,
+						295.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:44:21 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "323, Chemistry Storage",
+					"floor": 3,
+					"use": "Chemistry Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						347.0625,
+						320.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:44:37 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "323, Storage",
+					"floor": 3,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						320.8125,
+						320.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:44:49 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "325",
+					"floor": 3,
+					"use": "Magnet Chemistry",
+					"section": "Academic Classrooms",
+					"center": [
+						313.3125,
+						346.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:45:12 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "327",
+					"floor": 3,
+					"use": "Science",
+					"section": "Academic Classrooms",
+					"center": [
+						346.8125,
+						389.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:47:06 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "328",
+					"floor": 3,
+					"section": "Academic Classrooms",
+					"center": [
+						304.3125,
+						401.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:46:03 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "329",
+					"floor": 3,
+					"use": "Science",
+					"section": "Academic Classrooms",
+					"center": [
+						346.8125,
+						417.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:46:40 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "330",
+					"floor": 3,
+					"use": "Technology Education",
+					"section": "Academic Classrooms",
+					"center": [
+						382.8125,
+						396.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:47:36 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "330, Computer Lab",
+					"floor": 3,
+					"use": "Computer Lab",
+					"section": "Academic Classrooms",
+					"center": [
+						382.8125,
+						424.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:48:22 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "331",
+					"floor": 3,
+					"use": "Chemistry",
+					"section": "Academic Classrooms",
+					"center": [
+						341.8125,
+						346.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:48:46 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "332",
+					"floor": 3,
+					"use": "Science",
+					"section": "Academic Classrooms",
+					"center": [
+						418.3125,
+						388.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:49:15 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "341",
+					"floor": 3,
+					"use": "Science",
+					"section": "Academic Classrooms",
+					"center": [
+						473.5625,
+						337.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:50:08 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "341, Office",
+					"floor": 3,
+					"use": "Office",
+					"section": "Academic Classrooms",
+					"center": [
+						486.0625,
+						328.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:50:18 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "342",
+					"floor": 3,
+					"use": "MOVHS",
+					"section": "Academic Classrooms",
+					"center": [
+						438.5625,
+						340.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:50:40 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "343",
+					"floor": 3,
+					"use": "Magnet",
+					"section": "Academic Classrooms",
+					"center": [
+						477.0625,
+						363.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:51:00 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "344",
+					"floor": 3,
+					"use": "Science",
+					"section": "Academic Classrooms",
+					"center": [
+						418.5625,
+						417.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:51:24 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "345",
+					"floor": 3,
+					"use": "Biology",
+					"section": "Academic Classrooms",
+					"center": [
+						494.8125,
+						445.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:51:56 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "352",
+					"floor": 3,
+					"use": "Biology",
+					"section": "Academic Classrooms",
+					"center": [
+						494.5625,
+						417.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:52:17 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "354",
+					"floor": 3,
+					"use": "Technology Education",
+					"section": "Academic Classrooms",
+					"center": [
+						530.0625,
+						429.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:53:01 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "354, Computer Lab",
+					"floor": 3,
+					"use": "Computer Lab",
+					"section": "Academic Classrooms",
+					"center": [
+						532.5625,
+						452.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:53:25 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "354, Office",
+					"floor": 3,
+					"use": "Office",
+					"section": "Academic Classrooms",
+					"center": [
+						538.0625,
+						406.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:53:45 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "354, Storage",
+					"floor": 3,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						521.3125,
+						407.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:54:01 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "356",
+					"floor": 3,
+					"use": "Biology",
+					"section": "Academic Classrooms",
+					"center": [
+						563.0625,
+						416.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:54:25 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "360",
+					"floor": 3,
+					"use": "Biology",
+					"section": "Academic Classrooms",
+					"center": [
+						574.8125,
+						354.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:54:57 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "361",
+					"floor": 3,
+					"use": "Technology Education",
+					"section": "Academic Classrooms",
+					"center": [
+						613.3125,
+						391.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:55:17 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "361, Computer Lab",
+					"floor": 3,
+					"use": "Computer Lab",
+					"section": "Academic Classrooms",
+					"center": [
+						613.3125,
+						363.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:55:33 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "361, Office",
+					"floor": 3,
+					"use": "Office",
+					"section": "Academic Classrooms",
+					"center": [
+						605.0625,
+						415.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:56:21 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "361, Storage",
+					"floor": 3,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						619.5625,
+						415.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:55:46 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "362",
+					"floor": 3,
+					"use": "Biology",
+					"section": "Academic Classrooms",
+					"center": [
+						569.3125,
+						445.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:56:45 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "363",
+					"floor": 3,
+					"use": "Advanced Biology",
+					"section": "Academic Classrooms",
+					"center": [
+						617.8125,
+						435.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:57:21 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "364",
+					"floor": 3,
+					"section": "Academic Classrooms",
+					"center": [
+						574.5625,
+						486.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:57:43 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "365",
+					"floor": 3,
+					"use": "Advanced Biology",
+					"section": "Academic Classrooms",
+					"center": [
+						617.8125,
+						462.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:58:01 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "365, Storage",
+					"floor": 3,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						645.0625,
+						467.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:58:25 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "371",
+					"floor": 3,
+					"use": "Advanced Biology",
+					"section": "Academic Classrooms",
+					"center": [
+						649.0625,
+						449.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:59:14 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "373",
+					"floor": 3,
+					"use": "Technology Education",
+					"section": "Academic Classrooms",
+					"center": [
+						677.5625,
+						447.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 22:00:14 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "373, Computer Lab",
+					"floor": 3,
+					"use": "Computer Lab",
+					"section": "Academic Classrooms",
+					"center": [
+						680.0625,
+						427.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 22:01:33 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "373, Office",
+					"floor": 3,
+					"use": "Office",
+					"section": "Academic Classrooms",
+					"center": [
+						674.8125,
+						462.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 22:02:28 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "373, Storage",
+					"floor": 3,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						674.8125,
+						471.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 22:01:51 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Floor 3, Biology Storage",
+					"floor": 3,
+					"use": "Biology Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						468.3125,
+						426.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:52:44 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Floor 3, Storage 2",
+					"floor": 3,
+					"use": "Storage",
+					"section": "Academic Classrooms",
+					"center": [
+						574.5625,
+						467.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 21:56:59 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				}
+			],
+			"Bathrooms / Building Services": [
+				{
+					"id": "Boys' Bathroom 3L",
+					"floor": 3,
+					"use": "Bathroom",
+					"section": "Bathrooms / Building Services",
+					"center": [
+						282.3125,
+						351.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 22:05:33 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Boys' Bathroom 3R",
+					"floor": 3,
+					"use": "Bathroom",
+					"section": "Bathrooms / Building Services",
+					"center": [
+						577.3125,
+						379.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 22:07:00 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Girls' Bathroom 3L",
+					"floor": 3,
+					"use": "Bathroom",
+					"section": "Bathrooms / Building Services",
+					"center": [
+						271.3125,
+						351.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 22:05:54 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Girls' Bathroom 3R",
+					"floor": 3,
+					"use": "Bathroom",
+					"section": "Bathrooms / Building Services",
+					"center": [
+						565.3125,
+						379.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sun Dec 22 2019 22:06:18 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jeffrey Tong"
+					]
+				}
+			]
+		},
+		{
+			"Dining": [
+				{
+					"id": "5-star Turkish Restaurant",
+					"floor": 4,
+					"use": "Restaurant",
+					"section": "Dining",
+					"center": [
+						639.8125,
+						454.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:26:13 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "McDonald's",
+					"floor": 4,
+					"use": "Restaurant",
+					"section": "Dining",
+					"center": [
+						487.8125,
+						440.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:25:05 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Restaurant Kitchen",
+					"floor": 4,
+					"use": "Kitchen",
+					"section": "Dining",
+					"center": [
+						579.5625,
+						459.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:25:53 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Turkish Delight Parlor",
+					"floor": 4,
+					"use": "Restaurant",
+					"section": "Dining",
+					"center": [
+						536.0625,
+						440.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:25:22 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				}
+			],
+			"Recreation": [
+				{
+					"id": "Blair Bocce Field",
+					"floor": 4,
+					"use": "Park",
+					"section": "Recreation",
+					"center": [
+						341.8125,
+						344.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:23:00 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Blair Park",
+					"floor": 4,
+					"use": "Park",
+					"section": "Recreation",
+					"center": [
+						350.8125,
+						310.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:23:15 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Blair River",
+					"floor": 4,
+					"use": "River",
+					"section": "Recreation",
+					"center": [
+						329.0625,
+						332.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:22:33 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Daniel Zhu Memorial Park",
+					"floor": 4,
+					"use": "Park",
+					"section": "Recreation",
+					"center": [
+						414.3125,
+						373.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:24:14 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Grande Plaza de Blair",
+					"floor": 4,
+					"use": "Plaza",
+					"section": "Recreation",
+					"center": [
+						341.125,
+						376.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:21:40 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Inconspicuous Patch of Grass",
+					"floor": 4,
+					"use": "Park",
+					"section": "Recreation",
+					"center": [
+						365.0625,
+						287.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:23:28 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Other Plaza",
+					"floor": 4,
+					"use": "Plaza",
+					"section": "Recreation",
+					"center": [
+						340.5625,
+						288.8515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:22:15 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Zhu Croquet Field",
+					"floor": 4,
+					"use": "Park",
+					"section": "Recreation",
+					"center": [
+						370.3125,
+						375.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Sat Jan 04 2020 22:14:25 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Zhu River",
+					"floor": 4,
+					"use": "River",
+					"section": "Recreation",
+					"center": [
+						390.5625,
+						383.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 21:00:29 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					],
+					"notes": "\"They say that a single dip in Zhu Memorial River from the foot crossing can increase IQ by 10.\" - Jason Liu"
+				}
+			],
+			"Learning and Relaxation": [
+				{
+					"id": "Blair Exclusive Ultra-Chic Lounge",
+					"floor": 4,
+					"use": "Lounge",
+					"section": "Learning and Relaxation",
+					"center": [
+						379.625,
+						420.203125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:21:20 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Center for Higher Study and Philosophy",
+					"floor": 4,
+					"use": "Center for Higher Study and Philosophy",
+					"section": "Learning and Relaxation",
+					"center": [
+						300.0625,
+						267.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:17:27 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					],
+					"notes": "\"Basically big brain place full of books that is better than the stupid media center on the first floor\" - Jason Liu"
+				},
+				{
+					"id": "Lockers",
+					"floor": 4,
+					"use": "Lockers",
+					"section": "Learning and Relaxation",
+					"center": [
+						291.8125,
+						396.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:16:33 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Security Booth/Lounge",
+					"floor": 4,
+					"use": "Lounge",
+					"section": "Learning and Relaxation",
+					"center": [
+						291.3125,
+						364.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:16:16 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				}
+			],
+			"Outdoor Areas": [
+				{
+					"id": "Helicopter Pad",
+					"floor": 4,
+					"use": "Helicopter Pad",
+					"section": "Outdoor Areas",
+					"center": [
+						131.3125,
+						372.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:13:22 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Infinity Hot Tub/Jacuzzi",
+					"floor": 4,
+					"use": "Jacuzzi",
+					"section": "Outdoor Areas",
+					"center": [
+						255.5625,
+						396.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:14:28 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Pool",
+					"floor": 4,
+					"use": "Pool",
+					"section": "Outdoor Areas",
+					"center": [
+						211.3125,
+						372.6015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:14:09 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Turkish Restaurant, Outdoor Patio",
+					"floor": 4,
+					"use": "Patio",
+					"section": "Outdoor Areas",
+					"center": [
+						689.3125,
+						468.1015625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:14:48 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				}
+			],
+			"Commercial Facilities": [
+				{
+					"id": "La Fondue",
+					"floor": 4,
+					"use": "Fountain",
+					"section": "Commercial Facilities",
+					"center": [
+						467.0625,
+						314.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:28:46 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Luxury Goods Bazaar",
+					"floor": 4,
+					"use": "Shop",
+					"section": "Commercial Facilities",
+					"center": [
+						458.3125,
+						359.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:24:30 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				},
+				{
+					"id": "Premium Texas Instruments Store",
+					"floor": 4,
+					"use": "Shop",
+					"section": "Commercial Facilities",
+					"center": [
+						435.3125,
+						317.3515625
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:24:43 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				}
+			],
+			"Entertainment": [
+				{
+					"id": "Non-gambling Casino",
+					"floor": 4,
+					"use": "Casino",
+					"section": "Entertainment",
+					"center": [
+						593.375,
+						381.703125
+					],
+					"vertices": null,
+					"doors": null,
+					"updated": "Mon Dec 23 2019 10:26:34 GMT-0500 (Eastern Standard Time)",
+					"authors": [
+						"Jason Liu",
+						"Jeffrey Tong"
+					]
+				}
+			]
+		}
+	],
+	"nodes": [
+		{
+			"floor": 1,
+			"links": [
+				593316
+			],
+			"id": 245247,
+			"pos": [
+				63.0625,
+				144.8515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				593316,
+				740307
+			],
+			"id": 767771,
+			"pos": [
+				50.0625,
+				123.1015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				740307,
+				9471,
+				873977
+			],
+			"id": 147407,
+			"pos": [
+				117.3125,
+				78.1015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				9471
+			],
+			"id": 630707,
+			"pos": [
+				185.3125,
+				33.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				873977,
+				367110,
+				410574
+			],
+			"id": 41555,
+			"pos": [
+				198.5625,
+				201.8515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				216054,
+				959607,
+				771743
+			],
+			"id": 246275,
+			"pos": [
+				272.8125,
+				222.8515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				379497,
+				216054
+			],
+			"id": 718808,
+			"pos": [
+				237.3125,
+				233.8515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				645187,
+				379497
+			],
+			"id": 615624,
+			"pos": [
+				190.0625,
+				235.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				367110,
+				645187
+			],
+			"id": 122148,
+			"pos": [
+				184.0625,
+				219.1015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				771743,
+				36776,
+				82968
+			],
+			"id": 272804,
+			"pos": [
+				321.0625,
+				235.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				410885,
+				907908,
+				133150
+			],
+			"id": 473853,
+			"pos": [
+				321.0625,
+				343.1015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				410885,
+				869464
+			],
+			"id": 268768,
+			"pos": [
+				110.3125,
+				342.6015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				907908,
+				144737,
+				577815
+			],
+			"id": 272266,
+			"pos": [
+				321.0625,
+				399.6015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				144737,
+				3138
+			],
+			"id": 500770,
+			"pos": [
+				320.8125,
+				430.9765625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				3138,
+				122797
+			],
+			"id": 633590,
+			"pos": [
+				293.3125,
+				430.8515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				74409,
+				577815,
+				793872
+			],
+			"id": 421948,
+			"pos": [
+				457.0625,
+				399.1015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				793872,
+				281127,
+				882058
+			],
+			"id": 958928,
+			"pos": [
+				457.0625,
+				426.8515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				281127,
+				433729
+			],
+			"id": 694896,
+			"pos": [
+				456.8125,
+				459.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				433729,
+				8107
+			],
+			"id": 730604,
+			"pos": [
+				429.5625,
+				459.1015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				748554,
+				882058,
+				129370
+			],
+			"id": 942838,
+			"pos": [
+				594.3125,
+				427.6015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				129370,
+				586151,
+				466599
+			],
+			"id": 463265,
+			"pos": [
+				594.3125,
+				454.1015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				586151
+			],
+			"id": 449149,
+			"pos": [
+				594.0625,
+				487.6015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				466599,
+				598424
+			],
+			"id": 60523,
+			"pos": [
+				697.8125,
+				454.6015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				598424,
+				12048
+			],
+			"id": 329627,
+			"pos": [
+				697.5625,
+				482.8515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				748554,
+				586201,
+				19979
+			],
+			"id": 258928,
+			"pos": [
+				594.8125,
+				311.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				36776,
+				747284,
+				386473
+			],
+			"id": 176012,
+			"pos": [
+				379.5625,
+				249.8515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				747284
+			],
+			"id": 86497,
+			"pos": [
+				380.0625,
+				171.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				386473,
+				510348,
+				579277
+			],
+			"id": 507250,
+			"pos": [
+				437.8125,
+				267.7265625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				569981
+			],
+			"id": 145124,
+			"pos": [
+				438.3125,
+				170.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				510348,
+				74409,
+				117289
+			],
+			"id": 89069,
+			"pos": [
+				458.3125,
+				273.8515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				608713,
+				329706,
+				202861
+			],
+			"id": 836965,
+			"pos": [
+				667.7038043478261,
+				331.2646059782609
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				608713,
+				972937
+			],
+			"id": 743176,
+			"pos": [
+				667.7038043478261,
+				377.2646059782609
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				972937,
+				709268
+			],
+			"id": 957159,
+			"pos": [
+				703.5625,
+				411.1015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				709268,
+				263714
+			],
+			"id": 274798,
+			"pos": [
+				761.0625,
+				415.1015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				263714,
+				455014
+			],
+			"id": 413147,
+			"pos": [
+				782.3125,
+				407.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				455014,
+				940375,
+				781172
+			],
+			"id": 502935,
+			"pos": [
+				944.0625,
+				408.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				355944,
+				136121
+			],
+			"id": 165062,
+			"pos": [
+				944.4375,
+				322.2265625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				355944,
+				318920
+			],
+			"id": 760944,
+			"pos": [
+				955.0625,
+				322.2265625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				318920,
+				461214
+			],
+			"id": 299213,
+			"pos": [
+				955.1875,
+				301.2265625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				461214,
+				474801,
+				515240
+			],
+			"id": 930049,
+			"pos": [
+				1000.0625,
+				300.8515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				474801
+			],
+			"id": 472051,
+			"pos": [
+				1000.5625,
+				285.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				515240,
+				940375,
+				261976
+			],
+			"id": 133058,
+			"pos": [
+				998.5625,
+				408.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				261976,
+				276505,
+				513208
+			],
+			"id": 692783,
+			"pos": [
+				1015.3125,
+				408.8515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				276505
+			],
+			"id": 532817,
+			"pos": [
+				1014.8125,
+				318.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				513208
+			],
+			"id": 885240,
+			"pos": [
+				1077.0625,
+				409.1015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				329706
+			],
+			"id": 657030,
+			"pos": [
+				667.2038043478261,
+				287.7646059782609
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				410574,
+				887213,
+				626300
+			],
+			"id": 883314,
+			"pos": [
+				246.4375,
+				185.9765625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				674039,
+				626300,
+				959607
+			],
+			"id": 942244,
+			"pos": [
+				265.1875,
+				195.7265625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				887213,
+				502168
+			],
+			"id": 344040,
+			"pos": [
+				268.9375,
+				166.1015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				502168,
+				674039
+			],
+			"id": 551646,
+			"pos": [
+				278.4375,
+				174.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				781172,
+				136121,
+				24590
+			],
+			"id": 487832,
+			"pos": [
+				943.6875,
+				381.9765625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				24590
+			],
+			"id": 229075,
+			"pos": [
+				917.1875,
+				381.7265625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				579277,
+				505523,
+				569981
+			],
+			"id": 577825,
+			"pos": [
+				438.0625,
+				248.8515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				505523,
+				882936
+			],
+			"id": 932796,
+			"pos": [
+				403.0625,
+				237.4765625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				869464,
+				932001
+			],
+			"id": 964654,
+			"pos": [
+				110.3125,
+				367.6015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				932001,
+				465897
+			],
+			"id": 390054,
+			"pos": [
+				110.3125,
+				396.6015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				465897,
+				61071
+			],
+			"id": 386262,
+			"pos": [
+				121.3125,
+				396.7265625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				586201,
+				10359
+			],
+			"id": 663317,
+			"pos": [
+				612.6875,
+				316.2265625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				699287,
+				759204
+			],
+			"id": 301190,
+			"pos": [
+				612.4375,
+				353.2265625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				82968,
+				133150,
+				439904
+			],
+			"id": 714387,
+			"pos": [
+				321.1875,
+				253.8515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				439904,
+				553791
+			],
+			"id": 688013,
+			"pos": [
+				294.0625,
+				253.9765625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				553791,
+				877157
+			],
+			"id": 782813,
+			"pos": [
+				294.0625,
+				271.9765625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				117289,
+				19979,
+				273720
+			],
+			"id": 21452,
+			"pos": [
+				527.5625,
+				293.1015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				670901,
+				61071
+			],
+			"id": 604683,
+			"pos": [
+				121.0625,
+				397.2265625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				653901,
+				993863
+			],
+			"id": 449781,
+			"pos": [
+				112.0625,
+				397.3515625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				571126,
+				653901
+			],
+			"id": 864840,
+			"pos": [
+				111.82029724121094,
+				371.1458320617676
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				462183,
+				93277,
+				557730
+			],
+			"id": 764925,
+			"pos": [
+				321.5625,
+				371.2265625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				93277,
+				445557,
+				581730
+			],
+			"id": 405086,
+			"pos": [
+				321.8125,
+				398.7265625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				573426,
+				5290
+			],
+			"id": 669753,
+			"pos": [
+				293.3125,
+				430.2265625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				296054,
+				600574
+			],
+			"id": 409584,
+			"pos": [
+				293.3125,
+				439.4765625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				208451,
+				296054
+			],
+			"id": 54854,
+			"pos": [
+				321.8125,
+				439.2265625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				806651,
+				877157
+			],
+			"id": 228246,
+			"pos": [
+				294.3125,
+				272.2265625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				806651,
+				46594,
+				9528
+			],
+			"id": 439895,
+			"pos": [
+				303.4375,
+				272.2265625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				432006,
+				462183,
+				46594
+			],
+			"id": 784308,
+			"pos": [
+				321.8125,
+				276.9765625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				432006,
+				764702
+			],
+			"id": 692041,
+			"pos": [
+				321.8125,
+				250.2265625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				764702,
+				563247,
+				638170
+			],
+			"id": 386080,
+			"pos": [
+				372.8125,
+				263.2265625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				563247,
+				189288,
+				202265
+			],
+			"id": 759035,
+			"pos": [
+				376.8125,
+				249.9765625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				764703,
+				882936
+			],
+			"id": 930546,
+			"pos": [
+				403.3125,
+				238.2265625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				189288,
+				764703
+			],
+			"id": 636081,
+			"pos": [
+				381.8125,
+				232.4765625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				638170,
+				202360,
+				684646
+			],
+			"id": 252337,
+			"pos": [
+				458.5625,
+				287.6015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				581730,
+				219037,
+				202360
+			],
+			"id": 505446,
+			"pos": [
+				458.0625,
+				399.1015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				219037,
+				12212,
+				928176
+			],
+			"id": 536980,
+			"pos": [
+				458.0625,
+				426.6015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				755275,
+				65236
+			],
+			"id": 141336,
+			"pos": [
+				457.8125,
+				468.1015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				755275,
+				482996
+			],
+			"id": 579525,
+			"pos": [
+				430.0625,
+				468.3515625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				362192,
+				9333
+			],
+			"id": 720976,
+			"pos": [
+				430.0625,
+				458.8515625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				928176,
+				247265,
+				385715
+			],
+			"id": 108553,
+			"pos": [
+				594.5625,
+				426.8515625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				385715,
+				566508,
+				888220
+			],
+			"id": 506267,
+			"pos": [
+				594.8125,
+				454.6015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				566508
+			],
+			"id": 209090,
+			"pos": [
+				594.8125,
+				471.6015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				34359,
+				760766
+			],
+			"id": 575826,
+			"pos": [
+				698.6875,
+				454.9765625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				760766,
+				707239
+			],
+			"id": 227595,
+			"pos": [
+				698.5625,
+				482.1015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				126713,
+				454386
+			],
+			"id": 204231,
+			"pos": [
+				688.3125,
+				482.1015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				811061,
+				247265,
+				437918
+			],
+			"id": 683647,
+			"pos": [
+				594.8125,
+				325.1015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				811061,
+				334789,
+				565836
+			],
+			"id": 187250,
+			"pos": [
+				612.8125,
+				330.3515625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				334789,
+				867301
+			],
+			"id": 488522,
+			"pos": [
+				621.8125,
+				332.6015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				867301,
+				560782
+			],
+			"id": 67662,
+			"pos": [
+				621.8125,
+				352.8515625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				670901,
+				571126,
+				557730
+			],
+			"id": 654012,
+			"pos": [
+				121.32029724121094,
+				370.8958320617676
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				9528,
+				210239
+			],
+			"id": 222179,
+			"pos": [
+				303.3125,
+				246.1015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				202265,
+				310761
+			],
+			"id": 983518,
+			"pos": [
+				398.6875,
+				256.4765625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				10359,
+				202861,
+				931662
+			],
+			"id": 497335,
+			"pos": [
+				621.8125,
+				318.8515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				931662,
+				699287
+			],
+			"id": 733944,
+			"pos": [
+				621.8125,
+				353.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				759204,
+				565836
+			],
+			"id": 48358,
+			"pos": [
+				612.3125,
+				331.3515625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				12048,
+				454386
+			],
+			"id": 57570,
+			"pos": [
+				688.8125,
+				482.8515625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				888220,
+				126713,
+				34359
+			],
+			"id": 198597,
+			"pos": [
+				688.3125,
+				455.1015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				8107,
+				482996
+			],
+			"id": 605990,
+			"pos": [
+				429.5625,
+				469.1015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				65236,
+				362192,
+				12212
+			],
+			"id": 249071,
+			"pos": [
+				457.8125,
+				458.6015625
+			]
+		},
+		{
+			"floor": 1,
+			"links": [
+				122797,
+				600574
+			],
+			"id": 438863,
+			"pos": [
+				293.3125,
+				439.8515625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				445557,
+				208451,
+				573426
+			],
+			"id": 141777,
+			"pos": [
+				321.8125,
+				430.6015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				331519,
+				993863
+			],
+			"id": 4254,
+			"pos": [
+				111.5625,
+				397.6015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				62313
+			],
+			"id": 302271,
+			"pos": [
+				111.8125,
+				371.6015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				989499,
+				227329,
+				746796
+			],
+			"id": 526513,
+			"pos": [
+				293.5625,
+				370.6015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				916325,
+				848262,
+				989499
+			],
+			"id": 9389,
+			"pos": [
+				322.0625,
+				371.1015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				916325,
+				27096
+			],
+			"id": 165374,
+			"pos": [
+				321.5625,
+				440.8515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				41252,
+				5290
+			],
+			"id": 752548,
+			"pos": [
+				293.0625,
+				430.3515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				931286,
+				261697,
+				848262
+			],
+			"id": 637422,
+			"pos": [
+				458.0625,
+				371.3515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				22956,
+				261697,
+				630587
+			],
+			"id": 410246,
+			"pos": [
+				458.0625,
+				399.3515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				783652,
+				9333
+			],
+			"id": 780629,
+			"pos": [
+				430.8125,
+				459.6015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				153143,
+				22956,
+				588121
+			],
+			"id": 528801,
+			"pos": [
+				594.5625,
+				398.6015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				588121,
+				415574,
+				233154
+			],
+			"id": 175710,
+			"pos": [
+				595.0625,
+				483.3515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				415574
+			],
+			"id": 684563,
+			"pos": [
+				595.0625,
+				495.1015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				233154,
+				707239
+			],
+			"id": 422760,
+			"pos": [
+				699.1875,
+				483.4765625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				977215,
+				560782
+			],
+			"id": 909391,
+			"pos": [
+				622.3125,
+				352.8515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				711936,
+				977215
+			],
+			"id": 864336,
+			"pos": [
+				613.0625,
+				352.8515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				509847,
+				711936
+			],
+			"id": 196296,
+			"pos": [
+				613.3125,
+				330.3515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				990988,
+				509847,
+				153143
+			],
+			"id": 906436,
+			"pos": [
+				595.0625,
+				337.1015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				460398,
+				664325,
+				931286
+			],
+			"id": 16611,
+			"pos": [
+				458.0625,
+				299.6015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				485267,
+				210239
+			],
+			"id": 620377,
+			"pos": [
+				303.3125,
+				246.6015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				485267,
+				341935
+			],
+			"id": 570848,
+			"pos": [
+				294.0625,
+				244.1015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				746796,
+				341935,
+				632725
+			],
+			"id": 909335,
+			"pos": [
+				294.3125,
+				271.8515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				239567,
+				632725
+			],
+			"id": 227771,
+			"pos": [
+				351.0625,
+				271.8515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				455577,
+				310761
+			],
+			"id": 216499,
+			"pos": [
+				399.0625,
+				256.3515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				229119,
+				455577
+			],
+			"id": 540079,
+			"pos": [
+				419.5625,
+				263.1015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				239567,
+				460398,
+				229119
+			],
+			"id": 237405,
+			"pos": [
+				412.8125,
+				287.6015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				232606,
+				273720,
+				389170
+			],
+			"id": 975998,
+			"pos": [
+				528.0625,
+				293.1015625
+			]
+		},
+		{
+			"floor": 2,
+			"links": [
+				232606,
+				684646,
+				437918
+			],
+			"id": 367398,
+			"pos": [
+				524.0625,
+				305.6015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				860840,
+				389170,
+				932778
+			],
+			"id": 6548,
+			"pos": [
+				528.3125,
+				293.3515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				664325,
+				990988,
+				860840
+			],
+			"id": 669346,
+			"pos": [
+				527.5625,
+				318.8515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				783652,
+				402798
+			],
+			"id": 815319,
+			"pos": [
+				430.8125,
+				468.8515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				402798,
+				630587
+			],
+			"id": 685549,
+			"pos": [
+				458.3125,
+				469.1015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				41252,
+				27096
+			],
+			"id": 856229,
+			"pos": [
+				293.0625,
+				440.8515625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				331519,
+				652486
+			],
+			"id": 584360,
+			"pos": [
+				121.0625,
+				397.6015625
+			]
+		},
+		{
+			"floor": 3,
+			"links": [
+				652486,
+				62313,
+				227329
+			],
+			"id": 373446,
+			"pos": [
+				121.5625,
+				371.3515625
+			]
+		},
+		{
+			"floor": 4,
+			"links": [
+				611583,
+				932778
+			],
+			"id": 660232,
+			"pos": [
+				528.0625,
+				292.6015625
+			]
+		},
+		{
+			"floor": 4,
+			"links": [
+				611583,
+				993957,
+				999208
+			],
+			"id": 481954,
+			"pos": [
+				527.8125,
+				319.6015625
+			]
+		},
+		{
+			"floor": 4,
+			"links": [
+				993957
+			],
+			"id": 401760,
+			"pos": [
+				553.8125,
+				326.3515625
+			]
+		},
+		{
+			"floor": 4,
+			"links": [
+				862887,
+				63254,
+				999208
+			],
+			"id": 871462,
+			"pos": [
+				485.3125,
+				314.8515625
+			]
+		},
+		{
+			"floor": 4,
+			"links": [
+				140975,
+				862887
+			],
+			"id": 864513,
+			"pos": [
+				474.8125,
+				324.3515625
+			]
+		},
+		{
+			"floor": 4,
+			"links": [
+				779312,
+				140975,
+				855167
+			],
+			"id": 262639,
+			"pos": [
+				458.0625,
+				320.6015625
+			]
+		},
+		{
+			"floor": 4,
+			"links": [
+				682180,
+				63254
+			],
+			"id": 977142,
+			"pos": [
+				477.8125,
+				303.3515625
+			]
+		},
+		{
+			"floor": 4,
+			"links": [
+				842548,
+				779312,
+				682180
+			],
+			"id": 921490,
+			"pos": [
+				454.0625,
+				299.3515625
+			]
+		},
+		{
+			"floor": 4,
+			"links": [
+				842548,
+				414042
+			],
+			"id": 12766,
+			"pos": [
+				363.0625,
+				272.6015625
+			]
+		},
+		{
+			"floor": 4,
+			"links": [
+				587116,
+				19593
+			],
+			"id": 630848,
+			"pos": [
+				319.8125,
+				283.1015625
+			]
+		},
+		{
+			"floor": 4,
+			"links": [
+				587116,
+				326342
+			],
+			"id": 266651,
+			"pos": [
+				319.5625,
+				385.3515625
+			]
+		},
+		{
+			"floor": 4,
+			"links": [
+				326342,
+				557083,
+				855167
+			],
+			"id": 607515,
+			"pos": [
+				458.3125,
+				406.6015625
+			]
+		},
+		{
+			"floor": 4,
+			"links": [
+				557083
+			],
+			"id": 393522,
+			"pos": [
+				560.5625,
+				406.8515625
+			]
+		},
+		{
+			"floor": 4,
+			"links": [
+				19593,
+				414042
+			],
+			"id": 509687,
+			"pos": [
+				362.8125,
+				283.1015625
+			]
+		}
+	],
+	"links": [
+		{
+			"nodes": [
+				245247,
+				767771
+			],
+			"id": 593316,
+			"points": [
+				[
+					63.0625,
+					144.8515625,
+					1
+				],
+				[
+					50.0625,
+					123.1015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				767771,
+				147407
+			],
+			"id": 740307,
+			"points": [
+				[
+					50.0625,
+					123.1015625,
+					1
+				],
+				[
+					117.3125,
+					78.1015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				147407,
+				630707
+			],
+			"id": 9471,
+			"points": [
+				[
+					117.3125,
+					78.1015625,
+					1
+				],
+				[
+					185.3125,
+					33.3515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				147407,
+				41555
+			],
+			"id": 873977,
+			"points": [
+				[
+					117.3125,
+					78.1015625,
+					1
+				],
+				[
+					198.5625,
+					201.8515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				41555,
+				122148
+			],
+			"id": 367110,
+			"points": [
+				[
+					198.5625,
+					201.8515625,
+					1
+				],
+				[
+					184.0625,
+					219.1015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				122148,
+				615624
+			],
+			"id": 645187,
+			"points": [
+				[
+					184.0625,
+					219.1015625,
+					1
+				],
+				[
+					190.0625,
+					235.3515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				615624,
+				718808
+			],
+			"id": 379497,
+			"points": [
+				[
+					190.0625,
+					235.3515625,
+					1
+				],
+				[
+					237.3125,
+					233.8515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				718808,
+				246275
+			],
+			"id": 216054,
+			"points": [
+				[
+					237.3125,
+					233.8515625,
+					1
+				],
+				[
+					272.8125,
+					222.8515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				41555,
+				883314
+			],
+			"id": 410574,
+			"points": [
+				[
+					198.5625,
+					201.8515625,
+					1
+				],
+				[
+					246.4375,
+					185.9765625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				883314,
+				344040
+			],
+			"id": 887213,
+			"points": [
+				[
+					246.4375,
+					185.9765625,
+					1
+				],
+				[
+					268.9375,
+					166.1015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				344040,
+				551646
+			],
+			"id": 502168,
+			"points": [
+				[
+					268.9375,
+					166.1015625,
+					1
+				],
+				[
+					278.4375,
+					174.3515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				551646,
+				942244
+			],
+			"id": 674039,
+			"points": [
+				[
+					278.4375,
+					174.3515625,
+					1
+				],
+				[
+					265.1875,
+					195.7265625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				883314,
+				942244
+			],
+			"id": 626300,
+			"points": [
+				[
+					246.4375,
+					185.9765625,
+					1
+				],
+				[
+					265.1875,
+					195.7265625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				942244,
+				246275
+			],
+			"id": 959607,
+			"points": [
+				[
+					265.1875,
+					195.7265625,
+					1
+				],
+				[
+					272.8125,
+					222.8515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				246275,
+				272804
+			],
+			"id": 771743,
+			"points": [
+				[
+					272.8125,
+					222.8515625,
+					1
+				],
+				[
+					321.0625,
+					235.3515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				473853,
+				268768
+			],
+			"id": 410885,
+			"points": [
+				[
+					321.0625,
+					343.1015625,
+					1
+				],
+				[
+					110.3125,
+					342.6015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				473853,
+				272266
+			],
+			"id": 907908,
+			"points": [
+				[
+					321.0625,
+					343.1015625,
+					1
+				],
+				[
+					321.0625,
+					399.6015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				272266,
+				500770
+			],
+			"id": 144737,
+			"points": [
+				[
+					321.0625,
+					399.6015625,
+					1
+				],
+				[
+					320.8125,
+					430.9765625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				500770,
+				633590
+			],
+			"id": 3138,
+			"points": [
+				[
+					320.8125,
+					430.9765625,
+					1
+				],
+				[
+					293.3125,
+					430.8515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				272804,
+				176012
+			],
+			"id": 36776,
+			"points": [
+				[
+					321.0625,
+					235.3515625,
+					1
+				],
+				[
+					379.5625,
+					249.8515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				176012,
+				86497
+			],
+			"id": 747284,
+			"points": [
+				[
+					379.5625,
+					249.8515625,
+					1
+				],
+				[
+					380.0625,
+					171.3515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				176012,
+				507250
+			],
+			"id": 386473,
+			"points": [
+				[
+					379.5625,
+					249.8515625,
+					1
+				],
+				[
+					437.8125,
+					267.7265625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				507250,
+				89069
+			],
+			"id": 510348,
+			"points": [
+				[
+					437.8125,
+					267.7265625,
+					1
+				],
+				[
+					458.3125,
+					273.8515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				89069,
+				421948
+			],
+			"id": 74409,
+			"points": [
+				[
+					458.3125,
+					273.8515625,
+					1
+				],
+				[
+					457.0625,
+					399.1015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				272266,
+				421948
+			],
+			"id": 577815,
+			"points": [
+				[
+					321.0625,
+					399.6015625,
+					1
+				],
+				[
+					457.0625,
+					399.1015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				421948,
+				958928
+			],
+			"id": 793872,
+			"points": [
+				[
+					457.0625,
+					399.1015625,
+					1
+				],
+				[
+					457.0625,
+					426.8515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				958928,
+				694896
+			],
+			"id": 281127,
+			"points": [
+				[
+					457.0625,
+					426.8515625,
+					1
+				],
+				[
+					456.8125,
+					459.3515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				694896,
+				730604
+			],
+			"id": 433729,
+			"points": [
+				[
+					456.8125,
+					459.3515625,
+					1
+				],
+				[
+					429.5625,
+					459.1015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				258928,
+				942838
+			],
+			"id": 748554,
+			"points": [
+				[
+					594.8125,
+					311.3515625,
+					1
+				],
+				[
+					594.3125,
+					427.6015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				958928,
+				942838
+			],
+			"id": 882058,
+			"points": [
+				[
+					457.0625,
+					426.8515625,
+					1
+				],
+				[
+					594.3125,
+					427.6015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				942838,
+				463265
+			],
+			"id": 129370,
+			"points": [
+				[
+					594.3125,
+					427.6015625,
+					1
+				],
+				[
+					594.3125,
+					454.1015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				463265,
+				449149
+			],
+			"id": 586151,
+			"points": [
+				[
+					594.3125,
+					454.1015625,
+					1
+				],
+				[
+					594.0625,
+					487.6015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				463265,
+				60523
+			],
+			"id": 466599,
+			"points": [
+				[
+					594.3125,
+					454.1015625,
+					1
+				],
+				[
+					697.8125,
+					454.6015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				60523,
+				329627
+			],
+			"id": 598424,
+			"points": [
+				[
+					697.8125,
+					454.6015625,
+					1
+				],
+				[
+					697.5625,
+					482.8515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				836965,
+				743176
+			],
+			"id": 608713,
+			"points": [
+				[
+					667.7038043478261,
+					331.2646059782609,
+					1
+				],
+				[
+					667.7038043478261,
+					377.2646059782609,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				743176,
+				957159
+			],
+			"id": 972937,
+			"points": [
+				[
+					667.7038043478261,
+					377.2646059782609,
+					1
+				],
+				[
+					703.5625,
+					411.1015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				957159,
+				274798
+			],
+			"id": 709268,
+			"points": [
+				[
+					703.5625,
+					411.1015625,
+					1
+				],
+				[
+					761.0625,
+					415.1015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				274798,
+				413147
+			],
+			"id": 263714,
+			"points": [
+				[
+					761.0625,
+					415.1015625,
+					1
+				],
+				[
+					782.3125,
+					407.3515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				413147,
+				502935
+			],
+			"id": 455014,
+			"points": [
+				[
+					782.3125,
+					407.3515625,
+					1
+				],
+				[
+					944.0625,
+					408.3515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				165062,
+				760944
+			],
+			"id": 355944,
+			"points": [
+				[
+					944.4375,
+					322.2265625,
+					1
+				],
+				[
+					955.0625,
+					322.2265625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				760944,
+				299213
+			],
+			"id": 318920,
+			"points": [
+				[
+					955.0625,
+					322.2265625,
+					1
+				],
+				[
+					955.1875,
+					301.2265625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				299213,
+				930049
+			],
+			"id": 461214,
+			"points": [
+				[
+					955.1875,
+					301.2265625,
+					1
+				],
+				[
+					1000.0625,
+					300.8515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				930049,
+				472051
+			],
+			"id": 474801,
+			"points": [
+				[
+					1000.0625,
+					300.8515625,
+					1
+				],
+				[
+					1000.5625,
+					285.3515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				930049,
+				133058
+			],
+			"id": 515240,
+			"points": [
+				[
+					1000.0625,
+					300.8515625,
+					1
+				],
+				[
+					998.5625,
+					408.3515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				502935,
+				133058
+			],
+			"id": 940375,
+			"points": [
+				[
+					944.0625,
+					408.3515625,
+					1
+				],
+				[
+					998.5625,
+					408.3515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				133058,
+				692783
+			],
+			"id": 261976,
+			"points": [
+				[
+					998.5625,
+					408.3515625,
+					1
+				],
+				[
+					1015.3125,
+					408.8515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				692783,
+				532817
+			],
+			"id": 276505,
+			"points": [
+				[
+					1015.3125,
+					408.8515625,
+					1
+				],
+				[
+					1014.8125,
+					318.3515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				692783,
+				885240
+			],
+			"id": 513208,
+			"points": [
+				[
+					1015.3125,
+					408.8515625,
+					1
+				],
+				[
+					1077.0625,
+					409.1015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				502935,
+				487832
+			],
+			"id": 781172,
+			"points": [
+				[
+					944.0625,
+					408.3515625,
+					1
+				],
+				[
+					943.6875,
+					381.9765625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				487832,
+				165062
+			],
+			"id": 136121,
+			"points": [
+				[
+					943.6875,
+					381.9765625,
+					1
+				],
+				[
+					944.4375,
+					322.2265625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				487832,
+				229075
+			],
+			"id": 24590,
+			"points": [
+				[
+					943.6875,
+					381.9765625,
+					1
+				],
+				[
+					917.1875,
+					381.7265625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				836965,
+				657030
+			],
+			"id": 329706,
+			"points": [
+				[
+					667.7038043478261,
+					331.2646059782609,
+					1
+				],
+				[
+					667.2038043478261,
+					287.7646059782609,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				507250,
+				577825
+			],
+			"id": 579277,
+			"points": [
+				[
+					437.8125,
+					267.7265625,
+					1
+				],
+				[
+					438.0625,
+					248.8515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				577825,
+				932796
+			],
+			"id": 505523,
+			"points": [
+				[
+					438.0625,
+					248.8515625,
+					1
+				],
+				[
+					403.0625,
+					237.4765625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				577825,
+				145124
+			],
+			"id": 569981,
+			"points": [
+				[
+					438.0625,
+					248.8515625,
+					1
+				],
+				[
+					438.3125,
+					170.3515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				268768,
+				964654
+			],
+			"id": 869464,
+			"points": [
+				[
+					110.3125,
+					342.6015625,
+					1
+				],
+				[
+					110.3125,
+					367.6015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				964654,
+				390054
+			],
+			"id": 932001,
+			"points": [
+				[
+					110.3125,
+					367.6015625,
+					1
+				],
+				[
+					110.3125,
+					396.6015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				390054,
+				386262
+			],
+			"id": 465897,
+			"points": [
+				[
+					110.3125,
+					396.6015625,
+					1
+				],
+				[
+					121.3125,
+					396.7265625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				258928,
+				663317
+			],
+			"id": 586201,
+			"points": [
+				[
+					594.8125,
+					311.3515625,
+					1
+				],
+				[
+					612.6875,
+					316.2265625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				272804,
+				714387
+			],
+			"id": 82968,
+			"points": [
+				[
+					321.0625,
+					235.3515625,
+					1
+				],
+				[
+					321.1875,
+					253.8515625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				714387,
+				473853
+			],
+			"id": 133150,
+			"points": [
+				[
+					321.1875,
+					253.8515625,
+					1
+				],
+				[
+					321.0625,
+					343.1015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				714387,
+				688013
+			],
+			"id": 439904,
+			"points": [
+				[
+					321.1875,
+					253.8515625,
+					1
+				],
+				[
+					294.0625,
+					253.9765625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				688013,
+				782813
+			],
+			"id": 553791,
+			"points": [
+				[
+					294.0625,
+					253.9765625,
+					1
+				],
+				[
+					294.0625,
+					271.9765625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				89069,
+				21452
+			],
+			"id": 117289,
+			"points": [
+				[
+					458.3125,
+					273.8515625,
+					1
+				],
+				[
+					527.5625,
+					293.1015625,
+					1
+				]
+			]
+		},
+		{
+			"nodes": [
+				21452,
+				258928
+			],
+			"id": 19979,
+			"points": [
+				[
+					527.5625,
+					293.1015625,
+					1
+				],
+				[
+					594.8125,
+					311.3515625,
+					1
+				]
+			]
+		},
+		{
+			"points": [
+				[
+					612.6875,
+					316.2265625,
+					1
+				],
+				[
+					621.8125,
+					318.8515625,
+					1
+				]
+			],
+			"nodes": [
+				663317,
+				497335
+			],
+			"id": 10359
+		},
+		{
+			"points": [
+				[
+					621.8125,
+					318.8515625,
+					1
+				],
+				[
+					667.7038043478261,
+					331.2646059782609,
+					1
+				]
+			],
+			"nodes": [
+				497335,
+				836965
+			],
+			"id": 202861
+		},
+		{
+			"points": [
+				[
+					621.8125,
+					318.8515625,
+					1
+				],
+				[
+					621.8125,
+					353.3515625,
+					1
+				]
+			],
+			"nodes": [
+				497335,
+				733944
+			],
+			"id": 931662
+		},
+		{
+			"points": [
+				[
+					612.4375,
+					353.2265625,
+					1
+				],
+				[
+					621.8125,
+					353.3515625,
+					1
+				]
+			],
+			"nodes": [
+				301190,
+				733944
+			],
+			"id": 699287
+		},
+		{
+			"points": [
+				[
+					612.4375,
+					353.2265625,
+					1
+				],
+				[
+					612.3125,
+					331.3515625,
+					1
+				]
+			],
+			"nodes": [
+				301190,
+				48358
+			],
+			"id": 759204
+		},
+		{
+			"points": [
+				[
+					697.5625,
+					482.8515625,
+					1
+				],
+				[
+					688.8125,
+					482.8515625,
+					1
+				]
+			],
+			"nodes": [
+				329627,
+				57570
+			],
+			"id": 12048
+		},
+		{
+			"points": [
+				[
+					429.5625,
+					459.1015625,
+					1
+				],
+				[
+					429.5625,
+					469.1015625,
+					1
+				]
+			],
+			"nodes": [
+				730604,
+				605990
+			],
+			"id": 8107
+		},
+		{
+			"points": [
+				[
+					293.3125,
+					430.8515625,
+					1
+				],
+				[
+					293.3125,
+					439.8515625,
+					1
+				]
+			],
+			"nodes": [
+				633590,
+				438863
+			],
+			"id": 122797
+		},
+		{
+			"points": [
+				[
+					294.3125,
+					272.2265625,
+					2
+				],
+				[
+					303.4375,
+					272.2265625,
+					2
+				]
+			],
+			"nodes": [
+				228246,
+				439895
+			],
+			"id": 806651
+		},
+		{
+			"points": [
+				[
+					321.8125,
+					250.2265625,
+					2
+				],
+				[
+					321.8125,
+					276.9765625,
+					2
+				]
+			],
+			"nodes": [
+				692041,
+				784308
+			],
+			"id": 432006
+		},
+		{
+			"points": [
+				[
+					321.8125,
+					250.2265625,
+					2
+				],
+				[
+					372.8125,
+					263.2265625,
+					2
+				]
+			],
+			"nodes": [
+				692041,
+				386080
+			],
+			"id": 764702
+		},
+		{
+			"points": [
+				[
+					372.8125,
+					263.2265625,
+					2
+				],
+				[
+					376.8125,
+					249.9765625,
+					2
+				]
+			],
+			"nodes": [
+				386080,
+				759035
+			],
+			"id": 563247
+		},
+		{
+			"points": [
+				[
+					376.8125,
+					249.9765625,
+					2
+				],
+				[
+					381.8125,
+					232.4765625,
+					2
+				]
+			],
+			"nodes": [
+				759035,
+				636081
+			],
+			"id": 189288
+		},
+		{
+			"points": [
+				[
+					381.8125,
+					232.4765625,
+					2
+				],
+				[
+					403.3125,
+					238.2265625,
+					2
+				]
+			],
+			"nodes": [
+				636081,
+				930546
+			],
+			"id": 764703
+		},
+		{
+			"points": [
+				[
+					376.8125,
+					249.9765625,
+					2
+				],
+				[
+					398.6875,
+					256.4765625,
+					2
+				]
+			],
+			"nodes": [
+				759035,
+				983518
+			],
+			"id": 202265
+		},
+		{
+			"points": [
+				[
+					321.8125,
+					276.9765625,
+					2
+				],
+				[
+					321.5625,
+					371.2265625,
+					2
+				]
+			],
+			"nodes": [
+				784308,
+				764925
+			],
+			"id": 462183
+		},
+		{
+			"points": [
+				[
+					321.5625,
+					371.2265625,
+					2
+				],
+				[
+					321.8125,
+					398.7265625,
+					2
+				]
+			],
+			"nodes": [
+				764925,
+				405086
+			],
+			"id": 93277
+		},
+		{
+			"points": [
+				[
+					321.8125,
+					398.7265625,
+					2
+				],
+				[
+					321.8125,
+					430.6015625,
+					2
+				]
+			],
+			"nodes": [
+				405086,
+				141777
+			],
+			"id": 445557
+		},
+		{
+			"points": [
+				[
+					321.8125,
+					430.6015625,
+					2
+				],
+				[
+					321.8125,
+					439.2265625,
+					2
+				]
+			],
+			"nodes": [
+				141777,
+				54854
+			],
+			"id": 208451
+		},
+		{
+			"points": [
+				[
+					293.3125,
+					439.4765625,
+					2
+				],
+				[
+					321.8125,
+					439.2265625,
+					2
+				]
+			],
+			"nodes": [
+				409584,
+				54854
+			],
+			"id": 296054
+		},
+		{
+			"points": [
+				[
+					293.3125,
+					430.2265625,
+					2
+				],
+				[
+					321.8125,
+					430.6015625,
+					2
+				]
+			],
+			"nodes": [
+				669753,
+				141777
+			],
+			"id": 573426
+		},
+		{
+			"points": [
+				[
+					321.8125,
+					398.7265625,
+					2
+				],
+				[
+					458.0625,
+					399.1015625,
+					2
+				]
+			],
+			"nodes": [
+				405086,
+				505446
+			],
+			"id": 581730
+		},
+		{
+			"points": [
+				[
+					458.0625,
+					399.1015625,
+					2
+				],
+				[
+					458.0625,
+					426.6015625,
+					2
+				]
+			],
+			"nodes": [
+				505446,
+				536980
+			],
+			"id": 219037
+		},
+		{
+			"points": [
+				[
+					430.0625,
+					468.3515625,
+					2
+				],
+				[
+					457.8125,
+					468.1015625,
+					2
+				]
+			],
+			"nodes": [
+				579525,
+				141336
+			],
+			"id": 755275
+		},
+		{
+			"points": [
+				[
+					457.8125,
+					468.1015625,
+					2
+				],
+				[
+					457.8125,
+					458.6015625,
+					2
+				]
+			],
+			"nodes": [
+				141336,
+				249071
+			],
+			"id": 65236
+		},
+		{
+			"points": [
+				[
+					457.8125,
+					458.6015625,
+					2
+				],
+				[
+					430.0625,
+					458.8515625,
+					2
+				]
+			],
+			"nodes": [
+				249071,
+				720976
+			],
+			"id": 362192
+		},
+		{
+			"points": [
+				[
+					457.8125,
+					458.6015625,
+					2
+				],
+				[
+					458.0625,
+					426.6015625,
+					2
+				]
+			],
+			"nodes": [
+				249071,
+				536980
+			],
+			"id": 12212
+		},
+		{
+			"points": [
+				[
+					121.0625,
+					397.2265625,
+					2
+				],
+				[
+					121.32029724121094,
+					370.8958320617676,
+					2
+				]
+			],
+			"nodes": [
+				604683,
+				654012
+			],
+			"id": 670901
+		},
+		{
+			"points": [
+				[
+					121.32029724121094,
+					370.8958320617676,
+					2
+				],
+				[
+					111.82029724121094,
+					371.1458320617676,
+					2
+				]
+			],
+			"nodes": [
+				654012,
+				864840
+			],
+			"id": 571126
+		},
+		{
+			"points": [
+				[
+					111.82029724121094,
+					371.1458320617676,
+					2
+				],
+				[
+					112.0625,
+					397.3515625,
+					2
+				]
+			],
+			"nodes": [
+				864840,
+				449781
+			],
+			"id": 653901
+		},
+		{
+			"points": [
+				[
+					121.32029724121094,
+					370.8958320617676,
+					2
+				],
+				[
+					321.5625,
+					371.2265625,
+					2
+				]
+			],
+			"nodes": [
+				654012,
+				764925
+			],
+			"id": 557730
+		},
+		{
+			"points": [
+				[
+					372.8125,
+					263.2265625,
+					2
+				],
+				[
+					458.5625,
+					287.6015625,
+					2
+				]
+			],
+			"nodes": [
+				386080,
+				252337
+			],
+			"id": 638170
+		},
+		{
+			"points": [
+				[
+					458.5625,
+					287.6015625,
+					2
+				],
+				[
+					458.0625,
+					399.1015625,
+					2
+				]
+			],
+			"nodes": [
+				252337,
+				505446
+			],
+			"id": 202360
+		},
+		{
+			"points": [
+				[
+					594.8125,
+					325.1015625,
+					2
+				],
+				[
+					612.8125,
+					330.3515625,
+					2
+				]
+			],
+			"nodes": [
+				683647,
+				187250
+			],
+			"id": 811061
+		},
+		{
+			"points": [
+				[
+					612.8125,
+					330.3515625,
+					2
+				],
+				[
+					621.8125,
+					332.6015625,
+					2
+				]
+			],
+			"nodes": [
+				187250,
+				488522
+			],
+			"id": 334789
+		},
+		{
+			"points": [
+				[
+					621.8125,
+					332.6015625,
+					2
+				],
+				[
+					621.8125,
+					352.8515625,
+					2
+				]
+			],
+			"nodes": [
+				488522,
+				67662
+			],
+			"id": 867301
+		},
+		{
+			"points": [
+				[
+					458.0625,
+					426.6015625,
+					2
+				],
+				[
+					594.5625,
+					426.8515625,
+					2
+				]
+			],
+			"nodes": [
+				536980,
+				108553
+			],
+			"id": 928176
+		},
+		{
+			"points": [
+				[
+					594.5625,
+					426.8515625,
+					2
+				],
+				[
+					594.8125,
+					325.1015625,
+					2
+				]
+			],
+			"nodes": [
+				108553,
+				683647
+			],
+			"id": 247265
+		},
+		{
+			"points": [
+				[
+					594.5625,
+					426.8515625,
+					2
+				],
+				[
+					594.8125,
+					454.6015625,
+					2
+				]
+			],
+			"nodes": [
+				108553,
+				506267
+			],
+			"id": 385715
+		},
+		{
+			"points": [
+				[
+					594.8125,
+					454.6015625,
+					2
+				],
+				[
+					594.8125,
+					471.6015625,
+					2
+				]
+			],
+			"nodes": [
+				506267,
+				209090
+			],
+			"id": 566508
+		},
+		{
+			"points": [
+				[
+					594.8125,
+					454.6015625,
+					2
+				],
+				[
+					688.3125,
+					455.1015625,
+					2
+				]
+			],
+			"nodes": [
+				506267,
+				198597
+			],
+			"id": 888220
+		},
+		{
+			"points": [
+				[
+					688.3125,
+					455.1015625,
+					2
+				],
+				[
+					688.3125,
+					482.1015625,
+					2
+				]
+			],
+			"nodes": [
+				198597,
+				204231
+			],
+			"id": 126713
+		},
+		{
+			"points": [
+				[
+					688.3125,
+					455.1015625,
+					2
+				],
+				[
+					698.6875,
+					454.9765625,
+					2
+				]
+			],
+			"nodes": [
+				198597,
+				575826
+			],
+			"id": 34359
+		},
+		{
+			"points": [
+				[
+					698.6875,
+					454.9765625,
+					2
+				],
+				[
+					698.5625,
+					482.1015625,
+					2
+				]
+			],
+			"nodes": [
+				575826,
+				227595
+			],
+			"id": 760766
+		},
+		{
+			"points": [
+				[
+					121.3125,
+					396.7265625,
+					1
+				],
+				[
+					121.0625,
+					397.2265625,
+					2
+				]
+			],
+			"nodes": [
+				386262,
+				604683
+			],
+			"id": 61071
+		},
+		{
+			"points": [
+				[
+					294.0625,
+					271.9765625,
+					1
+				],
+				[
+					294.3125,
+					272.2265625,
+					2
+				]
+			],
+			"nodes": [
+				782813,
+				228246
+			],
+			"id": 877157
+		},
+		{
+			"points": [
+				[
+					403.0625,
+					237.4765625,
+					1
+				],
+				[
+					403.3125,
+					238.2265625,
+					2
+				]
+			],
+			"nodes": [
+				932796,
+				930546
+			],
+			"id": 882936
+		},
+		{
+			"points": [
+				[
+					293.3125,
+					439.8515625,
+					1
+				],
+				[
+					293.3125,
+					439.4765625,
+					2
+				]
+			],
+			"nodes": [
+				438863,
+				409584
+			],
+			"id": 600574
+		},
+		{
+			"points": [
+				[
+					429.5625,
+					469.1015625,
+					1
+				],
+				[
+					430.0625,
+					468.3515625,
+					2
+				]
+			],
+			"nodes": [
+				605990,
+				579525
+			],
+			"id": 482996
+		},
+		{
+			"points": [
+				[
+					688.8125,
+					482.8515625,
+					1
+				],
+				[
+					688.3125,
+					482.1015625,
+					2
+				]
+			],
+			"nodes": [
+				57570,
+				204231
+			],
+			"id": 454386
+		},
+		{
+			"points": [
+				[
+					612.3125,
+					331.3515625,
+					1
+				],
+				[
+					612.8125,
+					330.3515625,
+					2
+				]
+			],
+			"nodes": [
+				48358,
+				187250
+			],
+			"id": 565836
+		},
+		{
+			"points": [
+				[
+					303.4375,
+					272.2265625,
+					2
+				],
+				[
+					321.8125,
+					276.9765625,
+					2
+				]
+			],
+			"nodes": [
+				439895,
+				784308
+			],
+			"id": 46594
+		},
+		{
+			"points": [
+				[
+					351.0625,
+					271.8515625,
+					3
+				],
+				[
+					412.8125,
+					287.6015625,
+					3
+				]
+			],
+			"nodes": [
+				227771,
+				237405
+			],
+			"id": 239567
+		},
+		{
+			"points": [
+				[
+					412.8125,
+					287.6015625,
+					3
+				],
+				[
+					458.0625,
+					299.6015625,
+					3
+				]
+			],
+			"nodes": [
+				237405,
+				16611
+			],
+			"id": 460398
+		},
+		{
+			"points": [
+				[
+					419.5625,
+					263.1015625,
+					3
+				],
+				[
+					412.8125,
+					287.6015625,
+					3
+				]
+			],
+			"nodes": [
+				540079,
+				237405
+			],
+			"id": 229119
+		},
+		{
+			"points": [
+				[
+					399.0625,
+					256.3515625,
+					3
+				],
+				[
+					419.5625,
+					263.1015625,
+					3
+				]
+			],
+			"nodes": [
+				216499,
+				540079
+			],
+			"id": 455577
+		},
+		{
+			"points": [
+				[
+					528.0625,
+					293.1015625,
+					2
+				],
+				[
+					524.0625,
+					305.6015625,
+					2
+				]
+			],
+			"nodes": [
+				975998,
+				367398
+			],
+			"id": 232606
+		},
+		{
+			"points": [
+				[
+					458.5625,
+					287.6015625,
+					2
+				],
+				[
+					524.0625,
+					305.6015625,
+					2
+				]
+			],
+			"nodes": [
+				252337,
+				367398
+			],
+			"id": 684646
+		},
+		{
+			"points": [
+				[
+					524.0625,
+					305.6015625,
+					2
+				],
+				[
+					594.8125,
+					325.1015625,
+					2
+				]
+			],
+			"nodes": [
+				367398,
+				683647
+			],
+			"id": 437918
+		},
+		{
+			"points": [
+				[
+					527.5625,
+					293.1015625,
+					1
+				],
+				[
+					528.0625,
+					293.1015625,
+					2
+				]
+			],
+			"nodes": [
+				21452,
+				975998
+			],
+			"name": "Elevator",
+			"id": 273720
+		},
+		{
+			"points": [
+				[
+					458.0625,
+					299.6015625,
+					3
+				],
+				[
+					527.5625,
+					318.8515625,
+					3
+				]
+			],
+			"nodes": [
+				16611,
+				669346
+			],
+			"id": 664325
+		},
+		{
+			"points": [
+				[
+					527.5625,
+					318.8515625,
+					3
+				],
+				[
+					595.0625,
+					337.1015625,
+					3
+				]
+			],
+			"nodes": [
+				669346,
+				906436
+			],
+			"id": 990988
+		},
+		{
+			"points": [
+				[
+					528.3125,
+					293.3515625,
+					3
+				],
+				[
+					527.5625,
+					318.8515625,
+					3
+				]
+			],
+			"nodes": [
+				6548,
+				669346
+			],
+			"id": 860840
+		},
+		{
+			"points": [
+				[
+					613.3125,
+					330.3515625,
+					3
+				],
+				[
+					595.0625,
+					337.1015625,
+					3
+				]
+			],
+			"nodes": [
+				196296,
+				906436
+			],
+			"id": 509847
+		},
+		{
+			"points": [
+				[
+					613.0625,
+					352.8515625,
+					3
+				],
+				[
+					613.3125,
+					330.3515625,
+					3
+				]
+			],
+			"nodes": [
+				864336,
+				196296
+			],
+			"id": 711936
+		},
+		{
+			"points": [
+				[
+					622.3125,
+					352.8515625,
+					3
+				],
+				[
+					613.0625,
+					352.8515625,
+					3
+				]
+			],
+			"nodes": [
+				909391,
+				864336
+			],
+			"id": 977215
+		},
+		{
+			"points": [
+				[
+					595.0625,
+					337.1015625,
+					3
+				],
+				[
+					594.5625,
+					398.6015625,
+					3
+				]
+			],
+			"nodes": [
+				906436,
+				528801
+			],
+			"id": 153143
+		},
+		{
+			"points": [
+				[
+					458.0625,
+					399.3515625,
+					3
+				],
+				[
+					594.5625,
+					398.6015625,
+					3
+				]
+			],
+			"nodes": [
+				410246,
+				528801
+			],
+			"id": 22956
+		},
+		{
+			"points": [
+				[
+					458.0625,
+					371.3515625,
+					3
+				],
+				[
+					458.0625,
+					299.6015625,
+					3
+				]
+			],
+			"nodes": [
+				637422,
+				16611
+			],
+			"id": 931286
+		},
+		{
+			"points": [
+				[
+					458.0625,
+					371.3515625,
+					3
+				],
+				[
+					458.0625,
+					399.3515625,
+					3
+				]
+			],
+			"nodes": [
+				637422,
+				410246
+			],
+			"id": 261697
+		},
+		{
+			"points": [
+				[
+					430.8125,
+					459.6015625,
+					3
+				],
+				[
+					430.8125,
+					468.8515625,
+					3
+				]
+			],
+			"nodes": [
+				780629,
+				815319
+			],
+			"id": 783652
+		},
+		{
+			"points": [
+				[
+					430.8125,
+					468.8515625,
+					3
+				],
+				[
+					458.3125,
+					469.1015625,
+					3
+				]
+			],
+			"nodes": [
+				815319,
+				685549
+			],
+			"id": 402798
+		},
+		{
+			"points": [
+				[
+					458.3125,
+					469.1015625,
+					3
+				],
+				[
+					458.0625,
+					399.3515625,
+					3
+				]
+			],
+			"nodes": [
+				685549,
+				410246
+			],
+			"id": 630587
+		},
+		{
+			"points": [
+				[
+					595.0625,
+					483.3515625,
+					3
+				],
+				[
+					594.5625,
+					398.6015625,
+					3
+				]
+			],
+			"nodes": [
+				175710,
+				528801
+			],
+			"id": 588121
+		},
+		{
+			"points": [
+				[
+					595.0625,
+					483.3515625,
+					3
+				],
+				[
+					595.0625,
+					495.1015625,
+					3
+				]
+			],
+			"nodes": [
+				175710,
+				684563
+			],
+			"id": 415574
+		},
+		{
+			"points": [
+				[
+					699.1875,
+					483.4765625,
+					3
+				],
+				[
+					595.0625,
+					483.3515625,
+					3
+				]
+			],
+			"nodes": [
+				422760,
+				175710
+			],
+			"id": 233154
+		},
+		{
+			"points": [
+				[
+					321.5625,
+					440.8515625,
+					3
+				],
+				[
+					322.0625,
+					371.1015625,
+					3
+				]
+			],
+			"nodes": [
+				165374,
+				9389
+			],
+			"id": 916325
+		},
+		{
+			"points": [
+				[
+					293.0625,
+					430.3515625,
+					3
+				],
+				[
+					293.0625,
+					440.8515625,
+					3
+				]
+			],
+			"nodes": [
+				752548,
+				856229
+			],
+			"id": 41252
+		},
+		{
+			"points": [
+				[
+					293.0625,
+					440.8515625,
+					3
+				],
+				[
+					321.5625,
+					440.8515625,
+					3
+				]
+			],
+			"nodes": [
+				856229,
+				165374
+			],
+			"id": 27096
+		},
+		{
+			"points": [
+				[
+					322.0625,
+					371.1015625,
+					3
+				],
+				[
+					458.0625,
+					371.3515625,
+					3
+				]
+			],
+			"nodes": [
+				9389,
+				637422
+			],
+			"id": 848262
+		},
+		{
+			"points": [
+				[
+					322.0625,
+					371.1015625,
+					3
+				],
+				[
+					293.5625,
+					370.6015625,
+					3
+				]
+			],
+			"nodes": [
+				9389,
+				526513
+			],
+			"id": 989499
+		},
+		{
+			"points": [
+				[
+					111.5625,
+					397.6015625,
+					3
+				],
+				[
+					121.0625,
+					397.6015625,
+					3
+				]
+			],
+			"nodes": [
+				4254,
+				584360
+			],
+			"id": 331519
+		},
+		{
+			"points": [
+				[
+					121.0625,
+					397.6015625,
+					3
+				],
+				[
+					121.5625,
+					371.3515625,
+					3
+				]
+			],
+			"nodes": [
+				584360,
+				373446
+			],
+			"id": 652486
+		},
+		{
+			"points": [
+				[
+					121.5625,
+					371.3515625,
+					3
+				],
+				[
+					111.8125,
+					371.6015625,
+					3
+				]
+			],
+			"nodes": [
+				373446,
+				302271
+			],
+			"id": 62313
+		},
+		{
+			"points": [
+				[
+					121.5625,
+					371.3515625,
+					3
+				],
+				[
+					293.5625,
+					370.6015625,
+					3
+				]
+			],
+			"nodes": [
+				373446,
+				526513
+			],
+			"id": 227329
+		},
+		{
+			"points": [
+				[
+					293.5625,
+					370.6015625,
+					3
+				],
+				[
+					294.3125,
+					271.8515625,
+					3
+				]
+			],
+			"nodes": [
+				526513,
+				909335
+			],
+			"id": 746796
+		},
+		{
+			"points": [
+				[
+					303.4375,
+					272.2265625,
+					2
+				],
+				[
+					303.3125,
+					246.1015625,
+					2
+				]
+			],
+			"nodes": [
+				439895,
+				222179
+			],
+			"id": 9528
+		},
+		{
+			"points": [
+				[
+					303.3125,
+					246.6015625,
+					3
+				],
+				[
+					294.0625,
+					244.1015625,
+					3
+				]
+			],
+			"nodes": [
+				620377,
+				570848
+			],
+			"id": 485267
+		},
+		{
+			"points": [
+				[
+					294.0625,
+					244.1015625,
+					3
+				],
+				[
+					294.3125,
+					271.8515625,
+					3
+				]
+			],
+			"nodes": [
+				570848,
+				909335
+			],
+			"id": 341935
+		},
+		{
+			"points": [
+				[
+					294.3125,
+					271.8515625,
+					3
+				],
+				[
+					351.0625,
+					271.8515625,
+					3
+				]
+			],
+			"nodes": [
+				909335,
+				227771
+			],
+			"id": 632725
+		},
+		{
+			"points": [
+				[
+					112.0625,
+					397.3515625,
+					2
+				],
+				[
+					111.5625,
+					397.6015625,
+					3
+				]
+			],
+			"nodes": [
+				449781,
+				4254
+			],
+			"id": 993863
+		},
+		{
+			"points": [
+				[
+					293.3125,
+					430.2265625,
+					2
+				],
+				[
+					293.0625,
+					430.3515625,
+					3
+				]
+			],
+			"nodes": [
+				669753,
+				752548
+			],
+			"id": 5290
+		},
+		{
+			"points": [
+				[
+					430.0625,
+					458.8515625,
+					2
+				],
+				[
+					430.8125,
+					459.6015625,
+					3
+				]
+			],
+			"nodes": [
+				720976,
+				780629
+			],
+			"id": 9333
+		},
+		{
+			"points": [
+				[
+					698.5625,
+					482.1015625,
+					2
+				],
+				[
+					699.1875,
+					483.4765625,
+					3
+				]
+			],
+			"nodes": [
+				227595,
+				422760
+			],
+			"id": 707239
+		},
+		{
+			"points": [
+				[
+					621.8125,
+					352.8515625,
+					2
+				],
+				[
+					622.3125,
+					352.8515625,
+					3
+				]
+			],
+			"nodes": [
+				67662,
+				909391
+			],
+			"id": 560782
+		},
+		{
+			"points": [
+				[
+					528.0625,
+					293.1015625,
+					2
+				],
+				[
+					528.3125,
+					293.3515625,
+					3
+				]
+			],
+			"nodes": [
+				975998,
+				6548
+			],
+			"name": "Elevator",
+			"id": 389170
+		},
+		{
+			"points": [
+				[
+					398.6875,
+					256.4765625,
+					2
+				],
+				[
+					399.0625,
+					256.3515625,
+					3
+				]
+			],
+			"nodes": [
+				983518,
+				216499
+			],
+			"id": 310761
+		},
+		{
+			"points": [
+				[
+					303.3125,
+					246.1015625,
+					2
+				],
+				[
+					303.3125,
+					246.6015625,
+					3
+				]
+			],
+			"nodes": [
+				222179,
+				620377
+			],
+			"id": 210239
+		},
+		{
+			"points": [
+				[
+					319.8125,
+					283.1015625,
+					4
+				],
+				[
+					319.5625,
+					385.3515625,
+					4
+				]
+			],
+			"nodes": [
+				630848,
+				266651
+			],
+			"id": 587116
+		},
+		{
+			"points": [
+				[
+					319.5625,
+					385.3515625,
+					4
+				],
+				[
+					458.3125,
+					406.6015625,
+					4
+				]
+			],
+			"nodes": [
+				266651,
+				607515
+			],
+			"id": 326342
+		},
+		{
+			"points": [
+				[
+					458.3125,
+					406.6015625,
+					4
+				],
+				[
+					560.5625,
+					406.8515625,
+					4
+				]
+			],
+			"nodes": [
+				607515,
+				393522
+			],
+			"id": 557083
+		},
+		{
+			"points": [
+				[
+					454.0625,
+					299.3515625,
+					4
+				],
+				[
+					363.0625,
+					272.6015625,
+					4
+				]
+			],
+			"nodes": [
+				921490,
+				12766
+			],
+			"id": 842548
+		},
+		{
+			"points": [
+				[
+					458.0625,
+					320.6015625,
+					4
+				],
+				[
+					454.0625,
+					299.3515625,
+					4
+				]
+			],
+			"nodes": [
+				262639,
+				921490
+			],
+			"id": 779312
+		},
+		{
+			"points": [
+				[
+					474.8125,
+					324.3515625,
+					4
+				],
+				[
+					458.0625,
+					320.6015625,
+					4
+				]
+			],
+			"nodes": [
+				864513,
+				262639
+			],
+			"id": 140975
+		},
+		{
+			"points": [
+				[
+					477.8125,
+					303.3515625,
+					4
+				],
+				[
+					454.0625,
+					299.3515625,
+					4
+				]
+			],
+			"nodes": [
+				977142,
+				921490
+			],
+			"id": 682180
+		},
+		{
+			"points": [
+				[
+					485.3125,
+					314.8515625,
+					4
+				],
+				[
+					474.8125,
+					324.3515625,
+					4
+				]
+			],
+			"nodes": [
+				871462,
+				864513
+			],
+			"id": 862887
+		},
+		{
+			"points": [
+				[
+					485.3125,
+					314.8515625,
+					4
+				],
+				[
+					477.8125,
+					303.3515625,
+					4
+				]
+			],
+			"nodes": [
+				871462,
+				977142
+			],
+			"id": 63254
+		},
+		{
+			"points": [
+				[
+					528.0625,
+					292.6015625,
+					4
+				],
+				[
+					527.8125,
+					319.6015625,
+					4
+				]
+			],
+			"nodes": [
+				660232,
+				481954
+			],
+			"id": 611583
+		},
+		{
+			"points": [
+				[
+					527.8125,
+					319.6015625,
+					4
+				],
+				[
+					553.8125,
+					326.3515625,
+					4
+				]
+			],
+			"nodes": [
+				481954,
+				401760
+			],
+			"id": 993957
+		},
+		{
+			"points": [
+				[
+					527.8125,
+					319.6015625,
+					4
+				],
+				[
+					485.3125,
+					314.8515625,
+					4
+				]
+			],
+			"nodes": [
+				481954,
+				871462
+			],
+			"id": 999208
+		},
+		{
+			"points": [
+				[
+					528.3125,
+					293.3515625,
+					3
+				],
+				[
+					528.0625,
+					292.6015625,
+					4
+				]
+			],
+			"nodes": [
+				6548,
+				660232
+			],
+			"name": "Elevator",
+			"id": 932778
+		},
+		{
+			"points": [
+				[
+					319.8125,
+					283.1015625,
+					4
+				],
+				[
+					362.8125,
+					283.1015625,
+					4
+				]
+			],
+			"nodes": [
+				630848,
+				509687
+			],
+			"id": 19593
+		},
+		{
+			"points": [
+				[
+					363.0625,
+					272.6015625,
+					4
+				],
+				[
+					362.8125,
+					283.1015625,
+					4
+				]
+			],
+			"nodes": [
+				12766,
+				509687
+			],
+			"id": 414042
+		},
+		{
+			"points": [
+				[
+					458.3125,
+					406.6015625,
+					4
+				],
+				[
+					458.0625,
+					320.6015625,
+					4
+				]
+			],
+			"nodes": [
+				607515,
+				262639
+			],
+			"id": 855167
+		}
+	]
+}

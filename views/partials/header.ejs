@@ -1,0 +1,17 @@
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|Source+Code+Pro" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<title>Blairpath.org |</title>
+<link rel="shortcut icon" href="/favicon.ico">
+<script>
+	const pageNames = ["Home", "Changelog", "About", "Map"], pageToPath = s => '/' + s.toLowerCase();
+	pageNames.forEach(s => {
+		if (pageToPath(s) == window.location.pathname) document.title += ' ' + s;
+	});
+	if (document.title.endsWith('|')) document.title += " Page not found";
+</script>
