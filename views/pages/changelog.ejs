@@ -9,39 +9,38 @@
 		<section class="main">
 			<div>
 				<h1>Changelog</h1>
-
-				<p>Major release <select id="selectRelease" style="margin-left: 10px"></select></p>
-				<table id="versionsTable"></table>
-				
-				<script>
-					const selector = document.getElementById("selectRelease");
-					$.getJSON("/json/versions.json", function (data) {
-						const versions = Object.keys(data);
-						
-						// Add options to selector
-						versions.forEach(v => {
-							var newOption = document.createElement("option");
-							newOption.innerHTML = v;
-							newOption.setAttribute("value", v);
-							selector.appendChild(newOption);
-						});
-
-						// Listen for selector changes
-						const generateTable = function () {
-							var output = "<tr> <th>Version</th> <th>Date</th> <th>Changes</th> </tr>"
-							data[selector.value].forEach(row => {
-								function generateChangeHTML (changes) {
-									if (typeof changes == "object") return '<ul>' + changes.map(c => '<li>' + generateChangeHTML(c) + '</li>').join('').replace(/<\/li><li><ul>/g, '<ul>') + '</ul>';
-									else return changes;
-								}
-								output += `<tr> <td>${row.version}</td> <td>${row.date}</td> <td>${generateChangeHTML(row.changes)}</td>`;
-							});
-							document.getElementById("versionsTable").innerHTML = output;
-						};
-						generateTable();
-						selector.addEventListener("change", generateTable);
-					});
-				</script>
+				<div class="banner gray">
+					<p style="text-align: left">
+						<b>Apr 16, 2021</b>
+						<span style="float: right">Jeffrey Tong</span>
+					</p>
+					<i>v1.5.0 release notes</i>
+					<p>Blairpath now has its own official domain, <a href="blairpath.org">blairpath.org</a>.</p>
+				</div>
+				<div class="banner gray">
+					<p style="text-align: left">
+						<b>Mar 28, 2021</b>
+						<span style="float: right">Jeffrey Tong</span>
+					</p>
+					<i>v1.4.0 release notes</i>
+					<p>Blairpath's source is now published on GitHub.</p>
+				</div>
+				<div class="banner gray">
+					<p style="text-align: left">
+						<b>Mar 28, 2021</b>
+						<span style="float: right">Jeffrey Tong</span>
+					</p>
+					<i>v1.3.0 release notes</i>
+					<p>The website has been migrated to Heroku and will soon be hosted on a standalone domain.</p>
+				</div>
+				<div class="banner gray">
+					<p style="text-align: left">
+						<b>Jan 20, 2020</b>
+						<span style="float: right">Jeffrey Tong</span>
+					</p>
+					<i>v1.0.0 release notes</i>
+					<p>Blairpath has now entered the Release phase! Pathfinding has been implemented and all major features for this version should now be fully functional.</p>
+				</div>
 			</div>
 		</section>
 	</body>

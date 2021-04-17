@@ -10,7 +10,7 @@
 	<body>
 		<%-include("../partials/menu.ejs")%>
 		<section class="main">
-			<div class="left" style="width: auto; overflow: hidden">
+			<div class="left" style="width: calc(100% - 600px - 4%); overflow: hidden">
 				<h1>Map</h1>
 
 				<p>Select any sequence of rooms and press "Calculate Route" to find the shortest route.</p>
@@ -65,7 +65,7 @@
 				<div id="calcResult"></div>
 			</div>
 
-			<div class="right" style="width: 600px; height: 600px; float: right" oncontextmenu="return false;">
+			<div class="right" style="width: 600px; height: 600px" oncontextmenu="return false;">
 				<div id="processingCanvas">
 					<div id="pjsLoadingMessage">
 						<img src="/images/loading-spinner.gif" style="margin: 200px 0 0 200px; width: 200px; height: 200px"/>

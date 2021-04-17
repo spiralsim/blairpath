@@ -9,9 +9,9 @@ UI
 - Constrain tooltips to canvas
 - Reorganize code for interactives
 - Create SVG icons
-- Create SVG loading spinner
+- Replace SVG loading spinner with gray placeholder
 - Make scrollbar values smooth
-Rewrite about page (search bar adapted from https://www.w3schools.com/howto/howto_js_autocomplete.asp)
+- Make FPS counter more smooth
 Create tutorial page
 Reorganize changelog
 Create contribution system

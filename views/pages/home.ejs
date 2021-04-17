@@ -7,40 +7,56 @@
 	<body>
 		<%-include("../partials/menu.ejs")%>
 		<section class="main">
-			<div class="left" style="width: 50%">
+			<div class="left">
 				<h1>Welcome!</h1>
 
-				<p><b>Welcome to <i>Blairpath.org</i>!</b> This is a database of map data similar to the popular <a href="https://maps.google.com">maps.google.com</a>. We feature rooms used for academic classes from Montgomery Blair High School's interior campus. Of course, Blairpath.org rooms do not have to be related to academic uses or limited to the interior; rooms can have any use and anyone familiar with the Blair campus can use and contribute map data. Currently, the database contains a total of <span id="roomCounter">?</span> rooms.</p>
+				<p><b>Welcome to <i>Blairpath.org</i>!</b> This is a website compiling cartographic data and navigation utilities pertaining to Montgomery Blair High School's campus. Currently, the database contains a total of <span id="roomCounter">?</span> rooms.</p>
 				<script>
 					$.getJSON("/json/data.json", function (data) {
 						document.getElementById("roomCounter").innerHTML = data.rooms.map(f => Object.keys(f).map(s => f[s])).flat(2).length;
 					});
 				</script>
 
-				<p>More information can be found in the About tab.</p>
+				<p>More information can be found in the <a href="/about">About</a> page.</p>
 
-				<div class="banner red" style="border-radius: 0.5em; padding: 16px">
-					<p><b>Please note the following:</b> Blairpath.org does not have any affiliation with Montgomery Blair High School. Data on Blairpath.org do not necessarily reflect the views of the authors of administrators of this site, nor do they reflect the views of Montgomery Blair High School.</p>
-				
-					<p style="margin: 16px 0 16px 0">The name "Blairpath.org" is not meant as a derogatory comment towards Montgomery Blair High School or any entity - it originates from blairbash.org and other Blair-related websites.</p>
-				
-					<p>Data on Blairpath.org have no implicit or explicit claim of validity; some data are unverified.</p>
+				<div class="banner red">
+					<p><b>Please note the following:</b> Blairpath is not officially associated with Montgomery Blair High School. Cartographic data on this site have no implicit or explicit claim of accuracy; some information is unverified.</p>
 				</div>
 			</div>
 
-			<div class="right" style="width: 50%">
+			<div class="right">
 				<h1>News</h1>
 				<div class="banner gray">
-					<b>Jeffrey Tong | Mar 28, 2021</b>
-					<p>[v1.4.0] Blairpath's source is now published on GitHub.</p>
+					<p style="text-align: left">
+						<b>Apr 17, 2021</b>
+						<span style="float: right">Jeffrey Tong</span>
+					</p>
+					<i>v1.5.0 release notes</i>
+					<p>Blairpath now has its own official domain, <a href="blairpath.org">blairpath.org</a>.</p>
 				</div>
 				<div class="banner gray">
-					<b>Jeffrey Tong | Mar 28, 2021</b>
-					<p>[v1.3.0] The website has been migrated to Heroku and will soon be hosted on a standalone domain.</p>
+					<p style="text-align: left">
+						<b>Mar 28, 2021</b>
+						<span style="float: right">Jeffrey Tong</span>
+					</p>
+					<i>v1.4.0 release notes</i>
+					<p>Blairpath's source is now published on GitHub.</p>
 				</div>
 				<div class="banner gray">
-					<b>Jeffrey Tong | Jan 20, 2020</b>
-					<p>[v1.0.0] Blairpath has now entered the Release phase! Pathfinding has been implemented and all major features for this version should now be fully functional.</p>
+					<p style="text-align: left">
+						<b>Mar 28, 2021</b>
+						<span style="float: right">Jeffrey Tong</span>
+					</p>
+					<i>v1.3.0 release notes</i>
+					<p>The website has been migrated to Heroku and will soon be hosted on a standalone domain.</p>
+				</div>
+				<div class="banner gray">
+					<p style="text-align: left">
+						<b>Jan 20, 2020</b>
+						<span style="float: right">Jeffrey Tong</span>
+					</p>
+					<i>v1.0.0 release notes</i>
+					<p>Blairpath has now entered the Release phase! Pathfinding has been implemented and all major features for this version should now be fully functional.</p>
 				</div>
 				<a href="/changelog">View more</a>	
 			</div>

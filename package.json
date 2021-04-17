@@ -1,7 +1,7 @@
 {
   "name": "blairpath",
-  "version": "1.4.0",
-  "description": "Mapping tool for Montgomery Blair High School",
+  "version": "1.5.0",
+  "description": "Navigation tool for Montgomery Blair High School",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -20,7 +20,8 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "http": "*"
   },
   "engines": {
     "node": "14.16.0"
