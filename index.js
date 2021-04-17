@@ -18,4 +18,4 @@ app.get(/.*/, (req, res) => {
 });
 
 // Ping every 15 minutes to keep the dyno running
-setInterval(() => http.get("http://www.blairpath.org/"), 15 * 1000);
+setInterval(() => http.get("http://www.blairpath.org/"), 15 * 60 * 1000);
