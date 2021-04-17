@@ -18,4 +18,15 @@ app.get(/.*/, (req, res) => {
 });
 
 // Ping every 15 minutes to keep the dyno running
-setInterval(() => http.get("http://blairpath.org"), 60 * 1000);
+setInterval(function () {
+	const options = {
+		host: "http://blairpath.org",
+		port: 80,
+		path: "/"
+	};
+	http.get(options, function (res) {
+		res.on("data", chunk => {
+			console.log(chunk.toString());
+		});
+	})
+}, 5 * 1000);
