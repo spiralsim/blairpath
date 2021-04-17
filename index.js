@@ -26,7 +26,7 @@ setInterval(function () {
 		path: "/"
 	};
 	*/
-	http.get("blairpath.org/home", function (res) {
+	http.get("http://blairpath.org/home", function (res) {
 		res.on("data", chunk => {
 			console.log(chunk.toString());
 		});
