@@ -12,9 +12,14 @@ app
 // Handle all asset and page requests
 app.get(/.*/, (req, res) => {
 	const path = req.path;
-	if (path == '/') res.redirect("/home");
-	else if (fs.existsSync(`${__dirname}/views/pages/${path}.ejs`)) res.render(`pages/${path}`);
-	else res.render("pages/404");
+	if (path == "/") res.redirect("/home");
+	else if (fs.existsSync(`${__dirname}/views/pages/${path}.ejs`)) {
+		const locals = {};
+		["data", "news"].forEach(s => {
+			locals[s] = JSON.parse(fs.readFileSync(`./assets/json/${s}.json`));
+		});
+		res.render(`pages/${path}`, locals);
+	} else res.render("pages/404");
 });
 
 // Ping every 15 minutes to keep the dyno running

@@ -2,14 +2,13 @@
 var rooms = nodes = links = [];
 var constants = {};
 const dist2D = (a, b) => Math.sqrt(Math.pow(b[0] - a[0], 2) + Math.pow(b[1] - a[1], 2));
+var tableLoaded = false;
 $.getJSON("/json/data.json", function (data) {
 	// Load constants
 	constants = data.constants;
 
 	// Initial load for all object types
-	["rooms", "nodes", "links"].forEach(o => {
-		eval(`${o} = data.${o};`)
-	});
+	["rooms", "nodes", "links"].forEach(o => eval(`${o} = data.${o};`));
 	
 	// Flatten rooms data structure into list
 	rooms = rooms.map(f => Object.keys(f).map(s => f[s])).flat(2);
@@ -23,12 +22,15 @@ $.getJSON("/json/data.json", function (data) {
 		else l.vLen = (l.points[1][2] - l.points[0][2]) * constants.FEET_PER_FLOOR / constants.FEET_PER_PIXEL;
 	});
 
+	// Remove placeholder rows
+	for (let i = 1; i <= 2; i++) document.getElementById("row-placeholder-" + i).remove();
+
 	// Create 2 initial rows
-	addPoint();
-	addPoint();
+	tableLoaded = true;
+	for (let i = 0; i < 2; i++) addPoint();
 });
 
-/* Search bar */
+/* Search bar adapted from https://www.w3schools.com/howto/howto_js_autocomplete.asp */
 function autocomplete (input, arr) {
 	var currentFocus;
 	input.addEventListener("input", function (e) {
@@ -46,12 +48,12 @@ function autocomplete (input, arr) {
 
 		this.setAttribute("style", "background-color: lightpink");
 		for (i = 0; i < arr.length; i++) {
-			const len = val.length, name = arr[i].id + (arr[i].use && !arr[i].id.endsWith(arr[i].use) ? ' (' + arr[i].use + ')' : '');
+			const name = arr[i].id + (arr[i].use && !arr[i].id.endsWith(arr[i].use) ? ` (${arr[i].use})` : "");
 			if (name.toUpperCase().indexOf(val.toUpperCase()) > -1)  {
 				b = document.createElement("div");
-				b.innerHTML = name.replace(new RegExp('(' + val + ')', 'gi'), "<b>$1</b>");
+				b.innerHTML = name.replace(new RegExp(`(${val})`, "gi"), "<b>$1</b>");
 				//b.innerHTML = `<strong>${name.substr(0, len)}</strong>${name.substr(len)}`;
-				b.innerHTML += `<span style="color: gray; float: right">${arr[i].section} | Floor ${arr[i].floor}</span>`;
+				b.innerHTML += `<span class="section-text" style="float: right">${arr[i].section} | Floor ${arr[i].floor}</span>`;
 				b.innerHTML += `<input type="hidden" value="${arr[i].id}">`;
 				a.appendChild(b);
 				b.addEventListener("click", function (e) {
@@ -110,29 +112,29 @@ function removePoint (ID) {
 	// Shift all the remaining rows to the correct number
 	for (let i = 0; i < rows.length; i++) {
 		const row = document.getElementById(rows[i].id),
-			rowStr = rows[i].id.substr(3),
-			// Save the value so that we can place it back in later
-			val = document.getElementById("point" + rowStr).value,
-			rowNum = i + 1;
-		row.id = "row" + rowNum;
-		row.innerHTML = row.innerHTML.replace(new RegExp(rowStr, 'g'), rowNum);
-		document.getElementById("point" + rowNum).value = val;
-		autocomplete(document.getElementById("point" + rowNum), rooms);
+		      rowStr = rows[i].id.split("-")[1],
+		      // Save the value so that we can place it back in later
+		      val = document.getElementById("point-" + rowStr).value,
+		      rowNum = i + 1;
+		row.id = "row-" + rowNum;
+		row.innerHTML = row.innerHTML.replace(new RegExp(rowStr, "g"), rowNum);
+		document.getElementById("point-" + rowNum).value = val;
+		autocomplete(document.getElementById("point-" + rowNum), rooms);
 	}
 };
 // Add a row to the points table
 function addPoint () {
+	if (!tableLoaded) return;
 	const row = document.createElement("tr"), rowNum = rows.length + 1;
 	row.innerHTML = `<tr>
 		<td>${rowNum}</td>
-		<td><input id="point${rowNum}" value="" class="pointInput"></input></td>
+		<td><input id="point-${rowNum}" value="" class="point-input"></input></td>
 		<td><button class="square remove-point" onclick="removePoint(${rowNum})"></button></td>
 	</tr>`;
-	row.id = "row" + rowNum;
+	row.id = "row-" + rowNum;
 	rows.push(row);
 	table.insertBefore(row, table.childNodes[rowNum]);
-	autocomplete(document.getElementById("point" + rowNum), rooms);
-	document.getElementById("pointsLoadingMessage").setAttribute("style", "display: none");
+	autocomplete(document.getElementById("point-" + rowNum), rooms);
 };
 
 /* Calculate Route */
@@ -242,24 +244,24 @@ function clearCalc () {
 		delete l.visited;
 	});
 	path = null;
-	document.getElementById("calcResult").innerHTML = '';
+	document.getElementById("calc-result").innerHTML = '';
 }
 function calculate () {
 	clearCalc();
 
-	const calcButton = document.getElementById("calcButton"), calcResult = document.getElementById("calcResult");
+	const calcButton = document.getElementById("calc-button"), calcResult = document.getElementById("calc-result");
 	function finishCalc (msg, err) {
 		calcResult.innerHTML = `<p style="color: ${err ? "red" : "black"}">${msg}</p>`;
 		calcButton.removeAttribute("disabled");
 		calcButton.innerHTML = "Calculate Route";
 	}
 
-	calcButton.setAttribute("disabled", '');
+	calcButton.setAttribute("disabled", "");
 	calcButton.innerHTML = "Calculating...";
 
 	const startTime = new Date().getTime();
 	const options = {
-		allowElevator: document.getElementById("allowElevator").checked
+		allowElevator: document.getElementById("allow-elevator").checked
 	};
 
 	// Check that there are enough points
@@ -267,11 +269,11 @@ function calculate () {
 	else {
 		// Check that all points are valid
 		for (let i = 1; i <= rows.length; i++) {
-			const col = document.getElementById("point" + i).style["background-color"];
+			const col = document.getElementById("point-" + i).style["background-color"];
 			if (col != "lightgreen") return finishCalc(`Point #${i} is ${col == "lightpink" ? "invalid" : "empty"}.`, true);
 		}
 
-		var output = '';
+		var output = "";
 		path = {
 			length: 0,
 			nodes: [],
@@ -280,7 +282,7 @@ function calculate () {
 
 		for (let i = 0, prevSteps = 0; i < rows.length - 1; i++) {
 			// "boundary" refers to the start or end of this subpath
-			const boundaryRoomIDs = [1, 2].map(shift => document.getElementById("point" + (i + shift)).value),
+			const boundaryRoomIDs = [1, 2].map(shift => document.getElementById("point-" + (i + shift)).value),
 				  boundaryRoomObjs = boundaryRoomIDs.map(id => rooms.find(r => r.id == id));
 			const boundaryNodes = boundaryRoomObjs.map(p => createTempNodeAndLink(p));
 
@@ -303,25 +305,24 @@ function calculate () {
 				var subPathTable = "<tr> <th>#</th> <th>Step</th> <th>Length (ft)</th> </tr>";
 				for (let j = 0; j < subPath.links.length; j++) {
 					const link = subPath.links[j], nodeA = subPath.nodes[j], nodeB = subPath.nodes[j + 1];
-					subPathTable +=
-					'<tr>' +
-					`<td>${j + prevSteps + 1}</td>` +
-					`<td>${link.name ? "Go along " + link.name : dispCoords([... nodeA.pos, nodeA.floor]) + ' → ' + dispCoords([... nodeB.pos, nodeB.floor])}</td>` +
-					`<td>${link.gLen ? (link.gLen * constants.FEET_PER_PIXEL).toFixed(2) : (link.vLen * constants.FEET_PER_PIXEL).toFixed(2) + " (vertical)"}</td>` +
-					'</tr>';
+					subPathTable += `<tr>
+						<td>${j + prevSteps + 1}</td>
+						<td>${link.name ? "Go along " + link.name : dispCoords([... nodeA.pos, nodeA.floor]) + " → " + dispCoords([... nodeB.pos, nodeB.floor])}</td>
+						<td>${link.gLen ? (link.gLen * constants.FEET_PER_PIXEL).toFixed(2) : (link.vLen * constants.FEET_PER_PIXEL).toFixed(2) + " (vertical)"}</td>
+					</tr>`;
 				}
 				prevSteps += subPath.links.length;
 				output += "<table>" + subPathTable + "</table>";
 			} else output += "<p style='color: red'>A path between these points could not be found. Try adjusting the options.</p>"
 
-			output += '<hr>';
+			output += "<hr>";
 		}
 
 		//const path = computeDijsktraPath()
 		const endTime = new Date().getTime();
 		
-		output += "<p>Total path length: <code>" + (path.length * constants.FEET_PER_PIXEL).toFixed(2) + ' ft</code></p>';
-		output += "<p>Process took " + (endTime - startTime) + ' ms</p>';
+		output += "<p>Total path length: <code>" + (path.length * constants.FEET_PER_PIXEL).toFixed(2) + " ft</code></p>";
+		output += "<p>Process took " + (endTime - startTime) + " ms</p>";
 		// Convert output string to HTML and print to website
 		finishCalc(output);
 	}	

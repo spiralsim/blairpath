@@ -147,7 +147,7 @@ var loaded = false, lastFrameRate = 60, lastUpdate = framesSinceUpdate = 0;
 
 var setup = function () {
 	canvas = createCanvas(dimensions[0], dimensions[1]);
-	canvas.parent("processingCanvas");
+	canvas.parent("processing-canvas");
 
 	menus = [
 		// Main menu
@@ -156,7 +156,7 @@ var setup = function () {
 				new Row({
 					left: [
 						new Label({ 
-							txt: "(Drag to move)"
+							txt: "(Drag to pan)"
 						}),
 						new Button({
 							title: "Center Map",
@@ -1157,7 +1157,7 @@ function FPScounter (args) {
 		if (this.autoOptimized) fill(0, 0, 255);
 		else if (this.optimize) fill(0, 128, 0);
 		else {
-			if (this.lastFrameRate >= 60) fill(0, 255, 0);
+			if (this.lastFrameRate >= 40) fill(0, 255, 0);
 			else if (this.lastFrameRate >= 24) fill(255, 255, 0);
 			else {
 				fill(255, 0, 0);
@@ -1473,13 +1473,13 @@ var mousePressed = function () {
 					// Find the number of the first empty point input
 					var i = 1, input;
 					for ( ; i <= rows.length; i++) {
-						input = document.getElementById("point" + i);
+						input = document.getElementById("point-" + i);
 						if (!input.value) break;
 					}
 					// If we are at the last row and it is still full, create a new row and go to that one
 					if (input.value && i == rows.length + 1) {
 						addPoint();
-						input = document.getElementById("point" + i);
+						input = document.getElementById("point-" + i);
 					}
 					// Assign the name of the room and the "valid" color to the input
 					input.value = r.id;
@@ -1487,7 +1487,7 @@ var mousePressed = function () {
 				} else {
 					// Remove room
 					for (let i = 1; i <= rows.length; i++) {
-						input = document.getElementById("point" + i);
+						input = document.getElementById("point-" + i);
 						if (input.value == r.id) {
 							removePoint(i);
 							break;
@@ -1514,7 +1514,7 @@ var mouseReleased = function () {
 var draw = function () {
 	// Remove loading message
 	if (!loaded) {
-		document.getElementById("pjsLoadingMessage").innerHTML = '';
+		document.getElementById("map-placeholder").remove();
 		loaded = true;
 	}
 
@@ -1580,7 +1580,7 @@ var draw = function () {
 
 		// Display selected points
 		for (let i = 0; i < rows.length; i++) {
-			const room = rooms.find(r => r.id == document.getElementById("point" + (i + 1)).value);
+			const room = rooms.find(r => r.id == document.getElementById("point-" + (i + 1)).value);
 			if (!room || !room.center || room.floor != _floor) continue;
 
 			// Draw center, doors, etc.

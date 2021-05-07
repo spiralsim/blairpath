@@ -10,14 +10,9 @@
 			<div class="left">
 				<h1>Welcome!</h1>
 
-				<p><b>Welcome to <i>Blairpath.org</i>!</b> This is a website compiling cartographic data and navigation utilities pertaining to Montgomery Blair High School's campus. Currently, the database contains a total of <span id="roomCounter">?</span> rooms.</p>
-				<script>
-					$.getJSON("/json/data.json", function (data) {
-						document.getElementById("roomCounter").innerHTML = data.rooms.map(f => Object.keys(f).map(s => f[s])).flat(2).length;
-					});
-				</script>
+				<p><b>Welcome to <i>Blairpath.org</i>!</b> This is a website compiling cartographic data and navigation utilities pertaining to Montgomery Blair High School's campus. Currently, the database contains a total of <%-data.rooms.map(floor => Object.keys(floor).map(s => floor[s])).flat(2).length%> rooms, <%-data.links.length%> hallways and stairwells, and <%-data.nodes.length%> intersections.</p>
 
-				<p>More information can be found in the <a href="/about">About</a> page.</p>
+				<p>More information can be found on the <a href="/about">about</a> page.</p>
 
 				<div class="banner red">
 					<p><b>Please note the following:</b> Blairpath is not officially associated with Montgomery Blair High School. Cartographic data on this site have no implicit or explicit claim of accuracy; some information is unverified.</p>
@@ -26,6 +21,14 @@
 
 			<div class="right">
 				<h1>News</h1>
+				<div class="banner gray">
+					<p style="text-align: left">
+						<b>May 7, 2021</b>
+						<span style="float: right">Jeffrey Tong</span>
+					</p>
+					<i>v1.6.0 release notes</i>
+					<p>A tutorial page has been added.</p>
+				</div>
 				<div class="banner gray">
 					<p style="text-align: left">
 						<b>Apr 17, 2021</b>
@@ -42,23 +45,7 @@
 					<i>v1.4.0 release notes</i>
 					<p>Blairpath's source is now published on GitHub.</p>
 				</div>
-				<div class="banner gray">
-					<p style="text-align: left">
-						<b>Mar 28, 2021</b>
-						<span style="float: right">Jeffrey Tong</span>
-					</p>
-					<i>v1.3.0 release notes</i>
-					<p>The website has been migrated to Heroku and will soon be hosted on a standalone domain.</p>
-				</div>
-				<div class="banner gray">
-					<p style="text-align: left">
-						<b>Jan 20, 2020</b>
-						<span style="float: right">Jeffrey Tong</span>
-					</p>
-					<i>v1.0.0 release notes</i>
-					<p>Blairpath has now entered the Release phase! Pathfinding has been implemented and all major features for this version should now be fully functional.</p>
-				</div>
-				<a href="/changelog">View more</a>	
+				<a href="/news">View all</a>	
 			</div>
 		</section>
 	</body>

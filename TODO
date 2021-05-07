@@ -8,10 +8,10 @@ UI
 - Create buttons to swap rows in point table
 - Constrain tooltips to canvas
 - Reorganize code for interactives
-- Create SVG icons
-- Replace SVG loading spinner with gray placeholder
 - Make scrollbar values smooth
 - Make FPS counter more smooth
 Create tutorial page
 Reorganize changelog
 Create contribution system
+Make rooms have corresponding polygonal regions that can be clicked
+Fix ruler ordering

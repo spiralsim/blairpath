@@ -9,9 +9,9 @@
 <title>Blairpath.org |</title>
 <link rel="shortcut icon" href="/favicon.ico">
 <script>
-	const pageNames = ["Home", "Changelog", "About", "Map"], pageToPath = s => '/' + s.toLowerCase();
+	const pageNames = ["Home", "Changelog", "About", "Tutorial", "Map"], pageToPath = s => "/" + s.toLowerCase();
 	pageNames.forEach(s => {
-		if (pageToPath(s) == window.location.pathname) document.title += ' ' + s;
+		if (pageToPath(s) == window.location.pathname) document.title += " " + s;
 	});
-	if (document.title.endsWith('|')) document.title += " Page not found";
+	if (document.title.endsWith("|")) document.title += " Page not found";
 </script>

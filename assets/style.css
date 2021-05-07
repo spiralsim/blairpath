@@ -4,6 +4,7 @@
 	--background: #fbfbfb;
 	--text: black;
 	--light-text: #555555;
+	--placeholder: #e0e0e0;
 }
 * {
 	font-family: "PT Sans", sans-serif;
@@ -121,6 +122,7 @@ code {
 	padding: 1px 3px;
 }
 
+/* Search bar adapted from https://www.w3schools.com/howto/howto_js_autocomplete.asp */
 .autocomplete {
 	position: relative;
 	display: inline-block;
@@ -160,8 +162,18 @@ input[type = submit] {
 	background-color: #5897fb !important;
 	color: white;
 }
-.pointInput {
+/* End of adapted code */
+.section-text {
+	color: gray;
+}
+.autocomplete-active > * {
+	color: white;
+}
+.point-input {
 	width: 400px;
+	height: 20px;
+	border: 1px solid #aaa;
+	border-radius: 2px;
 }
 
 h1 a {
@@ -208,6 +220,9 @@ th, td {
 	padding: 3px;
 	border: solid 1px black;
 	position: relative;
+}
+table#points td {
+	border: none;
 }
 
 img#map {

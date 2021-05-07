@@ -17,22 +17,27 @@
 				<p>For more detailed instructions, see the About tab.</p>
 
 				<table id="points">
-					<tr id="head">
-						<th>#</th>
-						<th style="width: 405px">Point</th>
-						<th>...</th>
+					<tr id="row-placeholder-1">
+						<td>1</td>
+						<td><input value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
+						<td><button class="square remove-point"></button></td>
+					</tr>
+					<tr id="row-placeholder-2">
+						<td>2</td>
+						<td><input value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
+						<td><button class="square remove-point"></button></td>
 					</tr>
 					<tr id="last">
-						<td></td>
-						<td><img src="/images/loading-spinner.gif" id="pointsLoadingMessage" style="display: block; height: 24px; margin-left: auto; margin-right: auto"/></td>
+						<td style="width: 9px"></td>
+						<td style="width: 406px"></td>
 						<td><button class="square add-point" onclick="addPoint()"></button></td>
 					</tr>
 				</table>
 
 				<p style="margin-bottom: 0"><b>Options</b></p>
-				<p style="margin: 0px 5px 0px 5px"><input type="checkbox" id="allowElevator"> Allow the path to use the elevator</p>
+				<p style="margin: 0px 5px 0px 5px"><input type="checkbox" id="allow-elevator"> Allow the path to use the elevator</p>
 				
-				<div id="outputDiv" style="border: 1px solid; padding: 5px; margin-top: 5px; width: fit-content" hidden>
+				<div id="output-div" style="border: 1px solid; padding: 5px; margin-top: 5px; width: fit-content" hidden>
 					<!-- Calling this "roomData" causes errors with p5.js for some reason -->
 					<b>Data Output Window</b>
 					<br>
@@ -40,15 +45,15 @@
 
 					<hr>
 
-					<textarea id="outputField" rows="12" cols="90" style="font-family: Source Code Pro"></textarea>
-					<p>Contributor token: <input id="tokenField" style="width: 300px"/></p>
+					<textarea id="output-field" rows="12" cols="90" style="font-family: Source Code Pro"></textarea>
+					<p>Contributor token: <input id="token-field" style="width: 300px"/></p>
 					<button onclick="copyData()">Copy to clipboard</button>
 					<button onclick="alert('Data received')">Submit changes</button>
-					<button onclick="document.getElementById('outputDiv').setAttribute('hidden', true)">Close</button>
+					<button onclick="document.getElementById('output-div').setAttribute('hidden', true)">Close</button>
 
 					<script>
 						function copyData () {
-							var copyTextarea = document.querySelector("#outputField");
+							var copyTextarea = document.querySelector("#output-field");
 							copyTextarea.focus();
 							copyTextarea.select();
 
@@ -57,19 +62,17 @@
 					</script>
 				</div>
 
-				<button id="calcButton" class="smooth" onclick="calculate()">Calculate Route</button>
-				<button id="clearButton" class="smooth" onclick="clearCalc()">Clear</button>
+				<button id="calc-button" class="smooth" onclick="calculate()">Calculate Route</button>
+				<button id="clear-button" class="smooth" onclick="clearCalc()">Clear</button>
 
 				<hr>
 
-				<div id="calcResult"></div>
+				<div id="calc-result"></div>
 			</div>
 
 			<div class="right" style="width: 600px; height: 600px" oncontextmenu="return false;">
-				<div id="processingCanvas">
-					<div id="pjsLoadingMessage">
-						<img src="/images/loading-spinner.gif" style="margin: 200px 0 0 200px; width: 200px; height: 200px"/>
-					</div>
+				<div id="processing-canvas">
+					<div id="map-placeholder" style="width: 600px; height: 600px; background-color: var(--placeholder)"></div>
 				</div>
 			</div>
 		</section>
