@@ -10,7 +10,7 @@
 	<body>
 		<%-include("../partials/menu.ejs")%>
 		<section class="main">
-			<div class="left" style="width: calc(100% - 600px - 4%); overflow: hidden">
+			<div class="left" style="width: calc(100% - 600px - 2%); overflow: hidden">
 				<h1>Map</h1>
 
 				<p>Select any sequence of rooms and press "Calculate Route" to find the shortest route.</p>
@@ -19,12 +19,12 @@
 				<table id="points">
 					<tr id="row-placeholder-1">
 						<td>1</td>
-						<td><input value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
+						<td><input type="text" value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
 						<td><button class="square remove-point"></button></td>
 					</tr>
 					<tr id="row-placeholder-2">
 						<td>2</td>
-						<td><input value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
+						<td><input type="text" value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
 						<td><button class="square remove-point"></button></td>
 					</tr>
 					<tr id="last">
@@ -35,21 +35,22 @@
 				</table>
 
 				<p style="margin-bottom: 0"><b>Options</b></p>
-				<p style="margin: 0px 5px 0px 5px"><input type="checkbox" id="allow-elevator"> Allow the path to use the elevator</p>
+				<p style="margin: 0"><input type="checkbox" id="allow-elevator"> Allow the path to use the elevator</p>
 				
-				<div id="output-div" style="border: 1px solid; padding: 5px; margin-top: 5px; width: fit-content" hidden>
+				<button id="calc-button" class="smooth" onclick="calculate()">Calculate Route</button>
+				<button id="clear-button" class="smooth" onclick="clearCalc()">Clear</button>
+
+				<div id="dev-div" style="border: 1px solid; padding: 5px; margin-top: 5px" hidden>
 					<!-- Calling this "roomData" causes errors with p5.js for some reason -->
 					<b>Data Output Window</b>
 					<br>
 					<p style="margin: 0">If you are contributing a room object, please add your name to the <code>authors</code> attribute if it is not already there.</p>
 
-					<hr>
-
-					<textarea id="output-field" rows="12" cols="90" style="font-family: Source Code Pro"></textarea>
-					<p>Contributor token: <input id="token-field" style="width: 300px"/></p>
-					<button onclick="copyData()">Copy to clipboard</button>
-					<button onclick="alert('Data received')">Submit changes</button>
-					<button onclick="document.getElementById('output-div').setAttribute('hidden', true)">Close</button>
+					<textarea id="dev-textarea" rows="12" style="font-family: 'Source Code Pro'; width: calc(100% - 3px * 2)"></textarea>
+					<p style="margin: 0">Contributor token: <input type="text" id="token-field" style="width: 300px"/></p>
+					<button class="smooth" onclick="copyData()">Copy to Clipboard</button>
+					<button class="smooth" onclick="alert('Data received')">Submit Data</button>
+					<button class="smooth" onclick="document.getElementById('dev-div').setAttribute('hidden', true)">Close</button>
 
 					<script>
 						function copyData () {
@@ -61,9 +62,6 @@
 						}
 					</script>
 				</div>
-
-				<button id="calc-button" class="smooth" onclick="calculate()">Calculate Route</button>
-				<button id="clear-button" class="smooth" onclick="clearCalc()">Clear</button>
 
 				<hr>
 

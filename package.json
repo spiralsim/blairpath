@@ -1,6 +1,6 @@
 {
   "name": "blairpath",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Navigation tool for Montgomery Blair High School",
   "main": "index.js",
   "scripts": {

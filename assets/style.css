@@ -5,6 +5,7 @@
 	--text: black;
 	--light-text: #555555;
 	--placeholder: #e0e0e0;
+	--border: #aaa;
 }
 * {
 	font-family: "PT Sans", sans-serif;
@@ -60,7 +61,7 @@ nav.main ul li.active a {
 }
 
 button {
-	border: 1px solid #aaa;
+	border: 1px solid var(--border);
 	outline: none;
 	cursor: pointer;
 }
@@ -128,10 +129,9 @@ code {
 	display: inline-block;
 }
 input[type = text] {
-	background-color: #f1f1f1;
-	width: 100px;
-	border-radius: 4px;
-    border: 1px solid #aaa;
+	height: 20px;
+	border: 1px solid var(--border);
+	border-radius: 2px;
 }
 input[type = submit] {
 	background-color: DodgerBlue;
@@ -169,11 +169,13 @@ input[type = submit] {
 .autocomplete-active > * {
 	color: white;
 }
+textarea {
+	border: 1px solid var(--border);
+	border-radius: 2px;
+	margin: 5px 0 5px 0;
+}
 .point-input {
 	width: 400px;
-	height: 20px;
-	border: 1px solid #aaa;
-	border-radius: 2px;
 }
 
 h1 a {

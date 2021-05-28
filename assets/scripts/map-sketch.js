@@ -314,8 +314,8 @@ var setup = function () {
 								}
 
 								if (outputObj) {
-									document.getElementById("outputDiv").removeAttribute("hidden");
-									document.getElementById("outputField").value = formatJSON(outputObj);
+									document.getElementById("dev-div").removeAttribute("hidden");
+									document.getElementById("dev-textarea").value = formatJSON(outputObj);
 									devData.pushMsg("Object printed to webpage", 1);
 								}
 							}
@@ -346,9 +346,9 @@ var setup = function () {
 									delete l.vLen;
 								});
 
-								document.getElementById("outputDiv").removeAttribute("hidden");
+								document.getElementById("dev-div").removeAttribute("hidden");
 								// Make sure all the nodes and links have the required fields
-								document.getElementById("outputField").value = formatJSON({
+								document.getElementById("dev-textarea").value = formatJSON({
 									constants: constants,
 									rooms: formattedRoomsList,
 									nodes: nodes.filter(n => n.pos),
@@ -370,9 +370,9 @@ var setup = function () {
 							title: "Select",
 							onPress: () => {
 								if (!rows.length) return devData.pushMsg("First row does not exist", 0);
-								if (document.getElementById("point1").style["background-color"] != "lightgreen") return devData.pushMsg("Invalid point entered", 0);
-
-								devData.room = rooms.find(r => r.id == document.getElementById("point1").value);
+								if (document.getElementById("point-1").style["background-color"] != "lightgreen") return devData.pushMsg("Invalid point entered", 0);
+								
+								devData.room = rooms.find(r => r.id == document.getElementById("point-1").value);
 								devData.pushMsg("Selected room", 1);
 							}
 						}),

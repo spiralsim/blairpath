@@ -128,7 +128,7 @@ function addPoint () {
 	const row = document.createElement("tr"), rowNum = rows.length + 1;
 	row.innerHTML = `<tr>
 		<td>${rowNum}</td>
-		<td><input id="point-${rowNum}" value="" class="point-input"></input></td>
+		<td><input type="text" id="point-${rowNum}" value="" class="point-input"></input></td>
 		<td><button class="square remove-point" onclick="removePoint(${rowNum})"></button></td>
 	</tr>`;
 	row.id = "row-" + rowNum;

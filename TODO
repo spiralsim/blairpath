@@ -10,8 +10,12 @@ UI
 - Reorganize code for interactives
 - Make scrollbar values smooth
 - Make FPS counter more smooth
-Create tutorial page
 Reorganize changelog
 Create contribution system
 Make rooms have corresponding polygonal regions that can be clicked
 Fix ruler ordering
+Finish cartography
+- Create cartography tab
+- Open GDrive assets folder w/ links
+Allow multi-segmented links
+Polish <hr>'s
