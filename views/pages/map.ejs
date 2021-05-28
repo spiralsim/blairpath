@@ -42,7 +42,7 @@
 
 				<div id="dev-div" style="border: 1px solid; padding: 5px; margin-top: 5px" hidden>
 					<!-- Calling this "roomData" causes errors with p5.js for some reason -->
-					<b>Data Output Window</b>
+					<b>Developer Output Window</b>
 					<br>
 					<p style="margin: 0">If you are contributing a room object, please add your name to the <code>authors</code> attribute if it is not already there.</p>
 
@@ -54,9 +54,9 @@
 
 					<script>
 						function copyData () {
-							var copyTextarea = document.querySelector("#output-field");
-							copyTextarea.focus();
-							copyTextarea.select();
+							const devTextarea = document.querySelector("#dev-textarea");
+							devTextarea.focus();
+							devTextarea.select();
 
 							document.execCommand("copy");
 						}
