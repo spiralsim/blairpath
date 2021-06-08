@@ -164,7 +164,10 @@ var setup = function () {
 						})
 					],
 					right: [
-						new CoverageIndicator({})
+						new Label({
+							txt: "Map last updated Jan 04 2020"
+						})
+						// new CoverageIndicator({})
 					]
 				}),
 				new Row({
@@ -1604,28 +1607,38 @@ var draw = function () {
 			text(room.id, room.center[0], room.center[1] - 15 / _camera.zoom);
 		}
 
-		// Iteration 2: Display information box if hovered
+		// Iteration 2: Display tooltip if hovered
 		for (let i = 0; i < rooms.length; i++) {
 			var room = rooms[i];
 			if (room.hover) {
-				const infoX = room.center[0] - 120 / _camera.zoom, infoY = room.center[1] + 10 / _camera.zoom;
+				const tooltipW = 240 / _camera.zoom, tooltipH = (128 + 12 * floor((room.notes || '').length / 50)) / _camera.zoom;
+				const tooltipX = room.center[0] - tooltipW / 2, tooltipY = room.center[1] + 10 / _camera.zoom;
 				fill(255, 255, 255, 192);
 				stroke(0);
-				rect(infoX, infoY, 240 / _camera.zoom, (128 + 12 * floor((room.notes || '').length / 50)) / _camera.zoom, 5 / _camera.zoom);
+				rect(tooltipX, tooltipY, tooltipW, tooltipH, 5 / _camera.zoom);
 				fill(0);
 				textAlign(LEFT, TOP);
 				noStroke();
 				textSize(10 / _camera.zoom);
-				textStyle(NORMAL);
-				text(`Name/ID: ${room.id}
-Use: ${room.use || "N/A"}
-Section: ${room.section}
-Floor: ${room.floor}
+				textStyle(BOLD);
+				text(`Name/ID
+Purpose
+Section
+Floor`, tooltipX + 3 / _camera.zoom, tooltipY + 3 / _camera.zoom);
+				text(`Coverage
+Last updated
 
-Coverage: ${["center", "doors", "vertices"].filter(p => room[p]).length}/3
-Entry last updated: ${room.updated}
-Contributors (in order): ${room.authors.join(', ')}
-Notes: ${room.notes || "None"}`, infoX + 2.5 / _camera.zoom, infoY + 2.5 / _camera.zoom, 230 / _camera.zoom);
+Contributors
+Dev notes`, tooltipX + 3 / _camera.zoom, tooltipY + 66 / _camera.zoom);
+				textStyle(NORMAL);
+				text(`${room.id}
+${room.use || "N/A"}
+${room.section}
+${room.floor}`, tooltipX + 50 / _camera.zoom, tooltipY + 3 / _camera.zoom, 205 / _camera.zoom);
+				text(`${["center", "doors", "vertices"].filter(p => room[p]).length}/3
+${room.updated}
+${room.authors.join(', ')}
+${room.notes || "None"}`, tooltipX + 65 / _camera.zoom, tooltipY + 66 / _camera.zoom, 180 / _camera.zoom);
 			}
 		}
 	}

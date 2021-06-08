@@ -4,6 +4,7 @@
 - Make borders more consistent
 1st floor
 - Add more nodes to allow the path to wrap around circular gardens
+- Update to reflect new position of portables
 UI
 - Create buttons to swap rows in point table
 - Constrain tooltips to canvas
