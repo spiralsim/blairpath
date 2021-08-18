@@ -10,17 +10,17 @@ app
 	.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 // Handle all asset and page requests
-app.get(/.*/, (req, res) => {
-	const path = req.path;
-	if (path == "/") res.redirect("/home");
+app.get(/.*/, (request, response) => {
+	const path = request.path;
+	if (path == "/") response.redirect("/home");
 	else if (fs.existsSync(`${__dirname}/views/pages/${path}.ejs`)) {
-		const locals = {};
+		const options = {};
 		["data", "news"].forEach(s => {
-			locals[s] = JSON.parse(fs.readFileSync(`./assets/json/${s}.json`));
+			options[s] = JSON.parse(fs.readFileSync(`./assets/json/${s}.json`));
 		});
-		res.render(`pages/${path}`, locals);
-	} else res.render("pages/404");
+		response.render(`pages/${path}`, options);
+	} else response.render("pages/404");
 });
 
-// Ping every 15 minutes to keep the dyno running
+// Ping the website every 15 minutes to keep the dyno up
 setInterval(() => http.get("http://www.blairpath.org/"), 15 * 60 * 1000);

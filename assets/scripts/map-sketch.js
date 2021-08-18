@@ -165,7 +165,7 @@ var setup = function () {
 					],
 					right: [
 						new Label({
-							txt: "Map last updated Jan 04 2020"
+							txt: "Map last updated Jan 04, 2020"
 						})
 						// new CoverageIndicator({})
 					]
@@ -1611,7 +1611,7 @@ var draw = function () {
 		for (let i = 0; i < rooms.length; i++) {
 			var room = rooms[i];
 			if (room.hover) {
-				const tooltipW = 240 / _camera.zoom, tooltipH = (128 + 12 * floor((room.notes || '').length / 50)) / _camera.zoom;
+				const tooltipW = 240 / _camera.zoom, tooltipH = (128 + 12 * floor((room.notes || '').length / 35)) / _camera.zoom;
 				const tooltipX = room.center[0] - tooltipW / 2, tooltipY = room.center[1] + 10 / _camera.zoom;
 				fill(255, 255, 255, 192);
 				stroke(0);
@@ -1629,7 +1629,7 @@ Floor`, tooltipX + 3 / _camera.zoom, tooltipY + 3 / _camera.zoom);
 Last updated
 
 Contributors
-Dev notes`, tooltipX + 3 / _camera.zoom, tooltipY + 66 / _camera.zoom);
+Developer notes`, tooltipX + 3 / _camera.zoom, tooltipY + 66 / _camera.zoom);
 				textStyle(NORMAL);
 				text(`${room.id}
 ${room.use || "N/A"}
@@ -1638,7 +1638,7 @@ ${room.floor}`, tooltipX + 50 / _camera.zoom, tooltipY + 3 / _camera.zoom, 205 /
 				text(`${["center", "doors", "vertices"].filter(p => room[p]).length}/3
 ${room.updated}
 ${room.authors.join(', ')}
-${room.notes || "None"}`, tooltipX + 65 / _camera.zoom, tooltipY + 66 / _camera.zoom, 180 / _camera.zoom);
+${room.notes || "None"}`, tooltipX + 80 / _camera.zoom, tooltipY + 66 / _camera.zoom, 160 / _camera.zoom);
 			}
 		}
 	}
