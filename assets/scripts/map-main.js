@@ -49,7 +49,7 @@ function autocomplete (input, arr) {
 		this.setAttribute("style", "background-color: lightpink");
 		for (i = 0; i < arr.length; i++) {
 			const name = arr[i].id + (arr[i].use && !arr[i].id.endsWith(arr[i].use) ? ` (${arr[i].use})` : "");
-			if (name.toUpperCase().indexOf(val.toUpperCase()) > -1)  {
+			if (name.toUpperCase().indexOf(val.toUpperCase()) > -1) {
 				b = document.createElement("div");
 				b.innerHTML = name.replace(new RegExp(`(${val})`, "gi"), "<b>$1</b>");
 				//b.innerHTML = `<strong>${name.substr(0, len)}</strong>${name.substr(len)}`;
