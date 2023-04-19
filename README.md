@@ -1,6 +1,6 @@
 # Blairpath
 
-[Blairpath](www.blairpath.org) is a website that provides mapping tools to help students, teachers, and visitors of Montgomery Blair High School navigate and survey the school campus.
+[Blairpath](http://www.blairpath.org) is a website that provides mapping tools to help students, teachers, and visitors of Montgomery Blair High School navigate and survey the school campus.
 
 The application is hosted remotely using [Heroku](https://heroku.com) as a cloud server and [Google Domains](https://domains.google/) as a DNS provider service.
 
