@@ -9,20 +9,33 @@
 			<div>
 				<h1>About</h1>
 
-				<h3>History</h3>
-				<p>Blairpath was started on October 21, 2019 by Jeffrey Tong, then a Blair sophomore, as an open project for the Magnet program's Algorithms and Data Structures B (ADSB) course. Initially created with <a href="https://replit.com">Replit</a>, it drew inspiration from <a href="https://blairbash.org">Blairbash</a>.</p>
-				<p>He finished the Alpha version on December 16, 2019 and the first released version on January 20, 2020.</p>
-				<p>A long development hiatus began after the first semester of the 2019–2020 school year.</p>
-				<p>He restarted substantive work in February 2021 as a junior for the Future of Programming (FoP) course's open project.</p>
-				<p>On March 28, 2021, he released Blairpath to GitHub, thereby making it an open-source project.</p>
-				<p>On April 8, 2021, he began hosting Blairpath at its own domain, <a href="/">blairpath.org</a>, through <a href="https://heroku.com">Heroku</a> and <a href="https://domains.google/">Google Domains</a>. The site's original location, <a href="https://blairpath.jwt4517.repl.co/">blairpath.jwt4517.repl.co</a>, will remain available but henceforth hold a notice redirecting visitors to the new domain.</p>
+				<div class="banner red">
+					<p><b>Disclaimer:</b> Blairpath is a hobby project. We are not officially associated with Montgomery Blair High School (we wish the Webmaster would let us be, though. 😔)</p>
+				</div>
 
-				<h3>Credits</h3>
-				<p>The following people have made notable contributions to Blairpath.</p>
-				<ul>
-					<li><b>Jeffrey Tong (class of 2022)</b> created Blairpath and continues to maintain it.</li>
-					<li><b>Jason Liu (class of 2022)</b> created the design for the fourth floor.</li>
-				</ul>
+				<section style="display: table; table-layout: fixed; width: 100%">
+					<div style="display: table-cell">
+						<h3>Team</h3>
+						<ul>
+							<li><b><a href="https://github.com/spiralsim">Jeffrey Tong</a>:</b> Founder and Lead Developer</li>
+							<li><b><a href="https://github.com/GeneralPoxter">Jason Liu</a>:</b> Designer of 4th Floor</li>
+						</ul>
+					</div>
+					<div style="display: table-cell">
+						<h3>Database Stats</h3>
+						<p>We added all of these by hand—we'd really appreciate having more volunteers!</p>
+						<ul>
+							<li><b><%-data.rooms.map(floor => Object.values(floor)).flat(2).length%></b> places (rooms, courtyards, landmarks, etc.)</li>
+							<li><b><%-data.links.length%></b> links (hallways, stairwells, and elevators)</li>
+							<li><b><%-data.nodes.length%></b> nodes (endpoints of links)</li>
+						</ul>
+					</div>
+				</section>
+
+				<h3>History</h3>
+				<p>On October 21, 2019, Jeffrey, then a Blair sophmore, started working on Blairpath as an open project for the Blair Magnet program's Algorithms and Data Structures B (ADSB) course. The branding was created as a parody of <a href="https://blairbash.org">Blairbash</a>, and the website was initially developed and hosted on <a href="https://replit.com">Replit</a>.</p>
+
+				<p>On April 8, 2021, Blairpath started being hosted at its own domain, blairpath.org, through <a href="https://heroku.com">Heroku</a>.</li>
 
 				<h3>Contributing</h3>
 				<p>Being <a href="https://en.wikipedia.org/wiki/Montgomery_Blair_High_School">the most populous school in the state of Maryland</a>, mapping out the entire campus is a large task. Contributions of any kind, including new maps, measurements, labels, or categorizations, as well as contributions to the source code, are welcome.</p>

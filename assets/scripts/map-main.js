@@ -1,9 +1,27 @@
+var walkingSpeed = 1.35; // Walking speed in m/s
+/**
+ * Converts a path length to a human-readable string with meters and estimated
+ * time based on `walkingSpeed`: `a min b sec (x m)`. Lengths that are negative
+ * or undefined are converted to `No path`.
+ * @param {*} length Length in virtual px
+ */
+function stringifyLength(length) {
+	if (length < 0 || length == undefined) return `No path`;
+	const lengthInM = length * constants.METERS_PER_PIXEL,
+		timeInSec = Math.round(lengthInM / walkingSpeed);
+	const min = Math.floor(timeInSec / 60), sec = timeInSec % 60;
+	var res = ``;
+	if (min) res += `${min} min `;
+	if (sec) res += `${sec} s `;
+	return res + `(${Math.round(lengthInM)} m)`;
+}
+
 /* Data preprocessing */
 var rooms = nodes = links = [];
 var constants = {};
 const dist2D = (a, b) => Math.sqrt(Math.pow(b[0] - a[0], 2) + Math.pow(b[1] - a[1], 2));
 var tableLoaded = false;
-$.getJSON("/json/data.json", function (data) {
+$.getJSON('/data.json', function (data) {
 	// Load constants
 	constants = data.constants;
 
@@ -19,7 +37,7 @@ $.getJSON("/json/data.json", function (data) {
 	links.forEach(l => {
 		l.gLen = l.vLen = 0;
 		if (l.points[0][2] == l.points[1][2]) l.gLen = dist2D(l.points[0], l.points[1]);
-		else l.vLen = (l.points[1][2] - l.points[0][2]) * constants.FEET_PER_FLOOR / constants.FEET_PER_PIXEL;
+		else l.vLen = (l.points[1][2] - l.points[0][2]) * constants.METERS_PER_FLOOR / constants.METERS_PER_PIXEL;
 	});
 
 	// Remove placeholder rows
@@ -53,7 +71,7 @@ function autocomplete (input, arr) {
 				b = document.createElement("div");
 				b.innerHTML = name.replace(new RegExp(`(${val})`, "gi"), "<b>$1</b>");
 				//b.innerHTML = `<strong>${name.substr(0, len)}</strong>${name.substr(len)}`;
-				b.innerHTML += `<span class="section-text" style="float: right">${arr[i].section} | Floor ${arr[i].floor}</span>`;
+				b.innerHTML += `<span class="section-text" style="float: right">${arr[i].section} (${arr[i].floor})</span>`;
 				b.innerHTML += `<input type="hidden" value="${arr[i].id}">`;
 				a.appendChild(b);
 				b.addEventListener("click", function (e) {
@@ -128,7 +146,7 @@ function addPoint () {
 	const row = document.createElement("tr"), rowNum = rows.length + 1;
 	row.innerHTML = `<tr>
 		<td>${rowNum}</td>
-		<td><input type="text" id="point-${rowNum}" value="" class="point-input"></input></td>
+		<td style="display: flex"><input type="text" id="point-${rowNum}" value="" class="point-input"></input></td>
 		<td><button class="square remove-point" onclick="removePoint(${rowNum})"></button></td>
 	</tr>`;
 	row.id = "row-" + rowNum;
@@ -259,7 +277,6 @@ function calculate () {
 	calcButton.setAttribute("disabled", "");
 	calcButton.innerHTML = "Calculating...";
 
-	const startTime = new Date().getTime();
 	const options = {
 		allowElevator: document.getElementById("allow-elevator").checked
 	};
@@ -286,15 +303,20 @@ function calculate () {
 				  boundaryRoomObjs = boundaryRoomIDs.map(id => rooms.find(r => r.id == id));
 			const boundaryNodes = boundaryRoomObjs.map(p => createTempNodeAndLink(p));
 
-			output += `<p><b>[${i + 1}]</b> Compute the shortest path from <code>${boundaryRoomIDs[0]}</code> to <code>${boundaryRoomIDs[1]}</code>, with elevators ${options.allowElevator ? "allowed" : "disallowed"}.</p>`;
+			output += '<hr>';
 			
 			const subPath = computeDijkstraPath(... boundaryNodes, options);
+
+			const STYLE = `color: ${subPath ? 'black' : 'red'}`;
+			const LENGTH = stringifyLength(subPath?.length);
+			output += `<p>${boundaryRoomIDs[0]} → ${boundaryRoomIDs[1]}\t` +
+				`<span style='color: gray'>${LENGTH}</span></p>`;
+
 			if (subPath) {
 				path.length += subPath.length;
 				["nodes", "links"].forEach(k => {
 					path[k] = path[k].concat(subPath[k]);
 				});
-				output += `<p>The shortest path found contains <code>${Math.max(subPath.links.length - 2, 0)}</code> hallway(s)/stairwell(s) (dotted lines are not counted) and has a length of <code>${(subPath.length * constants.FEET_PER_PIXEL).toFixed(2)} ft</code> (counting both horizontal and vertical distance).</p>`;
 
 				if (subPath.links.find(l => l.name == "Elevator")) {
 					output += `<div class="banner gray" style="margin-bottom: 20px">
@@ -302,27 +324,25 @@ function calculate () {
 					</div>`;
 				}
 
-				var subPathTable = "<tr> <th>#</th> <th>Step</th> <th>Length (ft)</th> </tr>";
+				var subPathDirections = [];
 				for (let j = 0; j < subPath.links.length; j++) {
-					const link = subPath.links[j], nodeA = subPath.nodes[j], nodeB = subPath.nodes[j + 1];
-					subPathTable += `<tr>
-						<td>${j + prevSteps + 1}</td>
-						<td>${link.name ? "Go along " + link.name : dispCoords([... nodeA.pos, nodeA.floor]) + " → " + dispCoords([... nodeB.pos, nodeB.floor])}</td>
-						<td>${link.gLen ? (link.gLen * constants.FEET_PER_PIXEL).toFixed(2) : (link.vLen * constants.FEET_PER_PIXEL).toFixed(2) + " (vertical)"}</td>
-					</tr>`;
+					// const link = subPath.links[j], nodeA = subPath.nodes[j], nodeB = subPath.nodes[j + 1];
+					var dir = '';
+					if (j == 0) dir = 'Exit ' + boundaryRoomIDs[0];
+					else if (j == subPath.links.length - 1) dir = 'Enter ' + boundaryRoomIDs[1];
+					if (dir) subPathDirections.push(dir);
+					// subPathTable += `<tr>
+					// 	<td>${j + prevSteps + 1}</td>
+					// 	<td>${stepDescription}</td>
+					// 	<td>${link.gLen ? round(link.gLen * constants.FEET_PER_PIXEL) : round(link.vLen * constants.FEET_PER_PIXEL) + " (vertical)"}</td>
+					// </tr>`;
 				}
 				prevSteps += subPath.links.length;
-				output += "<table>" + subPathTable + "</table>";
-			} else output += "<p style='color: red'>A path between these points could not be found. Try adjusting the options.</p>"
-
-			output += "<hr>";
+				output += '<ul>' + subPathDirections.map(dir => `<li>${dir}</li>`).join('\n') + '</ul>';
+			}
 		}
-
-		//const path = computeDijsktraPath()
-		const endTime = new Date().getTime();
 		
-		output += "<p>Total path length: <code>" + (path.length * constants.FEET_PER_PIXEL).toFixed(2) + " ft</code></p>";
-		output += "<p>Process took " + (endTime - startTime) + " ms</p>";
+		output = `<b>${stringifyLength(path.length)}</b>${output}`;
 		// Convert output string to HTML and print to website
 		finishCalc(output);
 	}	

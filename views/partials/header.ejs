@@ -1,5 +1,8 @@
 <link rel="stylesheet" type="text/css" href="/style.css"/>
-<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|Source+Code+Pro" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -9,9 +12,11 @@
 <title>Blairpath.org |</title>
 <link rel="shortcut icon" href="/favicon.ico">
 <script>
-	const pageNames = ["Home", "Changelog", "About", "Tutorial", "Map"], pageToPath = s => "/" + s.toLowerCase();
-	pageNames.forEach(s => {
-		if (pageToPath(s) == window.location.pathname) document.title += " " + s;
+	const PAGE_NAMES = ['Map', 'Tutorial', 'About'];
+	const getPath = name => '/' + name.toLowerCase();
+	var page_name = '';
+	PAGE_NAMES.forEach(name => {
+		if (getPath(name) == window.location.pathname) page_name = name;
 	});
-	if (document.title.endsWith("|")) document.title += " Page not found";
+	document.title = page_name || '404';
 </script>

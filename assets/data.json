@@ -1,7 +1,7 @@
 {
 	"constants": {
-		"FEET_PER_FLOOR": 14.416010498687664,
-		"FEET_PER_PIXEL": 1.0666666666666667
+		"METERS_PER_FLOOR": 4.39,
+		"METERS_PER_PIXEL": 0.32512
 	},
 	"rooms": [
 		{

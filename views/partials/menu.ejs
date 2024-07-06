@@ -1,17 +1,14 @@
 <header>
-	<h1 class="banner red" style="padding-left: 0.7em; border-radius: 0.2em">
-		<a href="/">Blairpath.org</a>
-	</h1>
 	<nav class="main">
 		<ul id="nav-ul"></ul>
 	</nav>
 	<script>
-		pageNames.forEach(s => {
-			if (s == "Changelog") return;
-			const path = pageToPath(s);
-			var liHTML = `<li><a href="${path}">${s}</a></li>`;
-			if (window.location.pathname == path) liHTML = liHTML.replace("<li>", "<li class=\"active\">");
-			document.getElementById("nav-ul").innerHTML += liHTML;
+		PAGE_NAMES.forEach(name => {
+			const PATH = getPath(name);
+			var liHTML = `<li><a href="${PATH}">${name}</a></li>`;
+			if (window.location.pathname == PATH)
+				liHTML = liHTML.replace('<li>', '<li class=\"active\">');
+			document.getElementById('nav-ul').innerHTML += liHTML;
 		});
 	</script>
 </header>

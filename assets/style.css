@@ -8,12 +8,11 @@
 	--border: #aaa;
 }
 * {
-	font-family: "PT Sans", sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 
-html {
-	margin: 1.5em 3em;
-	background-color: #fbfbfb;
+body {
+	margin: 0;
 }
 
 nav.main ul {
@@ -23,7 +22,6 @@ nav.main ul {
 	display: inline-block;
 	width: 100%;
 	background-color: #e9e9e9;
-	border-radius: 0.3em 0.3em 0 0;
 	margin-bottom: -5px;
 }
 nav.main ul li a {
@@ -72,17 +70,25 @@ button.smooth {
 	color: var(--light-text);
 	font-size: 1em;
 	margin-top: 0.7em;
-	padding: 0 0.8em;
+	padding: 0 0.4em;
 	height: 28px;
 }
 button.smooth:hover {
-	background-color: #fcfcfc;
+	background-color: #efefef;
 }
 button.smooth:disabled {
-	background-color: #e9e9e9;
+	background-color: var(--placeholder);
 }
 button.smooth:disabled:hover {
 	cursor: not-allowed;
+}
+
+button.special {
+	background-color: dodgerblue;
+	color: white;
+}
+button.special:hover {
+	background-color: #0e80ef;
 }
 
 button.square {
@@ -107,11 +113,10 @@ h1 {
 }
 
 a {
-	text-decoration: none;
+	text-decoration: underline;
 	color: var(--light-text);
 }
 a:hover {
-	text-decoration: underline;
 	color: var(--primary);
 }
 
@@ -175,7 +180,7 @@ textarea {
 	margin: 5px 0 5px 0;
 }
 .point-input {
-	width: 400px;
+	width: 100%;
 }
 
 h1 a {
