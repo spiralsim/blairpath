@@ -342,10 +342,10 @@ function draw() {
 		}
 	}
 
-	// Points
+	// Place dots (except tooltips)
 	if (showOptions[`show-place-dots`]) {
 		// Display dots for room selection
-		// Iteration 1: Display the point and detect hovering if applicable
+		// Display the point and detect hovering if applicable
 		for (let i = 0, hovering = false; i < rooms.length; i++) {
 			var room = rooms[i];
 			if (room.floor == _floor && room.center) {
@@ -372,6 +372,7 @@ function draw() {
 
 			// Draw center, doors, etc.
 			stroke(255);
+			/*
 			if (showOptions[`show-dev-tools`] && getElement("objectType").value == "Room" && devData.room == room) {
 				stroke(0, 255, 0);
 				noFill();
@@ -382,6 +383,7 @@ function draw() {
 					triangle(v[0], v[1] - 2 / VIEW.zoom, v[0] + 2 / VIEW.zoom, v[1] + 2 / VIEW.zoom, v[0] - 2 / VIEW.zoom, v[1] + 2 / VIEW.zoom);
 				});
 			}
+			*/
 			fill(0);
 			strokeWeight(1 / VIEW.zoom);
 			circle(room.center[0], room.center[1], 10 / VIEW.zoom);
@@ -389,41 +391,6 @@ function draw() {
 			textSize(10 / VIEW.zoom);
 			textStyle(BOLD);
 			text(room.id, room.center[0], room.center[1] - 15 / VIEW.zoom);
-		}
-
-		// Iteration 2: Display tooltip if hovered
-		for (let i = 0; i < rooms.length; i++) {
-			var room = rooms[i];
-			if (room.hover) {
-				const tooltipW = 240 / VIEW.zoom, tooltipH = (128 + 12 * floor((room.notes || '').length / 35)) / VIEW.zoom;
-				const tooltipX = room.center[0] - tooltipW / 2, tooltipY = room.center[1] + 10 / VIEW.zoom;
-				fill(255, 255, 255, 192);
-				stroke(0);
-				rect(tooltipX, tooltipY, tooltipW, tooltipH, 5 / VIEW.zoom);
-				fill(0);
-				textAlign(LEFT, TOP);
-				noStroke();
-				textSize(10 / VIEW.zoom);
-				textStyle(BOLD);
-				text(`Name/ID
-Purpose
-Section
-Floor`, tooltipX + 3 / VIEW.zoom, tooltipY + 3 / VIEW.zoom);
-				text(`Coverage
-Last updated
-
-Contributors
-Developer notes`, tooltipX + 3 / VIEW.zoom, tooltipY + 66 / VIEW.zoom);
-				textStyle(NORMAL);
-				text(`${room.id}
-${room.use || "N/A"}
-${room.section}
-${room.floor}`, tooltipX + 50 / VIEW.zoom, tooltipY + 3 / VIEW.zoom, 205 / VIEW.zoom);
-				text(`${["center", "doors", "vertices"].filter(p => room[p]).length}/3
-${room.updated}
-${room.authors.join(', ')}
-${room.notes || "None"}`, tooltipX + 80 / VIEW.zoom, tooltipY + 66 / VIEW.zoom, 160 / VIEW.zoom);
-			}
 		}
 	}
 
@@ -477,7 +444,7 @@ ${room.notes || "None"}`, tooltipX + 80 / VIEW.zoom, tooltipY + 66 / VIEW.zoom, 
 
 				fill(255);
 				if (node.hover) fill(mouseIsPressed ? color(250, 85, 85) : 128);
-				stroke(getElement("objectType").value == "Node" && node == devData.node ? color(0, 255, 0) : 192);
+				stroke(/*getElement("objectType").value == "Node" && node == devData.node ? color(0, 255, 0) : */192);
 				circle(node.pos[0], node.pos[1], 6 / VIEW.zoom);
 			}
 		}
@@ -485,7 +452,7 @@ ${room.notes || "None"}`, tooltipX + 80 / VIEW.zoom, tooltipY + 66 / VIEW.zoom, 
 		// Display the link and detect hovering if applicable
 		for (let i = 0, hovering = false; i < links.length; i++) {
 			var link = links[i];
-			const selectedLink = getElement("objectType").value == "Link" && link == devData.link;
+			const selectedLink = false; //getElement("objectType").value == "Link" && link == devData.link;
 
 			if (link.points[0] && link.points[1] && link.points.find(p => p[2] == _floor)) {
 				const hoveringOnLine = link.points[0][2] == link.points[1][2] &&
@@ -558,6 +525,44 @@ ${room.notes || "None"}`, tooltipX + 80 / VIEW.zoom, tooltipY + 66 / VIEW.zoom, 
 			textStyle(NORMAL);
 			text(n + 1, (l.points[0][0] + l.points[1][0]) / 2, (l.points[0][1] + l.points[1][1]) / 2);
 		});
+	}
+
+	// Place dots (tooltips)
+	if (showOptions[`show-place-dots`]) {
+		strokeWeight(1 / VIEW.zoom);
+		for (let i = 0; i < rooms.length; i++) {
+			var room = rooms[i];
+			if (room.hover) {
+				const tooltipW = 240 / VIEW.zoom, tooltipH = (128 + 12 * floor((room.notes || '').length / 35)) / VIEW.zoom;
+				const tooltipX = room.center[0] - tooltipW / 2, tooltipY = room.center[1] + 10 / VIEW.zoom;
+				fill(255, 255, 255, 230);
+				stroke(0);
+				rect(tooltipX, tooltipY, tooltipW, tooltipH, 5 / VIEW.zoom);
+				fill(0);
+				textAlign(LEFT, TOP);
+				noStroke();
+				textSize(10 / VIEW.zoom);
+				textStyle(BOLD);
+				text(`Name/ID
+Purpose
+Section
+Floor`, tooltipX + 3 / VIEW.zoom, tooltipY + 3 / VIEW.zoom);
+				text(`Coverage
+Last updated
+
+Contributors
+Developer notes`, tooltipX + 3 / VIEW.zoom, tooltipY + 66 / VIEW.zoom);
+				textStyle(NORMAL);
+				text(`${room.id}
+${room.use || "N/A"}
+${room.section}
+${room.floor}`, tooltipX + 50 / VIEW.zoom, tooltipY + 3 / VIEW.zoom, 205 / VIEW.zoom);
+				text(`${["center", "doors", "vertices"].filter(p => room[p]).length}/3
+${room.updated}
+${room.authors.join(', ')}
+${room.notes || "None"}`, tooltipX + 80 / VIEW.zoom, tooltipY + 66 / VIEW.zoom, 160 / VIEW.zoom);
+			}
+		}
 	}
 
 	pop();
