@@ -10,37 +10,42 @@
 				<h1>Tutorial</h1>
 
 				<h3>Viewing the School</h3>
-				<p>The floor plan is shown on the top of the map; specific sections of each floor are marked with their own colors. You can click and drag on the map to pan the camera.</p>
-				<p>Use the "Floor" and "Zoom" scrollbars to set the floor of the school and the zoom level, respectively. The scale corresponding to the zoom level is shown on the bottom-left corner; the bar underneath represents the length displayed.</p>
-				<p>Use the "Floor Plan" and "Site Plan" checkboxes to control whether the respective plans are displayed.</p>
+				<p>By default, the floor plan is the only map shown on the screen; specific sections of each floor are shaded with a corresponding color. You can independently show/hide the floor plan and site plan using the respective checkboxes.</p>
+				<p>You can click and drag on the map to pan the camera. To zoom, either scroll with the mouse wheel (recommended) or press the <code>+</code> and <code>-</code> buttons. To reset all movement, press <code>Reset View</code>.</p>
 
-				<h3>Selecting Rooms</h3>
-				<p>You will need to select a series of two or more points (rooms or other areas or locations) to calculate routes between them in the next step.</p>
-				<p>To graphically interact with a point, hover over the point on the map and a tooltip with its properties will appear; you can also select it by clicking on it.</p>
-				<p>You can also select a point by typing its number or use in one of the text fields on the left.</p>
-				<p>Two types of points have special naming conventions:</p>
+				<h3>Selecting Places</h3>
+				<p>By default, each place has a dot over its center.</p>
 				<ul>
-					<li>Portables are identified as "P[number]" (e.g. "P6" corresponds to Portable 6.)</li>
-					<li>Bathrooms are identified as "[gender]'s Bathroom [floor][side]" (e.g. "Boys' Bathroom 2L" corresponds to the boys' bathroom on the left side of Floor 2 and "Girls' Bathroom 3R" corresponds to the girls' bathroom on the right side of Floor 3.)</li>
+					<li><b>Left side:</b> You can select a point textually by typing its name or purpose in one of the text fields in the places list.</li>
+					<li><b>Right side:</b> To graphically interact with a place, you can hover over its dot, and a tooltip with its properties will appear; you can then select it by clicking on it.</li>
 				</ul>
+				<p>Two types of places have special naming conventions:</p>
+				<ol>
+					<li>Portables are named <code>P[number]</code> (e.g. <code>P6</code> corresponds to Portable 6.)</li>
+					<li>Bathrooms are named <code>[gender]s' Bathroom [floor][side]</code> (e.g. <code>Boys' Bathroom 2</code> corresponds to the boys' bathroom on the left side of Floor 2 and <code>Girls' Bathroom 3R</code> corresponds to the girls' bathroom on the right side of Floor 3.)</li>
+				</ol>
 
 				<h3>Calculating Routes</h3>
-				<p>After you have selected at least two points, you have the option to allow the path to use the elevator.</p>
-				<p>Then, press "Calculate Route" to compute and analyze the shortest routes between each pair of consecutive points.</p>
-				<p>You can view each step of the routes textually in the resulting table or graphically on the map.</p>
-				<p>Use the "Show Points" and "Show Path" checkboxes to control whether the points and path, respectively, are shown.</p>
+				<p>After you have selected at least two places, you have the option to allow the path to use the elevator.</p>
+				<p>Then, press <code>Calculate Route</code> to compute and analyze the shortest routes between each pair of consecutive places.</p>
+				<ul>
+					<li><b>Left side:</b> Key directions will be listed textually. You will also see the length and estimated walking time of each route.</li>
+					<li><b>Right side:</b> The complete sequences of directions will be displayed graphically on the map.</li>
+				</ul>
+				<p>Use the <code>Place Dots</code> and <code>Path</code> checkboxes to control whether the dots and path, respectively, are shown.</p>
 
+				<!--
 				<h3>Additional Tools</h3>
 				<p>A few additional tools are available on the map's menu:</p>
 				<ul>
-					<li>A compass is on the bottom-left.</li>
 					<li>The bar under the scale next to the compass can also be clicked to activate a ruler. After the ruler is activated, you can left-click on the map to add markers to measure between or right-click on existing markers to delete them.</li>
-					<li>A FPS (frames per second) counter is on the bottom-right to help analyze and moderate performance. If the FPS drops very low, optimization mode will automatically activate and automatically deactivate once the FPS returns to an acceptable value. In optimization mode, all plans are replaced with low-quality compressed versions and the FPS is capped at 24. You can also manually activate optimization mode by pressing the leaf icon next to the FPS counter.</li>
-					<li>A room coverage indicator, which displays the fractions of the points that are at each stage of registration (documentation) in the database, is on the top-right. Hover over each section for more information.</li>
 				</ul>
+				-->
 
+				<!--
 				<h3>Editing</h3>
 				<p>A guide to editing will be added after the contribution system is completed.</p>
+				-->
 			</div>
 		</section>
 	</body>
