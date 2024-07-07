@@ -216,6 +216,11 @@ div.right {
 	width: 48%;
 }
 
+hr {
+	border: none;
+	border-top: solid 1px var(--border);
+}
+
 table {
 	border-collapse: collapse;
 }

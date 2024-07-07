@@ -26,4 +26,3 @@ If you would like to contribute map data or suggest posssible improvements for t
 - Finish cartography
 	- Create cartography tab
 	- Open GDrive assets folder w/ links
-- Polish <hr>'s
