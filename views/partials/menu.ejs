@@ -3,10 +3,9 @@
 		<ul id="nav-ul"></ul>
 	</nav>
 	<script>
-		PAGE_NAMES.forEach(name => {
-			const PATH = getPath(name);
-			var liHTML = `<li><a href="${PATH}">${name}</a></li>`;
-			if (window.location.pathname == PATH)
+		PAGES.forEach(({ name, path }) => {
+			var liHTML = `<li><a href="${path}">${name}</a></li>`;
+			if (window.location.pathname == path)
 				liHTML = liHTML.replace('<li>', '<li class=\"active\">');
 			document.getElementById('nav-ul').innerHTML += liHTML;
 		});

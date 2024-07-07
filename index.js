@@ -13,7 +13,7 @@ app
 const DATA = JSON.parse(fs.readFileSync(`./assets/data.json`));
 app.get(/.*/, (request, response) => {
 	const path = request.path;
-	if (path == "/") response.redirect("/map");
+	if (path == "/") response.render(`pages/map`, {data: DATA});
 	else if (fs.existsSync(`${__dirname}/views/pages/${path}.ejs`)) 
 		response.render(`pages/${path}`, {data: DATA});
 	else response.render("pages/404");

@@ -9,14 +9,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
-<title>Blairpath.org |</title>
 <link rel="shortcut icon" href="/favicon.ico">
 <script>
-	const PAGE_NAMES = ['Map', 'Tutorial', 'About'];
+	const PAGES = [
+		{name: `Map`, path: `/`},
+		{name: `Tutorial`, path: `/tutorial`},
+		{name: `About`, path: `/about`}
+	];
 	const getPath = name => '/' + name.toLowerCase();
-	var page_name = '';
-	PAGE_NAMES.forEach(name => {
-		if (getPath(name) == window.location.pathname) page_name = name;
+	PAGES.forEach(({ name, path }) => {
+		if (path == window.location.pathname) document.title = name;
 	});
-	document.title = page_name || '404';
+	document.title ||= '404';
 </script>
