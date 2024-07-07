@@ -237,10 +237,44 @@ var devData = {
 	}
 };
 
+/**
+ * Draws an arrow centered at `(x, y)`, facing in direction `dir`. 
+ * @param {number} x x-coordinate of the arrow's center.
+ * @param {number} y y-coordinate of the arrow's center.
+ * @param {1 | -1} dir 1 to make the arrow point up and -1 to make it point down.
+ */
+function drawArrow(x, y, dir) {
+	noFill();
+	beginShape();
+	vertex(x, y - 15 / VIEW.zoom * dir);
+	vertex(x + 10 / VIEW.zoom, y - 5 / VIEW.zoom * dir);
+	vertex(x + 5 / VIEW.zoom, y - 5 / VIEW.zoom * dir);
+	vertex(x + 5 / VIEW.zoom, y + 5 / VIEW.zoom * dir);
+	vertex(x - 5 / VIEW.zoom, y + 5 / VIEW.zoom * dir);
+	vertex(x - 5 / VIEW.zoom, y - 5 / VIEW.zoom * dir);
+	vertex(x - 10 / VIEW.zoom, y - 5 / VIEW.zoom * dir);
+	vertex(x, y - 15 / VIEW.zoom * dir);
+	endShape();
+}
+
+/**
+ * Draws a dotted line from point a to b.
+ * @param {number[]} a First endpoint.
+ * @param {number[]} b Second endpoint.
+ */
+function drawDottedLine(a, b) {
+	const len = dist(a[0], a[1], b[0], b[1]);
+	for (let d = 0; d < len; d += 5 / VIEW.zoom)
+		point(
+			a[0] + (b[0] - a[0]) * d / len,
+			a[1] + (b[1] - a[1]) * d / len
+		);
+}
+
 /*
 	p5.js Event Functions
 */
-var setup = function () {
+function setup() {
 	canvas = createCanvas(getCanvasDivWidth(), windowHeight);
 	canvas.parent("canvas");
 
@@ -250,7 +284,7 @@ var setup = function () {
 	VIEW.reset();
 };
 
-var windowResized = function () {
+function windowResized() {
 	resizeCanvas(getCanvasDivWidth(), windowHeight);
 }
 
@@ -391,31 +425,6 @@ function draw() {
 			textSize(10 / VIEW.zoom);
 			textStyle(BOLD);
 			text(room.id, room.center[0], room.center[1] - 15 / VIEW.zoom);
-		}
-	}
-
-	// Draw an arrow centered at (x, y), facing in direction dir 
-	function drawArrow(x, y, dir) {
-		noFill();
-		beginShape();
-		vertex(x, y - 15 / VIEW.zoom * dir);
-		vertex(x + 10 / VIEW.zoom, y - 5 / VIEW.zoom * dir);
-		vertex(x + 5 / VIEW.zoom, y - 5 / VIEW.zoom * dir);
-		vertex(x + 5 / VIEW.zoom, y + 5 / VIEW.zoom * dir);
-		vertex(x - 5 / VIEW.zoom, y + 5 / VIEW.zoom * dir);
-		vertex(x - 5 / VIEW.zoom, y - 5 / VIEW.zoom * dir);
-		vertex(x - 10 / VIEW.zoom, y - 5 / VIEW.zoom * dir);
-		vertex(x, y - 15 / VIEW.zoom * dir);
-		endShape();
-	}
-	// Draw a dotted line from point a to b
-	function drawDottedLine(a, b) {
-		const len = dist(a[0], a[1], b[0], b[1]);
-		for (let d = 0; d < len; d += 5 / VIEW.zoom) {
-			point(
-				a[0] + (b[0] - a[0]) * d / len,
-				a[1] + (b[1] - a[1]) * d / len
-			);
 		}
 	}
 
