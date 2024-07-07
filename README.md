@@ -9,20 +9,16 @@ The website is not currently being hosted on its own domain, but we plan to host
 If you would like to contribute map data or suggest posssible improvements for the software, feel free to open a pull request.
 
 ## Planned Features
-- Put Blairpath back on blairpath.org
-- Development
-	- Implement dev tools for the new UI
-	- Create contribution system
-- 1st floor
-	- Add more nodes to allow the path to wrap around circular gardens
-	- Update to reflect new position of portables
-- 4th floor
-	- Move the map slightly to the left to align with lower floors
-	- Make borders more consistent
-- UI
-	- Create buttons to swap rows in point table
-	- Add back ruler
-- Make rooms have corresponding polygonal regions that can be clicked
-- Finish cartography
-	- Create cartography tab
-	- Open GDrive assets folder w/ links
+<ol>
+	<li>Put Blairpath back on some website</li>
+	<li>Add X button to close banners on Map page</li>
+	<li>Make place/link/node IDs count up from 1</li>
+	<li>Implement dev tools for the new UI</li>
+	<li>Create contribution system</li>
+	<li>Update new portables</li>
+	<li>Create cartography tab</li>
+	<li>Move map of 4th floor slightly to the left to align with lower floors</li>
+	<li>Make 4th floor borders more consistent</li>
+	<li>Allow dragging to reorder rows in point table</li>
+	<li>Add back ruler</li>
+</ol>
