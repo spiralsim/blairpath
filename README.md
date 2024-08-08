@@ -10,7 +10,9 @@ If you would like to contribute map data or suggest posssible improvements for t
 
 ## Planned Features
 <ol>
+	<li>Change place dots to clickable text</li>
 	<li>Put Blairpath back on some website</li>
+	<li>Add names for labeled Blair "streets"</li>
 	<li>Add X button to close banners on Map page</li>
 	<li>Make place/link/node IDs count up from 1</li>
 	<li>Implement dev tools for the new UI</li>

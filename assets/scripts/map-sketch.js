@@ -331,7 +331,7 @@ function mouseDragged() {
 
 function mouseWheel({ delta }) {
 	if (!inCanvas()) return;
-	VIEW.applyZoom(SCROLL_ZOOM_RATE ** delta, CURSOR.physPos);
+	VIEW.applyZoom(SCROLL_ZOOM_RATE ** -delta, CURSOR.physPos); // Uses negative sign to conform to Google Maps' zoom
 };
 
 function draw() {
