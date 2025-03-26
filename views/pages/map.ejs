@@ -8,120 +8,95 @@
 		<script src="/scripts/map-sketch.js" defer></script>
 	</head>
 	<body>
-		<div style="position: absolute; top: 0; bottom: 0; padding: 1em; width: 400px; overflow: auto; background-color: rgba(255, 255, 255, 0.9);">
-			<div>
-				<button class="smooth special" style="margin: 0 0 10px 0" onclick="window.open('/tutorial', '_blank').focus();">Tutorial</button>
-				<button class="smooth" style="margin: 0 0 10px 0" onclick="window.open('/about', '_blank').focus();">About</button>
-			</div>
-			<!--
-			<div class="banner gray" style="margin-bottom: 10px">
-				<b>ℹ️ Quick Tips</b>
-				<p>Under the MCPS and MCPS-Guest WiFi firewalls, blairpath.org is restricted, which might be caused by the MCPS whitelist system. The <a href="https://blairpath.jwt4517.repl.co">Replit archive</a>, however, seems to still be unblocked.</p>
-			</div>
-				<br>
-				<p>If a landmark you're looking for isn't registered on Blairpath yet, you can use a nearby placeholder. These are the closest placeholders to some key points:</p>
-				<ul>
-					<li>Front Entrance / Bus Lot → Principal's Office</li>
-					<li>Back Entrance / Parking Lot → 016 (Choral)</li>
-					<li>P11–P18 → 110 (Weight Room)
-						<ul>
-							<li>Walking south past the adjacent stairwell brings you directly next to P15.</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-			-->
-
-			<!--
-			<div class="banner gray" style="margin-bottom: 10px">
-				<b>⚠️ Summer 2021 Portables not Added</b>
-				<p>Blair installed a new section with 8 outdoor portables (P11–P18) on the southeast corner of the building by the Gym Complex. These haven't been added to the map yet. As a workaround, you're encouraged to also use the <a href="https://bit.ly/mbhsMAP">official MBHS map</a>.</p>
-			</div>
-			-->
-
-			<table id="points">
-				<tr id="row-placeholder-1">
-					<td>1</td>
-					<td><input type="text" value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
-					<td><button class="square remove-point"></button></td>
-				</tr>
-				<tr id="row-placeholder-2">
-					<td>2</td>
-					<td><input type="text" value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
-					<td><button class="square remove-point"></button></td>
-				</tr>
-				<tr id="last">
-					<td style="width: 9px"></td>
-					<td style="width: 406px"></td>
-					<td><button class="square add-point" onclick="addPoint()"></button></td>
-				</tr>
-			</table>
-
-			<p style="margin-bottom: 0"><b>Options</b></p>
-			<p style="margin: 0"><input type="checkbox" id="allow-elevator"> Allow use of elevator</p>
-			
-			<button id="calc-button" class="smooth" onclick="calculate()">Calculate Route</button>
-			<button id="clear-button" class="smooth" onclick="clearCalc()">Clear</button>
-
-			<div id="dev-div" style="border: 1px solid; padding: 5px; margin-top: 5px" hidden>
-				<!-- Calling this "roomData" causes errors with p5.js for some reason -->
-				<b>Developer Output Window</b>
-				<br>
-				<p style="margin: 0">If you are contributing a room object, please add your name to the <code>authors</code> attribute if it is not already there.</p>
-
-				<textarea id="dev-textarea" rows="12" style="font-family: 'Source Code Pro'; width: calc(100% - 3px * 2)"></textarea>
-				<p style="margin: 0">Contributor token: <input type="text" id="token-field" style="width: 300px"/></p>
-				<button class="smooth" onclick="copyData()">Copy to Clipboard</button>
-				<button class="smooth" onclick="alert('Data received')">Submit Data</button>
-				<button class="smooth" onclick="document.getElementById('dev-div').setAttribute('hidden', true)">Close</button>
-
-				<script>
-					function copyData () {
-						const devTextarea = document.querySelector("#dev-textarea");
-						devTextarea.focus();
-						devTextarea.select();
-
-						document.execCommand("copy");
-					}
-				</script>
-			</div>
-
-			<hr>
-
-			<div id="calc-result"></div>
-		</div>
-		<div style="position: absolute; left: 432px; right: 0; top: 0; bottom: 0; overflow: hidden" id="canvas" oncontextmenu="return false;">
-			<div id="map-placeholder" style="background-color: var(--placeholder)"></div>
-			<div id="map-controls" style="position: absolute; left: 0; bottom: 0; padding: 1em; background-color: rgba(255, 255, 255, 0.9)">
-				<div>
-					<button class="smooth" onclick="VIEW.applyZoom(1.2)">➕</button>
-					<button class="smooth" onclick="VIEW.applyZoom(0.8)">➖</button>
-					<button class="smooth" onclick="VIEW.reset()">Reset View</button>
-					<span>Map data last updated Jan 04, 2020</span>
+		<%-include("../partials/menu.ejs")%>
+		<section class="main">
+			<div style="width: 400px; overflow: auto; background-color: rgba(255, 255, 255, 0.9);">
+				<table id="points">
+					<tr id="row-placeholder-1">
+						<td>1</td>
+						<td><input type="text" value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
+						<td><button class="square remove-point"></button></td>
+					</tr>
+					<tr id="row-placeholder-2">
+						<td>2</td>
+						<td><input type="text" value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
+						<td><button class="square remove-point"></button></td>
+					</tr>
+					<tr id="last">
+						<td style="width: 9px"></td>
+						<td style="width: 406px"></td>
+						<td><button class="square add-point" onclick="addPoint()"></button></td>
+					</tr>
+				</table>
+	
+				<p style="margin-bottom: 0"><b>Options</b></p>
+				<p style="margin: 0"><input type="checkbox" id="allow-elevator"> Allow use of elevator</p>
+				
+				<div class="button-row">
+					<button id="calc-button" class="smooth" onclick="calculate()">Calculate Route</button>
+					<button id="clear-button" class="smooth" onclick="clearCalc()">Clear</button>
 				</div>
-				<div>
-					<input type="checkbox" id="show-floor-plan" checked>
-					<label for="show-floor-plan">Floor Plan</label>
-					<input type="checkbox" id="show-site-plan">
-					<label for="show-site-plan">Site Plan</label>
-					<input type="checkbox" id="show-place-dots" checked>
-					<label for="show-place-dots">Place Dots</label>
-					<input type="checkbox" id="show-path" checked>
-					<label for="show-path">Path</label>
-					<input type="checkbox" id="show-dev-tools">
-					<label for="show-dev-tools">Dev Tools</label>
-				</div>
-				<div>
-					<label for="floor">Floor</label>
-					<input type="number" min="1" max="4" value="1" id="floor" onchange="setFloor(parseInt(this.value))">
+	
+				<div id="dev-div" style="border: 1px solid; padding: 5px; margin-top: 5px" hidden>
+					<!-- Calling this "roomData" causes errors with p5.js for some reason -->
+					<b>Developer Output Window</b>
+					<br>
+					<p style="margin: 0">If you are contributing a room object, please add your name to the <code>authors</code> attribute if it is not already there.</p>
+	
+					<textarea id="dev-textarea" rows="12" style="font-family: 'Source Code Pro'; width: calc(100% - 3px * 2)"></textarea>
+					<p style="margin: 0">Contributor token: <input type="text" id="token-field" style="width: 300px"/></p>
+					<button class="smooth" onclick="copyData()">Copy to Clipboard</button>
+					<button class="smooth" onclick="alert('Data received')">Submit Data</button>
+					<button class="smooth" onclick="document.getElementById('dev-div').setAttribute('hidden', true)">Close</button>
+	
 					<script>
-						function setFloor(newFloor) {
-							if (Number.isNaN(newFloor) || newFloor < 1 || newFloor > 4) return;
-							_floor = newFloor;
+						function copyData () {
+							const devTextarea = document.querySelector("#dev-textarea");
+							devTextarea.focus();
+							devTextarea.select();
+	
+							document.execCommand("copy");
 						}
 					</script>
 				</div>
+	
+				<hr>
+	
+				<div id="calc-result"></div>
 			</div>
-		</div>
+			<div style="position: absolute; left: 432px; right: 0; top: 0; bottom: 0; overflow: hidden" id="canvas" oncontextmenu="return false;">
+				<div id="map-placeholder" style="background-color: var(--placeholder)"></div>
+				<div id="map-controls" style="position: absolute; left: 0; bottom: 0; padding: 1em; background-color: rgba(255, 255, 255, 0.9)">
+					<div>
+						<button class="smooth" onclick="VIEW.applyZoom(1.2)">➕</button>
+						<button class="smooth" onclick="VIEW.applyZoom(0.8)">➖</button>
+						<button class="smooth" onclick="VIEW.reset()">Reset View</button>
+						<span>Map data last updated Jan 04, 2020</span>
+					</div>
+					<div>
+						<input type="checkbox" id="show-floor-plan" checked>
+						<label for="show-floor-plan">Floor Plan</label>
+						<input type="checkbox" id="show-site-plan">
+						<label for="show-site-plan">Site Plan</label>
+						<input type="checkbox" id="show-place-dots" checked>
+						<label for="show-place-dots">Place Dots</label>
+						<input type="checkbox" id="show-path" checked>
+						<label for="show-path">Path</label>
+						<input type="checkbox" id="show-dev-tools">
+						<label for="show-dev-tools">Dev Tools</label>
+					</div>
+					<div>
+						<label for="floor">Floor</label>
+						<input type="number" min="1" max="4" value="1" id="floor" onchange="setFloor(parseInt(this.value))">
+						<script>
+							function setFloor(newFloor) {
+								if (Number.isNaN(newFloor) || newFloor < 1 || newFloor > 4) return;
+								_floor = newFloor;
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+		</section>
 	</body>
 </html>

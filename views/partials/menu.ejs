@@ -1,9 +1,14 @@
 <header>
 	<nav class="main">
-		<ul id="nav-ul"></ul>
+		<ul id="nav-ul">
+			<li>
+				<a href="/" class="wordmark"></a>
+			</li>
+		</ul>
 	</nav>
 	<script>
 		PAGES.forEach(({ name, path }) => {
+			if (name == 'Map') return;
 			var liHTML = `<li><a href="${path}">${name}</a></li>`;
 			if (window.location.pathname == path)
 				liHTML = liHTML.replace('<li>', '<li class=\"active\">');

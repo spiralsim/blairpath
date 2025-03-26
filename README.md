@@ -6,10 +6,9 @@ Blairpath (hosted at http://www.blairpath.org) is a website that provides mappin
 
 If you're trying to access Blairpath through MCPS Wi-Fi but are getting blocked, try using the [Replit archive](https://81d8ecfd-ca27-4963-948c-4ce42ba7f41e-00-22virfovc06v7.worf.replit.dev/map/).
 
-If you would like to contribute map data or suggest posssible improvements for the software, feel free to open a pull request!
-
-## Planned Features
+## Possible Future Features
 <ol>
+	<li>Create clean logo and wordmark</li>
 	<li>Change place dots to clickable text</li>
 	<li>Add names for labeled Blair "streets"</li>
 	<li>Add X button to close banners on Map page</li>

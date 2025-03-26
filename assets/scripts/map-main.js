@@ -342,7 +342,9 @@ function calculate () {
 			}
 		}
 		
-		output = `<b>${stringifyLength(path.length)}</b>${output}`;
+		output = `<p><b>${stringifyLength(path.length)}</b></p>` +
+			`<p><i>Assuming a walking speed of ${walkingSpeed} m/s</i></p>` +
+			output;
 		// Convert output string to HTML and print to website
 		finishCalc(output);
 	}	
