@@ -2,8 +2,6 @@
 
 [Blairpath](http://www.blairpath.org) is a website that provides mapping tools to help students, teachers, and visitors of [Montgomery Blair High School](mbhs.edu) navigate and survey the **200+ rooms and other landmarks** across **3 floors** on the school campus.
 
-If you're trying to access Blairpath through MCPS Wi-Fi but are getting blocked, try using the [Replit archive](https://81d8ecfd-ca27-4963-948c-4ce42ba7f41e-00-22virfovc06v7.worf.replit.dev/map/).
-
 ## Sources for Map Background Images
 In November 2019, I found the original background images on designshare.com. As of April 2021, that website is defunct, so I've included Wayback Machine links to the pages and files I used.
 
