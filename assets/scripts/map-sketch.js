@@ -334,6 +334,41 @@ function mouseWheel({ delta }) {
 	VIEW.applyZoom(SCROLL_ZOOM_RATE ** -delta, CURSOR.physPos); // Uses negative sign to conform to Google Maps' zoom
 };
 
+function showTooltip(room) {
+	textSize(10);
+
+	var topText = room.id;
+	if (room.use && topText.indexOf(room.use) == -1)
+		topText += ' (' + room.use + ')';
+
+	var bottomText = room.section;
+
+	const center = room.center;
+	const tooltipW = max(textWidth(topText), textWidth(bottomText)) + 10,
+			tooltipH = 30,
+			tooltipX = constrain(
+			VIEW.physPos.x + center[0] * VIEW.zoom,
+			0,
+			width - tooltipW,
+			),
+			tooltipY = constrain(
+			VIEW.physPos.y + center[1] * VIEW.zoom + 15,
+			0,
+			height - tooltipH,
+			);
+
+	strokeWeight(1);
+	fill(255, 255, 255, 230);
+	rect(tooltipX - tooltipW / 2, tooltipY, tooltipW, tooltipH, 5);
+	fill(0);
+	textAlign(CENTER, TOP);
+	noStroke();
+	textStyle(BOLD);
+	text(topText, tooltipX, tooltipY + 5);
+	textStyle(NORMAL);
+	text(bottomText, tooltipX, tooltipY + 15);
+}
+
 function draw() {
 	// Remove loading message
 	if (!loaded) {
@@ -377,16 +412,17 @@ function draw() {
 	}
 
 	// Place dots (except tooltips)
-	var hoveredRoom = null;
+	var hoveredRoom = null
 	if (showOptions[`show-place-dots`]) {
+		var hoveringOverRoom = false;
 		// Display dots for room selection
 		// Display the point and detect hovering if applicable
 		rooms.forEach(room => {
 			room.hover = false;
 			if (room.floor != _floor || !room.center) return;
 			if (CURSOR.virtPos.dist(createVector(...room.center)) < 5 / VIEW.zoom && !hoveredRoom) {
-				room.hover = true;
 				hoveredRoom = room;
+				room.hover = true;
 				cursorType = HAND;
 			}
 
@@ -405,18 +441,6 @@ function draw() {
 
 			// Draw center, doors, etc.
 			stroke(255);
-			/*
-			if (showOptions[`show-dev-tools`] && getElement("objectType").value == "Room" && devData.room == room) {
-				stroke(0, 255, 0);
-				noFill();
-				(room.doors || []).forEach(d => {
-					rect(d[0] - 2 / VIEW.zoom, d[1] - 2 / VIEW.zoom, 4 / VIEW.zoom, 4 / VIEW.zoom);
-				});
-				(room.vertices || []).forEach(v => {
-					triangle(v[0], v[1] - 2 / VIEW.zoom, v[0] + 2 / VIEW.zoom, v[1] + 2 / VIEW.zoom, v[0] - 2 / VIEW.zoom, v[1] + 2 / VIEW.zoom);
-				});
-			}
-			*/
 			fill(0);
 			strokeWeight(1 / VIEW.zoom);
 			circle(room.center[0], room.center[1], 10 / VIEW.zoom);
@@ -547,40 +571,6 @@ function draw() {
 	cursor(cursorType);
 	cursorType = ARROW;
 
-	// Compass
-	textAlign(CENTER, TOP);
-	fill(0);
-	textSize(30);
-	const x = width - 30, y = height - 60;
-	text(`N`, x + 5, y);
-	triangle(x, y + 50, x + 5, y + 30, x + 10, y + 50);
-
 	// Place dots (tooltips)
-	if (showOptions[`show-place-dots`] && hoveredRoom) {
-		const tooltipW = 240,
-			tooltipH = (128 + 12 * floor((hoveredRoom.notes || '').length / 35));
-		const tooltipX = constrain(mouseX, 0, width - tooltipW),
-			tooltipY = constrain(mouseY, 0, height - tooltipH);	
-		
-		strokeWeight(1);
-		fill(255, 255, 255, 230);
-		stroke(0);
-		rect(tooltipX, tooltipY, tooltipW, tooltipH, 5);
-		fill(0);
-		textAlign(LEFT, TOP);
-		noStroke();
-		textSize(10);
-		textStyle(BOLD);
-		text(`Name/ID\nPurpose\nSection\nFloor`, tooltipX + 3, tooltipY + 3);
-		text(`Last updated\nContributors\nNotes`, tooltipX + 3, tooltipY + 66);
-		textStyle(NORMAL);
-		text(
-			`${hoveredRoom.id}\n${hoveredRoom.use || `(Unknown)`}\n${hoveredRoom.section}\n${hoveredRoom.floor}`,
-			tooltipX + 50, tooltipY + 3, 205
-		);
-		text(
-			`${hoveredRoom.updated}\n${hoveredRoom.authors.join(', ')}\n${hoveredRoom.notes || "None"}`,
-			tooltipX + 80, tooltipY + 66, 160
-		);
-	}
+	if (hoveredRoom) showTooltip(hoveredRoom);
 };
