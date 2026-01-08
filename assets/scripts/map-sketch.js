@@ -137,12 +137,12 @@ function mergeLinks (id) {
 }
 // Compute distance between a point [x, y] (p) and segment [x, y] (a) - [x, y] (b)
 // Adapted from https://stackoverflow.com/questions/849211/shortest-distance-between-a-point-and-a-line-segment
-function distToLine (p, a, b) {
-	var l = pow(dist(a[0], a[1], b[0], b[1]), 2);
-	if (l == 0) return pow(dist(p[0], p[1], a[0], a[1]), 2);
-	var t = ((p[0] - a[0]) * (b[0] - a[0]) + (p[1] - a[1]) * (b[1] - a[1])) / l;
+function distToLine ({ x: px, y: py }, { x: ax, y: ay }, { x: bx, y: by }) {
+	var l = pow(dist(ax, ay, bx, by), 2);
+	if (l == 0) return pow(dist(px, py, ax, ay), 2);
+	var t = ((px - ax) * (bx - ax) + (py - ay) * (by - ay)) / l;
 	t = max(0, min(1, t));
-	return dist(p[0], p[1], a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1]));
+	return dist(px, py, ax + t * (bx - ax), ay + t * (by - ay));
 }
 
 var loaded = false, lastFrameRate = 60, lastUpdate = framesSinceUpdate = 0;
@@ -198,9 +198,8 @@ const CURSOR = {
 var showOptions = {
 	'show-floor-plan': null,
 	'show-site-plan': null,
-	'show-place-dots': null,
-	'show-path': null,
-	'show-dev-tools': null
+	'show-places': null,
+	'show-dev-tools': null,
 };
 for (let option in showOptions) {
 	const checkbox = document.querySelector(`#${option}`);
@@ -239,15 +238,17 @@ var devData = {
 };
 
 /**
- * Draws an arrow centered at `(x, y)`, facing in direction `dir`. 
+ * Draws an arrow representing the vertical edge between `a` and `b`, pointing
+ * in the direction of the endpoint not on the current floor.
  * @param {Vertex} a Vertex at the arrow's start point
  * @param {Vertex} b Vertex at the arrow's end point
  */
 function drawArrow(a, b) {
+	const dir = a.floor == _floor ? b.floor - _floor : a.floor - _floor;
 	triangle(
 		a.x - 5 / VIEW.zoom, a.y,
 		a.x + 5 / VIEW.zoom, a.y,
-		a.x, a.y - (b.floor - a.floor) * 10 / VIEW.zoom,
+		a.x, a.y - dir * 10 / VIEW.zoom,
 	);
 }
 
@@ -325,6 +326,23 @@ function mouseWheel({ delta }) {
 	VIEW.applyZoom(SCROLL_ZOOM_RATE ** -delta, CURSOR.physPos); // Uses negative sign to conform to Google Maps' zoom
 };
 
+const EDGE_WIDTH = 4;
+/**
+ * Draws an edge (segment, dotted, or arrow).
+ * 
+ * @param {Edge} edge
+ * @param {p5.Color} _color
+ */
+function drawEdge({ endpoint1, endpoint2, isTemporary }, _color) {
+	stroke(_color);
+	fill(_color);
+	strokeWeight(EDGE_WIDTH / VIEW.zoom);
+	if (endpoint1.floor == endpoint2.floor) {
+		if (isTemporary) drawDottedLine(endpoint1, endpoint2);
+		else line(endpoint1.x, endpoint1.y, endpoint2.x, endpoint2.y);
+	} else drawArrow(endpoint1, endpoint2);
+}
+
 function showSitePlan() {
 	tint(255, 64);
 	image(images.site, SITE_PLAN_OFFSET.x, SITE_PLAN_OFFSET.y);
@@ -381,102 +399,15 @@ function showPlaceDots() {
 }
 
 function showDevTools() {
-	// Display dots for node selection
-	// Display the node and detect hovering if applicable
-	for (let i = 0, hovering = false; i < nodes.length; i++) {
-		var node = nodes[i];
-		if (node.floor == _floor && node.pos) {
-			if (
-				["selectNode", "setNodeA", "setNodeB"].includes(devData.awaiting) &&
-				CURSOR.virtPos.dist(createVector(node.pos)) < 3 / VIEW.zoom &&
-				!hovering
-			) {
-				node.hover = true;
-				hovering = true;
-				cursorType = HAND;
-			} else node.hover = false;
-
-			noFill();
-			if (node.visited) fill(255, 0, 255);
-			stroke(0);
-			strokeWeight(1 / VIEW.zoom);
-			circle(node.pos[0], node.pos[1], 10 / VIEW.zoom);
-
-			fill(255);
-			if (node.hover) fill(mouseIsPressed ? color(250, 85, 85) : 128);
-			stroke(/*getElement("objectType").value == "Node" && node == devData.node ? color(0, 255, 0) : */192);
-			circle(node.pos[0], node.pos[1], 6 / VIEW.zoom);
+	var foundHoveredEdge = false;
+	edges.forEach(e => {
+		e.isHovered = false;
+		if (e.endpoint1.floor != _floor && e.endpoint2.floor != _floor) return;
+		if (!foundHoveredEdge) {
+			e.checkHovered();
+			foundHoveredEdge ||= e.isHovered;
 		}
-	}
-
-	// Display the link and detect hovering if applicable
-	for (let i = 0, hovering = false; i < links.length; i++) {
-		var link = links[i];
-		const selectedLink = false; //getElement("objectType").value == "Link" && link == devData.link;
-
-		if (link.points[0] && link.points[1] && link.points.find(p => p[2] == _floor)) {
-			const hoveringOnLine = link.points[0][2] == link.points[1][2] &&
-				distToLine(CURSOR.virtPos, link.points[0], link.points[1]) < 3 / VIEW.zoom;
-			const hoveringOnArrow = link.points[0][2] != link.points[1][2] &&
-				link.points.find(p => CURSOR.virtPos.dist(createVector(p)) < 10 / VIEW.zoom);
-			if (devData.awaiting == "selectLink" && (hoveringOnLine || hoveringOnArrow) && !hovering) {
-				link.hover = true;
-				hovering = true;
-				cursorType = HAND;
-			} else link.hover = false;
-
-			stroke(0);
-			if (link.visited) stroke(255, 0, 255);
-			if (link.hover) stroke(mouseIsPressed ? color(250, 85, 85) : 128);
-			if (selectedLink) stroke(0, 255, 0);
-			strokeWeight(2 / VIEW.zoom);
-			// The points are on the same floor
-			if (link.points[0][2] == link.points[1][2]) {
-				if (!link.tmp) line(link.points[0][0], link.points[0][1], link.points[1][0], link.points[1][1]);
-				else drawDottedLine(link.points[0], link.points[1]);
-			// The points are on different floors
-			} else {
-				link.points.forEach((p, i) => {
-					if (p[2] == _floor) {
-						const otherPoint = link.points[1 - i];
-						drawArrow(p[0], p[1], otherPoint[2] - p[2]);
-					}
-				});
-			}
-		}
-
-		if (selectedLink) {
-			noStroke();
-			fill(0, 255, 0);
-			textSize(8 / VIEW.zoom);
-			textAlign(CENTER, CENTER);
-			link.points.forEach((p, i) => {
-				if (p && p[2] == _floor) text('AB'[i], link.points[i][0], link.points[i][1]);
-			});
-		}
-	}
-}
-
-function showPath() {
-	if (!path) return;
-
-	const PATH_COLOR = color(0, 128, 255);
-	stroke(PATH_COLOR);
-	fill(PATH_COLOR);
-	strokeWeight(4 / VIEW.zoom);
-	
-	path.subpaths.forEach(subpath => {
-		for (let i = 0; i < subpath.length - 1; i++) {
-			const vertex1 = subpath[i], vertex2 = subpath[i + 1];
-			if (vertex1.floor != _floor && vertex2.floor != _floor) continue;
-			console.log(subpath[i]);
-			if (vertex1.floor == vertex2.floor) {
-				if (i == 0 || i == subpath.length - 2) drawDottedLine(vertex1, vertex2);
-				else line(vertex1.x, vertex1.y, vertex2.x, vertex2.y);
-			} else {
-				drawArrow(vertex1, vertex2);
-			}
-		}
+		drawEdge(e, color(e.isHovered ? 192 : 0));
 	});
 }
 
@@ -540,9 +471,23 @@ function draw() {
 	hoveredRoom = null;
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
-	if (showOptions[`show-place-dots`]) showPlaceDots();
-	if (showOptions[`show-dev-tools`]) showDevTools();
-	if (showOptions[`show-path`]) showPath();
+	var foundHoveredEdge = false;
+	edges.forEach(e => {
+		if (e.endpoint1.floor != _floor && e.endpoint2.floor != _floor) return;
+		if (showOptions[`show-dev-tools`]) {
+			e.isHovered = false;
+			if (!foundHoveredEdge) {
+				e.checkHovered();
+				foundHoveredEdge ||= e.isHovered;
+			}
+		}
+		if (!e.isPath && !showOptions[`show-dev-tools`])
+			return;
+		var _color = e.isPath ? color(0, 128, 255) : color(0);
+		if (e.isHovered) _color = lerpColor(_color, color(255), 0.75)
+		drawEdge(e, _color);
+	});
+	if (showOptions[`show-places`]) showPlaceDots();
 
 	pop();
 

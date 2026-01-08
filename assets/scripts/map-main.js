@@ -44,6 +44,7 @@ class Edge {
 		this.endpoint1 = endpoint1;
 		this.endpoint2 = endpoint2;
 		this.name = name;
+		this.isHovered = false;
 	}
 
 	length() {
@@ -53,9 +54,31 @@ class Edge {
 			(this.endpoint2.y - this.endpoint1.y) * constants.METERS_PER_PIXEL,
 		);
 	}
+	checkHovered() {
+		this.isHovered = false;
+		if (this.endpoint1.floor == this.endpoint2.floor) {
+			if (distToLine(CURSOR.virtPos, this.endpoint1, this.endpoint2) < EDGE_WIDTH / VIEW.zoom)
+				this.isHovered = true;
+		} else {
+			if (dist(this.endpoint1.x, this.endpoint1.y, CURSOR.virtPos.x, CURSOR.virtPos.y) < 10 / VIEW.zoom)
+				this.isHovered = true;
+		}
+	}
+	equals({ endpoint1, endpoint2 }) {
+		const thisEndpoints = new Set([this.endpoint1.toString(), this.endpoint2.toString()]);
+		const otherEndpoints = new Set([endpoint1.toString(), endpoint2.toString()]);
+		return thisEndpoints.symmetricDifference(otherEndpoints).size == 0;
+	}
+	findInDatabase() {
+		for (let i = 0; i < edges.length; i++) {
+			const e = edges[i];
+			if (this.equals(e)) return e;
+		}
+	}
 }
 
 var tableLoaded = false;
+var vertices = new Set();
 $.getJSON('/data.json', function (data) {
 	// Load constants
 	constants = data.constants;
@@ -63,11 +86,32 @@ $.getJSON('/data.json', function (data) {
 	// Initial load for all object types
 	rooms = data.rooms;
 	edges = data.edges.map(e => new Edge(new Vertex(e.endpoint1), new Vertex(e.endpoint2), e.name));
-	
+	edges.forEach(e => {
+		vertices.add(e.endpoint1);
+		vertices.add(e.endpoint2);
+	});
+
 	// Flatten rooms data structure into list
 	rooms = rooms.map(f => Object.keys(f).map(s => f[s])).flat(2);
 	// Sort rooms first by floor, then by name
 	rooms.sort((a, b) => a.floor > b.floor || a.id > b.id ? 1 : -1);
+
+	rooms.forEach(r => {
+		const roomVertex = new Vertex([r.floor, ...r.center]);
+		var nearest, minDist = Infinity, tempEdge;
+		vertices.forEach(v => {
+			if (v.floor != r.floor) return;
+			const edge = new Edge(v, roomVertex);
+			const dist = edge.length();
+			if (dist < minDist) {
+				nearest = v;
+				minDist = dist;
+				tempEdge = edge;
+			}
+		});
+		tempEdge.isTemporary = true;
+		edges.push(tempEdge);
+	});
 
 	// Remove placeholder rows
 	for (let i = 1; i <= 2; i++) document.getElementById("row-placeholder-" + i).remove();
@@ -188,13 +232,13 @@ function addPoint () {
 var path = {};
 
 function clearCalc () {
+	edges.forEach(e => e.isPath = false);
 	path = {
 		subpaths: [],
 		distance: 0,
 	};
 	document.getElementById("calc-result").innerHTML = '';
 };
-clearCalc();
 
 function calculate () {
 	clearCalc();
@@ -228,46 +272,28 @@ function calculate () {
 		const graph = new WeightedGraph();
 		var vertices = new Set();
 		edges.forEach(e => {
-			if (e.name == 'Elevator' && !options.allowElevator) return;
-			vertices.add(e.endpoint1);
-			vertices.add(e.endpoint2);
-			graph.addEdge(e);
+			if (e.name != 'Elevator' || options.allowElevator) graph.addEdge(e);
 		});
-
-		function nearestVertexToRoom(room) {
-			// TODO rewrite coords 
-			const roomVertex = new Vertex([room.floor, ...room.center]);
-			var nearest, minDist = Infinity;
-			vertices.forEach(v => {
-				if (v.floor != room.floor) return;
-				const dist = new Edge(v, roomVertex).length();
-				if (dist < minDist) {
-					nearest = v;
-					minDist = dist;
-				}
-			});
-			return nearest;
-		}
 
 		for (let i = 0; i < rows.length - 1; i++) {
 			const subpathRoomIDs = [1, 2].map(j => document.getElementById(`point-${i + j}`).value);
 			const subpathRooms = subpathRoomIDs.map(id => rooms.find(r => r.id == id));
 			const subpathRoomVertices = subpathRooms.map(room => new Vertex([room.floor, ...room.center]));
-			const subpathEndpoints = subpathRooms.map(room => nearestVertexToRoom(room));
 
-			const {path: subpath, distance: subDistance} = graph.Dijkstra(...subpathEndpoints);
+			var {path: subpathVertices, distance: subDistance} = graph.Dijkstra(...subpathRoomVertices);
 
 			output +=
 				`<p>${subpathRoomIDs.join(' → ')}` +
 				`\t` +
 				`<span style='color: gray'>${prettifyDistance(subDistance)}</span></p>`;
 
-			if (subDistance) {
-				path.subpaths.push([subpathRoomVertices[0], ...subpath, subpathRoomVertices[1]]);
-				path.distance += subDistance;
-			} else {
-				return finishCalc(`We couldn't find a path between ${subpathRoomIDs.join(' and ')}.`, true);
+			if (!subDistance) return finishCalc(`We couldn't find a path from ${subpathRoomIDs.join(' to ')}.`, true);
+			for (let i = 0; i < subpathVertices.length - 1; i++) {
+				const edge = new Edge(subpathVertices[i], subpathVertices[i + 1]);
+				edge.findInDatabase().isPath = true;
 			}
+			
+			path.distance += subDistance;
 		}
 		
 		output = `<p><b>${prettifyDistance(path.distance)}</b></p>` + output;
