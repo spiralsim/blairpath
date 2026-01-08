@@ -63,7 +63,6 @@ $.getJSON('/data.json', function (data) {
 	// Initial load for all object types
 	rooms = data.rooms;
 	edges = data.edges.map(e => new Edge(new Vertex(e.endpoint1), new Vertex(e.endpoint2), e.name));
-	console.log(edges);
 	
 	// Flatten rooms data structure into list
 	rooms = rooms.map(f => Object.keys(f).map(s => f[s])).flat(2);
@@ -186,12 +185,17 @@ function addPoint () {
 };
 
 /* Calculate Path */
-var path;
+var path = {};
 
 function clearCalc () {
-	path = null;
+	path = {
+		subpaths: [],
+		distance: 0,
+	};
 	document.getElementById("calc-result").innerHTML = '';
-}
+};
+clearCalc();
+
 function calculate () {
 	clearCalc();
 
@@ -220,10 +224,6 @@ function calculate () {
 		}
 
 		var output = "";
-		path = {
-			distance: 0,
-			vertices: [],
-		};
 		
 		const graph = new WeightedGraph();
 		var vertices = new Set();
@@ -252,9 +252,10 @@ function calculate () {
 		for (let i = 0; i < rows.length - 1; i++) {
 			const subpathRoomIDs = [1, 2].map(j => document.getElementById(`point-${i + j}`).value);
 			const subpathRooms = subpathRoomIDs.map(id => rooms.find(r => r.id == id));
-			const subpathRoomVertices = subpathRooms.map(room => nearestVertexToRoom(room).toString());
+			const subpathRoomVertices = subpathRooms.map(room => new Vertex([room.floor, ...room.center]));
+			const subpathEndpoints = subpathRooms.map(room => nearestVertexToRoom(room));
 
-			const {path: subpath, distance: subDistance} = graph.Dijkstra(...subpathRoomVertices);
+			const {path: subpath, distance: subDistance} = graph.Dijkstra(...subpathEndpoints);
 
 			output +=
 				`<p>${subpathRoomIDs.join(' → ')}` +
@@ -262,7 +263,7 @@ function calculate () {
 				`<span style='color: gray'>${prettifyDistance(subDistance)}</span></p>`;
 
 			if (subDistance) {
-				path.vertices += subpath;
+				path.subpaths.push([subpathRoomVertices[0], ...subpath, subpathRoomVertices[1]]);
 				path.distance += subDistance;
 			} else {
 				return finishCalc(`We couldn't find a path between ${subpathRoomIDs.join(' and ')}.`, true);

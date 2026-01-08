@@ -240,36 +240,26 @@ var devData = {
 
 /**
  * Draws an arrow centered at `(x, y)`, facing in direction `dir`. 
- * @param {number} x x-coordinate of the arrow's center.
- * @param {number} y y-coordinate of the arrow's center.
- * @param {1 | -1} dir 1 to make the arrow point up and -1 to make it point down.
+ * @param {Vertex} a Vertex at the arrow's start point
+ * @param {Vertex} b Vertex at the arrow's end point
  */
-function drawArrow(x, y, dir) {
-	noFill();
-	beginShape();
-	vertex(x, y - 15 / VIEW.zoom * dir);
-	vertex(x + 10 / VIEW.zoom, y - 5 / VIEW.zoom * dir);
-	vertex(x + 5 / VIEW.zoom, y - 5 / VIEW.zoom * dir);
-	vertex(x + 5 / VIEW.zoom, y + 5 / VIEW.zoom * dir);
-	vertex(x - 5 / VIEW.zoom, y + 5 / VIEW.zoom * dir);
-	vertex(x - 5 / VIEW.zoom, y - 5 / VIEW.zoom * dir);
-	vertex(x - 10 / VIEW.zoom, y - 5 / VIEW.zoom * dir);
-	vertex(x, y - 15 / VIEW.zoom * dir);
-	endShape();
+function drawArrow(a, b) {
+	triangle(
+		a.x - 5 / VIEW.zoom, a.y,
+		a.x + 5 / VIEW.zoom, a.y,
+		a.x, a.y - (b.floor - a.floor) * 10 / VIEW.zoom,
+	);
 }
 
 /**
  * Draws a dotted line from point a to b.
- * @param {number[]} a First endpoint.
- * @param {number[]} b Second endpoint.
+ * @param {Vertex} a First endpoint.
+ * @param {Vertex} b Second endpoint.
  */
 function drawDottedLine(a, b) {
-	const len = dist(a[0], a[1], b[0], b[1]);
-	for (let d = 0; d < len; d += 5 / VIEW.zoom)
-		point(
-			a[0] + (b[0] - a[0]) * d / len,
-			a[1] + (b[1] - a[1]) * d / len
-		);
+	const length = dist(a.x, a.y, b.x, b.y);
+	for (let i = 0; i < length; i += 5 / VIEW.zoom)
+		point(lerp(a.x, b.x, i / length), lerp(a.y, b.y, i / length));
 }
 
 /*
@@ -470,31 +460,23 @@ function showDevTools() {
 function showPath() {
 	if (!path) return;
 
-	stroke(0, 255, 255);
-	strokeWeight(2 / VIEW.zoom);
-
-	path.links.forEach((l, n) => {
-		if (!l.points.find(p => p[2] == _floor)) return;
-
-		// The points are on the same floor
-		if (l.points[0][2] == l.points[1][2]) {
-			if (!l.tmp) line(l.points[0][0], l.points[0][1], l.points[1][0], l.points[1][1]);
-			else drawDottedLine(l.points[0], l.points[1]);
-		// The points are on different floors
-		} else {
-			l.points.forEach((p, i) => {
-				if (p[2] == _floor) {
-					const otherPoint = l.points[1 - i];
-					drawArrow(p[0], p[1], otherPoint[2] - p[2]);
-				}
-			});
+	const PATH_COLOR = color(0, 128, 255);
+	stroke(PATH_COLOR);
+	fill(PATH_COLOR);
+	strokeWeight(4 / VIEW.zoom);
+	
+	path.subpaths.forEach(subpath => {
+		for (let i = 0; i < subpath.length - 1; i++) {
+			const vertex1 = subpath[i], vertex2 = subpath[i + 1];
+			if (vertex1.floor != _floor && vertex2.floor != _floor) continue;
+			console.log(subpath[i]);
+			if (vertex1.floor == vertex2.floor) {
+				if (i == 0 || i == subpath.length - 2) drawDottedLine(vertex1, vertex2);
+				else line(vertex1.x, vertex1.y, vertex2.x, vertex2.y);
+			} else {
+				drawArrow(vertex1, vertex2);
+			}
 		}
-
-		fill(0);
-		textSize(10 / VIEW.zoom);
-		textAlign(CENTER, CENTER);
-		textStyle(NORMAL);
-		text(n + 1, (l.points[0][0] + l.points[1][0]) / 2, (l.points[0][1] + l.points[1][1]) / 2);
 	});
 }
 

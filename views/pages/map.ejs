@@ -75,6 +75,16 @@
 						<span>Map data last updated Jan 04, 2020</span>
 					</div>
 					<div>
+						<label for="floor">Floor</label>
+						<input type="number" min="1" max="4" value="1" id="floor" onchange="setFloor(parseInt(this.value))">
+						<script>
+							function setFloor(newFloor) {
+								if (Number.isNaN(newFloor) || newFloor < 1 || newFloor > 4) return;
+								_floor = newFloor;
+							}
+						</script>
+					</div>
+					<div>
 						<input type="checkbox" id="show-floor-plan" checked>
 						<label for="show-floor-plan">Floor Plan</label>
 						<input type="checkbox" id="show-site-plan">
@@ -85,16 +95,6 @@
 						<label for="show-path">Path</label>
 						<input type="checkbox" id="show-dev-tools">
 						<label for="show-dev-tools">Dev Tools</label>
-					</div>
-					<div>
-						<label for="floor">Floor</label>
-						<input type="number" min="1" max="4" value="1" id="floor" onchange="setFloor(parseInt(this.value))">
-						<script>
-							function setFloor(newFloor) {
-								if (Number.isNaN(newFloor) || newFloor < 1 || newFloor > 4) return;
-								_floor = newFloor;
-							}
-						</script>
 					</div>
 				</div>
 			</div>
