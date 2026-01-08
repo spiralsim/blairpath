@@ -16,11 +16,7 @@
 						149.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 17:36:15 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "002",
@@ -32,11 +28,7 @@
 						133.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 18:41:58 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "003",
@@ -48,11 +40,7 @@
 						123.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 17:36:15 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "004",
@@ -64,11 +52,7 @@
 						107.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 18:41:58 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "005",
@@ -80,11 +64,7 @@
 						100.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 18:41:58 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "006",
@@ -96,11 +76,7 @@
 						75.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 18:41:58 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "007",
@@ -112,11 +88,7 @@
 						83.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 18:41:58 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "008",
@@ -128,11 +100,7 @@
 						53.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 18:46:38 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "011",
@@ -144,11 +112,7 @@
 						42.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 18:47:40 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "013",
@@ -160,11 +124,7 @@
 						25.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 18:49:01 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "014",
@@ -176,11 +136,7 @@
 						150.302
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 18:50:24 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "016A",
@@ -192,11 +148,7 @@
 						188.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 17:36:15 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "016B",
@@ -208,11 +160,7 @@
 						201.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 17:36:15 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Auditorium",
@@ -224,11 +172,7 @@
 						126.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 18:53:28 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Kiln",
@@ -240,11 +184,7 @@
 						24.6355
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 18:49:35 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Stage Shop",
@@ -256,11 +196,7 @@
 						41.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 18:45:24 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			],
 			"Media/Reference Complex": [
@@ -274,11 +210,7 @@
 						196.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:03:57 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "102",
@@ -290,11 +222,7 @@
 						181.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:04:21 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "103",
@@ -306,11 +234,7 @@
 						219.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:05:37 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "106 !",
@@ -322,12 +246,7 @@
 						214.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:06:44 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					],
-					"notes": "The room number for this one was illegible, so it was guessed to be 106."
+					"doors": null
 				},
 				{
 					"id": "Computer/Work Room",
@@ -339,11 +258,7 @@
 						226.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:09:34 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Conference A",
@@ -355,11 +270,7 @@
 						267.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:07:55 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Conference B",
@@ -371,11 +282,7 @@
 						239.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:08:52 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Equipment Storage",
@@ -387,11 +294,7 @@
 						178.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:12:15 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "General Storage",
@@ -403,11 +306,7 @@
 						203.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:13:05 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Head-in Room",
@@ -419,11 +318,7 @@
 						174.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:27:35 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Media Center",
@@ -435,11 +330,7 @@
 						233.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:07:20 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			],
 			"Gymnasium Complex": [
@@ -453,11 +344,7 @@
 						376.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 17:45:02 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "111",
@@ -469,11 +356,7 @@
 						318.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 17:48:39 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "112",
@@ -485,11 +368,7 @@
 						354.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 17:48:15 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "112, Storage",
@@ -501,11 +380,7 @@
 						358.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 17:50:39 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "113",
@@ -517,11 +392,7 @@
 						318.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 17:51:13 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "114",
@@ -533,11 +404,7 @@
 						361.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 17:52:05 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "114, Storage",
@@ -549,11 +416,7 @@
 						359.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 17:52:27 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "116",
@@ -565,11 +428,7 @@
 						361.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 17:53:13 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "118",
@@ -581,11 +440,7 @@
 						356.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 17:57:59 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "118, Storage",
@@ -597,11 +452,7 @@
 						356.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 17:58:37 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Boys' Locker Room",
@@ -613,11 +464,7 @@
 						385.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 17:56:30 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Girls' Locker Room",
@@ -629,11 +476,7 @@
 						388.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 17:56:59 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Large Gymnasium",
@@ -645,11 +488,7 @@
 						291.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 19:51:14 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Small Gymnasium",
@@ -661,11 +500,7 @@
 						291.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 17:59:40 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			],
 			"Academic Classrooms": [
@@ -678,11 +513,7 @@
 						327.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:34:10 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "119",
@@ -693,11 +524,7 @@
 						358.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:35:36 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "122",
@@ -708,11 +535,7 @@
 						305.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:37:25 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "122, Office",
@@ -723,11 +546,7 @@
 						307.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:14:58 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "123",
@@ -738,11 +557,7 @@
 						360.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:38:17 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "124",
@@ -753,11 +568,7 @@
 						381.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:38:48 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "126",
@@ -768,11 +579,7 @@
 						398.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:39:05 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "128",
@@ -783,11 +590,7 @@
 						409.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:39:32 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "130",
@@ -799,11 +602,7 @@
 						418.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:41:53 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "131",
@@ -814,11 +613,7 @@
 						384.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:40:04 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "132",
@@ -829,11 +624,7 @@
 						418.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:40:55 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "133",
@@ -844,11 +635,7 @@
 						379.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:42:22 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "134",
@@ -859,11 +646,7 @@
 						418.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:42:52 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "135",
@@ -874,11 +657,7 @@
 						379.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:43:22 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "136",
@@ -889,11 +668,7 @@
 						418.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:46:58 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "137",
@@ -904,11 +679,7 @@
 						379.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:44:01 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "138",
@@ -919,11 +690,7 @@
 						418.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:47:40 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "138, Storage",
@@ -935,11 +702,7 @@
 						437.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:48:11 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "141",
@@ -950,11 +713,7 @@
 						331.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:49:19 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "141, English",
@@ -966,11 +725,7 @@
 						311.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:49:54 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "141, Storage",
@@ -982,11 +737,7 @@
 						303.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:50:57 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "142",
@@ -997,11 +748,7 @@
 						325.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:51:28 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "143",
@@ -1013,11 +760,7 @@
 						350.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:52:01 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "144",
@@ -1028,11 +771,7 @@
 						349.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:52:23 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "145",
@@ -1044,11 +783,7 @@
 						363.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:53:03 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "146",
@@ -1060,11 +795,7 @@
 						379.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:54:16 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "147",
@@ -1076,11 +807,7 @@
 						382.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:54:44 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "148",
@@ -1092,11 +819,7 @@
 						443.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:55:20 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "151",
@@ -1107,11 +830,7 @@
 						408.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:56:45 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "152",
@@ -1122,11 +841,7 @@
 						446.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:57:41 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "152, Work Room",
@@ -1138,11 +853,7 @@
 						446.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:58:06 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "153",
@@ -1154,11 +865,7 @@
 						408.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:58:34 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "154",
@@ -1169,11 +876,7 @@
 						446.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:59:10 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "155",
@@ -1184,11 +887,7 @@
 						408.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:59:32 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "156",
@@ -1199,11 +898,7 @@
 						446.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:00:29 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "157",
@@ -1214,11 +909,7 @@
 						408.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:00:04 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "158",
@@ -1229,11 +920,7 @@
 						443.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:00:46 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "160",
@@ -1245,11 +932,7 @@
 						363.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:01:25 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "161",
@@ -1261,11 +944,7 @@
 						364.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:01:51 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "162",
@@ -1276,11 +955,7 @@
 						383.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:02:30 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "163",
@@ -1291,11 +966,7 @@
 						383.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:02:53 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "164",
@@ -1306,11 +977,7 @@
 						408.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:03:23 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "165",
@@ -1321,11 +988,7 @@
 						409.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:03:46 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "166",
@@ -1336,11 +999,7 @@
 						465.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:04:29 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "167",
@@ -1351,11 +1010,7 @@
 						436.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:05:42 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "168",
@@ -1366,11 +1021,7 @@
 						488.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:04:46 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "170",
@@ -1382,11 +1033,7 @@
 						474.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:07:21 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "170, Office",
@@ -1398,11 +1045,7 @@
 						483.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:07:03 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "171",
@@ -1413,11 +1056,7 @@
 						436.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:07:43 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "172",
@@ -1428,11 +1067,7 @@
 						474.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:08:00 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "173",
@@ -1443,11 +1078,7 @@
 						436.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:08:15 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "174",
@@ -1458,11 +1089,7 @@
 						474.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:08:46 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "176",
@@ -1474,11 +1101,7 @@
 						474.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:10:15 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "177",
@@ -1489,11 +1112,7 @@
 						436.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:11:12 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			],
 			"Administration Complex": [
@@ -1507,11 +1126,7 @@
 						285.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:37:39 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "121",
@@ -1523,11 +1138,7 @@
 						335.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:01:17 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "AP Office",
@@ -1539,11 +1150,7 @@
 						167.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:02:46 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Athletic Director",
@@ -1555,11 +1162,7 @@
 						240.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:05:40 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Attendance Office",
@@ -1571,11 +1174,7 @@
 						222.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:18:23 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Concessions",
@@ -1587,11 +1186,7 @@
 						239.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:06:19 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Guidance [main room]",
@@ -1603,11 +1198,7 @@
 						274.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 17:55:43 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Main Office",
@@ -1619,11 +1210,7 @@
 						198.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 19:52:33 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Principal's Office",
@@ -1635,11 +1222,7 @@
 						163.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:03:10 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Registrar",
@@ -1651,11 +1234,7 @@
 						251.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 17:56:48 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			],
 			"Bathrooms / Building Services": [
@@ -1669,11 +1248,7 @@
 						204.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:13:17 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Boys' Bathroom 1R",
@@ -1685,11 +1260,7 @@
 						335.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:14:57 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Building Services",
@@ -1701,11 +1272,7 @@
 						212.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:14:13 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Girls' Bathroom 1L",
@@ -1717,11 +1284,7 @@
 						221.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:13:33 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Girls' Bathroom 1R",
@@ -1733,11 +1296,7 @@
 						347.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:15:23 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			],
 			"Dining Facilities": [
@@ -1751,11 +1310,7 @@
 						286.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:18:11 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Main Mechanical Room",
@@ -1767,11 +1322,7 @@
 						301.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:17:28 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "PAC Serving Table",
@@ -1783,11 +1334,7 @@
 						339.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:16:41 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "SAC",
@@ -1799,11 +1346,7 @@
 						269.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 14 2019 19:50:36 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Serving Table 1",
@@ -1815,11 +1358,7 @@
 						280.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:15:42 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Serving Table 2",
@@ -1831,11 +1370,7 @@
 						294.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 16 2019 18:16:13 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			],
 			"Outdoor Areas": [
@@ -1848,11 +1383,7 @@
 						317.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:23:53 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "P10",
@@ -1863,11 +1394,7 @@
 						361.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:21:33 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "P2",
@@ -1878,11 +1405,7 @@
 						338.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:23:32 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "P3",
@@ -1893,11 +1416,7 @@
 						361.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:22:45 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "P4",
@@ -1908,11 +1427,7 @@
 						383.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:22:13 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "P5",
@@ -1923,11 +1438,7 @@
 						384.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:24:21 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "P6",
@@ -1938,11 +1449,7 @@
 						362.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:24:37 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "P7",
@@ -1953,11 +1460,7 @@
 						340.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:24:57 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "P8",
@@ -1968,11 +1471,7 @@
 						318.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:25:13 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "P9",
@@ -1983,11 +1482,7 @@
 						278.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 18:25:35 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Senior Courtyard",
@@ -1999,11 +1494,7 @@
 						362.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:17:25 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Staff Courtyard",
@@ -2015,11 +1506,7 @@
 						331.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Thu Dec 19 2019 19:17:06 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			]
 		},
@@ -2035,11 +1522,7 @@
 						391.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:12:22 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "210",
@@ -2050,11 +1533,7 @@
 						388.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:13:25 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "211",
@@ -2066,11 +1545,7 @@
 						351.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:14:23 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "211, Computer Lab",
@@ -2082,11 +1557,7 @@
 						354.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:14:57 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "211, Office",
@@ -2098,11 +1569,7 @@
 						340.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 22:31:47 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "211, Storage",
@@ -2114,11 +1581,7 @@
 						345.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:15:28 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "212",
@@ -2130,11 +1593,7 @@
 						388.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:16:07 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "213",
@@ -2146,11 +1605,7 @@
 						350.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:16:56 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "214",
@@ -2162,11 +1617,7 @@
 						388.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:20:17 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "215",
@@ -2178,11 +1629,7 @@
 						350.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:21:17 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "216",
@@ -2193,11 +1640,7 @@
 						388.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:22:25 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "217",
@@ -2208,11 +1651,7 @@
 						351.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:23:33 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "218",
@@ -2223,11 +1662,7 @@
 						388.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:24:04 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "219",
@@ -2238,11 +1673,7 @@
 						387.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:24:51 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "220",
@@ -2253,11 +1684,7 @@
 						292.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:25:40 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "221",
@@ -2268,11 +1695,7 @@
 						280.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:28:32 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "221, Biology",
@@ -2284,11 +1707,7 @@
 						317.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:29:07 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "222",
@@ -2299,11 +1718,7 @@
 						321.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:26:28 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "223",
@@ -2314,11 +1729,7 @@
 						338.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:29:47 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "223, Computer Science",
@@ -2330,11 +1741,7 @@
 						358.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:30:23 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "225",
@@ -2345,11 +1752,7 @@
 						378.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:31:02 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "226",
@@ -2360,11 +1763,7 @@
 						411.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:27:21 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "227",
@@ -2375,11 +1774,7 @@
 						416.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:32:10 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "231",
@@ -2390,11 +1785,7 @@
 						378.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:34:10 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "232",
@@ -2405,11 +1796,7 @@
 						416.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:38:32 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "233",
@@ -2420,11 +1807,7 @@
 						378.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:34:37 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "234",
@@ -2435,11 +1818,7 @@
 						416.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:38:48 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "235",
@@ -2450,11 +1829,7 @@
 						378.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:34:57 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "236",
@@ -2465,11 +1840,7 @@
 						416.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:39:10 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "238",
@@ -2481,11 +1852,7 @@
 						426.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:06:37 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "238, Storage",
@@ -2497,11 +1864,7 @@
 						411.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:06:53 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "240",
@@ -2512,11 +1875,7 @@
 						296.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:07:32 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "241",
@@ -2528,11 +1887,7 @@
 						318.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:08:09 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "241, Storage",
@@ -2544,11 +1899,7 @@
 						331.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:08:24 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "242",
@@ -2559,11 +1910,7 @@
 						330.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:08:43 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "243",
@@ -2574,11 +1921,7 @@
 						350.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:08:59 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "244",
@@ -2589,11 +1932,7 @@
 						354.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:09:10 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "245",
@@ -2604,11 +1943,7 @@
 						373.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:09:34 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "246",
@@ -2619,11 +1954,7 @@
 						379.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:09:56 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "247",
@@ -2634,11 +1965,7 @@
 						396.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:10:20 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "249",
@@ -2649,11 +1976,7 @@
 						446.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:11:46 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "250",
@@ -2664,11 +1987,7 @@
 						444.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:11:14 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "250, Storage",
@@ -2680,11 +1999,7 @@
 						432.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:11:25 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "251",
@@ -2695,11 +2010,7 @@
 						406.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:13:53 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "251W",
@@ -2710,11 +2021,7 @@
 						414.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:10:41 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "252",
@@ -2725,11 +2032,7 @@
 						444.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:12:08 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "253",
@@ -2740,11 +2043,7 @@
 						406.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:13:10 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "254",
@@ -2755,11 +2054,7 @@
 						444.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:12:30 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "255",
@@ -2770,11 +2065,7 @@
 						406.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:14:19 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "256",
@@ -2785,11 +2076,7 @@
 						441.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:14:40 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "260",
@@ -2800,11 +2087,7 @@
 						358.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:15:03 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "261",
@@ -2815,11 +2098,7 @@
 						368.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:16:24 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "261, Storage",
@@ -2831,11 +2110,7 @@
 						346.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:16:41 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "262",
@@ -2846,11 +2121,7 @@
 						381.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:15:21 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "263",
@@ -2861,11 +2132,7 @@
 						391.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:17:28 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "264",
@@ -2876,11 +2143,7 @@
 						463.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:17:47 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "265",
@@ -2891,11 +2154,7 @@
 						414.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:18:16 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "266",
@@ -2906,11 +2165,7 @@
 						486.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:18:47 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "267",
@@ -2921,11 +2176,7 @@
 						436.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:19:13 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "269",
@@ -2936,11 +2187,7 @@
 						478.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:19:34 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "270",
@@ -2951,11 +2198,7 @@
 						472.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:20:11 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "271",
@@ -2966,11 +2209,7 @@
 						434.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:20:29 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "272",
@@ -2981,11 +2220,7 @@
 						472.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:20:46 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "273",
@@ -2996,11 +2231,7 @@
 						433.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:21:14 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "274",
@@ -3011,11 +2242,7 @@
 						472.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:21:00 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "275",
@@ -3026,11 +2253,7 @@
 						433.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:21:25 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Floor 2, Storage 1",
@@ -3042,11 +2265,7 @@
 						388.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:18:24 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Floor 2, Storage 2",
@@ -3058,11 +2277,7 @@
 						350.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 13:19:09 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			],
 			"Bathrooms / Building Services": [
@@ -3076,11 +2291,7 @@
 						351.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 23:34:39 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Boys' Bathroom 2R",
@@ -3092,11 +2303,7 @@
 						407.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:23:16 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Girls' Bathroom 2L",
@@ -3108,11 +2315,7 @@
 						351.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Fri Dec 20 2019 23:36:32 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Girls' Bathroom 2R",
@@ -3124,11 +2327,7 @@
 						407.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Dec 21 2019 17:23:32 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			]
 		},
@@ -3143,11 +2342,7 @@
 						351.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:20:40 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "310",
@@ -3158,11 +2353,7 @@
 						388.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:21:17 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "310, Office",
@@ -3174,11 +2365,7 @@
 						396.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:22:06 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "311",
@@ -3189,11 +2376,7 @@
 						351.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:21:33 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "312",
@@ -3204,11 +2387,7 @@
 						388.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:23:45 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "313",
@@ -3219,11 +2398,7 @@
 						351.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:23:07 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "314",
@@ -3234,11 +2409,7 @@
 						389.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:24:58 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "315",
@@ -3249,11 +2420,7 @@
 						351.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:24:23 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "316",
@@ -3264,11 +2431,7 @@
 						393.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:26:29 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "317",
@@ -3279,11 +2442,7 @@
 						351.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:27:24 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "318",
@@ -3294,11 +2453,7 @@
 						393.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:27:04 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "319",
@@ -3310,11 +2465,7 @@
 						349.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:29:22 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "319, Storage",
@@ -3326,11 +2477,7 @@
 						352.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:28:42 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "321",
@@ -3342,11 +2489,7 @@
 						296.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:44:02 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "323",
@@ -3358,11 +2501,7 @@
 						295.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:44:21 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "323, Chemistry Storage",
@@ -3374,11 +2513,7 @@
 						320.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:44:37 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "323, Storage",
@@ -3390,11 +2525,7 @@
 						320.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:44:49 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "325",
@@ -3406,11 +2537,7 @@
 						346.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:45:12 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "327",
@@ -3422,11 +2549,7 @@
 						389.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:47:06 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "328",
@@ -3437,11 +2560,7 @@
 						401.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:46:03 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "329",
@@ -3453,11 +2572,7 @@
 						417.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:46:40 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "330",
@@ -3469,11 +2584,7 @@
 						396.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:47:36 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "330, Computer Lab",
@@ -3485,11 +2596,7 @@
 						424.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:48:22 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "331",
@@ -3501,11 +2608,7 @@
 						346.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:48:46 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "332",
@@ -3517,11 +2620,7 @@
 						388.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:49:15 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "341",
@@ -3533,11 +2632,7 @@
 						337.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:50:08 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "341, Office",
@@ -3549,11 +2644,7 @@
 						328.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:50:18 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "342",
@@ -3565,11 +2656,7 @@
 						340.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:50:40 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "343",
@@ -3581,11 +2668,7 @@
 						363.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:51:00 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "344",
@@ -3597,11 +2680,7 @@
 						417.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:51:24 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "345",
@@ -3613,11 +2692,7 @@
 						445.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:51:56 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "352",
@@ -3629,11 +2704,7 @@
 						417.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:52:17 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "354",
@@ -3645,11 +2716,7 @@
 						429.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:53:01 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "354, Computer Lab",
@@ -3661,11 +2728,7 @@
 						452.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:53:25 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "354, Office",
@@ -3677,11 +2740,7 @@
 						406.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:53:45 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "354, Storage",
@@ -3693,11 +2752,7 @@
 						407.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:54:01 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "356",
@@ -3709,11 +2764,7 @@
 						416.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:54:25 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "360",
@@ -3725,11 +2776,7 @@
 						354.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:54:57 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "361",
@@ -3741,11 +2788,7 @@
 						391.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:55:17 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "361, Computer Lab",
@@ -3757,11 +2800,7 @@
 						363.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:55:33 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "361, Office",
@@ -3773,11 +2812,7 @@
 						415.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:56:21 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "361, Storage",
@@ -3789,11 +2824,7 @@
 						415.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:55:46 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "362",
@@ -3805,11 +2836,7 @@
 						445.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:56:45 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "363",
@@ -3821,11 +2848,7 @@
 						435.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:57:21 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "364",
@@ -3836,11 +2859,7 @@
 						486.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:57:43 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "365",
@@ -3852,11 +2871,7 @@
 						462.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:58:01 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "365, Storage",
@@ -3868,11 +2883,7 @@
 						467.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:58:25 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "371",
@@ -3884,11 +2895,7 @@
 						449.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:59:14 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "373",
@@ -3900,11 +2907,7 @@
 						447.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 22:00:14 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "373, Computer Lab",
@@ -3916,11 +2919,7 @@
 						427.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 22:01:33 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "373, Office",
@@ -3932,11 +2931,7 @@
 						462.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 22:02:28 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "373, Storage",
@@ -3948,11 +2943,7 @@
 						471.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 22:01:51 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Floor 3, Biology Storage",
@@ -3964,11 +2955,7 @@
 						426.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:52:44 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Floor 3, Storage 2",
@@ -3980,11 +2967,7 @@
 						467.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 21:56:59 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			],
 			"Bathrooms / Building Services": [
@@ -3998,11 +2981,7 @@
 						351.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 22:05:33 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Boys' Bathroom 3R",
@@ -4014,11 +2993,7 @@
 						379.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 22:07:00 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Girls' Bathroom 3L",
@@ -4030,11 +3005,7 @@
 						351.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 22:05:54 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Girls' Bathroom 3R",
@@ -4046,11 +3017,7 @@
 						379.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sun Dec 22 2019 22:06:18 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			]
 		},
@@ -4066,12 +3033,7 @@
 						454.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:26:13 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "McDonald's",
@@ -4083,12 +3045,7 @@
 						440.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:25:05 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Restaurant Kitchen",
@@ -4100,12 +3057,7 @@
 						459.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:25:53 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Turkish Delight Parlor",
@@ -4117,12 +3069,7 @@
 						440.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:25:22 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			],
 			"Recreation": [
@@ -4136,12 +3083,7 @@
 						344.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:23:00 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Blair Park",
@@ -4153,12 +3095,7 @@
 						310.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:23:15 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Blair River",
@@ -4170,12 +3107,7 @@
 						332.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:22:33 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Daniel Zhu Memorial Park",
@@ -4187,12 +3119,7 @@
 						373.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:24:14 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Grande Plaza de Blair",
@@ -4204,12 +3131,7 @@
 						376.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:21:40 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Inconspicuous Patch of Grass",
@@ -4221,12 +3143,7 @@
 						287.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:23:28 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Other Plaza",
@@ -4238,12 +3155,7 @@
 						288.8515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:22:15 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Zhu Croquet Field",
@@ -4255,12 +3167,7 @@
 						375.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Sat Jan 04 2020 22:14:25 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Zhu River",
@@ -4272,13 +3179,7 @@
 						383.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 21:00:29 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					],
-					"notes": "\"They say that a single dip in Zhu Memorial River from the foot crossing can increase IQ by 10.\" - Jason Liu"
+					"doors": null
 				}
 			],
 			"Learning and Relaxation": [
@@ -4292,12 +3193,7 @@
 						420.203125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:21:20 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Center for Higher Study and Philosophy",
@@ -4309,13 +3205,7 @@
 						267.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:17:27 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					],
-					"notes": "\"Basically big brain place full of books that is better than the stupid media center on the first floor\" - Jason Liu"
+					"doors": null
 				},
 				{
 					"id": "Lockers",
@@ -4327,12 +3217,7 @@
 						396.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:16:33 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Security Booth/Lounge",
@@ -4344,12 +3229,7 @@
 						364.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:16:16 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			],
 			"Outdoor Areas": [
@@ -4363,12 +3243,7 @@
 						372.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:13:22 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Infinity Hot Tub/Jacuzzi",
@@ -4380,12 +3255,7 @@
 						396.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:14:28 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Pool",
@@ -4397,12 +3267,7 @@
 						372.6015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:14:09 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Turkish Restaurant, Outdoor Patio",
@@ -4414,12 +3279,7 @@
 						468.1015625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:14:48 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			],
 			"Commercial Facilities": [
@@ -4433,12 +3293,7 @@
 						314.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:28:46 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Luxury Goods Bazaar",
@@ -4450,12 +3305,7 @@
 						359.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:24:30 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				},
 				{
 					"id": "Premium Texas Instruments Store",
@@ -4467,12 +3317,7 @@
 						317.3515625
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:24:43 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			],
 			"Entertainment": [
@@ -4486,5330 +3331,190 @@
 						381.703125
 					],
 					"vertices": null,
-					"doors": null,
-					"updated": "Mon Dec 23 2019 10:26:34 GMT-0500 (Eastern Standard Time)",
-					"authors": [
-						"Jason Liu",
-						"Jeffrey Tong"
-					]
+					"doors": null
 				}
 			]
 		}
 	],
-	"nodes": [
-		{
-			"floor": 1,
-			"links": [
-				593316
-			],
-			"id": 245247,
-			"pos": [
-				63.0625,
-				144.8515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				593316,
-				740307
-			],
-			"id": 767771,
-			"pos": [
-				50.0625,
-				123.1015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				740307,
-				9471,
-				873977
-			],
-			"id": 147407,
-			"pos": [
-				117.3125,
-				78.1015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				9471
-			],
-			"id": 630707,
-			"pos": [
-				185.3125,
-				33.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				873977,
-				367110,
-				410574
-			],
-			"id": 41555,
-			"pos": [
-				198.5625,
-				201.8515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				216054,
-				959607,
-				771743
-			],
-			"id": 246275,
-			"pos": [
-				272.8125,
-				222.8515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				379497,
-				216054
-			],
-			"id": 718808,
-			"pos": [
-				237.3125,
-				233.8515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				645187,
-				379497
-			],
-			"id": 615624,
-			"pos": [
-				190.0625,
-				235.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				367110,
-				645187
-			],
-			"id": 122148,
-			"pos": [
-				184.0625,
-				219.1015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				771743,
-				36776,
-				82968
-			],
-			"id": 272804,
-			"pos": [
-				321.0625,
-				235.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				410885,
-				907908,
-				133150
-			],
-			"id": 473853,
-			"pos": [
-				321.0625,
-				343.1015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				410885,
-				869464
-			],
-			"id": 268768,
-			"pos": [
-				110.3125,
-				342.6015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				907908,
-				144737,
-				577815
-			],
-			"id": 272266,
-			"pos": [
-				321.0625,
-				399.6015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				144737,
-				3138
-			],
-			"id": 500770,
-			"pos": [
-				320.8125,
-				430.9765625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				3138,
-				122797
-			],
-			"id": 633590,
-			"pos": [
-				293.3125,
-				430.8515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				74409,
-				577815,
-				793872
-			],
-			"id": 421948,
-			"pos": [
-				457.0625,
-				399.1015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				793872,
-				281127,
-				882058
-			],
-			"id": 958928,
-			"pos": [
-				457.0625,
-				426.8515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				281127,
-				433729
-			],
-			"id": 694896,
-			"pos": [
-				456.8125,
-				459.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				433729,
-				8107
-			],
-			"id": 730604,
-			"pos": [
-				429.5625,
-				459.1015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				748554,
-				882058,
-				129370
-			],
-			"id": 942838,
-			"pos": [
-				594.3125,
-				427.6015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				129370,
-				586151,
-				466599
-			],
-			"id": 463265,
-			"pos": [
-				594.3125,
-				454.1015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				586151
-			],
-			"id": 449149,
-			"pos": [
-				594.0625,
-				487.6015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				466599,
-				598424
-			],
-			"id": 60523,
-			"pos": [
-				697.8125,
-				454.6015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				598424,
-				12048
-			],
-			"id": 329627,
-			"pos": [
-				697.5625,
-				482.8515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				748554,
-				586201,
-				19979
-			],
-			"id": 258928,
-			"pos": [
-				594.8125,
-				311.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				36776,
-				747284,
-				386473
-			],
-			"id": 176012,
-			"pos": [
-				379.5625,
-				249.8515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				747284
-			],
-			"id": 86497,
-			"pos": [
-				380.0625,
-				171.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				386473,
-				510348,
-				579277
-			],
-			"id": 507250,
-			"pos": [
-				437.8125,
-				267.7265625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				569981
-			],
-			"id": 145124,
-			"pos": [
-				438.3125,
-				170.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				510348,
-				74409,
-				117289
-			],
-			"id": 89069,
-			"pos": [
-				458.3125,
-				273.8515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				608713,
-				329706,
-				202861
-			],
-			"id": 836965,
-			"pos": [
-				667.7038043478261,
-				331.2646059782609
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				608713,
-				972937
-			],
-			"id": 743176,
-			"pos": [
-				667.7038043478261,
-				377.2646059782609
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				972937,
-				709268
-			],
-			"id": 957159,
-			"pos": [
-				703.5625,
-				411.1015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				709268,
-				263714
-			],
-			"id": 274798,
-			"pos": [
-				761.0625,
-				415.1015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				263714,
-				455014
-			],
-			"id": 413147,
-			"pos": [
-				782.3125,
-				407.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				455014,
-				940375,
-				781172
-			],
-			"id": 502935,
-			"pos": [
-				944.0625,
-				408.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				355944,
-				136121
-			],
-			"id": 165062,
-			"pos": [
-				944.4375,
-				322.2265625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				355944,
-				318920
-			],
-			"id": 760944,
-			"pos": [
-				955.0625,
-				322.2265625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				318920,
-				461214
-			],
-			"id": 299213,
-			"pos": [
-				955.1875,
-				301.2265625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				461214,
-				474801,
-				515240
-			],
-			"id": 930049,
-			"pos": [
-				1000.0625,
-				300.8515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				474801
-			],
-			"id": 472051,
-			"pos": [
-				1000.5625,
-				285.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				515240,
-				940375,
-				261976
-			],
-			"id": 133058,
-			"pos": [
-				998.5625,
-				408.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				261976,
-				276505,
-				513208
-			],
-			"id": 692783,
-			"pos": [
-				1015.3125,
-				408.8515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				276505
-			],
-			"id": 532817,
-			"pos": [
-				1014.8125,
-				318.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				513208
-			],
-			"id": 885240,
-			"pos": [
-				1077.0625,
-				409.1015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				329706
-			],
-			"id": 657030,
-			"pos": [
-				667.2038043478261,
-				287.7646059782609
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				410574,
-				887213,
-				626300
-			],
-			"id": 883314,
-			"pos": [
-				246.4375,
-				185.9765625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				674039,
-				626300,
-				959607
-			],
-			"id": 942244,
-			"pos": [
-				265.1875,
-				195.7265625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				887213,
-				502168
-			],
-			"id": 344040,
-			"pos": [
-				268.9375,
-				166.1015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				502168,
-				674039
-			],
-			"id": 551646,
-			"pos": [
-				278.4375,
-				174.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				781172,
-				136121,
-				24590
-			],
-			"id": 487832,
-			"pos": [
-				943.6875,
-				381.9765625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				24590
-			],
-			"id": 229075,
-			"pos": [
-				917.1875,
-				381.7265625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				579277,
-				505523,
-				569981
-			],
-			"id": 577825,
-			"pos": [
-				438.0625,
-				248.8515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				505523,
-				882936
-			],
-			"id": 932796,
-			"pos": [
-				403.0625,
-				237.4765625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				869464,
-				932001
-			],
-			"id": 964654,
-			"pos": [
-				110.3125,
-				367.6015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				932001,
-				465897
-			],
-			"id": 390054,
-			"pos": [
-				110.3125,
-				396.6015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				465897,
-				61071
-			],
-			"id": 386262,
-			"pos": [
-				121.3125,
-				396.7265625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				586201,
-				10359
-			],
-			"id": 663317,
-			"pos": [
-				612.6875,
-				316.2265625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				699287,
-				759204
-			],
-			"id": 301190,
-			"pos": [
-				612.4375,
-				353.2265625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				82968,
-				133150,
-				439904
-			],
-			"id": 714387,
-			"pos": [
-				321.1875,
-				253.8515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				439904,
-				553791
-			],
-			"id": 688013,
-			"pos": [
-				294.0625,
-				253.9765625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				553791,
-				877157
-			],
-			"id": 782813,
-			"pos": [
-				294.0625,
-				271.9765625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				117289,
-				19979,
-				273720
-			],
-			"id": 21452,
-			"pos": [
-				527.5625,
-				293.1015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				670901,
-				61071
-			],
-			"id": 604683,
-			"pos": [
-				121.0625,
-				397.2265625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				653901,
-				993863
-			],
-			"id": 449781,
-			"pos": [
-				112.0625,
-				397.3515625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				571126,
-				653901
-			],
-			"id": 864840,
-			"pos": [
-				111.82029724121094,
-				371.1458320617676
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				462183,
-				93277,
-				557730
-			],
-			"id": 764925,
-			"pos": [
-				321.5625,
-				371.2265625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				93277,
-				445557,
-				581730
-			],
-			"id": 405086,
-			"pos": [
-				321.8125,
-				398.7265625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				573426,
-				5290
-			],
-			"id": 669753,
-			"pos": [
-				293.3125,
-				430.2265625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				296054,
-				600574
-			],
-			"id": 409584,
-			"pos": [
-				293.3125,
-				439.4765625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				208451,
-				296054
-			],
-			"id": 54854,
-			"pos": [
-				321.8125,
-				439.2265625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				806651,
-				877157
-			],
-			"id": 228246,
-			"pos": [
-				294.3125,
-				272.2265625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				806651,
-				46594,
-				9528
-			],
-			"id": 439895,
-			"pos": [
-				303.4375,
-				272.2265625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				432006,
-				462183,
-				46594
-			],
-			"id": 784308,
-			"pos": [
-				321.8125,
-				276.9765625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				432006,
-				764702
-			],
-			"id": 692041,
-			"pos": [
-				321.8125,
-				250.2265625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				764702,
-				563247,
-				638170
-			],
-			"id": 386080,
-			"pos": [
-				372.8125,
-				263.2265625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				563247,
-				189288,
-				202265
-			],
-			"id": 759035,
-			"pos": [
-				376.8125,
-				249.9765625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				764703,
-				882936
-			],
-			"id": 930546,
-			"pos": [
-				403.3125,
-				238.2265625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				189288,
-				764703
-			],
-			"id": 636081,
-			"pos": [
-				381.8125,
-				232.4765625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				638170,
-				202360,
-				684646
-			],
-			"id": 252337,
-			"pos": [
-				458.5625,
-				287.6015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				581730,
-				219037,
-				202360
-			],
-			"id": 505446,
-			"pos": [
-				458.0625,
-				399.1015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				219037,
-				12212,
-				928176
-			],
-			"id": 536980,
-			"pos": [
-				458.0625,
-				426.6015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				755275,
-				65236
-			],
-			"id": 141336,
-			"pos": [
-				457.8125,
-				468.1015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				755275,
-				482996
-			],
-			"id": 579525,
-			"pos": [
-				430.0625,
-				468.3515625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				362192,
-				9333
-			],
-			"id": 720976,
-			"pos": [
-				430.0625,
-				458.8515625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				928176,
-				247265,
-				385715
-			],
-			"id": 108553,
-			"pos": [
-				594.5625,
-				426.8515625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				385715,
-				566508,
-				888220
-			],
-			"id": 506267,
-			"pos": [
-				594.8125,
-				454.6015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				566508
-			],
-			"id": 209090,
-			"pos": [
-				594.8125,
-				471.6015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				34359,
-				760766
-			],
-			"id": 575826,
-			"pos": [
-				698.6875,
-				454.9765625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				760766,
-				707239
-			],
-			"id": 227595,
-			"pos": [
-				698.5625,
-				482.1015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				126713,
-				454386
-			],
-			"id": 204231,
-			"pos": [
-				688.3125,
-				482.1015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				811061,
-				247265,
-				437918
-			],
-			"id": 683647,
-			"pos": [
-				594.8125,
-				325.1015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				811061,
-				334789,
-				565836
-			],
-			"id": 187250,
-			"pos": [
-				612.8125,
-				330.3515625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				334789,
-				867301
-			],
-			"id": 488522,
-			"pos": [
-				621.8125,
-				332.6015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				867301,
-				560782
-			],
-			"id": 67662,
-			"pos": [
-				621.8125,
-				352.8515625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				670901,
-				571126,
-				557730
-			],
-			"id": 654012,
-			"pos": [
-				121.32029724121094,
-				370.8958320617676
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				9528,
-				210239
-			],
-			"id": 222179,
-			"pos": [
-				303.3125,
-				246.1015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				202265,
-				310761
-			],
-			"id": 983518,
-			"pos": [
-				398.6875,
-				256.4765625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				10359,
-				202861,
-				931662
-			],
-			"id": 497335,
-			"pos": [
-				621.8125,
-				318.8515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				931662,
-				699287
-			],
-			"id": 733944,
-			"pos": [
-				621.8125,
-				353.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				759204,
-				565836
-			],
-			"id": 48358,
-			"pos": [
-				612.3125,
-				331.3515625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				12048,
-				454386
-			],
-			"id": 57570,
-			"pos": [
-				688.8125,
-				482.8515625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				888220,
-				126713,
-				34359
-			],
-			"id": 198597,
-			"pos": [
-				688.3125,
-				455.1015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				8107,
-				482996
-			],
-			"id": 605990,
-			"pos": [
-				429.5625,
-				469.1015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				65236,
-				362192,
-				12212
-			],
-			"id": 249071,
-			"pos": [
-				457.8125,
-				458.6015625
-			]
-		},
-		{
-			"floor": 1,
-			"links": [
-				122797,
-				600574
-			],
-			"id": 438863,
-			"pos": [
-				293.3125,
-				439.8515625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				445557,
-				208451,
-				573426
-			],
-			"id": 141777,
-			"pos": [
-				321.8125,
-				430.6015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				331519,
-				993863
-			],
-			"id": 4254,
-			"pos": [
-				111.5625,
-				397.6015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				62313
-			],
-			"id": 302271,
-			"pos": [
-				111.8125,
-				371.6015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				989499,
-				227329,
-				746796
-			],
-			"id": 526513,
-			"pos": [
-				293.5625,
-				370.6015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				916325,
-				848262,
-				989499
-			],
-			"id": 9389,
-			"pos": [
-				322.0625,
-				371.1015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				916325,
-				27096
-			],
-			"id": 165374,
-			"pos": [
-				321.5625,
-				440.8515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				41252,
-				5290
-			],
-			"id": 752548,
-			"pos": [
-				293.0625,
-				430.3515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				931286,
-				261697,
-				848262
-			],
-			"id": 637422,
-			"pos": [
-				458.0625,
-				371.3515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				22956,
-				261697,
-				630587
-			],
-			"id": 410246,
-			"pos": [
-				458.0625,
-				399.3515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				783652,
-				9333
-			],
-			"id": 780629,
-			"pos": [
-				430.8125,
-				459.6015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				153143,
-				22956,
-				588121
-			],
-			"id": 528801,
-			"pos": [
-				594.5625,
-				398.6015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				588121,
-				415574,
-				233154
-			],
-			"id": 175710,
-			"pos": [
-				595.0625,
-				483.3515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				415574
-			],
-			"id": 684563,
-			"pos": [
-				595.0625,
-				495.1015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				233154,
-				707239
-			],
-			"id": 422760,
-			"pos": [
-				699.1875,
-				483.4765625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				977215,
-				560782
-			],
-			"id": 909391,
-			"pos": [
-				622.3125,
-				352.8515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				711936,
-				977215
-			],
-			"id": 864336,
-			"pos": [
-				613.0625,
-				352.8515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				509847,
-				711936
-			],
-			"id": 196296,
-			"pos": [
-				613.3125,
-				330.3515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				990988,
-				509847,
-				153143
-			],
-			"id": 906436,
-			"pos": [
-				595.0625,
-				337.1015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				460398,
-				664325,
-				931286
-			],
-			"id": 16611,
-			"pos": [
-				458.0625,
-				299.6015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				485267,
-				210239
-			],
-			"id": 620377,
-			"pos": [
-				303.3125,
-				246.6015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				485267,
-				341935
-			],
-			"id": 570848,
-			"pos": [
-				294.0625,
-				244.1015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				746796,
-				341935,
-				632725
-			],
-			"id": 909335,
-			"pos": [
-				294.3125,
-				271.8515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				239567,
-				632725
-			],
-			"id": 227771,
-			"pos": [
-				351.0625,
-				271.8515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				455577,
-				310761
-			],
-			"id": 216499,
-			"pos": [
-				399.0625,
-				256.3515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				229119,
-				455577
-			],
-			"id": 540079,
-			"pos": [
-				419.5625,
-				263.1015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				239567,
-				460398,
-				229119
-			],
-			"id": 237405,
-			"pos": [
-				412.8125,
-				287.6015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				232606,
-				273720,
-				389170
-			],
-			"id": 975998,
-			"pos": [
-				528.0625,
-				293.1015625
-			]
-		},
-		{
-			"floor": 2,
-			"links": [
-				232606,
-				684646,
-				437918
-			],
-			"id": 367398,
-			"pos": [
-				524.0625,
-				305.6015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				860840,
-				389170,
-				932778
-			],
-			"id": 6548,
-			"pos": [
-				528.3125,
-				293.3515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				664325,
-				990988,
-				860840
-			],
-			"id": 669346,
-			"pos": [
-				527.5625,
-				318.8515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				783652,
-				402798
-			],
-			"id": 815319,
-			"pos": [
-				430.8125,
-				468.8515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				402798,
-				630587
-			],
-			"id": 685549,
-			"pos": [
-				458.3125,
-				469.1015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				41252,
-				27096
-			],
-			"id": 856229,
-			"pos": [
-				293.0625,
-				440.8515625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				331519,
-				652486
-			],
-			"id": 584360,
-			"pos": [
-				121.0625,
-				397.6015625
-			]
-		},
-		{
-			"floor": 3,
-			"links": [
-				652486,
-				62313,
-				227329
-			],
-			"id": 373446,
-			"pos": [
-				121.5625,
-				371.3515625
-			]
-		},
-		{
-			"floor": 4,
-			"links": [
-				611583,
-				932778
-			],
-			"id": 660232,
-			"pos": [
-				528.0625,
-				292.6015625
-			]
-		},
-		{
-			"floor": 4,
-			"links": [
-				611583,
-				993957,
-				999208
-			],
-			"id": 481954,
-			"pos": [
-				527.8125,
-				319.6015625
-			]
-		},
-		{
-			"floor": 4,
-			"links": [
-				993957
-			],
-			"id": 401760,
-			"pos": [
-				553.8125,
-				326.3515625
-			]
-		},
-		{
-			"floor": 4,
-			"links": [
-				862887,
-				63254,
-				999208
-			],
-			"id": 871462,
-			"pos": [
-				485.3125,
-				314.8515625
-			]
-		},
-		{
-			"floor": 4,
-			"links": [
-				140975,
-				862887
-			],
-			"id": 864513,
-			"pos": [
-				474.8125,
-				324.3515625
-			]
-		},
-		{
-			"floor": 4,
-			"links": [
-				779312,
-				140975,
-				855167
-			],
-			"id": 262639,
-			"pos": [
-				458.0625,
-				320.6015625
-			]
-		},
-		{
-			"floor": 4,
-			"links": [
-				682180,
-				63254
-			],
-			"id": 977142,
-			"pos": [
-				477.8125,
-				303.3515625
-			]
-		},
-		{
-			"floor": 4,
-			"links": [
-				842548,
-				779312,
-				682180
-			],
-			"id": 921490,
-			"pos": [
-				454.0625,
-				299.3515625
-			]
-		},
-		{
-			"floor": 4,
-			"links": [
-				842548,
-				414042
-			],
-			"id": 12766,
-			"pos": [
-				363.0625,
-				272.6015625
-			]
-		},
-		{
-			"floor": 4,
-			"links": [
-				587116,
-				19593
-			],
-			"id": 630848,
-			"pos": [
-				319.8125,
-				283.1015625
-			]
-		},
-		{
-			"floor": 4,
-			"links": [
-				587116,
-				326342
-			],
-			"id": 266651,
-			"pos": [
-				319.5625,
-				385.3515625
-			]
-		},
-		{
-			"floor": 4,
-			"links": [
-				326342,
-				557083,
-				855167
-			],
-			"id": 607515,
-			"pos": [
-				458.3125,
-				406.6015625
-			]
-		},
-		{
-			"floor": 4,
-			"links": [
-				557083
-			],
-			"id": 393522,
-			"pos": [
-				560.5625,
-				406.8515625
-			]
-		},
-		{
-			"floor": 4,
-			"links": [
-				19593,
-				414042
-			],
-			"id": 509687,
-			"pos": [
-				362.8125,
-				283.1015625
-			]
-		}
-	],
-	"links": [
-		{
-			"nodes": [
-				245247,
-				767771
-			],
-			"id": 593316,
-			"points": [
-				[
-					63.0625,
-					144.8515625,
-					1
-				],
-				[
-					50.0625,
-					123.1015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				767771,
-				147407
-			],
-			"id": 740307,
-			"points": [
-				[
-					50.0625,
-					123.1015625,
-					1
-				],
-				[
-					117.3125,
-					78.1015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				147407,
-				630707
-			],
-			"id": 9471,
-			"points": [
-				[
-					117.3125,
-					78.1015625,
-					1
-				],
-				[
-					185.3125,
-					33.3515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				147407,
-				41555
-			],
-			"id": 873977,
-			"points": [
-				[
-					117.3125,
-					78.1015625,
-					1
-				],
-				[
-					198.5625,
-					201.8515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				41555,
-				122148
-			],
-			"id": 367110,
-			"points": [
-				[
-					198.5625,
-					201.8515625,
-					1
-				],
-				[
-					184.0625,
-					219.1015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				122148,
-				615624
-			],
-			"id": 645187,
-			"points": [
-				[
-					184.0625,
-					219.1015625,
-					1
-				],
-				[
-					190.0625,
-					235.3515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				615624,
-				718808
-			],
-			"id": 379497,
-			"points": [
-				[
-					190.0625,
-					235.3515625,
-					1
-				],
-				[
-					237.3125,
-					233.8515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				718808,
-				246275
-			],
-			"id": 216054,
-			"points": [
-				[
-					237.3125,
-					233.8515625,
-					1
-				],
-				[
-					272.8125,
-					222.8515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				41555,
-				883314
-			],
-			"id": 410574,
-			"points": [
-				[
-					198.5625,
-					201.8515625,
-					1
-				],
-				[
-					246.4375,
-					185.9765625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				883314,
-				344040
-			],
-			"id": 887213,
-			"points": [
-				[
-					246.4375,
-					185.9765625,
-					1
-				],
-				[
-					268.9375,
-					166.1015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				344040,
-				551646
-			],
-			"id": 502168,
-			"points": [
-				[
-					268.9375,
-					166.1015625,
-					1
-				],
-				[
-					278.4375,
-					174.3515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				551646,
-				942244
-			],
-			"id": 674039,
-			"points": [
-				[
-					278.4375,
-					174.3515625,
-					1
-				],
-				[
-					265.1875,
-					195.7265625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				883314,
-				942244
-			],
-			"id": 626300,
-			"points": [
-				[
-					246.4375,
-					185.9765625,
-					1
-				],
-				[
-					265.1875,
-					195.7265625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				942244,
-				246275
-			],
-			"id": 959607,
-			"points": [
-				[
-					265.1875,
-					195.7265625,
-					1
-				],
-				[
-					272.8125,
-					222.8515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				246275,
-				272804
-			],
-			"id": 771743,
-			"points": [
-				[
-					272.8125,
-					222.8515625,
-					1
-				],
-				[
-					321.0625,
-					235.3515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				473853,
-				268768
-			],
-			"id": 410885,
-			"points": [
-				[
-					321.0625,
-					343.1015625,
-					1
-				],
-				[
-					110.3125,
-					342.6015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				473853,
-				272266
-			],
-			"id": 907908,
-			"points": [
-				[
-					321.0625,
-					343.1015625,
-					1
-				],
-				[
-					321.0625,
-					399.6015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				272266,
-				500770
-			],
-			"id": 144737,
-			"points": [
-				[
-					321.0625,
-					399.6015625,
-					1
-				],
-				[
-					320.8125,
-					430.9765625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				500770,
-				633590
-			],
-			"id": 3138,
-			"points": [
-				[
-					320.8125,
-					430.9765625,
-					1
-				],
-				[
-					293.3125,
-					430.8515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				272804,
-				176012
-			],
-			"id": 36776,
-			"points": [
-				[
-					321.0625,
-					235.3515625,
-					1
-				],
-				[
-					379.5625,
-					249.8515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				176012,
-				86497
-			],
-			"id": 747284,
-			"points": [
-				[
-					379.5625,
-					249.8515625,
-					1
-				],
-				[
-					380.0625,
-					171.3515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				176012,
-				507250
-			],
-			"id": 386473,
-			"points": [
-				[
-					379.5625,
-					249.8515625,
-					1
-				],
-				[
-					437.8125,
-					267.7265625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				507250,
-				89069
-			],
-			"id": 510348,
-			"points": [
-				[
-					437.8125,
-					267.7265625,
-					1
-				],
-				[
-					458.3125,
-					273.8515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				89069,
-				421948
-			],
-			"id": 74409,
-			"points": [
-				[
-					458.3125,
-					273.8515625,
-					1
-				],
-				[
-					457.0625,
-					399.1015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				272266,
-				421948
-			],
-			"id": 577815,
-			"points": [
-				[
-					321.0625,
-					399.6015625,
-					1
-				],
-				[
-					457.0625,
-					399.1015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				421948,
-				958928
-			],
-			"id": 793872,
-			"points": [
-				[
-					457.0625,
-					399.1015625,
-					1
-				],
-				[
-					457.0625,
-					426.8515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				958928,
-				694896
-			],
-			"id": 281127,
-			"points": [
-				[
-					457.0625,
-					426.8515625,
-					1
-				],
-				[
-					456.8125,
-					459.3515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				694896,
-				730604
-			],
-			"id": 433729,
-			"points": [
-				[
-					456.8125,
-					459.3515625,
-					1
-				],
-				[
-					429.5625,
-					459.1015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				258928,
-				942838
-			],
-			"id": 748554,
-			"points": [
-				[
-					594.8125,
-					311.3515625,
-					1
-				],
-				[
-					594.3125,
-					427.6015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				958928,
-				942838
-			],
-			"id": 882058,
-			"points": [
-				[
-					457.0625,
-					426.8515625,
-					1
-				],
-				[
-					594.3125,
-					427.6015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				942838,
-				463265
-			],
-			"id": 129370,
-			"points": [
-				[
-					594.3125,
-					427.6015625,
-					1
-				],
-				[
-					594.3125,
-					454.1015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				463265,
-				449149
-			],
-			"id": 586151,
-			"points": [
-				[
-					594.3125,
-					454.1015625,
-					1
-				],
-				[
-					594.0625,
-					487.6015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				463265,
-				60523
-			],
-			"id": 466599,
-			"points": [
-				[
-					594.3125,
-					454.1015625,
-					1
-				],
-				[
-					697.8125,
-					454.6015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				60523,
-				329627
-			],
-			"id": 598424,
-			"points": [
-				[
-					697.8125,
-					454.6015625,
-					1
-				],
-				[
-					697.5625,
-					482.8515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				836965,
-				743176
-			],
-			"id": 608713,
-			"points": [
-				[
-					667.7038043478261,
-					331.2646059782609,
-					1
-				],
-				[
-					667.7038043478261,
-					377.2646059782609,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				743176,
-				957159
-			],
-			"id": 972937,
-			"points": [
-				[
-					667.7038043478261,
-					377.2646059782609,
-					1
-				],
-				[
-					703.5625,
-					411.1015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				957159,
-				274798
-			],
-			"id": 709268,
-			"points": [
-				[
-					703.5625,
-					411.1015625,
-					1
-				],
-				[
-					761.0625,
-					415.1015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				274798,
-				413147
-			],
-			"id": 263714,
-			"points": [
-				[
-					761.0625,
-					415.1015625,
-					1
-				],
-				[
-					782.3125,
-					407.3515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				413147,
-				502935
-			],
-			"id": 455014,
-			"points": [
-				[
-					782.3125,
-					407.3515625,
-					1
-				],
-				[
-					944.0625,
-					408.3515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				165062,
-				760944
-			],
-			"id": 355944,
-			"points": [
-				[
-					944.4375,
-					322.2265625,
-					1
-				],
-				[
-					955.0625,
-					322.2265625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				760944,
-				299213
-			],
-			"id": 318920,
-			"points": [
-				[
-					955.0625,
-					322.2265625,
-					1
-				],
-				[
-					955.1875,
-					301.2265625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				299213,
-				930049
-			],
-			"id": 461214,
-			"points": [
-				[
-					955.1875,
-					301.2265625,
-					1
-				],
-				[
-					1000.0625,
-					300.8515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				930049,
-				472051
-			],
-			"id": 474801,
-			"points": [
-				[
-					1000.0625,
-					300.8515625,
-					1
-				],
-				[
-					1000.5625,
-					285.3515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				930049,
-				133058
-			],
-			"id": 515240,
-			"points": [
-				[
-					1000.0625,
-					300.8515625,
-					1
-				],
-				[
-					998.5625,
-					408.3515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				502935,
-				133058
-			],
-			"id": 940375,
-			"points": [
-				[
-					944.0625,
-					408.3515625,
-					1
-				],
-				[
-					998.5625,
-					408.3515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				133058,
-				692783
-			],
-			"id": 261976,
-			"points": [
-				[
-					998.5625,
-					408.3515625,
-					1
-				],
-				[
-					1015.3125,
-					408.8515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				692783,
-				532817
-			],
-			"id": 276505,
-			"points": [
-				[
-					1015.3125,
-					408.8515625,
-					1
-				],
-				[
-					1014.8125,
-					318.3515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				692783,
-				885240
-			],
-			"id": 513208,
-			"points": [
-				[
-					1015.3125,
-					408.8515625,
-					1
-				],
-				[
-					1077.0625,
-					409.1015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				502935,
-				487832
-			],
-			"id": 781172,
-			"points": [
-				[
-					944.0625,
-					408.3515625,
-					1
-				],
-				[
-					943.6875,
-					381.9765625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				487832,
-				165062
-			],
-			"id": 136121,
-			"points": [
-				[
-					943.6875,
-					381.9765625,
-					1
-				],
-				[
-					944.4375,
-					322.2265625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				487832,
-				229075
-			],
-			"id": 24590,
-			"points": [
-				[
-					943.6875,
-					381.9765625,
-					1
-				],
-				[
-					917.1875,
-					381.7265625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				836965,
-				657030
-			],
-			"id": 329706,
-			"points": [
-				[
-					667.7038043478261,
-					331.2646059782609,
-					1
-				],
-				[
-					667.2038043478261,
-					287.7646059782609,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				507250,
-				577825
-			],
-			"id": 579277,
-			"points": [
-				[
-					437.8125,
-					267.7265625,
-					1
-				],
-				[
-					438.0625,
-					248.8515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				577825,
-				932796
-			],
-			"id": 505523,
-			"points": [
-				[
-					438.0625,
-					248.8515625,
-					1
-				],
-				[
-					403.0625,
-					237.4765625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				577825,
-				145124
-			],
-			"id": 569981,
-			"points": [
-				[
-					438.0625,
-					248.8515625,
-					1
-				],
-				[
-					438.3125,
-					170.3515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				268768,
-				964654
-			],
-			"id": 869464,
-			"points": [
-				[
-					110.3125,
-					342.6015625,
-					1
-				],
-				[
-					110.3125,
-					367.6015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				964654,
-				390054
-			],
-			"id": 932001,
-			"points": [
-				[
-					110.3125,
-					367.6015625,
-					1
-				],
-				[
-					110.3125,
-					396.6015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				390054,
-				386262
-			],
-			"id": 465897,
-			"points": [
-				[
-					110.3125,
-					396.6015625,
-					1
-				],
-				[
-					121.3125,
-					396.7265625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				258928,
-				663317
-			],
-			"id": 586201,
-			"points": [
-				[
-					594.8125,
-					311.3515625,
-					1
-				],
-				[
-					612.6875,
-					316.2265625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				272804,
-				714387
-			],
-			"id": 82968,
-			"points": [
-				[
-					321.0625,
-					235.3515625,
-					1
-				],
-				[
-					321.1875,
-					253.8515625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				714387,
-				473853
-			],
-			"id": 133150,
-			"points": [
-				[
-					321.1875,
-					253.8515625,
-					1
-				],
-				[
-					321.0625,
-					343.1015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				714387,
-				688013
-			],
-			"id": 439904,
-			"points": [
-				[
-					321.1875,
-					253.8515625,
-					1
-				],
-				[
-					294.0625,
-					253.9765625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				688013,
-				782813
-			],
-			"id": 553791,
-			"points": [
-				[
-					294.0625,
-					253.9765625,
-					1
-				],
-				[
-					294.0625,
-					271.9765625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				89069,
-				21452
-			],
-			"id": 117289,
-			"points": [
-				[
-					458.3125,
-					273.8515625,
-					1
-				],
-				[
-					527.5625,
-					293.1015625,
-					1
-				]
-			]
-		},
-		{
-			"nodes": [
-				21452,
-				258928
-			],
-			"id": 19979,
-			"points": [
-				[
-					527.5625,
-					293.1015625,
-					1
-				],
-				[
-					594.8125,
-					311.3515625,
-					1
-				]
-			]
-		},
-		{
-			"points": [
-				[
-					612.6875,
-					316.2265625,
-					1
-				],
-				[
-					621.8125,
-					318.8515625,
-					1
-				]
-			],
-			"nodes": [
-				663317,
-				497335
-			],
-			"id": 10359
-		},
-		{
-			"points": [
-				[
-					621.8125,
-					318.8515625,
-					1
-				],
-				[
-					667.7038043478261,
-					331.2646059782609,
-					1
-				]
-			],
-			"nodes": [
-				497335,
-				836965
-			],
-			"id": 202861
-		},
-		{
-			"points": [
-				[
-					621.8125,
-					318.8515625,
-					1
-				],
-				[
-					621.8125,
-					353.3515625,
-					1
-				]
-			],
-			"nodes": [
-				497335,
-				733944
-			],
-			"id": 931662
-		},
-		{
-			"points": [
-				[
-					612.4375,
-					353.2265625,
-					1
-				],
-				[
-					621.8125,
-					353.3515625,
-					1
-				]
-			],
-			"nodes": [
-				301190,
-				733944
-			],
-			"id": 699287
-		},
-		{
-			"points": [
-				[
-					612.4375,
-					353.2265625,
-					1
-				],
-				[
-					612.3125,
-					331.3515625,
-					1
-				]
-			],
-			"nodes": [
-				301190,
-				48358
-			],
-			"id": 759204
-		},
-		{
-			"points": [
-				[
-					697.5625,
-					482.8515625,
-					1
-				],
-				[
-					688.8125,
-					482.8515625,
-					1
-				]
-			],
-			"nodes": [
-				329627,
-				57570
-			],
-			"id": 12048
-		},
-		{
-			"points": [
-				[
-					429.5625,
-					459.1015625,
-					1
-				],
-				[
-					429.5625,
-					469.1015625,
-					1
-				]
-			],
-			"nodes": [
-				730604,
-				605990
-			],
-			"id": 8107
-		},
-		{
-			"points": [
-				[
-					293.3125,
-					430.8515625,
-					1
-				],
-				[
-					293.3125,
-					439.8515625,
-					1
-				]
-			],
-			"nodes": [
-				633590,
-				438863
-			],
-			"id": 122797
-		},
-		{
-			"points": [
-				[
-					294.3125,
-					272.2265625,
-					2
-				],
-				[
-					303.4375,
-					272.2265625,
-					2
-				]
-			],
-			"nodes": [
-				228246,
-				439895
-			],
-			"id": 806651
-		},
-		{
-			"points": [
-				[
-					321.8125,
-					250.2265625,
-					2
-				],
-				[
-					321.8125,
-					276.9765625,
-					2
-				]
-			],
-			"nodes": [
-				692041,
-				784308
-			],
-			"id": 432006
-		},
-		{
-			"points": [
-				[
-					321.8125,
-					250.2265625,
-					2
-				],
-				[
-					372.8125,
-					263.2265625,
-					2
-				]
-			],
-			"nodes": [
-				692041,
-				386080
-			],
-			"id": 764702
-		},
-		{
-			"points": [
-				[
-					372.8125,
-					263.2265625,
-					2
-				],
-				[
-					376.8125,
-					249.9765625,
-					2
-				]
-			],
-			"nodes": [
-				386080,
-				759035
-			],
-			"id": 563247
-		},
-		{
-			"points": [
-				[
-					376.8125,
-					249.9765625,
-					2
-				],
-				[
-					381.8125,
-					232.4765625,
-					2
-				]
-			],
-			"nodes": [
-				759035,
-				636081
-			],
-			"id": 189288
-		},
-		{
-			"points": [
-				[
-					381.8125,
-					232.4765625,
-					2
-				],
-				[
-					403.3125,
-					238.2265625,
-					2
-				]
-			],
-			"nodes": [
-				636081,
-				930546
-			],
-			"id": 764703
-		},
-		{
-			"points": [
-				[
-					376.8125,
-					249.9765625,
-					2
-				],
-				[
-					398.6875,
-					256.4765625,
-					2
-				]
-			],
-			"nodes": [
-				759035,
-				983518
-			],
-			"id": 202265
-		},
-		{
-			"points": [
-				[
-					321.8125,
-					276.9765625,
-					2
-				],
-				[
-					321.5625,
-					371.2265625,
-					2
-				]
-			],
-			"nodes": [
-				784308,
-				764925
-			],
-			"id": 462183
-		},
-		{
-			"points": [
-				[
-					321.5625,
-					371.2265625,
-					2
-				],
-				[
-					321.8125,
-					398.7265625,
-					2
-				]
-			],
-			"nodes": [
-				764925,
-				405086
-			],
-			"id": 93277
-		},
-		{
-			"points": [
-				[
-					321.8125,
-					398.7265625,
-					2
-				],
-				[
-					321.8125,
-					430.6015625,
-					2
-				]
-			],
-			"nodes": [
-				405086,
-				141777
-			],
-			"id": 445557
-		},
-		{
-			"points": [
-				[
-					321.8125,
-					430.6015625,
-					2
-				],
-				[
-					321.8125,
-					439.2265625,
-					2
-				]
-			],
-			"nodes": [
-				141777,
-				54854
-			],
-			"id": 208451
-		},
-		{
-			"points": [
-				[
-					293.3125,
-					439.4765625,
-					2
-				],
-				[
-					321.8125,
-					439.2265625,
-					2
-				]
-			],
-			"nodes": [
-				409584,
-				54854
-			],
-			"id": 296054
-		},
-		{
-			"points": [
-				[
-					293.3125,
-					430.2265625,
-					2
-				],
-				[
-					321.8125,
-					430.6015625,
-					2
-				]
-			],
-			"nodes": [
-				669753,
-				141777
-			],
-			"id": 573426
-		},
-		{
-			"points": [
-				[
-					321.8125,
-					398.7265625,
-					2
-				],
-				[
-					458.0625,
-					399.1015625,
-					2
-				]
-			],
-			"nodes": [
-				405086,
-				505446
-			],
-			"id": 581730
-		},
-		{
-			"points": [
-				[
-					458.0625,
-					399.1015625,
-					2
-				],
-				[
-					458.0625,
-					426.6015625,
-					2
-				]
-			],
-			"nodes": [
-				505446,
-				536980
-			],
-			"id": 219037
-		},
-		{
-			"points": [
-				[
-					430.0625,
-					468.3515625,
-					2
-				],
-				[
-					457.8125,
-					468.1015625,
-					2
-				]
-			],
-			"nodes": [
-				579525,
-				141336
-			],
-			"id": 755275
-		},
-		{
-			"points": [
-				[
-					457.8125,
-					468.1015625,
-					2
-				],
-				[
-					457.8125,
-					458.6015625,
-					2
-				]
-			],
-			"nodes": [
-				141336,
-				249071
-			],
-			"id": 65236
-		},
-		{
-			"points": [
-				[
-					457.8125,
-					458.6015625,
-					2
-				],
-				[
-					430.0625,
-					458.8515625,
-					2
-				]
-			],
-			"nodes": [
-				249071,
-				720976
-			],
-			"id": 362192
-		},
-		{
-			"points": [
-				[
-					457.8125,
-					458.6015625,
-					2
-				],
-				[
-					458.0625,
-					426.6015625,
-					2
-				]
-			],
-			"nodes": [
-				249071,
-				536980
-			],
-			"id": 12212
-		},
-		{
-			"points": [
-				[
-					121.0625,
-					397.2265625,
-					2
-				],
-				[
-					121.32029724121094,
-					370.8958320617676,
-					2
-				]
-			],
-			"nodes": [
-				604683,
-				654012
-			],
-			"id": 670901
-		},
-		{
-			"points": [
-				[
-					121.32029724121094,
-					370.8958320617676,
-					2
-				],
-				[
-					111.82029724121094,
-					371.1458320617676,
-					2
-				]
-			],
-			"nodes": [
-				654012,
-				864840
-			],
-			"id": 571126
-		},
-		{
-			"points": [
-				[
-					111.82029724121094,
-					371.1458320617676,
-					2
-				],
-				[
-					112.0625,
-					397.3515625,
-					2
-				]
-			],
-			"nodes": [
-				864840,
-				449781
-			],
-			"id": 653901
-		},
-		{
-			"points": [
-				[
-					121.32029724121094,
-					370.8958320617676,
-					2
-				],
-				[
-					321.5625,
-					371.2265625,
-					2
-				]
-			],
-			"nodes": [
-				654012,
-				764925
-			],
-			"id": 557730
-		},
-		{
-			"points": [
-				[
-					372.8125,
-					263.2265625,
-					2
-				],
-				[
-					458.5625,
-					287.6015625,
-					2
-				]
-			],
-			"nodes": [
-				386080,
-				252337
-			],
-			"id": 638170
-		},
-		{
-			"points": [
-				[
-					458.5625,
-					287.6015625,
-					2
-				],
-				[
-					458.0625,
-					399.1015625,
-					2
-				]
-			],
-			"nodes": [
-				252337,
-				505446
-			],
-			"id": 202360
-		},
-		{
-			"points": [
-				[
-					594.8125,
-					325.1015625,
-					2
-				],
-				[
-					612.8125,
-					330.3515625,
-					2
-				]
-			],
-			"nodes": [
-				683647,
-				187250
-			],
-			"id": 811061
-		},
-		{
-			"points": [
-				[
-					612.8125,
-					330.3515625,
-					2
-				],
-				[
-					621.8125,
-					332.6015625,
-					2
-				]
-			],
-			"nodes": [
-				187250,
-				488522
-			],
-			"id": 334789
-		},
-		{
-			"points": [
-				[
-					621.8125,
-					332.6015625,
-					2
-				],
-				[
-					621.8125,
-					352.8515625,
-					2
-				]
-			],
-			"nodes": [
-				488522,
-				67662
-			],
-			"id": 867301
-		},
-		{
-			"points": [
-				[
-					458.0625,
-					426.6015625,
-					2
-				],
-				[
-					594.5625,
-					426.8515625,
-					2
-				]
-			],
-			"nodes": [
-				536980,
-				108553
-			],
-			"id": 928176
-		},
-		{
-			"points": [
-				[
-					594.5625,
-					426.8515625,
-					2
-				],
-				[
-					594.8125,
-					325.1015625,
-					2
-				]
-			],
-			"nodes": [
-				108553,
-				683647
-			],
-			"id": 247265
-		},
-		{
-			"points": [
-				[
-					594.5625,
-					426.8515625,
-					2
-				],
-				[
-					594.8125,
-					454.6015625,
-					2
-				]
-			],
-			"nodes": [
-				108553,
-				506267
-			],
-			"id": 385715
-		},
-		{
-			"points": [
-				[
-					594.8125,
-					454.6015625,
-					2
-				],
-				[
-					594.8125,
-					471.6015625,
-					2
-				]
-			],
-			"nodes": [
-				506267,
-				209090
-			],
-			"id": 566508
-		},
-		{
-			"points": [
-				[
-					594.8125,
-					454.6015625,
-					2
-				],
-				[
-					688.3125,
-					455.1015625,
-					2
-				]
-			],
-			"nodes": [
-				506267,
-				198597
-			],
-			"id": 888220
-		},
-		{
-			"points": [
-				[
-					688.3125,
-					455.1015625,
-					2
-				],
-				[
-					688.3125,
-					482.1015625,
-					2
-				]
-			],
-			"nodes": [
-				198597,
-				204231
-			],
-			"id": 126713
-		},
-		{
-			"points": [
-				[
-					688.3125,
-					455.1015625,
-					2
-				],
-				[
-					698.6875,
-					454.9765625,
-					2
-				]
-			],
-			"nodes": [
-				198597,
-				575826
-			],
-			"id": 34359
-		},
-		{
-			"points": [
-				[
-					698.6875,
-					454.9765625,
-					2
-				],
-				[
-					698.5625,
-					482.1015625,
-					2
-				]
-			],
-			"nodes": [
-				575826,
-				227595
-			],
-			"id": 760766
-		},
-		{
-			"points": [
-				[
-					121.3125,
-					396.7265625,
-					1
-				],
-				[
-					121.0625,
-					397.2265625,
-					2
-				]
-			],
-			"nodes": [
-				386262,
-				604683
-			],
-			"id": 61071
-		},
-		{
-			"points": [
-				[
-					294.0625,
-					271.9765625,
-					1
-				],
-				[
-					294.3125,
-					272.2265625,
-					2
-				]
-			],
-			"nodes": [
-				782813,
-				228246
-			],
-			"id": 877157
-		},
-		{
-			"points": [
-				[
-					403.0625,
-					237.4765625,
-					1
-				],
-				[
-					403.3125,
-					238.2265625,
-					2
-				]
-			],
-			"nodes": [
-				932796,
-				930546
-			],
-			"id": 882936
-		},
-		{
-			"points": [
-				[
-					293.3125,
-					439.8515625,
-					1
-				],
-				[
-					293.3125,
-					439.4765625,
-					2
-				]
-			],
-			"nodes": [
-				438863,
-				409584
-			],
-			"id": 600574
-		},
-		{
-			"points": [
-				[
-					429.5625,
-					469.1015625,
-					1
-				],
-				[
-					430.0625,
-					468.3515625,
-					2
-				]
-			],
-			"nodes": [
-				605990,
-				579525
-			],
-			"id": 482996
-		},
-		{
-			"points": [
-				[
-					688.8125,
-					482.8515625,
-					1
-				],
-				[
-					688.3125,
-					482.1015625,
-					2
-				]
-			],
-			"nodes": [
-				57570,
-				204231
-			],
-			"id": 454386
-		},
-		{
-			"points": [
-				[
-					612.3125,
-					331.3515625,
-					1
-				],
-				[
-					612.8125,
-					330.3515625,
-					2
-				]
-			],
-			"nodes": [
-				48358,
-				187250
-			],
-			"id": 565836
-		},
-		{
-			"points": [
-				[
-					303.4375,
-					272.2265625,
-					2
-				],
-				[
-					321.8125,
-					276.9765625,
-					2
-				]
-			],
-			"nodes": [
-				439895,
-				784308
-			],
-			"id": 46594
-		},
-		{
-			"points": [
-				[
-					351.0625,
-					271.8515625,
-					3
-				],
-				[
-					412.8125,
-					287.6015625,
-					3
-				]
-			],
-			"nodes": [
-				227771,
-				237405
-			],
-			"id": 239567
-		},
-		{
-			"points": [
-				[
-					412.8125,
-					287.6015625,
-					3
-				],
-				[
-					458.0625,
-					299.6015625,
-					3
-				]
-			],
-			"nodes": [
-				237405,
-				16611
-			],
-			"id": 460398
-		},
-		{
-			"points": [
-				[
-					419.5625,
-					263.1015625,
-					3
-				],
-				[
-					412.8125,
-					287.6015625,
-					3
-				]
-			],
-			"nodes": [
-				540079,
-				237405
-			],
-			"id": 229119
-		},
-		{
-			"points": [
-				[
-					399.0625,
-					256.3515625,
-					3
-				],
-				[
-					419.5625,
-					263.1015625,
-					3
-				]
-			],
-			"nodes": [
-				216499,
-				540079
-			],
-			"id": 455577
-		},
-		{
-			"points": [
-				[
-					528.0625,
-					293.1015625,
-					2
-				],
-				[
-					524.0625,
-					305.6015625,
-					2
-				]
-			],
-			"nodes": [
-				975998,
-				367398
-			],
-			"id": 232606
-		},
-		{
-			"points": [
-				[
-					458.5625,
-					287.6015625,
-					2
-				],
-				[
-					524.0625,
-					305.6015625,
-					2
-				]
-			],
-			"nodes": [
-				252337,
-				367398
-			],
-			"id": 684646
-		},
-		{
-			"points": [
-				[
-					524.0625,
-					305.6015625,
-					2
-				],
-				[
-					594.8125,
-					325.1015625,
-					2
-				]
-			],
-			"nodes": [
-				367398,
-				683647
-			],
-			"id": 437918
-		},
-		{
-			"points": [
-				[
-					527.5625,
-					293.1015625,
-					1
-				],
-				[
-					528.0625,
-					293.1015625,
-					2
-				]
-			],
-			"nodes": [
-				21452,
-				975998
-			],
-			"name": "Elevator",
-			"id": 273720
-		},
-		{
-			"points": [
-				[
-					458.0625,
-					299.6015625,
-					3
-				],
-				[
-					527.5625,
-					318.8515625,
-					3
-				]
-			],
-			"nodes": [
-				16611,
-				669346
-			],
-			"id": 664325
-		},
-		{
-			"points": [
-				[
-					527.5625,
-					318.8515625,
-					3
-				],
-				[
-					595.0625,
-					337.1015625,
-					3
-				]
-			],
-			"nodes": [
-				669346,
-				906436
-			],
-			"id": 990988
-		},
-		{
-			"points": [
-				[
-					528.3125,
-					293.3515625,
-					3
-				],
-				[
-					527.5625,
-					318.8515625,
-					3
-				]
-			],
-			"nodes": [
-				6548,
-				669346
-			],
-			"id": 860840
-		},
-		{
-			"points": [
-				[
-					613.3125,
-					330.3515625,
-					3
-				],
-				[
-					595.0625,
-					337.1015625,
-					3
-				]
-			],
-			"nodes": [
-				196296,
-				906436
-			],
-			"id": 509847
-		},
-		{
-			"points": [
-				[
-					613.0625,
-					352.8515625,
-					3
-				],
-				[
-					613.3125,
-					330.3515625,
-					3
-				]
-			],
-			"nodes": [
-				864336,
-				196296
-			],
-			"id": 711936
-		},
-		{
-			"points": [
-				[
-					622.3125,
-					352.8515625,
-					3
-				],
-				[
-					613.0625,
-					352.8515625,
-					3
-				]
-			],
-			"nodes": [
-				909391,
-				864336
-			],
-			"id": 977215
-		},
-		{
-			"points": [
-				[
-					595.0625,
-					337.1015625,
-					3
-				],
-				[
-					594.5625,
-					398.6015625,
-					3
-				]
-			],
-			"nodes": [
-				906436,
-				528801
-			],
-			"id": 153143
-		},
-		{
-			"points": [
-				[
-					458.0625,
-					399.3515625,
-					3
-				],
-				[
-					594.5625,
-					398.6015625,
-					3
-				]
-			],
-			"nodes": [
-				410246,
-				528801
-			],
-			"id": 22956
-		},
-		{
-			"points": [
-				[
-					458.0625,
-					371.3515625,
-					3
-				],
-				[
-					458.0625,
-					299.6015625,
-					3
-				]
-			],
-			"nodes": [
-				637422,
-				16611
-			],
-			"id": 931286
-		},
-		{
-			"points": [
-				[
-					458.0625,
-					371.3515625,
-					3
-				],
-				[
-					458.0625,
-					399.3515625,
-					3
-				]
-			],
-			"nodes": [
-				637422,
-				410246
-			],
-			"id": 261697
-		},
-		{
-			"points": [
-				[
-					430.8125,
-					459.6015625,
-					3
-				],
-				[
-					430.8125,
-					468.8515625,
-					3
-				]
-			],
-			"nodes": [
-				780629,
-				815319
-			],
-			"id": 783652
-		},
-		{
-			"points": [
-				[
-					430.8125,
-					468.8515625,
-					3
-				],
-				[
-					458.3125,
-					469.1015625,
-					3
-				]
-			],
-			"nodes": [
-				815319,
-				685549
-			],
-			"id": 402798
-		},
-		{
-			"points": [
-				[
-					458.3125,
-					469.1015625,
-					3
-				],
-				[
-					458.0625,
-					399.3515625,
-					3
-				]
-			],
-			"nodes": [
-				685549,
-				410246
-			],
-			"id": 630587
-		},
-		{
-			"points": [
-				[
-					595.0625,
-					483.3515625,
-					3
-				],
-				[
-					594.5625,
-					398.6015625,
-					3
-				]
-			],
-			"nodes": [
-				175710,
-				528801
-			],
-			"id": 588121
-		},
-		{
-			"points": [
-				[
-					595.0625,
-					483.3515625,
-					3
-				],
-				[
-					595.0625,
-					495.1015625,
-					3
-				]
-			],
-			"nodes": [
-				175710,
-				684563
-			],
-			"id": 415574
-		},
-		{
-			"points": [
-				[
-					699.1875,
-					483.4765625,
-					3
-				],
-				[
-					595.0625,
-					483.3515625,
-					3
-				]
-			],
-			"nodes": [
-				422760,
-				175710
-			],
-			"id": 233154
-		},
-		{
-			"points": [
-				[
-					321.5625,
-					440.8515625,
-					3
-				],
-				[
-					322.0625,
-					371.1015625,
-					3
-				]
-			],
-			"nodes": [
-				165374,
-				9389
-			],
-			"id": 916325
-		},
-		{
-			"points": [
-				[
-					293.0625,
-					430.3515625,
-					3
-				],
-				[
-					293.0625,
-					440.8515625,
-					3
-				]
-			],
-			"nodes": [
-				752548,
-				856229
-			],
-			"id": 41252
-		},
-		{
-			"points": [
-				[
-					293.0625,
-					440.8515625,
-					3
-				],
-				[
-					321.5625,
-					440.8515625,
-					3
-				]
-			],
-			"nodes": [
-				856229,
-				165374
-			],
-			"id": 27096
-		},
-		{
-			"points": [
-				[
-					322.0625,
-					371.1015625,
-					3
-				],
-				[
-					458.0625,
-					371.3515625,
-					3
-				]
-			],
-			"nodes": [
-				9389,
-				637422
-			],
-			"id": 848262
-		},
-		{
-			"points": [
-				[
-					322.0625,
-					371.1015625,
-					3
-				],
-				[
-					293.5625,
-					370.6015625,
-					3
-				]
-			],
-			"nodes": [
-				9389,
-				526513
-			],
-			"id": 989499
-		},
-		{
-			"points": [
-				[
-					111.5625,
-					397.6015625,
-					3
-				],
-				[
-					121.0625,
-					397.6015625,
-					3
-				]
-			],
-			"nodes": [
-				4254,
-				584360
-			],
-			"id": 331519
-		},
-		{
-			"points": [
-				[
-					121.0625,
-					397.6015625,
-					3
-				],
-				[
-					121.5625,
-					371.3515625,
-					3
-				]
-			],
-			"nodes": [
-				584360,
-				373446
-			],
-			"id": 652486
-		},
-		{
-			"points": [
-				[
-					121.5625,
-					371.3515625,
-					3
-				],
-				[
-					111.8125,
-					371.6015625,
-					3
-				]
-			],
-			"nodes": [
-				373446,
-				302271
-			],
-			"id": 62313
-		},
-		{
-			"points": [
-				[
-					121.5625,
-					371.3515625,
-					3
-				],
-				[
-					293.5625,
-					370.6015625,
-					3
-				]
-			],
-			"nodes": [
-				373446,
-				526513
-			],
-			"id": 227329
-		},
-		{
-			"points": [
-				[
-					293.5625,
-					370.6015625,
-					3
-				],
-				[
-					294.3125,
-					271.8515625,
-					3
-				]
-			],
-			"nodes": [
-				526513,
-				909335
-			],
-			"id": 746796
-		},
-		{
-			"points": [
-				[
-					303.4375,
-					272.2265625,
-					2
-				],
-				[
-					303.3125,
-					246.1015625,
-					2
-				]
-			],
-			"nodes": [
-				439895,
-				222179
-			],
-			"id": 9528
-		},
-		{
-			"points": [
-				[
-					303.3125,
-					246.6015625,
-					3
-				],
-				[
-					294.0625,
-					244.1015625,
-					3
-				]
-			],
-			"nodes": [
-				620377,
-				570848
-			],
-			"id": 485267
-		},
-		{
-			"points": [
-				[
-					294.0625,
-					244.1015625,
-					3
-				],
-				[
-					294.3125,
-					271.8515625,
-					3
-				]
-			],
-			"nodes": [
-				570848,
-				909335
-			],
-			"id": 341935
-		},
-		{
-			"points": [
-				[
-					294.3125,
-					271.8515625,
-					3
-				],
-				[
-					351.0625,
-					271.8515625,
-					3
-				]
-			],
-			"nodes": [
-				909335,
-				227771
-			],
-			"id": 632725
-		},
-		{
-			"points": [
-				[
-					112.0625,
-					397.3515625,
-					2
-				],
-				[
-					111.5625,
-					397.6015625,
-					3
-				]
-			],
-			"nodes": [
-				449781,
-				4254
-			],
-			"id": 993863
-		},
-		{
-			"points": [
-				[
-					293.3125,
-					430.2265625,
-					2
-				],
-				[
-					293.0625,
-					430.3515625,
-					3
-				]
-			],
-			"nodes": [
-				669753,
-				752548
-			],
-			"id": 5290
-		},
-		{
-			"points": [
-				[
-					430.0625,
-					458.8515625,
-					2
-				],
-				[
-					430.8125,
-					459.6015625,
-					3
-				]
-			],
-			"nodes": [
-				720976,
-				780629
-			],
-			"id": 9333
-		},
-		{
-			"points": [
-				[
-					698.5625,
-					482.1015625,
-					2
-				],
-				[
-					699.1875,
-					483.4765625,
-					3
-				]
-			],
-			"nodes": [
-				227595,
-				422760
-			],
-			"id": 707239
-		},
-		{
-			"points": [
-				[
-					621.8125,
-					352.8515625,
-					2
-				],
-				[
-					622.3125,
-					352.8515625,
-					3
-				]
-			],
-			"nodes": [
-				67662,
-				909391
-			],
-			"id": 560782
-		},
-		{
-			"points": [
-				[
-					528.0625,
-					293.1015625,
-					2
-				],
-				[
-					528.3125,
-					293.3515625,
-					3
-				]
-			],
-			"nodes": [
-				975998,
-				6548
-			],
-			"name": "Elevator",
-			"id": 389170
-		},
-		{
-			"points": [
-				[
-					398.6875,
-					256.4765625,
-					2
-				],
-				[
-					399.0625,
-					256.3515625,
-					3
-				]
-			],
-			"nodes": [
-				983518,
-				216499
-			],
-			"id": 310761
-		},
-		{
-			"points": [
-				[
-					303.3125,
-					246.1015625,
-					2
-				],
-				[
-					303.3125,
-					246.6015625,
-					3
-				]
-			],
-			"nodes": [
-				222179,
-				620377
-			],
-			"id": 210239
-		},
-		{
-			"points": [
-				[
-					319.8125,
-					283.1015625,
-					4
-				],
-				[
-					319.5625,
-					385.3515625,
-					4
-				]
-			],
-			"nodes": [
-				630848,
-				266651
-			],
-			"id": 587116
-		},
-		{
-			"points": [
-				[
-					319.5625,
-					385.3515625,
-					4
-				],
-				[
-					458.3125,
-					406.6015625,
-					4
-				]
-			],
-			"nodes": [
-				266651,
-				607515
-			],
-			"id": 326342
-		},
-		{
-			"points": [
-				[
-					458.3125,
-					406.6015625,
-					4
-				],
-				[
-					560.5625,
-					406.8515625,
-					4
-				]
-			],
-			"nodes": [
-				607515,
-				393522
-			],
-			"id": 557083
-		},
-		{
-			"points": [
-				[
-					454.0625,
-					299.3515625,
-					4
-				],
-				[
-					363.0625,
-					272.6015625,
-					4
-				]
-			],
-			"nodes": [
-				921490,
-				12766
-			],
-			"id": 842548
-		},
-		{
-			"points": [
-				[
-					458.0625,
-					320.6015625,
-					4
-				],
-				[
-					454.0625,
-					299.3515625,
-					4
-				]
-			],
-			"nodes": [
-				262639,
-				921490
-			],
-			"id": 779312
-		},
-		{
-			"points": [
-				[
-					474.8125,
-					324.3515625,
-					4
-				],
-				[
-					458.0625,
-					320.6015625,
-					4
-				]
-			],
-			"nodes": [
-				864513,
-				262639
-			],
-			"id": 140975
-		},
-		{
-			"points": [
-				[
-					477.8125,
-					303.3515625,
-					4
-				],
-				[
-					454.0625,
-					299.3515625,
-					4
-				]
-			],
-			"nodes": [
-				977142,
-				921490
-			],
-			"id": 682180
-		},
-		{
-			"points": [
-				[
-					485.3125,
-					314.8515625,
-					4
-				],
-				[
-					474.8125,
-					324.3515625,
-					4
-				]
-			],
-			"nodes": [
-				871462,
-				864513
-			],
-			"id": 862887
-		},
-		{
-			"points": [
-				[
-					485.3125,
-					314.8515625,
-					4
-				],
-				[
-					477.8125,
-					303.3515625,
-					4
-				]
-			],
-			"nodes": [
-				871462,
-				977142
-			],
-			"id": 63254
-		},
-		{
-			"points": [
-				[
-					528.0625,
-					292.6015625,
-					4
-				],
-				[
-					527.8125,
-					319.6015625,
-					4
-				]
-			],
-			"nodes": [
-				660232,
-				481954
-			],
-			"id": 611583
-		},
-		{
-			"points": [
-				[
-					527.8125,
-					319.6015625,
-					4
-				],
-				[
-					553.8125,
-					326.3515625,
-					4
-				]
-			],
-			"nodes": [
-				481954,
-				401760
-			],
-			"id": 993957
-		},
-		{
-			"points": [
-				[
-					527.8125,
-					319.6015625,
-					4
-				],
-				[
-					485.3125,
-					314.8515625,
-					4
-				]
-			],
-			"nodes": [
-				481954,
-				871462
-			],
-			"id": 999208
-		},
-		{
-			"points": [
-				[
-					528.3125,
-					293.3515625,
-					3
-				],
-				[
-					528.0625,
-					292.6015625,
-					4
-				]
-			],
-			"nodes": [
-				6548,
-				660232
-			],
-			"name": "Elevator",
-			"id": 932778
-		},
-		{
-			"points": [
-				[
-					319.8125,
-					283.1015625,
-					4
-				],
-				[
-					362.8125,
-					283.1015625,
-					4
-				]
-			],
-			"nodes": [
-				630848,
-				509687
-			],
-			"id": 19593
-		},
-		{
-			"points": [
-				[
-					363.0625,
-					272.6015625,
-					4
-				],
-				[
-					362.8125,
-					283.1015625,
-					4
-				]
-			],
-			"nodes": [
-				12766,
-				509687
-			],
-			"id": 414042
-		},
-		{
-			"points": [
-				[
-					458.3125,
-					406.6015625,
-					4
-				],
-				[
-					458.0625,
-					320.6015625,
-					4
-				]
-			],
-			"nodes": [
-				607515,
-				262639
-			],
-			"id": 855167
-		}
+	"edges": [
+        {"endpoint1": [1, 50.0625, 123.1016], "endpoint2": [1, 63.0625, 144.8516]},
+        {"endpoint1": [1, 50.0625, 123.1016], "endpoint2": [1, 117.3125, 78.1016]},
+        {"endpoint1": [1, 110.3125, 342.6016], "endpoint2": [1, 110.3125, 367.6016]},
+        {"endpoint1": [1, 110.3125, 342.6016], "endpoint2": [1, 321.0625, 343.1016]},
+        {"endpoint1": [1, 110.3125, 367.6016], "endpoint2": [1, 110.3125, 396.6016]},
+        {"endpoint1": [1, 110.3125, 396.6016], "endpoint2": [1, 121.3125, 396.7266]},
+        {"endpoint1": [1, 117.3125, 78.1016], "endpoint2": [1, 185.3125, 33.3516]},
+        {"endpoint1": [1, 117.3125, 78.1016], "endpoint2": [1, 198.5625, 201.8516]},
+        {"endpoint1": [1, 184.0625, 219.1016], "endpoint2": [1, 190.0625, 235.3516]},
+        {"endpoint1": [1, 184.0625, 219.1016], "endpoint2": [1, 198.5625, 201.8516]},
+        {"endpoint1": [1, 190.0625, 235.3516], "endpoint2": [1, 237.3125, 233.8516]},
+        {"endpoint1": [1, 198.5625, 201.8516], "endpoint2": [1, 246.4375, 185.9766]},
+        {"endpoint1": [1, 237.3125, 233.8516], "endpoint2": [1, 272.8125, 222.8516]},
+        {"endpoint1": [1, 246.4375, 185.9766], "endpoint2": [1, 265.1875, 195.7266]},
+        {"endpoint1": [1, 246.4375, 185.9766], "endpoint2": [1, 268.9375, 166.1016]},
+        {"endpoint1": [1, 265.1875, 195.7266], "endpoint2": [1, 272.8125, 222.8516]},
+        {"endpoint1": [1, 265.1875, 195.7266], "endpoint2": [1, 278.4375, 174.3516]},
+        {"endpoint1": [1, 268.9375, 166.1016], "endpoint2": [1, 278.4375, 174.3516]},
+        {"endpoint1": [1, 272.8125, 222.8516], "endpoint2": [1, 321.0625, 235.3516]},
+        {"endpoint1": [1, 293.3125, 430.8516], "endpoint2": [1, 293.3125, 439.8516]},
+        {"endpoint1": [1, 293.3125, 430.8516], "endpoint2": [1, 320.8125, 430.9766]},
+        {"endpoint1": [1, 294.0625, 253.9766], "endpoint2": [1, 294.0625, 271.9766]},
+        {"endpoint1": [1, 294.0625, 253.9766], "endpoint2": [1, 321.1875, 253.8516]},
+        {"endpoint1": [1, 320.8125, 430.9766], "endpoint2": [1, 321.0625, 399.6016]},
+        {"endpoint1": [1, 321.0625, 235.3516], "endpoint2": [1, 321.1875, 253.8516]},
+        {"endpoint1": [1, 321.0625, 235.3516], "endpoint2": [1, 379.5625, 249.8516]},
+        {"endpoint1": [1, 321.0625, 343.1016], "endpoint2": [1, 321.0625, 399.6016]},
+        {"endpoint1": [1, 321.0625, 343.1016], "endpoint2": [1, 321.1875, 253.8516]},
+        {"endpoint1": [1, 321.0625, 399.6016], "endpoint2": [1, 457.0625, 399.1016]},
+        {"endpoint1": [1, 379.5625, 249.8516], "endpoint2": [1, 380.0625, 171.3516]},
+        {"endpoint1": [1, 379.5625, 249.8516], "endpoint2": [1, 437.8125, 267.7266]},
+        {"endpoint1": [1, 403.0625, 237.4766], "endpoint2": [1, 438.0625, 248.8516]},
+        {"endpoint1": [1, 429.5625, 459.1016], "endpoint2": [1, 429.5625, 469.1016]},
+        {"endpoint1": [1, 429.5625, 459.1016], "endpoint2": [1, 456.8125, 459.3516]},
+        {"endpoint1": [1, 437.8125, 267.7266], "endpoint2": [1, 438.0625, 248.8516]},
+        {"endpoint1": [1, 437.8125, 267.7266], "endpoint2": [1, 458.3125, 273.8516]},
+        {"endpoint1": [1, 438.0625, 248.8516], "endpoint2": [1, 438.3125, 170.3516]},
+        {"endpoint1": [1, 456.8125, 459.3516], "endpoint2": [1, 457.0625, 426.8516]},
+        {"endpoint1": [1, 457.0625, 399.1016], "endpoint2": [1, 457.0625, 426.8516]},
+        {"endpoint1": [1, 457.0625, 399.1016], "endpoint2": [1, 458.3125, 273.8516]},
+        {"endpoint1": [1, 457.0625, 426.8516], "endpoint2": [1, 594.3125, 427.6016]},
+        {"endpoint1": [1, 458.3125, 273.8516], "endpoint2": [1, 527.5625, 293.1016]},
+        {"endpoint1": [1, 527.5625, 293.1016], "endpoint2": [1, 594.8125, 311.3516]},
+        {"endpoint1": [1, 594.0625, 487.6016], "endpoint2": [1, 594.3125, 454.1016]},
+        {"endpoint1": [1, 594.3125, 427.6016], "endpoint2": [1, 594.3125, 454.1016]},
+        {"endpoint1": [1, 594.3125, 427.6016], "endpoint2": [1, 594.8125, 311.3516]},
+        {"endpoint1": [1, 594.3125, 454.1016], "endpoint2": [1, 697.8125, 454.6016]},
+        {"endpoint1": [1, 594.8125, 311.3516], "endpoint2": [1, 612.6875, 316.2266]},
+        {"endpoint1": [1, 612.3125, 331.3516], "endpoint2": [1, 612.4375, 353.2266]},
+        {"endpoint1": [1, 612.4375, 353.2266], "endpoint2": [1, 621.8125, 353.3516]},
+        {"endpoint1": [1, 612.6875, 316.2266], "endpoint2": [1, 621.8125, 318.8516]},
+        {"endpoint1": [1, 621.8125, 318.8516], "endpoint2": [1, 621.8125, 353.3516]},
+        {"endpoint1": [1, 621.8125, 318.8516], "endpoint2": [1, 667.7038, 331.2646]},
+        {"endpoint1": [1, 667.2038, 287.7646], "endpoint2": [1, 667.7038, 331.2646]},
+        {"endpoint1": [1, 667.7038, 331.2646], "endpoint2": [1, 667.7038, 377.2646]},
+        {"endpoint1": [1, 667.7038, 377.2646], "endpoint2": [1, 703.5625, 411.1016]},
+        {"endpoint1": [1, 688.8125, 482.8516], "endpoint2": [1, 697.5625, 482.8516]},
+        {"endpoint1": [1, 697.5625, 482.8516], "endpoint2": [1, 697.8125, 454.6016]},
+        {"endpoint1": [1, 703.5625, 411.1016], "endpoint2": [1, 761.0625, 415.1016]},
+        {"endpoint1": [1, 761.0625, 415.1016], "endpoint2": [1, 782.3125, 407.3516]},
+        {"endpoint1": [1, 782.3125, 407.3516], "endpoint2": [1, 944.0625, 408.3516]},
+        {"endpoint1": [1, 917.1875, 381.7266], "endpoint2": [1, 943.6875, 381.9766]},
+        {"endpoint1": [1, 943.6875, 381.9766], "endpoint2": [1, 944.0625, 408.3516]},
+        {"endpoint1": [1, 943.6875, 381.9766], "endpoint2": [1, 944.4375, 322.2266]},
+        {"endpoint1": [1, 944.0625, 408.3516], "endpoint2": [1, 998.5625, 408.3516]},
+        {"endpoint1": [1, 944.4375, 322.2266], "endpoint2": [1, 955.0625, 322.2266]},
+        {"endpoint1": [1, 955.0625, 322.2266], "endpoint2": [1, 955.1875, 301.2266]},
+        {"endpoint1": [1, 955.1875, 301.2266], "endpoint2": [1, 1000.0625, 300.8516]},
+        {"endpoint1": [1, 998.5625, 408.3516], "endpoint2": [1, 1000.0625, 300.8516]},
+        {"endpoint1": [1, 998.5625, 408.3516], "endpoint2": [1, 1015.3125, 408.8516]},
+        {"endpoint1": [1, 1000.0625, 300.8516], "endpoint2": [1, 1000.5625, 285.3516]},
+        {"endpoint1": [1, 1014.8125, 318.3516], "endpoint2": [1, 1015.3125, 408.8516]},
+        {"endpoint1": [1, 1015.3125, 408.8516], "endpoint2": [1, 1077.0625, 409.1016]},
+        {"endpoint1": [1, 121.3125, 396.7266], "endpoint2": [2, 121.0625, 397.2266]},
+        {"endpoint1": [1, 293.3125, 439.8516], "endpoint2": [2, 293.3125, 439.4766]},
+        {"endpoint1": [1, 294.0625, 271.9766], "endpoint2": [2, 294.3125, 272.2266]},
+        {"endpoint1": [1, 403.0625, 237.4766], "endpoint2": [2, 403.3125, 238.2266]},
+        {"endpoint1": [1, 429.5625, 469.1016], "endpoint2": [2, 430.0625, 468.3516]},
+        {"endpoint1": [1, 527.5625, 293.1016], "endpoint2": [2, 528.0625, 293.1016], "name": "Elevator"},
+        {"endpoint1": [1, 612.3125, 331.3516], "endpoint2": [2, 612.8125, 330.3516]},
+        {"endpoint1": [1, 688.8125, 482.8516], "endpoint2": [2, 688.3125, 482.1016]},
+        {"endpoint1": [2, 111.8203, 371.1458], "endpoint2": [2, 112.0625, 397.3516]},
+        {"endpoint1": [2, 111.8203, 371.1458], "endpoint2": [2, 121.3203, 370.8958]},
+        {"endpoint1": [2, 121.0625, 397.2266], "endpoint2": [2, 121.3203, 370.8958]},
+        {"endpoint1": [2, 121.3203, 370.8958], "endpoint2": [2, 321.5625, 371.2266]},
+        {"endpoint1": [2, 293.3125, 430.2266], "endpoint2": [2, 321.8125, 430.6016]},
+        {"endpoint1": [2, 293.3125, 439.4766], "endpoint2": [2, 321.8125, 439.2266]},
+        {"endpoint1": [2, 294.3125, 272.2266], "endpoint2": [2, 303.4375, 272.2266]},
+        {"endpoint1": [2, 303.3125, 246.1016], "endpoint2": [2, 303.4375, 272.2266]},
+        {"endpoint1": [2, 303.4375, 272.2266], "endpoint2": [2, 321.8125, 276.9766]},
+        {"endpoint1": [2, 321.5625, 371.2266], "endpoint2": [2, 321.8125, 276.9766]},
+        {"endpoint1": [2, 321.5625, 371.2266], "endpoint2": [2, 321.8125, 398.7266]},
+        {"endpoint1": [2, 321.8125, 250.2266], "endpoint2": [2, 321.8125, 276.9766]},
+        {"endpoint1": [2, 321.8125, 250.2266], "endpoint2": [2, 372.8125, 263.2266]},
+        {"endpoint1": [2, 321.8125, 398.7266], "endpoint2": [2, 321.8125, 430.6016]},
+        {"endpoint1": [2, 321.8125, 398.7266], "endpoint2": [2, 458.0625, 399.1016]},
+        {"endpoint1": [2, 321.8125, 430.6016], "endpoint2": [2, 321.8125, 439.2266]},
+        {"endpoint1": [2, 372.8125, 263.2266], "endpoint2": [2, 376.8125, 249.9766]},
+        {"endpoint1": [2, 372.8125, 263.2266], "endpoint2": [2, 458.5625, 287.6016]},
+        {"endpoint1": [2, 376.8125, 249.9766], "endpoint2": [2, 381.8125, 232.4766]},
+        {"endpoint1": [2, 376.8125, 249.9766], "endpoint2": [2, 398.6875, 256.4766]},
+        {"endpoint1": [2, 381.8125, 232.4766], "endpoint2": [2, 403.3125, 238.2266]},
+        {"endpoint1": [2, 430.0625, 458.8516], "endpoint2": [2, 457.8125, 458.6016]},
+        {"endpoint1": [2, 430.0625, 468.3516], "endpoint2": [2, 457.8125, 468.1016]},
+        {"endpoint1": [2, 457.8125, 458.6016], "endpoint2": [2, 457.8125, 468.1016]},
+        {"endpoint1": [2, 457.8125, 458.6016], "endpoint2": [2, 458.0625, 426.6016]},
+        {"endpoint1": [2, 458.0625, 399.1016], "endpoint2": [2, 458.0625, 426.6016]},
+        {"endpoint1": [2, 458.0625, 399.1016], "endpoint2": [2, 458.5625, 287.6016]},
+        {"endpoint1": [2, 458.0625, 426.6016], "endpoint2": [2, 594.5625, 426.8516]},
+        {"endpoint1": [2, 458.5625, 287.6016], "endpoint2": [2, 524.0625, 305.6016]},
+        {"endpoint1": [2, 524.0625, 305.6016], "endpoint2": [2, 528.0625, 293.1016]},
+        {"endpoint1": [2, 524.0625, 305.6016], "endpoint2": [2, 594.8125, 325.1016]},
+        {"endpoint1": [2, 594.5625, 426.8516], "endpoint2": [2, 594.8125, 325.1016]},
+        {"endpoint1": [2, 594.5625, 426.8516], "endpoint2": [2, 594.8125, 454.6016]},
+        {"endpoint1": [2, 594.8125, 325.1016], "endpoint2": [2, 612.8125, 330.3516]},
+        {"endpoint1": [2, 594.8125, 454.6016], "endpoint2": [2, 594.8125, 471.6016]},
+        {"endpoint1": [2, 594.8125, 454.6016], "endpoint2": [2, 688.3125, 455.1016]},
+        {"endpoint1": [2, 612.8125, 330.3516], "endpoint2": [2, 621.8125, 332.6016]},
+        {"endpoint1": [2, 621.8125, 332.6016], "endpoint2": [2, 621.8125, 352.8516]},
+        {"endpoint1": [2, 688.3125, 455.1016], "endpoint2": [2, 688.3125, 482.1016]},
+        {"endpoint1": [2, 688.3125, 455.1016], "endpoint2": [2, 698.6875, 454.9766]},
+        {"endpoint1": [2, 698.5625, 482.1016], "endpoint2": [2, 698.6875, 454.9766]},
+        {"endpoint1": [2, 112.0625, 397.3516], "endpoint2": [3, 111.5625, 397.6016]},
+        {"endpoint1": [2, 293.3125, 430.2266], "endpoint2": [3, 293.0625, 430.3516]},
+        {"endpoint1": [2, 303.3125, 246.1016], "endpoint2": [3, 303.3125, 246.6016]},
+        {"endpoint1": [2, 398.6875, 256.4766], "endpoint2": [3, 399.0625, 256.3516]},
+        {"endpoint1": [2, 430.0625, 458.8516], "endpoint2": [3, 430.8125, 459.6016]},
+        {"endpoint1": [2, 528.0625, 293.1016], "endpoint2": [3, 528.3125, 293.3516], "name": "Elevator"},
+        {"endpoint1": [2, 621.8125, 352.8516], "endpoint2": [3, 622.3125, 352.8516]},
+        {"endpoint1": [2, 698.5625, 482.1016], "endpoint2": [3, 699.1875, 483.4766]},
+        {"endpoint1": [3, 111.5625, 397.6016], "endpoint2": [3, 121.0625, 397.6016]},
+        {"endpoint1": [3, 111.8125, 371.6016], "endpoint2": [3, 121.5625, 371.3516]},
+        {"endpoint1": [3, 121.0625, 397.6016], "endpoint2": [3, 121.5625, 371.3516]},
+        {"endpoint1": [3, 121.5625, 371.3516], "endpoint2": [3, 293.5625, 370.6016]},
+        {"endpoint1": [3, 293.0625, 430.3516], "endpoint2": [3, 293.0625, 440.8516]},
+        {"endpoint1": [3, 293.0625, 440.8516], "endpoint2": [3, 321.5625, 440.8516]},
+        {"endpoint1": [3, 293.5625, 370.6016], "endpoint2": [3, 294.3125, 271.8516]},
+        {"endpoint1": [3, 293.5625, 370.6016], "endpoint2": [3, 322.0625, 371.1016]},
+        {"endpoint1": [3, 294.0625, 244.1016], "endpoint2": [3, 294.3125, 271.8516]},
+        {"endpoint1": [3, 294.0625, 244.1016], "endpoint2": [3, 303.3125, 246.6016]},
+        {"endpoint1": [3, 294.3125, 271.8516], "endpoint2": [3, 351.0625, 271.8516]},
+        {"endpoint1": [3, 321.5625, 440.8516], "endpoint2": [3, 322.0625, 371.1016]},
+        {"endpoint1": [3, 322.0625, 371.1016], "endpoint2": [3, 458.0625, 371.3516]},
+        {"endpoint1": [3, 351.0625, 271.8516], "endpoint2": [3, 412.8125, 287.6016]},
+        {"endpoint1": [3, 399.0625, 256.3516], "endpoint2": [3, 419.5625, 263.1016]},
+        {"endpoint1": [3, 412.8125, 287.6016], "endpoint2": [3, 419.5625, 263.1016]},
+        {"endpoint1": [3, 412.8125, 287.6016], "endpoint2": [3, 458.0625, 299.6016]},
+        {"endpoint1": [3, 430.8125, 459.6016], "endpoint2": [3, 430.8125, 468.8516]},
+        {"endpoint1": [3, 430.8125, 468.8516], "endpoint2": [3, 458.3125, 469.1016]},
+        {"endpoint1": [3, 458.0625, 299.6016], "endpoint2": [3, 458.0625, 371.3516]},
+        {"endpoint1": [3, 458.0625, 299.6016], "endpoint2": [3, 527.5625, 318.8516]},
+        {"endpoint1": [3, 458.0625, 371.3516], "endpoint2": [3, 458.0625, 399.3516]},
+        {"endpoint1": [3, 458.0625, 399.3516], "endpoint2": [3, 458.3125, 469.1016]},
+        {"endpoint1": [3, 458.0625, 399.3516], "endpoint2": [3, 594.5625, 398.6016]},
+        {"endpoint1": [3, 527.5625, 318.8516], "endpoint2": [3, 528.3125, 293.3516]},
+        {"endpoint1": [3, 527.5625, 318.8516], "endpoint2": [3, 595.0625, 337.1016]},
+        {"endpoint1": [3, 594.5625, 398.6016], "endpoint2": [3, 595.0625, 337.1016]},
+        {"endpoint1": [3, 594.5625, 398.6016], "endpoint2": [3, 595.0625, 483.3516]},
+        {"endpoint1": [3, 595.0625, 337.1016], "endpoint2": [3, 613.3125, 330.3516]},
+        {"endpoint1": [3, 595.0625, 483.3516], "endpoint2": [3, 595.0625, 495.1016]},
+        {"endpoint1": [3, 595.0625, 483.3516], "endpoint2": [3, 699.1875, 483.4766]},
+        {"endpoint1": [3, 613.0625, 352.8516], "endpoint2": [3, 613.3125, 330.3516]},
+        {"endpoint1": [3, 613.0625, 352.8516], "endpoint2": [3, 622.3125, 352.8516]},
+        {"endpoint1": [3, 528.3125, 293.3516], "endpoint2": [4, 528.0625, 292.6016], "name": "Elevator"},
+        {"endpoint1": [4, 319.5625, 385.3516], "endpoint2": [4, 319.8125, 283.1016]},
+        {"endpoint1": [4, 319.5625, 385.3516], "endpoint2": [4, 458.3125, 406.6016]},
+        {"endpoint1": [4, 319.8125, 283.1016], "endpoint2": [4, 362.8125, 283.1016]},
+        {"endpoint1": [4, 362.8125, 283.1016], "endpoint2": [4, 363.0625, 272.6016]},
+        {"endpoint1": [4, 363.0625, 272.6016], "endpoint2": [4, 454.0625, 299.3516]},
+        {"endpoint1": [4, 454.0625, 299.3516], "endpoint2": [4, 458.0625, 320.6016]},
+        {"endpoint1": [4, 454.0625, 299.3516], "endpoint2": [4, 477.8125, 303.3516]},
+        {"endpoint1": [4, 458.0625, 320.6016], "endpoint2": [4, 458.3125, 406.6016]},
+        {"endpoint1": [4, 458.0625, 320.6016], "endpoint2": [4, 474.8125, 324.3516]},
+        {"endpoint1": [4, 458.3125, 406.6016], "endpoint2": [4, 560.5625, 406.8516]},
+        {"endpoint1": [4, 474.8125, 324.3516], "endpoint2": [4, 485.3125, 314.8516]},
+        {"endpoint1": [4, 477.8125, 303.3516], "endpoint2": [4, 485.3125, 314.8516]},
+        {"endpoint1": [4, 485.3125, 314.8516], "endpoint2": [4, 527.8125, 319.6016]},
+        {"endpoint1": [4, 527.8125, 319.6016], "endpoint2": [4, 528.0625, 292.6016]},
+        {"endpoint1": [4, 527.8125, 319.6016], "endpoint2": [4, 553.8125, 326.3516]}
 	]
 }

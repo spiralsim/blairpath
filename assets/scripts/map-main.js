@@ -3,11 +3,11 @@ var walkingSpeed = 1.35; // Walking speed in m/s
  * Converts a path length to a human-readable string with meters and estimated
  * time based on `walkingSpeed`: `a min b sec (x m)`. Lengths that are negative
  * or undefined are converted to `No path`.
- * @param {*} length Length in virtual px
+ * @param {*} distance Distance in normalized px
  */
-function stringifyLength(length) {
-	if (length < 0 || length == undefined) return `No path`;
-	const lengthInM = length * constants.METERS_PER_PIXEL,
+function prettifyDistance(distance) {
+	if (distance < 0 || distance == undefined) return `No path`;
+	const lengthInM = distance * constants.METERS_PER_PIXEL,
 		timeInSec = Math.round(lengthInM / walkingSpeed);
 	const min = Math.floor(timeInSec / 60), sec = timeInSec % 60;
 	var res = ``;
@@ -17,28 +17,58 @@ function stringifyLength(length) {
 }
 
 /* Data preprocessing */
-var rooms = nodes = links = [];
+var rooms = [];
+var edges = [];
 var constants = {};
-const dist2D = (a, b) => Math.sqrt(Math.pow(b[0] - a[0], 2) + Math.pow(b[1] - a[1], 2));
+function dist2D(a, b) {
+	return Math.sqrt(Math.pow(b[0] - a[0], 2) + Math.pow(b[1] - a[1], 2));
+}
+
+class Vertex {
+	constructor([floor, x, y]) {
+		this.floor = floor;
+		this.x = x;
+		this.y = y;
+	}
+	toString() {
+		return `(${this.floor},${this.x},${this.y})`
+	}
+}
+class Edge {
+	/**
+	 * @param {Vertex} endpoint1
+	 * @param {Vertex} endpoint2
+	 * @param {string} name
+	 */
+	constructor(endpoint1, endpoint2, name) {
+		this.endpoint1 = endpoint1;
+		this.endpoint2 = endpoint2;
+		this.name = name;
+	}
+
+	length() {
+		return Math.hypot(
+			(this.endpoint2.floor - this.endpoint1.floor) * constants.METERS_PER_FLOOR,
+			(this.endpoint2.x - this.endpoint1.x) * constants.METERS_PER_PIXEL,
+			(this.endpoint2.y - this.endpoint1.y) * constants.METERS_PER_PIXEL,
+		);
+	}
+}
+
 var tableLoaded = false;
 $.getJSON('/data.json', function (data) {
 	// Load constants
 	constants = data.constants;
 
 	// Initial load for all object types
-	["rooms", "nodes", "links"].forEach(o => eval(`${o} = data.${o};`));
+	rooms = data.rooms;
+	edges = data.edges.map(e => new Edge(new Vertex(e.endpoint1), new Vertex(e.endpoint2), e.name));
+	console.log(edges);
 	
 	// Flatten rooms data structure into list
 	rooms = rooms.map(f => Object.keys(f).map(s => f[s])).flat(2);
 	// Sort rooms first by floor, then by name
 	rooms.sort((a, b) => a.floor > b.floor || a.id > b.id ? 1 : -1);
-
-	// Assign distances to links
-	links.forEach(l => {
-		l.gLen = l.vLen = 0;
-		if (l.points[0][2] == l.points[1][2]) l.gLen = dist2D(l.points[0], l.points[1]);
-		else l.vLen = (l.points[1][2] - l.points[0][2]) * constants.METERS_PER_FLOOR / constants.METERS_PER_PIXEL;
-	});
 
 	// Remove placeholder rows
 	for (let i = 1; i <= 2; i++) document.getElementById("row-placeholder-" + i).remove();
@@ -155,112 +185,10 @@ function addPoint () {
 	autocomplete(document.getElementById("point-" + rowNum), rooms);
 };
 
-/* Calculate Route */
+/* Calculate Path */
 var path;
-// Creates a temporary node and link to connect a room to a link on the graph, then returns the new node
-function createTempNodeAndLink (room) {
-	// (If this has already been done, return the previously created node)
-	const existingNode = nodes.find(n => n.pos == room.center && n.floor == room.floor);
-	if (existingNode) return existingNode;
-
-	var newNode = {
-		pos: room.center,
-		floor: room.floor,
-		links: [],
-		tmp: true,
-		id: ~~(Math.random() * 1000000)
-	}, nearestNode = nodes.reduce((prev, curr) => {
-		  return curr.floor == room.floor && dist2D(curr.pos, room.center) < dist2D(prev.pos, room.center) ? curr : prev;
-	}), newLink = {
-		points: [
-			[... newNode.pos, room.floor],
-			[... nearestNode.pos, room.floor]
-		],
-		gLen: dist2D(newNode.pos, nearestNode.pos),
-		vLen: 0,
-		nodes: [newNode.id, nearestNode.id],
-		tmp: true,
-		id: ~~(Math.random() * 1000000)
-	};
-	[newNode, nearestNode].forEach(n => n.links.push(newLink.id));
-
-	nodes.push(newNode);
-	links.push(newLink);
-
-	return newNode;
-}
-// Returns the shortest path, with some additional information
-function computeDijkstraPath (start, end, options) {
-	// Set up algorithm
-	var queue = [start], currNode, result;
-	nodes.forEach(n => {
-		n.shortestDist = n == start ? 0 : Infinity;
-		n.shortestPath = {
-			length: 0,
-			nodes: [start],
-			links: []
-		};
-		n.visited = false;
-	});
-	links.forEach(l => {
-		l.visited = false;
-	});
-
-	// Process each unvisited node if we have not reached the end node
-	while (queue.length) {
-		currNode = queue[0];
-		var nextNode = undefined;
-		// Process the current node's connecting links
-		currNode.links.forEach(lID => {
-			const linkObj = links.find(i => i.id == lID);
-			if (linkObj.visited) return;
-			if (!options.allowElevator && linkObj.name == "Elevator") return;
-
-			const adjNodeID = linkObj.nodes.find(nID => nID != currNode.id),
-				  adjNode = nodes.find(n => n.id == adjNodeID),
-				  distFromNode = currNode.shortestDist + linkObj.gLen + linkObj.vLen;
-			if (distFromNode < adjNode.shortestDist) {
-				adjNode.shortestDist = distFromNode;
-				adjNode.shortestPath = {
-					length: distFromNode,
-					nodes: [... currNode.shortestPath.nodes, adjNode],
-					links: [... currNode.shortestPath.links, linkObj]
-				};
-				//console.log("yes; d=" + adjNode.shortestDist + ", |p|=" + adjNode.shortestPath.length)
-			}
-			linkObj.visited = true;
-			// Add the adjacent node to the queue if it is still unprocessed
-			if (!adjNode.visited) queue.push(adjNode);
-		});
-		currNode.visited = true;
-
-		// If we have visited the end node, we are done
-		if (currNode.id == end.id) {
-			result = currNode.shortestPath;
-			break;
-		}
-
-		// Select a new node and repeat
-		queue.splice(0, 1);
-	}
-
-	return result;
-}
 
 function clearCalc () {
-	// Work in reverse to delete temporary nodes
-	for (let i = nodes.length - 1; i >= 0; i--) {
-		delete nodes[i].shortestDist;
-		delete nodes[i].shortestPath;
-		delete nodes[i].visited;
-		if (nodes[i].tmp) {
-			deleteLink(nodes[i].links[0]);
-			nodes.splice(i, 1);
-		}
-	}
-	links.forEach(l => {
-		delete l.visited;
-	});
 	path = null;
 	document.getElementById("calc-result").innerHTML = '';
 }
@@ -271,7 +199,7 @@ function calculate () {
 	function finishCalc (msg, err) {
 		calcResult.innerHTML = `<p style="color: ${err ? "red" : "black"}">${msg}</p>`;
 		calcButton.removeAttribute("disabled");
-		calcButton.innerHTML = "Calculate Route";
+		calcButton.innerHTML = "Calculate Path";
 	}
 
 	calcButton.setAttribute("disabled", "");
@@ -286,65 +214,62 @@ function calculate () {
 	else {
 		// Check that all points are valid
 		for (let i = 1; i <= rows.length; i++) {
-			const col = document.getElementById("point-" + i).style["background-color"];
-			if (col != "lightgreen") return finishCalc(`Point #${i} is ${col == "lightpink" ? "invalid" : "empty"}.`, true);
+			const bgColor = document.getElementById("point-" + i).style["background-color"];
+			if (bgColor != "lightgreen")
+				return finishCalc(`Point #${i} is ${bgColor == "lightpink" ? "invalid" : "empty"}.`, true);
 		}
 
 		var output = "";
 		path = {
-			length: 0,
-			nodes: [],
-			links: []
+			distance: 0,
+			vertices: [],
 		};
+		
+		const graph = new WeightedGraph();
+		var vertices = new Set();
+		edges.forEach(e => {
+			if (e.name == 'Elevator' && !options.allowElevator) return;
+			vertices.add(e.endpoint1);
+			vertices.add(e.endpoint2);
+			graph.addEdge(e);
+		});
 
-		for (let i = 0, prevSteps = 0; i < rows.length - 1; i++) {
-			// "boundary" refers to the start or end of this subpath
-			const boundaryRoomIDs = [1, 2].map(shift => document.getElementById("point-" + (i + shift)).value),
-				  boundaryRoomObjs = boundaryRoomIDs.map(id => rooms.find(r => r.id == id));
-			const boundaryNodes = boundaryRoomObjs.map(p => createTempNodeAndLink(p));
-
-			output += '<hr>';
-			
-			const subPath = computeDijkstraPath(... boundaryNodes, options);
-
-			const STYLE = `color: ${subPath ? 'black' : 'red'}`;
-			const LENGTH = stringifyLength(subPath?.length);
-			output += `<p>${boundaryRoomIDs[0]} → ${boundaryRoomIDs[1]}\t` +
-				`<span style='color: gray'>${LENGTH}</span></p>`;
-
-			if (subPath) {
-				path.length += subPath.length;
-				["nodes", "links"].forEach(k => {
-					path[k] = path[k].concat(subPath[k]);
-				});
-
-				if (subPath.links.find(l => l.name == "Elevator")) {
-					output += `<div class="banner gray" style="margin-bottom: 20px">
-						<b>⚠️ This route uses the elevator.</b> <p>Students are required to have a pass from the nurse to use the elevator.</p>
-					</div>`;
+		function nearestVertexToRoom(room) {
+			// TODO rewrite coords 
+			const roomVertex = new Vertex([room.floor, ...room.center]);
+			var nearest, minDist = Infinity;
+			vertices.forEach(v => {
+				if (v.floor != room.floor) return;
+				const dist = new Edge(v, roomVertex).length();
+				if (dist < minDist) {
+					nearest = v;
+					minDist = dist;
 				}
+			});
+			return nearest;
+		}
 
-				var subPathDirections = [];
-				for (let j = 0; j < subPath.links.length; j++) {
-					// const link = subPath.links[j], nodeA = subPath.nodes[j], nodeB = subPath.nodes[j + 1];
-					var dir = '';
-					if (j == 0) dir = 'Exit ' + boundaryRoomIDs[0];
-					else if (j == subPath.links.length - 1) dir = 'Enter ' + boundaryRoomIDs[1];
-					if (dir) subPathDirections.push(dir);
-					// subPathTable += `<tr>
-					// 	<td>${j + prevSteps + 1}</td>
-					// 	<td>${stepDescription}</td>
-					// 	<td>${link.gLen ? round(link.gLen * constants.FEET_PER_PIXEL) : round(link.vLen * constants.FEET_PER_PIXEL) + " (vertical)"}</td>
-					// </tr>`;
-				}
-				prevSteps += subPath.links.length;
-				output += '<ul>' + subPathDirections.map(dir => `<li>${dir}</li>`).join('\n') + '</ul>';
+		for (let i = 0; i < rows.length - 1; i++) {
+			const subpathRoomIDs = [1, 2].map(j => document.getElementById(`point-${i + j}`).value);
+			const subpathRooms = subpathRoomIDs.map(id => rooms.find(r => r.id == id));
+			const subpathRoomVertices = subpathRooms.map(room => nearestVertexToRoom(room).toString());
+
+			const {path: subpath, distance: subDistance} = graph.Dijkstra(...subpathRoomVertices);
+
+			output +=
+				`<p>${subpathRoomIDs.join(' → ')}` +
+				`\t` +
+				`<span style='color: gray'>${prettifyDistance(subDistance)}</span></p>`;
+
+			if (subDistance) {
+				path.vertices += subpath;
+				path.distance += subDistance;
+			} else {
+				return finishCalc(`We couldn't find a path between ${subpathRoomIDs.join(' and ')}.`, true);
 			}
 		}
 		
-		output = `<p><b>${stringifyLength(path.length)}</b></p>` +
-			`<p><i>Assuming a walking speed of ${walkingSpeed} m/s</i></p>` +
-			output;
+		output = `<p><b>${prettifyDistance(path.distance)}</b></p>` + output;
 		// Convert output string to HTML and print to website
 		finishCalc(output);
 	}	

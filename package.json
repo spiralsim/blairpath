@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jt4517/blairpath.git"
+    "url": "git+https://github.com/spiralsim/blairpath.git"
   },
   "author": "Jeffrey Tong",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jt4517/blairpath/issues"
+    "url": "https://github.com/spiralsim/blairpath/issues"
   },
-  "homepage": "https://github.com/jt4517/blairpath#readme",
+  "homepage": "https://github.com/spiralsim/blairpath#readme",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",

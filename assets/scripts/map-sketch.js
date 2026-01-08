@@ -215,6 +215,7 @@ var ruler;
 
 // What the cursor is displayed as (changes between ARROW, HAND, and MOVE)
 var cursorType;
+var hoveredRoom;
 
 /*
 	Developer Mode
@@ -334,7 +335,171 @@ function mouseWheel({ delta }) {
 	VIEW.applyZoom(SCROLL_ZOOM_RATE ** -delta, CURSOR.physPos); // Uses negative sign to conform to Google Maps' zoom
 };
 
+function showSitePlan() {
+	tint(255, 64);
+	image(images.site, SITE_PLAN_OFFSET.x, SITE_PLAN_OFFSET.y);
+	if (showOptions[`show-dev-tools`]) {
+		stroke(0, 0, 255);
+		rect(SITE_PLAN_OFFSET.x, SITE_PLAN_OFFSET.y, SITE_DIM.x, SITE_DIM.y);
+	}
+}
+
+function showFloorPlan() {
+	tint(255, 255);
+	image(images.floors[_floor - 1], 0, 0);
+	if (showOptions[`show-dev-tools`]) {
+		stroke(255, 0, 0);
+		rect(0, 0, MAP_DIM.x, MAP_DIM.y);
+	}
+}
+
+function showPlaceDots() {
+	// Display dots for room selection
+	rooms.forEach(room => {
+		room.hover = false;
+		if (room.floor != _floor || !room.center) return;
+		// Display the point and detect hovering if applicable
+		if (CURSOR.virtPos.dist(createVector(...room.center)) < 5 / VIEW.zoom && !hoveredRoom) {
+			hoveredRoom = room;
+			room.hover = true;
+			cursorType = HAND;
+		}
+
+		fill(255);
+		if (room.hover) fill(mouseIsPressed ? color(250, 85, 85) : 128);
+		
+		stroke(192);
+		strokeWeight(1 / VIEW.zoom);
+		circle(room.center[0], room.center[1], 10 / VIEW.zoom);
+	});
+
+	// Display selected points
+	for (let i = 0; i < rows.length; i++) {
+		const room = rooms.find(r => r.id == document.getElementById("point-" + (i + 1)).value);
+		if (!room || !room.center || room.floor != _floor) continue;
+
+		// Draw center, doors, etc.
+		stroke(255);
+		fill(0);
+		strokeWeight(1 / VIEW.zoom);
+		circle(room.center[0], room.center[1], 10 / VIEW.zoom);
+		textAlign(CENTER, TOP);
+		textSize(10 / VIEW.zoom);
+		textStyle(BOLD);
+		text(room.id, room.center[0], room.center[1] - 15 / VIEW.zoom);
+	}
+}
+
+function showDevTools() {
+	// Display dots for node selection
+	// Display the node and detect hovering if applicable
+	for (let i = 0, hovering = false; i < nodes.length; i++) {
+		var node = nodes[i];
+		if (node.floor == _floor && node.pos) {
+			if (
+				["selectNode", "setNodeA", "setNodeB"].includes(devData.awaiting) &&
+				CURSOR.virtPos.dist(createVector(node.pos)) < 3 / VIEW.zoom &&
+				!hovering
+			) {
+				node.hover = true;
+				hovering = true;
+				cursorType = HAND;
+			} else node.hover = false;
+
+			noFill();
+			if (node.visited) fill(255, 0, 255);
+			stroke(0);
+			strokeWeight(1 / VIEW.zoom);
+			circle(node.pos[0], node.pos[1], 10 / VIEW.zoom);
+
+			fill(255);
+			if (node.hover) fill(mouseIsPressed ? color(250, 85, 85) : 128);
+			stroke(/*getElement("objectType").value == "Node" && node == devData.node ? color(0, 255, 0) : */192);
+			circle(node.pos[0], node.pos[1], 6 / VIEW.zoom);
+		}
+	}
+
+	// Display the link and detect hovering if applicable
+	for (let i = 0, hovering = false; i < links.length; i++) {
+		var link = links[i];
+		const selectedLink = false; //getElement("objectType").value == "Link" && link == devData.link;
+
+		if (link.points[0] && link.points[1] && link.points.find(p => p[2] == _floor)) {
+			const hoveringOnLine = link.points[0][2] == link.points[1][2] &&
+				distToLine(CURSOR.virtPos, link.points[0], link.points[1]) < 3 / VIEW.zoom;
+			const hoveringOnArrow = link.points[0][2] != link.points[1][2] &&
+				link.points.find(p => CURSOR.virtPos.dist(createVector(p)) < 10 / VIEW.zoom);
+			if (devData.awaiting == "selectLink" && (hoveringOnLine || hoveringOnArrow) && !hovering) {
+				link.hover = true;
+				hovering = true;
+				cursorType = HAND;
+			} else link.hover = false;
+
+			stroke(0);
+			if (link.visited) stroke(255, 0, 255);
+			if (link.hover) stroke(mouseIsPressed ? color(250, 85, 85) : 128);
+			if (selectedLink) stroke(0, 255, 0);
+			strokeWeight(2 / VIEW.zoom);
+			// The points are on the same floor
+			if (link.points[0][2] == link.points[1][2]) {
+				if (!link.tmp) line(link.points[0][0], link.points[0][1], link.points[1][0], link.points[1][1]);
+				else drawDottedLine(link.points[0], link.points[1]);
+			// The points are on different floors
+			} else {
+				link.points.forEach((p, i) => {
+					if (p[2] == _floor) {
+						const otherPoint = link.points[1 - i];
+						drawArrow(p[0], p[1], otherPoint[2] - p[2]);
+					}
+				});
+			}
+		}
+
+		if (selectedLink) {
+			noStroke();
+			fill(0, 255, 0);
+			textSize(8 / VIEW.zoom);
+			textAlign(CENTER, CENTER);
+			link.points.forEach((p, i) => {
+				if (p && p[2] == _floor) text('AB'[i], link.points[i][0], link.points[i][1]);
+			});
+		}
+	}
+}
+
+function showPath() {
+	if (!path) return;
+
+	stroke(0, 255, 255);
+	strokeWeight(2 / VIEW.zoom);
+
+	path.links.forEach((l, n) => {
+		if (!l.points.find(p => p[2] == _floor)) return;
+
+		// The points are on the same floor
+		if (l.points[0][2] == l.points[1][2]) {
+			if (!l.tmp) line(l.points[0][0], l.points[0][1], l.points[1][0], l.points[1][1]);
+			else drawDottedLine(l.points[0], l.points[1]);
+		// The points are on different floors
+		} else {
+			l.points.forEach((p, i) => {
+				if (p[2] == _floor) {
+					const otherPoint = l.points[1 - i];
+					drawArrow(p[0], p[1], otherPoint[2] - p[2]);
+				}
+			});
+		}
+
+		fill(0);
+		textSize(10 / VIEW.zoom);
+		textAlign(CENTER, CENTER);
+		textStyle(NORMAL);
+		text(n + 1, (l.points[0][0] + l.points[1][0]) / 2, (l.points[0][1] + l.points[1][1]) / 2);
+	});
+}
+
 function showTooltip(room) {
+	textFont('Roboto');
 	textSize(10);
 
 	var topText = room.id;
@@ -344,18 +509,19 @@ function showTooltip(room) {
 	var bottomText = room.section;
 
 	const center = room.center;
-	const tooltipW = max(textWidth(topText), textWidth(bottomText)) + 10,
-			tooltipH = 30,
-			tooltipX = constrain(
+	const
+		tooltipW = max(textWidth(topText), textWidth(bottomText)) + 10,
+		tooltipH = 30,
+		tooltipX = constrain(
 			VIEW.physPos.x + center[0] * VIEW.zoom,
 			0,
 			width - tooltipW,
-			),
-			tooltipY = constrain(
+		),
+		tooltipY = constrain(
 			VIEW.physPos.y + center[1] * VIEW.zoom + 15,
 			0,
 			height - tooltipH,
-			);
+		);
 
 	strokeWeight(1);
 	fill(255, 255, 255, 230);
@@ -378,9 +544,7 @@ function draw() {
 
 	background(255);
 
-	/*
-		Map Display
-	*/
+	// Map Display
 	push();
 	
 	// Apply view transformations
@@ -391,181 +555,14 @@ function draw() {
 	noFill();
 	imageMode(CORNER);
 
-	// Site overlay
-	if (showOptions[`show-site-plan`]) {
-		tint(255, 64);
-		image(images.site, SITE_PLAN_OFFSET.x, SITE_PLAN_OFFSET.y);
-		if (showOptions[`show-dev-tools`]) {
-			stroke(0, 0, 255);
-			rect(SITE_PLAN_OFFSET.x, SITE_PLAN_OFFSET.y, SITE_DIM.x, SITE_DIM.y);
-		}
-	}
-
-	// Floor plan
-	if (showOptions[`show-floor-plan`]) {
-		tint(255, 255);
-		image(images.floors[_floor - 1], 0, 0);
-		if (showOptions[`show-dev-tools`]) {
-			stroke(255, 0, 0);
-			rect(0, 0, MAP_DIM.x, MAP_DIM.y);
-		}
-	}
-
-	// Place dots (except tooltips)
-	var hoveredRoom = null
-	if (showOptions[`show-place-dots`]) {
-		var hoveringOverRoom = false;
-		// Display dots for room selection
-		// Display the point and detect hovering if applicable
-		rooms.forEach(room => {
-			room.hover = false;
-			if (room.floor != _floor || !room.center) return;
-			if (CURSOR.virtPos.dist(createVector(...room.center)) < 5 / VIEW.zoom && !hoveredRoom) {
-				hoveredRoom = room;
-				room.hover = true;
-				cursorType = HAND;
-			}
-
-			fill(255);
-			if (room.hover) fill(mouseIsPressed ? color(250, 85, 85) : 128);
-			
-			stroke(192);
-			strokeWeight(1 / VIEW.zoom);
-			circle(room.center[0], room.center[1], 10 / VIEW.zoom);
-		});
-
-		// Display selected points
-		for (let i = 0; i < rows.length; i++) {
-			const room = rooms.find(r => r.id == document.getElementById("point-" + (i + 1)).value);
-			if (!room || !room.center || room.floor != _floor) continue;
-
-			// Draw center, doors, etc.
-			stroke(255);
-			fill(0);
-			strokeWeight(1 / VIEW.zoom);
-			circle(room.center[0], room.center[1], 10 / VIEW.zoom);
-			textAlign(CENTER, TOP);
-			textSize(10 / VIEW.zoom);
-			textStyle(BOLD);
-			text(room.id, room.center[0], room.center[1] - 15 / VIEW.zoom);
-		}
-	}
-
-	// Nodes and Links (dev mode)
-	if (showOptions[`show-dev-tools`]) {
-		// Display dots for node selection
-		// Display the node and detect hovering if applicable
-		for (let i = 0, hovering = false; i < nodes.length; i++) {
-			var node = nodes[i];
-			if (node.floor == _floor && node.pos) {
-				if (
-					["selectNode", "setNodeA", "setNodeB"].includes(devData.awaiting) &&
-					CURSOR.virtPos.dist(createVector(node.pos)) < 3 / VIEW.zoom &&
-					!hovering
-				) {
-					node.hover = true;
-					hovering = true;
-					cursorType = HAND;
-				} else node.hover = false;
-
-				noFill();
-				if (node.visited) fill(255, 0, 255);
-				stroke(0);
-				strokeWeight(1 / VIEW.zoom);
-				circle(node.pos[0], node.pos[1], 10 / VIEW.zoom);
-
-				fill(255);
-				if (node.hover) fill(mouseIsPressed ? color(250, 85, 85) : 128);
-				stroke(/*getElement("objectType").value == "Node" && node == devData.node ? color(0, 255, 0) : */192);
-				circle(node.pos[0], node.pos[1], 6 / VIEW.zoom);
-			}
-		}
-
-		// Display the link and detect hovering if applicable
-		for (let i = 0, hovering = false; i < links.length; i++) {
-			var link = links[i];
-			const selectedLink = false; //getElement("objectType").value == "Link" && link == devData.link;
-
-			if (link.points[0] && link.points[1] && link.points.find(p => p[2] == _floor)) {
-				const hoveringOnLine = link.points[0][2] == link.points[1][2] &&
-					distToLine(CURSOR.virtPos, link.points[0], link.points[1]) < 3 / VIEW.zoom;
-				const hoveringOnArrow = link.points[0][2] != link.points[1][2] &&
-					link.points.find(p => CURSOR.virtPos.dist(createVector(p)) < 10 / VIEW.zoom);
-				if (devData.awaiting == "selectLink" && (hoveringOnLine || hoveringOnArrow) && !hovering) {
-					link.hover = true;
-					hovering = true;
-					cursorType = HAND;
-				} else link.hover = false;
-
-				stroke(0);
-				if (link.visited) stroke(255, 0, 255);
-				if (link.hover) stroke(mouseIsPressed ? color(250, 85, 85) : 128);
-				if (selectedLink) stroke(0, 255, 0);
-				strokeWeight(2 / VIEW.zoom);
-				// The points are on the same floor
-				if (link.points[0][2] == link.points[1][2]) {
-					if (!link.tmp) line(link.points[0][0], link.points[0][1], link.points[1][0], link.points[1][1]);
-					else drawDottedLine(link.points[0], link.points[1]);
-				// The points are on different floors
-				} else {
-					link.points.forEach((p, i) => {
-						if (p[2] == _floor) {
-							const otherPoint = link.points[1 - i];
-							drawArrow(p[0], p[1], otherPoint[2] - p[2]);
-						}
-					});
-				}
-			}
-
-			if (selectedLink) {
-				noStroke();
-				fill(0, 255, 0);
-				textSize(8 / VIEW.zoom);
-				textAlign(CENTER, CENTER);
-				link.points.forEach((p, i) => {
-					if (p && p[2] == _floor) text('AB'[i], link.points[i][0], link.points[i][1]);
-				});
-			}
-		}
-	}
-
-	// Draw route
-	if (path && showOptions[`show-path`]) {
-		stroke(0, 255, 255);
-		strokeWeight(2 / VIEW.zoom);
-
-		path.links.forEach((l, n) => {
-			if (!l.points.find(p => p[2] == _floor)) return;
-
-			// The points are on the same floor
-			if (l.points[0][2] == l.points[1][2]) {
-				if (!l.tmp) line(l.points[0][0], l.points[0][1], l.points[1][0], l.points[1][1]);
-				else drawDottedLine(l.points[0], l.points[1]);
-			// The points are on different floors
-			} else {
-				l.points.forEach((p, i) => {
-					if (p[2] == _floor) {
-						const otherPoint = l.points[1 - i];
-						drawArrow(p[0], p[1], otherPoint[2] - p[2]);
-					}
-				});
-			}
-
-			fill(0);
-			textSize(10 / VIEW.zoom);
-			textAlign(CENTER, CENTER);
-			textStyle(NORMAL);
-			text(n + 1, (l.points[0][0] + l.points[1][0]) / 2, (l.points[0][1] + l.points[1][1]) / 2);
-		});
-	}
+	hoveredRoom = null;
+	if (showOptions[`show-site-plan`]) showSitePlan();
+	if (showOptions[`show-floor-plan`]) showFloorPlan();
+	if (showOptions[`show-place-dots`]) showPlaceDots();
+	if (showOptions[`show-dev-tools`]) showDevTools();
+	if (showOptions[`show-path`]) showPath();
 
 	pop();
-
-	/*
-		UI Controls
-	*/
-	textFont(`Roboto`);
-	textSize(16);
 
 	// Cursor
 	cursor(cursorType);
