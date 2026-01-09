@@ -237,7 +237,7 @@
 					"doors": null
 				},
 				{
-					"id": "106 !",
+					"id": "106",
 					"floor": 1,
 					"use": "Interactive Studio",
 					"section": "Media/Reference Complex",
@@ -595,7 +595,6 @@
 				{
 					"id": "130",
 					"floor": 1,
-					"use": "Description illegible [!]",
 					"section": "Academic Classrooms",
 					"center": [
 						351.5625,

@@ -17,7 +17,7 @@ function prettifyDistance(distance) {
 }
 
 /* Data preprocessing */
-var rooms = [];
+var rooms = [], roomIDs;
 var edges = [];
 var constants = {};
 function dist2D(a, b) {
@@ -111,6 +111,7 @@ $.getJSON('/data.json', function (data) {
 		tempEdge.isTemporary = true;
 		edges.push(tempEdge);
 	});
+	roomIDs = new Set(rooms.map(({id}) => id));
 
 	// Remove placeholder rows
 	for (let i = 1; i <= 2; i++) document.getElementById("row-placeholder-" + i).remove();
@@ -133,26 +134,21 @@ function autocomplete (input, arr) {
 		a.setAttribute("id", this.id + "autocomplete-list");
 		a.setAttribute("class", "autocomplete-items");
 		a.setAttribute("style", "max-height: 120px; overflow-y: auto");
-		//a.setAttribute("style", "position: absolute");
 		this.parentNode.appendChild(a);
 
-		this.setAttribute("style", "background-color: lightpink");
 		for (i = 0; i < arr.length; i++) {
 			const name = arr[i].id + (arr[i].use && !arr[i].id.endsWith(arr[i].use) ? ` (${arr[i].use})` : "");
 			if (name.toUpperCase().indexOf(val.toUpperCase()) > -1) {
 				b = document.createElement("div");
 				b.innerHTML = name.replace(new RegExp(`(${val})`, "gi"), "<b>$1</b>");
-				//b.innerHTML = `<strong>${name.substr(0, len)}</strong>${name.substr(len)}`;
 				b.innerHTML += `<span class="section-text" style="float: right">${arr[i].section} (${arr[i].floor})</span>`;
 				b.innerHTML += `<input type="hidden" value="${arr[i].id}">`;
 				a.appendChild(b);
 				b.addEventListener("click", function (e) {
 					input.value = this.getElementsByTagName("input")[0].value;
-					input.setAttribute("style", "background-color: lightgreen")
 					closeAllLists();
 				});
 			}
-			if (val == arr[i].id) this.setAttribute("style", "background-color: lightgreen");
 		}
 	});
 	input.addEventListener("keydown", function (e) {
@@ -228,6 +224,7 @@ function addPoint () {
 };
 
 /* Calculate Path */
+const calcButton = document.getElementById("calc-button");
 var totalDistance = 0;
 
 function clearCalc () {
@@ -239,7 +236,7 @@ function clearCalc () {
 function calculate () {
 	clearCalc();
 
-	const calcButton = document.getElementById("calc-button"), calcResult = document.getElementById("calc-result");
+	const calcResult = document.getElementById("calc-result");
 	function finishCalc (msg, err) {
 		if (err) edges.forEach(e => e.isPath = false);
 		calcResult.innerHTML = `<p style="color: ${err ? "red" : "black"}">${msg}</p>`;
@@ -255,47 +252,37 @@ function calculate () {
 	};
 
 	// Check that there are enough points
-	if (rows.length < 2) finishCalc("There must be at least two input points to calculate a route.", true);
-	else {
-		// Check that all points are valid
-		for (let i = 1; i <= rows.length; i++) {
-			const bgColor = document.getElementById("point-" + i).style["background-color"];
-			if (bgColor != "lightgreen")
-				return finishCalc(`Point #${i} is ${bgColor == "lightpink" ? "invalid" : "empty"}.`, true);
-		}
+	var output = "";
+	
+	const graph = new WeightedGraph();
+	edges.forEach(e => {
+		if (e.name != 'Elevator' || options.allowElevator) graph.addEdge(e);
+	});
 
-		var output = "";
-		
-		const graph = new WeightedGraph();
-		edges.forEach(e => {
-			if (e.name != 'Elevator' || options.allowElevator) graph.addEdge(e);
-		});
+	for (let i = 0; i < rows.length - 1; i++) {
+		const subpathRoomIDs = [1, 2].map(j => document.getElementById(`point-${i + j}`).value);
+		const subpathRooms = subpathRoomIDs.map(id => rooms.find(r => r.id == id));
+		const subpathRoomVertices = subpathRooms.map(room => new Vertex([room.floor, ...room.center]));
 
-		for (let i = 0; i < rows.length - 1; i++) {
-			const subpathRoomIDs = [1, 2].map(j => document.getElementById(`point-${i + j}`).value);
-			const subpathRooms = subpathRoomIDs.map(id => rooms.find(r => r.id == id));
-			const subpathRoomVertices = subpathRooms.map(room => new Vertex([room.floor, ...room.center]));
+		var {path: subpathVertices, distance: subDistance} = graph.Dijkstra(...subpathRoomVertices);
 
-			var {path: subpathVertices, distance: subDistance} = graph.Dijkstra(...subpathRoomVertices);
+		if (subDistance == Infinity)
+			return finishCalc(`We couldn't find a path from ${subpathRoomIDs.join(' to ')}.`, true);
 
-			if (subDistance == Infinity)
-				return finishCalc(`We couldn't find a path from ${subpathRoomIDs.join(' to ')}.`, true);
+		output +=
+			`<p>${subpathRoomIDs.join(' → ')}` +
+			`\t` +
+			`<span style='color: gray'>${prettifyDistance(subDistance)}</span></p>`;
 
-			output +=
-				`<p>${subpathRoomIDs.join(' → ')}` +
-				`\t` +
-				`<span style='color: gray'>${prettifyDistance(subDistance)}</span></p>`;
-
-			for (let i = 0; i < subpathVertices.length - 1; i++) {
-				const edge = new Edge(subpathVertices[i], subpathVertices[i + 1]);
-				edge.findInDatabase().isPath = true;
-			}
-			
-			totalDistance += subDistance;
+		for (let i = 0; i < subpathVertices.length - 1; i++) {
+			const edge = new Edge(subpathVertices[i], subpathVertices[i + 1]);
+			edge.findInDatabase().isPath = true;
 		}
 		
-		output = `<p><b>${prettifyDistance(totalDistance)}</b></p>` + output;
-		// Convert output string to HTML and print to website
-		finishCalc(output);
-	}	
+		totalDistance += subDistance;
+	}
+	
+	output = `<p><b>${prettifyDistance(totalDistance)}</b></p>` + output;
+	// Convert output string to HTML and print to website
+	finishCalc(output);
 }

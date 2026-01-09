@@ -300,7 +300,6 @@ function mousePressed() {
 				}
 				// Assign the name of the room and the "valid" color to the input
 				input.value = r.id;
-				input.style["background-color"] = "lightgreen";
 			} else {
 				// Remove room
 				for (let i = 1; i <= rows.length; i++) {
@@ -453,6 +452,19 @@ function draw() {
 	if (!loaded) {
 		document.getElementById("map-placeholder").remove();
 		loaded = true;
+	}
+
+	if (tableLoaded) {
+		var canCalculate = true;
+		for (let i = 1; i <= rows.length; i++) {
+			const input = document.getElementById("point-" + i);
+			const isValid = roomIDs.has(input.value);
+			canCalculate &&= isValid;
+			const borderColor = isValid || !input.value ? '--var(border)' : 'red';
+			input.setAttribute("style", `border-color: ${borderColor}`);
+		}
+		if (canCalculate) calcButton.removeAttribute('disabled');
+		else calcButton.setAttribute('disabled', '');
 	}
 
 	background(255);
