@@ -17,7 +17,7 @@ function prettifyDistance(distance) {
 }
 
 /* Data preprocessing */
-var places = [], roomIDs;
+var places = {};
 var edges = [];
 var constants = {};
 function dist2D(a, b) {
@@ -91,17 +91,12 @@ $.getJSON('/data.json', function (data) {
 		vertices.add(e.endpoint2);
 	});
 
-	// Flatten rooms data structure into list
-	places = places.map(f => Object.keys(f).map(s => f[s])).flat(2);
-	// Sort rooms first by floor, then by name
-	places.sort((a, b) => a.floor > b.floor || a.id > b.id ? 1 : -1);
-
-	places.forEach(r => {
-		const roomVertex = new Vertex([r.floor, ...r.center]);
+	Object.values(places).forEach(p => {
+		const placeVertex = new Vertex([p.floor, ...p.center]);
 		var minDist = Infinity, tempEdge;
 		vertices.forEach(v => {
-			if (v.floor != r.floor) return;
-			const edge = new Edge(v, roomVertex);
+			if (v.floor != p.floor) return;
+			const edge = new Edge(v, placeVertex);
 			const dist = edge.length();
 			if (dist < minDist) {
 				minDist = dist;
@@ -111,7 +106,6 @@ $.getJSON('/data.json', function (data) {
 		tempEdge.isTemporary = true;
 		edges.push(tempEdge);
 	});
-	roomIDs = new Set(places.map(({id}) => id));
 
 	// Remove placeholder rows
 	for (let i = 1; i <= 2; i++) document.getElementById("row-placeholder-" + i).remove();
@@ -122,7 +116,7 @@ $.getJSON('/data.json', function (data) {
 });
 
 /* Search bar adapted from https://www.w3schools.com/howto/howto_js_autocomplete.asp */
-function autocomplete (input, arr) {
+function autocomplete (input) {
 	var currentFocus;
 	input.addEventListener("input", function (e) {
 		var a, b, i, val = this.value;
@@ -136,13 +130,14 @@ function autocomplete (input, arr) {
 		a.setAttribute("style", "max-height: 120px; overflow-y: auto");
 		this.parentNode.appendChild(a);
 
-		for (i = 0; i < arr.length; i++) {
-			const name = arr[i].id + (arr[i].use && !arr[i].id.endsWith(arr[i].use) ? ` (${arr[i].use})` : "");
+		for (let id in places) {
+			const place = places[id];
+			const name = id + (place.use && !id.endsWith(place.use) ? ` (${place.use})` : "");
 			if (name.toUpperCase().indexOf(val.toUpperCase()) > -1) {
 				b = document.createElement("div");
 				b.innerHTML = name.replace(new RegExp(`(${val})`, "gi"), "<b>$1</b>");
-				b.innerHTML += `<span class="section-text" style="float: right">${arr[i].section} (${arr[i].floor})</span>`;
-				b.innerHTML += `<input type="hidden" value="${arr[i].id}">`;
+				b.innerHTML += `<span class="section-text" style="float: right">${place.section} (${place.floor})</span>`;
+				b.innerHTML += `<input type="hidden" value="${place.id}">`;
 				a.appendChild(b);
 				b.addEventListener("click", function (e) {
 					input.value = this.getElementsByTagName("input")[0].value;
@@ -190,6 +185,12 @@ function autocomplete (input, arr) {
 
 /* Point input */
 var table = document.getElementById("points").childNodes[1], rows = [];
+function getRowValue(index) {
+	return document.getElementById(`point-${index}`).value;
+}
+function setRowValue(index, value) {
+	return document.getElementById(`point-${index}`).value = value;
+}
 // Remove a row from the points table
 function removePoint (ID) {
 	// Remove the row
@@ -200,11 +201,11 @@ function removePoint (ID) {
 		const row = document.getElementById(rows[i].id),
 		      rowStr = rows[i].id.split("-")[1],
 		      // Save the value so that we can place it back in later
-		      val = document.getElementById("point-" + rowStr).value,
+		      val = getRowValue(rowStr),
 		      rowNum = i + 1;
 		row.id = "row-" + rowNum;
 		row.innerHTML = row.innerHTML.replace(new RegExp(rowStr, "g"), rowNum);
-		document.getElementById("point-" + rowNum).value = val;
+		setRowValue(rowNum, val);
 		autocomplete(document.getElementById("point-" + rowNum), places);
 	}
 };
@@ -225,11 +226,12 @@ function addPoint () {
 
 /* Calculate Path */
 const calcButton = document.getElementById("calc-button");
-var totalDistance = 0;
+var totalDistance = 0, pathEdges = new Set();
 
 function clearCalc () {
 	edges.forEach(e => e.isPath = false);
 	totalDistance = 0;
+	pathEdges = new Set();
 	document.getElementById("calc-result").innerHTML = '';
 };
 
@@ -241,11 +243,9 @@ function calculate () {
 		if (err) edges.forEach(e => e.isPath = false);
 		calcResult.innerHTML = `<p style="color: ${err ? "red" : "black"}">${msg}</p>`;
 		calcButton.removeAttribute("disabled");
-		calcButton.innerHTML = "Calculate Path";
 	}
 
 	calcButton.setAttribute("disabled", "");
-	calcButton.innerHTML = "Calculating...";
 
 	const options = {
 		allowElevator: document.getElementById("allow-elevator").checked
@@ -260,24 +260,22 @@ function calculate () {
 	});
 
 	for (let i = 0; i < rows.length - 1; i++) {
-		const subpathRoomIDs = [1, 2].map(j => document.getElementById(`point-${i + j}`).value);
-		const subpathRooms = subpathRoomIDs.map(id => places.find(r => r.id == id));
-		const subpathRoomVertices = subpathRooms.map(room => new Vertex([room.floor, ...room.center]));
+		const subpathPlaceIDs = [1, 2].map(j => document.getElementById(`point-${i + j}`).value);
+		const subpathPlaces = subpathPlaceIDs.map(id => places[id]);
+		const subpathPlaceVertices = subpathPlaces.map(room => new Vertex([room.floor, ...room.center]));
 
-		var {path: subpathVertices, distance: subDistance} = graph.Dijkstra(...subpathRoomVertices);
+		var {path: subpathVertices, distance: subDistance} = graph.Dijkstra(...subpathPlaceVertices);
 
 		if (subDistance == Infinity)
-			return finishCalc(`We couldn't find a path from ${subpathRoomIDs.join(' to ')}.`, true);
+			return finishCalc(`We couldn't find a path from ${subpathPlaceIDs.join(' to ')}.`, true);
 
 		output +=
-			`<p>${subpathRoomIDs.join(' → ')}` +
+			`<p>${subpathPlaceIDs.join(' → ')}` +
 			`\t` +
 			`<span style='color: gray'>${prettifyDistance(subDistance)}</span></p>`;
 
-		for (let i = 0; i < subpathVertices.length - 1; i++) {
-			const edge = new Edge(subpathVertices[i], subpathVertices[i + 1]);
-			edge.findInDatabase().isPath = true;
-		}
+		for (let i = 0; i < subpathVertices.length - 1; i++)
+			pathEdges.add((new Edge(subpathVertices[i], subpathVertices[i + 1])).findInDatabase());
 		
 		totalDistance += subDistance;
 	}

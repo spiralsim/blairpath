@@ -283,37 +283,19 @@ function windowResized() {
 }
 
 function mousePressed() {
-	places.forEach(r => {
-		if (r.hover) {
-			// Add room
-			if (mouseButton == LEFT) {
-				// Handle edge case where there are no rows to begin with
-				if (!rows.length) addPoint();
-				// Find the number of the first empty point input
-				var i = 1, input;
-				for ( ; i <= rows.length; i++) {
-					input = document.getElementById("point-" + i);
-					if (!input.value) break;
-				}
-				// If we are at the last row and it is still full, create a new row and go to that one
-				if (input.value && i == rows.length + 1) {
-					addPoint();
-					input = document.getElementById("point-" + i);
-				}
-				// Assign the name of the room and the "valid" color to the input
-				input.value = r.id;
-			} else {
-				// Remove room
-				for (let i = 1; i <= rows.length; i++) {
-					input = document.getElementById("point-" + i);
-					if (input.value == r.id) {
-						removePoint(i);
-						break;
-					}
-				}
-			}
+	const place = Object.values(places).find(p => p.hover);
+	if (!place) return;
+	// Handle edge case where there are no rows to begin with
+	if (!rows.length) addPoint();
+	// Find the number of the first empty point input
+	for (let i = 1; i <= rows.length; i++) {
+		if (!getRowValue(i)) {
+			setRowValue(i, place.id);
+			return;
 		}
-	});
+	}
+	addPoint();
+	setRowValue(rows.length, place.id);
 };
 
 function mouseDragged() {
@@ -368,11 +350,12 @@ function showPlaces() {
 	stroke(0);
 	strokeWeight(1 / VIEW.zoom);
 	// Display dots for room selection
-	places.forEach(place => {
+	for (let id in places) {
+		const place = places[id];
 		place.hover = false;
-		if (place.floor != _floor || !place.center) return;
+		if (place.floor != _floor || !place.center) continue;
 		// Display the point and detect hovering if applicable
-		const nameWidth = textWidth(place.id);
+		const nameWidth = textWidth(id);
 		if (
 			abs(CURSOR.virtPos.x - place.center[0]) < nameWidth / 2 &&
 			abs(CURSOR.virtPos.y - place.center[1]) < 6 / VIEW.zoom &&
@@ -386,18 +369,18 @@ function showPlaces() {
 		fill(255);
 		if (place.hover) fill(mouseIsPressed ? color(250, 85, 85) : 128);
 		
-		text(place.id, place.center[0], place.center[1]);
-	});
+		text(id, place.center[0], place.center[1]);
+	}
 
 	// Display selected points
 	stroke(255);
 	fill(0);
-	for (let i = 0; i < rows.length; i++) {
-		const place = places.find(r => r.id == document.getElementById("point-" + (i + 1)).value);
-		if (!place || !place.center || place.floor != _floor) continue;
+	for (let i = 1; i <= rows.length; i++) {
+		const id = getRowValue(i), place = places[id];
+		if (!place || place.floor != _floor) continue;
 
 		// Draw center, doors, etc.
-		text(place.id, place.center[0], place.center[1]);
+		text(id, place.center[0], place.center[1]);
 	}
 }
 
@@ -461,7 +444,7 @@ function draw() {
 		var canCalculate = rows.length >= 2;
 		for (let i = 1; i <= rows.length; i++) {
 			const input = document.getElementById("point-" + i);
-			const isValid = roomIDs.has(input.value);
+			const isValid = !!places[input.value];
 			canCalculate &&= isValid;
 			const borderColor = isValid || !input.value ? '--var(border)' : 'red';
 			input.setAttribute("style", `border-color: ${borderColor}`);
@@ -496,9 +479,9 @@ function draw() {
 				foundHoveredEdge ||= e.isHovered;
 			}
 		}
-		if (!e.isPath && !showOptions[`show-dev-tools`])
+		if (!pathEdges.has(e) && !showOptions[`show-dev-tools`])
 			return;
-		var _color = e.isPath ? color(0, 128, 255) : color(0);
+		var _color = pathEdges.has(e) ? color(0, 128, 255) : color(0);
 		if (e.isHovered) _color = lerpColor(_color, color(255), 0.75)
 		drawEdge(e, _color);
 	});

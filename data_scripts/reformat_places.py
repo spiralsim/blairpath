@@ -1,0 +1,2780 @@
+import json
+places = [
+	{
+		"Fine Arts Wing": [
+			{
+				"id": "001",
+				"floor": 1,
+				"use": "Child Development",
+				"section": "Fine Arts Wing",
+				"center": [
+					45.625,
+					149.703125
+				]
+			},
+			{
+				"id": "002",
+				"floor": 1,
+				"use": "Art",
+				"section": "Fine Arts Wing",
+				"center": [
+					77.625,
+					133.203125
+				]
+			},
+			{
+				"id": "003",
+				"floor": 1,
+				"use": "Personal/Family Living",
+				"section": "Fine Arts Wing",
+				"center": [
+					28.125,
+					123.703125
+				]
+			},
+			{
+				"id": "004",
+				"floor": 1,
+				"use": "Photography",
+				"section": "Fine Arts Wing",
+				"center": [
+					103.625,
+					107.203125
+				]
+			},
+			{
+				"id": "005",
+				"floor": 1,
+				"use": "Multi-Purpose",
+				"section": "Fine Arts Wing",
+				"center": [
+					42.625,
+					100.703125
+				]
+			},
+			{
+				"id": "006",
+				"floor": 1,
+				"use": "Drama",
+				"section": "Fine Arts Wing",
+				"center": [
+					151.125,
+					75.203125
+				]
+			},
+			{
+				"id": "007",
+				"floor": 1,
+				"use": "Studio Art",
+				"section": "Fine Arts Wing",
+				"center": [
+					68.125,
+					83.703125
+				]
+			},
+			{
+				"id": "008",
+				"floor": 1,
+				"use": "Studio Art",
+				"section": "Fine Arts Wing",
+				"center": [
+					94.625,
+					53.203125
+				]
+			},
+			{
+				"id": "011",
+				"floor": 1,
+				"use": "Studio Art",
+				"section": "Fine Arts Wing",
+				"center": [
+					134.625,
+					42.203125
+				]
+			},
+			{
+				"id": "013",
+				"floor": 1,
+				"use": "Ceramics/Sculpture",
+				"section": "Fine Arts Wing",
+				"center": [
+					158.625,
+					25.703125
+				]
+			},
+			{
+				"id": "014",
+				"floor": 1,
+				"use": "Instrumental Room",
+				"section": "Fine Arts Wing",
+				"center": [
+					119.915,
+					150.302
+				]
+			},
+			{
+				"id": "016A",
+				"floor": 1,
+				"use": "Choral",
+				"section": "Fine Arts Wing",
+				"center": [
+					156.625,
+					188.703125
+				]
+			},
+			{
+				"id": "016B",
+				"floor": 1,
+				"use": "Keyboard Lab",
+				"section": "Fine Arts Wing",
+				"center": [
+					139.125,
+					201.703125
+				]
+			},
+			{
+				"id": "Auditorium",
+				"floor": 1,
+				"use": "Auditorium",
+				"section": "Fine Arts Wing",
+				"center": [
+					208.125,
+					126.703125
+				]
+			},
+			{
+				"id": "Kiln",
+				"floor": 1,
+				"use": "Kiln",
+				"section": "Fine Arts Wing",
+				"center": [
+					182.25,
+					24.6355
+				]
+			},
+			{
+				"id": "Stage Shop",
+				"floor": 1,
+				"use": "Stage Shop",
+				"section": "Fine Arts Wing",
+				"center": [
+					205.625,
+					41.203125
+				]
+			}
+		],
+		"Media/Reference Complex": [
+			{
+				"id": "101",
+				"floor": 1,
+				"use": "Communications/Technology",
+				"section": "Media/Reference Complex",
+				"center": [
+					361.125,
+					196.703125
+				]
+			},
+			{
+				"id": "102",
+				"floor": 1,
+				"use": "Multi-Media Studio",
+				"section": "Media/Reference Complex",
+				"center": [
+					397.125,
+					181.203125
+				]
+			},
+			{
+				"id": "103",
+				"floor": 1,
+				"use": "TV Studio",
+				"section": "Media/Reference Complex",
+				"center": [
+					423.125,
+					219.203125
+				]
+			},
+			{
+				"id": "106",
+				"floor": 1,
+				"use": "Interactive Studio",
+				"section": "Media/Reference Complex",
+				"center": [
+					397.125,
+					214.703125
+				]
+			},
+			{
+				"id": "Computer/Work Room",
+				"floor": 1,
+				"use": "Computer/Work Room",
+				"section": "Media/Reference Complex",
+				"center": [
+					455.125,
+					226.703125
+				]
+			},
+			{
+				"id": "Conference A",
+				"floor": 1,
+				"use": "Conference",
+				"section": "Media/Reference Complex",
+				"center": [
+					552.625,
+					267.203125
+				]
+			},
+			{
+				"id": "Conference B",
+				"floor": 1,
+				"use": "Conference",
+				"section": "Media/Reference Complex",
+				"center": [
+					542.625,
+					239.203125
+				]
+			},
+			{
+				"id": "Equipment Storage",
+				"floor": 1,
+				"use": "Storage",
+				"section": "Media/Reference Complex",
+				"center": [
+					450.125,
+					178.203125
+				]
+			},
+			{
+				"id": "General Storage",
+				"floor": 1,
+				"use": "Storage",
+				"section": "Media/Reference Complex",
+				"center": [
+					451.625,
+					203.703125
+				]
+			},
+			{
+				"id": "Head-in Room",
+				"floor": 1,
+				"use": "Head-in Room",
+				"section": "Media/Reference Complex",
+				"center": [
+					472.3125,
+					174.3515625
+				]
+			},
+			{
+				"id": "Media Center",
+				"floor": 1,
+				"use": "Media Center",
+				"section": "Media/Reference Complex",
+				"center": [
+					503.125,
+					233.703125
+				]
+			}
+		],
+		"Gymnasium Complex": [
+			{
+				"id": "110",
+				"floor": 1,
+				"use": "Weight Room",
+				"section": "Gymnasium Complex",
+				"center": [
+					92.125,
+					376.203125
+				]
+			},
+			{
+				"id": "111",
+				"floor": 1,
+				"use": "Dance",
+				"section": "Gymnasium Complex",
+				"center": [
+					131.625,
+					318.203125
+				]
+			},
+			{
+				"id": "112",
+				"floor": 1,
+				"use": "Team Room",
+				"section": "Gymnasium Complex",
+				"center": [
+					128.125,
+					354.703125
+				]
+			},
+			{
+				"id": "112, Storage",
+				"floor": 1,
+				"use": "Storage",
+				"section": "Gymnasium Complex",
+				"center": [
+					165.625,
+					358.703125
+				]
+			},
+			{
+				"id": "113",
+				"floor": 1,
+				"use": "Wrestling",
+				"section": "Gymnasium Complex",
+				"center": [
+					113.625,
+					318.203125
+				]
+			},
+			{
+				"id": "114",
+				"floor": 1,
+				"use": "Physical Education / PE",
+				"section": "Gymnasium Complex",
+				"center": [
+					190.625,
+					361.703125
+				]
+			},
+			{
+				"id": "114, Storage",
+				"floor": 1,
+				"use": "Storage",
+				"section": "Gymnasium Complex",
+				"center": [
+					178.125,
+					359.703125
+				]
+			},
+			{
+				"id": "116",
+				"floor": 1,
+				"use": "Physical Education / PE",
+				"section": "Gymnasium Complex",
+				"center": [
+					222.625,
+					361.703125
+				]
+			},
+			{
+				"id": "118",
+				"floor": 1,
+				"use": "Team Room",
+				"section": "Gymnasium Complex",
+				"center": [
+					264.625,
+					356.203125
+				]
+			},
+			{
+				"id": "118, Storage",
+				"floor": 1,
+				"use": "Storage",
+				"section": "Gymnasium Complex",
+				"center": [
+					244.625,
+					356.703125
+				]
+			},
+			{
+				"id": "Boys' Locker Room",
+				"floor": 1,
+				"use": "Locker Room",
+				"section": "Gymnasium Complex",
+				"center": [
+					245.625,
+					385.703125
+				]
+			},
+			{
+				"id": "Girls' Locker Room",
+				"floor": 1,
+				"use": "Locker Room",
+				"section": "Gymnasium Complex",
+				"center": [
+					169.125,
+					388.203125
+				]
+			},
+			{
+				"id": "Large Gymnasium",
+				"floor": 1,
+				"use": "Gymnasium",
+				"section": "Gymnasium Complex",
+				"center": [
+					237.125,
+					291.203125
+				]
+			},
+			{
+				"id": "Small Gymnasium",
+				"floor": 1,
+				"use": "Gymnasium",
+				"section": "Gymnasium Complex",
+				"center": [
+					171.125,
+					291.203125
+				]
+			}
+		],
+		"Academic Classrooms": [
+			{
+				"id": "117",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					301.8125,
+					327.3515625
+				]
+			},
+			{
+				"id": "119",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					302.0625,
+					358.3515625
+				]
+			},
+			{
+				"id": "122",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					298.125,
+					305.203125
+				]
+			},
+			{
+				"id": "122, Office",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					312.3125,
+					307.3515625
+				]
+			},
+			{
+				"id": "123",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					340.3125,
+					360.8515625
+				]
+			},
+			{
+				"id": "124",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					301.8125,
+					381.6015625
+				]
+			},
+			{
+				"id": "126",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					301.8125,
+					398.6015625
+				]
+			},
+			{
+				"id": "128",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					301.8125,
+					409.6015625
+				]
+			},
+			{
+				"id": "130",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					351.5625,
+					418.3515625
+				]
+			},
+			{
+				"id": "131",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					340.0625,
+					384.1015625
+				]
+			},
+			{
+				"id": "132",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					371.5625,
+					418.1015625
+				]
+			},
+			{
+				"id": "133",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					366.5625,
+					379.1015625
+				]
+			},
+			{
+				"id": "134",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					395.0625,
+					418.1015625
+				]
+			},
+			{
+				"id": "135",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					389.3125,
+					379.3515625
+				]
+			},
+			{
+				"id": "136",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					418.3125,
+					418.3515625
+				]
+			},
+			{
+				"id": "137",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					411.8125,
+					379.8515625
+				]
+			},
+			{
+				"id": "138",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					440.5625,
+					418.1015625
+				]
+			},
+			{
+				"id": "138, Storage",
+				"floor": 1,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					470.8125,
+					437.8515625
+				]
+			},
+			{
+				"id": "141",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					477.3125,
+					331.8515625
+				]
+			},
+			{
+				"id": "141, English",
+				"floor": 1,
+				"use": "English",
+				"section": "Academic Classrooms",
+				"center": [
+					498.5625,
+					311.1015625
+				]
+			},
+			{
+				"id": "141, Storage",
+				"floor": 1,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					474.0625,
+					303.1015625
+				]
+			},
+			{
+				"id": "142",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					438.3125,
+					325.6015625
+				]
+			},
+			{
+				"id": "143",
+				"floor": 1,
+				"use": "SPARC",
+				"section": "Academic Classrooms",
+				"center": [
+					476.8125,
+					350.1015625
+				]
+			},
+			{
+				"id": "144",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					438.3125,
+					349.6015625
+				]
+			},
+			{
+				"id": "145",
+				"floor": 1,
+				"use": "CAP",
+				"section": "Academic Classrooms",
+				"center": [
+					476.8125,
+					363.8515625
+				]
+			},
+			{
+				"id": "146",
+				"floor": 1,
+				"use": "Social Studies",
+				"section": "Academic Classrooms",
+				"center": [
+					438.5625,
+					379.3515625
+				]
+			},
+			{
+				"id": "147",
+				"floor": 1,
+				"use": "Social Studies",
+				"section": "Academic Classrooms",
+				"center": [
+					477.0625,
+					382.3515625
+				]
+			},
+			{
+				"id": "148",
+				"floor": 1,
+				"use": "Social Studies",
+				"section": "Academic Classrooms",
+				"center": [
+					438.5625,
+					443.1015625
+				]
+			},
+			{
+				"id": "151",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					482.5625,
+					408.1015625
+				]
+			},
+			{
+				"id": "152",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					502.8125,
+					446.3515625
+				]
+			},
+			{
+				"id": "152, Work Room",
+				"floor": 1,
+				"use": "Work Room",
+				"section": "Academic Classrooms",
+				"center": [
+					485.3125,
+					446.6015625
+				]
+			},
+			{
+				"id": "153",
+				"floor": 1,
+				"use": "ESOL",
+				"section": "Academic Classrooms",
+				"center": [
+					513.5625,
+					408.1015625
+				]
+			},
+			{
+				"id": "154",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					526.5625,
+					446.6015625
+				]
+			},
+			{
+				"id": "155",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					530.8125,
+					408.1015625
+				]
+			},
+			{
+				"id": "156",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					548.5625,
+					446.8515625
+				]
+			},
+			{
+				"id": "157",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					548.8125,
+					408.3515625
+				]
+			},
+			{
+				"id": "158",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					575.3125,
+					443.1015625
+				]
+			},
+			{
+				"id": "160",
+				"floor": 1,
+				"use": "ISS",
+				"section": "Academic Classrooms",
+				"center": [
+					575.0625,
+					363.1015625
+				]
+			},
+			{
+				"id": "161",
+				"floor": 1,
+				"use": "SGA",
+				"section": "Academic Classrooms",
+				"center": [
+					613.5625,
+					364.8515625
+				]
+			},
+			{
+				"id": "162",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					574.8125,
+					383.1015625
+				]
+			},
+			{
+				"id": "163",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					613.5625,
+					383.6015625
+				]
+			},
+			{
+				"id": "164",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					574.3125,
+					408.3515625
+				]
+			},
+			{
+				"id": "165",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					613.3125,
+					409.1015625
+				]
+			},
+			{
+				"id": "166",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					575.0625,
+					465.8515625
+				]
+			},
+			{
+				"id": "167",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					616.5625,
+					436.1015625
+				]
+			},
+			{
+				"id": "168",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					575.0625,
+					488.8515625
+				]
+			},
+			{
+				"id": "170",
+				"floor": 1,
+				"use": "Foreign Langugage",
+				"section": "Academic Classrooms",
+				"center": [
+					613.3125,
+					474.1015625
+				]
+			},
+			{
+				"id": "170, Office",
+				"floor": 1,
+				"use": "Foreign Langugage",
+				"section": "Academic Classrooms",
+				"center": [
+					623.3125,
+					483.3515625
+				]
+			},
+			{
+				"id": "171",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					639.8125,
+					436.1015625
+				]
+			},
+			{
+				"id": "172",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					638.8125,
+					474.1015625
+				]
+			},
+			{
+				"id": "173",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					662.5625,
+					436.1015625
+				]
+			},
+			{
+				"id": "174",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					663.3125,
+					474.3515625
+				]
+			},
+			{
+				"id": "176",
+				"floor": 1,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					679.8125,
+					474.1015625
+				]
+			},
+			{
+				"id": "177",
+				"floor": 1,
+				"section": "Academic Classrooms",
+				"center": [
+					685.3125,
+					436.3515625
+				]
+			}
+		],
+		"Administration Complex": [
+			{
+				"id": "120",
+				"floor": 1,
+				"use": "Vocational Support",
+				"section": "Administration Complex",
+				"center": [
+					298.5625,
+					285.6015625
+				]
+			},
+			{
+				"id": "121",
+				"floor": 1,
+				"use": "Career Center",
+				"section": "Administration Complex",
+				"center": [
+					340.125,
+					335.703125
+				]
+			},
+			{
+				"id": "AP Office",
+				"floor": 1,
+				"use": "AP Office",
+				"section": "Administration Complex",
+				"center": [
+					340.125,
+					167.703125
+				]
+			},
+			{
+				"id": "Athletic Director",
+				"floor": 1,
+				"use": "Athletic Director",
+				"section": "Administration Complex",
+				"center": [
+					279.3125,
+					240.1015625
+				]
+			},
+			{
+				"id": "Attendance Office",
+				"floor": 1,
+				"use": "Attendance Office",
+				"section": "Administration Complex",
+				"center": [
+					331.5625,
+					222.6015625
+				]
+			},
+			{
+				"id": "Concessions",
+				"floor": 1,
+				"use": "Concessions",
+				"section": "Administration Complex",
+				"center": [
+					261.0625,
+					239.1015625
+				]
+			},
+			{
+				"id": "Guidance",
+				"floor": 1,
+				"use": "Counseling",
+				"section": "Administration Complex",
+				"center": [
+					356.125,
+					274.703125
+				]
+			},
+			{
+				"id": "Main Office",
+				"floor": 1,
+				"use": "Main Office",
+				"section": "Administration Complex",
+				"center": [
+					288.125,
+					198.203125
+				]
+			},
+			{
+				"id": "Principal's Office",
+				"floor": 1,
+				"use": "Principal's Office",
+				"section": "Administration Complex",
+				"center": [
+					320.125,
+					163.203125
+				]
+			},
+			{
+				"id": "Registrar",
+				"floor": 1,
+				"use": "Counseling",
+				"section": "Administration Complex",
+				"center": [
+					331.625,
+					251.203125
+				]
+			}
+		],
+		"Bathrooms / Building Services": [
+			{
+				"id": "Boys' Bathroom 1L",
+				"floor": 1,
+				"use": "Bathroom",
+				"section": "Bathrooms / Building Services",
+				"center": [
+					223.3125,
+					204.3515625
+				]
+			},
+			{
+				"id": "Boys' Bathroom 1R",
+				"floor": 1,
+				"use": "Bathroom",
+				"section": "Bathrooms / Building Services",
+				"center": [
+					575.3125,
+					335.1015625
+				]
+			},
+			{
+				"id": "Building Services",
+				"floor": 1,
+				"use": "Building Services",
+				"section": "Bathrooms / Building Services",
+				"center": [
+					226.0625,
+					212.6015625
+				]
+			},
+			{
+				"id": "Girls' Bathroom 1L",
+				"floor": 1,
+				"use": "Bathroom",
+				"section": "Bathrooms / Building Services",
+				"center": [
+					228.8125,
+					221.8515625
+				]
+			},
+			{
+				"id": "Girls' Bathroom 1R",
+				"floor": 1,
+				"use": "Bathroom",
+				"section": "Bathrooms / Building Services",
+				"center": [
+					575.3125,
+					347.6015625
+				]
+			}
+		],
+		"Dining Facilities": [
+			{
+				"id": "Kitchen",
+				"floor": 1,
+				"use": "Kitchen",
+				"section": "Dining Facilities",
+				"center": [
+					726.125,
+					286.203125
+				]
+			},
+			{
+				"id": "Main Mechanical Room",
+				"floor": 1,
+				"use": "Mechanical",
+				"section": "Dining Facilities",
+				"center": [
+					755.125,
+					301.703125
+				]
+			},
+			{
+				"id": "PAC Serving Table",
+				"floor": 1,
+				"use": "Serving",
+				"section": "Dining Facilities",
+				"center": [
+					698.625,
+					339.203125
+				]
+			},
+			{
+				"id": "SAC",
+				"floor": 1,
+				"use": "Student Activity Center / Cafeteria",
+				"section": "Dining Facilities",
+				"center": [
+					630.625,
+					269.703125
+				]
+			},
+			{
+				"id": "Serving Table 1",
+				"floor": 1,
+				"use": "Serving",
+				"section": "Dining Facilities",
+				"center": [
+					704.125,
+					280.703125
+				]
+			},
+			{
+				"id": "Serving Table 2",
+				"floor": 1,
+				"use": "Serving",
+				"section": "Dining Facilities",
+				"center": [
+					704.125,
+					294.203125
+				]
+			}
+		],
+		"Outdoor Areas": [
+			{
+				"id": "P1",
+				"floor": 1,
+				"section": "Outdoor Areas",
+				"center": [
+					977.8125,
+					317.1015625
+				]
+			},
+			{
+				"id": "P10",
+				"floor": 1,
+				"section": "Outdoor Areas",
+				"center": [
+					925.3125,
+					361.6015625
+				]
+			},
+			{
+				"id": "P2",
+				"floor": 1,
+				"section": "Outdoor Areas",
+				"center": [
+					967.8125,
+					338.8515625
+				]
+			},
+			{
+				"id": "P3",
+				"floor": 1,
+				"section": "Outdoor Areas",
+				"center": [
+					967.5625,
+					361.1015625
+				]
+			},
+			{
+				"id": "P4",
+				"floor": 1,
+				"section": "Outdoor Areas",
+				"center": [
+					967.8125,
+					383.1015625
+				]
+			},
+			{
+				"id": "P5",
+				"floor": 1,
+				"section": "Outdoor Areas",
+				"center": [
+					1038.8125,
+					384.1015625
+				]
+			},
+			{
+				"id": "P6",
+				"floor": 1,
+				"section": "Outdoor Areas",
+				"center": [
+					1038.5625,
+					362.1015625
+				]
+			},
+			{
+				"id": "P7",
+				"floor": 1,
+				"section": "Outdoor Areas",
+				"center": [
+					1038.5625,
+					340.1015625
+				]
+			},
+			{
+				"id": "P8",
+				"floor": 1,
+				"section": "Outdoor Areas",
+				"center": [
+					1038.5625,
+					318.8515625
+				]
+			},
+			{
+				"id": "P9",
+				"floor": 1,
+				"section": "Outdoor Areas",
+				"center": [
+					1038.5625,
+					278.6015625
+				]
+			},
+			{
+				"id": "Senior Courtyard",
+				"floor": 1,
+				"use": "Courtyard",
+				"section": "Outdoor Areas",
+				"center": [
+					527.0625,
+					362.3515625
+				]
+			},
+			{
+				"id": "Staff Courtyard",
+				"floor": 1,
+				"use": "Courtyard",
+				"section": "Outdoor Areas",
+				"center": [
+					390.0625,
+					331.1015625
+				]
+			}
+		]
+	},
+	{
+		"Academic Classrooms": [
+			{
+				"id": "208",
+				"floor": 2,
+				"use": "Greenhouse",
+				"section": "Academic Classrooms",
+				"center": [
+					93.5625,
+					391.1015625
+				]
+			},
+			{
+				"id": "210",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					140.0625,
+					388.1015625
+				]
+			},
+			{
+				"id": "211",
+				"floor": 2,
+				"use": "Magnet Technology Education",
+				"section": "Academic Classrooms",
+				"center": [
+					137.5625,
+					351.1015625
+				]
+			},
+			{
+				"id": "211, Computer Lab",
+				"floor": 2,
+				"use": "Computer Lab",
+				"section": "Academic Classrooms",
+				"center": [
+					110.8125,
+					354.6015625
+				]
+			},
+			{
+				"id": "211, Office",
+				"floor": 2,
+				"use": "Office",
+				"section": "Academic Classrooms",
+				"center": [
+					154.8125,
+					340.3515625
+				]
+			},
+			{
+				"id": "211, Storage",
+				"floor": 2,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					164.0625,
+					345.8515625
+				]
+			},
+			{
+				"id": "212",
+				"floor": 2,
+				"use": "Earth Science",
+				"section": "Academic Classrooms",
+				"center": [
+					171.3125,
+					388.3515625
+				]
+			},
+			{
+				"id": "213",
+				"floor": 2,
+				"use": "Magnet Physics",
+				"section": "Academic Classrooms",
+				"center": [
+					188.5625,
+					350.8515625
+				]
+			},
+			{
+				"id": "214",
+				"floor": 2,
+				"use": "Magnet Earth Science",
+				"section": "Academic Classrooms",
+				"center": [
+					224.3125,
+					388.3515625
+				]
+			},
+			{
+				"id": "215",
+				"floor": 2,
+				"use": "Physics",
+				"section": "Academic Classrooms",
+				"center": [
+					245.8125,
+					350.6015625
+				]
+			},
+			{
+				"id": "216",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					255.5625,
+					388.3515625
+				]
+			},
+			{
+				"id": "217",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					300.8125,
+					351.6015625
+				]
+			},
+			{
+				"id": "218",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					278.5625,
+					388.6015625
+				]
+			},
+			{
+				"id": "219",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					301.0625,
+					387.3515625
+				]
+			},
+			{
+				"id": "220",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					303.8125,
+					292.3515625
+				]
+			},
+			{
+				"id": "221",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					342.0625,
+					280.6015625
+				]
+			},
+			{
+				"id": "221, Biology",
+				"floor": 2,
+				"use": "Biology",
+				"section": "Academic Classrooms",
+				"center": [
+					341.5625,
+					317.8515625
+				]
+			},
+			{
+				"id": "222",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					303.5625,
+					321.8515625
+				]
+			},
+			{
+				"id": "223",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					341.5625,
+					338.6015625
+				]
+			},
+			{
+				"id": "223, Computer Science",
+				"floor": 2,
+				"use": "Computer Science",
+				"section": "Academic Classrooms",
+				"center": [
+					341.5625,
+					358.8515625
+				]
+			},
+			{
+				"id": "225",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					341.5625,
+					378.6015625
+				]
+			},
+			{
+				"id": "226",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					303.8125,
+					411.8515625
+				]
+			},
+			{
+				"id": "227",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					340.8125,
+					416.3515625
+				]
+			},
+			{
+				"id": "231",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					367.5625,
+					378.8515625
+				]
+			},
+			{
+				"id": "232",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					365.5625,
+					416.3515625
+				]
+			},
+			{
+				"id": "233",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					391.0625,
+					378.8515625
+				]
+			},
+			{
+				"id": "234",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					388.8125,
+					416.3515625
+				]
+			},
+			{
+				"id": "235",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					414.0625,
+					378.8515625
+				]
+			},
+			{
+				"id": "236",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					411.8125,
+					416.3515625
+				]
+			},
+			{
+				"id": "238",
+				"floor": 2,
+				"use": "Math",
+				"section": "Academic Classrooms",
+				"center": [
+					439.8125,
+					426.6015625
+				]
+			},
+			{
+				"id": "238, Storage",
+				"floor": 2,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					429.5625,
+					411.1015625
+				]
+			},
+			{
+				"id": "240",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					442.8125,
+					296.8515625
+				]
+			},
+			{
+				"id": "241",
+				"floor": 2,
+				"use": "CISCO",
+				"section": "Academic Classrooms",
+				"center": [
+					491.8125,
+					318.3515625
+				]
+			},
+			{
+				"id": "241, Storage",
+				"floor": 2,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					468.5625,
+					331.1015625
+				]
+			},
+			{
+				"id": "242",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					439.5625,
+					330.6015625
+				]
+			},
+			{
+				"id": "243",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					478.3125,
+					350.1015625
+				]
+			},
+			{
+				"id": "244",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					439.8125,
+					354.3515625
+				]
+			},
+			{
+				"id": "245",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					477.8125,
+					373.3515625
+				]
+			},
+			{
+				"id": "246",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					440.3125,
+					379.3515625
+				]
+			},
+			{
+				"id": "247",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					478.3125,
+					396.8515625
+				]
+			},
+			{
+				"id": "249",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					478.5625,
+					446.8515625
+				]
+			},
+			{
+				"id": "250",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					503.8125,
+					444.3515625
+				]
+			},
+			{
+				"id": "250, Storage",
+				"floor": 2,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					475.5625,
+					432.3515625
+				]
+			},
+			{
+				"id": "251",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					504.5625,
+					406.1015625
+				]
+			},
+			{
+				"id": "251W",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					481.8125,
+					414.6015625
+				]
+			},
+			{
+				"id": "252",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					527.3125,
+					444.3515625
+				]
+			},
+			{
+				"id": "253",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					527.3125,
+					406.6015625
+				]
+			},
+			{
+				"id": "254",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					549.5625,
+					444.1015625
+				]
+			},
+			{
+				"id": "255",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					550.0625,
+					406.6015625
+				]
+			},
+			{
+				"id": "256",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					576.5625,
+					441.3515625
+				]
+			},
+			{
+				"id": "260",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					575.8125,
+					358.8515625
+				]
+			},
+			{
+				"id": "261",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					614.3125,
+					368.3515625
+				]
+			},
+			{
+				"id": "261, Storage",
+				"floor": 2,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					603.5625,
+					346.6015625
+				]
+			},
+			{
+				"id": "262",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					575.8125,
+					381.6015625
+				]
+			},
+			{
+				"id": "263",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					614.0625,
+					391.1015625
+				]
+			},
+			{
+				"id": "264",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					576.3125,
+					463.8515625
+				]
+			},
+			{
+				"id": "265",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					614.3125,
+					414.1015625
+				]
+			},
+			{
+				"id": "266",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					580.3125,
+					486.8515625
+				]
+			},
+			{
+				"id": "267",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					614.5625,
+					436.3515625
+				]
+			},
+			{
+				"id": "269",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					607.0625,
+					478.1015625
+				]
+			},
+			{
+				"id": "270",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					627.0625,
+					472.1015625
+				]
+			},
+			{
+				"id": "271",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					640.5625,
+					434.1015625
+				]
+			},
+			{
+				"id": "272",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					650.3125,
+					472.1015625
+				]
+			},
+			{
+				"id": "273",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					663.0625,
+					433.8515625
+				]
+			},
+			{
+				"id": "274",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					672.8125,
+					472.1015625
+				]
+			},
+			{
+				"id": "275",
+				"floor": 2,
+				"section": "Academic Classrooms",
+				"center": [
+					685.5625,
+					433.8515625
+				]
+			},
+			{
+				"id": "Floor 2, Storage 1",
+				"floor": 2,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					198.0625,
+					388.8515625
+				]
+			},
+			{
+				"id": "Floor 2, Storage 2",
+				"floor": 2,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					217.8125,
+					350.6015625
+				]
+			}
+		],
+		"Bathrooms / Building Services": [
+			{
+				"id": "Boys' Bathroom 2L",
+				"floor": 2,
+				"use": "Bathroom",
+				"section": "Bathrooms / Building Services",
+				"center": [
+					283.3125,
+					351.1015625
+				]
+			},
+			{
+				"id": "Boys' Bathroom 2R",
+				"floor": 2,
+				"use": "Bathroom",
+				"section": "Bathrooms / Building Services",
+				"center": [
+					579.3125,
+					407.1015625
+				]
+			},
+			{
+				"id": "Girls' Bathroom 2L",
+				"floor": 2,
+				"use": "Bathroom",
+				"section": "Bathrooms / Building Services",
+				"center": [
+					272.0625,
+					351.1015625
+				]
+			},
+			{
+				"id": "Girls' Bathroom 2R",
+				"floor": 2,
+				"use": "Bathroom",
+				"section": "Bathrooms / Building Services",
+				"center": [
+					567.3125,
+					407.6015625
+				]
+			}
+		]
+	},
+	{
+		"Academic Classrooms": [
+			{
+				"id": "309",
+				"floor": 3,
+				"section": "Academic Classrooms",
+				"center": [
+					116.8125,
+					351.3515625
+				]
+			},
+			{
+				"id": "310",
+				"floor": 3,
+				"section": "Academic Classrooms",
+				"center": [
+					146.5625,
+					388.8515625
+				]
+			},
+			{
+				"id": "310, Office",
+				"floor": 3,
+				"use": "Office",
+				"section": "Academic Classrooms",
+				"center": [
+					132.8125,
+					396.8515625
+				]
+			},
+			{
+				"id": "311",
+				"floor": 3,
+				"section": "Academic Classrooms",
+				"center": [
+					140.0625,
+					351.3515625
+				]
+			},
+			{
+				"id": "312",
+				"floor": 3,
+				"section": "Academic Classrooms",
+				"center": [
+					171.3125,
+					388.3515625
+				]
+			},
+			{
+				"id": "313",
+				"floor": 3,
+				"section": "Academic Classrooms",
+				"center": [
+					162.5625,
+					351.8515625
+				]
+			},
+			{
+				"id": "314",
+				"floor": 3,
+				"section": "Academic Classrooms",
+				"center": [
+					197.5625,
+					389.1015625
+				]
+			},
+			{
+				"id": "315",
+				"floor": 3,
+				"section": "Academic Classrooms",
+				"center": [
+					185.3125,
+					351.8515625
+				]
+			},
+			{
+				"id": "316",
+				"floor": 3,
+				"section": "Academic Classrooms",
+				"center": [
+					233.5625,
+					393.1015625
+				]
+			},
+			{
+				"id": "317",
+				"floor": 3,
+				"section": "Academic Classrooms",
+				"center": [
+					208.5625,
+					351.8515625
+				]
+			},
+			{
+				"id": "318",
+				"floor": 3,
+				"section": "Academic Classrooms",
+				"center": [
+					273.8125,
+					393.3515625
+				]
+			},
+			{
+				"id": "319",
+				"floor": 3,
+				"use": "INST LAB",
+				"section": "Academic Classrooms",
+				"center": [
+					252.3125,
+					349.1015625
+				]
+			},
+			{
+				"id": "319, Storage",
+				"floor": 3,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					230.3125,
+					352.8515625
+				]
+			},
+			{
+				"id": "321",
+				"floor": 3,
+				"use": "Chemistry",
+				"section": "Academic Classrooms",
+				"center": [
+					341.0625,
+					296.8515625
+				]
+			},
+			{
+				"id": "323",
+				"floor": 3,
+				"use": "Chemistry",
+				"section": "Academic Classrooms",
+				"center": [
+					313.0625,
+					295.6015625
+				]
+			},
+			{
+				"id": "323, Chemistry Storage",
+				"floor": 3,
+				"use": "Chemistry Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					347.0625,
+					320.8515625
+				]
+			},
+			{
+				"id": "323, Storage",
+				"floor": 3,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					320.8125,
+					320.3515625
+				]
+			},
+			{
+				"id": "325",
+				"floor": 3,
+				"use": "Magnet Chemistry",
+				"section": "Academic Classrooms",
+				"center": [
+					313.3125,
+					346.1015625
+				]
+			},
+			{
+				"id": "327",
+				"floor": 3,
+				"use": "Science",
+				"section": "Academic Classrooms",
+				"center": [
+					346.8125,
+					389.1015625
+				]
+			},
+			{
+				"id": "328",
+				"floor": 3,
+				"section": "Academic Classrooms",
+				"center": [
+					304.3125,
+					401.1015625
+				]
+			},
+			{
+				"id": "329",
+				"floor": 3,
+				"use": "Science",
+				"section": "Academic Classrooms",
+				"center": [
+					346.8125,
+					417.1015625
+				]
+			},
+			{
+				"id": "330",
+				"floor": 3,
+				"use": "Technology Education",
+				"section": "Academic Classrooms",
+				"center": [
+					382.8125,
+					396.6015625
+				]
+			},
+			{
+				"id": "330, Computer Lab",
+				"floor": 3,
+				"use": "Computer Lab",
+				"section": "Academic Classrooms",
+				"center": [
+					382.8125,
+					424.6015625
+				]
+			},
+			{
+				"id": "331",
+				"floor": 3,
+				"use": "Chemistry",
+				"section": "Academic Classrooms",
+				"center": [
+					341.8125,
+					346.3515625
+				]
+			},
+			{
+				"id": "332",
+				"floor": 3,
+				"use": "Science",
+				"section": "Academic Classrooms",
+				"center": [
+					418.3125,
+					388.3515625
+				]
+			},
+			{
+				"id": "341",
+				"floor": 3,
+				"use": "Science",
+				"section": "Academic Classrooms",
+				"center": [
+					473.5625,
+					337.6015625
+				]
+			},
+			{
+				"id": "341, Office",
+				"floor": 3,
+				"use": "Office",
+				"section": "Academic Classrooms",
+				"center": [
+					486.0625,
+					328.8515625
+				]
+			},
+			{
+				"id": "342",
+				"floor": 3,
+				"use": "MOVHS",
+				"section": "Academic Classrooms",
+				"center": [
+					438.5625,
+					340.3515625
+				]
+			},
+			{
+				"id": "343",
+				"floor": 3,
+				"use": "Magnet",
+				"section": "Academic Classrooms",
+				"center": [
+					477.0625,
+					363.8515625
+				]
+			},
+			{
+				"id": "344",
+				"floor": 3,
+				"use": "Science",
+				"section": "Academic Classrooms",
+				"center": [
+					418.5625,
+					417.1015625
+				]
+			},
+			{
+				"id": "345",
+				"floor": 3,
+				"use": "Biology",
+				"section": "Academic Classrooms",
+				"center": [
+					494.8125,
+					445.1015625
+				]
+			},
+			{
+				"id": "352",
+				"floor": 3,
+				"use": "Biology",
+				"section": "Academic Classrooms",
+				"center": [
+					494.5625,
+					417.1015625
+				]
+			},
+			{
+				"id": "354",
+				"floor": 3,
+				"use": "Technology Education",
+				"section": "Academic Classrooms",
+				"center": [
+					530.0625,
+					429.1015625
+				]
+			},
+			{
+				"id": "354, Computer Lab",
+				"floor": 3,
+				"use": "Computer Lab",
+				"section": "Academic Classrooms",
+				"center": [
+					532.5625,
+					452.1015625
+				]
+			},
+			{
+				"id": "354, Office",
+				"floor": 3,
+				"use": "Office",
+				"section": "Academic Classrooms",
+				"center": [
+					538.0625,
+					406.6015625
+				]
+			},
+			{
+				"id": "354, Storage",
+				"floor": 3,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					521.3125,
+					407.8515625
+				]
+			},
+			{
+				"id": "356",
+				"floor": 3,
+				"use": "Biology",
+				"section": "Academic Classrooms",
+				"center": [
+					563.0625,
+					416.6015625
+				]
+			},
+			{
+				"id": "360",
+				"floor": 3,
+				"use": "Biology",
+				"section": "Academic Classrooms",
+				"center": [
+					574.8125,
+					354.1015625
+				]
+			},
+			{
+				"id": "361",
+				"floor": 3,
+				"use": "Technology Education",
+				"section": "Academic Classrooms",
+				"center": [
+					613.3125,
+					391.3515625
+				]
+			},
+			{
+				"id": "361, Computer Lab",
+				"floor": 3,
+				"use": "Computer Lab",
+				"section": "Academic Classrooms",
+				"center": [
+					613.3125,
+					363.6015625
+				]
+			},
+			{
+				"id": "361, Office",
+				"floor": 3,
+				"use": "Office",
+				"section": "Academic Classrooms",
+				"center": [
+					605.0625,
+					415.8515625
+				]
+			},
+			{
+				"id": "361, Storage",
+				"floor": 3,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					619.5625,
+					415.3515625
+				]
+			},
+			{
+				"id": "362",
+				"floor": 3,
+				"use": "Biology",
+				"section": "Academic Classrooms",
+				"center": [
+					569.3125,
+					445.3515625
+				]
+			},
+			{
+				"id": "363",
+				"floor": 3,
+				"use": "Advanced Biology",
+				"section": "Academic Classrooms",
+				"center": [
+					617.8125,
+					435.1015625
+				]
+			},
+			{
+				"id": "364",
+				"floor": 3,
+				"section": "Academic Classrooms",
+				"center": [
+					574.5625,
+					486.6015625
+				]
+			},
+			{
+				"id": "365",
+				"floor": 3,
+				"use": "Advanced Biology",
+				"section": "Academic Classrooms",
+				"center": [
+					617.8125,
+					462.6015625
+				]
+			},
+			{
+				"id": "365, Storage",
+				"floor": 3,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					645.0625,
+					467.8515625
+				]
+			},
+			{
+				"id": "371",
+				"floor": 3,
+				"use": "Advanced Biology",
+				"section": "Academic Classrooms",
+				"center": [
+					649.0625,
+					449.6015625
+				]
+			},
+			{
+				"id": "373",
+				"floor": 3,
+				"use": "Technology Education",
+				"section": "Academic Classrooms",
+				"center": [
+					677.5625,
+					447.3515625
+				]
+			},
+			{
+				"id": "373, Computer Lab",
+				"floor": 3,
+				"use": "Computer Lab",
+				"section": "Academic Classrooms",
+				"center": [
+					680.0625,
+					427.8515625
+				]
+			},
+			{
+				"id": "373, Office",
+				"floor": 3,
+				"use": "Office",
+				"section": "Academic Classrooms",
+				"center": [
+					674.8125,
+					462.3515625
+				]
+			},
+			{
+				"id": "373, Storage",
+				"floor": 3,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					674.8125,
+					471.3515625
+				]
+			},
+			{
+				"id": "Floor 3, Biology Storage",
+				"floor": 3,
+				"use": "Biology Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					468.3125,
+					426.1015625
+				]
+			},
+			{
+				"id": "Floor 3, Storage 2",
+				"floor": 3,
+				"use": "Storage",
+				"section": "Academic Classrooms",
+				"center": [
+					574.5625,
+					467.6015625
+				]
+			}
+		],
+		"Bathrooms / Building Services": [
+			{
+				"id": "Boys' Bathroom 3L",
+				"floor": 3,
+				"use": "Bathroom",
+				"section": "Bathrooms / Building Services",
+				"center": [
+					282.3125,
+					351.1015625
+				]
+			},
+			{
+				"id": "Boys' Bathroom 3R",
+				"floor": 3,
+				"use": "Bathroom",
+				"section": "Bathrooms / Building Services",
+				"center": [
+					577.3125,
+					379.8515625
+				]
+			},
+			{
+				"id": "Girls' Bathroom 3L",
+				"floor": 3,
+				"use": "Bathroom",
+				"section": "Bathrooms / Building Services",
+				"center": [
+					271.3125,
+					351.3515625
+				]
+			},
+			{
+				"id": "Girls' Bathroom 3R",
+				"floor": 3,
+				"use": "Bathroom",
+				"section": "Bathrooms / Building Services",
+				"center": [
+					565.3125,
+					379.8515625
+				]
+			}
+		]
+	},
+	{
+		"Dining": [
+			{
+				"id": "5-star Turkish Restaurant",
+				"floor": 4,
+				"use": "Restaurant",
+				"section": "Dining",
+				"center": [
+					639.8125,
+					454.3515625
+				]
+			},
+			{
+				"id": "McDonald's",
+				"floor": 4,
+				"use": "Restaurant",
+				"section": "Dining",
+				"center": [
+					487.8125,
+					440.1015625
+				]
+			},
+			{
+				"id": "Restaurant Kitchen",
+				"floor": 4,
+				"use": "Kitchen",
+				"section": "Dining",
+				"center": [
+					579.5625,
+					459.3515625
+				]
+			},
+			{
+				"id": "Turkish Delight Parlor",
+				"floor": 4,
+				"use": "Restaurant",
+				"section": "Dining",
+				"center": [
+					536.0625,
+					440.3515625
+				]
+			}
+		],
+		"Recreation": [
+			{
+				"id": "Blair Bocce Field",
+				"floor": 4,
+				"use": "Park",
+				"section": "Recreation",
+				"center": [
+					341.8125,
+					344.3515625
+				]
+			},
+			{
+				"id": "Blair Park",
+				"floor": 4,
+				"use": "Park",
+				"section": "Recreation",
+				"center": [
+					350.8125,
+					310.1015625
+				]
+			},
+			{
+				"id": "Blair River",
+				"floor": 4,
+				"use": "River",
+				"section": "Recreation",
+				"center": [
+					329.0625,
+					332.3515625
+				]
+			},
+			{
+				"id": "Daniel Zhu Memorial Park",
+				"floor": 4,
+				"use": "Park",
+				"section": "Recreation",
+				"center": [
+					414.3125,
+					373.6015625
+				]
+			},
+			{
+				"id": "Grande Plaza de Blair",
+				"floor": 4,
+				"use": "Plaza",
+				"section": "Recreation",
+				"center": [
+					341.125,
+					376.703125
+				]
+			},
+			{
+				"id": "Inconspicuous Patch of Grass",
+				"floor": 4,
+				"use": "Park",
+				"section": "Recreation",
+				"center": [
+					365.0625,
+					287.6015625
+				]
+			},
+			{
+				"id": "Other Plaza",
+				"floor": 4,
+				"use": "Plaza",
+				"section": "Recreation",
+				"center": [
+					340.5625,
+					288.8515625
+				]
+			},
+			{
+				"id": "Zhu Croquet Field",
+				"floor": 4,
+				"use": "Park",
+				"section": "Recreation",
+				"center": [
+					370.3125,
+					375.1015625
+				]
+			},
+			{
+				"id": "Zhu River",
+				"floor": 4,
+				"use": "River",
+				"section": "Recreation",
+				"center": [
+					390.5625,
+					383.1015625
+				]
+			}
+		],
+		"Learning and Relaxation": [
+			{
+				"id": "Blair Exclusive Ultra-Chic Lounge",
+				"floor": 4,
+				"use": "Lounge",
+				"section": "Learning and Relaxation",
+				"center": [
+					379.625,
+					420.203125
+				]
+			},
+			{
+				"id": "Center for Higher Study and Philosophy",
+				"floor": 4,
+				"use": "Center for Higher Study and Philosophy",
+				"section": "Learning and Relaxation",
+				"center": [
+					300.0625,
+					267.6015625
+				]
+			},
+			{
+				"id": "Lockers",
+				"floor": 4,
+				"use": "Lockers",
+				"section": "Learning and Relaxation",
+				"center": [
+					291.8125,
+					396.1015625
+				]
+			},
+			{
+				"id": "Security Booth/Lounge",
+				"floor": 4,
+				"use": "Lounge",
+				"section": "Learning and Relaxation",
+				"center": [
+					291.3125,
+					364.3515625
+				]
+			}
+		],
+		"Outdoor Areas": [
+			{
+				"id": "Helicopter Pad",
+				"floor": 4,
+				"use": "Helicopter Pad",
+				"section": "Outdoor Areas",
+				"center": [
+					131.3125,
+					372.1015625
+				]
+			},
+			{
+				"id": "Infinity Hot Tub/Jacuzzi",
+				"floor": 4,
+				"use": "Jacuzzi",
+				"section": "Outdoor Areas",
+				"center": [
+					255.5625,
+					396.6015625
+				]
+			},
+			{
+				"id": "Pool",
+				"floor": 4,
+				"use": "Pool",
+				"section": "Outdoor Areas",
+				"center": [
+					211.3125,
+					372.6015625
+				]
+			},
+			{
+				"id": "Turkish Restaurant, Outdoor Patio",
+				"floor": 4,
+				"use": "Patio",
+				"section": "Outdoor Areas",
+				"center": [
+					689.3125,
+					468.1015625
+				]
+			}
+		],
+		"Commercial Facilities": [
+			{
+				"id": "La Fondue",
+				"floor": 4,
+				"use": "Fountain",
+				"section": "Commercial Facilities",
+				"center": [
+					467.0625,
+					314.3515625
+				]
+			},
+			{
+				"id": "Luxury Goods Bazaar",
+				"floor": 4,
+				"use": "Shop",
+				"section": "Commercial Facilities",
+				"center": [
+					458.3125,
+					359.3515625
+				]
+			},
+			{
+				"id": "Premium Texas Instruments Store",
+				"floor": 4,
+				"use": "Shop",
+				"section": "Commercial Facilities",
+				"center": [
+					435.3125,
+					317.3515625
+				]
+			}
+		],
+		"Entertainment": [
+			{
+				"id": "Non-gambling Casino",
+				"floor": 4,
+				"use": "Casino",
+				"section": "Entertainment",
+				"center": [
+					593.375,
+					381.703125
+				]
+			}
+		]
+	}
+]
+with open('new_places.json', 'w') as f:
+	f.write('"places": {\n')
+	isFirst = True
+	for floor in places:
+		for section in floor.values():
+			for place in section:
+				f.write(f'\t"{place['id']}": ')
+				json.dump(place, f)
+				if isFirst:
+					f.write(',')
+					isFirst = False
+				f.write('\n')
+	f.write('\n}')
