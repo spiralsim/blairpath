@@ -98,13 +98,12 @@ $.getJSON('/data.json', function (data) {
 
 	rooms.forEach(r => {
 		const roomVertex = new Vertex([r.floor, ...r.center]);
-		var nearest, minDist = Infinity, tempEdge;
+		var minDist = Infinity, tempEdge;
 		vertices.forEach(v => {
 			if (v.floor != r.floor) return;
 			const edge = new Edge(v, roomVertex);
 			const dist = edge.length();
 			if (dist < minDist) {
-				nearest = v;
 				minDist = dist;
 				tempEdge = edge;
 			}
@@ -229,14 +228,11 @@ function addPoint () {
 };
 
 /* Calculate Path */
-var path = {};
+var totalDistance = 0;
 
 function clearCalc () {
 	edges.forEach(e => e.isPath = false);
-	path = {
-		subpaths: [],
-		distance: 0,
-	};
+	totalDistance = 0;
 	document.getElementById("calc-result").innerHTML = '';
 };
 
@@ -245,6 +241,7 @@ function calculate () {
 
 	const calcButton = document.getElementById("calc-button"), calcResult = document.getElementById("calc-result");
 	function finishCalc (msg, err) {
+		if (err) edges.forEach(e => e.isPath = false);
 		calcResult.innerHTML = `<p style="color: ${err ? "red" : "black"}">${msg}</p>`;
 		calcButton.removeAttribute("disabled");
 		calcButton.innerHTML = "Calculate Path";
@@ -270,7 +267,6 @@ function calculate () {
 		var output = "";
 		
 		const graph = new WeightedGraph();
-		var vertices = new Set();
 		edges.forEach(e => {
 			if (e.name != 'Elevator' || options.allowElevator) graph.addEdge(e);
 		});
@@ -282,21 +278,23 @@ function calculate () {
 
 			var {path: subpathVertices, distance: subDistance} = graph.Dijkstra(...subpathRoomVertices);
 
+			if (subDistance == Infinity)
+				return finishCalc(`We couldn't find a path from ${subpathRoomIDs.join(' to ')}.`, true);
+
 			output +=
 				`<p>${subpathRoomIDs.join(' → ')}` +
 				`\t` +
 				`<span style='color: gray'>${prettifyDistance(subDistance)}</span></p>`;
 
-			if (!subDistance) return finishCalc(`We couldn't find a path from ${subpathRoomIDs.join(' to ')}.`, true);
 			for (let i = 0; i < subpathVertices.length - 1; i++) {
 				const edge = new Edge(subpathVertices[i], subpathVertices[i + 1]);
 				edge.findInDatabase().isPath = true;
 			}
 			
-			path.distance += subDistance;
+			totalDistance += subDistance;
 		}
 		
-		output = `<p><b>${prettifyDistance(path.distance)}</b></p>` + output;
+		output = `<p><b>${prettifyDistance(totalDistance)}</b></p>` + output;
 		// Convert output string to HTML and print to website
 		finishCalc(output);
 	}	
