@@ -364,40 +364,40 @@ function showFloorPlan() {
 
 function showPlaces() {
 	textAlign(CENTER, CENTER);
-	textSize(10 / VIEW.zoom);
+	textSize(12 / VIEW.zoom);
 	stroke(0);
 	strokeWeight(1 / VIEW.zoom);
 	// Display dots for room selection
-	places.forEach(room => {
-		room.hover = false;
-		if (room.floor != _floor || !room.center) return;
+	places.forEach(place => {
+		place.hover = false;
+		if (place.floor != _floor || !place.center) return;
 		// Display the point and detect hovering if applicable
-		const nameWidth = textWidth(room.id);
+		const nameWidth = textWidth(place.id);
 		if (
-			abs(CURSOR.virtPos.x - room.center[0]) < nameWidth / 2 &&
-			abs(CURSOR.virtPos.y - room.center[1]) < 5 / VIEW.zoom &&
+			abs(CURSOR.virtPos.x - place.center[0]) < nameWidth / 2 &&
+			abs(CURSOR.virtPos.y - place.center[1]) < 6 / VIEW.zoom &&
 			!hoveredRoom
 		) {
-			hoveredRoom = room;
-			room.hover = true;
+			hoveredRoom = place;
+			place.hover = true;
 			cursorType = HAND;
 		}
 
 		fill(255);
-		if (room.hover) fill(mouseIsPressed ? color(250, 85, 85) : 128);
+		if (place.hover) fill(mouseIsPressed ? color(250, 85, 85) : 128);
 		
-		text(room.id, room.center[0], room.center[1]);//, 10 / VIEW.zoom);
+		text(place.id, place.center[0], place.center[1]);
 	});
 
 	// Display selected points
 	stroke(255);
 	fill(0);
 	for (let i = 0; i < rows.length; i++) {
-		const room = places.find(r => r.id == document.getElementById("point-" + (i + 1)).value);
-		if (!room || !room.center || room.floor != _floor) continue;
+		const place = places.find(r => r.id == document.getElementById("point-" + (i + 1)).value);
+		if (!place || !place.center || place.floor != _floor) continue;
 
 		// Draw center, doors, etc.
-		text(room.id, room.center[0], room.center[1]);
+		text(place.id, place.center[0], place.center[1]);
 	}
 }
 
