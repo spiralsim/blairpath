@@ -40,7 +40,7 @@ function computeLength (link) {
 	if (!link.points[0] || !link.points[1]) return;
 
 	if (link.points[0][2] == link.points[1][2]) link.gLen = dist(link.points[0][0], link.points[0][1], link.points[1][0], link.points[1][1]);
-	else link.vLen = constants.METERS_PER_FLOOR / constants.METERS_PER_PIXEL;
+	else link.vLen = constants.METERS_PERVIEW.floor / constants.METERS_PER_PIXEL;
 }
 // Delete a link #(id), remove all records of the link, etc.
 function deleteLink (id) {
@@ -150,7 +150,6 @@ var loaded = false, lastFrameRate = 60, lastUpdate = framesSinceUpdate = 0;
 /*
 	Navigation
 */
-var _floor = 1;
 const MAP_DIM_TMP = [1083, 500],
 	SITE_DIM_TMP = [2263, 1267],
 	SITE_PLAN_OFFSET_TMP = [-525, -248];
@@ -170,6 +169,7 @@ const VIEW = {
 	// Physical position of the floor plan's top-left corner
 	physPos: null,
 	zoom: null,
+	floor: 1,
 	pan(delta) {
 		VIEW.physPos.add(delta);
 	},
@@ -244,7 +244,7 @@ var devData = {
  * @param {Vertex} b Vertex at the arrow's end point
  */
 function drawArrow(a, b) {
-	const dir = a.floor == _floor ? b.floor - _floor : a.floor - _floor;
+	const dir = a.floor == VIEW.floor ? b.floor - VIEW.floor : a.floor - VIEW.floor;
 	triangle(
 		a.x - 5 / VIEW.zoom, a.y,
 		a.x + 5 / VIEW.zoom, a.y,
@@ -337,7 +337,7 @@ function showSitePlan() {
 
 function showFloorPlan() {
 	tint(255, 255);
-	image(images.floors[_floor - 1], 0, 0);
+	image(images.floors[VIEW.floor - 1], 0, 0);
 	if (showOptions[`show-dev-tools`]) {
 		stroke(255, 0, 0);
 		rect(0, 0, MAP_DIM.x, MAP_DIM.y);
@@ -353,7 +353,7 @@ function showPlaces() {
 	for (let id in places) {
 		const place = places[id];
 		place.hover = false;
-		if (place.floor != _floor || !place.center) continue;
+		if (place.floor != VIEW.floor || !place.center) continue;
 		// Display the point and detect hovering if applicable
 		const nameWidth = textWidth(id);
 		if (
@@ -377,7 +377,7 @@ function showPlaces() {
 	fill(0);
 	for (let i = 1; i <= rows.length; i++) {
 		const id = getRowValue(i), place = places[id];
-		if (!place || place.floor != _floor) continue;
+		if (!place || place.floor != VIEW.floor) continue;
 
 		// Draw center, doors, etc.
 		text(id, place.center[0], place.center[1]);
@@ -385,15 +385,15 @@ function showPlaces() {
 }
 
 function showDevTools() {
-	var foundHoveredEdge = false;
-	edges.forEach(e => {
-		e.isHovered = false;
-		if (e.endpoint1.floor != _floor && e.endpoint2.floor != _floor) return;
-		if (!foundHoveredEdge) {
-			e.checkHovered();
-			foundHoveredEdge ||= e.isHovered;
-		}
-		drawEdge(e, color(e.isHovered ? 192 : 0));
+	stroke(0);
+	noFill();
+	strokeWeight(2 / VIEW.zoom);
+	edges.forEach(({ endpoint1, endpoint2, isTemporary }) => {
+		if (isTemporary) return;
+		[endpoint1, endpoint2].forEach(({ x, y, floor }) => {
+			if (floor == VIEW.floor)
+				circle(x, y, EDGE_WIDTH * 3 / VIEW.zoom);
+		});
 	});
 }
 
@@ -471,7 +471,7 @@ function draw() {
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
 	var foundHoveredEdge = false;
 	edges.forEach(e => {
-		if (e.endpoint1.floor != _floor && e.endpoint2.floor != _floor) return;
+		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor) return;
 		if (showOptions[`show-dev-tools`]) {
 			e.isHovered = false;
 			if (!foundHoveredEdge) {
@@ -485,6 +485,7 @@ function draw() {
 		if (e.isHovered) _color = lerpColor(_color, color(255), 0.75)
 		drawEdge(e, _color);
 	});
+	if (showOptions[`show-dev-tools`]) showDevTools();
 	if (showOptions[`show-names`]) showPlaces();
 
 	pop();
