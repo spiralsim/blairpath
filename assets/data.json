@@ -3,7 +3,7 @@
 		"METERS_PER_FLOOR": 4.39,
 		"METERS_PER_PIXEL": 0.32512
 	},
-	"rooms": [
+	"places": [
 		{
 			"Fine Arts Wing": [
 				{
@@ -14,9 +14,7 @@
 					"center": [
 						45.625,
 						149.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "002",
@@ -26,9 +24,7 @@
 					"center": [
 						77.625,
 						133.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "003",
@@ -38,9 +34,7 @@
 					"center": [
 						28.125,
 						123.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "004",
@@ -50,9 +44,7 @@
 					"center": [
 						103.625,
 						107.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "005",
@@ -62,9 +54,7 @@
 					"center": [
 						42.625,
 						100.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "006",
@@ -74,9 +64,7 @@
 					"center": [
 						151.125,
 						75.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "007",
@@ -86,9 +74,7 @@
 					"center": [
 						68.125,
 						83.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "008",
@@ -98,9 +84,7 @@
 					"center": [
 						94.625,
 						53.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "011",
@@ -110,9 +94,7 @@
 					"center": [
 						134.625,
 						42.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "013",
@@ -122,9 +104,7 @@
 					"center": [
 						158.625,
 						25.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "014",
@@ -134,9 +114,7 @@
 					"center": [
 						119.915,
 						150.302
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "016A",
@@ -146,9 +124,7 @@
 					"center": [
 						156.625,
 						188.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "016B",
@@ -158,9 +134,7 @@
 					"center": [
 						139.125,
 						201.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Auditorium",
@@ -170,9 +144,7 @@
 					"center": [
 						208.125,
 						126.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Kiln",
@@ -182,9 +154,7 @@
 					"center": [
 						182.25,
 						24.6355
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Stage Shop",
@@ -194,9 +164,7 @@
 					"center": [
 						205.625,
 						41.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			],
 			"Media/Reference Complex": [
@@ -208,9 +176,7 @@
 					"center": [
 						361.125,
 						196.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "102",
@@ -220,9 +186,7 @@
 					"center": [
 						397.125,
 						181.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "103",
@@ -232,9 +196,7 @@
 					"center": [
 						423.125,
 						219.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "106",
@@ -244,9 +206,7 @@
 					"center": [
 						397.125,
 						214.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Computer/Work Room",
@@ -256,9 +216,7 @@
 					"center": [
 						455.125,
 						226.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Conference A",
@@ -268,9 +226,7 @@
 					"center": [
 						552.625,
 						267.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Conference B",
@@ -280,9 +236,7 @@
 					"center": [
 						542.625,
 						239.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Equipment Storage",
@@ -292,9 +246,7 @@
 					"center": [
 						450.125,
 						178.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "General Storage",
@@ -304,9 +256,7 @@
 					"center": [
 						451.625,
 						203.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Head-in Room",
@@ -316,9 +266,7 @@
 					"center": [
 						472.3125,
 						174.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Media Center",
@@ -328,9 +276,7 @@
 					"center": [
 						503.125,
 						233.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			],
 			"Gymnasium Complex": [
@@ -342,9 +288,7 @@
 					"center": [
 						92.125,
 						376.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "111",
@@ -354,9 +298,7 @@
 					"center": [
 						131.625,
 						318.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "112",
@@ -366,9 +308,7 @@
 					"center": [
 						128.125,
 						354.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "112, Storage",
@@ -378,9 +318,7 @@
 					"center": [
 						165.625,
 						358.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "113",
@@ -390,9 +328,7 @@
 					"center": [
 						113.625,
 						318.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "114",
@@ -402,9 +338,7 @@
 					"center": [
 						190.625,
 						361.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "114, Storage",
@@ -414,9 +348,7 @@
 					"center": [
 						178.125,
 						359.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "116",
@@ -426,9 +358,7 @@
 					"center": [
 						222.625,
 						361.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "118",
@@ -438,9 +368,7 @@
 					"center": [
 						264.625,
 						356.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "118, Storage",
@@ -450,9 +378,7 @@
 					"center": [
 						244.625,
 						356.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Boys' Locker Room",
@@ -462,9 +388,7 @@
 					"center": [
 						245.625,
 						385.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Girls' Locker Room",
@@ -474,9 +398,7 @@
 					"center": [
 						169.125,
 						388.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Large Gymnasium",
@@ -486,9 +408,7 @@
 					"center": [
 						237.125,
 						291.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Small Gymnasium",
@@ -498,9 +418,7 @@
 					"center": [
 						171.125,
 						291.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			],
 			"Academic Classrooms": [
@@ -511,9 +429,7 @@
 					"center": [
 						301.8125,
 						327.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "119",
@@ -522,9 +438,7 @@
 					"center": [
 						302.0625,
 						358.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "122",
@@ -533,9 +447,7 @@
 					"center": [
 						298.125,
 						305.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "122, Office",
@@ -544,9 +456,7 @@
 					"center": [
 						312.3125,
 						307.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "123",
@@ -555,9 +465,7 @@
 					"center": [
 						340.3125,
 						360.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "124",
@@ -566,9 +474,7 @@
 					"center": [
 						301.8125,
 						381.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "126",
@@ -577,9 +483,7 @@
 					"center": [
 						301.8125,
 						398.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "128",
@@ -588,9 +492,7 @@
 					"center": [
 						301.8125,
 						409.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "130",
@@ -599,9 +501,7 @@
 					"center": [
 						351.5625,
 						418.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "131",
@@ -610,9 +510,7 @@
 					"center": [
 						340.0625,
 						384.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "132",
@@ -621,9 +519,7 @@
 					"center": [
 						371.5625,
 						418.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "133",
@@ -632,9 +528,7 @@
 					"center": [
 						366.5625,
 						379.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "134",
@@ -643,9 +537,7 @@
 					"center": [
 						395.0625,
 						418.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "135",
@@ -654,9 +546,7 @@
 					"center": [
 						389.3125,
 						379.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "136",
@@ -665,9 +555,7 @@
 					"center": [
 						418.3125,
 						418.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "137",
@@ -676,9 +564,7 @@
 					"center": [
 						411.8125,
 						379.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "138",
@@ -687,9 +573,7 @@
 					"center": [
 						440.5625,
 						418.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "138, Storage",
@@ -699,9 +583,7 @@
 					"center": [
 						470.8125,
 						437.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "141",
@@ -710,9 +592,7 @@
 					"center": [
 						477.3125,
 						331.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "141, English",
@@ -722,9 +602,7 @@
 					"center": [
 						498.5625,
 						311.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "141, Storage",
@@ -734,9 +612,7 @@
 					"center": [
 						474.0625,
 						303.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "142",
@@ -745,9 +621,7 @@
 					"center": [
 						438.3125,
 						325.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "143",
@@ -757,9 +631,7 @@
 					"center": [
 						476.8125,
 						350.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "144",
@@ -768,9 +640,7 @@
 					"center": [
 						438.3125,
 						349.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "145",
@@ -780,9 +650,7 @@
 					"center": [
 						476.8125,
 						363.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "146",
@@ -792,9 +660,7 @@
 					"center": [
 						438.5625,
 						379.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "147",
@@ -804,9 +670,7 @@
 					"center": [
 						477.0625,
 						382.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "148",
@@ -816,9 +680,7 @@
 					"center": [
 						438.5625,
 						443.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "151",
@@ -827,9 +689,7 @@
 					"center": [
 						482.5625,
 						408.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "152",
@@ -838,9 +698,7 @@
 					"center": [
 						502.8125,
 						446.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "152, Work Room",
@@ -850,9 +708,7 @@
 					"center": [
 						485.3125,
 						446.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "153",
@@ -862,9 +718,7 @@
 					"center": [
 						513.5625,
 						408.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "154",
@@ -873,9 +727,7 @@
 					"center": [
 						526.5625,
 						446.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "155",
@@ -884,9 +736,7 @@
 					"center": [
 						530.8125,
 						408.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "156",
@@ -895,9 +745,7 @@
 					"center": [
 						548.5625,
 						446.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "157",
@@ -906,9 +754,7 @@
 					"center": [
 						548.8125,
 						408.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "158",
@@ -917,9 +763,7 @@
 					"center": [
 						575.3125,
 						443.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "160",
@@ -929,9 +773,7 @@
 					"center": [
 						575.0625,
 						363.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "161",
@@ -941,9 +783,7 @@
 					"center": [
 						613.5625,
 						364.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "162",
@@ -952,9 +792,7 @@
 					"center": [
 						574.8125,
 						383.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "163",
@@ -963,9 +801,7 @@
 					"center": [
 						613.5625,
 						383.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "164",
@@ -974,9 +810,7 @@
 					"center": [
 						574.3125,
 						408.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "165",
@@ -985,9 +819,7 @@
 					"center": [
 						613.3125,
 						409.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "166",
@@ -996,9 +828,7 @@
 					"center": [
 						575.0625,
 						465.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "167",
@@ -1007,9 +837,7 @@
 					"center": [
 						616.5625,
 						436.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "168",
@@ -1018,9 +846,7 @@
 					"center": [
 						575.0625,
 						488.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "170",
@@ -1030,9 +856,7 @@
 					"center": [
 						613.3125,
 						474.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "170, Office",
@@ -1042,9 +866,7 @@
 					"center": [
 						623.3125,
 						483.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "171",
@@ -1053,9 +875,7 @@
 					"center": [
 						639.8125,
 						436.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "172",
@@ -1064,9 +884,7 @@
 					"center": [
 						638.8125,
 						474.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "173",
@@ -1075,9 +893,7 @@
 					"center": [
 						662.5625,
 						436.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "174",
@@ -1086,9 +902,7 @@
 					"center": [
 						663.3125,
 						474.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "176",
@@ -1098,9 +912,7 @@
 					"center": [
 						679.8125,
 						474.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "177",
@@ -1109,9 +921,7 @@
 					"center": [
 						685.3125,
 						436.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			],
 			"Administration Complex": [
@@ -1123,9 +933,7 @@
 					"center": [
 						298.5625,
 						285.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "121",
@@ -1135,9 +943,7 @@
 					"center": [
 						340.125,
 						335.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "AP Office",
@@ -1147,9 +953,7 @@
 					"center": [
 						340.125,
 						167.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Athletic Director",
@@ -1159,9 +963,7 @@
 					"center": [
 						279.3125,
 						240.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Attendance Office",
@@ -1171,9 +973,7 @@
 					"center": [
 						331.5625,
 						222.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Concessions",
@@ -1183,21 +983,17 @@
 					"center": [
 						261.0625,
 						239.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
-					"id": "Guidance [main room]",
+					"id": "Guidance",
 					"floor": 1,
 					"use": "Counseling",
 					"section": "Administration Complex",
 					"center": [
 						356.125,
 						274.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Main Office",
@@ -1207,9 +1003,7 @@
 					"center": [
 						288.125,
 						198.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Principal's Office",
@@ -1219,9 +1013,7 @@
 					"center": [
 						320.125,
 						163.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Registrar",
@@ -1231,9 +1023,7 @@
 					"center": [
 						331.625,
 						251.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			],
 			"Bathrooms / Building Services": [
@@ -1245,9 +1035,7 @@
 					"center": [
 						223.3125,
 						204.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Boys' Bathroom 1R",
@@ -1257,9 +1045,7 @@
 					"center": [
 						575.3125,
 						335.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Building Services",
@@ -1269,9 +1055,7 @@
 					"center": [
 						226.0625,
 						212.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Girls' Bathroom 1L",
@@ -1281,9 +1065,7 @@
 					"center": [
 						228.8125,
 						221.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Girls' Bathroom 1R",
@@ -1293,9 +1075,7 @@
 					"center": [
 						575.3125,
 						347.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			],
 			"Dining Facilities": [
@@ -1307,9 +1087,7 @@
 					"center": [
 						726.125,
 						286.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Main Mechanical Room",
@@ -1319,9 +1097,7 @@
 					"center": [
 						755.125,
 						301.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "PAC Serving Table",
@@ -1331,9 +1107,7 @@
 					"center": [
 						698.625,
 						339.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "SAC",
@@ -1343,9 +1117,7 @@
 					"center": [
 						630.625,
 						269.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Serving Table 1",
@@ -1355,9 +1127,7 @@
 					"center": [
 						704.125,
 						280.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Serving Table 2",
@@ -1367,9 +1137,7 @@
 					"center": [
 						704.125,
 						294.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			],
 			"Outdoor Areas": [
@@ -1380,9 +1148,7 @@
 					"center": [
 						977.8125,
 						317.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "P10",
@@ -1391,9 +1157,7 @@
 					"center": [
 						925.3125,
 						361.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "P2",
@@ -1402,9 +1166,7 @@
 					"center": [
 						967.8125,
 						338.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "P3",
@@ -1413,9 +1175,7 @@
 					"center": [
 						967.5625,
 						361.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "P4",
@@ -1424,9 +1184,7 @@
 					"center": [
 						967.8125,
 						383.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "P5",
@@ -1435,9 +1193,7 @@
 					"center": [
 						1038.8125,
 						384.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "P6",
@@ -1446,9 +1202,7 @@
 					"center": [
 						1038.5625,
 						362.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "P7",
@@ -1457,9 +1211,7 @@
 					"center": [
 						1038.5625,
 						340.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "P8",
@@ -1468,9 +1220,7 @@
 					"center": [
 						1038.5625,
 						318.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "P9",
@@ -1479,9 +1229,7 @@
 					"center": [
 						1038.5625,
 						278.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Senior Courtyard",
@@ -1491,9 +1239,7 @@
 					"center": [
 						527.0625,
 						362.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Staff Courtyard",
@@ -1503,9 +1249,7 @@
 					"center": [
 						390.0625,
 						331.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			]
 		},
@@ -1519,9 +1263,7 @@
 					"center": [
 						93.5625,
 						391.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "210",
@@ -1530,9 +1272,7 @@
 					"center": [
 						140.0625,
 						388.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "211",
@@ -1542,9 +1282,7 @@
 					"center": [
 						137.5625,
 						351.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "211, Computer Lab",
@@ -1554,9 +1292,7 @@
 					"center": [
 						110.8125,
 						354.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "211, Office",
@@ -1566,9 +1302,7 @@
 					"center": [
 						154.8125,
 						340.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "211, Storage",
@@ -1578,9 +1312,7 @@
 					"center": [
 						164.0625,
 						345.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "212",
@@ -1590,9 +1322,7 @@
 					"center": [
 						171.3125,
 						388.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "213",
@@ -1602,9 +1332,7 @@
 					"center": [
 						188.5625,
 						350.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "214",
@@ -1614,9 +1342,7 @@
 					"center": [
 						224.3125,
 						388.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "215",
@@ -1626,9 +1352,7 @@
 					"center": [
 						245.8125,
 						350.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "216",
@@ -1637,9 +1361,7 @@
 					"center": [
 						255.5625,
 						388.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "217",
@@ -1648,9 +1370,7 @@
 					"center": [
 						300.8125,
 						351.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "218",
@@ -1659,9 +1379,7 @@
 					"center": [
 						278.5625,
 						388.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "219",
@@ -1670,9 +1388,7 @@
 					"center": [
 						301.0625,
 						387.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "220",
@@ -1681,9 +1397,7 @@
 					"center": [
 						303.8125,
 						292.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "221",
@@ -1692,9 +1406,7 @@
 					"center": [
 						342.0625,
 						280.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "221, Biology",
@@ -1704,9 +1416,7 @@
 					"center": [
 						341.5625,
 						317.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "222",
@@ -1715,9 +1425,7 @@
 					"center": [
 						303.5625,
 						321.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "223",
@@ -1726,9 +1434,7 @@
 					"center": [
 						341.5625,
 						338.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "223, Computer Science",
@@ -1738,9 +1444,7 @@
 					"center": [
 						341.5625,
 						358.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "225",
@@ -1749,9 +1453,7 @@
 					"center": [
 						341.5625,
 						378.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "226",
@@ -1760,9 +1462,7 @@
 					"center": [
 						303.8125,
 						411.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "227",
@@ -1771,9 +1471,7 @@
 					"center": [
 						340.8125,
 						416.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "231",
@@ -1782,9 +1480,7 @@
 					"center": [
 						367.5625,
 						378.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "232",
@@ -1793,9 +1489,7 @@
 					"center": [
 						365.5625,
 						416.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "233",
@@ -1804,9 +1498,7 @@
 					"center": [
 						391.0625,
 						378.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "234",
@@ -1815,9 +1507,7 @@
 					"center": [
 						388.8125,
 						416.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "235",
@@ -1826,9 +1516,7 @@
 					"center": [
 						414.0625,
 						378.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "236",
@@ -1837,9 +1525,7 @@
 					"center": [
 						411.8125,
 						416.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "238",
@@ -1849,9 +1535,7 @@
 					"center": [
 						439.8125,
 						426.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "238, Storage",
@@ -1861,9 +1545,7 @@
 					"center": [
 						429.5625,
 						411.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "240",
@@ -1872,9 +1554,7 @@
 					"center": [
 						442.8125,
 						296.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "241",
@@ -1884,9 +1564,7 @@
 					"center": [
 						491.8125,
 						318.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "241, Storage",
@@ -1896,9 +1574,7 @@
 					"center": [
 						468.5625,
 						331.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "242",
@@ -1907,9 +1583,7 @@
 					"center": [
 						439.5625,
 						330.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "243",
@@ -1918,9 +1592,7 @@
 					"center": [
 						478.3125,
 						350.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "244",
@@ -1929,9 +1601,7 @@
 					"center": [
 						439.8125,
 						354.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "245",
@@ -1940,9 +1610,7 @@
 					"center": [
 						477.8125,
 						373.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "246",
@@ -1951,9 +1619,7 @@
 					"center": [
 						440.3125,
 						379.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "247",
@@ -1962,9 +1628,7 @@
 					"center": [
 						478.3125,
 						396.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "249",
@@ -1973,9 +1637,7 @@
 					"center": [
 						478.5625,
 						446.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "250",
@@ -1984,9 +1646,7 @@
 					"center": [
 						503.8125,
 						444.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "250, Storage",
@@ -1996,9 +1656,7 @@
 					"center": [
 						475.5625,
 						432.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "251",
@@ -2007,9 +1665,7 @@
 					"center": [
 						504.5625,
 						406.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "251W",
@@ -2018,9 +1674,7 @@
 					"center": [
 						481.8125,
 						414.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "252",
@@ -2029,9 +1683,7 @@
 					"center": [
 						527.3125,
 						444.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "253",
@@ -2040,9 +1692,7 @@
 					"center": [
 						527.3125,
 						406.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "254",
@@ -2051,9 +1701,7 @@
 					"center": [
 						549.5625,
 						444.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "255",
@@ -2062,9 +1710,7 @@
 					"center": [
 						550.0625,
 						406.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "256",
@@ -2073,9 +1719,7 @@
 					"center": [
 						576.5625,
 						441.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "260",
@@ -2084,9 +1728,7 @@
 					"center": [
 						575.8125,
 						358.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "261",
@@ -2095,9 +1737,7 @@
 					"center": [
 						614.3125,
 						368.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "261, Storage",
@@ -2107,9 +1747,7 @@
 					"center": [
 						603.5625,
 						346.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "262",
@@ -2118,9 +1756,7 @@
 					"center": [
 						575.8125,
 						381.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "263",
@@ -2129,9 +1765,7 @@
 					"center": [
 						614.0625,
 						391.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "264",
@@ -2140,9 +1774,7 @@
 					"center": [
 						576.3125,
 						463.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "265",
@@ -2151,9 +1783,7 @@
 					"center": [
 						614.3125,
 						414.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "266",
@@ -2162,9 +1792,7 @@
 					"center": [
 						580.3125,
 						486.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "267",
@@ -2173,9 +1801,7 @@
 					"center": [
 						614.5625,
 						436.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "269",
@@ -2184,9 +1810,7 @@
 					"center": [
 						607.0625,
 						478.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "270",
@@ -2195,9 +1819,7 @@
 					"center": [
 						627.0625,
 						472.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "271",
@@ -2206,9 +1828,7 @@
 					"center": [
 						640.5625,
 						434.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "272",
@@ -2217,9 +1837,7 @@
 					"center": [
 						650.3125,
 						472.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "273",
@@ -2228,9 +1846,7 @@
 					"center": [
 						663.0625,
 						433.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "274",
@@ -2239,9 +1855,7 @@
 					"center": [
 						672.8125,
 						472.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "275",
@@ -2250,9 +1864,7 @@
 					"center": [
 						685.5625,
 						433.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Floor 2, Storage 1",
@@ -2262,9 +1874,7 @@
 					"center": [
 						198.0625,
 						388.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Floor 2, Storage 2",
@@ -2274,9 +1884,7 @@
 					"center": [
 						217.8125,
 						350.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			],
 			"Bathrooms / Building Services": [
@@ -2288,9 +1896,7 @@
 					"center": [
 						283.3125,
 						351.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Boys' Bathroom 2R",
@@ -2300,9 +1906,7 @@
 					"center": [
 						579.3125,
 						407.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Girls' Bathroom 2L",
@@ -2312,9 +1916,7 @@
 					"center": [
 						272.0625,
 						351.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Girls' Bathroom 2R",
@@ -2324,9 +1926,7 @@
 					"center": [
 						567.3125,
 						407.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			]
 		},
@@ -2339,9 +1939,7 @@
 					"center": [
 						116.8125,
 						351.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "310",
@@ -2350,9 +1948,7 @@
 					"center": [
 						146.5625,
 						388.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "310, Office",
@@ -2362,9 +1958,7 @@
 					"center": [
 						132.8125,
 						396.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "311",
@@ -2373,9 +1967,7 @@
 					"center": [
 						140.0625,
 						351.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "312",
@@ -2384,9 +1976,7 @@
 					"center": [
 						171.3125,
 						388.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "313",
@@ -2395,9 +1985,7 @@
 					"center": [
 						162.5625,
 						351.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "314",
@@ -2406,9 +1994,7 @@
 					"center": [
 						197.5625,
 						389.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "315",
@@ -2417,9 +2003,7 @@
 					"center": [
 						185.3125,
 						351.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "316",
@@ -2428,9 +2012,7 @@
 					"center": [
 						233.5625,
 						393.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "317",
@@ -2439,9 +2021,7 @@
 					"center": [
 						208.5625,
 						351.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "318",
@@ -2450,9 +2030,7 @@
 					"center": [
 						273.8125,
 						393.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "319",
@@ -2462,9 +2040,7 @@
 					"center": [
 						252.3125,
 						349.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "319, Storage",
@@ -2474,9 +2050,7 @@
 					"center": [
 						230.3125,
 						352.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "321",
@@ -2486,9 +2060,7 @@
 					"center": [
 						341.0625,
 						296.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "323",
@@ -2498,9 +2070,7 @@
 					"center": [
 						313.0625,
 						295.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "323, Chemistry Storage",
@@ -2510,9 +2080,7 @@
 					"center": [
 						347.0625,
 						320.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "323, Storage",
@@ -2522,9 +2090,7 @@
 					"center": [
 						320.8125,
 						320.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "325",
@@ -2534,9 +2100,7 @@
 					"center": [
 						313.3125,
 						346.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "327",
@@ -2546,9 +2110,7 @@
 					"center": [
 						346.8125,
 						389.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "328",
@@ -2557,9 +2119,7 @@
 					"center": [
 						304.3125,
 						401.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "329",
@@ -2569,9 +2129,7 @@
 					"center": [
 						346.8125,
 						417.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "330",
@@ -2581,9 +2139,7 @@
 					"center": [
 						382.8125,
 						396.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "330, Computer Lab",
@@ -2593,9 +2149,7 @@
 					"center": [
 						382.8125,
 						424.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "331",
@@ -2605,9 +2159,7 @@
 					"center": [
 						341.8125,
 						346.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "332",
@@ -2617,9 +2169,7 @@
 					"center": [
 						418.3125,
 						388.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "341",
@@ -2629,9 +2179,7 @@
 					"center": [
 						473.5625,
 						337.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "341, Office",
@@ -2641,9 +2189,7 @@
 					"center": [
 						486.0625,
 						328.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "342",
@@ -2653,9 +2199,7 @@
 					"center": [
 						438.5625,
 						340.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "343",
@@ -2665,9 +2209,7 @@
 					"center": [
 						477.0625,
 						363.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "344",
@@ -2677,9 +2219,7 @@
 					"center": [
 						418.5625,
 						417.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "345",
@@ -2689,9 +2229,7 @@
 					"center": [
 						494.8125,
 						445.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "352",
@@ -2701,9 +2239,7 @@
 					"center": [
 						494.5625,
 						417.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "354",
@@ -2713,9 +2249,7 @@
 					"center": [
 						530.0625,
 						429.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "354, Computer Lab",
@@ -2725,9 +2259,7 @@
 					"center": [
 						532.5625,
 						452.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "354, Office",
@@ -2737,9 +2269,7 @@
 					"center": [
 						538.0625,
 						406.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "354, Storage",
@@ -2749,9 +2279,7 @@
 					"center": [
 						521.3125,
 						407.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "356",
@@ -2761,9 +2289,7 @@
 					"center": [
 						563.0625,
 						416.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "360",
@@ -2773,9 +2299,7 @@
 					"center": [
 						574.8125,
 						354.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "361",
@@ -2785,9 +2309,7 @@
 					"center": [
 						613.3125,
 						391.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "361, Computer Lab",
@@ -2797,9 +2319,7 @@
 					"center": [
 						613.3125,
 						363.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "361, Office",
@@ -2809,9 +2329,7 @@
 					"center": [
 						605.0625,
 						415.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "361, Storage",
@@ -2821,9 +2339,7 @@
 					"center": [
 						619.5625,
 						415.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "362",
@@ -2833,9 +2349,7 @@
 					"center": [
 						569.3125,
 						445.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "363",
@@ -2845,9 +2359,7 @@
 					"center": [
 						617.8125,
 						435.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "364",
@@ -2856,9 +2368,7 @@
 					"center": [
 						574.5625,
 						486.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "365",
@@ -2868,9 +2378,7 @@
 					"center": [
 						617.8125,
 						462.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "365, Storage",
@@ -2880,9 +2388,7 @@
 					"center": [
 						645.0625,
 						467.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "371",
@@ -2892,9 +2398,7 @@
 					"center": [
 						649.0625,
 						449.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "373",
@@ -2904,9 +2408,7 @@
 					"center": [
 						677.5625,
 						447.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "373, Computer Lab",
@@ -2916,9 +2418,7 @@
 					"center": [
 						680.0625,
 						427.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "373, Office",
@@ -2928,9 +2428,7 @@
 					"center": [
 						674.8125,
 						462.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "373, Storage",
@@ -2940,9 +2438,7 @@
 					"center": [
 						674.8125,
 						471.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Floor 3, Biology Storage",
@@ -2952,9 +2448,7 @@
 					"center": [
 						468.3125,
 						426.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Floor 3, Storage 2",
@@ -2964,9 +2458,7 @@
 					"center": [
 						574.5625,
 						467.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			],
 			"Bathrooms / Building Services": [
@@ -2978,9 +2470,7 @@
 					"center": [
 						282.3125,
 						351.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Boys' Bathroom 3R",
@@ -2990,9 +2480,7 @@
 					"center": [
 						577.3125,
 						379.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Girls' Bathroom 3L",
@@ -3002,9 +2490,7 @@
 					"center": [
 						271.3125,
 						351.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Girls' Bathroom 3R",
@@ -3014,9 +2500,7 @@
 					"center": [
 						565.3125,
 						379.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			]
 		},
@@ -3030,9 +2514,7 @@
 					"center": [
 						639.8125,
 						454.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "McDonald's",
@@ -3042,9 +2524,7 @@
 					"center": [
 						487.8125,
 						440.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Restaurant Kitchen",
@@ -3054,9 +2534,7 @@
 					"center": [
 						579.5625,
 						459.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Turkish Delight Parlor",
@@ -3066,9 +2544,7 @@
 					"center": [
 						536.0625,
 						440.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			],
 			"Recreation": [
@@ -3080,9 +2556,7 @@
 					"center": [
 						341.8125,
 						344.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Blair Park",
@@ -3092,9 +2566,7 @@
 					"center": [
 						350.8125,
 						310.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Blair River",
@@ -3104,9 +2576,7 @@
 					"center": [
 						329.0625,
 						332.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Daniel Zhu Memorial Park",
@@ -3116,9 +2586,7 @@
 					"center": [
 						414.3125,
 						373.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Grande Plaza de Blair",
@@ -3128,9 +2596,7 @@
 					"center": [
 						341.125,
 						376.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Inconspicuous Patch of Grass",
@@ -3140,9 +2606,7 @@
 					"center": [
 						365.0625,
 						287.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Other Plaza",
@@ -3152,9 +2616,7 @@
 					"center": [
 						340.5625,
 						288.8515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Zhu Croquet Field",
@@ -3164,9 +2626,7 @@
 					"center": [
 						370.3125,
 						375.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Zhu River",
@@ -3176,9 +2636,7 @@
 					"center": [
 						390.5625,
 						383.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			],
 			"Learning and Relaxation": [
@@ -3190,9 +2648,7 @@
 					"center": [
 						379.625,
 						420.203125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Center for Higher Study and Philosophy",
@@ -3202,9 +2658,7 @@
 					"center": [
 						300.0625,
 						267.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Lockers",
@@ -3214,9 +2668,7 @@
 					"center": [
 						291.8125,
 						396.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Security Booth/Lounge",
@@ -3226,9 +2678,7 @@
 					"center": [
 						291.3125,
 						364.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			],
 			"Outdoor Areas": [
@@ -3240,9 +2690,7 @@
 					"center": [
 						131.3125,
 						372.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Infinity Hot Tub/Jacuzzi",
@@ -3252,9 +2700,7 @@
 					"center": [
 						255.5625,
 						396.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Pool",
@@ -3264,9 +2710,7 @@
 					"center": [
 						211.3125,
 						372.6015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Turkish Restaurant, Outdoor Patio",
@@ -3276,9 +2720,7 @@
 					"center": [
 						689.3125,
 						468.1015625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			],
 			"Commercial Facilities": [
@@ -3290,9 +2732,7 @@
 					"center": [
 						467.0625,
 						314.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Luxury Goods Bazaar",
@@ -3302,9 +2742,7 @@
 					"center": [
 						458.3125,
 						359.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				},
 				{
 					"id": "Premium Texas Instruments Store",
@@ -3314,9 +2752,7 @@
 					"center": [
 						435.3125,
 						317.3515625
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			],
 			"Entertainment": [
@@ -3328,9 +2764,7 @@
 					"center": [
 						593.375,
 						381.703125
-					],
-					"vertices": null,
-					"doors": null
+					]
 				}
 			]
 		}

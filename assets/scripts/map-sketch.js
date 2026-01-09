@@ -157,7 +157,7 @@ const MAP_DIM_TMP = [1083, 500],
 var MAP_DIM,
 	SITE_DIM,
 	SITE_PLAN_OFFSET;
-const DEFAULT_ZOOM = 1 / 2, SCROLL_ZOOM_RATE = 1.01;
+const DEFAULT_ZOOM = 1, SCROLL_ZOOM_RATE = 1.01;
 // All positions are given as pixel coordinates
 
 /*
@@ -198,7 +198,7 @@ const CURSOR = {
 var showOptions = {
 	'show-floor-plan': null,
 	'show-site-plan': null,
-	'show-places': null,
+	'show-names': null,
 	'show-dev-tools': null,
 };
 for (let option in showOptions) {
@@ -270,6 +270,8 @@ function setup() {
 	canvas = createCanvas(getCanvasDivWidth(), windowHeight);
 	canvas.parent("canvas");
 
+	textFont('Roboto');
+
 	MAP_DIM = createVector(...MAP_DIM_TMP);
 	SITE_DIM = createVector(...SITE_DIM_TMP);
 	SITE_PLAN_OFFSET = createVector(...SITE_PLAN_OFFSET_TMP);
@@ -281,7 +283,7 @@ function windowResized() {
 }
 
 function mousePressed() {
-	rooms.forEach(r => {
+	places.forEach(r => {
 		if (r.hover) {
 			// Add room
 			if (mouseButton == LEFT) {
@@ -360,13 +362,22 @@ function showFloorPlan() {
 	}
 }
 
-function showPlaceDots() {
+function showPlaces() {
+	textAlign(CENTER, CENTER);
+	textSize(10 / VIEW.zoom);
+	stroke(0);
+	strokeWeight(1 / VIEW.zoom);
 	// Display dots for room selection
-	rooms.forEach(room => {
+	places.forEach(room => {
 		room.hover = false;
 		if (room.floor != _floor || !room.center) return;
 		// Display the point and detect hovering if applicable
-		if (CURSOR.virtPos.dist(createVector(...room.center)) < 5 / VIEW.zoom && !hoveredRoom) {
+		const nameWidth = textWidth(room.id);
+		if (
+			abs(CURSOR.virtPos.x - room.center[0]) < nameWidth / 2 &&
+			abs(CURSOR.virtPos.y - room.center[1]) < 5 / VIEW.zoom &&
+			!hoveredRoom
+		) {
 			hoveredRoom = room;
 			room.hover = true;
 			cursorType = HAND;
@@ -375,25 +386,18 @@ function showPlaceDots() {
 		fill(255);
 		if (room.hover) fill(mouseIsPressed ? color(250, 85, 85) : 128);
 		
-		stroke(192);
-		strokeWeight(1 / VIEW.zoom);
-		circle(room.center[0], room.center[1], 10 / VIEW.zoom);
+		text(room.id, room.center[0], room.center[1]);//, 10 / VIEW.zoom);
 	});
 
 	// Display selected points
+	stroke(255);
+	fill(0);
 	for (let i = 0; i < rows.length; i++) {
-		const room = rooms.find(r => r.id == document.getElementById("point-" + (i + 1)).value);
+		const room = places.find(r => r.id == document.getElementById("point-" + (i + 1)).value);
 		if (!room || !room.center || room.floor != _floor) continue;
 
 		// Draw center, doors, etc.
-		stroke(255);
-		fill(0);
-		strokeWeight(1 / VIEW.zoom);
-		circle(room.center[0], room.center[1], 10 / VIEW.zoom);
-		textAlign(CENTER, TOP);
-		textSize(10 / VIEW.zoom);
-		textStyle(BOLD);
-		text(room.id, room.center[0], room.center[1] - 15 / VIEW.zoom);
+		text(room.id, room.center[0], room.center[1]);
 	}
 }
 
@@ -411,7 +415,6 @@ function showDevTools() {
 }
 
 function showTooltip(room) {
-	textFont('Roboto');
 	textSize(10);
 
 	var topText = room.id;
@@ -455,7 +458,7 @@ function draw() {
 	}
 
 	if (tableLoaded) {
-		var canCalculate = true;
+		var canCalculate = rows.length >= 2;
 		for (let i = 1; i <= rows.length; i++) {
 			const input = document.getElementById("point-" + i);
 			const isValid = roomIDs.has(input.value);
@@ -499,7 +502,7 @@ function draw() {
 		if (e.isHovered) _color = lerpColor(_color, color(255), 0.75)
 		drawEdge(e, _color);
 	});
-	if (showOptions[`show-places`]) showPlaceDots();
+	if (showOptions[`show-names`]) showPlaces();
 
 	pop();
 

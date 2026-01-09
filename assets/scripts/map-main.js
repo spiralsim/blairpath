@@ -17,7 +17,7 @@ function prettifyDistance(distance) {
 }
 
 /* Data preprocessing */
-var rooms = [], roomIDs;
+var places = [], roomIDs;
 var edges = [];
 var constants = {};
 function dist2D(a, b) {
@@ -84,7 +84,7 @@ $.getJSON('/data.json', function (data) {
 	constants = data.constants;
 
 	// Initial load for all object types
-	rooms = data.rooms;
+	places = data.places;
 	edges = data.edges.map(e => new Edge(new Vertex(e.endpoint1), new Vertex(e.endpoint2), e.name));
 	edges.forEach(e => {
 		vertices.add(e.endpoint1);
@@ -92,11 +92,11 @@ $.getJSON('/data.json', function (data) {
 	});
 
 	// Flatten rooms data structure into list
-	rooms = rooms.map(f => Object.keys(f).map(s => f[s])).flat(2);
+	places = places.map(f => Object.keys(f).map(s => f[s])).flat(2);
 	// Sort rooms first by floor, then by name
-	rooms.sort((a, b) => a.floor > b.floor || a.id > b.id ? 1 : -1);
+	places.sort((a, b) => a.floor > b.floor || a.id > b.id ? 1 : -1);
 
-	rooms.forEach(r => {
+	places.forEach(r => {
 		const roomVertex = new Vertex([r.floor, ...r.center]);
 		var minDist = Infinity, tempEdge;
 		vertices.forEach(v => {
@@ -111,7 +111,7 @@ $.getJSON('/data.json', function (data) {
 		tempEdge.isTemporary = true;
 		edges.push(tempEdge);
 	});
-	roomIDs = new Set(rooms.map(({id}) => id));
+	roomIDs = new Set(places.map(({id}) => id));
 
 	// Remove placeholder rows
 	for (let i = 1; i <= 2; i++) document.getElementById("row-placeholder-" + i).remove();
@@ -205,7 +205,7 @@ function removePoint (ID) {
 		row.id = "row-" + rowNum;
 		row.innerHTML = row.innerHTML.replace(new RegExp(rowStr, "g"), rowNum);
 		document.getElementById("point-" + rowNum).value = val;
-		autocomplete(document.getElementById("point-" + rowNum), rooms);
+		autocomplete(document.getElementById("point-" + rowNum), places);
 	}
 };
 // Add a row to the points table
@@ -220,7 +220,7 @@ function addPoint () {
 	row.id = "row-" + rowNum;
 	rows.push(row);
 	table.insertBefore(row, table.childNodes[rowNum]);
-	autocomplete(document.getElementById("point-" + rowNum), rooms);
+	autocomplete(document.getElementById("point-" + rowNum), places);
 };
 
 /* Calculate Path */
@@ -261,7 +261,7 @@ function calculate () {
 
 	for (let i = 0; i < rows.length - 1; i++) {
 		const subpathRoomIDs = [1, 2].map(j => document.getElementById(`point-${i + j}`).value);
-		const subpathRooms = subpathRoomIDs.map(id => rooms.find(r => r.id == id));
+		const subpathRooms = subpathRoomIDs.map(id => places.find(r => r.id == id));
 		const subpathRoomVertices = subpathRooms.map(room => new Vertex([room.floor, ...room.center]));
 
 		var {path: subpathVertices, distance: subDistance} = graph.Dijkstra(...subpathRoomVertices);
