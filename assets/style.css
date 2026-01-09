@@ -80,7 +80,7 @@ button.smooth {
 	background-color: white;
 	color: var(--light-text);
 	font-size: 1em;
-	padding: 0 0.4em;
+	padding: 0 0.3em;
 	height: var(--button-height);
 }
 button.smooth:hover {
