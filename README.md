@@ -3,7 +3,9 @@
 [Blairpath](http://www.blairpath.org) is a website that provides mapping tools to help students, teachers, and visitors of [Montgomery Blair High School](mbhs.edu) navigate and survey the **200+ rooms and other landmarks** across **3 floors** on the school campus.
 
 ## Sources for Map Background Images
-In November 2019, I found the original background images on designshare.com. As of April 2021, that website is defunct, so I've included Wayback Machine links to the pages and files I used.
+In November 2019, Jeffrey found the original background images on designshare.com.
+
+As of April 2021, that website is defunct, but the pages and files used can still be found on the Wayback Machine.
 
 |Image|Webpage|Image file|
 |-|-|-|
@@ -14,11 +16,7 @@ In November 2019, I found the original background images on designshare.com. As 
 
 ## Possible Future Features
 <ol>
-	<li>Create clean logo and wordmark</li>
-	<li>Change place dots to clickable text</li>
 	<li>Add names for labeled Blair "streets"</li>
-	<li>Add X button to close banners on Map page</li>
-	<li>Make place/link/node IDs count up from 1</li>
 	<li>Implement dev tools for the new UI</li>
 	<li>Create contribution system</li>
 	<li>Update new portables</li>

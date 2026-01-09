@@ -26,7 +26,7 @@
 						<h3>Database Stats</h3>
 						<p>Jeffrey added all of these data by hand:</p>
 						<ul>
-							<li><b><%-data.rooms.map(floor => Object.values(floor)).flat(2).length%></b> places (rooms, courtyards, landmarks, etc.)</li>
+							<li><b><%-Object.keys(data.places).length%></b> places (rooms, courtyards, landmarks, etc.)</li>
 							<li><b><%-data.edges.length%></b> edges (hallways, stairwells, and elevators)</li>
 						</ul>
 					</div>
