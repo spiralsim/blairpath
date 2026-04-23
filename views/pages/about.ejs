@@ -9,39 +9,47 @@
 			<div>
 				<h1>About</h1>
 
+				<p>Blairpath is a web application that provides maps and route calculation for the campus of Montgomery Blair High School.</p>
+
 				<div class="banner red">
-					<p><b>Disclaimer:</b> Blairpath is a hobby project. We are not officially associated with Montgomery Blair High School (we wish they would let us be, though. 😔)</p>
+					<p><b>Disclaimer:</b> Blairpath is a hobby project. It is not officially associated with Blair.</p>
 				</div>
 
-				<section style="display: table; table-layout: fixed; width: 100%">
-					<div style="display: table-cell">
+				<section style="display: table; width: 100%">
+					<div class="left">
 						<h3>Team</h3>
-						<p>Blairpath was made by two best buddies in the Blair Magnet's Class of 2022:</p>
 						<ul>
-							<li><b><a href="https://github.com/spiralsim">Jeffrey Tong</a>:</b> Founder and Lead Developer</li>
-							<li><b><a href="https://github.com/GeneralPoxter">Jason Liu</a>:</b> Designer of 4th Floor</li>
+							<li>I (<a href="https://github.com/spiralsim"><b>Jeffrey Tong</b></a>, Blair Class of 2022) conceived and developed Blairpath.</li>
+							<li>My classmate (<a href="https://github.com/GeneralPoxter">Jason Liu</a>, Blair Class of 2022) designed the 4th floor.</li>
 						</ul>
 					</div>
-					<div style="display: table-cell">
+					<div class="right">
 						<h3>Database Stats</h3>
-						<p>Jeffrey added all of these data by hand:</p>
 						<ul>
-							<li><b><%-Object.keys(data.places).length%></b> places (rooms, courtyards, landmarks, etc.)</li>
+							<li><b><%-Object.keys(data.places).length%></b> vertices (classrooms, offices, courtyards, etc.)</li>
 							<li><b><%-data.edges.length%></b> edges (hallways, stairwells, and elevators)</li>
 						</ul>
 					</div>
 				</section>
 
 				<h3>History</h3>
-				<p>On October 21, 2019, Jeffrey, then a Blair sophmore, started working on Blairpath as an open project for the Blair Magnet program's Algorithms and Data Structures B (ADSB) course. The branding was created as a parody of <a href="https://blairbash.org">Blairbash</a>, and the website was initially developed and hosted on <a href="https://replit.com">Replit</a>.</p>
+				<p><b>2019</b>: As a project for Blair's ADSB course, I conceived and developed Blairpath. I was heavily inspired by <a href="https://blairbash.org">Blairbash</a> and the website was initially hosted on <a href="https://replit.com">Replit</a>.</p>
+				<p><b>2021</b>: I purchased the domain blairpath.org and started hosting Blairpath there using Heroku.</li>
+				<p><b>2022</b>: Blair teacher Mr. Schwartz showed his 9th grade students Blairpath to help them get around.</p>
+				<p><b>2025</b>: I redesigned Blairpath to make its UI/UX much more intuitive to outsiders.</p>
 
-				<p>On April 8, 2021, Jeffrey started hosting Blairpath at its own domain, blairpath.org, through <a href="https://heroku.com">Heroku</a>.</li>
-
-				<h3>Contributing</h3>
-				<p>Blairpath is <a href="https://github.com/spiralsim/blairpath">open-source on GitHub</a>.</p>
-				<!--
-				<p>To learn how to make cartographic contributions through the website's editing system, read the <a href="/tutorial">tutorial</a>.</p>
-				-->
+				<section style="display: table; width: 100%">
+					<div class="left">
+						<h3>Blair Architecture</h3>
+						<p>Blair's campus, designed and built by SHW Group, Inc. Architects + Engineers, was completed in 1998.</p>
+						<p>SHW Group wrote about their design <a href="https://web.archive.org/web/20200222231349/http://www.designshare.com/HighSchoolLibrary/HSBlair/Blair2_Prog.htm">here</a>, including design considerations, metrics, and materials.</p>
+						<p>They also shared their floor plans, which I based Blairpath's maps on: <a href="https://web.archive.org/web/20120205151339im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/BlairSite.jpg">Site</a>, <a href="https://web.archive.org/web/20160505145914im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/blairpl1.jpg">Floor 1</a>, <a href="https://web.archive.org/web/20160505225805im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/blairpl2.gif">Floor 2</a>, <a href="https://web.archive.org/web/20120205151407im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/blairpl3.gif">Floor 3</a>.</p>
+					</div>
+					<div class="right">
+						<h3>Technical</h3>
+						<p>Blairpath is open-source on GitHub at <a href="https://github.com/spiralsim/blairpath">spiralsim / <b>blairpath</b></a>.</p>
+					</div>
+				</section>
 			</div>
 		</section>
 	</body>

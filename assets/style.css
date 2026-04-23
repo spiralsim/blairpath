@@ -206,7 +206,7 @@ section {
 	display: block;
 }
 section.main {
-	padding: 2em;
+	padding: 1.5em;
 	border-radius: 0 0 0.5em 0.5em;
 	background-color: white;
 }
