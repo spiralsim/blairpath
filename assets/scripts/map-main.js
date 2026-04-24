@@ -132,18 +132,21 @@ function autocomplete (input) {
 
 		for (let id in places) {
 			const place = places[id];
-			const name = id + (place.use && !id.endsWith(place.use) ? ` (${place.use})` : "");
-			if (name.toUpperCase().indexOf(val.toUpperCase()) > -1) {
-				b = document.createElement("div");
-				b.innerHTML = name.replace(new RegExp(`(${val})`, "gi"), "<b>$1</b>");
-				b.innerHTML += `<span class="section-text" style="float: right">${place.section} (${place.floor})</span>`;
-				b.innerHTML += `<input type="hidden" value="${place.id}">`;
-				a.appendChild(b);
-				b.addEventListener("click", function (e) {
-					input.value = this.getElementsByTagName("input")[0].value;
-					closeAllLists();
-				});
-			}
+			var name = id;
+			if (place.use && !id.includes(place.use))
+				name += ` (${place.use})`;
+			if (name.toUpperCase().indexOf(val.toUpperCase()) == -1)
+				continue;
+
+			b = document.createElement("div");
+			b.innerHTML = name.replace(new RegExp(`(${val})`, "gi"), "<b>$1</b>");
+			b.innerHTML += `<span class="section-text" style="float: right">${place.section} | Floor ${place.floor}</span>`;
+			b.innerHTML += `<input type="hidden" value="${place.id}">`;
+			a.appendChild(b);
+			b.addEventListener("click", function (e) {
+				input.value = this.getElementsByTagName("input")[0].value;
+				closeAllLists();
+			});
 		}
 	});
 	input.addEventListener("keydown", function (e) {
