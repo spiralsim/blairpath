@@ -346,9 +346,9 @@ function showFloorPlan() {
 
 function showPlaces() {
 	textAlign(CENTER, CENTER);
-	textSize(12 / VIEW.zoom);
+	textSize(14 / VIEW.zoom);
 	stroke(0);
-	strokeWeight(1 / VIEW.zoom);
+	strokeWeight(2 / VIEW.zoom);
 	// Display dots for room selection
 	for (let id in places) {
 		const place = places[id];

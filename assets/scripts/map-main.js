@@ -140,7 +140,7 @@ function autocomplete (input) {
 
 			b = document.createElement("div");
 			b.innerHTML = name.replace(new RegExp(`(${val})`, "gi"), "<b>$1</b>");
-			b.innerHTML += `<span class="section-text" style="float: right">${place.section} | Floor ${place.floor}</span>`;
+			b.innerHTML += `<span class="section-text" style="float: right">Floor ${place.floor}</span>`;
 			b.innerHTML += `<input type="hidden" value="${place.id}">`;
 			a.appendChild(b);
 			b.addEventListener("click", function (e) {

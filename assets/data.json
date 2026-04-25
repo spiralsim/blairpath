@@ -284,8 +284,8 @@
 		"Pool": {"id": "Pool", "floor": 4, "use": "Pool", "section": "Outdoor Areas", "center": [211.3125, 372.6015625]},
 		"Turkish Restaurant, Outdoor Patio": {"id": "Turkish Restaurant, Outdoor Patio", "floor": 4, "use": "Patio", "section": "Outdoor Areas", "center": [689.3125, 468.1015625]},
 		"La Fondue": {"id": "La Fondue", "floor": 4, "use": "Fountain", "section": "Commercial Facilities", "center": [467.0625, 314.3515625]},
-		"Luxury Goods Bazaar": {"id": "Luxury Goods Bazaar", "floor": 4, "use": "Shop", "section": "Commercial Facilities", "center": [458.3125, 359.3515625]},
-		"Premium Texas Instruments Store": {"id": "Premium Texas Instruments Store", "floor": 4, "use": "Shop", "section": "Commercial Facilities", "center": [435.3125, 317.3515625]},
+		"Luxury Goods Bazaar": {"id": "Luxury Goods Bazaar", "floor": 4, "section": "Commercial Facilities", "center": [458.3125, 359.3515625]},
+		"Premium Texas Instruments Store": {"id": "Premium Texas Instruments Store", "floor": 4, "section": "Commercial Facilities", "center": [435.3125, 317.3515625]},
 		"Non-gambling Casino": {"id": "Non-gambling Casino", "floor": 4, "use": "Casino", "section": "Entertainment", "center": [593.375, 381.703125]}
 	},
 	"edges": [
