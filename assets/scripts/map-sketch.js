@@ -238,6 +238,9 @@ for (let option in showOptions) {
 	const checkbox = document.querySelector(`#${option}`);
 	function updateOption() {
 		showOptions[option] = checkbox.checked;
+		if (option != 'show-dev-tools') return;
+		const outputDiv = document.getElementById('outputDiv');
+		outputDiv.hidden = !checkbox.checked;
 	}
 	updateOption();
 	checkbox.addEventListener('change', updateOption);
