@@ -349,6 +349,7 @@ function showPortables() {
 		return /^P[0-9]+$/.test(id);
 	} 
 	stroke(0);
+	fill(204, 30, 30);
 	strokeWeight(2 / VIEW.zoom);
 	rectMode(CENTER);
 	angleMode(DEGREES);
