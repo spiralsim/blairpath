@@ -157,6 +157,7 @@ var MAP_DIM,
 	SITE_DIM,
 	SITE_PLAN_OFFSET;
 const DEFAULT_ZOOM = 1, SCROLL_ZOOM_RATE = 1.01;
+const MIN_ZOOM = 0.4, MAX_ZOOM = 10;
 // All positions are given as pixel coordinates
 
 /*
@@ -170,19 +171,51 @@ const VIEW = {
 	physPos: null,
 	zoom: null,
 	floor: 1,
+	rulerInMeters: 100,
 	pan(delta) {
 		VIEW.physPos.add(delta);
 	},
+	rulerInPixels() {
+		return VIEW.rulerInMeters / constants.METERS_PER_PIXEL * VIEW.zoom;
+	},
+	calibrateRuler() {
+		// Note that we must have
+		// MAX_RULER_LENGTH_IN_PIXELS / MIN_RULER_LENGTH_IN_PIXELS > 5/2
+		// because consecutive increments are separated by a factor up to 5/2
+		const MIN_RULER_LENGTH_IN_PIXELS = 40;
+		const MAX_RULER_LENGTH_IN_PIXELS = 120;
+		function increment() {
+			if (String(VIEW.rulerInMeters)[0] == '2') VIEW.rulerInMeters *= 5 / 2;
+			// Includes 1 -> 2 and 5 -> 10
+			else VIEW.rulerInMeters *= 2;
+		}
+		function decrement() {
+			if (String(VIEW.rulerInMeters)[0] == '5') VIEW.rulerInMeters /= 5 / 2;
+			// Includes 1 -> 0.5 and 2 -> 1
+			else VIEW.rulerInMeters /= 2;
+		}
+		while (VIEW.rulerInPixels() < MIN_RULER_LENGTH_IN_PIXELS) increment();
+		while (VIEW.rulerInPixels() > MAX_RULER_LENGTH_IN_PIXELS) decrement();
+	},
 	applyZoom(scaleFactor, center = createVector(width / 2, height / 2)) {
+		var nextZoom = VIEW.zoom * scaleFactor;
+		// console.log(nextZoom);
+		if (nextZoom < MIN_ZOOM || nextZoom > MAX_ZOOM) {
+			console.log(nextRulerInMeters);
+			return;
+		}
+
 		VIEW.physPos = p5.Vector.add(
 			center, p5.Vector.sub(VIEW.physPos, center).mult(scaleFactor)
 		);
 		VIEW.zoom *= scaleFactor;
+		VIEW.calibrateRuler();
 	},
 	reset() {
 		VIEW.zoom = DEFAULT_ZOOM;
 		const CANVAS_CENTER = createVector(width / 2, height / 2);
 		VIEW.physPos = CANVAS_CENTER.sub(p5.Vector.mult(MAP_DIM, VIEW.zoom / 2));
+		VIEW.calibrateRuler();
 	}
 };
 
@@ -472,6 +505,22 @@ function showTooltip(room) {
 	text(bottomText, tooltipX, tooltipY + 15);
 }
 
+function showRuler() {
+	fill(255, 192);
+	rect(0, height - 20, width, 20);	
+
+	var rulerStartX = width - VIEW.rulerInPixels() - 15;
+	noStroke();
+	fill(0);
+	rect(rulerStartX, height - 15, 2, 10);
+	rect(rulerStartX, height - 7, VIEW.rulerInPixels(), 2);
+	rect(rulerStartX +  VIEW.rulerInPixels() - 2, height - 15, 2, 10);
+	fill(0);
+	textSize(18);
+	textAlign(RIGHT, CENTER);
+	text(`${VIEW.rulerInMeters} m`, rulerStartX - 5, height - 10);
+}
+
 function draw() {
 	// Remove loading message
 	if (!loaded) {
@@ -521,4 +570,6 @@ function draw() {
 
 	// Place dots (tooltips)
 	if (hoveredRoom) showTooltip(hoveredRoom);
+
+	showRuler();
 };

@@ -20,6 +20,15 @@ heroku local web
 
 Then open `localhost:<port>`.
 
+## In case of the localhost being already in use from a previous Node.js run:
+```
+sudo lsof -n -i :<port> | grep LISTEN
+```
+Copy the pid, then run
+```
+kill <pid>
+```
+
 # Deployment
 ```
 git push origin master
