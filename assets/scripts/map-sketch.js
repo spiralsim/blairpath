@@ -344,7 +344,26 @@ function showFloorPlan() {
 	}
 }
 
-function showPlaces() {
+function showPortables() {
+	function isPortable(id) {
+		return /^P[0-9]+$/.test(id);
+	} 
+	stroke(0);
+	strokeWeight(2 / VIEW.zoom);
+	rectMode(CENTER);
+	angleMode(DEGREES);
+	for (let id in places) {
+		const place = places[id];
+		if (!isPortable(id) || place.floor != VIEW.floor) continue;
+		push();
+		translate(place.center[0], place.center[1]);
+		rotate(place.angle ?? 0);
+		rect(0, 0, constants.PORTABLE_LENGTH_IN_PIXELS, constants.PORTABLE_WIDTH_IN_PIXELS);
+		pop();
+	}
+}
+
+function showNames() {
 	textAlign(CENTER, CENTER);
 	textSize(14 / VIEW.zoom);
 	stroke(0);
@@ -382,6 +401,25 @@ function showPlaces() {
 		// Draw center, doors, etc.
 		text(id, place.center[0], place.center[1]);
 	}
+}
+
+function showEdges() {
+	var foundHoveredEdge = false;
+	edges.forEach(e => {
+		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor) return;
+		if (showOptions[`show-dev-tools`]) {
+			e.isHovered = false;
+			if (!foundHoveredEdge) {
+				e.checkHovered();
+				foundHoveredEdge ||= e.isHovered;
+			}
+		}
+		if (!pathEdges.has(e) && !showOptions[`show-dev-tools`])
+			return;
+		var _color = pathEdges.has(e) ? color(0, 128, 255) : color(0);
+		if (e.isHovered) _color = lerpColor(_color, color(255), 0.75)
+		drawEdge(e, _color);
+	});
 }
 
 function showDevTools() {
@@ -469,24 +507,10 @@ function draw() {
 	hoveredRoom = null;
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
-	var foundHoveredEdge = false;
-	edges.forEach(e => {
-		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor) return;
-		if (showOptions[`show-dev-tools`]) {
-			e.isHovered = false;
-			if (!foundHoveredEdge) {
-				e.checkHovered();
-				foundHoveredEdge ||= e.isHovered;
-			}
-		}
-		if (!pathEdges.has(e) && !showOptions[`show-dev-tools`])
-			return;
-		var _color = pathEdges.has(e) ? color(0, 128, 255) : color(0);
-		if (e.isHovered) _color = lerpColor(_color, color(255), 0.75)
-		drawEdge(e, _color);
-	});
+	showEdges();
 	if (showOptions[`show-dev-tools`]) showDevTools();
-	if (showOptions[`show-names`]) showPlaces();
+	showPortables();
+	if (showOptions[`show-names`]) showNames();
 
 	pop();
 

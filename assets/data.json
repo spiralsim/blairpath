@@ -1,7 +1,9 @@
 {
 	"constants": {
 		"METERS_PER_FLOOR": 4.39,
-		"METERS_PER_PIXEL": 0.32512
+		"METERS_PER_PIXEL": 0.32512,
+		"PORTABLE_LENGTH_IN_PIXELS": 36,
+		"PORTABLE_WIDTH_IN_PIXELS": 22
 	},
 	"places": {
 		"001": {"id": "001", "floor": 1, "use": "Child Development", "section": "Fine Arts Wing", "center": [45.625, 149.703125]},
@@ -121,7 +123,7 @@
 		"Serving Table 1": {"id": "Serving Table 1", "floor": 1, "use": "Serving", "section": "Dining Facilities", "center": [704.125, 280.703125]},
 		"Serving Table 2": {"id": "Serving Table 2", "floor": 1, "use": "Serving", "section": "Dining Facilities", "center": [704.125, 294.203125]},
 		"P1": {"id": "P1", "floor": 1, "section": "Outdoor Areas", "center": [977.8125, 317.1015625]},
-		"P10": {"id": "P10", "floor": 1, "section": "Outdoor Areas", "center": [925.3125, 361.6015625]},
+		"P10": {"id": "P10", "floor": 1, "section": "Outdoor Areas", "center": [925.3125, 361.6015625], "angle": 90},
 		"P2": {"id": "P2", "floor": 1, "section": "Outdoor Areas", "center": [967.8125, 338.8515625]},
 		"P3": {"id": "P3", "floor": 1, "section": "Outdoor Areas", "center": [967.5625, 361.1015625]},
 		"P4": {"id": "P4", "floor": 1, "section": "Outdoor Areas", "center": [967.8125, 383.1015625]},
