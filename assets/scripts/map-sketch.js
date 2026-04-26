@@ -1,12 +1,10 @@
 var canvas, images = {
 	floors: [],
 	site: null,
-	satellite: null,
 };
 const OFFSETS = {
 	FLOOR: [0, 0],
 	SITE: [-525, -248],
-	SATELLITE: [-860, -300],
 };
 
 // Loads maps
@@ -14,7 +12,6 @@ function preload () {
 	const MAP_PATH = "/maps";
 	for (let i = 1; i <= 4; i++) images.floors.push(loadImage(`${MAP_PATH}/f${i}.png`));
 	images.site = loadImage(`${MAP_PATH}/site.png`);
-	images.satellite = loadImage(`${MAP_PATH}/satellite.png`);
 }
 
 function getCanvasDivWidth() {
@@ -362,13 +359,6 @@ function drawEdge({ endpoint1, endpoint2, isTemporary }, _color) {
 	} else drawArrow(endpoint1, endpoint2);
 }
 
-function showSatelliteImage() {
-	image(images.satellite, ...OFFSETS.SATELLITE);
-	if (!showOptions[`show-dev-tools`]) return;
-	stroke(0, 255, 0);
-	rect(...OFFSETS.SATELLITE, images.satellite.width, images.satellite.height);
-}
-
 function showSitePlan() {
 	image(images.site, ...OFFSETS.SITE);
 	if (!showOptions[`show-dev-tools`]) return;
@@ -565,7 +555,6 @@ function draw() {
 	imageMode(CORNER);
 
 	hoveredRoom = null;
-	if (showOptions[`show-satellite-image`]) showSatelliteImage();
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
 	if (showOptions[`show-dev-tools`]) showDevTools();
