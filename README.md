@@ -29,6 +29,12 @@ Copy the pid, then run
 kill <pid>
 ```
 
+# Dev Tools
+In the JavaScript console, call 
+```
+toggleDevTools()
+```
+
 # Deployment
 ```
 git push origin master

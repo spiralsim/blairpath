@@ -228,19 +228,14 @@ const CURSOR = {
 };
 
 var showOptions = {
-	'show-floor-plan': null,
 	'show-site-plan': null,
-	'show-names': null,
-	'show-dev-tools': null,
-	'show-satellite-image': null,
+	'show-floor-plan': null,
+	'show-labels': null,
 };
 for (let option in showOptions) {
 	const checkbox = document.querySelector(`#${option}`);
 	function updateOption() {
 		showOptions[option] = checkbox.checked;
-		if (option != 'show-dev-tools') return;
-		const outputDiv = document.getElementById('outputDiv');
-		outputDiv.hidden = !checkbox.checked;
 	}
 	updateOption();
 	checkbox.addEventListener('change', updateOption);
@@ -361,7 +356,7 @@ function drawEdge({ endpoint1, endpoint2, isTemporary }, _color) {
 
 function showSitePlan() {
 	image(images.site, ...OFFSETS.SITE);
-	if (!showOptions[`show-dev-tools`]) return;
+	if (!showingDevTools) return;
 	stroke(0, 0, 255);
 	rect(...OFFSETS.SITE, images.site.width, images.site.height);
 }
@@ -370,14 +365,14 @@ function showEdges() {
 	var foundHoveredEdge = false;
 	edges.forEach(e => {
 		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor) return;
-		if (showOptions[`show-dev-tools`]) {
+		if (showingDevTools) {
 			e.isHovered = false;
 			if (!foundHoveredEdge) {
 				e.checkHovered();
 				foundHoveredEdge ||= e.isHovered;
 			}
 		}
-		if (!pathEdges.has(e) && !showOptions[`show-dev-tools`])
+		if (!pathEdges.has(e) && !showingDevTools)
 			return;
 		var _color = pathEdges.has(e) ? color(0, 128, 255) : color(0);
 		if (e.isHovered) _color = lerpColor(_color, color(255), 0.75)
@@ -407,7 +402,7 @@ function showExtensions() {
 
 function showFloorPlan() {
 	image(images.floors[VIEW.floor - 1], 0, 0);
-	if (showOptions[`show-dev-tools`]) {
+	if (showingDevTools) {
 		stroke(255, 0, 0);
 		noFill();
 		rect(0, 0, images.floors[0].width, images.floors[0].height);
@@ -456,6 +451,12 @@ function showNames() {
 	}
 }
 
+var showingDevTools = false;
+function toggleDevTools() {
+	showingDevTools = !showingDevTools;
+	const outputDiv = document.getElementById('outputDiv');
+	outputDiv.hidden = !showingDevTools;
+}
 function showDevTools() {
 	stroke(0);
 	noFill();
@@ -557,8 +558,8 @@ function draw() {
 	hoveredRoom = null;
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
-	if (showOptions[`show-dev-tools`]) showDevTools();
-	if (showOptions[`show-names`]) showNames();
+	if (showingDevTools) showDevTools();
+	if (showOptions[`show-labels`]) showNames();
 
 	pop();
 
