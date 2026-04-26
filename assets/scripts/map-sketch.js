@@ -376,14 +376,26 @@ function showSitePlan() {
 	rect(...OFFSETS.SITE, images.site.width, images.site.height);
 }
 
-function showFloorPlan() {
-	image(images.floors[VIEW.floor - 1], 0, 0);
-	if (!showOptions[`show-dev-tools`]) return;
-	stroke(255, 0, 0);
-	rect(0, 0, images.floors[0].width, images.floors[0].height);
+function showEdges() {
+	var foundHoveredEdge = false;
+	edges.forEach(e => {
+		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor) return;
+		if (showOptions[`show-dev-tools`]) {
+			e.isHovered = false;
+			if (!foundHoveredEdge) {
+				e.checkHovered();
+				foundHoveredEdge ||= e.isHovered;
+			}
+		}
+		if (!pathEdges.has(e) && !showOptions[`show-dev-tools`])
+			return;
+		var _color = pathEdges.has(e) ? color(0, 128, 255) : color(0);
+		if (e.isHovered) _color = lerpColor(_color, color(255), 0.75)
+		drawEdge(e, _color);
+	});
 }
 
-function showPortables() {
+function showExtensions() {
 	function isPortable(id) {
 		return /^P[0-9]+$/.test(id);
 	} 
@@ -401,6 +413,17 @@ function showPortables() {
 		rect(0, 0, constants.PORTABLE_LENGTH_IN_PIXELS, constants.PORTABLE_WIDTH_IN_PIXELS);
 		pop();
 	}
+}
+
+function showFloorPlan() {
+	image(images.floors[VIEW.floor - 1], 0, 0);
+	if (showOptions[`show-dev-tools`]) {
+		stroke(255, 0, 0);
+		noFill();
+		rect(0, 0, images.floors[0].width, images.floors[0].height);
+		showEdges();
+	}
+	showExtensions();
 }
 
 function showNames() {
@@ -441,25 +464,6 @@ function showNames() {
 		// Draw center, doors, etc.
 		text(id, place.center[0], place.center[1]);
 	}
-}
-
-function showEdges() {
-	var foundHoveredEdge = false;
-	edges.forEach(e => {
-		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor) return;
-		if (showOptions[`show-dev-tools`]) {
-			e.isHovered = false;
-			if (!foundHoveredEdge) {
-				e.checkHovered();
-				foundHoveredEdge ||= e.isHovered;
-			}
-		}
-		if (!pathEdges.has(e) && !showOptions[`show-dev-tools`])
-			return;
-		var _color = pathEdges.has(e) ? color(0, 128, 255) : color(0);
-		if (e.isHovered) _color = lerpColor(_color, color(255), 0.75)
-		drawEdge(e, _color);
-	});
 }
 
 function showDevTools() {
@@ -564,9 +568,7 @@ function draw() {
 	if (showOptions[`show-satellite-image`]) showSatelliteImage();
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
-	showEdges();
 	if (showOptions[`show-dev-tools`]) showDevTools();
-	showPortables();
 	if (showOptions[`show-names`]) showNames();
 
 	pop();
