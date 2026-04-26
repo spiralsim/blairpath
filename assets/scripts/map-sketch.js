@@ -1,13 +1,20 @@
 var canvas, images = {
 	floors: [],
-	site: null
+	site: null,
+	satellite: null,
 };
-const assetPath = "";
+const OFFSETS = {
+	FLOOR: [0, 0],
+	SITE: [-525, -248],
+	SATELLITE: [-860, -300],
+};
 
 // Loads maps
 function preload () {
-	for (let i = 1; i <= 4; i++) images.floors.push(loadImage(`${assetPath}/maps/f${i}.png`));
-	images.site = loadImage(`${assetPath}/maps/site.png`);
+	const MAP_PATH = "/maps";
+	for (let i = 1; i <= 4; i++) images.floors.push(loadImage(`${MAP_PATH}/f${i}.png`));
+	images.site = loadImage(`${MAP_PATH}/site.png`);
+	images.satellite = loadImage(`${MAP_PATH}/satellite.png`);
 }
 
 function getCanvasDivWidth() {
@@ -150,14 +157,8 @@ var loaded = false, lastFrameRate = 60, lastUpdate = framesSinceUpdate = 0;
 /*
 	Navigation
 */
-const MAP_DIM_TMP = [1083, 500],
-	SITE_DIM_TMP = [2263, 1267],
-	SITE_PLAN_OFFSET_TMP = [-525, -248];
-var MAP_DIM,
-	SITE_DIM,
-	SITE_PLAN_OFFSET;
 const DEFAULT_ZOOM = 1, SCROLL_ZOOM_RATE = 1.01;
-const MIN_ZOOM = 0.4, MAX_ZOOM = 10;
+const MIN_ZOOM = 0.3, MAX_ZOOM = 10;
 // All positions are given as pixel coordinates
 
 /*
@@ -214,7 +215,8 @@ const VIEW = {
 	reset() {
 		VIEW.zoom = DEFAULT_ZOOM;
 		const CANVAS_CENTER = createVector(width / 2, height / 2);
-		VIEW.physPos = CANVAS_CENTER.sub(p5.Vector.mult(MAP_DIM, VIEW.zoom / 2));
+		const FLOOR_SIZE_VECTOR = createVector(images.floors[0].width, images.floors[0].height);
+		VIEW.physPos = CANVAS_CENTER.sub(p5.Vector.mult(FLOOR_SIZE_VECTOR, VIEW.zoom / 2));
 		VIEW.calibrateRuler();
 	}
 };
@@ -233,6 +235,7 @@ var showOptions = {
 	'show-site-plan': null,
 	'show-names': null,
 	'show-dev-tools': null,
+	'show-satellite-image': null,
 };
 for (let option in showOptions) {
 	const checkbox = document.querySelector(`#${option}`);
@@ -308,9 +311,6 @@ function setup() {
 
 	textFont('Roboto');
 
-	MAP_DIM = createVector(...MAP_DIM_TMP);
-	SITE_DIM = createVector(...SITE_DIM_TMP);
-	SITE_PLAN_OFFSET = createVector(...SITE_PLAN_OFFSET_TMP);
 	VIEW.reset();
 };
 
@@ -362,22 +362,25 @@ function drawEdge({ endpoint1, endpoint2, isTemporary }, _color) {
 	} else drawArrow(endpoint1, endpoint2);
 }
 
+function showSatelliteImage() {
+	image(images.satellite, ...OFFSETS.SATELLITE);
+	if (!showOptions[`show-dev-tools`]) return;
+	stroke(0, 255, 0);
+	rect(...OFFSETS.SATELLITE, images.satellite.width, images.satellite.height);
+}
+
 function showSitePlan() {
-	tint(255, 64);
-	image(images.site, SITE_PLAN_OFFSET.x, SITE_PLAN_OFFSET.y);
-	if (showOptions[`show-dev-tools`]) {
-		stroke(0, 0, 255);
-		rect(SITE_PLAN_OFFSET.x, SITE_PLAN_OFFSET.y, SITE_DIM.x, SITE_DIM.y);
-	}
+	image(images.site, ...OFFSETS.SITE);
+	if (!showOptions[`show-dev-tools`]) return;
+	stroke(0, 0, 255);
+	rect(...OFFSETS.SITE, images.site.width, images.site.height);
 }
 
 function showFloorPlan() {
-	tint(255, 255);
 	image(images.floors[VIEW.floor - 1], 0, 0);
-	if (showOptions[`show-dev-tools`]) {
-		stroke(255, 0, 0);
-		rect(0, 0, MAP_DIM.x, MAP_DIM.y);
-	}
+	if (!showOptions[`show-dev-tools`]) return;
+	stroke(255, 0, 0);
+	rect(0, 0, images.floors[0].width, images.floors[0].height);
 }
 
 function showPortables() {
@@ -512,16 +515,16 @@ function showRuler() {
 	fill(255, 192);
 	rect(0, height - 20, width, 20);	
 
-	var rulerStartX = width - VIEW.rulerInPixels() - 15;
+	var rulerLeftX = width - VIEW.rulerInPixels() - 22;
 	noStroke();
 	fill(0);
-	rect(rulerStartX, height - 15, 2, 10);
-	rect(rulerStartX, height - 7, VIEW.rulerInPixels(), 2);
-	rect(rulerStartX +  VIEW.rulerInPixels() - 2, height - 15, 2, 10);
+	rect(rulerLeftX, height - 15, 2, 10);
+	rect(rulerLeftX, height - 7, VIEW.rulerInPixels(), 2);
+	rect(rulerLeftX + VIEW.rulerInPixels() - 2, height - 15, 2, 10);
 	fill(0);
 	textSize(18);
 	textAlign(RIGHT, CENTER);
-	text(`${VIEW.rulerInMeters} m`, rulerStartX - 5, height - 10);
+	text(`${VIEW.rulerInMeters} m`, rulerLeftX - 5, height - 10);
 }
 
 function draw() {
@@ -558,6 +561,7 @@ function draw() {
 	imageMode(CORNER);
 
 	hoveredRoom = null;
+	if (showOptions[`show-satellite-image`]) showSatelliteImage();
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
 	showEdges();
