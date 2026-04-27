@@ -217,9 +217,8 @@ function addPoint () {
 	if (!tableLoaded) return;
 	const row = document.createElement("tr"), rowNum = rows.length + 1;
 	row.innerHTML = `<tr>
-		<td>${rowNum}</td>
-		<td style="display: flex"><input type="text" id="point-${rowNum}" value="" class="point-input"></input></td>
 		<td><button class="square remove-point" onclick="removePoint(${rowNum})"></button></td>
+		<td style="display: flex"><input type="text" id="point-${rowNum}" value="" class="point-input"></input></td>
 	</tr>`;
 	row.id = "row-" + rowNum;
 	rows.push(row);
