@@ -507,19 +507,23 @@ function showTooltip(room) {
 }
 
 function showRuler() {
-	fill(255, 192);
-	rect(0, height - 20, width, 20);	
-
 	var rulerLeftX = width - VIEW.rulerInPixels() - 22;
+
+	textSize(18);
+
+	var rulerText = `${VIEW.rulerInMeters} m`;
+	var rulerTextLeftX = rulerLeftX - 5 - textWidth(rulerText);
+
+	fill(255, 192);
+	rect(rulerTextLeftX - 5, height - 20, width, 20);	
+
 	noStroke();
 	fill(0);
 	rect(rulerLeftX, height - 15, 2, 10);
 	rect(rulerLeftX, height - 7, VIEW.rulerInPixels(), 2);
 	rect(rulerLeftX + VIEW.rulerInPixels() - 2, height - 15, 2, 10);
-	fill(0);
-	textSize(18);
-	textAlign(RIGHT, CENTER);
-	text(`${VIEW.rulerInMeters} m`, rulerLeftX - 5, height - 10);
+	textAlign(LEFT, CENTER);
+	text(rulerText, rulerTextLeftX, height - 10);
 }
 
 function draw() {

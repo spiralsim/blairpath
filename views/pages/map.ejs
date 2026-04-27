@@ -12,6 +12,10 @@
 		<%-include("../partials/menu.ejs")%>
 		<section class="main">
 			<div style="width: 300px; overflow: auto; background-color: rgba(255, 255, 255, 0.9);">
+				<div class="banner red">
+					<p>The map data was last updated on January 4, 2020. The portables on the left side of the main building haven't been added yet.</p>
+				</div>
+				
 				<table id="points">
 					<tr id="row-placeholder-1">
 						<td>1</td>
@@ -70,23 +74,27 @@
 			</div>
 			<div style="position: absolute; left: 330px; right: 0; top: 0; bottom: 0; overflow: hidden" id="canvas" oncontextmenu="return false;">
 				<div id="map-placeholder" style="background-color: var(--placeholder)"></div>
-				<div id="map-controls" style="position: absolute; left: 0; bottom: 0; padding: 1em; background-color: rgba(255, 255, 255, 0.9)">
-					<div style="margin-bottom: 4px">
-						<button class="smooth" onclick="VIEW.applyZoom(1.2)">➕</button>
-						<button class="smooth" onclick="VIEW.applyZoom(0.8)">➖</button>
-						<button class="smooth" onclick="VIEW.reset()">Reset View</button>
-					</div>
-					<div>
+				<div id="map-controls" style="position: absolute; right: var(--map-controls-padding); bottom: 20px">
+					<button class="white" onclick="VIEW.applyZoom(1.2)" style="position: absolute; right: 0; bottom: 76px; border-radius: var(--button-corner) var(--button-corner) 0 0; border-bottom: 0">➕</button>
+					<button class="white" onclick="VIEW.applyZoom(0.8)" style="position: absolute; right: 0; bottom: 48px; border-radius: 0 0 var(--button-corner) var(--button-corner)">➖</button>
+					<div style="position: absolute; right: var(--map-controls-right); padding-right: var(--map-controls-padding); bottom: 20px; display: flex;">
 						<label for="floor">Floor</label>
 						<input type="number" min="1" max="4" value="1" id="floor" onchange="setFloor(parseInt(this.value))">
 						<script>
+							const FLOOR_INPUT = document.getElementById('floor');
 							function setFloor(newFloor) {
 								if (Number.isNaN(newFloor) || newFloor < 1 || newFloor > 4) return;
+								FLOOR_INPUT.value = String(newFloor);
 								VIEW.floor = newFloor;
 							}
+							function adjustFloor(delta) {
+								setFloor(parseInt(FLOOR_INPUT.value) + delta);
+							}
 						</script>
+						<button class="square" onclick="adjustFloor(-1)" style="padding: 0">⬇</button>
+						<button class="square" onclick="adjustFloor(1)" style="padding: 0">⬆</button>
 					</div>
-					<div>
+					<div style="position: absolute; right: var(--map-controls-right); padding-right: var(--map-controls-padding); bottom: 0; display: flex;">
 						<input type="checkbox" id="show-site-plan">
 						<label for="show-site-plan">Site Plan (1998)</label>
 						<input type="checkbox" id="show-floor-plan" checked>

@@ -7,6 +7,9 @@
 	--placeholder: #e0e0e0;
 	--border: #aaa;
 	--button-height: 28px;
+	--button-corner: 4px;
+	--map-controls-right: -22px;
+	--map-controls-padding: 22px;
 }
 * {
 	font-family: "Roboto", sans-serif;
@@ -69,36 +72,40 @@ nav.main ul li.active a {
 	background-color: #e9e9e9;
 }
 
+#map-controls > div {
+	background-color: rgba(255, 255, 255, 0.75);
+}
+
+div > label {
+	white-space: nowrap;
+	padding-left: 2px;
+	padding-right: 4px;
+	font-size: 18px;
+}
+
 button {
 	border: 1px solid var(--border);
 	outline: none;
 	cursor: pointer;
 }
 
-button.smooth {
-	border-radius: 4px;
+button.white {
+	border-radius: var(--button-corner);
 	background-color: white;
 	color: var(--light-text);
 	font-size: 1em;
 	padding: 0 0.3em;
+	width: var(--button-height);
 	height: var(--button-height);
 }
-button.smooth:hover {
+button.white:hover {
 	background-color: #efefef;
 }
-button.smooth:disabled {
+button.white:disabled {
 	background-color: var(--placeholder);
 }
-button.smooth:disabled:hover {
+button.white:disabled:hover {
 	cursor: not-allowed;
-}
-
-button.special {
-	background-color: dodgerblue;
-	color: white;
-}
-button.special:hover {
-	background-color: #0e80ef;
 }
 
 button.square {
