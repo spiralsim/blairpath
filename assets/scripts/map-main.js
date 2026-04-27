@@ -188,12 +188,22 @@ function autocomplete (input) {
 
 /* Point input */
 var table = document.getElementById("points").childNodes[1], rows = [];
-function getRowValue(index) {
-	return document.getElementById(`point-${index}`).value;
+function getPointInput(index) {
+	return document.getElementById(`point-${index}`);
 }
-function setRowValue(index, value) {
+function getPointValue(index) {
+	return getPointInput(index).value;
+}
+function getPointValues() {
+	var values = [];
+	for (let i = 1; i <= rows.length; i++)
+		values.push(getPointValue(i));
+	return values;
+}
+function setPointValue(index, value) {
 	return document.getElementById(`point-${index}`).value = value;
 }
+
 // Remove a row from the points table
 function removePoint (ID) {
 	// Remove the row
@@ -204,11 +214,11 @@ function removePoint (ID) {
 		const row = document.getElementById(rows[i].id),
 		      rowStr = rows[i].id.split("-")[1],
 		      // Save the value so that we can place it back in later
-		      val = getRowValue(rowStr),
+		      val = getPointValue(rowStr),
 		      rowNum = i + 1;
 		row.id = "row-" + rowNum;
 		row.innerHTML = row.innerHTML.replace(new RegExp(rowStr, "g"), rowNum);
-		setRowValue(rowNum, val);
+		setPointValue(rowNum, val);
 		autocomplete(document.getElementById("point-" + rowNum), places);
 	}
 };
@@ -229,25 +239,31 @@ function addPoint () {
 /* Calculate Path */
 const calcButton = document.getElementById("calc-button");
 var totalDistance = 0, pathEdges = new Set();
+var pathPoints = [];
 
-function clearCalc () {
+function clearCalculation() {
 	edges.forEach(e => e.isPath = false);
 	totalDistance = 0;
 	pathEdges = new Set();
 	document.getElementById("calc-result").innerHTML = '';
-};
+}
 
-function calculate () {
-	clearCalc();
+function calculateRoute () {
+	// Prevents duplicate calculations
+	const pointValues = getPointValues();
+	if (pointValues == pathPoints) return;
+	pathPoints = pointValues;
+
+	edges.forEach(e => e.isPath = false);
+	totalDistance = 0;
+	pathEdges = new Set();
+	document.getElementById("calc-result").innerHTML = '';
 
 	const calcResult = document.getElementById("calc-result");
 	function finishCalc (msg, err) {
 		if (err) edges.forEach(e => e.isPath = false);
 		calcResult.innerHTML = `<p style="color: ${err ? "red" : "black"}">${msg}</p>`;
-		calcButton.removeAttribute("disabled");
 	}
-
-	calcButton.setAttribute("disabled", "");
 
 	const options = {
 		allowElevator: document.getElementById("allow-elevator").checked
@@ -285,4 +301,17 @@ function calculate () {
 	output = `<p><b>${prettifyDistance(totalDistance)}</b></p>` + output;
 	// Convert output string to HTML and print to website
 	finishCalc(output);
+}
+
+function refreshPointTable() {
+	var canCalculate = rows.length >= 2;
+	for (let i = 1; i <= rows.length; i++) {
+		const input = getPointInput(i);
+		const isValid = !!places[input.value];
+		canCalculate &&= isValid;
+		const borderColor = isValid || !input.value ? '--var(border)' : 'red';
+		input.setAttribute("style", `border-color: ${borderColor}`);
+	}
+	if (canCalculate) calculateRoute();
+	else clearCalculation();
 }

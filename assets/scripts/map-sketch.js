@@ -317,13 +317,13 @@ function mousePressed() {
 	if (!rows.length) addPoint();
 	// Find the number of the first empty point input
 	for (let i = 1; i <= rows.length; i++) {
-		if (!getRowValue(i)) {
-			setRowValue(i, place.id);
+		if (!getPointValue(i)) {
+			setPointValue(i, place.id);
 			return;
 		}
 	}
 	addPoint();
-	setRowValue(rows.length, place.id);
+	setPointValue(rows.length, place.id);
 };
 
 function mouseDragged() {
@@ -443,7 +443,7 @@ function showNames() {
 	stroke(255);
 	fill(0);
 	for (let i = 1; i <= rows.length; i++) {
-		const id = getRowValue(i), place = places[id];
+		const id = getPointValue(i), place = places[id];
 		if (!place || place.floor != VIEW.floor) continue;
 
 		// Draw center, doors, etc.
@@ -533,18 +533,7 @@ function draw() {
 		loaded = true;
 	}
 
-	if (tableLoaded) {
-		var canCalculate = rows.length >= 2;
-		for (let i = 1; i <= rows.length; i++) {
-			const input = document.getElementById("point-" + i);
-			const isValid = !!places[input.value];
-			canCalculate &&= isValid;
-			const borderColor = isValid || !input.value ? '--var(border)' : 'red';
-			input.setAttribute("style", `border-color: ${borderColor}`);
-		}
-		if (canCalculate) calcButton.removeAttribute('disabled');
-		else calcButton.setAttribute('disabled', '');
-	}
+	if (tableLoaded) refreshPointTable();
 
 	background(255);
 
@@ -562,6 +551,7 @@ function draw() {
 	hoveredRoom = null;
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
+	showEdges();
 	if (showingDevTools) showDevTools();
 	if (showOptions[`show-labels`]) showNames();
 

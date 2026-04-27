@@ -12,36 +12,33 @@
 		<%-include("../partials/menu.ejs")%>
 		<section class="main">
 			<div style="width: 300px; overflow: auto; background-color: rgba(255, 255, 255, 0.9);">
-				<div class="banner red">
-					<p>The map data was last updated on January 4, 2020. The portables on the left side of the main building haven't been added yet.</p>
+				<div>
+					<div class="banner red">
+						<p>The map data was last updated on January 4, 2020. The portables on the left side of the main building haven't been added yet.</p>
+					</div>
+					
+					<table id="points">
+						<tr id="row-placeholder-1">
+							<td><button class="square remove-point"></button></td>
+							<td><input type="text" value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
+						</tr>
+						<tr id="row-placeholder-2">
+							<td><button class="square remove-point"></button></td>
+							<td><input type="text" value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
+						</tr>
+						<tr id="last">
+							<td><button class="square add-point" onclick="addPoint()"></button></td>
+							<td style="width: 406px"></td>
+						</tr>
+					</table>
+		
+					<p style="margin-bottom: 0"><b>Options</b></p>
+					<p style="margin: 0"><input type="checkbox" id="allow-elevator"> Allow use of elevator*</p>
+					<p>* Requires pass from nurse</p>
 				</div>
-				
-				<table id="points">
-					<tr id="row-placeholder-1">
-						<td><button class="square remove-point"></button></td>
-						<td><input type="text" value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
-					</tr>
-					<tr id="row-placeholder-2">
-						<td><button class="square remove-point"></button></td>
-						<td><input type="text" value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
-					</tr>
-					<tr id="last">
-						<td><button class="square add-point" onclick="addPoint()"></button></td>
-						<td style="width: 406px"></td>
-					</tr>
-				</table>
-	
-				<p style="margin-bottom: 0"><b>Options</b></p>
-				<p style="margin: 0"><input type="checkbox" id="allow-elevator"> Allow use of elevator*</p>
-				<p>* Requires pass from nurse</p>
-				
-				<div class="button-row">
-					<button id="calc-button" class="smooth" onclick="calculate()" disabled>Find Path</button>
-					<button id="clear-button" class="smooth" onclick="clearCalc()">Clear</button>
-				</div>
-	
+
 				<hr>
-	
+
 				<div id="calc-result"></div>
 
 				<div id="outputDiv" style="border: 1px solid; padding: 5px; margin-top: 5px" hidden>
@@ -67,6 +64,7 @@
 							document.execCommand("copy");
 						}
 					</script>
+				</div>
 				</div>
 			</div>
 			<div style="position: absolute; left: 330px; right: 0; top: 0; bottom: 0; overflow: hidden" id="canvas" oncontextmenu="return false;">
