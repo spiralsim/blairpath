@@ -7,7 +7,7 @@ var walkingSpeed = 1.35; // Walking speed in m/s
  */
 function prettifyDistance(distance) {
 	if (distance < 0 || distance == undefined) return `No path`;
-	const lengthInM = distance * constants.METERS_PER_PIXEL,
+	const lengthInM = distance * data.constants.METERS_PER_PIXEL,
 		timeInSec = Math.round(lengthInM / walkingSpeed);
 	const min = Math.floor(timeInSec / 60), sec = timeInSec % 60;
 	var res = ``;
@@ -17,9 +17,9 @@ function prettifyDistance(distance) {
 }
 
 /* Data preprocessing */
-var places = {};
-var edges = [];
-var constants = {};
+var data = {};
+var tableLoaded = false;
+var vertices = new Set(), edges = new Set();
 function dist2D(a, b) {
 	return Math.sqrt(Math.pow(b[0] - a[0], 2) + Math.pow(b[1] - a[1], 2));
 }
@@ -49,9 +49,9 @@ class Edge {
 
 	length() {
 		return Math.hypot(
-			(this.endpoint2.floor - this.endpoint1.floor) * constants.METERS_PER_FLOOR,
-			(this.endpoint2.x - this.endpoint1.x) * constants.METERS_PER_PIXEL,
-			(this.endpoint2.y - this.endpoint1.y) * constants.METERS_PER_PIXEL,
+			(this.endpoint2.floor - this.endpoint1.floor) * data.constants.METERS_PER_FLOOR,
+			(this.endpoint2.x - this.endpoint1.x) * data.constants.METERS_PER_PIXEL,
+			(this.endpoint2.y - this.endpoint1.y) * data.constants.METERS_PER_PIXEL,
 		);
 	}
 	checkHovered() {
@@ -77,21 +77,15 @@ class Edge {
 	}
 }
 
-var tableLoaded = false;
-var vertices = new Set();
-$.getJSON('/data.json', function (data) {
-	// Load constants
-	constants = data.constants;
-
-	// Initial load for all object types
-	places = data.places;
+$.getJSON('/data.json', function (payload) {
+	data = payload;
 	edges = data.edges.map(e => new Edge(new Vertex(e.endpoint1), new Vertex(e.endpoint2), e.name));
 	edges.forEach(e => {
 		vertices.add(e.endpoint1);
 		vertices.add(e.endpoint2);
 	});
 
-	Object.values(places).forEach(p => {
+	Object.values(data.places).forEach(p => {
 		const placeVertex = new Vertex([p.floor, ...p.center]);
 		var minDist = Infinity, tempEdge;
 		vertices.forEach(v => {
@@ -115,6 +109,10 @@ $.getJSON('/data.json', function (data) {
 	for (let i = 0; i < 2; i++) addPoint();
 });
 
+function updateOutput() {
+	document.getElementById("outputField").value = formatJSON(data);
+}
+
 /* Search bar adapted from https://www.w3schools.com/howto/howto_js_autocomplete.asp */
 function autocomplete (input) {
 	var currentFocus;
@@ -130,8 +128,8 @@ function autocomplete (input) {
 		a.setAttribute("style", "max-height: 120px; overflow-y: auto");
 		this.parentNode.appendChild(a);
 
-		for (let id in places) {
-			const place = places[id];
+		for (let id in data.places) {
+			const place = data.places[id];
 			var name = id;
 			if (place.use && !id.includes(place.use))
 				name += ` (${place.use})`;
@@ -219,7 +217,7 @@ function removePoint (ID) {
 		row.id = "row-" + rowNum;
 		row.innerHTML = row.innerHTML.replace(new RegExp(rowStr, "g"), rowNum);
 		setPointValue(rowNum, val);
-		autocomplete(document.getElementById("point-" + rowNum), places);
+		autocomplete(document.getElementById("point-" + rowNum), data.places);
 	}
 };
 // Add a row to the points table
@@ -233,7 +231,7 @@ function addPoint () {
 	row.id = "row-" + rowNum;
 	rows.push(row);
 	table.insertBefore(row, table.childNodes[rowNum]);
-	autocomplete(document.getElementById("point-" + rowNum), places);
+	autocomplete(document.getElementById("point-" + rowNum), data.places);
 };
 
 /* Calculate Path */
@@ -279,7 +277,7 @@ function calculateRoute () {
 
 	for (let i = 0; i < rows.length - 1; i++) {
 		const subpathPlaceIDs = [1, 2].map(j => document.getElementById(`point-${i + j}`).value);
-		const subpathPlaces = subpathPlaceIDs.map(id => places[id]);
+		const subpathPlaces = subpathPlaceIDs.map(id => data.places[id]);
 		const subpathPlaceVertices = subpathPlaces.map(room => new Vertex([room.floor, ...room.center]));
 
 		var {path: subpathVertices, distance: subDistance} = graph.Dijkstra(...subpathPlaceVertices);
@@ -307,7 +305,7 @@ function refreshPointTable() {
 	var canCalculate = rows.length >= 2;
 	for (let i = 1; i <= rows.length; i++) {
 		const input = getPointInput(i);
-		const isValid = !!places[input.value];
+		const isValid = !!data.places[input.value];
 		canCalculate &&= isValid;
 		const borderColor = isValid || !input.value ? '--var(border)' : 'red';
 		input.setAttribute("style", `border-color: ${borderColor}`);

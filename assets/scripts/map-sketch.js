@@ -2,10 +2,6 @@ var canvas, images = {
 	floors: [],
 	site: null,
 };
-const OFFSETS = {
-	FLOOR: [0, 0],
-	SITE: [-525, -248],
-};
 
 // Loads maps
 function preload () {
@@ -44,7 +40,7 @@ function computeLength (link) {
 	if (!link.points[0] || !link.points[1]) return;
 
 	if (link.points[0][2] == link.points[1][2]) link.gLen = dist(link.points[0][0], link.points[0][1], link.points[1][0], link.points[1][1]);
-	else link.vLen = constants.METERS_PERVIEW.floor / constants.METERS_PER_PIXEL;
+	else link.vLen = data.constants.METERS_PER_FLOOR / data.constants.METERS_PER_PIXEL;
 }
 // Delete a link #(id), remove all records of the link, etc.
 function deleteLink (id) {
@@ -174,7 +170,7 @@ const VIEW = {
 		VIEW.physPos.add(delta);
 	},
 	rulerInPixels() {
-		return VIEW.rulerInMeters / constants.METERS_PER_PIXEL * VIEW.zoom;
+		return VIEW.rulerInMeters / data.constants.METERS_PER_PIXEL * VIEW.zoom;
 	},
 	calibrateRuler() {
 		// Note that we must have
@@ -224,6 +220,9 @@ const CURSOR = {
 	},
 	get virtPos() {
 		return p5.Vector.sub(CURSOR.physPos, VIEW.physPos).div(VIEW.zoom);
+	},
+	get virtPosArray2D() {
+		return this.virtPos.array().slice(0, 2).map(coord => round(coord));
 	}
 };
 
@@ -310,8 +309,35 @@ function windowResized() {
 	resizeCanvas(getCanvasDivWidth(), windowHeight);
 }
 
+var borderIsActive = false;
+function getLastSidewalkBorder() {
+	const borders = data.sidewalkBorders;
+	return borders[borders.length - 1];
+}
+function deleteActiveBorder() {
+	data.sidewalkBorders.splice(-1);
+}
+function keyPressed() {
+	if (!showingDevTools) return;
+	if (key === 's') {
+		if (!borderIsActive)
+			data.sidewalkBorders.push([CURSOR.virtPosArray2D]);
+		else {
+			if (getLastSidewalkBorder().length == 1)
+				deleteActiveBorder();
+			updateOutput();
+		}
+		borderIsActive = !borderIsActive;
+	}
+};
+
 function mousePressed() {
-	const place = Object.values(places).find(p => p.hover);
+	if (borderIsActive) {
+		getLastSidewalkBorder().push(CURSOR.virtPosArray2D);
+		return;
+	}
+
+	const place = Object.values(data.places).find(p => p.hover);
 	if (!place) return;
 	// Handle edge case where there are no rows to begin with
 	if (!rows.length) addPoint();
@@ -355,10 +381,38 @@ function drawEdge({ endpoint1, endpoint2, isTemporary }, _color) {
 }
 
 function showSitePlan() {
-	image(images.site, ...OFFSETS.SITE);
+	const OFFSET = data.constants["SITE_PLAN_OFFSET_IN_PIXELS"];
+	image(images.site, ...OFFSET);
 	if (!showingDevTools) return;
+	strokeWeight(EDGE_WIDTH / VIEW.zoom);
 	stroke(0, 0, 255);
-	rect(...OFFSETS.SITE, images.site.width, images.site.height);
+	rect(...OFFSET, images.site.width, images.site.height);
+}
+
+function showSidewalkBorders() {
+	const borders = data.sidewalkBorders;
+	noFill();
+	stroke(0);
+	rectMode(CENTER);
+	borders.forEach((border, i) => {
+		if (VIEW.floor != 1) return;
+		if (i == borders.length - 1 && borderIsActive) {
+			stroke(0, 192, 0);
+		}
+		strokeWeight(EDGE_WIDTH / 2);
+		beginShape();
+		border.forEach(v => {
+			vertex(...v);
+		});
+		endShape();
+		if (showingDevTools) {
+			strokeWeight(EDGE_WIDTH / 2 / VIEW.zoom);
+			border.forEach(v => {
+				square(...v, EDGE_WIDTH * 3 / VIEW.zoom);
+			});
+		}
+	});
+	rectMode(CORNER);
 }
 
 function showEdges() {
@@ -375,7 +429,7 @@ function showEdges() {
 		if (!pathEdges.has(e) && !showingDevTools)
 			return;
 		var _color = pathEdges.has(e) ? color(0, 128, 255) : color(0);
-		if (e.isHovered) _color = lerpColor(_color, color(255), 0.75)
+		if (e.isHovered) _color = lerpColor(_color, color(255), 0.75);
 		drawEdge(e, _color);
 	});
 }
@@ -389,26 +443,33 @@ function showExtensions() {
 	strokeWeight(2 / VIEW.zoom);
 	rectMode(CENTER);
 	angleMode(DEGREES);
-	for (let id in places) {
-		const place = places[id];
+	for (let id in data.places) {
+		const place = data.places[id];
 		if (!isPortable(id) || place.floor != VIEW.floor) continue;
 		push();
 		translate(place.center[0], place.center[1]);
 		rotate(place.angle ?? 0);
-		rect(0, 0, constants.PORTABLE_LENGTH_IN_PIXELS, constants.PORTABLE_WIDTH_IN_PIXELS);
+		rect(
+			0,
+			0,
+			data.constants["PORTABLE_LENGTH_IN_PIXELS"],
+			data.constants["PORTABLE_WIDTH_IN_PIXELS"]
+		);
 		pop();
 	}
+	rectMode(CORNERS);
 }
 
 function showFloorPlan() {
 	image(images.floors[VIEW.floor - 1], 0, 0);
+	showExtensions();
+	showEdges();
 	if (showingDevTools) {
+		strokeWeight(EDGE_WIDTH / VIEW.zoom);
 		stroke(255, 0, 0);
 		noFill();
 		rect(0, 0, images.floors[0].width, images.floors[0].height);
-		showEdges();
 	}
-	showExtensions();
 }
 
 function showNames() {
@@ -417,8 +478,8 @@ function showNames() {
 	stroke(0);
 	strokeWeight(2 / VIEW.zoom);
 	// Display dots for room selection
-	for (let id in places) {
-		const place = places[id];
+	for (let id in data.places) {
+		const place = data.places[id];
 		place.hover = false;
 		if (place.floor != VIEW.floor || !place.center) continue;
 		// Display the point and detect hovering if applicable
@@ -443,7 +504,7 @@ function showNames() {
 	stroke(255);
 	fill(0);
 	for (let i = 1; i <= rows.length; i++) {
-		const id = getPointValue(i), place = places[id];
+		const id = getPointValue(i), place = data.places[id];
 		if (!place || place.floor != VIEW.floor) continue;
 
 		// Draw center, doors, etc.
@@ -453,6 +514,10 @@ function showNames() {
 
 var showingDevTools = false;
 function toggleDevTools() {
+	if (borderIsActive) {
+		deleteActiveBorder();
+		borderIsActive = false;
+	}
 	showingDevTools = !showingDevTools;
 	const outputDiv = document.getElementById('outputDiv');
 	outputDiv.hidden = !showingDevTools;
@@ -461,7 +526,7 @@ function showDevTools() {
 	stroke(0);
 	noFill();
 	strokeWeight(2 / VIEW.zoom);
-	edges.forEach(({ endpoint1, endpoint2, isTemporary }) => {
+	data.edges.forEach(({ endpoint1, endpoint2, isTemporary }) => {
 		if (isTemporary) return;
 		[endpoint1, endpoint2].forEach(({ x, y, floor }) => {
 			if (floor == VIEW.floor)
@@ -551,7 +616,7 @@ function draw() {
 	hoveredRoom = null;
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
-	showEdges();
+	showSidewalkBorders();
 	if (showingDevTools) showDevTools();
 	if (showOptions[`show-labels`]) showNames();
 

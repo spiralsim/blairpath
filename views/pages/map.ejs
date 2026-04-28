@@ -42,13 +42,26 @@
 				<div id="calc-result"></div>
 
 				<div id="outputDiv" style="border: 1px solid; padding: 5px; margin-top: 5px" hidden>
-					<b>Adding Portables (for developers only)</b>
+					<b>Adding Sidewalk Borders</b>
 					<br>
 					<ol style="margin: 0; margin-left: -15px">
-						<li>Press <code>P</code> to add a portable object (you will adjust it in the following steps.)</li>
+						<li>Press <code>S</code> to start a new sidewalk border at the cursor.</li>
+						<li>Click as many times as needed to add another vertex to the current border.</li>
+						<li>Press <code>S</code> again to end the border.</li>
+					</ol>
+
+					<b>Adding Portables</b>
+					<br>
+					<ol style="margin: 0; margin-left: -15px">
+						<li>Press <code>P</code> to add a portable object.</li>
 						<li>Move the cursor to move the center.</li>
 						<li>Press <code>[</code> or <code>]</code> to rotate counterclockwise or clockwise.</li>
 						<li>Click to place.</li>
+					</ol>
+					
+					<b>Saving</b>
+					<br>
+					<ol style="margin: 0; margin-left: -15px">
 						<li>Copy the data below to <code>/assets/data.json</code> in Blairpath's package.</li>
 					</ol>
 
@@ -64,7 +77,6 @@
 							document.execCommand("copy");
 						}
 					</script>
-				</div>
 				</div>
 			</div>
 			<div style="position: absolute; left: 330px; right: 0; top: 0; bottom: 0; overflow: hidden" id="canvas" oncontextmenu="return false;">
