@@ -166,6 +166,9 @@ const VIEW = {
 	zoom: null,
 	floor: 1,
 	rulerInMeters: 100,
+	get hoverRadius() {
+		return EDGE_WIDTH * 2 / this.zoom;
+	},
 	pan(delta) {
 		VIEW.physPos.add(delta);
 	},
@@ -309,31 +312,52 @@ function windowResized() {
 	resizeCanvas(getCanvasDivWidth(), windowHeight);
 }
 
-var borderIsActive = false;
-function getLastSidewalkBorder() {
-	const borders = data.sidewalkBorders;
-	return borders[borders.length - 1];
+var borderIsActive = false, isClosingBorder = false;
+function lastSidewalkBorder() {
+	return data.sidewalkBorders.at(-1);
+}
+function closeBorderVertex() {
+	return lastSidewalkBorder()[0];
+}
+function canCloseBorder() {
+	const isHovering = dist(...CURSOR.virtPosArray2D, ...closeBorderVertex()) < VIEW.hoverRadius;
+	return isHovering && lastSidewalkBorder().length > 1;
 }
 function deleteActiveBorder() {
 	data.sidewalkBorders.splice(-1);
 }
 function keyPressed() {
 	if (!showingDevTools) return;
-	if (key === 's') {
-		if (!borderIsActive)
-			data.sidewalkBorders.push([CURSOR.virtPosArray2D]);
-		else {
-			if (getLastSidewalkBorder().length == 1)
-				deleteActiveBorder();
-			updateOutput();
-		}
-		borderIsActive = !borderIsActive;
+	switch (key) {
+		case 's':
+			if (!borderIsActive)
+				data.sidewalkBorders.push([CURSOR.virtPosArray2D]);
+			else {
+				if (lastSidewalkBorder().length == 1)
+					deleteActiveBorder();
+				updateOutput();
+			}
+			borderIsActive = !borderIsActive;
+			break;
+		case 'u':
+			if (!borderIsActive) return;
+			lastSidewalkBorder().splice(-1);
+			if (lastSidewalkBorder().length == 0) {
+				data.sidewalkBorders.splice(-1);
+				borderIsActive = false;
+			}
+			break;
 	}
 };
 
 function mousePressed() {
 	if (borderIsActive) {
-		getLastSidewalkBorder().push(CURSOR.virtPosArray2D);
+		var nextVertex = CURSOR.virtPosArray2D;
+		if (canCloseBorder()) {
+			nextVertex = closeBorderVertex();
+			borderIsActive = false;
+		}
+		lastSidewalkBorder().push(nextVertex);
 		return;
 	}
 
@@ -396,14 +420,14 @@ function showSidewalkBorders() {
 	rectMode(CENTER);
 	borders.forEach((border, i) => {
 		if (VIEW.floor != 1) return;
-		if (i == borders.length - 1 && borderIsActive) {
-			stroke(0, 192, 0);
-		}
+		const curBorderIsActive = i == borders.length - 1 && borderIsActive;
+		if (curBorderIsActive) stroke(0, 192, 0);
 		strokeWeight(EDGE_WIDTH / 2);
 		beginShape();
 		border.forEach(v => {
 			vertex(...v);
 		});
+		if (curBorderIsActive && canCloseBorder()) vertex(...border[0]);
 		endShape();
 		if (showingDevTools) {
 			strokeWeight(EDGE_WIDTH / 2 / VIEW.zoom);

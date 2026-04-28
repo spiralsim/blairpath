@@ -57,10 +57,10 @@ class Edge {
 	checkHovered() {
 		this.isHovered = false;
 		if (this.endpoint1.floor == this.endpoint2.floor) {
-			if (distToLine(CURSOR.virtPos, this.endpoint1, this.endpoint2) < EDGE_WIDTH / VIEW.zoom)
+			if (distToLine(CURSOR.virtPos, this.endpoint1, this.endpoint2) < VIEW.hoverRadius)
 				this.isHovered = true;
 		} else {
-			if (dist(this.endpoint1.x, this.endpoint1.y, CURSOR.virtPos.x, CURSOR.virtPos.y) < 10 / VIEW.zoom)
+			if (dist(this.endpoint1.x, this.endpoint1.y, CURSOR.virtPos.x, CURSOR.virtPos.y) < VIEW.hoverRadius)
 				this.isHovered = true;
 		}
 	}
