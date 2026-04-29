@@ -135,7 +135,7 @@ function mergeLinks (id) {
 		}
 	});
 }
-// Compute distance between a point [x, y] (p) and segment [x, y] (a) - [x, y] (b)
+// Compute distance between a point (px, py) and segment (ax, ay) -- (bx, by)
 // Adapted from https://stackoverflow.com/questions/849211/shortest-distance-between-a-point-and-a-line-segment
 function distToLine ({ x: px, y: py }, { x: ax, y: ay }, { x: bx, y: by }) {
 	var l = pow(dist(ax, ay, bx, by), 2);
@@ -143,6 +143,15 @@ function distToLine ({ x: px, y: py }, { x: ax, y: ay }, { x: bx, y: by }) {
 	var t = ((px - ax) * (bx - ax) + (py - ay) * (by - ay)) / l;
 	t = max(0, min(1, t));
 	return dist(px, py, ax + t * (bx - ax), ay + t * (by - ay));
+}
+/**
+ * 
+ * @param {{x, y}} endpointA 
+ * @param {{x, y}} endpointB 
+ * @returns bool
+ */
+function isHoveringOnSegment(endpointA, endpointB) {
+	return distToLine(CURSOR.virtPos, endpointA, endpointB) < VIEW.hoverRadius;
 }
 
 var loaded = false, lastFrameRate = 60, lastUpdate = framesSinceUpdate = 0;
@@ -167,7 +176,7 @@ const VIEW = {
 	floor: 1,
 	rulerInMeters: 100,
 	get hoverRadius() {
-		return EDGE_WIDTH * 2 / this.zoom;
+		return EDGE_WIDTH / this.zoom;
 	},
 	pan(delta) {
 		VIEW.physPos.add(delta);
@@ -312,52 +321,61 @@ function windowResized() {
 	resizeCanvas(getCanvasDivWidth(), windowHeight);
 }
 
-var borderIsActive = false, isClosingBorder = false;
-function lastSidewalkBorder() {
-	return data.sidewalkBorders.at(-1);
-}
-function closeBorderVertex() {
-	return lastSidewalkBorder()[0];
+var activeBorderIndex = -1, isClosingBorder = false;
+var hoveringBorderIndex = -1;
+function activeBorder() {
+	return data.borders[activeBorderIndex];
 }
 function canCloseBorder() {
-	const isHovering = dist(...CURSOR.virtPosArray2D, ...closeBorderVertex()) < VIEW.hoverRadius;
-	return isHovering && lastSidewalkBorder().length > 1;
+	const isHovering = dist(...CURSOR.virtPosArray2D, ...activeBorder()[0]) < VIEW.hoverRadius;
+	return isHovering && activeBorder().length > 1;
 }
 function deleteActiveBorder() {
-	data.sidewalkBorders.splice(-1);
+	if (activeBorderIndex == -1) return;
+	data.borders.splice(activeBorderIndex);
+	activeBorderIndex = -1;
+}
+function deactivateBorder() {
+	if (activeBorderIndex == -1) return;
+	if (activeBorder().length == 1)
+		deleteActiveBorder();
+	activeBorderIndex = -1;
+	updateOutput();
 }
 function keyPressed() {
 	if (!showingDevTools) return;
 	switch (key) {
-		case 's':
-			if (!borderIsActive)
-				data.sidewalkBorders.push([CURSOR.virtPosArray2D]);
-			else {
-				if (lastSidewalkBorder().length == 1)
-					deleteActiveBorder();
-				updateOutput();
-			}
-			borderIsActive = !borderIsActive;
+		case 'b':
+			if (activeBorderIndex == -1) {
+				activeBorderIndex = data.borders.length;
+				data.borders.push([CURSOR.virtPosArray2D]);
+			} else 
+				deactivateBorder();
 			break;
 		case 'u':
-			if (!borderIsActive) return;
-			lastSidewalkBorder().splice(-1);
-			if (lastSidewalkBorder().length == 0) {
-				data.sidewalkBorders.splice(-1);
-				borderIsActive = false;
-			}
+			if (activeBorderIndex == -1) return;
+			activeBorder().splice(-1);
+			if (activeBorder().length == 0)
+				deleteActiveBorder();
+			break;
+		case 'd':
+			if (activeBorderIndex != -1) deleteActiveBorder();
 			break;
 	}
 };
 
 function mousePressed() {
-	if (borderIsActive) {
-		var nextVertex = CURSOR.virtPosArray2D;
+	if (hoveringBorderIndex != -1) {
+		deactivateBorder();
+		activeBorderIndex = hoveringBorderIndex;
+		return;
+	}
+	if (activeBorderIndex != -1) {
 		if (canCloseBorder()) {
-			nextVertex = closeBorderVertex();
-			borderIsActive = false;
-		}
-		lastSidewalkBorder().push(nextVertex);
+			activeBorder().push(activeBorder()[0]);
+			activeBorderIndex = -1;
+		} else
+			activeBorder().push(CURSOR.virtPosArray2D);
 		return;
 	}
 
@@ -413,22 +431,36 @@ function showSitePlan() {
 	rect(...OFFSET, images.site.width, images.site.height);
 }
 
-function showSidewalkBorders() {
-	const borders = data.sidewalkBorders;
+function showBorders() {
+	const borders = data.borders;
 	noFill();
-	stroke(0);
 	rectMode(CENTER);
+	hoveringBorderIndex = -1;
 	borders.forEach((border, i) => {
 		if (VIEW.floor != 1) return;
-		const curBorderIsActive = i == borders.length - 1 && borderIsActive;
-		if (curBorderIsActive) stroke(0, 192, 0);
+
+		stroke(0);
+
+		const isActive = i == activeBorderIndex;
+		if (isActive) stroke(0, 192, 0);
+		else if (showingDevTools) {
+			for (let j = 0; j < border.length - 1; j++) {
+				const endpointA = {x: border[j][0], y: border[j][1]};
+				const endpointB = {x: border[j + 1][0], y: border[j + 1][1]};
+				if (isHoveringOnSegment(endpointA, endpointB))
+					hoveringBorderIndex = i;
+			}
+		}
+		
+		if (i == hoveringBorderIndex) stroke(192);
 		strokeWeight(EDGE_WIDTH / 2);
 		beginShape();
 		border.forEach(v => {
 			vertex(...v);
 		});
-		if (curBorderIsActive && canCloseBorder()) vertex(...border[0]);
+		if (isActive && canCloseBorder()) vertex(...border[0]);
 		endShape();
+
 		if (showingDevTools) {
 			strokeWeight(EDGE_WIDTH / 2 / VIEW.zoom);
 			border.forEach(v => {
@@ -443,8 +475,8 @@ function showEdges() {
 	var foundHoveredEdge = false;
 	edges.forEach(e => {
 		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor) return;
+		e.isHovered = false;
 		if (showingDevTools) {
-			e.isHovered = false;
 			if (!foundHoveredEdge) {
 				e.checkHovered();
 				foundHoveredEdge ||= e.isHovered;
@@ -538,10 +570,8 @@ function showNames() {
 
 var showingDevTools = false;
 function toggleDevTools() {
-	if (borderIsActive) {
+	if (activeBorderIndex != -1)
 		deleteActiveBorder();
-		borderIsActive = false;
-	}
 	showingDevTools = !showingDevTools;
 	const outputDiv = document.getElementById('outputDiv');
 	outputDiv.hidden = !showingDevTools;
@@ -550,7 +580,7 @@ function showDevTools() {
 	stroke(0);
 	noFill();
 	strokeWeight(2 / VIEW.zoom);
-	data.edges.forEach(({ endpoint1, endpoint2, isTemporary }) => {
+	edges.forEach(({ endpoint1, endpoint2, isTemporary }) => {
 		if (isTemporary) return;
 		[endpoint1, endpoint2].forEach(({ x, y, floor }) => {
 			if (floor == VIEW.floor)
@@ -640,7 +670,7 @@ function draw() {
 	hoveredRoom = null;
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
-	showSidewalkBorders();
+	showBorders();
 	if (showingDevTools) showDevTools();
 	if (showOptions[`show-labels`]) showNames();
 
