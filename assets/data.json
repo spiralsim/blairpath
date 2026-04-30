@@ -2209,17 +2209,6 @@
 			],
 			"hover": false
 		},
-		"P10": {
-			"id": "P10",
-			"floor": 1,
-			"section": "Academic Classrooms",
-			"center": [
-				925.3125,
-				361.6015625
-			],
-			"angle": 90,
-			"hover": false
-		},
 		"P2": {
 			"id": "P2",
 			"floor": 1,
@@ -2298,6 +2287,116 @@
 				1038.5625,
 				278.6015625
 			],
+			"hover": false
+		},
+		"P10": {
+			"id": "P10",
+			"floor": 1,
+			"section": "Academic Classrooms",
+			"center": [
+				925.3125,
+				361.6015625
+			],
+			"angle": 90,
+			"hover": false
+		},
+		"P11": {
+			"id": "P11",
+			"floor": 1,
+			"section": "Academic Classrooms",
+			"center": [
+				45,
+				415
+			],
+			"angle": 0,
+			"hover": false
+		},
+		"P12": {
+			"id": "P12",
+			"floor": 1,
+			"section": "Academic Classrooms",
+			"center": [
+				45,
+				437
+			],
+			"angle": 0,
+			"hover": false
+		},
+		"P13": {
+			"id": "P13",
+			"floor": 1,
+			"section": "Academic Classrooms",
+			"center": [
+				45,
+				459
+			],
+			"angle": 0,
+			"hover": false
+		},
+		"P14": {
+			"id": "P14",
+			"floor": 1,
+			"section": "Academic Classrooms",
+			"center": [
+				45,
+				481
+			],
+			"angle": 0,
+			"hover": false
+		},
+		"P15": {
+			"id": "P15",
+			"floor": 1,
+			"section": "Academic Classrooms",
+			"center": [
+				15,
+				381
+			],
+			"angle": 36,
+			"hover": false
+		},
+		"P16": {
+			"id": "P16",
+			"floor": 1,
+			"section": "Academic Classrooms",
+			"center": [
+				2,
+				399
+			],
+			"angle": 36,
+			"hover": false
+		},
+		"P17": {
+			"id": "P17",
+			"floor": 1,
+			"section": "Academic Classrooms",
+			"center": [
+				-11,
+				417
+			],
+			"angle": 36,
+			"hover": false
+		},
+		"P18": {
+			"id": "P18",
+			"floor": 1,
+			"section": "Academic Classrooms",
+			"center": [
+				-24,
+				435
+			],
+			"angle": 36,
+			"hover": false
+		},
+		"P19": {
+			"id": "P19",
+			"floor": 1,
+			"section": "Academic Classrooms",
+			"center": [
+				-37,
+				290
+			],
+			"angle": 36,
 			"hover": false
 		},
 		"Senior Courtyard": {

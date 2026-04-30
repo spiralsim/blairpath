@@ -631,6 +631,8 @@ function showRuler() {
 	textSize(18);
 
 	var rulerText = `${VIEW.rulerInMeters} m`;
+	if (showingDevTools)
+		rulerText = `(${CURSOR.virtPosArray2D.join(', ')}) ` + rulerText;
 	var rulerTextLeftX = rulerLeftX - 5 - textWidth(rulerText);
 
 	fill(255, 192);
