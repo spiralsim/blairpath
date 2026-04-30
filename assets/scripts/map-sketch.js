@@ -342,6 +342,7 @@ function deactivateBorder() {
 	activeBorderIndex = -1;
 	updateOutput();
 }
+var hoveringVertex = null, activeVertex = null;
 function keyPressed() {
 	if (!showingDevTools) return;
 	switch (key) {
@@ -378,6 +379,17 @@ function mousePressed() {
 			activeBorder().push(CURSOR.virtPosArray2D);
 		return;
 	}
+	if (hoveringVertex) {
+		activeVertex = hoveringVertex != activeVertex ? hoveringVertex : null;
+		return;
+	}
+	// if (activeVertex) {
+	// 	const newVertex = new Vertex([VIEW.floor, ...CURSOR.virtPosArray2D]);
+	// 	vertices.push(newVertex);
+	// 	edges.add(new Edge(activeVertex, hoveringVertex));
+	// 	// data.edges.push({"endpoint1": [activeVertex]})
+	// 	activeVertex = newVertex;
+	// }
 
 	const place = Object.values(data.places).find(p => p.hover);
 	if (!place) return;
@@ -476,12 +488,12 @@ function showEdges() {
 	edges.forEach(e => {
 		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor) return;
 		e.isHovered = false;
-		if (showingDevTools) {
-			if (!foundHoveredEdge) {
-				e.checkHovered();
-				foundHoveredEdge ||= e.isHovered;
-			}
-		}
+		// if (showingDevTools) {
+		// 	if (!foundHoveredEdge) {
+		// 		e.checkHovered();
+		// 		foundHoveredEdge ||= e.isHovered;
+		// 	}
+		// }
 		if (!pathEdges.has(e) && !showingDevTools)
 			return;
 		var _color = pathEdges.has(e) ? color(0, 128, 255) : color(0);
@@ -577,14 +589,22 @@ function toggleDevTools() {
 	outputDiv.hidden = !showingDevTools;
 }
 function showDevTools() {
-	stroke(0);
 	noFill();
 	strokeWeight(2 / VIEW.zoom);
+	hoveringVertex = null;
 	edges.forEach(({ endpoint1, endpoint2, isTemporary }) => {
 		if (isTemporary) return;
-		[endpoint1, endpoint2].forEach(({ x, y, floor }) => {
-			if (floor == VIEW.floor)
-				circle(x, y, EDGE_WIDTH * 3 / VIEW.zoom);
+		[endpoint1, endpoint2].forEach(v => {
+			if (v.floor != VIEW.floor) return;
+			const d = EDGE_WIDTH * 3 / VIEW.zoom;
+			var strokeColor = color(0);
+			if (v == activeVertex) strokeColor = color(0, 192, 0);
+			if (dist(...CURSOR.virtPosArray2D, v.x, v.y) < d / 2) {
+				hoveringVertex = v;
+				strokeColor = lerpColor(strokeColor, color(255), 0.75);
+			}
+			stroke(strokeColor);
+			circle(v.x, v.y, d);
 		});
 	});
 }
