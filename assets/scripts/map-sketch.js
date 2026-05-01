@@ -29,10 +29,6 @@ function stringifyPoint(p) {
 	else throw new TypeError('p must be a p5.Vector or array of numbers');
 }
 
-function formatJSON (data) {
-	return JSON.stringify(data, null, 4).replace(/ {4}/g, '\t');
-}
-
 // Compute / recompute the length of a link and adjust properties accordingly
 function computeLength (link) {
 	// If no valid points are given, both distances should be 0
@@ -256,7 +252,7 @@ var ruler;
 
 // What the cursor is displayed as (changes between ARROW, HAND, and MOVE)
 var cursorType;
-var hoveredRoom;
+var hoveredPlace;
 
 /*
 	Developer Mode
@@ -342,6 +338,7 @@ function deactivateBorder() {
 	activeBorderIndex = -1;
 	updateOutput();
 }
+
 var hoveringVertex = null, activeVertex = null;
 function keyPressed() {
 	if (!showingDevTools) return;
@@ -391,19 +388,18 @@ function mousePressed() {
 	// 	activeVertex = newVertex;
 	// }
 
-	const place = Object.values(data.places).find(p => p.hover);
-	if (!place) return;
+	if (!hoveredPlace) return;
 	// Handle edge case where there are no rows to begin with
 	if (!rows.length) addPoint();
 	// Find the number of the first empty point input
 	for (let i = 1; i <= rows.length; i++) {
 		if (!getPointValue(i)) {
-			setPointValue(i, place.id);
+			setPointValue(i, hoveredPlace.id);
 			return;
 		}
 	}
 	addPoint();
-	setPointValue(rows.length, place.id);
+	setPointValue(rows.length, hoveredPlace.id);
 };
 
 function mouseDragged() {
@@ -421,7 +417,7 @@ const EDGE_WIDTH = 4;
 /**
  * Draws an edge (segment, dotted, or arrow).
  * 
- * @param {Edge} edge
+ * @param {} edge
  * @param {p5.Color} _color
  */
 function drawEdge({ endpoint1, endpoint2, isTemporary }, _color) {
@@ -485,7 +481,7 @@ function showBorders() {
 
 function showEdges() {
 	var foundHoveredEdge = false;
-	edges.forEach(e => {
+	data.edges.forEach(e => {
 		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor) return;
 		e.isHovered = false;
 		// if (showingDevTools) {
@@ -494,9 +490,8 @@ function showEdges() {
 		// 		foundHoveredEdge ||= e.isHovered;
 		// 	}
 		// }
-		if (!pathEdges.has(e) && !showingDevTools)
-			return;
-		var _color = pathEdges.has(e) ? color(0, 128, 255) : color(0);
+		if (!e.onPath && !showingDevTools) return;
+		var _color = e.onPath ? color(0, 128, 255) : color(0);
 		if (e.isHovered) _color = lerpColor(_color, color(255), 0.75);
 		drawEdge(e, _color);
 	});
@@ -548,22 +543,21 @@ function showNames() {
 	// Display dots for room selection
 	for (let id in data.places) {
 		const place = data.places[id];
-		place.hover = false;
 		if (place.floor != VIEW.floor || !place.center) continue;
 		// Display the point and detect hovering if applicable
 		const nameWidth = textWidth(id);
 		if (
 			abs(CURSOR.virtPos.x - place.center[0]) < nameWidth / 2 &&
 			abs(CURSOR.virtPos.y - place.center[1]) < 6 / VIEW.zoom &&
-			!hoveredRoom
+			!hoveredPlace
 		) {
-			hoveredRoom = place;
-			place.hover = true;
+			hoveredPlace = place;
 			cursorType = HAND;
 		}
 
 		fill(255);
-		if (place.hover) fill(mouseIsPressed ? color(250, 85, 85) : 128);
+		if (place == hoveredPlace)
+			fill(mouseIsPressed ? color(250, 85, 85) : 128);
 		
 		text(id, place.center[0], place.center[1]);
 	}
@@ -587,12 +581,13 @@ function toggleDevTools() {
 	showingDevTools = !showingDevTools;
 	const outputDiv = document.getElementById('outputDiv');
 	outputDiv.hidden = !showingDevTools;
+	updateOutput();
 }
 function showDevTools() {
 	noFill();
 	strokeWeight(2 / VIEW.zoom);
 	hoveringVertex = null;
-	edges.forEach(({ endpoint1, endpoint2, isTemporary }) => {
+	data.edges.forEach(({ endpoint1, endpoint2, isTemporary }) => {
 		if (isTemporary) return;
 		[endpoint1, endpoint2].forEach(v => {
 			if (v.floor != VIEW.floor) return;
@@ -609,16 +604,16 @@ function showDevTools() {
 	});
 }
 
-function showTooltip(room) {
+function showTooltip(place) {
 	textSize(10);
 
-	var topText = room.id;
-	if (room.use && topText.indexOf(room.use) == -1)
-		topText += ' (' + room.use + ')';
+	var topText = place.id;
+	if (place.use && topText.indexOf(place.use) == -1)
+		topText += ' (' + place.use + ')';
 
-	var bottomText = room.section;
+	var bottomText = place.section;
 
-	const center = room.center;
+	const center = place.center;
 	const
 		tooltipW = max(textWidth(topText), textWidth(bottomText)) + 10,
 		tooltipH = 30,
@@ -689,7 +684,7 @@ function draw() {
 	noFill();
 	imageMode(CORNER);
 
-	hoveredRoom = null;
+	hoveredPlace = null;
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
 	showBorders();
@@ -703,7 +698,7 @@ function draw() {
 	cursorType = ARROW;
 
 	// Place dots (tooltips)
-	if (hoveredRoom) showTooltip(hoveredRoom);
+	if (hoveredPlace) showTooltip(hoveredPlace);
 
 	showRuler();
 };

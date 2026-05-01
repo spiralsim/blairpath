@@ -2,6 +2,7 @@
 	"constants": {
 		"METERS_PER_FLOOR": 4.39,
 		"METERS_PER_PIXEL": 0.32512,
+		"WALKING_SPEED_IN_METERS_PER_SECOND": 1.35,
 		"PORTABLE_LENGTH_IN_PIXELS": 36,
 		"PORTABLE_WIDTH_IN_PIXELS": 22,
 		"SITE_PLAN_OFFSET_IN_PIXELS": [
@@ -16,10 +17,9 @@
 			"use": "Communications/Technology",
 			"section": "Media/Reference Complex",
 			"center": [
-				361.125,
-				196.703125
-			],
-			"hover": false
+				361,
+				197
+			]
 		},
 		"102": {
 			"id": "102",
@@ -27,10 +27,9 @@
 			"use": "Multi-Media Studio",
 			"section": "Media/Reference Complex",
 			"center": [
-				397.125,
-				181.203125
-			],
-			"hover": false
+				397,
+				181
+			]
 		},
 		"103": {
 			"id": "103",
@@ -38,10 +37,9 @@
 			"use": "TV Studio",
 			"section": "Media/Reference Complex",
 			"center": [
-				423.125,
-				219.203125
-			],
-			"hover": false
+				423,
+				219
+			]
 		},
 		"106": {
 			"id": "106",
@@ -49,10 +47,9 @@
 			"use": "Interactive Studio",
 			"section": "Media/Reference Complex",
 			"center": [
-				397.125,
-				214.703125
-			],
-			"hover": false
+				397,
+				215
+			]
 		},
 		"110": {
 			"id": "110",
@@ -60,10 +57,9 @@
 			"use": "Weight Room",
 			"section": "Gymnasium Complex",
 			"center": [
-				92.125,
-				376.203125
-			],
-			"hover": false
+				92,
+				376
+			]
 		},
 		"111": {
 			"id": "111",
@@ -71,10 +67,9 @@
 			"use": "Dance",
 			"section": "Gymnasium Complex",
 			"center": [
-				131.625,
-				318.203125
-			],
-			"hover": false
+				132,
+				318
+			]
 		},
 		"112": {
 			"id": "112",
@@ -82,10 +77,9 @@
 			"use": "Team Room",
 			"section": "Gymnasium Complex",
 			"center": [
-				128.125,
-				354.703125
-			],
-			"hover": false
+				128,
+				355
+			]
 		},
 		"113": {
 			"id": "113",
@@ -93,10 +87,9 @@
 			"use": "Wrestling",
 			"section": "Gymnasium Complex",
 			"center": [
-				113.625,
-				318.203125
-			],
-			"hover": false
+				114,
+				318
+			]
 		},
 		"114": {
 			"id": "114",
@@ -104,10 +97,9 @@
 			"use": "Physical Education / PE",
 			"section": "Gymnasium Complex",
 			"center": [
-				190.625,
-				361.703125
-			],
-			"hover": false
+				191,
+				362
+			]
 		},
 		"116": {
 			"id": "116",
@@ -115,20 +107,18 @@
 			"use": "Physical Education / PE",
 			"section": "Gymnasium Complex",
 			"center": [
-				222.625,
-				361.703125
-			],
-			"hover": false
+				223,
+				362
+			]
 		},
 		"117": {
 			"id": "117",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				301.8125,
-				327.3515625
-			],
-			"hover": false
+				302,
+				327
+			]
 		},
 		"118": {
 			"id": "118",
@@ -136,20 +126,18 @@
 			"use": "Team Room",
 			"section": "Gymnasium Complex",
 			"center": [
-				264.625,
-				356.203125
-			],
-			"hover": false
+				265,
+				356
+			]
 		},
 		"119": {
 			"id": "119",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				302.0625,
-				358.3515625
-			],
-			"hover": false
+				302,
+				358
+			]
 		},
 		"120": {
 			"id": "120",
@@ -157,10 +145,9 @@
 			"use": "Vocational Support",
 			"section": "Administration Complex",
 			"center": [
-				298.5625,
-				285.6015625
-			],
-			"hover": false
+				299,
+				286
+			]
 		},
 		"121": {
 			"id": "121",
@@ -168,170 +155,153 @@
 			"use": "Career Center",
 			"section": "Administration Complex",
 			"center": [
-				340.125,
-				335.703125
-			],
-			"hover": false
+				340,
+				336
+			]
 		},
 		"122": {
 			"id": "122",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				298.125,
-				305.203125
-			],
-			"hover": false
+				298,
+				305
+			]
 		},
 		"123": {
 			"id": "123",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				340.3125,
-				360.8515625
-			],
-			"hover": false
+				340,
+				361
+			]
 		},
 		"124": {
 			"id": "124",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				301.8125,
-				381.6015625
-			],
-			"hover": false
+				302,
+				382
+			]
 		},
 		"126": {
 			"id": "126",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				301.8125,
-				398.6015625
-			],
-			"hover": false
+				302,
+				399
+			]
 		},
 		"128": {
 			"id": "128",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				301.8125,
-				409.6015625
-			],
-			"hover": false
+				302,
+				410
+			]
 		},
 		"130": {
 			"id": "130",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				351.5625,
-				418.3515625
-			],
-			"hover": false
+				352,
+				418
+			]
 		},
 		"131": {
 			"id": "131",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				340.0625,
-				384.1015625
-			],
-			"hover": false
+				340,
+				384
+			]
 		},
 		"132": {
 			"id": "132",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				371.5625,
-				418.1015625
-			],
-			"hover": false
+				372,
+				418
+			]
 		},
 		"133": {
 			"id": "133",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				366.5625,
-				379.1015625
-			],
-			"hover": false
+				367,
+				379
+			]
 		},
 		"134": {
 			"id": "134",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				395.0625,
-				418.1015625
-			],
-			"hover": false
+				395,
+				418
+			]
 		},
 		"135": {
 			"id": "135",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				389.3125,
-				379.3515625
-			],
-			"hover": false
+				389,
+				379
+			]
 		},
 		"136": {
 			"id": "136",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				418.3125,
-				418.3515625
-			],
-			"hover": false
+				418,
+				418
+			]
 		},
 		"137": {
 			"id": "137",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				411.8125,
-				379.8515625
-			],
-			"hover": false
+				412,
+				380
+			]
 		},
 		"138": {
 			"id": "138",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				440.5625,
-				418.1015625
-			],
-			"hover": false
+				441,
+				418
+			]
 		},
 		"141": {
 			"id": "141",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				477.3125,
-				331.8515625
-			],
-			"hover": false
+				477,
+				332
+			]
 		},
 		"142": {
 			"id": "142",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				438.3125,
-				325.6015625
-			],
-			"hover": false
+				438,
+				326
+			]
 		},
 		"143": {
 			"id": "143",
@@ -339,20 +309,18 @@
 			"use": "SPARC",
 			"section": "Academic Classrooms",
 			"center": [
-				476.8125,
-				350.1015625
-			],
-			"hover": false
+				477,
+				350
+			]
 		},
 		"144": {
 			"id": "144",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				438.3125,
-				349.6015625
-			],
-			"hover": false
+				438,
+				350
+			]
 		},
 		"145": {
 			"id": "145",
@@ -360,10 +328,9 @@
 			"use": "CAP",
 			"section": "Academic Classrooms",
 			"center": [
-				476.8125,
-				363.8515625
-			],
-			"hover": false
+				477,
+				364
+			]
 		},
 		"146": {
 			"id": "146",
@@ -371,10 +338,9 @@
 			"use": "Social Studies",
 			"section": "Academic Classrooms",
 			"center": [
-				438.5625,
-				379.3515625
-			],
-			"hover": false
+				439,
+				379
+			]
 		},
 		"147": {
 			"id": "147",
@@ -382,10 +348,9 @@
 			"use": "Social Studies",
 			"section": "Academic Classrooms",
 			"center": [
-				477.0625,
-				382.3515625
-			],
-			"hover": false
+				477,
+				382
+			]
 		},
 		"148": {
 			"id": "148",
@@ -393,30 +358,27 @@
 			"use": "Social Studies",
 			"section": "Academic Classrooms",
 			"center": [
-				438.5625,
-				443.1015625
-			],
-			"hover": false
+				439,
+				443
+			]
 		},
 		"151": {
 			"id": "151",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				482.5625,
-				408.1015625
-			],
-			"hover": false
+				483,
+				408
+			]
 		},
 		"152": {
 			"id": "152",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				502.8125,
-				446.3515625
-			],
-			"hover": false
+				503,
+				446
+			]
 		},
 		"153": {
 			"id": "153",
@@ -424,60 +386,54 @@
 			"use": "ESOL",
 			"section": "Academic Classrooms",
 			"center": [
-				513.5625,
-				408.1015625
-			],
-			"hover": false
+				514,
+				408
+			]
 		},
 		"154": {
 			"id": "154",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				526.5625,
-				446.6015625
-			],
-			"hover": false
+				527,
+				447
+			]
 		},
 		"155": {
 			"id": "155",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				530.8125,
-				408.1015625
-			],
-			"hover": false
+				531,
+				408
+			]
 		},
 		"156": {
 			"id": "156",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				548.5625,
-				446.8515625
-			],
-			"hover": false
+				549,
+				447
+			]
 		},
 		"157": {
 			"id": "157",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				548.8125,
-				408.3515625
-			],
-			"hover": false
+				549,
+				408
+			]
 		},
 		"158": {
 			"id": "158",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				575.3125,
-				443.1015625
-			],
-			"hover": false
+				575,
+				443
+			]
 		},
 		"160": {
 			"id": "160",
@@ -485,10 +441,9 @@
 			"use": "ISS",
 			"section": "Academic Classrooms",
 			"center": [
-				575.0625,
-				363.1015625
-			],
-			"hover": false
+				575,
+				363
+			]
 		},
 		"161": {
 			"id": "161",
@@ -496,80 +451,72 @@
 			"use": "SGA",
 			"section": "Academic Classrooms",
 			"center": [
-				613.5625,
-				364.8515625
-			],
-			"hover": false
+				614,
+				365
+			]
 		},
 		"162": {
 			"id": "162",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				574.8125,
-				383.1015625
-			],
-			"hover": false
+				575,
+				383
+			]
 		},
 		"163": {
 			"id": "163",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				613.5625,
-				383.6015625
-			],
-			"hover": false
+				614,
+				384
+			]
 		},
 		"164": {
 			"id": "164",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				574.3125,
-				408.3515625
-			],
-			"hover": false
+				574,
+				408
+			]
 		},
 		"165": {
 			"id": "165",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				613.3125,
-				409.1015625
-			],
-			"hover": false
+				613,
+				409
+			]
 		},
 		"166": {
 			"id": "166",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				575.0625,
-				465.8515625
-			],
-			"hover": false
+				575,
+				466
+			]
 		},
 		"167": {
 			"id": "167",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				616.5625,
-				436.1015625
-			],
-			"hover": false
+				617,
+				436
+			]
 		},
 		"168": {
 			"id": "168",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				575.0625,
-				488.8515625
-			],
-			"hover": false
+				575,
+				489
+			]
 		},
 		"170": {
 			"id": "170",
@@ -577,50 +524,45 @@
 			"use": "Foreign Langugage",
 			"section": "Academic Classrooms",
 			"center": [
-				613.3125,
-				474.1015625
-			],
-			"hover": false
+				613,
+				474
+			]
 		},
 		"171": {
 			"id": "171",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				639.8125,
-				436.1015625
-			],
-			"hover": false
+				640,
+				436
+			]
 		},
 		"172": {
 			"id": "172",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				638.8125,
-				474.1015625
-			],
-			"hover": false
+				639,
+				474
+			]
 		},
 		"173": {
 			"id": "173",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				662.5625,
-				436.1015625
-			],
-			"hover": false
+				663,
+				436
+			]
 		},
 		"174": {
 			"id": "174",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				663.3125,
-				474.3515625
-			],
-			"hover": false
+				663,
+				474
+			]
 		},
 		"176": {
 			"id": "176",
@@ -628,20 +570,18 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				679.8125,
-				474.1015625
-			],
-			"hover": false
+				680,
+				474
+			]
 		},
 		"177": {
 			"id": "177",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				685.3125,
-				436.3515625
-			],
-			"hover": false
+				685,
+				436
+			]
 		},
 		"208": {
 			"id": "208",
@@ -649,20 +589,18 @@
 			"use": "Greenhouse",
 			"section": "Academic Classrooms",
 			"center": [
-				93.5625,
-				391.1015625
-			],
-			"hover": false
+				94,
+				391
+			]
 		},
 		"210": {
 			"id": "210",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				140.0625,
-				388.1015625
-			],
-			"hover": false
+				140,
+				388
+			]
 		},
 		"211": {
 			"id": "211",
@@ -670,10 +608,9 @@
 			"use": "Magnet Technology Education",
 			"section": "Academic Classrooms",
 			"center": [
-				137.5625,
-				351.1015625
-			],
-			"hover": false
+				138,
+				351
+			]
 		},
 		"212": {
 			"id": "212",
@@ -681,10 +618,9 @@
 			"use": "Earth Science",
 			"section": "Academic Classrooms",
 			"center": [
-				171.3125,
-				388.3515625
-			],
-			"hover": false
+				171,
+				388
+			]
 		},
 		"213": {
 			"id": "213",
@@ -692,10 +628,9 @@
 			"use": "Magnet Physics",
 			"section": "Academic Classrooms",
 			"center": [
-				188.5625,
-				350.8515625
-			],
-			"hover": false
+				189,
+				351
+			]
 		},
 		"214": {
 			"id": "214",
@@ -703,10 +638,9 @@
 			"use": "Magnet Earth Science",
 			"section": "Academic Classrooms",
 			"center": [
-				224.3125,
-				388.3515625
-			],
-			"hover": false
+				224,
+				388
+			]
 		},
 		"215": {
 			"id": "215",
@@ -714,180 +648,162 @@
 			"use": "Physics",
 			"section": "Academic Classrooms",
 			"center": [
-				245.8125,
-				350.6015625
-			],
-			"hover": false
+				246,
+				351
+			]
 		},
 		"216": {
 			"id": "216",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				255.5625,
-				388.3515625
-			],
-			"hover": false
+				256,
+				388
+			]
 		},
 		"217": {
 			"id": "217",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				300.8125,
-				351.6015625
-			],
-			"hover": false
+				301,
+				352
+			]
 		},
 		"218": {
 			"id": "218",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				278.5625,
-				388.6015625
-			],
-			"hover": false
+				279,
+				389
+			]
 		},
 		"219": {
 			"id": "219",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				301.0625,
-				387.3515625
-			],
-			"hover": false
+				301,
+				387
+			]
 		},
 		"220": {
 			"id": "220",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				303.8125,
-				292.3515625
-			],
-			"hover": false
+				304,
+				292
+			]
 		},
 		"221": {
 			"id": "221",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				342.0625,
-				280.6015625
-			],
-			"hover": false
+				342,
+				281
+			]
 		},
 		"222": {
 			"id": "222",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				303.5625,
-				321.8515625
-			],
-			"hover": false
+				304,
+				322
+			]
 		},
 		"223": {
 			"id": "223",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				341.5625,
-				338.6015625
-			],
-			"hover": false
+				342,
+				339
+			]
 		},
 		"225": {
 			"id": "225",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				341.5625,
-				378.6015625
-			],
-			"hover": false
+				342,
+				379
+			]
 		},
 		"226": {
 			"id": "226",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				303.8125,
-				411.8515625
-			],
-			"hover": false
+				304,
+				412
+			]
 		},
 		"227": {
 			"id": "227",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				340.8125,
-				416.3515625
-			],
-			"hover": false
+				341,
+				416
+			]
 		},
 		"231": {
 			"id": "231",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				367.5625,
-				378.8515625
-			],
-			"hover": false
+				368,
+				379
+			]
 		},
 		"232": {
 			"id": "232",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				365.5625,
-				416.3515625
-			],
-			"hover": false
+				366,
+				416
+			]
 		},
 		"233": {
 			"id": "233",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				391.0625,
-				378.8515625
-			],
-			"hover": false
+				391,
+				379
+			]
 		},
 		"234": {
 			"id": "234",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				388.8125,
-				416.3515625
-			],
-			"hover": false
+				389,
+				416
+			]
 		},
 		"235": {
 			"id": "235",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				414.0625,
-				378.8515625
-			],
-			"hover": false
+				414,
+				379
+			]
 		},
 		"236": {
 			"id": "236",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				411.8125,
-				416.3515625
-			],
-			"hover": false
+				412,
+				416
+			]
 		},
 		"238": {
 			"id": "238",
@@ -895,20 +811,18 @@
 			"use": "Math",
 			"section": "Academic Classrooms",
 			"center": [
-				439.8125,
-				426.6015625
-			],
-			"hover": false
+				440,
+				427
+			]
 		},
 		"240": {
 			"id": "240",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				442.8125,
-				296.8515625
-			],
-			"hover": false
+				443,
+				297
+			]
 		},
 		"241": {
 			"id": "241",
@@ -916,400 +830,360 @@
 			"use": "CISCO",
 			"section": "Academic Classrooms",
 			"center": [
-				491.8125,
-				318.3515625
-			],
-			"hover": false
+				492,
+				318
+			]
 		},
 		"242": {
 			"id": "242",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				439.5625,
-				330.6015625
-			],
-			"hover": false
+				440,
+				331
+			]
 		},
 		"243": {
 			"id": "243",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				478.3125,
-				350.1015625
-			],
-			"hover": false
+				478,
+				350
+			]
 		},
 		"244": {
 			"id": "244",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				439.8125,
-				354.3515625
-			],
-			"hover": false
+				440,
+				354
+			]
 		},
 		"245": {
 			"id": "245",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				477.8125,
-				373.3515625
-			],
-			"hover": false
+				478,
+				373
+			]
 		},
 		"246": {
 			"id": "246",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				440.3125,
-				379.3515625
-			],
-			"hover": false
+				440,
+				379
+			]
 		},
 		"247": {
 			"id": "247",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				478.3125,
-				396.8515625
-			],
-			"hover": false
+				478,
+				397
+			]
 		},
 		"249": {
 			"id": "249",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				478.5625,
-				446.8515625
-			],
-			"hover": false
+				479,
+				447
+			]
 		},
 		"250": {
 			"id": "250",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				503.8125,
-				444.3515625
-			],
-			"hover": false
+				504,
+				444
+			]
 		},
 		"251": {
 			"id": "251",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				504.5625,
-				406.1015625
-			],
-			"hover": false
+				505,
+				406
+			]
 		},
 		"252": {
 			"id": "252",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				527.3125,
-				444.3515625
-			],
-			"hover": false
+				527,
+				444
+			]
 		},
 		"253": {
 			"id": "253",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				527.3125,
-				406.6015625
-			],
-			"hover": false
+				527,
+				407
+			]
 		},
 		"254": {
 			"id": "254",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				549.5625,
-				444.1015625
-			],
-			"hover": false
+				550,
+				444
+			]
 		},
 		"255": {
 			"id": "255",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				550.0625,
-				406.6015625
-			],
-			"hover": false
+				550,
+				407
+			]
 		},
 		"256": {
 			"id": "256",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				576.5625,
-				441.3515625
-			],
-			"hover": false
+				577,
+				441
+			]
 		},
 		"260": {
 			"id": "260",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				575.8125,
-				358.8515625
-			],
-			"hover": false
+				576,
+				359
+			]
 		},
 		"261": {
 			"id": "261",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				614.3125,
-				368.3515625
-			],
-			"hover": false
+				614,
+				368
+			]
 		},
 		"262": {
 			"id": "262",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				575.8125,
-				381.6015625
-			],
-			"hover": false
+				576,
+				382
+			]
 		},
 		"263": {
 			"id": "263",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				614.0625,
-				391.1015625
-			],
-			"hover": false
+				614,
+				391
+			]
 		},
 		"264": {
 			"id": "264",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				576.3125,
-				463.8515625
-			],
-			"hover": false
+				576,
+				464
+			]
 		},
 		"265": {
 			"id": "265",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				614.3125,
-				414.1015625
-			],
-			"hover": false
+				614,
+				414
+			]
 		},
 		"266": {
 			"id": "266",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				580.3125,
-				486.8515625
-			],
-			"hover": false
+				580,
+				487
+			]
 		},
 		"267": {
 			"id": "267",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				614.5625,
-				436.3515625
-			],
-			"hover": false
+				615,
+				436
+			]
 		},
 		"269": {
 			"id": "269",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				607.0625,
-				478.1015625
-			],
-			"hover": false
+				607,
+				478
+			]
 		},
 		"270": {
 			"id": "270",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				627.0625,
-				472.1015625
-			],
-			"hover": false
+				627,
+				472
+			]
 		},
 		"271": {
 			"id": "271",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				640.5625,
-				434.1015625
-			],
-			"hover": false
+				641,
+				434
+			]
 		},
 		"272": {
 			"id": "272",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				650.3125,
-				472.1015625
-			],
-			"hover": false
+				650,
+				472
+			]
 		},
 		"273": {
 			"id": "273",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				663.0625,
-				433.8515625
-			],
-			"hover": false
+				663,
+				434
+			]
 		},
 		"274": {
 			"id": "274",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				672.8125,
-				472.1015625
-			],
-			"hover": false
+				673,
+				472
+			]
 		},
 		"275": {
 			"id": "275",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				685.5625,
-				433.8515625
-			],
-			"hover": false
+				686,
+				434
+			]
 		},
 		"309": {
 			"id": "309",
 			"floor": 3,
 			"section": "Academic Classrooms",
 			"center": [
-				116.8125,
-				351.3515625
-			],
-			"hover": false
+				117,
+				351
+			]
 		},
 		"310": {
 			"id": "310",
 			"floor": 3,
 			"section": "Academic Classrooms",
 			"center": [
-				146.5625,
-				388.8515625
-			],
-			"hover": false
+				147,
+				389
+			]
 		},
 		"311": {
 			"id": "311",
 			"floor": 3,
 			"section": "Academic Classrooms",
 			"center": [
-				140.0625,
-				351.3515625
-			],
-			"hover": false
+				140,
+				351
+			]
 		},
 		"312": {
 			"id": "312",
 			"floor": 3,
 			"section": "Academic Classrooms",
 			"center": [
-				171.3125,
-				388.3515625
-			],
-			"hover": false
+				171,
+				388
+			]
 		},
 		"313": {
 			"id": "313",
 			"floor": 3,
 			"section": "Academic Classrooms",
 			"center": [
-				162.5625,
-				351.8515625
-			],
-			"hover": false
+				163,
+				352
+			]
 		},
 		"314": {
 			"id": "314",
 			"floor": 3,
 			"section": "Academic Classrooms",
 			"center": [
-				197.5625,
-				389.1015625
-			],
-			"hover": false
+				198,
+				389
+			]
 		},
 		"315": {
 			"id": "315",
 			"floor": 3,
 			"section": "Academic Classrooms",
 			"center": [
-				185.3125,
-				351.8515625
-			],
-			"hover": false
+				185,
+				352
+			]
 		},
 		"316": {
 			"id": "316",
 			"floor": 3,
 			"section": "Academic Classrooms",
 			"center": [
-				233.5625,
-				393.1015625
-			],
-			"hover": false
+				234,
+				393
+			]
 		},
 		"317": {
 			"id": "317",
 			"floor": 3,
 			"section": "Academic Classrooms",
 			"center": [
-				208.5625,
-				351.8515625
-			],
-			"hover": false
+				209,
+				352
+			]
 		},
 		"318": {
 			"id": "318",
 			"floor": 3,
 			"section": "Academic Classrooms",
 			"center": [
-				273.8125,
-				393.3515625
-			],
-			"hover": false
+				274,
+				393
+			]
 		},
 		"319": {
 			"id": "319",
@@ -1317,10 +1191,9 @@
 			"use": "INST LAB",
 			"section": "Academic Classrooms",
 			"center": [
-				252.3125,
-				349.1015625
-			],
-			"hover": false
+				252,
+				349
+			]
 		},
 		"321": {
 			"id": "321",
@@ -1328,10 +1201,9 @@
 			"use": "Chemistry",
 			"section": "Academic Classrooms",
 			"center": [
-				341.0625,
-				296.8515625
-			],
-			"hover": false
+				341,
+				297
+			]
 		},
 		"323": {
 			"id": "323",
@@ -1339,10 +1211,9 @@
 			"use": "Chemistry",
 			"section": "Academic Classrooms",
 			"center": [
-				313.0625,
-				295.6015625
-			],
-			"hover": false
+				313,
+				296
+			]
 		},
 		"325": {
 			"id": "325",
@@ -1350,10 +1221,9 @@
 			"use": "Magnet Chemistry",
 			"section": "Academic Classrooms",
 			"center": [
-				313.3125,
-				346.1015625
-			],
-			"hover": false
+				313,
+				346
+			]
 		},
 		"327": {
 			"id": "327",
@@ -1361,20 +1231,18 @@
 			"use": "Science",
 			"section": "Academic Classrooms",
 			"center": [
-				346.8125,
-				389.1015625
-			],
-			"hover": false
+				347,
+				389
+			]
 		},
 		"328": {
 			"id": "328",
 			"floor": 3,
 			"section": "Academic Classrooms",
 			"center": [
-				304.3125,
-				401.1015625
-			],
-			"hover": false
+				304,
+				401
+			]
 		},
 		"329": {
 			"id": "329",
@@ -1382,10 +1250,9 @@
 			"use": "Science",
 			"section": "Academic Classrooms",
 			"center": [
-				346.8125,
-				417.1015625
-			],
-			"hover": false
+				347,
+				417
+			]
 		},
 		"330": {
 			"id": "330",
@@ -1393,10 +1260,9 @@
 			"use": "Technology Education",
 			"section": "Academic Classrooms",
 			"center": [
-				382.8125,
-				396.6015625
-			],
-			"hover": false
+				383,
+				397
+			]
 		},
 		"331": {
 			"id": "331",
@@ -1404,10 +1270,9 @@
 			"use": "Chemistry",
 			"section": "Academic Classrooms",
 			"center": [
-				341.8125,
-				346.3515625
-			],
-			"hover": false
+				342,
+				346
+			]
 		},
 		"332": {
 			"id": "332",
@@ -1415,10 +1280,9 @@
 			"use": "Science",
 			"section": "Academic Classrooms",
 			"center": [
-				418.3125,
-				388.3515625
-			],
-			"hover": false
+				418,
+				388
+			]
 		},
 		"341": {
 			"id": "341",
@@ -1426,10 +1290,9 @@
 			"use": "Science",
 			"section": "Academic Classrooms",
 			"center": [
-				473.5625,
-				337.6015625
-			],
-			"hover": false
+				474,
+				338
+			]
 		},
 		"342": {
 			"id": "342",
@@ -1437,10 +1300,9 @@
 			"use": "MOVHS",
 			"section": "Academic Classrooms",
 			"center": [
-				438.5625,
-				340.3515625
-			],
-			"hover": false
+				439,
+				340
+			]
 		},
 		"343": {
 			"id": "343",
@@ -1448,10 +1310,9 @@
 			"use": "Magnet",
 			"section": "Academic Classrooms",
 			"center": [
-				477.0625,
-				363.8515625
-			],
-			"hover": false
+				477,
+				364
+			]
 		},
 		"344": {
 			"id": "344",
@@ -1459,10 +1320,9 @@
 			"use": "Science",
 			"section": "Academic Classrooms",
 			"center": [
-				418.5625,
-				417.1015625
-			],
-			"hover": false
+				419,
+				417
+			]
 		},
 		"345": {
 			"id": "345",
@@ -1470,10 +1330,9 @@
 			"use": "Biology",
 			"section": "Academic Classrooms",
 			"center": [
-				494.8125,
-				445.1015625
-			],
-			"hover": false
+				495,
+				445
+			]
 		},
 		"352": {
 			"id": "352",
@@ -1481,10 +1340,9 @@
 			"use": "Biology",
 			"section": "Academic Classrooms",
 			"center": [
-				494.5625,
-				417.1015625
-			],
-			"hover": false
+				495,
+				417
+			]
 		},
 		"354": {
 			"id": "354",
@@ -1492,10 +1350,9 @@
 			"use": "Technology Education",
 			"section": "Academic Classrooms",
 			"center": [
-				530.0625,
-				429.1015625
-			],
-			"hover": false
+				530,
+				429
+			]
 		},
 		"356": {
 			"id": "356",
@@ -1503,10 +1360,9 @@
 			"use": "Biology",
 			"section": "Academic Classrooms",
 			"center": [
-				563.0625,
-				416.6015625
-			],
-			"hover": false
+				563,
+				417
+			]
 		},
 		"360": {
 			"id": "360",
@@ -1514,10 +1370,9 @@
 			"use": "Biology",
 			"section": "Academic Classrooms",
 			"center": [
-				574.8125,
-				354.1015625
-			],
-			"hover": false
+				575,
+				354
+			]
 		},
 		"361": {
 			"id": "361",
@@ -1525,10 +1380,9 @@
 			"use": "Technology Education",
 			"section": "Academic Classrooms",
 			"center": [
-				613.3125,
-				391.3515625
-			],
-			"hover": false
+				613,
+				391
+			]
 		},
 		"362": {
 			"id": "362",
@@ -1536,10 +1390,9 @@
 			"use": "Biology",
 			"section": "Academic Classrooms",
 			"center": [
-				569.3125,
-				445.3515625
-			],
-			"hover": false
+				569,
+				445
+			]
 		},
 		"363": {
 			"id": "363",
@@ -1547,20 +1400,18 @@
 			"use": "Advanced Biology",
 			"section": "Academic Classrooms",
 			"center": [
-				617.8125,
-				435.1015625
-			],
-			"hover": false
+				618,
+				435
+			]
 		},
 		"364": {
 			"id": "364",
 			"floor": 3,
 			"section": "Academic Classrooms",
 			"center": [
-				574.5625,
-				486.6015625
-			],
-			"hover": false
+				575,
+				487
+			]
 		},
 		"365": {
 			"id": "365",
@@ -1568,10 +1419,9 @@
 			"use": "Advanced Biology",
 			"section": "Academic Classrooms",
 			"center": [
-				617.8125,
-				462.6015625
-			],
-			"hover": false
+				618,
+				463
+			]
 		},
 		"371": {
 			"id": "371",
@@ -1579,10 +1429,9 @@
 			"use": "Advanced Biology",
 			"section": "Academic Classrooms",
 			"center": [
-				649.0625,
-				449.6015625
-			],
-			"hover": false
+				649,
+				450
+			]
 		},
 		"373": {
 			"id": "373",
@@ -1590,10 +1439,9 @@
 			"use": "Technology Education",
 			"section": "Academic Classrooms",
 			"center": [
-				677.5625,
-				447.3515625
-			],
-			"hover": false
+				678,
+				447
+			]
 		},
 		"001": {
 			"id": "001",
@@ -1601,10 +1449,9 @@
 			"use": "Child Development",
 			"section": "Fine Arts Wing",
 			"center": [
-				45.625,
-				149.703125
-			],
-			"hover": false
+				46,
+				150
+			]
 		},
 		"002": {
 			"id": "002",
@@ -1612,10 +1459,9 @@
 			"use": "Art",
 			"section": "Fine Arts Wing",
 			"center": [
-				77.625,
-				133.203125
-			],
-			"hover": false
+				78,
+				133
+			]
 		},
 		"003": {
 			"id": "003",
@@ -1623,10 +1469,9 @@
 			"use": "Personal/Family Living",
 			"section": "Fine Arts Wing",
 			"center": [
-				28.125,
-				123.703125
-			],
-			"hover": false
+				28,
+				124
+			]
 		},
 		"004": {
 			"id": "004",
@@ -1634,10 +1479,9 @@
 			"use": "Photography",
 			"section": "Fine Arts Wing",
 			"center": [
-				103.625,
-				107.203125
-			],
-			"hover": false
+				104,
+				107
+			]
 		},
 		"005": {
 			"id": "005",
@@ -1645,10 +1489,9 @@
 			"use": "Multi-Purpose",
 			"section": "Fine Arts Wing",
 			"center": [
-				42.625,
-				100.703125
-			],
-			"hover": false
+				43,
+				101
+			]
 		},
 		"006": {
 			"id": "006",
@@ -1656,10 +1499,9 @@
 			"use": "Drama",
 			"section": "Fine Arts Wing",
 			"center": [
-				151.125,
-				75.203125
-			],
-			"hover": false
+				151,
+				75
+			]
 		},
 		"007": {
 			"id": "007",
@@ -1667,10 +1509,9 @@
 			"use": "Studio Art",
 			"section": "Fine Arts Wing",
 			"center": [
-				68.125,
-				83.703125
-			],
-			"hover": false
+				68,
+				84
+			]
 		},
 		"008": {
 			"id": "008",
@@ -1678,10 +1519,9 @@
 			"use": "Studio Art",
 			"section": "Fine Arts Wing",
 			"center": [
-				94.625,
-				53.203125
-			],
-			"hover": false
+				95,
+				53
+			]
 		},
 		"011": {
 			"id": "011",
@@ -1689,10 +1529,9 @@
 			"use": "Studio Art",
 			"section": "Fine Arts Wing",
 			"center": [
-				134.625,
-				42.203125
-			],
-			"hover": false
+				135,
+				42
+			]
 		},
 		"013": {
 			"id": "013",
@@ -1700,10 +1539,9 @@
 			"use": "Ceramics/Sculpture",
 			"section": "Fine Arts Wing",
 			"center": [
-				158.625,
-				25.703125
-			],
-			"hover": false
+				159,
+				26
+			]
 		},
 		"014": {
 			"id": "014",
@@ -1711,10 +1549,9 @@
 			"use": "Instrumental Room",
 			"section": "Fine Arts Wing",
 			"center": [
-				119.915,
-				150.302
-			],
-			"hover": false
+				120,
+				150
+			]
 		},
 		"016A": {
 			"id": "016A",
@@ -1722,10 +1559,9 @@
 			"use": "Choral",
 			"section": "Fine Arts Wing",
 			"center": [
-				156.625,
-				188.703125
-			],
-			"hover": false
+				157,
+				189
+			]
 		},
 		"016B": {
 			"id": "016B",
@@ -1733,10 +1569,9 @@
 			"use": "Keyboard Lab",
 			"section": "Fine Arts Wing",
 			"center": [
-				139.125,
-				201.703125
-			],
-			"hover": false
+				139,
+				202
+			]
 		},
 		"Auditorium": {
 			"id": "Auditorium",
@@ -1744,10 +1579,9 @@
 			"use": "Auditorium",
 			"section": "Fine Arts Wing",
 			"center": [
-				208.125,
-				126.703125
-			],
-			"hover": false
+				208,
+				127
+			]
 		},
 		"Kiln": {
 			"id": "Kiln",
@@ -1755,10 +1589,9 @@
 			"use": "Kiln",
 			"section": "Fine Arts Wing",
 			"center": [
-				182.25,
-				24.6355
-			],
-			"hover": false
+				182,
+				25
+			]
 		},
 		"Stage Shop": {
 			"id": "Stage Shop",
@@ -1766,10 +1599,9 @@
 			"use": "Stage Shop",
 			"section": "Fine Arts Wing",
 			"center": [
-				205.625,
-				41.203125
-			],
-			"hover": false
+				206,
+				41
+			]
 		},
 		"Computer/Work Room": {
 			"id": "Computer/Work Room",
@@ -1777,10 +1609,9 @@
 			"use": "Computer/Work Room",
 			"section": "Media/Reference Complex",
 			"center": [
-				455.125,
-				226.703125
-			],
-			"hover": false
+				455,
+				227
+			]
 		},
 		"Conference A": {
 			"id": "Conference A",
@@ -1788,10 +1619,9 @@
 			"use": "Conference",
 			"section": "Media/Reference Complex",
 			"center": [
-				552.625,
-				267.203125
-			],
-			"hover": false
+				553,
+				267
+			]
 		},
 		"Conference B": {
 			"id": "Conference B",
@@ -1799,10 +1629,9 @@
 			"use": "Conference",
 			"section": "Media/Reference Complex",
 			"center": [
-				542.625,
-				239.203125
-			],
-			"hover": false
+				543,
+				239
+			]
 		},
 		"Equipment Storage": {
 			"id": "Equipment Storage",
@@ -1810,10 +1639,9 @@
 			"use": "Storage",
 			"section": "Media/Reference Complex",
 			"center": [
-				450.125,
-				178.203125
-			],
-			"hover": false
+				450,
+				178
+			]
 		},
 		"General Storage": {
 			"id": "General Storage",
@@ -1821,10 +1649,9 @@
 			"use": "Storage",
 			"section": "Media/Reference Complex",
 			"center": [
-				451.625,
-				203.703125
-			],
-			"hover": false
+				452,
+				204
+			]
 		},
 		"Head-in Room": {
 			"id": "Head-in Room",
@@ -1832,10 +1659,9 @@
 			"use": "Head-in Room",
 			"section": "Media/Reference Complex",
 			"center": [
-				472.3125,
-				174.3515625
-			],
-			"hover": false
+				472,
+				174
+			]
 		},
 		"Media Center": {
 			"id": "Media Center",
@@ -1843,10 +1669,9 @@
 			"use": "Media Center",
 			"section": "Media/Reference Complex",
 			"center": [
-				503.125,
-				233.703125
-			],
-			"hover": false
+				503,
+				234
+			]
 		},
 		"112, Storage": {
 			"id": "112, Storage",
@@ -1854,10 +1679,9 @@
 			"use": "Storage",
 			"section": "Gymnasium Complex",
 			"center": [
-				165.625,
-				358.703125
-			],
-			"hover": false
+				166,
+				359
+			]
 		},
 		"114, Storage": {
 			"id": "114, Storage",
@@ -1865,10 +1689,9 @@
 			"use": "Storage",
 			"section": "Gymnasium Complex",
 			"center": [
-				178.125,
-				359.703125
-			],
-			"hover": false
+				178,
+				360
+			]
 		},
 		"118, Storage": {
 			"id": "118, Storage",
@@ -1876,10 +1699,9 @@
 			"use": "Storage",
 			"section": "Gymnasium Complex",
 			"center": [
-				244.625,
-				356.703125
-			],
-			"hover": false
+				245,
+				357
+			]
 		},
 		"Boys' Locker Room": {
 			"id": "Boys' Locker Room",
@@ -1887,10 +1709,9 @@
 			"use": "Locker Room",
 			"section": "Gymnasium Complex",
 			"center": [
-				245.625,
-				385.703125
-			],
-			"hover": false
+				246,
+				386
+			]
 		},
 		"Girls' Locker Room": {
 			"id": "Girls' Locker Room",
@@ -1898,10 +1719,9 @@
 			"use": "Locker Room",
 			"section": "Gymnasium Complex",
 			"center": [
-				169.125,
-				388.203125
-			],
-			"hover": false
+				169,
+				388
+			]
 		},
 		"Large Gymnasium": {
 			"id": "Large Gymnasium",
@@ -1909,10 +1729,9 @@
 			"use": "Gymnasium",
 			"section": "Gymnasium Complex",
 			"center": [
-				237.125,
-				291.203125
-			],
-			"hover": false
+				237,
+				291
+			]
 		},
 		"Small Gymnasium": {
 			"id": "Small Gymnasium",
@@ -1920,20 +1739,18 @@
 			"use": "Gymnasium",
 			"section": "Gymnasium Complex",
 			"center": [
-				171.125,
-				291.203125
-			],
-			"hover": false
+				171,
+				291
+			]
 		},
 		"122, Office": {
 			"id": "122, Office",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				312.3125,
-				307.3515625
-			],
-			"hover": false
+				312,
+				307
+			]
 		},
 		"138, Storage": {
 			"id": "138, Storage",
@@ -1941,10 +1758,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				470.8125,
-				437.8515625
-			],
-			"hover": false
+				471,
+				438
+			]
 		},
 		"141, English": {
 			"id": "141, English",
@@ -1952,10 +1768,9 @@
 			"use": "English",
 			"section": "Academic Classrooms",
 			"center": [
-				498.5625,
-				311.1015625
-			],
-			"hover": false
+				499,
+				311
+			]
 		},
 		"141, Storage": {
 			"id": "141, Storage",
@@ -1963,10 +1778,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				474.0625,
-				303.1015625
-			],
-			"hover": false
+				474,
+				303
+			]
 		},
 		"152, Work Room": {
 			"id": "152, Work Room",
@@ -1974,10 +1788,9 @@
 			"use": "Work Room",
 			"section": "Academic Classrooms",
 			"center": [
-				485.3125,
-				446.6015625
-			],
-			"hover": false
+				485,
+				447
+			]
 		},
 		"170, Office": {
 			"id": "170, Office",
@@ -1985,10 +1798,9 @@
 			"use": "Foreign Langugage",
 			"section": "Academic Classrooms",
 			"center": [
-				623.3125,
-				483.3515625
-			],
-			"hover": false
+				623,
+				483
+			]
 		},
 		"AP Office": {
 			"id": "AP Office",
@@ -1996,10 +1808,9 @@
 			"use": "AP Office",
 			"section": "Administration Complex",
 			"center": [
-				340.125,
-				167.703125
-			],
-			"hover": false
+				340,
+				168
+			]
 		},
 		"Athletic Director": {
 			"id": "Athletic Director",
@@ -2007,10 +1818,9 @@
 			"use": "Athletic Director",
 			"section": "Administration Complex",
 			"center": [
-				279.3125,
-				240.1015625
-			],
-			"hover": false
+				279,
+				240
+			]
 		},
 		"Attendance Office": {
 			"id": "Attendance Office",
@@ -2018,10 +1828,9 @@
 			"use": "Attendance Office",
 			"section": "Administration Complex",
 			"center": [
-				331.5625,
-				222.6015625
-			],
-			"hover": false
+				332,
+				223
+			]
 		},
 		"Concessions": {
 			"id": "Concessions",
@@ -2029,10 +1838,9 @@
 			"use": "Concessions",
 			"section": "Administration Complex",
 			"center": [
-				261.0625,
-				239.1015625
-			],
-			"hover": false
+				261,
+				239
+			]
 		},
 		"Guidance": {
 			"id": "Guidance",
@@ -2040,10 +1848,9 @@
 			"use": "Counseling",
 			"section": "Administration Complex",
 			"center": [
-				356.125,
-				274.703125
-			],
-			"hover": false
+				356,
+				275
+			]
 		},
 		"Main Office": {
 			"id": "Main Office",
@@ -2051,10 +1858,9 @@
 			"use": "Main Office",
 			"section": "Administration Complex",
 			"center": [
-				288.125,
-				198.203125
-			],
-			"hover": false
+				288,
+				198
+			]
 		},
 		"Principal's Office": {
 			"id": "Principal's Office",
@@ -2062,10 +1868,9 @@
 			"use": "Principal's Office",
 			"section": "Administration Complex",
 			"center": [
-				320.125,
-				163.203125
-			],
-			"hover": false
+				320,
+				163
+			]
 		},
 		"Registrar": {
 			"id": "Registrar",
@@ -2073,10 +1878,9 @@
 			"use": "Counseling",
 			"section": "Administration Complex",
 			"center": [
-				331.625,
-				251.203125
-			],
-			"hover": false
+				332,
+				251
+			]
 		},
 		"Boys' Bathroom 1L": {
 			"id": "Boys' Bathroom 1L",
@@ -2084,10 +1888,9 @@
 			"use": "Bathroom",
 			"section": "Bathrooms / Building Services",
 			"center": [
-				223.3125,
-				204.3515625
-			],
-			"hover": false
+				223,
+				204
+			]
 		},
 		"Boys' Bathroom 1R": {
 			"id": "Boys' Bathroom 1R",
@@ -2095,10 +1898,9 @@
 			"use": "Bathroom",
 			"section": "Bathrooms / Building Services",
 			"center": [
-				575.3125,
-				335.1015625
-			],
-			"hover": false
+				575,
+				335
+			]
 		},
 		"Building Services": {
 			"id": "Building Services",
@@ -2106,10 +1908,9 @@
 			"use": "Building Services",
 			"section": "Bathrooms / Building Services",
 			"center": [
-				226.0625,
-				212.6015625
-			],
-			"hover": false
+				226,
+				213
+			]
 		},
 		"Girls' Bathroom 1L": {
 			"id": "Girls' Bathroom 1L",
@@ -2117,10 +1918,9 @@
 			"use": "Bathroom",
 			"section": "Bathrooms / Building Services",
 			"center": [
-				228.8125,
-				221.8515625
-			],
-			"hover": false
+				229,
+				222
+			]
 		},
 		"Girls' Bathroom 1R": {
 			"id": "Girls' Bathroom 1R",
@@ -2128,10 +1928,9 @@
 			"use": "Bathroom",
 			"section": "Bathrooms / Building Services",
 			"center": [
-				575.3125,
-				347.6015625
-			],
-			"hover": false
+				575,
+				348
+			]
 		},
 		"Kitchen": {
 			"id": "Kitchen",
@@ -2139,10 +1938,9 @@
 			"use": "Kitchen",
 			"section": "Dining Facilities",
 			"center": [
-				726.125,
-				286.203125
-			],
-			"hover": false
+				726,
+				286
+			]
 		},
 		"Main Mechanical Room": {
 			"id": "Main Mechanical Room",
@@ -2150,10 +1948,9 @@
 			"use": "Mechanical",
 			"section": "Dining Facilities",
 			"center": [
-				755.125,
-				301.703125
-			],
-			"hover": false
+				755,
+				302
+			]
 		},
 		"PAC Serving Table": {
 			"id": "PAC Serving Table",
@@ -2161,10 +1958,9 @@
 			"use": "Serving",
 			"section": "Dining Facilities",
 			"center": [
-				698.625,
-				339.203125
-			],
-			"hover": false
+				699,
+				339
+			]
 		},
 		"SAC": {
 			"id": "SAC",
@@ -2172,10 +1968,9 @@
 			"use": "Student Activity Center / Cafeteria",
 			"section": "Dining Facilities",
 			"center": [
-				630.625,
-				269.703125
-			],
-			"hover": false
+				631,
+				270
+			]
 		},
 		"Serving Table 1": {
 			"id": "Serving Table 1",
@@ -2183,10 +1978,9 @@
 			"use": "Serving",
 			"section": "Dining Facilities",
 			"center": [
-				704.125,
-				280.703125
-			],
-			"hover": false
+				704,
+				281
+			]
 		},
 		"Serving Table 2": {
 			"id": "Serving Table 2",
@@ -2194,111 +1988,100 @@
 			"use": "Serving",
 			"section": "Dining Facilities",
 			"center": [
-				704.125,
-				294.203125
-			],
-			"hover": false
+				704,
+				294
+			]
 		},
 		"P1": {
 			"id": "P1",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				977.8125,
-				317.1015625
-			],
-			"hover": false
+				978,
+				317
+			]
 		},
 		"P2": {
 			"id": "P2",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				967.8125,
-				338.8515625
-			],
-			"hover": false
+				968,
+				339
+			]
 		},
 		"P3": {
 			"id": "P3",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				967.5625,
-				361.1015625
-			],
-			"hover": false
+				968,
+				361
+			]
 		},
 		"P4": {
 			"id": "P4",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				967.8125,
-				383.1015625
-			],
-			"hover": false
+				968,
+				383
+			]
 		},
 		"P5": {
 			"id": "P5",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				1038.8125,
-				384.1015625
-			],
-			"hover": false
+				1039,
+				384
+			]
 		},
 		"P6": {
 			"id": "P6",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				1038.5625,
-				362.1015625
-			],
-			"hover": false
+				1039,
+				362
+			]
 		},
 		"P7": {
 			"id": "P7",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				1038.5625,
-				340.1015625
-			],
-			"hover": false
+				1039,
+				340
+			]
 		},
 		"P8": {
 			"id": "P8",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				1038.5625,
-				318.8515625
-			],
-			"hover": false
+				1039,
+				319
+			]
 		},
 		"P9": {
 			"id": "P9",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				1038.5625,
-				278.6015625
-			],
-			"hover": false
+				1039,
+				279
+			]
 		},
 		"P10": {
 			"id": "P10",
 			"floor": 1,
 			"section": "Academic Classrooms",
 			"center": [
-				925.3125,
-				361.6015625
+				925,
+				362
 			],
-			"angle": 90,
-			"hover": false
+			"angle": 90
 		},
 		"P11": {
 			"id": "P11",
@@ -2308,8 +2091,7 @@
 				45,
 				415
 			],
-			"angle": 0,
-			"hover": false
+			"angle": 0
 		},
 		"P12": {
 			"id": "P12",
@@ -2319,8 +2101,7 @@
 				45,
 				437
 			],
-			"angle": 0,
-			"hover": false
+			"angle": 0
 		},
 		"P13": {
 			"id": "P13",
@@ -2330,8 +2111,7 @@
 				45,
 				459
 			],
-			"angle": 0,
-			"hover": false
+			"angle": 0
 		},
 		"P14": {
 			"id": "P14",
@@ -2341,8 +2121,7 @@
 				45,
 				481
 			],
-			"angle": 0,
-			"hover": false
+			"angle": 0
 		},
 		"P15": {
 			"id": "P15",
@@ -2352,8 +2131,7 @@
 				15,
 				381
 			],
-			"angle": 36,
-			"hover": false
+			"angle": 36
 		},
 		"P16": {
 			"id": "P16",
@@ -2363,8 +2141,7 @@
 				2,
 				399
 			],
-			"angle": 36,
-			"hover": false
+			"angle": 36
 		},
 		"P17": {
 			"id": "P17",
@@ -2374,8 +2151,7 @@
 				-11,
 				417
 			],
-			"angle": 36,
-			"hover": false
+			"angle": 36
 		},
 		"P18": {
 			"id": "P18",
@@ -2385,8 +2161,7 @@
 				-24,
 				435
 			],
-			"angle": 36,
-			"hover": false
+			"angle": 36
 		},
 		"P19": {
 			"id": "P19",
@@ -2396,8 +2171,7 @@
 				-37,
 				290
 			],
-			"angle": 36,
-			"hover": false
+			"angle": 36
 		},
 		"Senior Courtyard": {
 			"id": "Senior Courtyard",
@@ -2405,10 +2179,9 @@
 			"use": "Courtyard",
 			"section": "Outdoor Areas",
 			"center": [
-				527.0625,
-				362.3515625
-			],
-			"hover": false
+				527,
+				362
+			]
 		},
 		"Staff Courtyard": {
 			"id": "Staff Courtyard",
@@ -2416,10 +2189,9 @@
 			"use": "Courtyard",
 			"section": "Outdoor Areas",
 			"center": [
-				390.0625,
-				331.1015625
-			],
-			"hover": false
+				390,
+				331
+			]
 		},
 		"211, Computer Lab": {
 			"id": "211, Computer Lab",
@@ -2427,10 +2199,9 @@
 			"use": "Computer Lab",
 			"section": "Academic Classrooms",
 			"center": [
-				110.8125,
-				354.6015625
-			],
-			"hover": false
+				111,
+				355
+			]
 		},
 		"211, Office": {
 			"id": "211, Office",
@@ -2438,10 +2209,9 @@
 			"use": "Office",
 			"section": "Academic Classrooms",
 			"center": [
-				154.8125,
-				340.3515625
-			],
-			"hover": false
+				155,
+				340
+			]
 		},
 		"211, Storage": {
 			"id": "211, Storage",
@@ -2449,10 +2219,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				164.0625,
-				345.8515625
-			],
-			"hover": false
+				164,
+				346
+			]
 		},
 		"221, Biology": {
 			"id": "221, Biology",
@@ -2460,10 +2229,9 @@
 			"use": "Biology",
 			"section": "Academic Classrooms",
 			"center": [
-				341.5625,
-				317.8515625
-			],
-			"hover": false
+				342,
+				318
+			]
 		},
 		"223, Computer Science": {
 			"id": "223, Computer Science",
@@ -2471,10 +2239,9 @@
 			"use": "Computer Science",
 			"section": "Academic Classrooms",
 			"center": [
-				341.5625,
-				358.8515625
-			],
-			"hover": false
+				342,
+				359
+			]
 		},
 		"238, Storage": {
 			"id": "238, Storage",
@@ -2482,10 +2249,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				429.5625,
-				411.1015625
-			],
-			"hover": false
+				430,
+				411
+			]
 		},
 		"241, Storage": {
 			"id": "241, Storage",
@@ -2493,10 +2259,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				468.5625,
-				331.1015625
-			],
-			"hover": false
+				469,
+				331
+			]
 		},
 		"250, Storage": {
 			"id": "250, Storage",
@@ -2504,20 +2269,18 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				475.5625,
-				432.3515625
-			],
-			"hover": false
+				476,
+				432
+			]
 		},
 		"251W": {
 			"id": "251W",
 			"floor": 2,
 			"section": "Academic Classrooms",
 			"center": [
-				481.8125,
-				414.6015625
-			],
-			"hover": false
+				482,
+				415
+			]
 		},
 		"261, Storage": {
 			"id": "261, Storage",
@@ -2525,10 +2288,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				603.5625,
-				346.6015625
-			],
-			"hover": false
+				604,
+				347
+			]
 		},
 		"Floor 2, Storage 1": {
 			"id": "Floor 2, Storage 1",
@@ -2536,10 +2298,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				198.0625,
-				388.8515625
-			],
-			"hover": false
+				198,
+				389
+			]
 		},
 		"Floor 2, Storage 2": {
 			"id": "Floor 2, Storage 2",
@@ -2547,10 +2308,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				217.8125,
-				350.6015625
-			],
-			"hover": false
+				218,
+				351
+			]
 		},
 		"Boys' Bathroom 2L": {
 			"id": "Boys' Bathroom 2L",
@@ -2558,10 +2318,9 @@
 			"use": "Bathroom",
 			"section": "Bathrooms / Building Services",
 			"center": [
-				283.3125,
-				351.1015625
-			],
-			"hover": false
+				283,
+				351
+			]
 		},
 		"Boys' Bathroom 2R": {
 			"id": "Boys' Bathroom 2R",
@@ -2569,10 +2328,9 @@
 			"use": "Bathroom",
 			"section": "Bathrooms / Building Services",
 			"center": [
-				579.3125,
-				407.1015625
-			],
-			"hover": false
+				579,
+				407
+			]
 		},
 		"Girls' Bathroom 2L": {
 			"id": "Girls' Bathroom 2L",
@@ -2580,10 +2338,9 @@
 			"use": "Bathroom",
 			"section": "Bathrooms / Building Services",
 			"center": [
-				272.0625,
-				351.1015625
-			],
-			"hover": false
+				272,
+				351
+			]
 		},
 		"Girls' Bathroom 2R": {
 			"id": "Girls' Bathroom 2R",
@@ -2591,10 +2348,9 @@
 			"use": "Bathroom",
 			"section": "Bathrooms / Building Services",
 			"center": [
-				567.3125,
-				407.6015625
-			],
-			"hover": false
+				567,
+				408
+			]
 		},
 		"310, Office": {
 			"id": "310, Office",
@@ -2602,10 +2358,9 @@
 			"use": "Office",
 			"section": "Academic Classrooms",
 			"center": [
-				132.8125,
-				396.8515625
-			],
-			"hover": false
+				133,
+				397
+			]
 		},
 		"319, Storage": {
 			"id": "319, Storage",
@@ -2613,10 +2368,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				230.3125,
-				352.8515625
-			],
-			"hover": false
+				230,
+				353
+			]
 		},
 		"323, Chemistry Storage": {
 			"id": "323, Chemistry Storage",
@@ -2624,10 +2378,9 @@
 			"use": "Chemistry Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				347.0625,
-				320.8515625
-			],
-			"hover": false
+				347,
+				321
+			]
 		},
 		"323, Storage": {
 			"id": "323, Storage",
@@ -2635,10 +2388,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				320.8125,
-				320.3515625
-			],
-			"hover": false
+				321,
+				320
+			]
 		},
 		"330, Computer Lab": {
 			"id": "330, Computer Lab",
@@ -2646,10 +2398,9 @@
 			"use": "Computer Lab",
 			"section": "Academic Classrooms",
 			"center": [
-				382.8125,
-				424.6015625
-			],
-			"hover": false
+				383,
+				425
+			]
 		},
 		"341, Office": {
 			"id": "341, Office",
@@ -2657,10 +2408,9 @@
 			"use": "Office",
 			"section": "Academic Classrooms",
 			"center": [
-				486.0625,
-				328.8515625
-			],
-			"hover": false
+				486,
+				329
+			]
 		},
 		"354, Computer Lab": {
 			"id": "354, Computer Lab",
@@ -2668,10 +2418,9 @@
 			"use": "Computer Lab",
 			"section": "Academic Classrooms",
 			"center": [
-				532.5625,
-				452.1015625
-			],
-			"hover": false
+				533,
+				452
+			]
 		},
 		"354, Office": {
 			"id": "354, Office",
@@ -2679,10 +2428,9 @@
 			"use": "Office",
 			"section": "Academic Classrooms",
 			"center": [
-				538.0625,
-				406.6015625
-			],
-			"hover": false
+				538,
+				407
+			]
 		},
 		"354, Storage": {
 			"id": "354, Storage",
@@ -2690,10 +2438,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				521.3125,
-				407.8515625
-			],
-			"hover": false
+				521,
+				408
+			]
 		},
 		"361, Computer Lab": {
 			"id": "361, Computer Lab",
@@ -2701,10 +2448,9 @@
 			"use": "Computer Lab",
 			"section": "Academic Classrooms",
 			"center": [
-				613.3125,
-				363.6015625
-			],
-			"hover": false
+				613,
+				364
+			]
 		},
 		"361, Office": {
 			"id": "361, Office",
@@ -2712,10 +2458,9 @@
 			"use": "Office",
 			"section": "Academic Classrooms",
 			"center": [
-				605.0625,
-				415.8515625
-			],
-			"hover": false
+				605,
+				416
+			]
 		},
 		"361, Storage": {
 			"id": "361, Storage",
@@ -2723,10 +2468,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				619.5625,
-				415.3515625
-			],
-			"hover": false
+				620,
+				415
+			]
 		},
 		"365, Storage": {
 			"id": "365, Storage",
@@ -2734,10 +2478,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				645.0625,
-				467.8515625
-			],
-			"hover": false
+				645,
+				468
+			]
 		},
 		"373, Computer Lab": {
 			"id": "373, Computer Lab",
@@ -2745,10 +2488,9 @@
 			"use": "Computer Lab",
 			"section": "Academic Classrooms",
 			"center": [
-				680.0625,
-				427.8515625
-			],
-			"hover": false
+				680,
+				428
+			]
 		},
 		"373, Office": {
 			"id": "373, Office",
@@ -2756,10 +2498,9 @@
 			"use": "Office",
 			"section": "Academic Classrooms",
 			"center": [
-				674.8125,
-				462.3515625
-			],
-			"hover": false
+				675,
+				462
+			]
 		},
 		"373, Storage": {
 			"id": "373, Storage",
@@ -2767,10 +2508,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				674.8125,
-				471.3515625
-			],
-			"hover": false
+				675,
+				471
+			]
 		},
 		"Floor 3, Biology Storage": {
 			"id": "Floor 3, Biology Storage",
@@ -2778,10 +2518,9 @@
 			"use": "Biology Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				468.3125,
-				426.1015625
-			],
-			"hover": false
+				468,
+				426
+			]
 		},
 		"Floor 3, Storage 2": {
 			"id": "Floor 3, Storage 2",
@@ -2789,10 +2528,9 @@
 			"use": "Storage",
 			"section": "Academic Classrooms",
 			"center": [
-				574.5625,
-				467.6015625
-			],
-			"hover": false
+				575,
+				468
+			]
 		},
 		"Boys' Bathroom 3L": {
 			"id": "Boys' Bathroom 3L",
@@ -2800,10 +2538,9 @@
 			"use": "Bathroom",
 			"section": "Bathrooms / Building Services",
 			"center": [
-				282.3125,
-				351.1015625
-			],
-			"hover": false
+				282,
+				351
+			]
 		},
 		"Boys' Bathroom 3R": {
 			"id": "Boys' Bathroom 3R",
@@ -2811,10 +2548,9 @@
 			"use": "Bathroom",
 			"section": "Bathrooms / Building Services",
 			"center": [
-				577.3125,
-				379.8515625
-			],
-			"hover": false
+				577,
+				380
+			]
 		},
 		"Girls' Bathroom 3L": {
 			"id": "Girls' Bathroom 3L",
@@ -2822,10 +2558,9 @@
 			"use": "Bathroom",
 			"section": "Bathrooms / Building Services",
 			"center": [
-				271.3125,
-				351.3515625
-			],
-			"hover": false
+				271,
+				351
+			]
 		},
 		"Girls' Bathroom 3R": {
 			"id": "Girls' Bathroom 3R",
@@ -2833,10 +2568,9 @@
 			"use": "Bathroom",
 			"section": "Bathrooms / Building Services",
 			"center": [
-				565.3125,
-				379.8515625
-			],
-			"hover": false
+				565,
+				380
+			]
 		},
 		"5-star Turkish Restaurant": {
 			"id": "5-star Turkish Restaurant",
@@ -2844,10 +2578,9 @@
 			"use": "Restaurant",
 			"section": "Dining",
 			"center": [
-				639.8125,
-				454.3515625
-			],
-			"hover": false
+				640,
+				454
+			]
 		},
 		"McDonald's": {
 			"id": "McDonald's",
@@ -2855,10 +2588,9 @@
 			"use": "Restaurant",
 			"section": "Dining",
 			"center": [
-				487.8125,
-				440.1015625
-			],
-			"hover": false
+				488,
+				440
+			]
 		},
 		"Restaurant Kitchen": {
 			"id": "Restaurant Kitchen",
@@ -2866,10 +2598,9 @@
 			"use": "Kitchen",
 			"section": "Dining",
 			"center": [
-				579.5625,
-				459.3515625
-			],
-			"hover": false
+				580,
+				459
+			]
 		},
 		"Turkish Delight Parlor": {
 			"id": "Turkish Delight Parlor",
@@ -2877,10 +2608,9 @@
 			"use": "Restaurant",
 			"section": "Dining",
 			"center": [
-				536.0625,
-				440.3515625
-			],
-			"hover": false
+				536,
+				440
+			]
 		},
 		"Blair Bocce Field": {
 			"id": "Blair Bocce Field",
@@ -2888,10 +2618,9 @@
 			"use": "Park",
 			"section": "Recreation",
 			"center": [
-				341.8125,
-				344.3515625
-			],
-			"hover": false
+				342,
+				344
+			]
 		},
 		"Blair Park": {
 			"id": "Blair Park",
@@ -2899,10 +2628,9 @@
 			"use": "Park",
 			"section": "Recreation",
 			"center": [
-				350.8125,
-				310.1015625
-			],
-			"hover": false
+				351,
+				310
+			]
 		},
 		"Blair River": {
 			"id": "Blair River",
@@ -2910,10 +2638,9 @@
 			"use": "River",
 			"section": "Recreation",
 			"center": [
-				329.0625,
-				332.3515625
-			],
-			"hover": false
+				329,
+				332
+			]
 		},
 		"Daniel Zhu Memorial Park": {
 			"id": "Daniel Zhu Memorial Park",
@@ -2921,10 +2648,9 @@
 			"use": "Park",
 			"section": "Recreation",
 			"center": [
-				414.3125,
-				373.6015625
-			],
-			"hover": false
+				414,
+				374
+			]
 		},
 		"Grande Plaza de Blair": {
 			"id": "Grande Plaza de Blair",
@@ -2932,10 +2658,9 @@
 			"use": "Plaza",
 			"section": "Recreation",
 			"center": [
-				341.125,
-				376.703125
-			],
-			"hover": false
+				341,
+				377
+			]
 		},
 		"Inconspicuous Patch of Grass": {
 			"id": "Inconspicuous Patch of Grass",
@@ -2943,10 +2668,9 @@
 			"use": "Park",
 			"section": "Recreation",
 			"center": [
-				365.0625,
-				287.6015625
-			],
-			"hover": false
+				365,
+				288
+			]
 		},
 		"Other Plaza": {
 			"id": "Other Plaza",
@@ -2954,10 +2678,9 @@
 			"use": "Plaza",
 			"section": "Recreation",
 			"center": [
-				340.5625,
-				288.8515625
-			],
-			"hover": false
+				341,
+				289
+			]
 		},
 		"Zhu Croquet Field": {
 			"id": "Zhu Croquet Field",
@@ -2965,10 +2688,9 @@
 			"use": "Park",
 			"section": "Recreation",
 			"center": [
-				370.3125,
-				375.1015625
-			],
-			"hover": false
+				370,
+				375
+			]
 		},
 		"Zhu River": {
 			"id": "Zhu River",
@@ -2976,10 +2698,9 @@
 			"use": "River",
 			"section": "Recreation",
 			"center": [
-				390.5625,
-				383.1015625
-			],
-			"hover": false
+				391,
+				383
+			]
 		},
 		"Blair Exclusive Ultra-Chic Lounge": {
 			"id": "Blair Exclusive Ultra-Chic Lounge",
@@ -2987,10 +2708,9 @@
 			"use": "Lounge",
 			"section": "Learning and Relaxation",
 			"center": [
-				379.625,
-				420.203125
-			],
-			"hover": false
+				380,
+				420
+			]
 		},
 		"Center for Higher Study and Philosophy": {
 			"id": "Center for Higher Study and Philosophy",
@@ -2998,10 +2718,9 @@
 			"use": "Center for Higher Study and Philosophy",
 			"section": "Learning and Relaxation",
 			"center": [
-				300.0625,
-				267.6015625
-			],
-			"hover": false
+				300,
+				268
+			]
 		},
 		"Lockers": {
 			"id": "Lockers",
@@ -3009,10 +2728,9 @@
 			"use": "Lockers",
 			"section": "Learning and Relaxation",
 			"center": [
-				291.8125,
-				396.1015625
-			],
-			"hover": false
+				292,
+				396
+			]
 		},
 		"Security Booth/Lounge": {
 			"id": "Security Booth/Lounge",
@@ -3020,10 +2738,9 @@
 			"use": "Lounge",
 			"section": "Learning and Relaxation",
 			"center": [
-				291.3125,
-				364.3515625
-			],
-			"hover": false
+				291,
+				364
+			]
 		},
 		"Helicopter Pad": {
 			"id": "Helicopter Pad",
@@ -3031,10 +2748,9 @@
 			"use": "Helicopter Pad",
 			"section": "Outdoor Areas",
 			"center": [
-				131.3125,
-				372.1015625
-			],
-			"hover": false
+				131,
+				372
+			]
 		},
 		"Infinity Hot Tub/Jacuzzi": {
 			"id": "Infinity Hot Tub/Jacuzzi",
@@ -3042,10 +2758,9 @@
 			"use": "Jacuzzi",
 			"section": "Outdoor Areas",
 			"center": [
-				255.5625,
-				396.6015625
-			],
-			"hover": false
+				256,
+				397
+			]
 		},
 		"Pool": {
 			"id": "Pool",
@@ -3053,10 +2768,9 @@
 			"use": "Pool",
 			"section": "Outdoor Areas",
 			"center": [
-				211.3125,
-				372.6015625
-			],
-			"hover": false
+				211,
+				373
+			]
 		},
 		"Turkish Restaurant, Outdoor Patio": {
 			"id": "Turkish Restaurant, Outdoor Patio",
@@ -3064,10 +2778,9 @@
 			"use": "Patio",
 			"section": "Outdoor Areas",
 			"center": [
-				689.3125,
-				468.1015625
-			],
-			"hover": false
+				689,
+				468
+			]
 		},
 		"La Fondue": {
 			"id": "La Fondue",
@@ -3075,30 +2788,27 @@
 			"use": "Fountain",
 			"section": "Commercial Facilities",
 			"center": [
-				467.0625,
-				314.3515625
-			],
-			"hover": false
+				467,
+				314
+			]
 		},
 		"Luxury Goods Bazaar": {
 			"id": "Luxury Goods Bazaar",
 			"floor": 4,
 			"section": "Commercial Facilities",
 			"center": [
-				458.3125,
-				359.3515625
-			],
-			"hover": false
+				458,
+				359
+			]
 		},
 		"Premium Texas Instruments Store": {
 			"id": "Premium Texas Instruments Store",
 			"floor": 4,
 			"section": "Commercial Facilities",
 			"center": [
-				435.3125,
-				317.3515625
-			],
-			"hover": false
+				435,
+				317
+			]
 		},
 		"Non-gambling Casino": {
 			"id": "Non-gambling Casino",
@@ -3106,2163 +2816,2162 @@
 			"use": "Casino",
 			"section": "Entertainment",
 			"center": [
-				593.375,
-				381.703125
-			],
-			"hover": false
+				593,
+				382
+			]
 		}
 	},
 	"edges": [
 		{
-			"endpoint1": [
-				1,
-				50.0625,
-				123.1016
-			],
-			"endpoint2": [
-				1,
-				63.0625,
-				144.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				50.0625,
-				123.1016
-			],
-			"endpoint2": [
-				1,
-				117.3125,
-				78.1016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				110.3125,
-				342.6016
-			],
-			"endpoint2": [
-				1,
-				110.3125,
-				367.6016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				110.3125,
-				342.6016
-			],
-			"endpoint2": [
-				1,
-				321.0625,
-				343.1016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				110.3125,
-				367.6016
-			],
-			"endpoint2": [
-				1,
-				110.3125,
-				396.6016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				110.3125,
-				396.6016
-			],
-			"endpoint2": [
-				1,
-				121.3125,
-				396.7266
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				117.3125,
-				78.1016
-			],
-			"endpoint2": [
-				1,
-				185.3125,
-				33.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				117.3125,
-				78.1016
-			],
-			"endpoint2": [
-				1,
-				198.5625,
-				201.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				184.0625,
-				219.1016
-			],
-			"endpoint2": [
-				1,
-				190.0625,
-				235.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				184.0625,
-				219.1016
-			],
-			"endpoint2": [
-				1,
-				198.5625,
-				201.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				190.0625,
-				235.3516
-			],
-			"endpoint2": [
-				1,
-				237.3125,
-				233.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				198.5625,
-				201.8516
-			],
-			"endpoint2": [
-				1,
-				246.4375,
-				185.9766
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				237.3125,
-				233.8516
-			],
-			"endpoint2": [
-				1,
-				272.8125,
-				222.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				246.4375,
-				185.9766
-			],
-			"endpoint2": [
-				1,
-				265.1875,
-				195.7266
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				246.4375,
-				185.9766
-			],
-			"endpoint2": [
-				1,
-				268.9375,
-				166.1016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				265.1875,
-				195.7266
-			],
-			"endpoint2": [
-				1,
-				272.8125,
-				222.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				265.1875,
-				195.7266
-			],
-			"endpoint2": [
-				1,
-				278.4375,
-				174.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				268.9375,
-				166.1016
-			],
-			"endpoint2": [
-				1,
-				278.4375,
-				174.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				272.8125,
-				222.8516
-			],
-			"endpoint2": [
-				1,
-				321.0625,
-				235.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				293.3125,
-				430.8516
-			],
-			"endpoint2": [
-				1,
-				293.3125,
-				439.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				293.3125,
-				430.8516
-			],
-			"endpoint2": [
-				1,
-				320.8125,
-				430.9766
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				294.0625,
-				253.9766
-			],
-			"endpoint2": [
-				1,
-				294.0625,
-				271.9766
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				294.0625,
-				253.9766
-			],
-			"endpoint2": [
-				1,
-				321.1875,
-				253.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				320.8125,
-				430.9766
-			],
-			"endpoint2": [
-				1,
-				321.0625,
-				399.6016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				321.0625,
-				235.3516
-			],
-			"endpoint2": [
-				1,
-				321.1875,
-				253.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				321.0625,
-				235.3516
-			],
-			"endpoint2": [
-				1,
-				379.5625,
-				249.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				321.0625,
-				343.1016
-			],
-			"endpoint2": [
-				1,
-				321.0625,
-				399.6016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				321.0625,
-				343.1016
-			],
-			"endpoint2": [
-				1,
-				321.1875,
-				253.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				321.0625,
-				399.6016
-			],
-			"endpoint2": [
-				1,
-				457.0625,
-				399.1016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				379.5625,
-				249.8516
-			],
-			"endpoint2": [
-				1,
-				380.0625,
-				171.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				379.5625,
-				249.8516
-			],
-			"endpoint2": [
-				1,
-				437.8125,
-				267.7266
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				403.0625,
-				237.4766
-			],
-			"endpoint2": [
-				1,
-				438.0625,
-				248.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				429.5625,
-				459.1016
-			],
-			"endpoint2": [
-				1,
-				429.5625,
-				469.1016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				429.5625,
-				459.1016
-			],
-			"endpoint2": [
-				1,
-				456.8125,
-				459.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				437.8125,
-				267.7266
-			],
-			"endpoint2": [
-				1,
-				438.0625,
-				248.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				437.8125,
-				267.7266
-			],
-			"endpoint2": [
-				1,
-				458.3125,
-				273.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				438.0625,
-				248.8516
-			],
-			"endpoint2": [
-				1,
-				438.3125,
-				170.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				456.8125,
-				459.3516
-			],
-			"endpoint2": [
-				1,
-				457.0625,
-				426.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				457.0625,
-				399.1016
-			],
-			"endpoint2": [
-				1,
-				457.0625,
-				426.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				457.0625,
-				399.1016
-			],
-			"endpoint2": [
-				1,
-				458.3125,
-				273.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				457.0625,
-				426.8516
-			],
-			"endpoint2": [
-				1,
-				594.3125,
-				427.6016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				458.3125,
-				273.8516
-			],
-			"endpoint2": [
-				1,
-				527.5625,
-				293.1016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				527.5625,
-				293.1016
-			],
-			"endpoint2": [
-				1,
-				594.8125,
-				311.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				594.0625,
-				487.6016
-			],
-			"endpoint2": [
-				1,
-				594.3125,
-				454.1016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				594.3125,
-				427.6016
-			],
-			"endpoint2": [
-				1,
-				594.3125,
-				454.1016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				594.3125,
-				427.6016
-			],
-			"endpoint2": [
-				1,
-				594.8125,
-				311.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				594.3125,
-				454.1016
-			],
-			"endpoint2": [
-				1,
-				697.8125,
-				454.6016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				594.8125,
-				311.3516
-			],
-			"endpoint2": [
-				1,
-				612.6875,
-				316.2266
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				612.3125,
-				331.3516
-			],
-			"endpoint2": [
-				1,
-				612.4375,
-				353.2266
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				612.4375,
-				353.2266
-			],
-			"endpoint2": [
-				1,
-				621.8125,
-				353.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				612.6875,
-				316.2266
-			],
-			"endpoint2": [
-				1,
-				621.8125,
-				318.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				621.8125,
-				318.8516
-			],
-			"endpoint2": [
-				1,
-				621.8125,
-				353.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				621.8125,
-				318.8516
-			],
-			"endpoint2": [
-				1,
-				667.7038,
-				331.2646
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				667.2038,
-				287.7646
-			],
-			"endpoint2": [
-				1,
-				667.7038,
-				331.2646
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				667.7038,
-				331.2646
-			],
-			"endpoint2": [
-				1,
-				667.7038,
-				377.2646
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				667.7038,
-				377.2646
-			],
-			"endpoint2": [
-				1,
-				703.5625,
-				411.1016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				688.8125,
-				482.8516
-			],
-			"endpoint2": [
-				1,
-				697.5625,
-				482.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				697.5625,
-				482.8516
-			],
-			"endpoint2": [
-				1,
-				697.8125,
-				454.6016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				703.5625,
-				411.1016
-			],
-			"endpoint2": [
-				1,
-				761.0625,
-				415.1016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				761.0625,
-				415.1016
-			],
-			"endpoint2": [
-				1,
-				782.3125,
-				407.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				782.3125,
-				407.3516
-			],
-			"endpoint2": [
-				1,
-				944.0625,
-				408.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				917.1875,
-				381.7266
-			],
-			"endpoint2": [
-				1,
-				943.6875,
-				381.9766
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				943.6875,
-				381.9766
-			],
-			"endpoint2": [
-				1,
-				944.0625,
-				408.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				943.6875,
-				381.9766
-			],
-			"endpoint2": [
-				1,
-				944.4375,
-				322.2266
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				944.0625,
-				408.3516
-			],
-			"endpoint2": [
-				1,
-				998.5625,
-				408.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				944.4375,
-				322.2266
-			],
-			"endpoint2": [
-				1,
-				955.0625,
-				322.2266
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				955.0625,
-				322.2266
-			],
-			"endpoint2": [
-				1,
-				955.1875,
-				301.2266
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				955.1875,
-				301.2266
-			],
-			"endpoint2": [
-				1,
-				1000.0625,
-				300.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				998.5625,
-				408.3516
-			],
-			"endpoint2": [
-				1,
-				1000.0625,
-				300.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				998.5625,
-				408.3516
-			],
-			"endpoint2": [
-				1,
-				1015.3125,
-				408.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				1000.0625,
-				300.8516
-			],
-			"endpoint2": [
-				1,
-				1000.5625,
-				285.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				1014.8125,
-				318.3516
-			],
-			"endpoint2": [
-				1,
-				1015.3125,
-				408.8516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				1015.3125,
-				408.8516
-			],
-			"endpoint2": [
-				1,
-				1077.0625,
-				409.1016
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				121.3125,
-				396.7266
-			],
-			"endpoint2": [
-				2,
-				121.0625,
-				397.2266
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				293.3125,
-				439.8516
-			],
-			"endpoint2": [
-				2,
-				293.3125,
-				439.4766
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				294.0625,
-				271.9766
-			],
-			"endpoint2": [
-				2,
-				294.3125,
-				272.2266
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				403.0625,
-				237.4766
-			],
-			"endpoint2": [
-				2,
-				403.3125,
-				238.2266
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				429.5625,
-				469.1016
-			],
-			"endpoint2": [
-				2,
-				430.0625,
-				468.3516
-			]
-		},
-		{
-			"endpoint1": [
-				1,
-				527.5625,
-				293.1016
-			],
-			"endpoint2": [
-				2,
-				528.0625,
-				293.1016
-			],
+			"endpoint1": {
+				"floor": 1,
+				"x": 50,
+				"y": 123
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 63,
+				"y": 145
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 50,
+				"y": 123
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 117,
+				"y": 78
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 110,
+				"y": 343
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 110,
+				"y": 368
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 110,
+				"y": 343
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 321,
+				"y": 343
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 110,
+				"y": 368
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 110,
+				"y": 397
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 110,
+				"y": 397
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 121,
+				"y": 397
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 117,
+				"y": 78
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 185,
+				"y": 33
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 117,
+				"y": 78
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 199,
+				"y": 202
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 184,
+				"y": 219
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 190,
+				"y": 235
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 184,
+				"y": 219
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 199,
+				"y": 202
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 190,
+				"y": 235
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 237,
+				"y": 234
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 199,
+				"y": 202
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 246,
+				"y": 186
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 237,
+				"y": 234
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 273,
+				"y": 223
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 246,
+				"y": 186
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 265,
+				"y": 196
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 246,
+				"y": 186
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 269,
+				"y": 166
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 265,
+				"y": 196
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 273,
+				"y": 223
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 265,
+				"y": 196
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 278,
+				"y": 174
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 269,
+				"y": 166
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 278,
+				"y": 174
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 273,
+				"y": 223
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 321,
+				"y": 235
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 293,
+				"y": 431
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 293,
+				"y": 440
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 293,
+				"y": 431
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 321,
+				"y": 431
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 294,
+				"y": 254
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 294,
+				"y": 272
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 294,
+				"y": 254
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 321,
+				"y": 254
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 321,
+				"y": 431
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 321,
+				"y": 400
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 321,
+				"y": 235
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 321,
+				"y": 254
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 321,
+				"y": 235
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 380,
+				"y": 250
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 321,
+				"y": 343
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 321,
+				"y": 400
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 321,
+				"y": 343
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 321,
+				"y": 254
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 321,
+				"y": 400
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 457,
+				"y": 399
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 380,
+				"y": 250
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 380,
+				"y": 171
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 380,
+				"y": 250
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 438,
+				"y": 268
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 403,
+				"y": 237
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 438,
+				"y": 249
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 430,
+				"y": 459
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 430,
+				"y": 469
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 430,
+				"y": 459
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 457,
+				"y": 459
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 438,
+				"y": 268
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 438,
+				"y": 249
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 438,
+				"y": 268
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 458,
+				"y": 274
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 438,
+				"y": 249
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 438,
+				"y": 170
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 457,
+				"y": 459
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 457,
+				"y": 427
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 457,
+				"y": 399
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 457,
+				"y": 427
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 457,
+				"y": 399
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 458,
+				"y": 274
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 457,
+				"y": 427
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 594,
+				"y": 428
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 458,
+				"y": 274
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 528,
+				"y": 293
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 528,
+				"y": 293
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 595,
+				"y": 311
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 594,
+				"y": 488
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 594,
+				"y": 454
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 594,
+				"y": 428
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 594,
+				"y": 454
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 594,
+				"y": 428
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 595,
+				"y": 311
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 594,
+				"y": 454
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 698,
+				"y": 455
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 595,
+				"y": 311
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 613,
+				"y": 316
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 612,
+				"y": 331
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 612,
+				"y": 353
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 612,
+				"y": 353
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 622,
+				"y": 353
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 613,
+				"y": 316
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 622,
+				"y": 319
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 622,
+				"y": 319
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 622,
+				"y": 353
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 622,
+				"y": 319
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 668,
+				"y": 331
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 667,
+				"y": 288
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 668,
+				"y": 331
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 668,
+				"y": 331
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 668,
+				"y": 377
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 668,
+				"y": 377
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 704,
+				"y": 411
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 689,
+				"y": 483
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 698,
+				"y": 483
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 698,
+				"y": 483
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 698,
+				"y": 455
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 704,
+				"y": 411
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 761,
+				"y": 415
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 761,
+				"y": 415
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 782,
+				"y": 407
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 782,
+				"y": 407
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 944,
+				"y": 408
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 917,
+				"y": 382
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 944,
+				"y": 382
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 944,
+				"y": 382
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 944,
+				"y": 408
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 944,
+				"y": 382
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 944,
+				"y": 322
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 944,
+				"y": 408
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 999,
+				"y": 408
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 944,
+				"y": 322
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 955,
+				"y": 322
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 955,
+				"y": 322
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 955,
+				"y": 301
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 955,
+				"y": 301
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 1000,
+				"y": 301
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 999,
+				"y": 408
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 1000,
+				"y": 301
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 999,
+				"y": 408
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 1015,
+				"y": 409
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 1000,
+				"y": 301
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 1001,
+				"y": 285
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 1015,
+				"y": 318
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 1015,
+				"y": 409
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 1015,
+				"y": 409
+			},
+			"endpoint2": {
+				"floor": 1,
+				"x": 1077,
+				"y": 409
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 121,
+				"y": 397
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 121,
+				"y": 397
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 293,
+				"y": 440
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 293,
+				"y": 439
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 294,
+				"y": 272
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 294,
+				"y": 272
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 403,
+				"y": 237
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 403,
+				"y": 238
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 430,
+				"y": 469
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 430,
+				"y": 468
+			}
+		},
+		{
+			"endpoint1": {
+				"floor": 1,
+				"x": 528,
+				"y": 293
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 528,
+				"y": 293
+			},
 			"name": "Elevator"
 		},
 		{
-			"endpoint1": [
-				1,
-				612.3125,
-				331.3516
-			],
-			"endpoint2": [
-				2,
-				612.8125,
-				330.3516
-			]
+			"endpoint1": {
+				"floor": 1,
+				"x": 612,
+				"y": 331
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 613,
+				"y": 330
+			}
 		},
 		{
-			"endpoint1": [
-				1,
-				688.8125,
-				482.8516
-			],
-			"endpoint2": [
-				2,
-				688.3125,
-				482.1016
-			]
+			"endpoint1": {
+				"floor": 1,
+				"x": 689,
+				"y": 483
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 688,
+				"y": 482
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				111.8203,
-				371.1458
-			],
-			"endpoint2": [
-				2,
-				112.0625,
-				397.3516
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 112,
+				"y": 371
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 112,
+				"y": 397
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				111.8203,
-				371.1458
-			],
-			"endpoint2": [
-				2,
-				121.3203,
-				370.8958
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 112,
+				"y": 371
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 121,
+				"y": 371
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				121.0625,
-				397.2266
-			],
-			"endpoint2": [
-				2,
-				121.3203,
-				370.8958
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 121,
+				"y": 397
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 121,
+				"y": 371
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				121.3203,
-				370.8958
-			],
-			"endpoint2": [
-				2,
-				321.5625,
-				371.2266
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 121,
+				"y": 371
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 322,
+				"y": 371
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				293.3125,
-				430.2266
-			],
-			"endpoint2": [
-				2,
-				321.8125,
-				430.6016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 293,
+				"y": 430
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 322,
+				"y": 431
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				293.3125,
-				439.4766
-			],
-			"endpoint2": [
-				2,
-				321.8125,
-				439.2266
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 293,
+				"y": 439
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 322,
+				"y": 439
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				294.3125,
-				272.2266
-			],
-			"endpoint2": [
-				2,
-				303.4375,
-				272.2266
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 294,
+				"y": 272
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 303,
+				"y": 272
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				303.3125,
-				246.1016
-			],
-			"endpoint2": [
-				2,
-				303.4375,
-				272.2266
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 303,
+				"y": 246
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 303,
+				"y": 272
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				303.4375,
-				272.2266
-			],
-			"endpoint2": [
-				2,
-				321.8125,
-				276.9766
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 303,
+				"y": 272
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 322,
+				"y": 277
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				321.5625,
-				371.2266
-			],
-			"endpoint2": [
-				2,
-				321.8125,
-				276.9766
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 322,
+				"y": 371
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 322,
+				"y": 277
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				321.5625,
-				371.2266
-			],
-			"endpoint2": [
-				2,
-				321.8125,
-				398.7266
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 322,
+				"y": 371
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 322,
+				"y": 399
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				321.8125,
-				250.2266
-			],
-			"endpoint2": [
-				2,
-				321.8125,
-				276.9766
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 322,
+				"y": 250
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 322,
+				"y": 277
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				321.8125,
-				250.2266
-			],
-			"endpoint2": [
-				2,
-				372.8125,
-				263.2266
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 322,
+				"y": 250
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 373,
+				"y": 263
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				321.8125,
-				398.7266
-			],
-			"endpoint2": [
-				2,
-				321.8125,
-				430.6016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 322,
+				"y": 399
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 322,
+				"y": 431
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				321.8125,
-				398.7266
-			],
-			"endpoint2": [
-				2,
-				458.0625,
-				399.1016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 322,
+				"y": 399
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 458,
+				"y": 399
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				321.8125,
-				430.6016
-			],
-			"endpoint2": [
-				2,
-				321.8125,
-				439.2266
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 322,
+				"y": 431
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 322,
+				"y": 439
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				372.8125,
-				263.2266
-			],
-			"endpoint2": [
-				2,
-				376.8125,
-				249.9766
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 373,
+				"y": 263
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 377,
+				"y": 250
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				372.8125,
-				263.2266
-			],
-			"endpoint2": [
-				2,
-				458.5625,
-				287.6016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 373,
+				"y": 263
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 459,
+				"y": 288
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				376.8125,
-				249.9766
-			],
-			"endpoint2": [
-				2,
-				381.8125,
-				232.4766
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 377,
+				"y": 250
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 382,
+				"y": 232
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				376.8125,
-				249.9766
-			],
-			"endpoint2": [
-				2,
-				398.6875,
-				256.4766
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 377,
+				"y": 250
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 399,
+				"y": 256
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				381.8125,
-				232.4766
-			],
-			"endpoint2": [
-				2,
-				403.3125,
-				238.2266
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 382,
+				"y": 232
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 403,
+				"y": 238
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				430.0625,
-				458.8516
-			],
-			"endpoint2": [
-				2,
-				457.8125,
-				458.6016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 430,
+				"y": 459
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 458,
+				"y": 459
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				430.0625,
-				468.3516
-			],
-			"endpoint2": [
-				2,
-				457.8125,
-				468.1016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 430,
+				"y": 468
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 458,
+				"y": 468
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				457.8125,
-				458.6016
-			],
-			"endpoint2": [
-				2,
-				457.8125,
-				468.1016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 458,
+				"y": 459
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 458,
+				"y": 468
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				457.8125,
-				458.6016
-			],
-			"endpoint2": [
-				2,
-				458.0625,
-				426.6016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 458,
+				"y": 459
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 458,
+				"y": 427
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				458.0625,
-				399.1016
-			],
-			"endpoint2": [
-				2,
-				458.0625,
-				426.6016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 458,
+				"y": 399
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 458,
+				"y": 427
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				458.0625,
-				399.1016
-			],
-			"endpoint2": [
-				2,
-				458.5625,
-				287.6016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 458,
+				"y": 399
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 459,
+				"y": 288
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				458.0625,
-				426.6016
-			],
-			"endpoint2": [
-				2,
-				594.5625,
-				426.8516
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 458,
+				"y": 427
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 595,
+				"y": 427
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				458.5625,
-				287.6016
-			],
-			"endpoint2": [
-				2,
-				524.0625,
-				305.6016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 459,
+				"y": 288
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 524,
+				"y": 306
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				524.0625,
-				305.6016
-			],
-			"endpoint2": [
-				2,
-				528.0625,
-				293.1016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 524,
+				"y": 306
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 528,
+				"y": 293
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				524.0625,
-				305.6016
-			],
-			"endpoint2": [
-				2,
-				594.8125,
-				325.1016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 524,
+				"y": 306
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 595,
+				"y": 325
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				594.5625,
-				426.8516
-			],
-			"endpoint2": [
-				2,
-				594.8125,
-				325.1016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 595,
+				"y": 427
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 595,
+				"y": 325
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				594.5625,
-				426.8516
-			],
-			"endpoint2": [
-				2,
-				594.8125,
-				454.6016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 595,
+				"y": 427
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 595,
+				"y": 455
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				594.8125,
-				325.1016
-			],
-			"endpoint2": [
-				2,
-				612.8125,
-				330.3516
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 595,
+				"y": 325
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 613,
+				"y": 330
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				594.8125,
-				454.6016
-			],
-			"endpoint2": [
-				2,
-				594.8125,
-				471.6016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 595,
+				"y": 455
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 595,
+				"y": 472
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				594.8125,
-				454.6016
-			],
-			"endpoint2": [
-				2,
-				688.3125,
-				455.1016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 595,
+				"y": 455
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 688,
+				"y": 455
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				612.8125,
-				330.3516
-			],
-			"endpoint2": [
-				2,
-				621.8125,
-				332.6016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 613,
+				"y": 330
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 622,
+				"y": 333
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				621.8125,
-				332.6016
-			],
-			"endpoint2": [
-				2,
-				621.8125,
-				352.8516
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 622,
+				"y": 333
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 622,
+				"y": 353
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				688.3125,
-				455.1016
-			],
-			"endpoint2": [
-				2,
-				688.3125,
-				482.1016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 688,
+				"y": 455
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 688,
+				"y": 482
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				688.3125,
-				455.1016
-			],
-			"endpoint2": [
-				2,
-				698.6875,
-				454.9766
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 688,
+				"y": 455
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 699,
+				"y": 455
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				698.5625,
-				482.1016
-			],
-			"endpoint2": [
-				2,
-				698.6875,
-				454.9766
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 699,
+				"y": 482
+			},
+			"endpoint2": {
+				"floor": 2,
+				"x": 699,
+				"y": 455
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				112.0625,
-				397.3516
-			],
-			"endpoint2": [
-				3,
-				111.5625,
-				397.6016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 112,
+				"y": 397
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 112,
+				"y": 398
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				293.3125,
-				430.2266
-			],
-			"endpoint2": [
-				3,
-				293.0625,
-				430.3516
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 293,
+				"y": 430
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 293,
+				"y": 430
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				303.3125,
-				246.1016
-			],
-			"endpoint2": [
-				3,
-				303.3125,
-				246.6016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 303,
+				"y": 246
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 303,
+				"y": 247
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				398.6875,
-				256.4766
-			],
-			"endpoint2": [
-				3,
-				399.0625,
-				256.3516
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 399,
+				"y": 256
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 399,
+				"y": 256
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				430.0625,
-				458.8516
-			],
-			"endpoint2": [
-				3,
-				430.8125,
-				459.6016
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 430,
+				"y": 459
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 431,
+				"y": 460
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				528.0625,
-				293.1016
-			],
-			"endpoint2": [
-				3,
-				528.3125,
-				293.3516
-			],
+			"endpoint1": {
+				"floor": 2,
+				"x": 528,
+				"y": 293
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 528,
+				"y": 293
+			},
 			"name": "Elevator"
 		},
 		{
-			"endpoint1": [
-				2,
-				621.8125,
-				352.8516
-			],
-			"endpoint2": [
-				3,
-				622.3125,
-				352.8516
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 622,
+				"y": 353
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 622,
+				"y": 353
+			}
 		},
 		{
-			"endpoint1": [
-				2,
-				698.5625,
-				482.1016
-			],
-			"endpoint2": [
-				3,
-				699.1875,
-				483.4766
-			]
+			"endpoint1": {
+				"floor": 2,
+				"x": 699,
+				"y": 482
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 699,
+				"y": 483
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				111.5625,
-				397.6016
-			],
-			"endpoint2": [
-				3,
-				121.0625,
-				397.6016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 112,
+				"y": 398
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 121,
+				"y": 398
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				111.8125,
-				371.6016
-			],
-			"endpoint2": [
-				3,
-				121.5625,
-				371.3516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 112,
+				"y": 372
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 122,
+				"y": 371
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				121.0625,
-				397.6016
-			],
-			"endpoint2": [
-				3,
-				121.5625,
-				371.3516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 121,
+				"y": 398
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 122,
+				"y": 371
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				121.5625,
-				371.3516
-			],
-			"endpoint2": [
-				3,
-				293.5625,
-				370.6016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 122,
+				"y": 371
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 294,
+				"y": 371
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				293.0625,
-				430.3516
-			],
-			"endpoint2": [
-				3,
-				293.0625,
-				440.8516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 293,
+				"y": 430
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 293,
+				"y": 441
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				293.0625,
-				440.8516
-			],
-			"endpoint2": [
-				3,
-				321.5625,
-				440.8516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 293,
+				"y": 441
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 322,
+				"y": 441
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				293.5625,
-				370.6016
-			],
-			"endpoint2": [
-				3,
-				294.3125,
-				271.8516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 294,
+				"y": 371
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 294,
+				"y": 272
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				293.5625,
-				370.6016
-			],
-			"endpoint2": [
-				3,
-				322.0625,
-				371.1016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 294,
+				"y": 371
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 322,
+				"y": 371
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				294.0625,
-				244.1016
-			],
-			"endpoint2": [
-				3,
-				294.3125,
-				271.8516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 294,
+				"y": 244
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 294,
+				"y": 272
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				294.0625,
-				244.1016
-			],
-			"endpoint2": [
-				3,
-				303.3125,
-				246.6016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 294,
+				"y": 244
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 303,
+				"y": 247
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				294.3125,
-				271.8516
-			],
-			"endpoint2": [
-				3,
-				351.0625,
-				271.8516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 294,
+				"y": 272
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 351,
+				"y": 272
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				321.5625,
-				440.8516
-			],
-			"endpoint2": [
-				3,
-				322.0625,
-				371.1016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 322,
+				"y": 441
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 322,
+				"y": 371
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				322.0625,
-				371.1016
-			],
-			"endpoint2": [
-				3,
-				458.0625,
-				371.3516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 322,
+				"y": 371
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 458,
+				"y": 371
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				351.0625,
-				271.8516
-			],
-			"endpoint2": [
-				3,
-				412.8125,
-				287.6016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 351,
+				"y": 272
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 413,
+				"y": 288
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				399.0625,
-				256.3516
-			],
-			"endpoint2": [
-				3,
-				419.5625,
-				263.1016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 399,
+				"y": 256
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 420,
+				"y": 263
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				412.8125,
-				287.6016
-			],
-			"endpoint2": [
-				3,
-				419.5625,
-				263.1016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 413,
+				"y": 288
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 420,
+				"y": 263
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				412.8125,
-				287.6016
-			],
-			"endpoint2": [
-				3,
-				458.0625,
-				299.6016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 413,
+				"y": 288
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 458,
+				"y": 300
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				430.8125,
-				459.6016
-			],
-			"endpoint2": [
-				3,
-				430.8125,
-				468.8516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 431,
+				"y": 460
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 431,
+				"y": 469
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				430.8125,
-				468.8516
-			],
-			"endpoint2": [
-				3,
-				458.3125,
-				469.1016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 431,
+				"y": 469
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 458,
+				"y": 469
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				458.0625,
-				299.6016
-			],
-			"endpoint2": [
-				3,
-				458.0625,
-				371.3516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 458,
+				"y": 300
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 458,
+				"y": 371
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				458.0625,
-				299.6016
-			],
-			"endpoint2": [
-				3,
-				527.5625,
-				318.8516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 458,
+				"y": 300
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 528,
+				"y": 319
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				458.0625,
-				371.3516
-			],
-			"endpoint2": [
-				3,
-				458.0625,
-				399.3516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 458,
+				"y": 371
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 458,
+				"y": 399
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				458.0625,
-				399.3516
-			],
-			"endpoint2": [
-				3,
-				458.3125,
-				469.1016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 458,
+				"y": 399
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 458,
+				"y": 469
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				458.0625,
-				399.3516
-			],
-			"endpoint2": [
-				3,
-				594.5625,
-				398.6016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 458,
+				"y": 399
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 595,
+				"y": 399
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				527.5625,
-				318.8516
-			],
-			"endpoint2": [
-				3,
-				528.3125,
-				293.3516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 528,
+				"y": 319
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 528,
+				"y": 293
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				527.5625,
-				318.8516
-			],
-			"endpoint2": [
-				3,
-				595.0625,
-				337.1016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 528,
+				"y": 319
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 595,
+				"y": 337
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				594.5625,
-				398.6016
-			],
-			"endpoint2": [
-				3,
-				595.0625,
-				337.1016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 595,
+				"y": 399
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 595,
+				"y": 337
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				594.5625,
-				398.6016
-			],
-			"endpoint2": [
-				3,
-				595.0625,
-				483.3516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 595,
+				"y": 399
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 595,
+				"y": 483
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				595.0625,
-				337.1016
-			],
-			"endpoint2": [
-				3,
-				613.3125,
-				330.3516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 595,
+				"y": 337
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 613,
+				"y": 330
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				595.0625,
-				483.3516
-			],
-			"endpoint2": [
-				3,
-				595.0625,
-				495.1016
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 595,
+				"y": 483
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 595,
+				"y": 495
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				595.0625,
-				483.3516
-			],
-			"endpoint2": [
-				3,
-				699.1875,
-				483.4766
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 595,
+				"y": 483
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 699,
+				"y": 483
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				613.0625,
-				352.8516
-			],
-			"endpoint2": [
-				3,
-				613.3125,
-				330.3516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 613,
+				"y": 353
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 613,
+				"y": 330
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				613.0625,
-				352.8516
-			],
-			"endpoint2": [
-				3,
-				622.3125,
-				352.8516
-			]
+			"endpoint1": {
+				"floor": 3,
+				"x": 613,
+				"y": 353
+			},
+			"endpoint2": {
+				"floor": 3,
+				"x": 622,
+				"y": 353
+			}
 		},
 		{
-			"endpoint1": [
-				3,
-				528.3125,
-				293.3516
-			],
-			"endpoint2": [
-				4,
-				528.0625,
-				292.6016
-			],
+			"endpoint1": {
+				"floor": 3,
+				"x": 528,
+				"y": 293
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 528,
+				"y": 293
+			},
 			"name": "Elevator"
 		},
 		{
-			"endpoint1": [
-				4,
-				319.5625,
-				385.3516
-			],
-			"endpoint2": [
-				4,
-				319.8125,
-				283.1016
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 320,
+				"y": 385
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 320,
+				"y": 283
+			}
 		},
 		{
-			"endpoint1": [
-				4,
-				319.5625,
-				385.3516
-			],
-			"endpoint2": [
-				4,
-				458.3125,
-				406.6016
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 320,
+				"y": 385
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 458,
+				"y": 407
+			}
 		},
 		{
-			"endpoint1": [
-				4,
-				319.8125,
-				283.1016
-			],
-			"endpoint2": [
-				4,
-				362.8125,
-				283.1016
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 320,
+				"y": 283
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 363,
+				"y": 283
+			}
 		},
 		{
-			"endpoint1": [
-				4,
-				362.8125,
-				283.1016
-			],
-			"endpoint2": [
-				4,
-				363.0625,
-				272.6016
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 363,
+				"y": 283
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 363,
+				"y": 273
+			}
 		},
 		{
-			"endpoint1": [
-				4,
-				363.0625,
-				272.6016
-			],
-			"endpoint2": [
-				4,
-				454.0625,
-				299.3516
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 363,
+				"y": 273
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 454,
+				"y": 299
+			}
 		},
 		{
-			"endpoint1": [
-				4,
-				454.0625,
-				299.3516
-			],
-			"endpoint2": [
-				4,
-				458.0625,
-				320.6016
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 454,
+				"y": 299
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 458,
+				"y": 321
+			}
 		},
 		{
-			"endpoint1": [
-				4,
-				454.0625,
-				299.3516
-			],
-			"endpoint2": [
-				4,
-				477.8125,
-				303.3516
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 454,
+				"y": 299
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 478,
+				"y": 303
+			}
 		},
 		{
-			"endpoint1": [
-				4,
-				458.0625,
-				320.6016
-			],
-			"endpoint2": [
-				4,
-				458.3125,
-				406.6016
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 458,
+				"y": 321
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 458,
+				"y": 407
+			}
 		},
 		{
-			"endpoint1": [
-				4,
-				458.0625,
-				320.6016
-			],
-			"endpoint2": [
-				4,
-				474.8125,
-				324.3516
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 458,
+				"y": 321
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 475,
+				"y": 324
+			}
 		},
 		{
-			"endpoint1": [
-				4,
-				458.3125,
-				406.6016
-			],
-			"endpoint2": [
-				4,
-				560.5625,
-				406.8516
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 458,
+				"y": 407
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 561,
+				"y": 407
+			}
 		},
 		{
-			"endpoint1": [
-				4,
-				474.8125,
-				324.3516
-			],
-			"endpoint2": [
-				4,
-				485.3125,
-				314.8516
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 475,
+				"y": 324
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 485,
+				"y": 315
+			}
 		},
 		{
-			"endpoint1": [
-				4,
-				477.8125,
-				303.3516
-			],
-			"endpoint2": [
-				4,
-				485.3125,
-				314.8516
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 478,
+				"y": 303
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 485,
+				"y": 315
+			}
 		},
 		{
-			"endpoint1": [
-				4,
-				485.3125,
-				314.8516
-			],
-			"endpoint2": [
-				4,
-				527.8125,
-				319.6016
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 485,
+				"y": 315
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 528,
+				"y": 320
+			}
 		},
 		{
-			"endpoint1": [
-				4,
-				527.8125,
-				319.6016
-			],
-			"endpoint2": [
-				4,
-				528.0625,
-				292.6016
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 528,
+				"y": 320
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 528,
+				"y": 293
+			}
 		},
 		{
-			"endpoint1": [
-				4,
-				527.8125,
-				319.6016
-			],
-			"endpoint2": [
-				4,
-				553.8125,
-				326.3516
-			]
+			"endpoint1": {
+				"floor": 4,
+				"x": 528,
+				"y": 320
+			},
+			"endpoint2": {
+				"floor": 4,
+				"x": 554,
+				"y": 326
+			}
 		}
 	],
 	"borders": [

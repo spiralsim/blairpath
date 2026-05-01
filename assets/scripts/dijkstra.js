@@ -1,12 +1,10 @@
-// Based on a GitHub Gist by @Prottoy2938
+// Based on
 // https://gist.github.com/Prottoy2938/66849e04b0bac459606059f5f9f3aa1a#file-dijkstra-s-algorithm-js
 
-//Dijkstra algorithm is used to find the shortest distance between two nodes inside a valid weighted graph. Often used in Google Maps, Network Router etc.
-
 //helper class for PriorityQueue
-class Node {
-  constructor(val, priority) {
-    this.val = val;
+class PQNode {
+  constructor(value, priority) {
+    this.value = value;
     this.priority = priority;
   }
 }
@@ -15,8 +13,8 @@ class PriorityQueue {
   constructor() {
     this.values = [];
   }
-  enqueue(val, priority) {
-    let newNode = new Node(val, priority);
+  enqueue(value, priority) {
+    let newNode = new PQNode(value, priority);
     this.values.push(newNode);
     this.bubbleUp();
   }
@@ -76,13 +74,20 @@ class PriorityQueue {
 
 //Dijkstra's algorithm only works on a weighted graph.
 
+class Neighbor {
+  constructor(vertex, weight) {
+    this.vertex = vertexToString(vertex);
+    this.weight = weight;
+  }
+}
+
 class WeightedGraph {
   constructor() {
     this.vertices = {};
     this.adjacencyList = {};
   }
   getVertex(vertex) {
-    const str = vertex.toString();
+    const str = vertexToString(vertex);
     if (!(str in this.vertices)) {
       this.vertices[str] = vertex;
       this.adjacencyList[str] = [];
@@ -90,32 +95,33 @@ class WeightedGraph {
     return this.adjacencyList[str];
   }
   addEdge(e) {
-    const weight = e.length();
-    this.getVertex(e.endpoint1).push({ node: e.endpoint2, weight });
-    this.getVertex(e.endpoint2).push({ node: e.endpoint1, weight });
+    const weight = edgeLength(e);
+    this.getVertex(e.endpoint1).push(new Neighbor(e.endpoint2, weight));
+    this.getVertex(e.endpoint2).push(new Neighbor(e.endpoint1, weight));
   }
   Dijkstra(start, finish) {
-    start = start.toString();
-    finish = finish.toString();
-    const nodes = new PriorityQueue();
+    start = vertexToString(start);
+    finish = vertexToString(finish);
+    const pq = new PriorityQueue();
     const distances = {};
     const previous = {};
     let path = []; //to return at end
     let smallest;
+    // console.log(start, finish);
     //build up initial state
     for (let vertex in this.adjacencyList) {
       if (vertex === start) {
         distances[vertex] = 0;
-        nodes.enqueue(vertex, 0);
+        pq.enqueue(vertex, 0);
       } else {
         distances[vertex] = Infinity;
-        nodes.enqueue(vertex, Infinity);
+        pq.enqueue(vertex, Infinity);
       }
       previous[vertex] = null;
     }
     // as long as there is something to visit
-    while (nodes.values.length) {
-      smallest = nodes.dequeue().val;
+    while (pq.values.length) {
+      smallest = pq.dequeue().value;
       if (smallest === finish) {
         //WE ARE DONE
         //BUILD UP PATH TO RETURN AT END
@@ -131,14 +137,17 @@ class WeightedGraph {
           let nextNode = this.adjacencyList[smallest][neighbor];
           //calculate new distance to neighboring node
           let candidate = distances[smallest] + nextNode.weight;
-          let nextNeighbor = nextNode.node;
+          let nextNeighbor = nextNode.vertex;
+          // console.log("candidate: " + candidate);
+          // console.log("neighbor: " + nextNeighbor);
+          // console.log("dist: " + distances[]);
           if (candidate < distances[nextNeighbor]) {
             //updating new smallest distance to neighbor
             distances[nextNeighbor] = candidate;
             //updating previous - How we got to neighbor
             previous[nextNeighbor] = smallest;
             //enqueue in priority queue with new priority
-            nodes.enqueue(nextNeighbor, candidate);
+            pq.enqueue(nextNeighbor, candidate);
           }
         }
       }

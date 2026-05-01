@@ -1,4 +1,3 @@
-var walkingSpeed = 1.35; // Walking speed in m/s
 /**
  * Converts a path length to a human-readable string with meters and estimated
  * time based on `walkingSpeed`: `a min b sec (x m)`. Lengths that are negative
@@ -7,8 +6,9 @@ var walkingSpeed = 1.35; // Walking speed in m/s
  */
 function prettifyDistance(distance) {
 	if (distance < 0 || distance == undefined) return `No path`;
-	const lengthInM = distance * data.constants.METERS_PER_PIXEL,
-		timeInSec = Math.round(lengthInM / walkingSpeed);
+	const lengthInM = distance * data.constants.METERS_PER_PIXEL;
+	const walkingSpeed = data.constants["WALKING_SPEED_IN_METERS_PER_SECOND"];
+	const timeInSec = Math.round(lengthInM / walkingSpeed);
 	const min = Math.floor(timeInSec / 60), sec = timeInSec % 60;
 	var res = ``;
 	if (min) res += `${min} min `;
@@ -19,86 +19,46 @@ function prettifyDistance(distance) {
 /* Data preprocessing */
 var data = {};
 var tableLoaded = false;
-var vertices = new Set(), edges = new Set();
+var vertices = null;
 function dist2D(a, b) {
 	return Math.sqrt(Math.pow(b[0] - a[0], 2) + Math.pow(b[1] - a[1], 2));
 }
 
-class Vertex {
-	constructor([floor, x, y]) {
-		this.floor = floor;
-		this.x = x;
-		this.y = y;
-	}
-	toString() {
-		return `(${this.floor},${this.x},${this.y})`
-	}
+function vertexToString({floor, x, y}) {
+	return `${floor},${x},${y}`;
 }
-class Edge {
-	/**
-	 * @param {Vertex} endpoint1
-	 * @param {Vertex} endpoint2
-	 * @param {string} name
-	 */
-	constructor(endpoint1, endpoint2, name) {
-		this.endpoint1 = endpoint1;
-		this.endpoint2 = endpoint2;
-		this.name = name;
-		this.isHovered = false;
-	}
 
-	length() {
-		return Math.hypot(
-			(this.endpoint2.floor - this.endpoint1.floor) * data.constants.METERS_PER_FLOOR,
-			(this.endpoint2.x - this.endpoint1.x) * data.constants.METERS_PER_PIXEL,
-			(this.endpoint2.y - this.endpoint1.y) * data.constants.METERS_PER_PIXEL,
-		);
-	}
-	checkHovered() {
-		this.isHovered = false;
-		if (this.endpoint1.floor == this.endpoint2.floor) {
-			if (isHoveringOnSegment(this.endpoint1, this.endpoint2))
-				this.isHovered = true;
-		} else {
-			if (dist(this.endpoint1.x, this.endpoint1.y, CURSOR.virtPos.x, CURSOR.virtPos.y) < VIEW.hoverRadius)
-				this.isHovered = true;
-		}
-	}
-	equals({ endpoint1, endpoint2 }) {
-		const thisEndpoints = new Set([this.endpoint1.toString(), this.endpoint2.toString()]);
-		const otherEndpoints = new Set([endpoint1.toString(), endpoint2.toString()]);
-		return thisEndpoints.symmetricDifference(otherEndpoints).size == 0;
-	}
-	findInDatabase() {
-		for (let i = 0; i < edges.length; i++) {
-			const e = edges[i];
-			if (this.equals(e)) return e;
-		}
-	}
+function edgeLength({endpoint1: {floor: f1, x: x1, y: y1}, endpoint2: {floor: f2, x: x2, y: y2}}) {
+	return Math.hypot(
+		(f2 - f1) * data.constants.METERS_PER_FLOOR,
+		(x2 - x1) * data.constants.METERS_PER_PIXEL,
+		(y2 - y1) * data.constants.METERS_PER_PIXEL,
+	);
 }
 
 $.getJSON('/data.json', function (payload) {
 	data = payload;
-	edges = data.edges.map(e => new Edge(new Vertex(e.endpoint1), new Vertex(e.endpoint2), e.name));
-	edges.forEach(e => {
-		vertices.add(e.endpoint1);
-		vertices.add(e.endpoint2);
+	var verticesSet = new Set();
+	data.edges.forEach(e => {
+		verticesSet.add(e.endpoint1);
+		verticesSet.add(e.endpoint2);
 	});
+	vertices = Array.from(verticesSet);
 
 	Object.values(data.places).forEach(p => {
-		const placeVertex = new Vertex([p.floor, ...p.center]);
+		const placeVertex = {floor: p.floor, x: p.center[0], y: p.center[1]};
 		var minDist = Infinity, tempEdge;
 		vertices.forEach(v => {
 			if (v.floor != p.floor) return;
-			const edge = new Edge(v, placeVertex);
-			const dist = edge.length();
+			const edge = {endpoint1: v, endpoint2: placeVertex};
+			const dist = edgeLength(edge);
 			if (dist < minDist) {
 				minDist = dist;
 				tempEdge = edge;
 			}
 		});
 		tempEdge.isTemporary = true;
-		edges.push(tempEdge);
+		data.edges.push(tempEdge);
 	});
 
 	// Remove placeholder rows
@@ -110,7 +70,14 @@ $.getJSON('/data.json', function (payload) {
 });
 
 function updateOutput() {
-	document.getElementById("outputField").value = formatJSON(data);
+	var permanentData = structuredClone(data);
+	permanentData["edges"] = permanentData["edges"].filter(e => !e.isTemporary);
+	permanentData["edges"].forEach(e => {
+		delete e.onPath;
+		delete e.isHovered;
+	});
+	const output = JSON.stringify(permanentData, null, 4).replace(/ {4}/g, '\t');
+	document.getElementById("outputField").value = output;
 }
 
 /* Search bar adapted from https://www.w3schools.com/howto/howto_js_autocomplete.asp */
@@ -236,65 +203,65 @@ function addPoint () {
 
 /* Calculate Path */
 const calcButton = document.getElementById("calc-button");
-var totalDistance = 0, pathEdges = new Set();
+var totalDistance = 0;
 var pathPoints = [];
 
 function clearCalculation() {
-	edges.forEach(e => e.isPath = false);
 	totalDistance = 0;
-	pathEdges = new Set();
+	data.edges.forEach(e => e.onPath = false);
 	document.getElementById("calc-result").innerHTML = '';
 }
 
-function calculateRoute () {
-	// Prevents duplicate calculations
-	const pointValues = getPointValues();
-	if (pointValues == pathPoints) return;
-	pathPoints = pointValues;
-
-	edges.forEach(e => e.isPath = false);
-	totalDistance = 0;
-	pathEdges = new Set();
-	document.getElementById("calc-result").innerHTML = '';
-
+function calculateRoute() {
 	const calcResult = document.getElementById("calc-result");
 	function finishCalc (msg, err) {
-		if (err) edges.forEach(e => e.isPath = false);
+		if (err) data.edges.forEach(e => e.isPath = false);
 		calcResult.innerHTML = `<p style="color: ${err ? "red" : "black"}">${msg}</p>`;
 	}
 
-	const options = {
-		allowElevator: document.getElementById("allow-elevator").checked
-	};
+	const elevatorIsAllowed = document.getElementById("allow-elevator").checked;
 
 	// Check that there are enough points
 	var output = "";
 	
 	const graph = new WeightedGraph();
-	edges.forEach(e => {
-		if (e.name != 'Elevator' || options.allowElevator) graph.addEdge(e);
+	data.edges.forEach(e => {
+		if (e.name != 'Elevator' || elevatorIsAllowed) graph.addEdge(e);
 	});
+
+	var pathDirectedEdges = new Set();
 
 	for (let i = 0; i < rows.length - 1; i++) {
 		const subpathPlaceIDs = [1, 2].map(j => document.getElementById(`point-${i + j}`).value);
 		const subpathPlaces = subpathPlaceIDs.map(id => data.places[id]);
-		const subpathPlaceVertices = subpathPlaces.map(room => new Vertex([room.floor, ...room.center]));
+		const subpathPlaceVertices = subpathPlaces.map(room => ({
+			floor: room.floor,
+			x: room.center[0],
+			y: room.center[1]
+		}));
 
-		var {path: subpathVertices, distance: subDistance} = graph.Dijkstra(...subpathPlaceVertices);
+		var {path: subpathVertices, distance: subpathDistance} =
+			graph.Dijkstra(...subpathPlaceVertices);
 
-		if (subDistance == Infinity)
-			return finishCalc(`We couldn't find a path from ${subpathPlaceIDs.join(' to ')}.`, true);
+		if (subpathDistance == Infinity)
+			return finishCalc(`No path from ${subpathPlaceIDs.join(' to ')}`, true);
 
 		output +=
-			`<p>${subpathPlaceIDs.join(' → ')}` +
-			`\t` +
-			`<span style='color: gray'>${prettifyDistance(subDistance)}</span></p>`;
+			`<p>${subpathPlaceIDs.join(' → ')}\t` +
+			`<span style='color: gray'>${prettifyDistance(subpathDistance)}</span></p>`;
 
 		for (let i = 0; i < subpathVertices.length - 1; i++)
-			pathEdges.add((new Edge(subpathVertices[i], subpathVertices[i + 1])).findInDatabase());
+			pathDirectedEdges.add(JSON.stringify(subpathVertices.slice(i, i + 2)));
 		
-		totalDistance += subDistance;
+		totalDistance += subpathDistance;
 	}
+
+	data.edges.forEach(e => {
+		const v1 = e.endpoint1, v2 = e.endpoint2;
+		const e1 = JSON.stringify([v1, v2]), e2 = JSON.stringify([v2, v1]);
+		if (pathDirectedEdges.has(e1) || pathDirectedEdges.has(e2))
+			e.onPath = true;
+	});
 	
 	output = `<p><b>${prettifyDistance(totalDistance)}</b></p>` + output;
 	// Convert output string to HTML and print to website
@@ -302,6 +269,7 @@ function calculateRoute () {
 }
 
 function refreshPointTable() {
+
 	var canCalculate = rows.length >= 2;
 	for (let i = 1; i <= rows.length; i++) {
 		const input = getPointInput(i);
@@ -310,6 +278,12 @@ function refreshPointTable() {
 		const borderColor = isValid || !input.value ? '--var(border)' : 'red';
 		input.setAttribute("style", `border-color: ${borderColor}`);
 	}
+	
+	// Prevents duplicate calculations
+	const newPathPoints = getPointValues();
+	if (newPathPoints.toString() == pathPoints.toString()) return;
+	pathPoints = newPathPoints;
+	
+	clearCalculation();
 	if (canCalculate) calculateRoute();
-	else clearCalculation();
 }
