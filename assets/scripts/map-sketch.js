@@ -301,6 +301,8 @@ function drawDottedLine(a, b) {
 		point(lerp(a.x, b.x, i / length), lerp(a.y, b.y, i / length));
 }
 
+const LABEL_FONT_SIZE = 14;
+
 /*
 	p5.js Event Functions
 */
@@ -484,12 +486,6 @@ function showEdges() {
 	data.edges.forEach(e => {
 		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor) return;
 		e.isHovered = false;
-		// if (showingDevTools) {
-		// 	if (!foundHoveredEdge) {
-		// 		e.checkHovered();
-		// 		foundHoveredEdge ||= e.isHovered;
-		// 	}
-		// }
 		if (!e.onPath && !showingDevTools) return;
 		var _color = e.onPath ? color(0, 128, 255) : color(0);
 		if (e.isHovered) _color = lerpColor(_color, color(255), 0.75);
@@ -535,11 +531,11 @@ function showFloorPlan() {
 	}
 }
 
-function showNames() {
+function showLabels() {
 	textAlign(CENTER, CENTER);
 	textSize(14 / VIEW.zoom);
-	stroke(0);
 	strokeWeight(2 / VIEW.zoom);
+	const pointValuesSet = new Set(getPointValues());
 	// Display dots for room selection
 	for (let id in data.places) {
 		const place = data.places[id];
@@ -555,21 +551,13 @@ function showNames() {
 			cursorType = HAND;
 		}
 
-		fill(255);
-		if (place == hoveredPlace)
-			fill(mouseIsPressed ? color(250, 85, 85) : 128);
-		
-		text(id, place.center[0], place.center[1]);
-	}
-
-	// Display selected points
-	stroke(255);
-	fill(0);
-	for (let i = 1; i <= rows.length; i++) {
-		const id = getPointValue(i), place = data.places[id];
-		if (!place || place.floor != VIEW.floor) continue;
-
-		// Draw center, doors, etc.
+		if (pointValuesSet.has(id)) {
+			stroke(255);
+			fill(0);
+		} else {
+			stroke(0);
+			fill(place == hoveredPlace ? 128 : 255);
+		}
 		text(id, place.center[0], place.center[1]);
 	}
 }
@@ -605,7 +593,7 @@ function showDevTools() {
 }
 
 function showTooltip(place) {
-	textSize(10);
+	textSize(LABEL_FONT_SIZE);
 
 	var topText = place.id;
 	if (place.use && topText.indexOf(place.use) == -1)
@@ -614,36 +602,32 @@ function showTooltip(place) {
 	var bottomText = place.section;
 
 	const center = place.center;
+	const labelX = VIEW.physPos.x + center[0] * VIEW.zoom;
+	const labelY = VIEW.physPos.y + center[1] * VIEW.zoom;
 	const
-		tooltipW = max(textWidth(topText), textWidth(bottomText)) + 10,
+		tooltipW = max(textWidth(topText), textWidth(bottomText)) + LABEL_FONT_SIZE,
 		tooltipH = 30,
-		tooltipX = constrain(
-			VIEW.physPos.x + center[0] * VIEW.zoom,
-			0,
-			width - tooltipW,
-		),
-		tooltipY = constrain(
-			VIEW.physPos.y + center[1] * VIEW.zoom + 15,
-			0,
-			height - tooltipH,
-		);
+		tooltipX = constrain(labelX, tooltipW / 2, width - tooltipW / 2),
+		tooltipY = labelY + tooltipH * (labelY < height / 2 ? -1 : 1);
 
 	strokeWeight(1);
 	fill(255, 255, 255, 230);
-	rect(tooltipX - tooltipW / 2, tooltipY, tooltipW, tooltipH, 5);
+	rectMode(CENTER);
+	rect(tooltipX, tooltipY, tooltipW, tooltipH, LABEL_FONT_SIZE / 2);
 	fill(0);
-	textAlign(CENTER, TOP);
+	textAlign(CENTER, CENTER);
 	noStroke();
 	textStyle(BOLD);
-	text(topText, tooltipX, tooltipY + 5);
+	text(topText, tooltipX, tooltipY - LABEL_FONT_SIZE / 2);
 	textStyle(NORMAL);
-	text(bottomText, tooltipX, tooltipY + 15);
+	text(bottomText, tooltipX, tooltipY + LABEL_FONT_SIZE / 2);
 }
 
 function showRuler() {
 	var rulerLeftX = width - VIEW.rulerInPixels() - 22;
 
 	textSize(18);
+	rectMode(CORNER);
 
 	var rulerText = `${VIEW.rulerInMeters} m`;
 	if (showingDevTools)
@@ -689,7 +673,7 @@ function draw() {
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
 	showBorders();
 	if (showingDevTools) showDevTools();
-	if (showOptions[`show-labels`]) showNames();
+	if (showOptions[`show-labels`]) showLabels();
 
 	pop();
 
