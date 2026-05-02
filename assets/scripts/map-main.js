@@ -19,7 +19,6 @@ function prettifyDistance(distance) {
 /* Data preprocessing */
 var data = {};
 var tableLoaded = false;
-var vertices = null;
 function dist2D(a, b) {
 	return Math.sqrt(Math.pow(b[0] - a[0], 2) + Math.pow(b[1] - a[1], 2));
 }
@@ -43,8 +42,8 @@ $.getJSON('/data.json', function (payload) {
 		verticesSet.add(e.endpoint1);
 		verticesSet.add(e.endpoint2);
 	});
-	vertices = Array.from(verticesSet);
 
+	const vertices = Array.from(verticesSet);
 	Object.values(data.places).forEach(p => {
 		const placeVertex = {floor: p.floor, x: p.center[0], y: p.center[1]};
 		var minDist = Infinity, tempEdge;
@@ -69,15 +68,15 @@ $.getJSON('/data.json', function (payload) {
 	for (let i = 0; i < 2; i++) addPoint();
 });
 
-function updateOutput() {
-	var permanentData = structuredClone(data);
-	permanentData["edges"] = permanentData["edges"].filter(e => !e.isTemporary);
-	permanentData["edges"].forEach(e => {
+function copySavedData() {
+	var savedData = structuredClone(data);
+	savedData["edges"] = savedData["edges"].filter(e => !e.isTemporary);
+	savedData["edges"].forEach(e => {
 		delete e.onPath;
 		delete e.isHovered;
 	});
-	const output = JSON.stringify(permanentData, null, 4).replace(/ {4}/g, '\t');
-	document.getElementById("outputField").value = output;
+	const output = JSON.stringify(savedData, null, 4).replace(/ {4}/g, '\t');
+	navigator.clipboard.writeText(output);
 }
 
 /* Search bar adapted from https://www.w3schools.com/howto/howto_js_autocomplete.asp */
@@ -204,7 +203,7 @@ function addPoint () {
 /* Calculate Path */
 const calcButton = document.getElementById("calc-button");
 var totalDistance = 0;
-var pathPoints = [];
+var lastPathQuery = null;
 
 function clearCalculation() {
 	totalDistance = 0;
@@ -212,27 +211,36 @@ function clearCalculation() {
 	document.getElementById("calc-result").innerHTML = '';
 }
 
-function calculateRoute() {
+class PathQuery {
+	constructor(points, allowElevator) {
+		this.points = points;
+		this.allowElevator = allowElevator;
+	}
+}
+
+function calculatePath(query) {
 	const calcResult = document.getElementById("calc-result");
 	function finishCalc (msg, err) {
 		if (err) data.edges.forEach(e => e.isPath = false);
 		calcResult.innerHTML = `<p style="color: ${err ? "red" : "black"}">${msg}</p>`;
 	}
 
-	const elevatorIsAllowed = document.getElementById("allow-elevator").checked;
+	function edgeIsElevator({ endpoint1, endpoint2 }) {
+		return endpoint1.x == 528 && endpoint2.x == 528 && endpoint1.y == 293 && endpoint2.y == 293;
+	}
 
 	// Check that there are enough points
 	var output = "";
 	
 	const graph = new WeightedGraph();
 	data.edges.forEach(e => {
-		if (e.name != 'Elevator' || elevatorIsAllowed) graph.addEdge(e);
+		if (!edgeIsElevator(e) || query.allowElevator) graph.addEdge(e);
 	});
 
 	var pathDirectedEdges = new Set();
 
 	for (let i = 0; i < rows.length - 1; i++) {
-		const subpathPlaceIDs = [1, 2].map(j => document.getElementById(`point-${i + j}`).value);
+		const subpathPlaceIDs = query.points.slice(i, i + 2);
 		const subpathPlaces = subpathPlaceIDs.map(id => data.places[id]);
 		const subpathPlaceVertices = subpathPlaces.map(room => ({
 			floor: room.floor,
@@ -269,7 +277,6 @@ function calculateRoute() {
 }
 
 function refreshPointTable() {
-
 	var canCalculate = rows.length >= 2;
 	for (let i = 1; i <= rows.length; i++) {
 		const input = getPointInput(i);
@@ -280,10 +287,13 @@ function refreshPointTable() {
 	}
 	
 	// Prevents duplicate calculations
-	const newPathPoints = getPointValues();
-	if (newPathPoints.toString() == pathPoints.toString()) return;
-	pathPoints = newPathPoints;
-	
+	const pathQuery = new PathQuery(
+		getPointValues(),
+		document.getElementById('allow-elevator').checked,
+	);
+	if (JSON.stringify(pathQuery) == JSON.stringify(lastPathQuery)) return;
+	lastPathQuery = pathQuery;
+
 	clearCalculation();
-	if (canCalculate) calculateRoute();
+	if (canCalculate) calculatePath(pathQuery);
 }

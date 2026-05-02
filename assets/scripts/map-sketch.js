@@ -18,119 +18,6 @@ function inCanvas () {
 	return mouseX > 0;
 }
 
-/**
- * Represents a point (`p5.Vector` or `Number[]`) as a human-readable string.
- * Each coordinate is rounded.
- */
-function stringifyPoint(p) {
-	if (!p) return '(None)';
-	else if (p instanceof p5.Vector) return `(${round(p.x)}, ${round(p.y)})`;
-	else if (p instanceof Array) return `(${p.map(c => round(c)).join(', ')})`;
-	else throw new TypeError('p must be a p5.Vector or array of numbers');
-}
-
-// Compute / recompute the length of a link and adjust properties accordingly
-function computeLength (link) {
-	// If no valid points are given, both distances should be 0
-	link.gLen = link.vLen = 0;
-	if (!link.points[0] || !link.points[1]) return;
-
-	if (link.points[0][2] == link.points[1][2]) link.gLen = dist(link.points[0][0], link.points[0][1], link.points[1][0], link.points[1][1]);
-	else link.vLen = data.constants.METERS_PER_FLOOR / data.constants.METERS_PER_PIXEL;
-}
-// Delete a link #(id), remove all records of the link, etc.
-function deleteLink (id) {
-	links.forEach((link, idx) => {
-		if (link.id == id) {
-			// Remove this link from the list of links in the node(s) it was previous attached to, if applicable
-			for (let i = 0; i < 2; i++) {
-				if (link.nodes[i]) {
-					var linkedNode = nodes.find(n => n.id == link.nodes[i]),
-						currLinkIdx = linkedNode.links.indexOf(link.id);
-					if (currLinkIdx >= 0) linkedNode.links.splice(currLinkIdx, 1);
-				}
-			}
-
-			if (devData.link == link) devData.link = null;
-
-			links.splice(idx, 1);
-		}
-	});
-}
-// Delete a node #(id), remove all records of the node, etc.
-function deleteNode (id) { 
-	nodes.forEach((node, idx) => {
-		if (node.id == id) {
-			// Unlink all attached links
-			const linksToDelete = node.links.slice(0);
-			linksToDelete.forEach(l => {
-				deleteLink(l);
-			});
-
-			// Remove node from array
-			nodes.splice(idx, 1);
-			if (id == devData.node.id) devData.node = null;
-		}
-	});
-}
-// Split the link #(id) into two sub-links from a point [x, y] (p) on floor (f)
-function splitLink (id, p, f) {
-	links.forEach((link, idx) => {
-		if (link.id == id) {
-			// Create new node
-			var newNode = {
-				pos: p,
-				floor: f,
-				id: ~~(random(1000000))
-			}, newLinks = [0, 1].map(i => {
-				return {
-					nodes: [link.nodes[i], newNode.id],
-					points: [link.points[i], [... p, f]],
-					id: ~~(random(1000000))
-				};
-			});
-			// Register the new links in the new node
-			newNode.links = newLinks.map(l => l.id);
-			nodes.push(newNode);
-			// Register the new links in the old nodes
-			[0, 1].forEach(i => {
-				nodes.find(n => n.id == link.nodes[i]).links.push(newLinks[i].id);
-			});
-			// Compute the lengths of the new links and add them to the array
-			newLinks.forEach(l => {
-				computeLength(l);
-				links.push(l);
-			});
-			
-			// Delete the current link
-			deleteLink(id);
-		}
-	});
-}
-// Merge two links from a node #(id)
-function mergeLinks (id) {
-	nodes.forEach((node, idx) => {
-		if (node.id == id) {
-			const currLinks = node.links.map(l => links.find(link => link.id == l)),
-			// Find the other nodes that the attached links are connected to
-			      otherNodeIDs = currLinks.map(l => l.nodes.find(n => n != id)),
-			      otherNodeObjs = otherNodeIDs.map(i => nodes.find(n => n.id == i));
-			// Create new link
-			var newLink = {
-				nodes: otherNodeIDs,
-				points: otherNodeObjs.map(n => [... n.pos, n.floor]),
-				id: ~~(random(1000000))
-			};
-			computeLength(newLink);
-			links.push(newLink);
-			// Register new link in its nodes
-			otherNodeObjs.forEach(n => n.links.push(newLink.id));
-			
-			// Delete the current node
-			deleteNode(id);
-		}
-	});
-}
 // Compute distance between a point (px, py) and segment (ax, ay) -- (bx, by)
 // Adapted from https://stackoverflow.com/questions/849211/shortest-distance-between-a-point-and-a-line-segment
 function distToLine ({ x: px, y: py }, { x: ax, y: ay }, { x: bx, y: by }) {
@@ -302,6 +189,7 @@ function drawDottedLine(a, b) {
 }
 
 const LABEL_FONT_SIZE = 14;
+const ACTIVE_COLOR = [0, 192, 0];
 
 /*
 	p5.js Event Functions
@@ -319,89 +207,105 @@ function windowResized() {
 	resizeCanvas(getCanvasDivWidth(), windowHeight);
 }
 
-var activeBorderIndex = -1, isClosingBorder = false;
-var hoveringBorderIndex = -1;
-function activeBorder() {
-	return data.borders[activeBorderIndex];
-}
+var activeBorder = null, hoveredBorder = null, isClosingBorder = false;
 function canCloseBorder() {
-	const isHovering = dist(...CURSOR.virtPosArray2D, ...activeBorder()[0]) < VIEW.hoverRadius;
-	return isHovering && activeBorder().length > 1;
+	if (!activeBorder) return;
+	const isHovering = dist(...CURSOR.virtPosArray2D, ...activeBorder[0]) < VIEW.hoverRadius;
+	return isHovering && activeBorder.length > 1;
 }
 function deleteActiveBorder() {
-	if (activeBorderIndex == -1) return;
-	data.borders.splice(activeBorderIndex);
-	activeBorderIndex = -1;
+	if (!activeBorder) return;
+	data.borders.splice(data.borders.indexOf(activeBorder), 1);
+	activeBorder = null;
 }
 function deactivateBorder() {
-	if (activeBorderIndex == -1) return;
-	if (activeBorder().length == 1)
-		deleteActiveBorder();
-	activeBorderIndex = -1;
-	updateOutput();
+	if (!activeBorder) return;
+	if (activeBorder.length == 1) deleteActiveBorder();
+	activeBorder = null;
 }
 
-var hoveringVertex = null, activeVertex = null;
+var hoveredVertex = null, activeVertex = null;
+var activeEdge = null;
+
+var hoveredEdge = null;
 function keyPressed() {
 	if (!showingDevTools) return;
-	switch (key) {
-		case 'b':
-			if (activeBorderIndex == -1) {
-				activeBorderIndex = data.borders.length;
-				data.borders.push([CURSOR.virtPosArray2D]);
-			} else 
-				deactivateBorder();
-			break;
-		case 'u':
-			if (activeBorderIndex == -1) return;
-			activeBorder().splice(-1);
-			if (activeBorder().length == 0)
-				deleteActiveBorder();
-			break;
-		case 'd':
-			if (activeBorderIndex != -1) deleteActiveBorder();
-			break;
+	if (key == 'b') {
+		if (!activeBorder) {
+			const newBorder = [CURSOR.virtPosArray2D];
+			activeBorder = newBorder;
+			data.borders.push(newBorder);
+		} else 
+			deactivateBorder();
+	} else if (key == 'u') {
+		
+	} else if (key == 'd') {
+		// activeBorderIndex = 
+	} else if (keyCode == DELETE) {
+		if (activeBorder) deleteActiveBorder();
+		if (activeEdge) {
+			if (activeVertex == activeEdge.endpoint1)
+				activeVertex = activeEdge.endpoint2;
+			else if (activeVertex == activeEdge.endpoint2)
+				activeVertex = activeEdge.endpoint1;
+			else
+				activeVertex = null;
+			data.edges.splice(data.edges.indexOf(activeEdge), 1);
+			activeEdge = null;
+		}
 	}
 };
 
 function mousePressed() {
-	if (hoveringBorderIndex != -1) {
-		deactivateBorder();
-		activeBorderIndex = hoveringBorderIndex;
-		return;
-	}
-	if (activeBorderIndex != -1) {
-		if (canCloseBorder()) {
-			activeBorder().push(activeBorder()[0]);
-			activeBorderIndex = -1;
-		} else
-			activeBorder().push(CURSOR.virtPosArray2D);
-		return;
-	}
-	if (hoveringVertex) {
-		activeVertex = hoveringVertex != activeVertex ? hoveringVertex : null;
-		return;
-	}
-	// if (activeVertex) {
-	// 	const newVertex = new Vertex([VIEW.floor, ...CURSOR.virtPosArray2D]);
-	// 	vertices.push(newVertex);
-	// 	edges.add(new Edge(activeVertex, hoveringVertex));
-	// 	// data.edges.push({"endpoint1": [activeVertex]})
-	// 	activeVertex = newVertex;
-	// }
-
-	if (!hoveredPlace) return;
-	// Handle edge case where there are no rows to begin with
-	if (!rows.length) addPoint();
-	// Find the number of the first empty point input
-	for (let i = 1; i <= rows.length; i++) {
-		if (!getPointValue(i)) {
-			setPointValue(i, hoveredPlace.id);
-			return;
+	if (hoveredPlace) {
+		// Handle edge case where there are no rows to begin with
+		if (!rows.length) addPoint();
+		// Find the number of the first empty point input
+		for (let i = 1; i <= rows.length; i++) {
+			if (!getPointValue(i)) {
+				setPointValue(i, hoveredPlace.id);
+				return;
+			}
 		}
+		addPoint();
+		setPointValue(rows.length, hoveredPlace.id);
 	}
-	addPoint();
-	setPointValue(rows.length, hoveredPlace.id);
+
+	if (hoveredBorder) {
+		deactivateBorder();
+		activeBorder = hoveredBorder;
+		activeVertex = null;
+		activeEdge = null;
+		return;
+	}
+	if (activeBorder) {
+		if (canCloseBorder()) {
+			activeBorder.push(activeBorder[0]);
+			activeBorder = -1;
+		} else
+			activeBorder.push(CURSOR.virtPosArray2D);
+		return;
+	}
+	if (hoveredVertex) {
+		activeVertex = hoveredVertex != activeVertex ? hoveredVertex : null;
+		return;
+	}
+	if (activeVertex) {
+		const newVertex = {
+			floor: VIEW.floor,
+			x: CURSOR.virtPosArray2D[0],
+			y: CURSOR.virtPosArray2D[1]
+		};
+		const newEdge = {endpoint1: activeVertex, endpoint2: newVertex};
+		data.edges.push(newEdge);
+		activeVertex = newVertex;
+		activeEdge = newEdge;
+		return;
+	}
+	if (hoveredEdge) {
+		activeEdge = hoveredEdge;
+		return;
+	}
 };
 
 function mouseDragged() {
@@ -445,24 +349,24 @@ function showBorders() {
 	const borders = data.borders;
 	noFill();
 	rectMode(CENTER);
-	hoveringBorderIndex = -1;
+	hoveredBorder = -1;
 	borders.forEach((border, i) => {
 		if (VIEW.floor != 1) return;
 
 		stroke(0);
 
-		const isActive = i == activeBorderIndex;
-		if (isActive) stroke(0, 192, 0);
+		const isActive = i == activeBorder;
+		if (isActive) stroke(ACTIVE_COLOR);
 		else if (showingDevTools) {
 			for (let j = 0; j < border.length - 1; j++) {
 				const endpointA = {x: border[j][0], y: border[j][1]};
 				const endpointB = {x: border[j + 1][0], y: border[j + 1][1]};
 				if (isHoveringOnSegment(endpointA, endpointB))
-					hoveringBorderIndex = i;
+					hoveredBorder = i;
 			}
 		}
 		
-		if (i == hoveringBorderIndex) stroke(192);
+		if (i == hoveredBorder) stroke(192);
 		strokeWeight(EDGE_WIDTH / 2);
 		beginShape();
 		border.forEach(v => {
@@ -482,14 +386,19 @@ function showBorders() {
 }
 
 function showEdges() {
-	var foundHoveredEdge = false;
+	hoveredEdge = null;
 	data.edges.forEach(e => {
 		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor) return;
 		e.isHovered = false;
 		if (!e.onPath && !showingDevTools) return;
-		var _color = e.onPath ? color(0, 128, 255) : color(0);
-		if (e.isHovered) _color = lerpColor(_color, color(255), 0.75);
-		drawEdge(e, _color);
+		const e1 = e.endpoint1, e2 = e.endpoint2;
+		var edge_color = e.onPath ? color(0, 128, 255) : color(0);
+		if (isHoveringOnSegment({x: e1.x, y: e1.y}, {x: e2.x, y: e2.y})) {
+			edge_color = lerpColor(edge_color, color(255), 0.75);
+			hoveredEdge = e;
+		}
+		if (e == activeEdge) edge_color = ACTIVE_COLOR;
+		drawEdge(e, edge_color);
 	});
 }
 
@@ -564,17 +473,14 @@ function showLabels() {
 
 var showingDevTools = false;
 function toggleDevTools() {
-	if (activeBorderIndex != -1)
-		deleteActiveBorder();
+	if (activeBorder) deleteActiveBorder();
 	showingDevTools = !showingDevTools;
-	const outputDiv = document.getElementById('outputDiv');
-	outputDiv.hidden = !showingDevTools;
-	updateOutput();
+	document.getElementById('outputDiv').hidden = !showingDevTools;
 }
 function showDevTools() {
 	noFill();
 	strokeWeight(2 / VIEW.zoom);
-	hoveringVertex = null;
+	hoveredVertex = null;
 	data.edges.forEach(({ endpoint1, endpoint2, isTemporary }) => {
 		if (isTemporary) return;
 		[endpoint1, endpoint2].forEach(v => {
@@ -583,7 +489,7 @@ function showDevTools() {
 			var strokeColor = color(0);
 			if (v == activeVertex) strokeColor = color(0, 192, 0);
 			if (dist(...CURSOR.virtPosArray2D, v.x, v.y) < d / 2) {
-				hoveringVertex = v;
+				hoveredVertex = v;
 				strokeColor = lerpColor(strokeColor, color(255), 0.75);
 			}
 			stroke(strokeColor);

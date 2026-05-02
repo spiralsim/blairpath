@@ -66,18 +66,7 @@
 						<li>Copy the data below to <code>/assets/data.json</code> in Blairpath's package.</li>
 					</ol>
 
-					<textarea id="outputField" rows="8" cols="30" style="font-family: Roboto Mono"></textarea>
-					<button onclick="copyData()">Copy to Clipboard</button>
-
-					<script>
-						function copyData () {
-							var copyTextarea = document.querySelector("#outputField");
-							copyTextarea.focus();
-							copyTextarea.select();
-
-							document.execCommand("copy");
-						}
-					</script>
+					<button onclick="copySavedData()">Copy to Clipboard</button>
 				</div>
 			</div>
 			<div style="position: absolute; left: 330px; right: 0; top: 0; bottom: 0; overflow: hidden" id="canvas" oncontextmenu="return false;">
