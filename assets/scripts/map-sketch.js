@@ -388,14 +388,17 @@ function showBorders() {
 function showEdges() {
 	hoveredEdge = null;
 	data.edges.forEach(e => {
-		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor) return;
+		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor)
+			return;
 		e.isHovered = false;
 		if (!e.onPath && !showingDevTools) return;
 		const e1 = e.endpoint1, e2 = e.endpoint2;
 		var edge_color = e.onPath ? color(0, 128, 255) : color(0);
-		if (isHoveringOnSegment({x: e1.x, y: e1.y}, {x: e2.x, y: e2.y})) {
-			edge_color = lerpColor(edge_color, color(255), 0.75);
-			hoveredEdge = e;
+		if (showingDevTools) {
+			if (isHoveringOnSegment({x: e1.x, y: e1.y}, {x: e2.x, y: e2.y})) {
+				edge_color = lerpColor(edge_color, color(255), 0.75);
+				hoveredEdge = e;
+			}
 		}
 		if (e == activeEdge) edge_color = ACTIVE_COLOR;
 		drawEdge(e, edge_color);
@@ -541,7 +544,7 @@ function showRuler() {
 	var rulerTextLeftX = rulerLeftX - 5 - textWidth(rulerText);
 
 	fill(255, 192);
-	rect(rulerTextLeftX - 5, height - 20, width, 20);	
+	rect(rulerTextLeftX - 5, height - 20, width, 20);
 
 	noStroke();
 	fill(0);

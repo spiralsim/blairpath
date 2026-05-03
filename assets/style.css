@@ -15,7 +15,16 @@
 	font-family: "Roboto", sans-serif;
 }
 
+html {
+	height: 100%
+}
+
 body {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: flex;
+	flex-flow: column;
 	margin: 0;
 }
 
@@ -213,6 +222,8 @@ section {
 	display: block;
 }
 section.main {
+	position: relative;
+	flex: 1 1 auto;
 	padding: 1.5em;
 	border-radius: 0 0 0.5em 0.5em;
 	background-color: white;
@@ -224,6 +235,14 @@ section.main::after {
     clear: both;
 }
 
+div.scrollable {
+	position: absolute;
+	top: 1.5em;
+	bottom: 1.5em;
+	left: 1.5em;
+	right: 1.5em;
+	overflow: auto
+}
 div.left {
 	float: left;
 	width: 48%;

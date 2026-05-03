@@ -10,8 +10,8 @@
 	</head>
 	<body>
 		<%-include("../partials/menu.ejs")%>
-		<section class="main">
-			<div style="width: 300px; overflow: auto; background-color: rgba(255, 255, 255, 0.9);">
+		<section class="main" style="width: 300px">
+			<div class="scrollable">
 				<div>
 					<div class="banner gray">
 						<p>Map last updated April 2026</p>
@@ -69,38 +69,38 @@
 					<button onclick="copySavedData()">Copy to Clipboard</button>
 				</div>
 			</div>
-			<div style="position: absolute; left: 330px; right: 0; top: 0; bottom: 0; overflow: hidden" id="canvas" oncontextmenu="return false;">
-				<div id="map-placeholder" style="background-color: var(--placeholder)"></div>
-				<div id="map-controls" style="position: absolute; right: var(--map-controls-padding); bottom: 20px">
-					<button class="white" onclick="VIEW.applyZoom(1.2)" style="position: absolute; right: 0; bottom: 76px; border-radius: var(--button-corner) var(--button-corner) 0 0; border-bottom: 0">➕</button>
-					<button class="white" onclick="VIEW.applyZoom(0.8)" style="position: absolute; right: 0; bottom: 48px; border-radius: 0 0 var(--button-corner) var(--button-corner)">➖</button>
-					<div style="position: absolute; right: var(--map-controls-right); padding-right: var(--map-controls-padding); bottom: 20px; display: flex;">
-						<label for="floor">Floor</label>
-						<input type="number" min="1" max="4" value="1" id="floor" onchange="setFloor(parseInt(this.value))">
-						<script>
-							const FLOOR_INPUT = document.getElementById('floor');
-							function setFloor(newFloor) {
-								if (Number.isNaN(newFloor) || newFloor < 1 || newFloor > 4) return;
-								FLOOR_INPUT.value = String(newFloor);
-								VIEW.floor = newFloor;
-							}
-							function adjustFloor(delta) {
-								setFloor(parseInt(FLOOR_INPUT.value) + delta);
-							}
-						</script>
-						<button class="square" onclick="adjustFloor(-1)" style="padding: 0">⬇</button>
-						<button class="square" onclick="adjustFloor(1)" style="padding: 0">⬆</button>
-					</div>
-					<div style="position: absolute; right: var(--map-controls-right); padding-right: var(--map-controls-padding); bottom: 0; display: flex;">
-						<input type="checkbox" id="show-site-plan">
-						<label for="show-site-plan">Site Plan (1998)</label>
-						<input type="checkbox" id="show-floor-plan" checked>
-						<label for="show-floor-plan">Floor Plan</label>
-						<input type="checkbox" id="show-labels" checked>
-						<label for="show-labels">Labels</label>
-					</div>
+		</section>
+		<div style="position: absolute; left: 330px; right: 0; top: 0; bottom: 0; overflow: hidden" id="canvas" oncontextmenu="return false;">
+			<div id="map-placeholder" style="background-color: var(--placeholder)"></div>
+			<div id="map-controls" style="position: absolute; right: var(--map-controls-padding); bottom: 20px">
+				<button class="white" onclick="VIEW.applyZoom(1.2)" style="position: absolute; right: 0; bottom: 76px; border-radius: var(--button-corner) var(--button-corner) 0 0; border-bottom: 0">➕</button>
+				<button class="white" onclick="VIEW.applyZoom(0.8)" style="position: absolute; right: 0; bottom: 48px; border-radius: 0 0 var(--button-corner) var(--button-corner)">➖</button>
+				<div style="position: absolute; right: var(--map-controls-right); padding-right: var(--map-controls-padding); bottom: 20px; display: flex;">
+					<label for="floor">Floor</label>
+					<input type="number" min="1" max="4" value="1" id="floor" onchange="setFloor(parseInt(this.value))">
+					<script>
+						const FLOOR_INPUT = document.getElementById('floor');
+						function setFloor(newFloor) {
+							if (Number.isNaN(newFloor) || newFloor < 1 || newFloor > 4) return;
+							FLOOR_INPUT.value = String(newFloor);
+							VIEW.floor = newFloor;
+						}
+						function adjustFloor(delta) {
+							setFloor(parseInt(FLOOR_INPUT.value) + delta);
+						}
+					</script>
+					<button class="square" onclick="adjustFloor(-1)" style="padding: 0">⬇</button>
+					<button class="square" onclick="adjustFloor(1)" style="padding: 0">⬆</button>
+				</div>
+				<div style="position: absolute; right: var(--map-controls-right); padding-right: var(--map-controls-padding); bottom: 0; display: flex;">
+					<input type="checkbox" id="show-site-plan">
+					<label for="show-site-plan">Site Plan (1998)</label>
+					<input type="checkbox" id="show-floor-plan" checked>
+					<label for="show-floor-plan">Floor Plan</label>
+					<input type="checkbox" id="show-labels" checked>
+					<label for="show-labels">Labels</label>
 				</div>
 			</div>
-		</section>
+		</div>
 	</body>
 </html>
