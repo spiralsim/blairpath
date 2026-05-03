@@ -141,26 +141,6 @@ var ruler;
 var cursorType;
 var hoveredPlace;
 
-/*
-	Developer Mode
-*/
-var devData = {
-	room: null,
-	node: null,
-	link: null,
-	awaiting: null, // Stores a user action that the program is waiting for, if applicable
-	msg: { txt: null, r: null, g: null, a: 0 },
-	pushMsg: (txt, type) => {
-		if (type != 2) devData.awaiting = null;
-		devData.msg = {
-			txt: txt,
-			r: (type == 0) * 255, // Red: error
-			g: (type == 1) * 255, // Green: success
-			b: (type == 2) * 255,  // Blue: awaiting user interaction
-			a: 400
-		};
-	}
-};
 
 /**
  * Draws an arrow representing the vertical edge between `a` and `b`, pointing
