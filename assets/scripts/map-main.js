@@ -87,9 +87,9 @@ $.getJSON('/data.json', function (payload) {
 		var minDist = Infinity, tempEdge;
 		memoryData.vertices.forEach(v => {
 			if (v.position.floor != place.position.floor) return;
+			if (v.section != 'path') return;
 			const edge = [place.position, v.position];
 			const dist = edgeLengthInPixels(edge);
-			if (dist == 0) return;
 			if (dist && dist < minDist) {
 				minDist = dist;
 				tempEdge = edge;
