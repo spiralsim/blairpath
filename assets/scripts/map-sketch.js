@@ -65,7 +65,7 @@ const VIEW = {
 		VIEW.physPos.add(delta);
 	},
 	rulerInPixels() {
-		return VIEW.rulerInMeters / data.constants.METERS_PER_PIXEL * VIEW.zoom;
+		return VIEW.rulerInMeters / memoryData.constants.METERS_PER_PIXEL * VIEW.zoom;
 	},
 	calibrateRuler() {
 		// Note that we must have
@@ -195,7 +195,7 @@ function canCloseBorder() {
 }
 function deleteActiveBorder() {
 	if (!activeBorder) return;
-	data.borders.splice(data.borders.indexOf(activeBorder), 1);
+	memoryData.borders.splice(memoryData.borders.indexOf(activeBorder), 1);
 	activeBorder = null;
 }
 function deactivateBorder() {
@@ -214,7 +214,7 @@ function keyPressed() {
 		if (!activeBorder) {
 			const newBorder = [CURSOR.virtPosArray2D];
 			activeBorder = newBorder;
-			data.borders.push(newBorder);
+			memoryData.borders.push(newBorder);
 		} else 
 			deactivateBorder();
 	} else if (key == 'u') {
@@ -230,7 +230,7 @@ function keyPressed() {
 				activeVertex = activeEdge.endpoint1;
 			else
 				activeVertex = null;
-			data.edges.splice(data.edges.indexOf(activeEdge), 1);
+			memoryData.edges.splice(memoryData.edges.indexOf(activeEdge), 1);
 			activeEdge = null;
 		}
 	}
@@ -239,7 +239,7 @@ function keyPressed() {
 function mousePressed() {
 	if (hoveredPlace) {
 		// Handle edge case where there are no rows to begin with
-		if (!rows.length) addPoint();
+		if (!rows.length) addPlaceInput();
 		// Find the number of the first empty point input
 		for (let i = 1; i <= rows.length; i++) {
 			if (!getPointValue(i)) {
@@ -247,7 +247,7 @@ function mousePressed() {
 				return;
 			}
 		}
-		addPoint();
+		addPlaceInput();
 		setPointValue(rows.length, hoveredPlace.id);
 	}
 
@@ -277,7 +277,7 @@ function mousePressed() {
 			y: CURSOR.virtPosArray2D[1]
 		};
 		const newEdge = {endpoint1: activeVertex, endpoint2: newVertex};
-		data.edges.push(newEdge);
+		memoryData.edges.push(newEdge);
 		activeVertex = newVertex;
 		activeEdge = newEdge;
 		return;
@@ -317,7 +317,7 @@ function drawEdge({ endpoint1, endpoint2, isTemporary }, _color) {
 }
 
 function showSitePlan() {
-	const OFFSET = data.constants["SITE_PLAN_OFFSET_IN_PIXELS"];
+	const OFFSET = memoryData.constants["SITE_PLAN_OFFSET_IN_PIXELS"];
 	image(images.site, ...OFFSET);
 	if (!showingDevTools) return;
 	strokeWeight(EDGE_WIDTH / VIEW.zoom);
@@ -326,7 +326,7 @@ function showSitePlan() {
 }
 
 function showBorders() {
-	const borders = data.borders;
+	const borders = memoryData.borders;
 	noFill();
 	rectMode(CENTER);
 	hoveredBorder = -1;
@@ -367,7 +367,7 @@ function showBorders() {
 
 function showEdges() {
 	hoveredEdge = null;
-	data.edges.forEach(e => {
+	memoryData.edges.forEach(e => {
 		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor)
 			return;
 		e.isHovered = false;
@@ -394,8 +394,8 @@ function showExtensions() {
 	strokeWeight(2 / VIEW.zoom);
 	rectMode(CENTER);
 	angleMode(DEGREES);
-	for (let id in data.places) {
-		const place = data.places[id];
+	for (let id in memoryData.places) {
+		const place = memoryData.places[id];
 		if (!isPortable(id) || place.floor != VIEW.floor) continue;
 		push();
 		translate(place.center[0], place.center[1]);
@@ -403,8 +403,8 @@ function showExtensions() {
 		rect(
 			0,
 			0,
-			data.constants["PORTABLE_LENGTH_IN_PIXELS"],
-			data.constants["PORTABLE_WIDTH_IN_PIXELS"]
+			memoryData.constants["PORTABLE_LENGTH_IN_PIXELS"],
+			memoryData.constants["PORTABLE_WIDTH_IN_PIXELS"]
 		);
 		pop();
 	}
@@ -429,8 +429,8 @@ function showLabels() {
 	strokeWeight(2 / VIEW.zoom);
 	const pointValuesSet = new Set(getPointValues());
 	// Display dots for room selection
-	for (let id in data.places) {
-		const place = data.places[id];
+	for (let id in memoryData.places) {
+		const place = memoryData.places[id];
 		if (place.floor != VIEW.floor || !place.center) continue;
 		// Display the point and detect hovering if applicable
 		const nameWidth = textWidth(id);
@@ -464,7 +464,7 @@ function showDevTools() {
 	noFill();
 	strokeWeight(2 / VIEW.zoom);
 	hoveredVertex = null;
-	data.edges.forEach(({ endpoint1, endpoint2, isTemporary }) => {
+	memoryData.edges.forEach(({ endpoint1, endpoint2, isTemporary }) => {
 		if (isTemporary) return;
 		[endpoint1, endpoint2].forEach(v => {
 			if (v.floor != VIEW.floor) return;

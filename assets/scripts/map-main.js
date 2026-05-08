@@ -6,8 +6,8 @@
  */
 function prettifyDistance(distance) {
 	if (distance < 0 || distance == undefined) return `No path`;
-	const lengthInM = distance * data.constants.METERS_PER_PIXEL;
-	const walkingSpeed = data.constants["WALKING_SPEED_IN_METERS_PER_SECOND"];
+	const lengthInM = distance * memoryData.constants.METERS_PER_PIXEL;
+	const walkingSpeed = memoryData.constants.WALKING_SPEED_IN_METERS_PER_SECOND;
 	const timeInSec = Math.round(lengthInM / walkingSpeed);
 	const min = Math.floor(timeInSec / 60), sec = timeInSec % 60;
 	var res = ``;
@@ -17,65 +17,107 @@ function prettifyDistance(distance) {
 }
 
 /* Data preprocessing */
-var data = {};
+var memoryData = {};
 var tableLoaded = false;
 function dist2D(a, b) {
 	return Math.sqrt(Math.pow(b[0] - a[0], 2) + Math.pow(b[1] - a[1], 2));
+}
+
+function edgeLengthInPixels([{floor: f1, x: x1, y: y1}, {floor: f2, x: x2, y: y2}]) {
+	return Math.hypot(
+		(f2 - f1) * memoryData.constants.METERS_PER_FLOOR,
+		(x2 - x1) * memoryData.constants.METERS_PER_PIXEL,
+		(y2 - y1) * memoryData.constants.METERS_PER_PIXEL,
+	);
 }
 
 function vertexToString({floor, x, y}) {
 	return `${floor},${x},${y}`;
 }
 
-function edgeLength({endpoint1: {floor: f1, x: x1, y: y1}, endpoint2: {floor: f2, x: x2, y: y2}}) {
-	return Math.hypot(
-		(f2 - f1) * data.constants.METERS_PER_FLOOR,
-		(x2 - x1) * data.constants.METERS_PER_PIXEL,
-		(y2 - y1) * data.constants.METERS_PER_PIXEL,
-	);
+/**
+ * A mapping from a vertex position's string form to the vertex itself
+ * 
+ * Example:
+ * 
+ * Suppose vertex V is at floor 2, x 50, y 100.
+ * 
+ * `stringToVertex['2,50,100']` evaluates to V.
+ */
+var stringToVertex = {};
+
+function positionToVertex(pos) {
+	return stringToVertex[vertexToString(pos)];
+}
+
+/**
+ * A mapping from a place's ID to the place vertex itself
+ * 
+ * Example:
+ * 
+ * Suppose place P has ID 101.
+ * 
+ * `stringToPlace['101']` evaluates to P.
+ */
+var stringToPlace = {};
+
+/**
+ * In `data.json`, each vertex is stored with a `section` key.
+ * 
+ * Here's a breakdown of vertices by type and `section`:
+ * 
+ * 1. Place vertices have a `section` starting with an uppercase letter
+ * 2. Path vertices have a `section` of `"path"`
+ * 3. Border vertices have a `section` of `"border"`
+ * 
+ * The possible edge types are `"border"`, `"temporary"`, and `"path"`.
+ * 
+ * @param {*} edge 
+ */
+function findEdgeType(edge) {
+	const endpointSections = edge.map(positionToVertex).map(v => v.section);
+	if (endpointSections[0] == 'border') return 'border';
+	else if (endpointSections[0] == 'path') return 'path';
+	else return 'temporary';
 }
 
 $.getJSON('/data.json', function (payload) {
-	data = payload;
-	var verticesSet = new Set();
-	data.edges.forEach(e => {
-		verticesSet.add(e.endpoint1);
-		verticesSet.add(e.endpoint2);
+	memoryData = payload;
+
+	memoryData.vertices.forEach(v => {
+		stringToVertex[vertexToString(v.position)] = v;
+		if (v.id) stringToPlace[v.id] = v;
 	});
 
-	const vertices = Array.from(verticesSet);
-	Object.values(data.places).forEach(p => {
-		const placeVertex = {floor: p.floor, x: p.center[0], y: p.center[1]};
+	// For each place, create a temporary edge between it and its nearest path vertex
+	Object.values(stringToPlace).forEach(place => {
 		var minDist = Infinity, tempEdge;
-		vertices.forEach(v => {
-			if (v.floor != p.floor) return;
-			const edge = {endpoint1: v, endpoint2: placeVertex};
-			const dist = edgeLength(edge);
-			if (dist < minDist) {
+		memoryData.vertices.forEach(v => {
+			if (v.position.floor != place.position.floor) return;
+			const edge = [place.position, v.position];
+			const dist = edgeLengthInPixels(edge);
+			if (dist == 0) return;
+			if (dist && dist < minDist) {
 				minDist = dist;
 				tempEdge = edge;
 			}
 		});
-		tempEdge.isTemporary = true;
-		data.edges.push(tempEdge);
+		memoryData.edges.push(tempEdge);
 	});
 
 	// Remove placeholder rows
-	for (let i = 1; i <= 2; i++) document.getElementById("row-placeholder-" + i).remove();
+	for (let i = 1; i <= 2; i++) document.getElementById("place-placeholder-" + i).remove();
 
 	// Create 2 initial rows
 	tableLoaded = true;
-	for (let i = 0; i < 2; i++) addPoint();
+	for (let i = 0; i < 2; i++) addPlaceInput();
 });
 
-function copySavedData() {
-	var savedData = structuredClone(data);
-	savedData["edges"] = savedData["edges"].filter(e => !e.isTemporary);
-	savedData["edges"].forEach(e => {
-		delete e.onPath;
-		delete e.isHovered;
-	});
-	const output = JSON.stringify(savedData, null, 4).replace(/ {4}/g, '\t');
+function copyNextDiskData() {
+	var nextDiskData = structuredClone(memoryData);
+	nextDiskData.edges = nextDiskData.edges.filter(e => findEdgeType(e) != "temporary");
+	
+	const output = JSON.stringify(nextDiskData, null, 4);
 	navigator.clipboard.writeText(output);
 }
 
@@ -94,8 +136,8 @@ function autocomplete (input) {
 		a.setAttribute("style", "max-height: 120px; overflow-y: auto");
 		this.parentNode.appendChild(a);
 
-		for (let id in data.places) {
-			const place = data.places[id];
+		for (let id in memoryData.places) {
+			const place = memoryData.places[id];
 			var name = id;
 			if (place.use && !id.includes(place.use))
 				name += ` (${place.use})`;
@@ -183,11 +225,11 @@ function removePoint (ID) {
 		row.id = "row-" + rowNum;
 		row.innerHTML = row.innerHTML.replace(new RegExp(rowStr, "g"), rowNum);
 		setPointValue(rowNum, val);
-		autocomplete(document.getElementById("point-" + rowNum), data.places);
+		autocomplete(document.getElementById("point-" + rowNum), memoryData.places);
 	}
 };
 // Add a row to the points table
-function addPoint () {
+function addPlaceInput () {
 	if (!tableLoaded) return;
 	const row = document.createElement("tr"), rowNum = rows.length + 1;
 	row.innerHTML = `<tr>
@@ -197,7 +239,7 @@ function addPoint () {
 	row.id = "row-" + rowNum;
 	rows.push(row);
 	table.insertBefore(row, table.childNodes[rowNum]);
-	autocomplete(document.getElementById("point-" + rowNum), data.places);
+	autocomplete(document.getElementById("point-" + rowNum), memoryData.places);
 };
 
 /* Calculate Path */
@@ -207,7 +249,7 @@ var lastPathQuery = null;
 
 function clearCalculation() {
 	totalDistance = 0;
-	data.edges.forEach(e => e.onPath = false);
+	memoryData.edges.forEach(e => e.onPath = false);
 	document.getElementById("calc-result").innerHTML = '';
 }
 
@@ -221,7 +263,7 @@ class PathQuery {
 function calculatePath(query) {
 	const calcResult = document.getElementById("calc-result");
 	function finishCalc (msg, err) {
-		if (err) data.edges.forEach(e => e.isPath = false);
+		if (err) memoryData.edges.forEach(e => e.isPath = false);
 		calcResult.innerHTML = `<p style="color: ${err ? "red" : "black"}">${msg}</p>`;
 	}
 
@@ -233,7 +275,7 @@ function calculatePath(query) {
 	var output = "";
 	
 	const graph = new WeightedGraph();
-	data.edges.forEach(e => {
+	memoryData.edges.forEach(e => {
 		if (!edgeIsElevator(e) || query.allowElevator) graph.addEdge(e);
 	});
 
@@ -241,7 +283,7 @@ function calculatePath(query) {
 
 	for (let i = 0; i < rows.length - 1; i++) {
 		const subpathPlaceIDs = query.points.slice(i, i + 2);
-		const subpathPlaces = subpathPlaceIDs.map(id => data.places[id]);
+		const subpathPlaces = subpathPlaceIDs.map(id => memoryData.places[id]);
 		const subpathPlaceVertices = subpathPlaces.map(room => ({
 			floor: room.floor,
 			x: room.center[0],
@@ -264,7 +306,7 @@ function calculatePath(query) {
 		totalDistance += subpathDistance;
 	}
 
-	data.edges.forEach(e => {
+	memoryData.edges.forEach(e => {
 		const v1 = e.endpoint1, v2 = e.endpoint2;
 		const e1 = JSON.stringify([v1, v2]), e2 = JSON.stringify([v2, v1]);
 		if (pathDirectedEdges.has(e1) || pathDirectedEdges.has(e2))
@@ -280,7 +322,7 @@ function refreshPointTable() {
 	var canCalculate = rows.length >= 2;
 	for (let i = 1; i <= rows.length; i++) {
 		const input = getPointInput(i);
-		const isValid = !!data.places[input.value];
+		const isValid = !!memoryData.places[input.value];
 		canCalculate &&= isValid;
 		const borderColor = isValid || !input.value ? '--var(border)' : 'red';
 		input.setAttribute("style", `border-color: ${borderColor}`);
