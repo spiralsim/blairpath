@@ -420,7 +420,7 @@ function showLabels() {
 	}
 }
 
-var showingDevTools = false;
+var showingDevTools = true;
 function toggleDevTools() {
 	if (activeBorder) deleteActiveBorder();
 	showingDevTools = !showingDevTools;
@@ -431,18 +431,23 @@ function showDevTools() {
 	strokeWeight(2 / VIEW.zoom);
 	hoveredVertex = null;
 	memoryData.edges.forEach(e => {
-		if (edgeType(e) == 'temporary') return;
-		e.forEach(v => {
-			if (v.floor != VIEW.floor) return;
+		const eType = edgeType(e);
+		if (eType == 'temporary') return;
+		e.forEach(pos => {
+			if (pos.floor != VIEW.floor) return;
 			const diameter = EDGE_WIDTH * 3 / VIEW.zoom;
 			var strokeColor = color(0);
-			if (v == activeVertex) strokeColor = color(0, 192, 0);
-			if (dist(...CURSOR.virtPosArray2D, v.x, v.y) < diameter / 2) {
-				hoveredVertex = v;
+			if (pos == activeVertex) strokeColor = color(0, 192, 0);
+			if (dist(...CURSOR.virtPosArray2D, pos.x, pos.y) < diameter / 2) {
+				hoveredVertex = pos;
 				strokeColor = lerpColor(strokeColor, color(255), 0.75);
 			}
 			stroke(strokeColor);
-			circle(v.x, v.y, diameter);
+			if (eType == 'path') circle(pos.x, pos.y, diameter);
+			else if (eType == 'border') {
+				rectMode(CENTER);
+				square(pos.x, pos.y, diameter);
+			}
 		});
 	});
 }
