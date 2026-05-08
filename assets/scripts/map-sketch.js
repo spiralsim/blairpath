@@ -29,12 +29,12 @@ function distToLine ({ x: px, y: py }, { x: ax, y: ay }, { x: bx, y: by }) {
 }
 /**
  * 
- * @param {{x, y}} endpointA 
- * @param {{x, y}} endpointB 
+ * @param {{x, y}} endpoint1 
+ * @param {{x, y}} endpoint2 
  * @returns bool
  */
-function isHoveringOnSegment(endpointA, endpointB) {
-	return distToLine(CURSOR.virtPos, endpointA, endpointB) < VIEW.hoverRadius;
+function edgeIsHovered([endpoint1, endpoint2]) {
+	return distToLine(CURSOR.virtPos, endpoint1, endpoint2) < VIEW.hoverRadius;
 }
 
 var loaded = false, lastFrameRate = 60, lastUpdate = framesSinceUpdate = 0;
@@ -140,33 +140,6 @@ var ruler;
 // What the cursor is displayed as (changes between ARROW, HAND, and MOVE)
 var cursorType;
 var hoveredPlace;
-
-
-/**
- * Draws an arrow representing the vertical edge between `a` and `b`, pointing
- * in the direction of the endpoint not on the current floor.
- * @param {Vertex} a Vertex at the arrow's start point
- * @param {Vertex} b Vertex at the arrow's end point
- */
-function drawArrow(a, b) {
-	const dir = a.floor == VIEW.floor ? b.floor - VIEW.floor : a.floor - VIEW.floor;
-	triangle(
-		a.x - 5 / VIEW.zoom, a.y,
-		a.x + 5 / VIEW.zoom, a.y,
-		a.x, a.y - dir * 10 / VIEW.zoom,
-	);
-}
-
-/**
- * Draws a dotted line from point a to b.
- * @param {Vertex} a First endpoint.
- * @param {Vertex} b Second endpoint.
- */
-function drawDottedLine(a, b) {
-	const length = dist(a.x, a.y, b.x, b.y);
-	for (let i = 0; i < length; i += 5 / VIEW.zoom)
-		point(lerp(a.x, b.x, i / length), lerp(a.y, b.y, i / length));
-}
 
 const LABEL_FONT_SIZE = 14;
 const ACTIVE_COLOR = [0, 192, 0];
@@ -306,14 +279,46 @@ const EDGE_WIDTH = 4;
  * @param {} edge
  * @param {p5.Color} _color
  */
-function drawEdge({ endpoint1, endpoint2, isTemporary }, _color) {
+function drawEdge(e, _color) {
+	/**
+	 * Draws an arrow representing the vertical edge between `a` and `b`, pointing
+	 * in the direction of the endpoint not on the current floor.
+	 * @param {Vertex} a Vertex at the arrow's start point
+	 * @param {Vertex} b Vertex at the arrow's end point
+	 */
+	function drawArrow(a, b) {
+		const dir = a.floor == VIEW.floor ? b.floor - VIEW.floor : a.floor - VIEW.floor;
+		triangle(
+			a.x - 5 / VIEW.zoom, a.y,
+			a.x + 5 / VIEW.zoom, a.y,
+			a.x, a.y - dir * 10 / VIEW.zoom,
+		);
+	}
+
+	/**
+	 * Draws a dotted line from point a to b.
+	 * @param {Vertex} a First endpoint.
+	 * @param {Vertex} b Second endpoint.
+	 */
+	function drawDottedEdge(a, b) {
+		const length = dist(a.x, a.y, b.x, b.y);
+		for (let i = 0; i < length; i += 5 / VIEW.zoom)
+			point(lerp(a.x, b.x, i / length), lerp(a.y, b.y, i / length));
+	}
+
 	stroke(_color);
 	fill(_color);
-	strokeWeight(EDGE_WIDTH / VIEW.zoom);
-	if (endpoint1.floor == endpoint2.floor) {
-		if (isTemporary) drawDottedLine(endpoint1, endpoint2);
-		else line(endpoint1.x, endpoint1.y, endpoint2.x, endpoint2.y);
-	} else drawArrow(endpoint1, endpoint2);
+
+	var originalStrokeWeight = EDGE_WIDTH;
+	if (edgeType(e) == 'border')
+		originalStrokeWeight /= 2;
+	strokeWeight(originalStrokeWeight / VIEW.zoom);
+
+	const a = e[0], b = e[1];
+	if (a.floor == b.floor) {
+		if (edgeType(e) == 'temporary') drawDottedEdge(a, b);
+		else line(a.x, a.y, b.x, b.y);
+	} else drawArrow(a, b);
 }
 
 function showSitePlan() {
@@ -325,57 +330,21 @@ function showSitePlan() {
 	rect(...OFFSET, images.site.width, images.site.height);
 }
 
-function showBorders() {
-	const borders = memoryData.borders;
-	noFill();
-	rectMode(CENTER);
-	hoveredBorder = -1;
-	borders.forEach((border, i) => {
-		if (VIEW.floor != 1) return;
-
-		stroke(0);
-
-		const isActive = i == activeBorder;
-		if (isActive) stroke(ACTIVE_COLOR);
-		else if (showingDevTools) {
-			for (let j = 0; j < border.length - 1; j++) {
-				const endpointA = {x: border[j][0], y: border[j][1]};
-				const endpointB = {x: border[j + 1][0], y: border[j + 1][1]};
-				if (isHoveringOnSegment(endpointA, endpointB))
-					hoveredBorder = i;
-			}
-		}
-		
-		if (i == hoveredBorder) stroke(192);
-		strokeWeight(EDGE_WIDTH / 2);
-		beginShape();
-		border.forEach(v => {
-			vertex(...v);
-		});
-		if (isActive && canCloseBorder()) vertex(...border[0]);
-		endShape();
-
-		if (showingDevTools) {
-			strokeWeight(EDGE_WIDTH / 2 / VIEW.zoom);
-			border.forEach(v => {
-				square(...v, EDGE_WIDTH * 3 / VIEW.zoom);
-			});
-		}
-	});
-	rectMode(CORNER);
-}
-
 function showEdges() {
 	hoveredEdge = null;
 	memoryData.edges.forEach(e => {
-		if (e.endpoint1.floor != VIEW.floor && e.endpoint2.floor != VIEW.floor)
+		if (!e.map(endpoint => endpoint.floor).includes(VIEW.floor))
 			return;
-		e.isHovered = false;
-		if (!e.onPath && !showingDevTools) return;
-		const e1 = e.endpoint1, e2 = e.endpoint2;
-		var edge_color = e.onPath ? color(0, 128, 255) : color(0);
+		
+		const isVisibleBorder = edgeType(e) == 'border' && VIEW.floor == 1;
+
+		const onPath = edgesOnPath.has(edgeToString(e));
+		if (!onPath && !showingDevTools && !isVisibleBorder)
+			return;
+
+		var edge_color = onPath ? color(0, 128, 255) : color(0);
 		if (showingDevTools) {
-			if (isHoveringOnSegment({x: e1.x, y: e1.y}, {x: e2.x, y: e2.y})) {
+			if (edgeIsHovered(e)) {
 				edge_color = lerpColor(edge_color, color(255), 0.75);
 				hoveredEdge = e;
 			}
@@ -385,35 +354,32 @@ function showEdges() {
 	});
 }
 
-function showExtensions() {
-	function isPortable(id) {
-		return /^P[0-9]+$/.test(id);
-	} 
-	stroke(0);
-	fill(204, 30, 30);
-	strokeWeight(2 / VIEW.zoom);
-	rectMode(CENTER);
-	angleMode(DEGREES);
-	for (let id in memoryData.places) {
-		const place = memoryData.places[id];
-		if (!isPortable(id) || place.floor != VIEW.floor) continue;
-		push();
-		translate(place.center[0], place.center[1]);
-		rotate(place.angle ?? 0);
-		rect(
-			0,
-			0,
-			memoryData.constants["PORTABLE_LENGTH_IN_PIXELS"],
-			memoryData.constants["PORTABLE_WIDTH_IN_PIXELS"]
-		);
-		pop();
-	}
-	rectMode(CORNERS);
-}
-
 function showFloorPlan() {
+	function showPortables() {
+		stroke(0);
+		fill(204, 30, 30);
+		strokeWeight(2 / VIEW.zoom);
+		rectMode(CENTER);
+		angleMode(DEGREES);
+		Object.values(idToPlace).forEach(p => {
+			const isPortable = /^P[0-9]+$/.test(p.id);
+			if (!isPortable || p.position.floor != VIEW.floor)
+				return;
+			push();
+			translate(p.position.x, p.position.y);
+			rotate(p.angle ?? 0);
+			rect(
+				0,
+				0,
+				memoryData.constants.PORTABLE_LENGTH_IN_PIXELS,
+				memoryData.constants.PORTABLE_WIDTH_IN_PIXELS
+			);
+			pop();
+		});
+		rectMode(CORNERS);
+	}
 	image(images.floors[VIEW.floor - 1], 0, 0);
-	showExtensions();
+	showPortables();
 	showEdges();
 	if (showingDevTools) {
 		strokeWeight(EDGE_WIDTH / VIEW.zoom);
@@ -427,16 +393,16 @@ function showLabels() {
 	textAlign(CENTER, CENTER);
 	textSize(14 / VIEW.zoom);
 	strokeWeight(2 / VIEW.zoom);
-	const pointValuesSet = new Set(getPointValues());
+	const pointValuesSet = new Set(getPlaceInputs());
 	// Display dots for room selection
-	for (let id in memoryData.places) {
-		const place = memoryData.places[id];
-		if (place.floor != VIEW.floor || !place.center) continue;
+	for (let id in idToPlace) {
+		const place = idToPlace[id], pos = place.position;
+		if (pos.floor != VIEW.floor) continue;
 		// Display the point and detect hovering if applicable
 		const nameWidth = textWidth(id);
 		if (
-			abs(CURSOR.virtPos.x - place.center[0]) < nameWidth / 2 &&
-			abs(CURSOR.virtPos.y - place.center[1]) < 6 / VIEW.zoom &&
+			abs(CURSOR.virtPos.x - pos.x) < nameWidth / 2 &&
+			abs(CURSOR.virtPos.y - pos.y) < 6 / VIEW.zoom &&
 			!hoveredPlace
 		) {
 			hoveredPlace = place;
@@ -450,7 +416,7 @@ function showLabels() {
 			stroke(0);
 			fill(place == hoveredPlace ? 128 : 255);
 		}
-		text(id, place.center[0], place.center[1]);
+		text(id, pos.x, pos.y);
 	}
 }
 
@@ -464,19 +430,19 @@ function showDevTools() {
 	noFill();
 	strokeWeight(2 / VIEW.zoom);
 	hoveredVertex = null;
-	memoryData.edges.forEach(({ endpoint1, endpoint2, isTemporary }) => {
-		if (isTemporary) return;
-		[endpoint1, endpoint2].forEach(v => {
+	memoryData.edges.forEach(e => {
+		if (edgeType(e) == 'temporary') return;
+		e.forEach(v => {
 			if (v.floor != VIEW.floor) return;
-			const d = EDGE_WIDTH * 3 / VIEW.zoom;
+			const diameter = EDGE_WIDTH * 3 / VIEW.zoom;
 			var strokeColor = color(0);
 			if (v == activeVertex) strokeColor = color(0, 192, 0);
-			if (dist(...CURSOR.virtPosArray2D, v.x, v.y) < d / 2) {
+			if (dist(...CURSOR.virtPosArray2D, v.x, v.y) < diameter / 2) {
 				hoveredVertex = v;
 				strokeColor = lerpColor(strokeColor, color(255), 0.75);
 			}
 			stroke(strokeColor);
-			circle(v.x, v.y, d);
+			circle(v.x, v.y, diameter);
 		});
 	});
 }
@@ -490,9 +456,8 @@ function showTooltip(place) {
 
 	var bottomText = place.section;
 
-	const center = place.center;
-	const labelX = VIEW.physPos.x + center[0] * VIEW.zoom;
-	const labelY = VIEW.physPos.y + center[1] * VIEW.zoom;
+	const labelX = VIEW.physPos.x + place.position.x * VIEW.zoom;
+	const labelY = VIEW.physPos.y + place.position.y * VIEW.zoom;
 	const
 		tooltipW = max(textWidth(topText), textWidth(bottomText)) + LABEL_FONT_SIZE,
 		tooltipH = 30,
@@ -560,7 +525,7 @@ function draw() {
 	hoveredPlace = null;
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
-	showBorders();
+	showEdges();
 	if (showingDevTools) showDevTools();
 	if (showOptions[`show-labels`]) showLabels();
 

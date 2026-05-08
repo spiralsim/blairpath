@@ -1,21 +1,3 @@
-/**
- * Converts a path length to a human-readable string with meters and estimated
- * time based on `walkingSpeed`: `a min b sec (x m)`. Lengths that are negative
- * or undefined are converted to `No path`.
- * @param {*} distance Distance in normalized px
- */
-function prettifyDistance(distance) {
-	if (distance < 0 || distance == undefined) return `No path`;
-	const lengthInM = distance * memoryData.constants.METERS_PER_PIXEL;
-	const walkingSpeed = memoryData.constants.WALKING_SPEED_IN_METERS_PER_SECOND;
-	const timeInSec = Math.round(lengthInM / walkingSpeed);
-	const min = Math.floor(timeInSec / 60), sec = timeInSec % 60;
-	var res = ``;
-	if (min) res += `${min} min `;
-	if (sec) res += `${sec} s `;
-	return res + `(${Math.round(lengthInM)} m)`;
-}
-
 /* Data preprocessing */
 var memoryData = {};
 var tableLoaded = false;
@@ -31,8 +13,19 @@ function edgeLengthInPixels([{floor: f1, x: x1, y: y1}, {floor: f2, x: x2, y: y2
 	);
 }
 
-function vertexToString({floor, x, y}) {
+/**
+ * `positionToString({floor: 1, x: 50, y: 100})` evaluates to `1,50,100`
+ */
+function positionToString({floor, x, y}) {
 	return `${floor},${x},${y}`;
+}
+
+/**
+ * `edgeToString({floor: 1, x: 50, y: 100}, {floor: 2, x: 300, y: 400})`
+ *  evaluates to `1,50,100;2,300,400`
+ */
+function edgeToString(e) {
+	return e.map(p => positionToString(p)).join(';');
 }
 
 /**
@@ -47,7 +40,7 @@ function vertexToString({floor, x, y}) {
 var stringToVertex = {};
 
 function positionToVertex(pos) {
-	return stringToVertex[vertexToString(pos)];
+	return stringToVertex[positionToString(pos)];
 }
 
 /**
@@ -57,9 +50,9 @@ function positionToVertex(pos) {
  * 
  * Suppose place P has ID 101.
  * 
- * `stringToPlace['101']` evaluates to P.
+ * `idToPlace['101']` evaluates to P.
  */
-var stringToPlace = {};
+var idToPlace = {};
 
 /**
  * In `data.json`, each vertex is stored with a `section` key.
@@ -74,7 +67,7 @@ var stringToPlace = {};
  * 
  * @param {*} edge 
  */
-function findEdgeType(edge) {
+function edgeType(edge) {
 	const endpointSections = edge.map(positionToVertex).map(v => v.section);
 	if (endpointSections[0] == 'border') return 'border';
 	else if (endpointSections[0] == 'path') return 'path';
@@ -85,12 +78,12 @@ $.getJSON('/data.json', function (payload) {
 	memoryData = payload;
 
 	memoryData.vertices.forEach(v => {
-		stringToVertex[vertexToString(v.position)] = v;
-		if (v.id) stringToPlace[v.id] = v;
+		stringToVertex[positionToString(v.position)] = v;
+		if (v.id) idToPlace[v.id] = v;
 	});
 
 	// For each place, create a temporary edge between it and its nearest path vertex
-	Object.values(stringToPlace).forEach(place => {
+	Object.values(idToPlace).forEach(place => {
 		var minDist = Infinity, tempEdge;
 		memoryData.vertices.forEach(v => {
 			if (v.position.floor != place.position.floor) return;
@@ -115,7 +108,7 @@ $.getJSON('/data.json', function (payload) {
 
 function copyNextDiskData() {
 	var nextDiskData = structuredClone(memoryData);
-	nextDiskData.edges = nextDiskData.edges.filter(e => findEdgeType(e) != "temporary");
+	nextDiskData.edges = nextDiskData.edges.filter(e => edgeType(e) != "temporary");
 	
 	const output = JSON.stringify(nextDiskData, null, 4);
 	navigator.clipboard.writeText(output);
@@ -194,13 +187,13 @@ function autocomplete (input) {
 
 /* Point input */
 var table = document.getElementById("points").childNodes[1], rows = [];
-function getPointInput(index) {
+function getPlaceInput(index) {
 	return document.getElementById(`point-${index}`);
 }
 function getPointValue(index) {
-	return getPointInput(index).value;
+	return getPlaceInput(index).value;
 }
-function getPointValues() {
+function getPlaceInputs() {
 	var values = [];
 	for (let i = 1; i <= rows.length; i++)
 		values.push(getPointValue(i));
@@ -260,6 +253,10 @@ class PathQuery {
 	}
 }
 
+/**
+ * Set of **directed** edges on the current computed path (for each edge, its opposite is also included)
+ */
+var edgesOnPath = new Set();
 function calculatePath(query) {
 	const calcResult = document.getElementById("calc-result");
 	function finishCalc (msg, err) {
@@ -267,8 +264,27 @@ function calculatePath(query) {
 		calcResult.innerHTML = `<p style="color: ${err ? "red" : "black"}">${msg}</p>`;
 	}
 
-	function edgeIsElevator({ endpoint1, endpoint2 }) {
-		return endpoint1.x == 528 && endpoint2.x == 528 && endpoint1.y == 293 && endpoint2.y == 293;
+	function edgeIsElevator(e) {
+		const xy = memoryData.constants.ELEVATOR_X_AND_Y;
+		return e.every(position => position.x == xy[0] && position.y == xy[1]);
+	}
+
+	/**
+	 * Converts a path length to a human-readable string with meters and estimated
+	 * time based on `walkingSpeed`: `a min b sec (x m)`. Lengths that are negative
+	 * or undefined are converted to `No path`.
+	 * @param {*} distance Distance in normalized px
+	 */
+	function prettifyDistance(distance) {
+		if (distance < 0 || distance == undefined) return `No path`;
+		const lengthInM = distance * memoryData.constants.METERS_PER_PIXEL;
+		const walkingSpeed = memoryData.constants.WALKING_SPEED_IN_METERS_PER_SECOND;
+		const timeInSec = Math.round(lengthInM / walkingSpeed);
+		const min = Math.floor(timeInSec / 60), sec = timeInSec % 60;
+		var res = ``;
+		if (min) res += `${min} min `;
+		if (sec) res += `${sec} s `;
+		return res + `(${Math.round(lengthInM)} m)`;
 	}
 
 	// Check that there are enough points
@@ -279,39 +295,31 @@ function calculatePath(query) {
 		if (!edgeIsElevator(e) || query.allowElevator) graph.addEdge(e);
 	});
 
-	var pathDirectedEdges = new Set();
+	edgesOnPath = new Set();
 
 	for (let i = 0; i < rows.length - 1; i++) {
-		const subpathPlaceIDs = query.points.slice(i, i + 2);
-		const subpathPlaces = subpathPlaceIDs.map(id => memoryData.places[id]);
-		const subpathPlaceVertices = subpathPlaces.map(room => ({
-			floor: room.floor,
-			x: room.center[0],
-			y: room.center[1]
-		}));
+		const subpathIDs = query.points.slice(i, i + 2);
+		const subpathPlaceVertices = subpathIDs.map(id => idToPlace[id]);
+		const subpathPlacePositions = subpathPlaceVertices.map(v => v.position);
 
-		var {path: subpathVertices, distance: subpathDistance} =
-			graph.Dijkstra(...subpathPlaceVertices);
+		var {path: subpathPositions, distance: subpathDistance} =
+			graph.Dijkstra(...subpathPlacePositions);
 
 		if (subpathDistance == Infinity)
-			return finishCalc(`No path from ${subpathPlaceIDs.join(' to ')}`, true);
+			return finishCalc(`No path from ${subpathIDs.join(' to ')}`, true);
 
 		output +=
-			`<p>${subpathPlaceIDs.join(' → ')}\t` +
+			`<p>${subpathIDs.join(' → ')}\t` +
 			`<span style='color: gray'>${prettifyDistance(subpathDistance)}</span></p>`;
 
-		for (let i = 0; i < subpathVertices.length - 1; i++)
-			pathDirectedEdges.add(JSON.stringify(subpathVertices.slice(i, i + 2)));
+		for (let i = 0; i < subpathPositions.length - 1; i++) {
+			const direction1 = subpathPositions.slice(i, i + 2);
+			edgesOnPath.add(edgeToString(direction1));
+			edgesOnPath.add(edgeToString(direction1.reverse()));
+		}
 		
 		totalDistance += subpathDistance;
 	}
-
-	memoryData.edges.forEach(e => {
-		const v1 = e.endpoint1, v2 = e.endpoint2;
-		const e1 = JSON.stringify([v1, v2]), e2 = JSON.stringify([v2, v1]);
-		if (pathDirectedEdges.has(e1) || pathDirectedEdges.has(e2))
-			e.onPath = true;
-	});
 	
 	output = `<p><b>${prettifyDistance(totalDistance)}</b></p>` + output;
 	// Convert output string to HTML and print to website
@@ -321,8 +329,8 @@ function calculatePath(query) {
 function refreshPointTable() {
 	var canCalculate = rows.length >= 2;
 	for (let i = 1; i <= rows.length; i++) {
-		const input = getPointInput(i);
-		const isValid = !!memoryData.places[input.value];
+		const input = getPlaceInput(i);
+		const isValid = input.value in idToPlace;
 		canCalculate &&= isValid;
 		const borderColor = isValid || !input.value ? '--var(border)' : 'red';
 		input.setAttribute("style", `border-color: ${borderColor}`);
@@ -330,7 +338,7 @@ function refreshPointTable() {
 	
 	// Prevents duplicate calculations
 	const pathQuery = new PathQuery(
-		getPointValues(),
+		getPlaceInputs(),
 		document.getElementById('allow-elevator').checked,
 	);
 	if (JSON.stringify(pathQuery) == JSON.stringify(lastPathQuery)) return;

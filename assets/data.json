@@ -8,6 +8,10 @@
         "SITE_PLAN_OFFSET_IN_PIXELS": [
             -525,
             -248
+        ],
+        "ELEVATOR_X_AND_Y": [
+            528,
+            293
         ]
     },
     "edges": [
