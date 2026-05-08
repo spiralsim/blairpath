@@ -13,10 +13,14 @@ function edgeLengthInPixels([{floor: f1, x: x1, y: y1}, {floor: f2, x: x2, y: y2
 	);
 }
 
+function FXY(floor, x, y) {
+	return {floor: floor, x: Math.round(x), y: Math.round(y)};
+}
+
 /**
- * `positionToString({floor: 1, x: 50, y: 100})` evaluates to `1,50,100`
+ * `FXYtoString({floor: 1, x: 50, y: 100})` evaluates to `1,50,100`
  */
-function positionToString({floor, x, y}) {
+function FXYtoString({floor, x, y}) {
 	return `${floor},${x},${y}`;
 }
 
@@ -25,7 +29,7 @@ function positionToString({floor, x, y}) {
  *  evaluates to `1,50,100;2,300,400`
  */
 function edgeToString(e) {
-	return e.map(p => positionToString(p)).join(';');
+	return e.map(fxy => FXYtoString(fxy)).join(';');
 }
 
 /**
@@ -33,14 +37,14 @@ function edgeToString(e) {
  * 
  * Example:
  * 
- * Suppose vertex V is at floor 2, x 50, y 100.
+ * Suppose vertex V has FXY floor 2, x 50, y 100.
  * 
  * `stringToVertex['2,50,100']` evaluates to V.
  */
 var stringToVertex = {};
 
-function positionToVertex(pos) {
-	return stringToVertex[positionToString(pos)];
+function fxyToVertex(fxy) {
+	return stringToVertex[FXYtoString(fxy)];
 }
 
 /**
@@ -68,7 +72,7 @@ var idToPlace = {};
  * @param {*} edge 
  */
 function edgeType(edge) {
-	const endpointSections = edge.map(positionToVertex).map(v => v.section);
+	const endpointSections = edge.map(fxyToVertex).map(v => v.section);
 	if (endpointSections[0] == 'border') return 'border';
 	else if (endpointSections[0] == 'path') return 'path';
 	else return 'temporary';
@@ -78,17 +82,17 @@ $.getJSON('/data.json', function (payload) {
 	memoryData = payload;
 
 	memoryData.vertices.forEach(v => {
-		stringToVertex[positionToString(v.position)] = v;
+		stringToVertex[FXYtoString(v.fxy)] = v;
 		if (v.id) idToPlace[v.id] = v;
 	});
 
-	// For each place, create a temporary edge between it and its nearest path vertex
+	// For each place, add a temporary edge from it to the nearest path vertex
 	Object.values(idToPlace).forEach(place => {
 		var minDist = Infinity, tempEdge;
 		memoryData.vertices.forEach(v => {
-			if (v.position.floor != place.position.floor) return;
+			if (v.fxy.floor != place.fxy.floor) return;
 			if (v.section != 'path') return;
-			const edge = [place.position, v.position];
+			const edge = [place.fxy, v.fxy];
 			const dist = edgeLengthInPixels(edge);
 			if (dist && dist < minDist) {
 				minDist = dist;
@@ -99,7 +103,8 @@ $.getJSON('/data.json', function (payload) {
 	});
 
 	// Remove placeholder rows
-	for (let i = 1; i <= 2; i++) document.getElementById("place-placeholder-" + i).remove();
+	for (let i = 1; i <= 2; i++)
+		document.getElementById(`place-placeholder-${i}`).remove();
 
 	// Create 2 initial rows
 	tableLoaded = true;
@@ -108,7 +113,9 @@ $.getJSON('/data.json', function (payload) {
 
 function copyNextDiskData() {
 	var nextDiskData = structuredClone(memoryData);
-	nextDiskData.edges = nextDiskData.edges.filter(e => edgeType(e) != "temporary");
+	nextDiskData.edges = nextDiskData.edges.filter(
+		e => edgeType(e) != 'temporary'
+	);
 	
 	const output = JSON.stringify(nextDiskData, null, 4);
 	navigator.clipboard.writeText(output);
@@ -300,7 +307,7 @@ function calculatePath(query) {
 	for (let i = 0; i < rows.length - 1; i++) {
 		const subpathIDs = query.points.slice(i, i + 2);
 		const subpathPlaceVertices = subpathIDs.map(id => idToPlace[id]);
-		const subpathPlacePositions = subpathPlaceVertices.map(v => v.position);
+		const subpathPlacePositions = subpathPlaceVertices.map(v => v.fxy);
 
 		var {path: subpathPositions, distance: subpathDistance} =
 			graph.Dijkstra(...subpathPlacePositions);

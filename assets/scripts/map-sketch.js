@@ -34,7 +34,7 @@ function distToLine ({ x: px, y: py }, { x: ax, y: ay }, { x: bx, y: by }) {
  * @returns bool
  */
 function edgeIsHovered([endpoint1, endpoint2]) {
-	return distToLine(CURSOR.virtPos, endpoint1, endpoint2) < VIEW.hoverRadius;
+	return distToLine(CURSOR.virtualXY, endpoint1, endpoint2) < VIEW.hoverRadius;
 }
 
 var loaded = false, lastFrameRate = 60, lastUpdate = framesSinceUpdate = 0;
@@ -45,6 +45,11 @@ var loaded = false, lastFrameRate = 60, lastUpdate = framesSinceUpdate = 0;
 const DEFAULT_ZOOM = 1, SCROLL_ZOOM_RATE = 1.01;
 const MIN_ZOOM = 0.3, MAX_ZOOM = 10;
 // All positions are given as pixel coordinates
+
+var mouseHasMoved = false;
+function mouseMoved() {
+	mouseHasMoved = true;
+}
 
 /*
 	Physical position = Location on the canvas, in px
@@ -110,14 +115,17 @@ const VIEW = {
 };
 
 const CURSOR = {
-	get physPos() {
+	get canvasXY() {
 		return createVector(mouseX, mouseY);
 	},
-	get virtPos() {
-		return p5.Vector.sub(CURSOR.physPos, VIEW.physPos).div(VIEW.zoom);
+	get virtualXY() {
+		return p5.Vector.sub(CURSOR.canvasXY, VIEW.physPos).div(VIEW.zoom);
+	},
+	get FXY() {
+		return FXY(VIEW.floor, this.virtualXY.x, this.virtualXY.y);
 	},
 	get virtPosArray2D() {
-		return this.virtPos.array().slice(0, 2).map(coord => round(coord));
+		return this.virtualXY.array().slice(0, 2).map(coord => round(coord));
 	}
 };
 
@@ -154,27 +162,11 @@ function setup() {
 	textFont('Roboto');
 
 	VIEW.reset();
+	mouseDragged();
 };
 
 function windowResized() {
 	resizeCanvas(getCanvasDivWidth(), windowHeight);
-}
-
-var activeBorder = null, hoveredBorder = null, isClosingBorder = false;
-function canCloseBorder() {
-	if (!activeBorder) return;
-	const isHovering = dist(...CURSOR.virtPosArray2D, ...activeBorder[0]) < VIEW.hoverRadius;
-	return isHovering && activeBorder.length > 1;
-}
-function deleteActiveBorder() {
-	if (!activeBorder) return;
-	memoryData.borders.splice(memoryData.borders.indexOf(activeBorder), 1);
-	activeBorder = null;
-}
-function deactivateBorder() {
-	if (!activeBorder) return;
-	if (activeBorder.length == 1) deleteActiveBorder();
-	activeBorder = null;
 }
 
 var hoveredVertex = null, activeVertex = null;
@@ -183,30 +175,6 @@ var activeEdge = null;
 var hoveredEdge = null;
 function keyPressed() {
 	if (!showingDevTools) return;
-	if (key == 'b') {
-		if (!activeBorder) {
-			const newBorder = [CURSOR.virtPosArray2D];
-			activeBorder = newBorder;
-			memoryData.borders.push(newBorder);
-		} else 
-			deactivateBorder();
-	} else if (key == 'u') {
-		
-	} else if (key == 'd') {
-		// activeBorderIndex = 
-	} else if (keyCode == DELETE) {
-		if (activeBorder) deleteActiveBorder();
-		if (activeEdge) {
-			if (activeVertex == activeEdge.endpoint1)
-				activeVertex = activeEdge.endpoint2;
-			else if (activeVertex == activeEdge.endpoint2)
-				activeVertex = activeEdge.endpoint1;
-			else
-				activeVertex = null;
-			memoryData.edges.splice(memoryData.edges.indexOf(activeEdge), 1);
-			activeEdge = null;
-		}
-	}
 };
 
 function mousePressed() {
@@ -224,21 +192,6 @@ function mousePressed() {
 		setPointValue(rows.length, hoveredPlace.id);
 	}
 
-	if (hoveredBorder) {
-		deactivateBorder();
-		activeBorder = hoveredBorder;
-		activeVertex = null;
-		activeEdge = null;
-		return;
-	}
-	if (activeBorder) {
-		if (canCloseBorder()) {
-			activeBorder.push(activeBorder[0]);
-			activeBorder = -1;
-		} else
-			activeBorder.push(CURSOR.virtPosArray2D);
-		return;
-	}
 	if (hoveredVertex) {
 		activeVertex = hoveredVertex != activeVertex ? hoveredVertex : null;
 		return;
@@ -269,7 +222,7 @@ function mouseDragged() {
 
 function mouseWheel({ delta }) {
 	if (!inCanvas()) return;
-	VIEW.applyZoom(SCROLL_ZOOM_RATE ** -delta, CURSOR.physPos); // Uses negative sign to conform to Google Maps' zoom
+	VIEW.applyZoom(SCROLL_ZOOM_RATE ** -delta, CURSOR.canvasXY); // Uses negative sign to conform to Google Maps' zoom
 };
 
 const EDGE_WIDTH = 4;
@@ -361,13 +314,13 @@ function showFloorPlan() {
 		strokeWeight(2 / VIEW.zoom);
 		rectMode(CENTER);
 		angleMode(DEGREES);
-		Object.values(idToPlace).forEach(p => {
-			const isPortable = /^P[0-9]+$/.test(p.id);
-			if (!isPortable || p.position.floor != VIEW.floor)
+		Object.values(idToPlace).forEach(place => {
+			const isPortable = /^P[0-9]+$/.test(place.id);
+			if (!isPortable || place.fxy.floor != VIEW.floor)
 				return;
 			push();
-			translate(p.position.x, p.position.y);
-			rotate(p.angle ?? 0);
+			translate(place.fxy.x, place.fxy.y);
+			rotate(place.angle ?? 0);
 			rect(
 				0,
 				0,
@@ -396,13 +349,13 @@ function showLabels() {
 	const pointValuesSet = new Set(getPlaceInputs());
 	// Display dots for room selection
 	for (let id in idToPlace) {
-		const place = idToPlace[id], pos = place.position;
-		if (pos.floor != VIEW.floor) continue;
+		const place = idToPlace[id], fxy = place.fxy;
+		if (fxy.floor != VIEW.floor) continue;
 		// Display the point and detect hovering if applicable
 		const nameWidth = textWidth(id);
 		if (
-			abs(CURSOR.virtPos.x - pos.x) < nameWidth / 2 &&
-			abs(CURSOR.virtPos.y - pos.y) < 6 / VIEW.zoom &&
+			abs(CURSOR.virtualXY.x - fxy.x) < nameWidth / 2 &&
+			abs(CURSOR.virtualXY.y - fxy.y) < 6 / VIEW.zoom &&
 			!hoveredPlace
 		) {
 			hoveredPlace = place;
@@ -416,7 +369,7 @@ function showLabels() {
 			stroke(0);
 			fill(place == hoveredPlace ? 128 : 255);
 		}
-		text(id, pos.x, pos.y);
+		text(id, fxy.x, fxy.y);
 	}
 }
 
@@ -461,8 +414,8 @@ function showTooltip(place) {
 
 	var bottomText = place.section;
 
-	const labelX = VIEW.physPos.x + place.position.x * VIEW.zoom;
-	const labelY = VIEW.physPos.y + place.position.y * VIEW.zoom;
+	const labelX = VIEW.physPos.x + place.fxy.x * VIEW.zoom;
+	const labelY = VIEW.physPos.y + place.fxy.y * VIEW.zoom;
 	const
 		tooltipW = max(textWidth(topText), textWidth(bottomText)) + LABEL_FONT_SIZE,
 		tooltipH = 30,
@@ -489,8 +442,8 @@ function showRuler() {
 	rectMode(CORNER);
 
 	var rulerText = `${VIEW.rulerInMeters} m`;
-	if (showingDevTools)
-		rulerText = `(${CURSOR.virtPosArray2D.join(', ')}) ` + rulerText;
+	if (showingDevTools && mouseHasMoved)
+		rulerText = `FXY: ${FXYtoString(CURSOR.FXY)} ` + rulerText;
 	var rulerTextLeftX = rulerLeftX - 5 - textWidth(rulerText);
 
 	fill(255, 192);
