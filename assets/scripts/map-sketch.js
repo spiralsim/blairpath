@@ -143,11 +143,17 @@ for (let option in showOptions) {
 	checkbox.addEventListener('change', updateOption);
 }
 
-var ruler;
-
 // What the cursor is displayed as (changes between ARROW, HAND, and MOVE)
 var cursorType;
-var hoveredPlace;
+
+var hoveredObject = null;
+function hoveredType() {
+	if ('fxy' in hoveredObject) {
+		if (hoveredObject.section[0]) 
+		return 'vertex';
+	}
+
+}
 
 const LABEL_FONT_SIZE = 14;
 const ACTIVE_COLOR = [0, 192, 0];

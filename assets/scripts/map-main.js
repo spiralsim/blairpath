@@ -61,21 +61,43 @@ var idToPlace = {};
 /**
  * In `data.json`, each vertex is stored with a `section` key.
  * 
- * Here's a breakdown of vertices by type and `section`:
- * 
- * 1. Place vertices have a `section` starting with an uppercase letter
- * 2. Path vertices have a `section` of `"path"`
- * 3. Border vertices have a `section` of `"border"`
- * 
- * The possible edge types are `"border"`, `"temporary"`, and `"path"`.
- * 
- * @param {*} edge 
+ * Vertices are divided into 3 types:
+ * 1. Place-type vertices have a section starting with an uppercase letter
+ * 2. Path-type vertices have a section of "path"
+ * 3. Border-type vertices have a section of "border"
+ */
+function vertexType(vertex) {
+	switch (vertex.section) {
+		case 'border':
+			return 'border';
+		case 'path':
+			return 'path';
+		default:
+			return 'place';
+	}
+}
+
+/**
+ * Edges are also divided into 3 types:
+ * 1. Path-type edges connect two path-type vertices
+ * 2. Border-type edges connect two border-type vertices
+ * 3. Temporary-type edges connect a place-type and path-type vertex 
  */
 function edgeType(edge) {
-	const endpointSections = edge.map(fxyToVertex).map(v => v.section);
-	if (endpointSections[0] == 'border') return 'border';
-	else if (endpointSections[0] == 'path') return 'path';
-	else return 'temporary';
+	var vertexTypeCounts = {
+		"border": 0,
+		"path": 0,
+		"place": 0,
+	};
+	edge.map(fxyToVertex).forEach(v => {
+		vertexTypeCounts[vertexType(v)]++;
+	});
+	if (vertexTypeCounts["border"] == 2)
+		return "border";
+	else if (vertexTypeCounts["path"] == 2)
+		return "path";
+	else if (vertexTypeCounts["path"] == 1 && vertexTypeCounts["place"] == 1)
+		return "temporary";
 }
 
 $.getJSON('/data.json', function (payload) {
@@ -307,22 +329,24 @@ function calculatePath(query) {
 	for (let i = 0; i < rows.length - 1; i++) {
 		const subpathIDs = query.points.slice(i, i + 2);
 		const subpathPlaceVertices = subpathIDs.map(id => idToPlace[id]);
-		const subpathPlacePositions = subpathPlaceVertices.map(v => v.fxy);
+		const subpathPlaceFXYs = subpathPlaceVertices.map(v => v.fxy);
+		const subpathPlaceFXYStrings = subpathPlaceFXYs.map(FXYtoString);
 
-		var {path: subpathPositions, distance: subpathDistance} =
-			graph.Dijkstra(...subpathPlacePositions);
+		var {path: subpathFXYStrings, distance: subpathDistance} =
+			graph.dijkstra(...subpathPlaceFXYStrings);
+		console.log(graph.dijkstra(...subpathPlaceFXYStrings));
 
 		if (subpathDistance == Infinity)
 			return finishCalc(`No path from ${subpathIDs.join(' to ')}`, true);
-
+		const prettifiedDistance = prettifyDistance(subpathDistance);
 		output +=
 			`<p>${subpathIDs.join(' → ')}\t` +
-			`<span style='color: gray'>${prettifyDistance(subpathDistance)}</span></p>`;
+			`<span style='color: gray'>${prettifiedDistance}</span></p>`;
 
-		for (let i = 0; i < subpathPositions.length - 1; i++) {
-			const direction1 = subpathPositions.slice(i, i + 2);
-			edgesOnPath.add(edgeToString(direction1));
-			edgesOnPath.add(edgeToString(direction1.reverse()));
+		for (let i = 0; i < subpathFXYStrings.length - 1; i++) {
+			const direction1 = subpathFXYStrings.slice(i, i + 2);
+			edgesOnPath.add(direction1.join(';'));
+			edgesOnPath.add(direction1.reverse().join(';'));
 		}
 		
 		totalDistance += subpathDistance;

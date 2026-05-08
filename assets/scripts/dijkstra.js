@@ -76,32 +76,27 @@ class PriorityQueue {
 
 class Neighbor {
   constructor(vertex, weight) {
-    this.vertex = vertexToString(vertex);
+    this.vertex = vertex;
     this.weight = weight;
   }
 }
 
 class WeightedGraph {
   constructor() {
-    this.vertices = {};
     this.adjacencyList = {};
   }
   getVertex(vertex) {
-    const str = vertexToString(vertex);
-    if (!(str in this.vertices)) {
-      this.vertices[str] = vertex;
-      this.adjacencyList[str] = [];
-    }
-    return this.adjacencyList[str];
+    if (!(vertex in this.adjacencyList))
+      this.adjacencyList[vertex] = [];
+    return this.adjacencyList[vertex];
   }
-  addEdge(e) {
-    const weight = edgeLength(e);
-    this.getVertex(e.endpoint1).push(new Neighbor(e.endpoint2, weight));
-    this.getVertex(e.endpoint2).push(new Neighbor(e.endpoint1, weight));
+  addEdge(edge) {
+    const weight = edgeLengthInPixels(edge);
+    const FXYs = edge.map(FXYtoString);
+    this.getVertex(FXYs[0]).push(new Neighbor(FXYs[1], weight));
+    this.getVertex(FXYs[1]).push(new Neighbor(FXYs[0], weight));
   }
-  Dijkstra(start, finish) {
-    start = vertexToString(start);
-    finish = vertexToString(finish);
+  dijkstra(startFXY, finishFXY) {
     const pq = new PriorityQueue();
     const distances = {};
     const previous = {};
@@ -110,7 +105,7 @@ class WeightedGraph {
     // console.log(start, finish);
     //build up initial state
     for (let vertex in this.adjacencyList) {
-      if (vertex === start) {
+      if (vertex === startFXY) {
         distances[vertex] = 0;
         pq.enqueue(vertex, 0);
       } else {
@@ -122,11 +117,11 @@ class WeightedGraph {
     // as long as there is something to visit
     while (pq.values.length) {
       smallest = pq.dequeue().value;
-      if (smallest === finish) {
+      if (smallest === finishFXY) {
         //WE ARE DONE
         //BUILD UP PATH TO RETURN AT END
         while (previous[smallest]) {
-          path.push(this.vertices[smallest]);
+          path.push(smallest);
           smallest = previous[smallest];
         }
         break;
@@ -153,8 +148,8 @@ class WeightedGraph {
       }
     }
     return {
-      path: path.concat(this.vertices[smallest]).reverse(),
-      distance: distances[finish],
+      path: path.concat(smallest).reverse(),
+      distance: distances[finishFXY],
     };
   }
 }
