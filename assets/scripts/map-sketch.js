@@ -72,14 +72,17 @@ const VIEW = {
 		// because consecutive increments are separated by a factor up to 5/2
 		const MIN_RULER_LENGTH_IN_PIXELS = 40;
 		const MAX_RULER_LENGTH_IN_PIXELS = 120;
+		function firstDigit() {
+			return String(VIEW.rulerInMeters)[0];
+		}
+		// 1 -> 2 -> 5 -> 10
 		function increment() {
-			if (String(VIEW.rulerInMeters)[0] == '2') VIEW.rulerInMeters *= 5 / 2;
-			// Includes 1 -> 2 and 5 -> 10
+			if (firstDigit() == '2') VIEW.rulerInMeters *= 5 / 2;
 			else VIEW.rulerInMeters *= 2;
 		}
+		// 10 -> 5 -> 2 -> 1
 		function decrement() {
-			if (String(VIEW.rulerInMeters)[0] == '5') VIEW.rulerInMeters /= 5 / 2;
-			// Includes 1 -> 0.5 and 2 -> 1
+			if (firstDigit() == '5') VIEW.rulerInMeters /= 5 / 2;
 			else VIEW.rulerInMeters /= 2;
 		}
 		while (VIEW.rulerInPixels() < MIN_RULER_LENGTH_IN_PIXELS) increment();
@@ -99,8 +102,11 @@ const VIEW = {
 	reset() {
 		VIEW.zoom = DEFAULT_ZOOM;
 		const CANVAS_CENTER = createVector(width / 2, height / 2);
-		const FLOOR_SIZE_VECTOR = createVector(images.floors[0].width, images.floors[0].height);
-		VIEW.physPos = CANVAS_CENTER.sub(p5.Vector.mult(FLOOR_SIZE_VECTOR, VIEW.zoom / 2));
+		const IMAGE_0 = images.floors[0];
+		const FLOOR_SIZE_VECTOR = createVector(IMAGE_0.width, IMAGE_0.height);
+		VIEW.physPos = CANVAS_CENTER.sub(
+			p5.Vector.mult(FLOOR_SIZE_VECTOR, VIEW.zoom / 2)
+		);
 		VIEW.calibrateRuler();
 	}
 };
@@ -218,10 +224,19 @@ function windowResized() {
 
 function keyPressed() {
 	if (!showingDevTools) return;
-	if (keyCode == DELETE) {
-		if (blairpathObjectType(activeObject) == "edge") {
-
+	const activeType = blairpathObjectType(activeObject);
+	if (key == 's') {
+		if (activeType == "border")
+			activeObject.section = "path";
+		else if (activeType == "path")
+			activeObject.section = "border";
+	} else if (keyCode == BACKSPACE) {
+		if (activeType == "edge") {
+			memoryData.edges.delete(activeObject);
+		} else {
+			
 		}
+		activeObject = null;
 	}
 };
 
