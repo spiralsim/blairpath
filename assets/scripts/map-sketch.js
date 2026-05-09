@@ -388,9 +388,8 @@ function showLabels() {
 	}
 }
 
-var showingDevTools = true;
+var showingDevTools = false;
 function toggleDevTools() {
-	if (activeBorder) deleteActiveBorder();
 	showingDevTools = !showingDevTools;
 	document.getElementById('outputDiv').hidden = !showingDevTools;
 }
@@ -406,7 +405,6 @@ function showDevTools() {
 		noFill();
 		rectMode(CENTER);
 		const shapeFunction = vertexType(v) == "path" ? circle : square;
-		console.log(v.fxy.x, v.fxy.y);
 		shapeFunction(v.fxy.x, v.fxy.y, VIEW.vertexDiameter);
 	});
 }

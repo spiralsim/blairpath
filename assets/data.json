@@ -2724,14 +2724,6 @@
         {
             "fxy": {
                 "floor": 1,
-                "x": 50,
-                "y": 123
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
                 "x": 117,
                 "y": 78
             },
@@ -2756,32 +2748,8 @@
         {
             "fxy": {
                 "floor": 1,
-                "x": 110,
-                "y": 343
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
                 "x": 321,
                 "y": 343
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 110,
-                "y": 368
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 110,
-                "y": 397
             },
             "section": "path"
         },
@@ -2804,14 +2772,6 @@
         {
             "fxy": {
                 "floor": 1,
-                "x": 117,
-                "y": 78
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
                 "x": 185,
                 "y": 33
             },
@@ -2820,14 +2780,6 @@
         {
             "fxy": {
                 "floor": 1,
-                "x": 117,
-                "y": 78
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
                 "x": 199,
                 "y": 202
             },
@@ -2852,30 +2804,6 @@
         {
             "fxy": {
                 "floor": 1,
-                "x": 184,
-                "y": 219
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 199,
-                "y": 202
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 190,
-                "y": 235
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
                 "x": 237,
                 "y": 234
             },
@@ -2884,72 +2812,8 @@
         {
             "fxy": {
                 "floor": 1,
-                "x": 199,
-                "y": 202
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
                 "x": 246,
                 "y": 186
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 237,
-                "y": 234
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 273,
-                "y": 223
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 246,
-                "y": 186
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 265,
-                "y": 196
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 246,
-                "y": 186
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 269,
-                "y": 166
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 265,
-                "y": 196
             },
             "section": "path"
         },
@@ -2966,14 +2830,6 @@
                 "floor": 1,
                 "x": 265,
                 "y": 196
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 278,
-                "y": 174
             },
             "section": "path"
         },
@@ -2990,14 +2846,6 @@
                 "floor": 1,
                 "x": 278,
                 "y": 174
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 273,
-                "y": 223
             },
             "section": "path"
         },
@@ -3028,14 +2876,6 @@
         {
             "fxy": {
                 "floor": 1,
-                "x": 293,
-                "y": 431
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
                 "x": 321,
                 "y": 431
             },
@@ -3060,24 +2900,8 @@
         {
             "fxy": {
                 "floor": 1,
-                "x": 294,
-                "y": 254
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
                 "x": 321,
                 "y": 254
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 321,
-                "y": 431
             },
             "section": "path"
         },
@@ -3086,30 +2910,6 @@
                 "floor": 1,
                 "x": 321,
                 "y": 400
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 321,
-                "y": 235
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 321,
-                "y": 254
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 321,
-                "y": 235
             },
             "section": "path"
         },
@@ -3118,46 +2918,6 @@
                 "floor": 1,
                 "x": 380,
                 "y": 250
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 321,
-                "y": 343
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 321,
-                "y": 400
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 321,
-                "y": 343
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 321,
-                "y": 254
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 321,
-                "y": 400
             },
             "section": "path"
         },
@@ -3173,23 +2933,7 @@
             "fxy": {
                 "floor": 1,
                 "x": 380,
-                "y": 250
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 380,
                 "y": 171
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 380,
-                "y": 250
             },
             "section": "path"
         },
@@ -3236,14 +2980,6 @@
         {
             "fxy": {
                 "floor": 1,
-                "x": 430,
-                "y": 459
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
                 "x": 457,
                 "y": 459
             },
@@ -3252,40 +2988,8 @@
         {
             "fxy": {
                 "floor": 1,
-                "x": 438,
-                "y": 268
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 438,
-                "y": 249
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 438,
-                "y": 268
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
                 "x": 458,
                 "y": 274
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 438,
-                "y": 249
             },
             "section": "path"
         },
@@ -3294,54 +2998,6 @@
                 "floor": 1,
                 "x": 438,
                 "y": 170
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 457,
-                "y": 459
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 457,
-                "y": 427
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 457,
-                "y": 399
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 457,
-                "y": 427
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 457,
-                "y": 399
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 458,
-                "y": 274
             },
             "section": "path"
         },
@@ -3358,22 +3014,6 @@
                 "floor": 1,
                 "x": 594,
                 "y": 428
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 458,
-                "y": 274
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 528,
-                "y": 293
             },
             "section": "path"
         },
@@ -3412,56 +3052,8 @@
         {
             "fxy": {
                 "floor": 1,
-                "x": 594,
-                "y": 428
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 594,
-                "y": 454
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 594,
-                "y": 428
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 595,
-                "y": 311
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 594,
-                "y": 454
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
                 "x": 698,
                 "y": 455
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 595,
-                "y": 311
             },
             "section": "path"
         },
@@ -3486,46 +3078,6 @@
                 "floor": 1,
                 "x": 612,
                 "y": 353
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 612,
-                "y": 353
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 622,
-                "y": 353
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 613,
-                "y": 316
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 622,
-                "y": 319
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 622,
-                "y": 319
             },
             "section": "path"
         },
@@ -3565,30 +3117,6 @@
             "fxy": {
                 "floor": 1,
                 "x": 668,
-                "y": 331
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 668,
-                "y": 331
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 668,
-                "y": 377
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 668,
                 "y": 377
             },
             "section": "path"
@@ -3620,48 +3148,8 @@
         {
             "fxy": {
                 "floor": 1,
-                "x": 698,
-                "y": 483
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 698,
-                "y": 455
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 704,
-                "y": 411
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
                 "x": 761,
                 "y": 415
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 761,
-                "y": 415
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 782,
-                "y": 407
             },
             "section": "path"
         },
@@ -3701,39 +3189,7 @@
             "fxy": {
                 "floor": 1,
                 "x": 944,
-                "y": 382
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 944,
-                "y": 408
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 944,
-                "y": 382
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 944,
                 "y": 322
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 944,
-                "y": 408
             },
             "section": "path"
         },
@@ -3748,32 +3204,8 @@
         {
             "fxy": {
                 "floor": 1,
-                "x": 944,
-                "y": 322
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
                 "x": 955,
                 "y": 322
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 955,
-                "y": 322
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 955,
-                "y": 301
             },
             "section": "path"
         },
@@ -3790,30 +3222,6 @@
                 "floor": 1,
                 "x": 1000,
                 "y": 301
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 999,
-                "y": 408
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 1000,
-                "y": 301
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 999,
-                "y": 408
             },
             "section": "path"
         },
@@ -3822,14 +3230,6 @@
                 "floor": 1,
                 "x": 1015,
                 "y": 409
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 1000,
-                "y": 301
             },
             "section": "path"
         },
@@ -3852,32 +3252,8 @@
         {
             "fxy": {
                 "floor": 1,
-                "x": 1015,
-                "y": 409
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 1015,
-                "y": 409
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
                 "x": 1077,
                 "y": 409
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 121,
-                "y": 397
             },
             "section": "path"
         },
@@ -3886,14 +3262,6 @@
                 "floor": 2,
                 "x": 121,
                 "y": 397
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 293,
-                "y": 440
             },
             "section": "path"
         },
@@ -3907,25 +3275,9 @@
         },
         {
             "fxy": {
-                "floor": 1,
-                "x": 294,
-                "y": 272
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
                 "floor": 2,
                 "x": 294,
                 "y": 272
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 403,
-                "y": 237
             },
             "section": "path"
         },
@@ -3939,14 +3291,6 @@
         },
         {
             "fxy": {
-                "floor": 1,
-                "x": 430,
-                "y": 469
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
                 "floor": 2,
                 "x": 430,
                 "y": 468
@@ -3955,25 +3299,9 @@
         },
         {
             "fxy": {
-                "floor": 1,
-                "x": 528,
-                "y": 293
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
                 "floor": 2,
                 "x": 528,
                 "y": 293
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 612,
-                "y": 331
             },
             "section": "path"
         },
@@ -3982,14 +3310,6 @@
                 "floor": 2,
                 "x": 613,
                 "y": 330
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 1,
-                "x": 689,
-                "y": 483
             },
             "section": "path"
         },
@@ -4014,38 +3334,6 @@
                 "floor": 2,
                 "x": 112,
                 "y": 397
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 112,
-                "y": 371
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 121,
-                "y": 371
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 121,
-                "y": 397
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 121,
-                "y": 371
             },
             "section": "path"
         },
@@ -4084,24 +3372,8 @@
         {
             "fxy": {
                 "floor": 2,
-                "x": 293,
-                "y": 439
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
                 "x": 322,
                 "y": 439
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 294,
-                "y": 272
             },
             "section": "path"
         },
@@ -4124,48 +3396,8 @@
         {
             "fxy": {
                 "floor": 2,
-                "x": 303,
-                "y": 272
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 303,
-                "y": 272
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
                 "x": 322,
                 "y": 277
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 322,
-                "y": 371
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 322,
-                "y": 277
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 322,
-                "y": 371
             },
             "section": "path"
         },
@@ -4174,22 +3406,6 @@
                 "floor": 2,
                 "x": 322,
                 "y": 399
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 322,
-                "y": 250
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 322,
-                "y": 277
             },
             "section": "path"
         },
@@ -4206,30 +3422,6 @@
                 "floor": 2,
                 "x": 373,
                 "y": 263
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 322,
-                "y": 399
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 322,
-                "y": 431
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 322,
-                "y": 399
             },
             "section": "path"
         },
@@ -4244,40 +3436,8 @@
         {
             "fxy": {
                 "floor": 2,
-                "x": 322,
-                "y": 431
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 322,
-                "y": 439
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 373,
-                "y": 263
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
                 "x": 377,
                 "y": 250
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 373,
-                "y": 263
             },
             "section": "path"
         },
@@ -4292,24 +3452,8 @@
         {
             "fxy": {
                 "floor": 2,
-                "x": 377,
-                "y": 250
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
                 "x": 382,
                 "y": 232
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 377,
-                "y": 250
             },
             "section": "path"
         },
@@ -4324,22 +3468,6 @@
         {
             "fxy": {
                 "floor": 2,
-                "x": 382,
-                "y": 232
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 403,
-                "y": 238
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
                 "x": 430,
                 "y": 459
             },
@@ -4356,80 +3484,8 @@
         {
             "fxy": {
                 "floor": 2,
-                "x": 430,
-                "y": 468
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
                 "x": 458,
                 "y": 468
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 458,
-                "y": 459
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 458,
-                "y": 468
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 458,
-                "y": 459
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 458,
-                "y": 427
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 458,
-                "y": 399
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 458,
-                "y": 427
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 458,
-                "y": 399
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 459,
-                "y": 288
             },
             "section": "path"
         },
@@ -4446,38 +3502,6 @@
                 "floor": 2,
                 "x": 595,
                 "y": 427
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 459,
-                "y": 288
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 524,
-                "y": 306
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 524,
-                "y": 306
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 528,
-                "y": 293
             },
             "section": "path"
         },
@@ -4494,54 +3518,6 @@
                 "floor": 2,
                 "x": 595,
                 "y": 325
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 595,
-                "y": 427
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 595,
-                "y": 325
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 595,
-                "y": 427
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 595,
-                "y": 455
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 595,
-                "y": 325
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 613,
-                "y": 330
             },
             "section": "path"
         },
@@ -4564,32 +3540,8 @@
         {
             "fxy": {
                 "floor": 2,
-                "x": 595,
-                "y": 455
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
                 "x": 688,
                 "y": 455
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 613,
-                "y": 330
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 622,
-                "y": 333
             },
             "section": "path"
         },
@@ -4612,30 +3564,6 @@
         {
             "fxy": {
                 "floor": 2,
-                "x": 688,
-                "y": 455
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 688,
-                "y": 482
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 688,
-                "y": 455
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
                 "x": 699,
                 "y": 455
             },
@@ -4646,22 +3574,6 @@
                 "floor": 2,
                 "x": 699,
                 "y": 482
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 699,
-                "y": 455
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 112,
-                "y": 397
             },
             "section": "path"
         },
@@ -4675,25 +3587,9 @@
         },
         {
             "fxy": {
-                "floor": 2,
-                "x": 293,
-                "y": 430
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
                 "floor": 3,
                 "x": 293,
                 "y": 430
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 303,
-                "y": 246
             },
             "section": "path"
         },
@@ -4707,25 +3603,9 @@
         },
         {
             "fxy": {
-                "floor": 2,
-                "x": 399,
-                "y": 256
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
                 "floor": 3,
                 "x": 399,
                 "y": 256
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 430,
-                "y": 459
             },
             "section": "path"
         },
@@ -4739,14 +3619,6 @@
         },
         {
             "fxy": {
-                "floor": 2,
-                "x": 528,
-                "y": 293
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
                 "floor": 3,
                 "x": 528,
                 "y": 293
@@ -4755,25 +3627,9 @@
         },
         {
             "fxy": {
-                "floor": 2,
-                "x": 622,
-                "y": 353
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
                 "floor": 3,
                 "x": 622,
                 "y": 353
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 2,
-                "x": 699,
-                "y": 482
             },
             "section": "path"
         },
@@ -4782,14 +3638,6 @@
                 "floor": 3,
                 "x": 699,
                 "y": 483
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 112,
-                "y": 398
             },
             "section": "path"
         },
@@ -4820,48 +3668,8 @@
         {
             "fxy": {
                 "floor": 3,
-                "x": 121,
-                "y": 398
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 122,
-                "y": 371
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 122,
-                "y": 371
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
                 "x": 294,
                 "y": 371
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 293,
-                "y": 430
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 293,
-                "y": 441
             },
             "section": "path"
         },
@@ -4885,23 +3693,7 @@
             "fxy": {
                 "floor": 3,
                 "x": 294,
-                "y": 371
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 294,
                 "y": 272
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 294,
-                "y": 371
             },
             "section": "path"
         },
@@ -4924,64 +3716,8 @@
         {
             "fxy": {
                 "floor": 3,
-                "x": 294,
-                "y": 272
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 294,
-                "y": 244
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 303,
-                "y": 247
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 294,
-                "y": 272
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
                 "x": 351,
                 "y": 272
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 322,
-                "y": 441
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 322,
-                "y": 371
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 322,
-                "y": 371
             },
             "section": "path"
         },
@@ -4990,38 +3726,6 @@
                 "floor": 3,
                 "x": 458,
                 "y": 371
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 351,
-                "y": 272
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 413,
-                "y": 288
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 399,
-                "y": 256
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 420,
-                "y": 263
             },
             "section": "path"
         },
@@ -5044,32 +3748,8 @@
         {
             "fxy": {
                 "floor": 3,
-                "x": 413,
-                "y": 288
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
                 "x": 458,
                 "y": 300
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 431,
-                "y": 460
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 431,
-                "y": 469
             },
             "section": "path"
         },
@@ -5086,30 +3766,6 @@
                 "floor": 3,
                 "x": 458,
                 "y": 469
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 458,
-                "y": 300
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 458,
-                "y": 371
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 458,
-                "y": 300
             },
             "section": "path"
         },
@@ -5125,79 +3781,7 @@
             "fxy": {
                 "floor": 3,
                 "x": 458,
-                "y": 371
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 458,
                 "y": 399
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 458,
-                "y": 399
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 458,
-                "y": 469
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 458,
-                "y": 399
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 595,
-                "y": 399
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 528,
-                "y": 319
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 528,
-                "y": 293
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 528,
-                "y": 319
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 595,
-                "y": 337
             },
             "section": "path"
         },
@@ -5214,14 +3798,6 @@
                 "floor": 3,
                 "x": 595,
                 "y": 337
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 595,
-                "y": 399
             },
             "section": "path"
         },
@@ -5230,14 +3806,6 @@
                 "floor": 3,
                 "x": 595,
                 "y": 483
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 595,
-                "y": 337
             },
             "section": "path"
         },
@@ -5246,14 +3814,6 @@
                 "floor": 3,
                 "x": 613,
                 "y": 330
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 595,
-                "y": 483
             },
             "section": "path"
         },
@@ -5268,56 +3828,8 @@
         {
             "fxy": {
                 "floor": 3,
-                "x": 595,
-                "y": 483
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 699,
-                "y": 483
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
                 "x": 613,
                 "y": 353
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 613,
-                "y": 330
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 613,
-                "y": 353
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 622,
-                "y": 353
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 3,
-                "x": 528,
-                "y": 293
             },
             "section": "path"
         },
@@ -5342,14 +3854,6 @@
                 "floor": 4,
                 "x": 320,
                 "y": 283
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
-                "x": 320,
-                "y": 385
             },
             "section": "path"
         },
@@ -5364,22 +3868,6 @@
         {
             "fxy": {
                 "floor": 4,
-                "x": 320,
-                "y": 283
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
-                "x": 363,
-                "y": 283
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
                 "x": 363,
                 "y": 283
             },
@@ -5390,22 +3878,6 @@
                 "floor": 4,
                 "x": 363,
                 "y": 273
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
-                "x": 363,
-                "y": 273
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
-                "x": 454,
-                "y": 299
             },
             "section": "path"
         },
@@ -5422,14 +3894,6 @@
                 "floor": 4,
                 "x": 458,
                 "y": 321
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
-                "x": 454,
-                "y": 299
             },
             "section": "path"
         },
@@ -5444,40 +3908,8 @@
         {
             "fxy": {
                 "floor": 4,
-                "x": 458,
-                "y": 321
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
-                "x": 458,
-                "y": 407
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
-                "x": 458,
-                "y": 321
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
                 "x": 475,
                 "y": 324
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
-                "x": 458,
-                "y": 407
             },
             "section": "path"
         },
@@ -5492,64 +3924,8 @@
         {
             "fxy": {
                 "floor": 4,
-                "x": 475,
-                "y": 324
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
                 "x": 485,
                 "y": 315
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
-                "x": 478,
-                "y": 303
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
-                "x": 485,
-                "y": 315
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
-                "x": 485,
-                "y": 315
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
-                "x": 528,
-                "y": 320
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
-                "x": 528,
-                "y": 320
-            },
-            "section": "path"
-        },
-        {
-            "fxy": {
-                "floor": 4,
-                "x": 528,
-                "y": 293
             },
             "section": "path"
         },
@@ -8508,14 +6884,6 @@
         },
         {
             "fxy": {
-                "x": 761,
-                "y": 415,
-                "floor": 1
-            },
-            "section": "border"
-        },
-        {
-            "fxy": {
                 "x": 1083,
                 "y": 417,
                 "floor": 1
@@ -8590,14 +6958,6 @@
             "fxy": {
                 "x": 1082,
                 "y": 402,
-                "floor": 1
-            },
-            "section": "border"
-        },
-        {
-            "fxy": {
-                "x": -10,
-                "y": 115,
                 "floor": 1
             },
             "section": "border"
@@ -8798,14 +7158,6 @@
             "fxy": {
                 "x": 61,
                 "y": 293,
-                "floor": 1
-            },
-            "section": "border"
-        },
-        {
-            "fxy": {
-                "x": 12,
-                "y": 357,
                 "floor": 1
             },
             "section": "border"

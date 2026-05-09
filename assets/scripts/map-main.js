@@ -101,8 +101,22 @@ function edgeType(edge) {
 }
 
 $.getJSON('/data.json', function (payload) {
-	memoryData = payload;
+	memoryData = structuredClone(payload);
 
+	function retainUniqueVertices(vertices) {
+		var uniqueVertices = [];
+		var fxyStrings = new Set();
+		payload.vertices.forEach(v => {
+			const fxyString = FXYtoString(v.fxy);
+			if (fxyStrings.has(fxyString))
+				return;
+			fxyStrings.add(fxyString);
+			uniqueVertices.push(v);
+		});
+		return uniqueVertices;
+	}
+	memoryData.vertices = retainUniqueVertices(memoryData.vertices);
+	
 	memoryData.vertices.forEach(v => {
 		stringToVertex[FXYtoString(v.fxy)] = v;
 		if (v.id) idToPlace[v.id] = v;
@@ -113,7 +127,7 @@ $.getJSON('/data.json', function (payload) {
 		var minDist = Infinity, tempEdge;
 		memoryData.vertices.forEach(v => {
 			if (v.fxy.floor != place.fxy.floor) return;
-			if (v.section != 'path') return;
+			if (v.section != "path") return;
 			const edge = [place.fxy, v.fxy];
 			const dist = edgeLengthInPixels(edge);
 			if (dist && dist < minDist) {
