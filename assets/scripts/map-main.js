@@ -13,7 +13,7 @@ function edgeLengthInPixels([{floor: f1, x: x1, y: y1}, {floor: f2, x: x2, y: y2
 	);
 }
 
-function FXY(floor, x, y) {
+function fxy(floor, x, y) {
 	return {floor: floor, x: Math.round(x), y: Math.round(y)};
 }
 
@@ -334,7 +334,6 @@ function calculatePath(query) {
 
 		var {path: subpathFXYStrings, distance: subpathDistance} =
 			graph.dijkstra(...subpathPlaceFXYStrings);
-		console.log(graph.dijkstra(...subpathPlaceFXYStrings));
 
 		if (subpathDistance == Infinity)
 			return finishCalc(`No path from ${subpathIDs.join(' to ')}`, true);

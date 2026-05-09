@@ -27,17 +27,8 @@ function distToLine ({ x: px, y: py }, { x: ax, y: ay }, { x: bx, y: by }) {
 	t = max(0, min(1, t));
 	return dist(px, py, ax + t * (bx - ax), ay + t * (by - ay));
 }
-/**
- * 
- * @param {{x, y}} endpoint1 
- * @param {{x, y}} endpoint2 
- * @returns bool
- */
-function edgeIsHovered([endpoint1, endpoint2]) {
-	return distToLine(CURSOR.virtualXY, endpoint1, endpoint2) < VIEW.hoverRadius;
-}
 
-var loaded = false, lastFrameRate = 60, lastUpdate = framesSinceUpdate = 0;
+var loaded = false;
 
 /*
 	Navigation
@@ -65,6 +56,9 @@ const VIEW = {
 	rulerInMeters: 100,
 	get hoverRadius() {
 		return EDGE_WIDTH / this.zoom;
+	},
+	get vertexDiameter() {
+		return this.hoverRadius * 3;
 	},
 	pan(delta) {
 		VIEW.physPos.add(delta);
@@ -121,10 +115,10 @@ const CURSOR = {
 	get virtualXY() {
 		return p5.Vector.sub(CURSOR.canvasXY, VIEW.physPos).div(VIEW.zoom);
 	},
-	get FXY() {
-		return FXY(VIEW.floor, this.virtualXY.x, this.virtualXY.y);
+	get fxy() {
+		return fxy(VIEW.floor, this.virtualXY.x, this.virtualXY.y);
 	},
-	get virtPosArray2D() {
+	get virtualXYArray() {
 		return this.virtualXY.array().slice(0, 2).map(coord => round(coord));
 	}
 };
@@ -147,16 +141,64 @@ for (let option in showOptions) {
 var cursorType;
 
 var hoveredObject = null;
-function hoveredType() {
-	if ('fxy' in hoveredObject) {
-		if (hoveredObject.section[0]) 
-		return 'vertex';
-	}
+var activeObject = null;
+function blairpathObjectType(object) {
+	if (!object)
+		return null;
+	else if (Array.isArray(object)) 
+		return "edge";
+	else
+		return vertexType(object);
+}
 
+function isVisibleBorder(edge) {
+	return edgeType(edge) == "border" && VIEW.floor == 1;
+}
+function isPathEdge(object) {
+	if (blairpathObjectType(object) != "edge")
+		return false;
+	return edgesOnPath.has(edgeToString(object));
+}
+
+function blairpathObjectColor(object) {
+	var colorUsed = isPathEdge(object) ? color(0, 128, 255) : color(0);
+	if (object == activeObject)
+		colorUsed = color(0, 192, 0);
+	if (object == hoveredObject)
+		colorUsed = lerpColor(colorUsed, color(255), 0.75);
+	stroke(colorUsed);
+	fill(colorUsed);
+}
+
+function refreshHoveredObject() {
+	hoveredObject = null;
+	if (!showingDevTools)
+		return;
+	for (let i = 0; i < memoryData.vertices.length; i++) {
+		const v = memoryData.vertices[i];
+		const fxy = v.fxy;
+		if (fxy.floor != VIEW.floor)
+			continue;
+		const radius = VIEW.vertexDiameter / 2;
+		if (dist(...CURSOR.virtualXYArray, fxy.x, fxy.y) < radius) {
+			hoveredObject = v;
+			return;
+		}
+	}
+	for (let i = 0; i < memoryData.edges.length; i++) {
+		const e = memoryData.edges[i];
+		if (!e.some(fxy => fxy.floor == VIEW.floor))
+			continue;
+		if (edgeType(e) == "temporary")
+			continue;
+		if (distToLine(CURSOR.virtualXY, ...e) < VIEW.hoverRadius) {
+			hoveredObject = e;
+			return;
+		}
+	}
 }
 
 const LABEL_FONT_SIZE = 14;
-const ACTIVE_COLOR = [0, 192, 0];
 
 /*
 	p5.js Event Functions
@@ -175,48 +217,29 @@ function windowResized() {
 	resizeCanvas(getCanvasDivWidth(), windowHeight);
 }
 
-var hoveredVertex = null, activeVertex = null;
-var activeEdge = null;
-
-var hoveredEdge = null;
 function keyPressed() {
 	if (!showingDevTools) return;
 };
 
 function mousePressed() {
-	if (hoveredPlace) {
-		// Handle edge case where there are no rows to begin with
-		if (!rows.length) addPlaceInput();
-		// Find the number of the first empty point input
-		for (let i = 1; i <= rows.length; i++) {
-			if (!getPointValue(i)) {
-				setPointValue(i, hoveredPlace.id);
-				return;
+	switch (blairpathObjectType(hoveredObject)) {
+		case null:
+			break;
+		case "place":
+			// Handle edge case where there are no rows to begin with
+			if (!rows.length) addPlaceInput();
+			// Find the number of the first empty point input
+			for (let i = 1; i <= rows.length; i++) {
+				if (!getPointValue(i)) {
+					setPointValue(i, hoveredObject.id);
+					return;
+				}
 			}
-		}
-		addPlaceInput();
-		setPointValue(rows.length, hoveredPlace.id);
-	}
-
-	if (hoveredVertex) {
-		activeVertex = hoveredVertex != activeVertex ? hoveredVertex : null;
-		return;
-	}
-	if (activeVertex) {
-		const newVertex = {
-			floor: VIEW.floor,
-			x: CURSOR.virtPosArray2D[0],
-			y: CURSOR.virtPosArray2D[1]
-		};
-		const newEdge = {endpoint1: activeVertex, endpoint2: newVertex};
-		memoryData.edges.push(newEdge);
-		activeVertex = newVertex;
-		activeEdge = newEdge;
-		return;
-	}
-	if (hoveredEdge) {
-		activeEdge = hoveredEdge;
-		return;
+			addPlaceInput();
+			setPointValue(rows.length, hoveredObject.id);
+			break;
+		default:
+			activeObject = hoveredObject;
 	}
 };
 
@@ -236,9 +259,8 @@ const EDGE_WIDTH = 4;
  * Draws an edge (segment, dotted, or arrow).
  * 
  * @param {} edge
- * @param {p5.Color} _color
  */
-function drawEdge(e, _color) {
+function drawEdge(e) {
 	/**
 	 * Draws an arrow representing the vertical edge between `a` and `b`, pointing
 	 * in the direction of the endpoint not on the current floor.
@@ -265,17 +287,16 @@ function drawEdge(e, _color) {
 			point(lerp(a.x, b.x, i / length), lerp(a.y, b.y, i / length));
 	}
 
-	stroke(_color);
-	fill(_color);
+	blairpathObjectColor(e);
 
-	var originalStrokeWeight = EDGE_WIDTH;
-	if (edgeType(e) == 'border')
-		originalStrokeWeight /= 2;
-	strokeWeight(originalStrokeWeight / VIEW.zoom);
+	var strokeWeightBeforeZoom = EDGE_WIDTH;
+	if (edgeType(e) == "border")
+		strokeWeightBeforeZoom /= 2;
+	strokeWeight(strokeWeightBeforeZoom / VIEW.zoom);
 
 	const a = e[0], b = e[1];
 	if (a.floor == b.floor) {
-		if (edgeType(e) == 'temporary') drawDottedEdge(a, b);
+		if (edgeType(e) == "temporary") drawDottedEdge(a, b);
 		else line(a.x, a.y, b.x, b.y);
 	} else drawArrow(a, b);
 }
@@ -290,26 +311,14 @@ function showSitePlan() {
 }
 
 function showEdges() {
-	hoveredEdge = null;
 	memoryData.edges.forEach(e => {
-		if (!e.map(endpoint => endpoint.floor).includes(VIEW.floor))
-			return;
-		
-		const isVisibleBorder = edgeType(e) == 'border' && VIEW.floor == 1;
-
-		const onPath = edgesOnPath.has(edgeToString(e));
-		if (!onPath && !showingDevTools && !isVisibleBorder)
+		if (!e.map(fxy => fxy.floor).includes(VIEW.floor))
 			return;
 
-		var edge_color = onPath ? color(0, 128, 255) : color(0);
-		if (showingDevTools) {
-			if (edgeIsHovered(e)) {
-				edge_color = lerpColor(edge_color, color(255), 0.75);
-				hoveredEdge = e;
-			}
-		}
-		if (e == activeEdge) edge_color = ACTIVE_COLOR;
-		drawEdge(e, edge_color);
+		if (!isPathEdge(e) && !showingDevTools && !isVisibleBorder(e))
+			return;
+
+		drawEdge(e);
 	});
 }
 
@@ -352,7 +361,7 @@ function showLabels() {
 	textAlign(CENTER, CENTER);
 	textSize(14 / VIEW.zoom);
 	strokeWeight(2 / VIEW.zoom);
-	const pointValuesSet = new Set(getPlaceInputs());
+	const placeValuesSet = new Set(getPlaceInputs());
 	// Display dots for room selection
 	for (let id in idToPlace) {
 		const place = idToPlace[id], fxy = place.fxy;
@@ -362,18 +371,18 @@ function showLabels() {
 		if (
 			abs(CURSOR.virtualXY.x - fxy.x) < nameWidth / 2 &&
 			abs(CURSOR.virtualXY.y - fxy.y) < 6 / VIEW.zoom &&
-			!hoveredPlace
+			!hoveredObject
 		) {
-			hoveredPlace = place;
+			hoveredObject = place;
 			cursorType = HAND;
 		}
 
-		if (pointValuesSet.has(id)) {
+		if (placeValuesSet.has(id)) {
 			stroke(255);
 			fill(0);
 		} else {
 			stroke(0);
-			fill(place == hoveredPlace ? 128 : 255);
+			fill(place == hoveredObject ? 128 : 255);
 		}
 		text(id, fxy.x, fxy.y);
 	}
@@ -388,42 +397,37 @@ function toggleDevTools() {
 function showDevTools() {
 	noFill();
 	strokeWeight(2 / VIEW.zoom);
-	hoveredVertex = null;
-	memoryData.edges.forEach(e => {
-		const eType = edgeType(e);
-		if (eType == 'temporary') return;
-		e.forEach(pos => {
-			if (pos.floor != VIEW.floor) return;
-			const diameter = EDGE_WIDTH * 3 / VIEW.zoom;
-			var strokeColor = color(0);
-			if (pos == activeVertex) strokeColor = color(0, 192, 0);
-			if (dist(...CURSOR.virtPosArray2D, pos.x, pos.y) < diameter / 2) {
-				hoveredVertex = pos;
-				strokeColor = lerpColor(strokeColor, color(255), 0.75);
-			}
-			stroke(strokeColor);
-			if (eType == 'path') circle(pos.x, pos.y, diameter);
-			else if (eType == 'border') {
-				rectMode(CENTER);
-				square(pos.x, pos.y, diameter);
-			}
-		});
+	memoryData.vertices.forEach(v => {
+		if (v.fxy.floor != VIEW.floor)
+			return;
+		if (vertexType(v) == "place")
+			return;
+		blairpathObjectColor(v);
+		noFill();
+		rectMode(CENTER);
+		const shapeFunction = vertexType(v) == "path" ? circle : square;
+		console.log(v.fxy.x, v.fxy.y);
+		shapeFunction(v.fxy.x, v.fxy.y, VIEW.vertexDiameter);
 	});
 }
 
-function showTooltip(place) {
+function showTooltip() {
+	if (blairpathObjectType(hoveredObject) != "place")
+		return;
+
 	textSize(LABEL_FONT_SIZE);
 
-	var topText = place.id;
-	if (place.use && topText.indexOf(place.use) == -1)
-		topText += ' (' + place.use + ')';
+	var topText = hoveredObject.id;
+	if (hoveredObject.use && !topText.includes(hoveredObject.use))
+		topText += ` (${hoveredObject.use})`;
 
-	var bottomText = place.section;
+	var bottomText = hoveredObject.section;
 
-	const labelX = VIEW.physPos.x + place.fxy.x * VIEW.zoom;
-	const labelY = VIEW.physPos.y + place.fxy.y * VIEW.zoom;
+	const labelX = VIEW.physPos.x + hoveredObject.fxy.x * VIEW.zoom;
+	const labelY = VIEW.physPos.y + hoveredObject.fxy.y * VIEW.zoom;
+	const maxW = max(textWidth(topText), textWidth(bottomText));
 	const
-		tooltipW = max(textWidth(topText), textWidth(bottomText)) + LABEL_FONT_SIZE,
+		tooltipW = maxW + LABEL_FONT_SIZE,
 		tooltipH = 30,
 		tooltipX = constrain(labelX, tooltipW / 2, width - tooltipW / 2),
 		tooltipY = labelY + tooltipH * (labelY < height / 2 ? -1 : 1);
@@ -449,7 +453,7 @@ function showRuler() {
 
 	var rulerText = `${VIEW.rulerInMeters} m`;
 	if (showingDevTools && mouseHasMoved)
-		rulerText = `FXY: ${FXYtoString(CURSOR.FXY)} ` + rulerText;
+		rulerText = `FXY: ${FXYtoString(CURSOR.fxy)} ` + rulerText;
 	var rulerTextLeftX = rulerLeftX - 5 - textWidth(rulerText);
 
 	fill(255, 192);
@@ -477,8 +481,6 @@ function draw() {
 
 	// Map Display
 	push();
-	
-	// Apply view transformations
 	translate(VIEW.physPos);
 	scale(VIEW.zoom);
 
@@ -486,7 +488,7 @@ function draw() {
 	noFill();
 	imageMode(CORNER);
 
-	hoveredPlace = null;
+	refreshHoveredObject();
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
 	showEdges();
@@ -499,8 +501,7 @@ function draw() {
 	cursor(cursorType);
 	cursorType = ARROW;
 
-	// Place dots (tooltips)
-	if (hoveredPlace) showTooltip(hoveredPlace);
+	showTooltip();
 
 	showRuler();
 };
