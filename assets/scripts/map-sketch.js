@@ -87,11 +87,8 @@ const VIEW = {
 	},
 	applyZoom(scaleFactor, center = createVector(width / 2, height / 2)) {
 		var nextZoom = VIEW.zoom * scaleFactor;
-		// console.log(nextZoom);
-		if (nextZoom < MIN_ZOOM || nextZoom > MAX_ZOOM) {
-			console.log(nextRulerInMeters);
+		if (nextZoom < MIN_ZOOM || nextZoom > MAX_ZOOM)
 			return;
-		}
 
 		VIEW.physPos = p5.Vector.add(
 			center, p5.Vector.sub(VIEW.physPos, center).mult(scaleFactor)
@@ -174,8 +171,9 @@ function refreshHoveredObject() {
 	hoveredObject = null;
 	if (!showingDevTools)
 		return;
-	for (let i = 0; i < memoryData.vertices.length; i++) {
-		const v = memoryData.vertices[i];
+	const verticesArray = Array.from(memoryData.vertices);
+	for (let i = 0; i < verticesArray.length; i++) {
+		const v = verticesArray[i];
 		const fxy = v.fxy;
 		if (fxy.floor != VIEW.floor)
 			continue;
@@ -185,8 +183,9 @@ function refreshHoveredObject() {
 			return;
 		}
 	}
-	for (let i = 0; i < memoryData.edges.length; i++) {
-		const e = memoryData.edges[i];
+	const edgesArray = Array.from(memoryData.edges);
+	for (let i = 0; i < edgesArray.length; i++) {
+		const e = edgesArray[i];
 		if (!e.some(fxy => fxy.floor == VIEW.floor))
 			continue;
 		if (edgeType(e) == "temporary")
@@ -219,6 +218,11 @@ function windowResized() {
 
 function keyPressed() {
 	if (!showingDevTools) return;
+	if (keyCode == DELETE) {
+		if (blairpathObjectType(activeObject) == "edge") {
+
+		}
+	}
 };
 
 function mousePressed() {

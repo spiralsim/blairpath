@@ -100,30 +100,24 @@ function edgeType(edge) {
 		return "temporary";
 }
 
-$.getJSON('/data.json', function (payload) {
-	memoryData = structuredClone(payload);
-
-	function retainUniqueVertices(vertices) {
-		var uniqueVertices = [];
-		var fxyStrings = new Set();
-		payload.vertices.forEach(v => {
-			const fxyString = FXYtoString(v.fxy);
-			if (fxyStrings.has(fxyString))
-				return;
-			fxyStrings.add(fxyString);
-			uniqueVertices.push(v);
-		});
-		return uniqueVertices;
-	}
-	memoryData.vertices = retainUniqueVertices(memoryData.vertices);
+$.getJSON('/data.json', function(diskData) {
+	memoryData = {constants: diskData.constants};
 	
+	["edges", "vertices"].forEach(key => {
+		memoryData[key] = new Set(diskData[key]);
+	});
+
+	var places = [];
 	memoryData.vertices.forEach(v => {
 		stringToVertex[FXYtoString(v.fxy)] = v;
-		if (v.id) idToPlace[v.id] = v;
+		if (v.id) {
+			idToPlace[v.id] = v;
+			places.push(v);
+		}
 	});
 
 	// For each place, add a temporary edge from it to the nearest path vertex
-	Object.values(idToPlace).forEach(place => {
+	places.forEach(place => {
 		var minDist = Infinity, tempEdge;
 		memoryData.vertices.forEach(v => {
 			if (v.fxy.floor != place.fxy.floor) return;
@@ -135,7 +129,7 @@ $.getJSON('/data.json', function (payload) {
 				tempEdge = edge;
 			}
 		});
-		memoryData.edges.push(tempEdge);
+		memoryData.edges.add(tempEdge);
 	});
 
 	// Remove placeholder rows
@@ -148,9 +142,14 @@ $.getJSON('/data.json', function (payload) {
 });
 
 function copyNextDiskData() {
-	var nextDiskData = structuredClone(memoryData);
+	var nextDiskData = {constants: memoryData.constants};
+
+	["edges", "vertices"].forEach(key => {
+		nextDiskData[key] = Array.from(memoryData[key]);
+	});
+
 	nextDiskData.edges = nextDiskData.edges.filter(
-		e => edgeType(e) != 'temporary'
+		e => edgeType(e) != "temporary"
 	);
 	
 	const output = JSON.stringify(nextDiskData, null, 4);
