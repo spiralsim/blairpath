@@ -33,7 +33,7 @@ var loaded = false;
 /*
 	Navigation
 */
-const DEFAULT_ZOOM = 1, SCROLL_ZOOM_RATE = 1.01;
+const DEFAULT_ZOOM = 0.9, SCROLL_ZOOM_RATE = 1.01;
 const MIN_ZOOM = 0.3, MAX_ZOOM = 10;
 // All positions are given as pixel coordinates
 
