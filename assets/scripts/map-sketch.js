@@ -64,7 +64,8 @@ const VIEW = {
 		VIEW.physPos.add(delta);
 	},
 	rulerInPixels() {
-		return VIEW.rulerInMeters / memoryData.constants.METERS_PER_PIXEL * VIEW.zoom;
+		const M_PER_PX = memoryData.constants.METERS_PER_PIXEL ?? 0.32512;
+		return VIEW.rulerInMeters / M_PER_PX * VIEW.zoom;
 	},
 	calibrateRuler() {
 		// Note that we must have
