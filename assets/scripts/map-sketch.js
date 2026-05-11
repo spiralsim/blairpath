@@ -310,20 +310,21 @@ function mousePressed() {
 	const hoveredType = blairpathObjectType(hoveredObject);
 	const activeType = blairpathObjectType(activeObject);
 	if (hoveredType != "edge") {
-		if (hoveredType == "place") {
-			// Handle edge case where there are no rows to begin with
-			if (!rows.length) addPlaceInput();
-			// Find the number of the first empty point input
-			for (let i = 1; i <= rows.length; i++) {
-				if (!getPointValue(i)) {
-					setPointValue(i, hoveredObject.id);
-					return;
-				}
-			}
-			addPlaceInput();
-			setPointValue(rows.length, hoveredObject.id);
-		} else if (hoveredType == activeType)
-			memoryData.edges.add([activeObject.fxy, hoveredObject.fxy]);
+		if (hoveredType == "place")
+			addPlaceToTable(hoveredObject.id);
+		else if (hoveredType == activeType) {
+			const newEdge = [activeObject.fxy, hoveredObject.fxy];
+			const s = edgeToString(newEdge);
+			var isDuplicate = false;
+			memoryData.edges.forEach(e => {
+				if (edgeToString(e) == s || edgeToString(e.reverse()) == s)
+					isDuplicate = true;
+			});
+			if (!isDuplicate)
+				memoryData.edges.add([activeObject.fxy, hoveredObject.fxy]);
+			else
+				activeObject = hoveredObject;
+		}
 	}
 	if (hoveredType != "place")
 		activeObject = hoveredObject;

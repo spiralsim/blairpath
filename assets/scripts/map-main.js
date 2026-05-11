@@ -247,6 +247,20 @@ function setPointValue(index, value) {
 	return document.getElementById(`point-${index}`).value = value;
 }
 
+function addPlaceToTable(id) {
+	// Handle edge case where there are no rows to begin with
+	if (!rows.length) addPlaceInput();
+	// Find the number of the first empty point input
+	for (let i = 1; i <= rows.length; i++) {
+		if (!getPointValue(i)) {
+			setPointValue(i, id);
+			return;
+		}
+	}
+	addPlaceInput();
+	setPointValue(rows.length, id);
+}
+
 // Remove a row from the points table
 function removePoint (ID) {
 	// Remove the row
