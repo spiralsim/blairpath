@@ -9,35 +9,29 @@
 			<div class="scrollable">
 				<h1>About</h1>
 
-				<p>Blairpath is a web application that provides maps and route calculation for the campus of Montgomery Blair High School.</p>
-
-				<div class="banner red">
-					<p><b>Disclaimer:</b> Blairpath is a hobby project. It is not officially associated with Blair.</p>
-				</div>
+				<p>Blairpath is a web application that provides maps and route calculation for the campus of <a href="https://mbhs.edu/">Montgomery Blair High School</a>.</p>
 
 				<section style="display: table; width: 100%">
 					<div class="left">
 						<h3>Team</h3>
-						<ul>
-							<li>I (<a href="https://github.com/spiralsim"><b>Jeffrey Tong</b></a>, Blair Class of 2022) conceived and developed Blairpath.</li>
-							<li>My classmate (<a href="https://github.com/GeneralPoxter">Jason Liu</a>, Blair Class of 2022) designed the 4th floor.</li>
-						</ul>
+						<p>Blairpath was conceived and developed by <a href="https://github.com/spiralsim"><b>Jeffrey Tong</b></a> (Blair Class of 2022).</p>
 					</div>
 					<div class="right">
 						<h3>Statistics</h3>
 						<ul>
-							<li><b><%-Object.keys(data.places).length%></b> places (classrooms, offices, courtyards, etc.)</li>
-							<li><b><%-data.edges.length%></b> edges (hallways, stairwells, elevators, etc.)</li>
+							<li><b><%-diskData.vertices.filter(v => v.id).length%></b> places</li>
+							<li><b><%-new Set(diskData.vertices.map(v => v.fxy.floor)).size%></b> floors</li>
+							<li><b><%-diskData.vertices.length%></b> vertices</li>
+							<li><b><%-diskData.edges.length%></b> edges</li>
 						</ul>
 					</div>
 				</section>
 
 				<h3>History</h3>
-				<p><b>1998</b>: Construction of the present-day Blair campus was completed by SHW Group, Inc. Architects + Engineers (the company that designed the architecture). SHW Group wrote about their design <a href="https://web.archive.org/web/20200222231349/http://www.designshare.com/HighSchoolLibrary/HSBlair/Blair2_Prog.htm">here</a>, including design considerations and statistics. They also shared their floor plans, which I based Blairpath's maps on: <a href="https://web.archive.org/web/20120205151339im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/BlairSite.jpg">Site</a>, <a href="https://web.archive.org/web/20160505145914im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/blairpl1.jpg">Floor 1</a>, <a href="https://web.archive.org/web/20160505225805im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/blairpl2.gif">Floor 2</a>, <a href="https://web.archive.org/web/20120205151407im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/blairpl3.gif">Floor 3</a>.</p>
-				<p><b>2009</b>: The first reference (that I know of) to the 4th floor was made (<a href="https://blairbash.org/1227">Blairbash Quote 1227</a>). It became a running joke at Blair.</p>
-				<p><b>2019</b>: As a project for Blair's ADSB course, I developed Blairpath. I was heavily inspired by <a href="https://blairbash.org">Blairbash</a> and the website first went live on <a href="https://replit.com">Replit</a>. Jason designed the 4th floor.</p>
-				<p><b>2021</b>: I purchased the domain blairpath.org and started deploying Blairpath there using Heroku. Blair teacher Mr. Schwartz showed his 9th grade students Blairpath to help them get around.</li>
-				<p><b>2025</b>: I redesigned Blairpath to make its UI/UX much more intuitive to outsiders.</p>
+				<p><b>1998</b>: Construction of the present-day Blair campus was completed by its designer SHW Group, Inc. Architects + Engineers. They wrote about their design <a href="https://web.archive.org/web/20200222231349/http://www.designshare.com/HighSchoolLibrary/HSBlair/Blair2_Prog.htm">here</a>, including design considerations and statistics. They also shared their floor plans, which Blairpath's maps are based on: <a href="https://web.archive.org/web/20120205151339im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/BlairSite.jpg">Site</a>, <a href="https://web.archive.org/web/20160505145914im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/blairpl1.jpg">Floor 1</a>, <a href="https://web.archive.org/web/20160505225805im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/blairpl2.gif">Floor 2</a>, <a href="https://web.archive.org/web/20120205151407im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/blairpl3.gif">Floor 3</a>.</p>
+				<p><b>2009</b>: <a href="https://blairbash.org/1227">Blairbash Quote 1227</a>, the first known reference to the 4th floor, was published. It became a running joke at Blair.</p>
+				<p><b>2019</b>: Jeffrey developed Blairpath as a project for a Blair CS course. Some branding was inspired by <a href="https://blairbash.org">Blairbash</a>. Jason Liu (also Blair class of 2022) designed the 4th floor.</p>
+				<p><b>2021</b>: Blairpath purchased the domain blairpath.org to host on. Blair teacher Mr. Schwartz showed his 9th grade students it to help them get around.</li>
 
 				<h3>Technical</h3>
 				<p>Blairpath is open-source on GitHub at <a href="https://github.com/spiralsim/blairpath">spiralsim / <b>blairpath</b></a>.</p>

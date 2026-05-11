@@ -10,12 +10,12 @@ app
 	.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 // Handle all asset and page requests
-const DATA = JSON.parse(fs.readFileSync(`./assets/data.json`));
+const DISK_DATA = JSON.parse(fs.readFileSync(`./assets/data.json`));
 app.get(/.*/, (request, response) => {
 	const path = request.path;
-	if (path == "/") response.render(`pages/map`, {data: DATA});
+	if (path == "/") response.render(`pages/map`, {diskData: DISK_DATA});
 	else if (fs.existsSync(`${__dirname}/views/pages/${path}.ejs`)) 
-		response.render(`pages/${path}`, {data: DATA});
+		response.render(`pages/${path}`, {diskData: DISK_DATA});
 	else response.render("pages/404");
 });
 
