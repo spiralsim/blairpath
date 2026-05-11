@@ -265,10 +265,10 @@ function addPlaceToTable(id) {
 }
 
 // Remove a row from the points table
-function removePoint (ID) {
+function removePlaceInput(id) {
 	// Remove the row
-	table.removeChild(table.childNodes[ID]);
-	rows.splice(ID - 1, 1);
+	table.removeChild(table.childNodes[id]);
+	rows.splice(id - 1, 1);
 	// Shift all the remaining rows to the correct number
 	for (let i = 0; i < rows.length; i++) {
 		const row = document.getElementById(rows[i].id),
@@ -285,15 +285,22 @@ function removePoint (ID) {
 // Add a row to the points table
 function addPlaceInput () {
 	if (!tableLoaded) return;
-	const row = document.createElement("tr"), rowNum = rows.length + 1;
+	const row = document.createElement("tr");
+	const i = rows.length + 1; // NOTE: 1-indexed
 	row.innerHTML = `<tr>
-		<td><button class="square remove-point" onclick="removePoint(${rowNum})"></button></td>
-		<td style="display: flex"><input type="text" id="point-${rowNum}" value="" class="point-input"></input></td>
+		<td>
+			<button class="square close" onclick="removePlaceInput(${i})">
+			</button>
+		</td>
+		<td style="display: flex">
+			<input type="text" id="point-${i}" value="" class="point-input">
+			</input>
+		</td>
 	</tr>`;
-	row.id = "row-" + rowNum;
+	row.id = `row-${i}`;
 	rows.push(row);
-	table.insertBefore(row, table.childNodes[rowNum]);
-	autocomplete(document.getElementById("point-" + rowNum), memoryData.places);
+	table.insertBefore(row, table.childNodes[i]);
+	autocomplete(document.getElementById(`point-${i}`), memoryData.places);
 };
 
 /* Calculate Path */

@@ -41,3 +41,6 @@ git push origin master
 ```
 
 (I preconfigured Blairpath's Heroku app to auto-deploy from its GitHub repo's master branch.)
+
+# Icons
+The icons are taken from [Google Fonts Material Symbols & Icons](https://fonts.google.com/icons?selected=Material+Symbols+Outlined).

@@ -17,17 +17,18 @@
 						<p>Map updated <%-diskData.timestamp.split(' ').slice(2, 4).join(' ')%></p>
 					</div>
 					
+
 					<table id="points">
 						<tr id="place-placeholder-1">
-							<td><button class="square remove-point"></button></td>
+							<td><button class="square close"></button></td>
 							<td><input type="text" value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
 						</tr>
 						<tr id="place-placeholder-2">
-							<td><button class="square remove-point"></button></td>
+							<td><button class="square close"></button></td>
 							<td><input type="text" value="" class="point-input" style="background-color: var(--placeholder)" disabled></input></td>
 						</tr>
 						<tr id="last">
-							<td><button class="square add-point" onclick="addPlaceInput()"></button></td>
+							<td><button class="square add" onclick="addPlaceInput()"></button></td>
 							<td style="width: 406px"></td>
 						</tr>
 					</table>
@@ -45,8 +46,8 @@
 		<div style="position: absolute; left: 330px; right: 0; top: 0; bottom: 0; overflow: hidden" id="canvas" oncontextmenu="return false;">
 			<div id="map-placeholder" style="background-color: var(--placeholder)"></div>
 			<div id="map-controls" style="position: absolute; right: var(--map-controls-padding); bottom: 20px">
-				<button class="white" onclick="VIEW.applyZoom(1.2)" style="position: absolute; right: 0; bottom: 76px; border-radius: var(--button-corner) var(--button-corner) 0 0; border-bottom: 0">➕</button>
-				<button class="white" onclick="VIEW.applyZoom(0.8)" style="position: absolute; right: 0; bottom: 48px; border-radius: 0 0 var(--button-corner) var(--button-corner)">➖</button>
+				<button class="square add" onclick="VIEW.applyZoom(1.2)" style="position: absolute; right: 0; bottom: 72px; border-radius: var(--button-corner) var(--button-corner) 0 0; border-bottom: 0"></button>
+				<button class="square remove" onclick="VIEW.applyZoom(0.8)" style="position: absolute; right: 0; bottom: 48px; border-radius: 0 0 var(--button-corner) var(--button-corner)"></button>
 				<div style="position: absolute; right: var(--map-controls-right); padding-right: var(--map-controls-padding); bottom: 20px; display: flex;">
 					<label for="floor">Floor</label>
 					<input type="number" min="1" max="4" value="1" id="floor" onchange="setFloor(parseInt(this.value))">
@@ -61,8 +62,8 @@
 							setFloor(parseInt(FLOOR_INPUT.value) + delta);
 						}
 					</script>
-					<button class="square" onclick="adjustFloor(-1)" style="padding: 0">⬇</button>
-					<button class="square" onclick="adjustFloor(1)" style="padding: 0">⬆</button>
+					<button class="square downward" onclick="adjustFloor(-1)" style="padding: 0"></button>
+					<button class="square upward" onclick="adjustFloor(1)" style="padding: 0"></button>
 				</div>
 				<div style="position: absolute; right: var(--map-controls-right); padding-right: var(--map-controls-padding); bottom: 0; display: flex;">
 					<input type="checkbox" id="show-site-plan">

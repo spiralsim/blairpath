@@ -121,16 +121,27 @@ button.square {
 	width: 24px;
 	height: 24px;
 	vertical-align: middle;
+	text-align: center;
+	padding: 0px;
 	border-radius: 2px;
 }
 button.square:hover {
-	filter: brightness(80%);
+	background-color: lightgray;
 }
-button.remove-point {
-	background: url("/images/buttons/remove-button.svg") center;
+button.close {
+	background: url("/images/buttons/close_24.svg") center;
 }
-button.add-point {
-	background: url("/images/buttons/add-button.svg") center;
+button.add {
+	background: url("/images/buttons/add_24.svg") center;
+}
+button.remove {
+	background: url("/images/buttons/remove_24.svg") center;
+}
+button.downward {
+	background: url("/images/buttons/arrow_downward_24.svg") center;
+}
+button.upward {
+	background: url("/images/buttons/arrow_upward_24.svg") center;
 }
 
 h1 {
