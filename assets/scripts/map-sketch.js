@@ -263,8 +263,17 @@ function windowResized() {
 	resizeCanvas(getCanvasDivWidth(), windowHeight);
 }
 
+var dataLastCopied = null;
 function keyPressed() {
-	if (!showingDevTools) return;
+	if (key == 'd')
+		toggleDevTools();
+	if (key == 'c') {
+		copyNextDiskData();
+		dataLastCopied = new Date();
+	}
+
+	if (!showingDevTools)
+		return;
 	const activeType = blairpathObjectType(activeObject);
 	if (key == 'p' || key == 'b') {
 		activeObject = {
@@ -509,6 +518,32 @@ function showVertices() {
 	});
 }
 
+function showDevStats() {
+	function localeFullString(date) {
+		const d = new Date(date)
+		return `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`;
+	}
+
+	var stats = [];
+	stats.push(`Disk last updated: ${localeFullString(memoryData.timestamp)}`);
+	if (dataLastCopied != null)
+		stats.push(`Data last copied: ${localeFullString(dataLastCopied)}`);
+	stats.push(`Vertices: ${memoryData.vertices.size}`);
+	stats.push(`Edges: ${memoryData.edges.size}`);
+	if (mouseHasMoved)
+		stats.push(`FXY: ${FXYtoString(CURSOR.fxy)}`);
+	const statsText = stats.join('\n');
+
+	const statsY = height - stats.length * 24;
+	fill(255, 192);
+	rect(0, statsY, textWidth(statsText) + 10, height);
+
+	noStroke();
+	fill(0);
+	textAlign(LEFT, TOP);
+	text(statsText, 5, statsY + 6);
+}
+
 function showTooltip() {
 	if (blairpathObjectType(hoveredObject) != "place")
 		return;
@@ -549,23 +584,12 @@ function showRuler() {
 	textSize(18);
 	rectMode(CORNER);
 
-	var bottomRightInfo = [];
-	if (showingDevTools) {
-		const d = new Date(memoryData.timestamp);
-		const dText = `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`;
-		bottomRightInfo.push(`Last updated: ${dText}`);
-		bottomRightInfo.push(`Vertices: ${memoryData.vertices.size}`);
-		bottomRightInfo.push(`Edges: ${memoryData.edges.size}`);
-		if (mouseHasMoved)
-			bottomRightInfo.push(`FXY: ${FXYtoString(CURSOR.fxy)}`);
-	}
-	bottomRightInfo.push(`${VIEW.rulerInMeters} m`);
+	const rulerText = `${VIEW.rulerInMeters} m`;
 
-	const bottomRightText = bottomRightInfo.join('\t');
-	var bottomRightTextLeftX = rulerLeftX - 5 - textWidth(bottomRightText);
+	var rulerTextLeftX = rulerLeftX - 5 - textWidth(rulerText);
 
 	fill(255, 192);
-	rect(bottomRightTextLeftX - 5, height - 20, width, 20);
+	rect(rulerTextLeftX - 5, height - 20, width, 20);
 
 	noStroke();
 	fill(0);
@@ -573,7 +597,7 @@ function showRuler() {
 	rect(rulerLeftX, height - 7, VIEW.rulerInPixels(), 2);
 	rect(rulerLeftX + VIEW.rulerInPixels() - 2, height - 15, 2, 10);
 	textAlign(LEFT, CENTER);
-	text(bottomRightText, bottomRightTextLeftX, height - 10);
+	text(rulerText, rulerTextLeftX, height - 10);
 }
 
 function draw() {
@@ -612,4 +636,5 @@ function draw() {
 	showTooltip();
 
 	showRuler();
+	if (showingDevTools) showDevStats();
 };

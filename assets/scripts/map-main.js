@@ -102,7 +102,7 @@ function edgeType(edge) {
 		return "temporary";
 }
 
-$.getJSON('/data.json', function(diskData) {
+$.getJSON("/data.json", function(diskData) {
 	memoryData = structuredClone(diskData);
 	
 	["edges", "vertices"].forEach(key => {
@@ -146,7 +146,7 @@ $.getJSON('/data.json', function(diskData) {
 function copyNextDiskData() {
 	var nextDiskData = {
 		constants: memoryData.constants,
-		timestamp: new Date().getTime(),
+		timestamp: new Date().toUTCString(),
 	};
 
 	["edges", "vertices"].forEach(key => {
