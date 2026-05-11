@@ -549,17 +549,23 @@ function showRuler() {
 	textSize(18);
 	rectMode(CORNER);
 
-	var rulerText = `${VIEW.rulerInMeters} m`;
+	var bottomRightInfo = [];
 	if (showingDevTools) {
-		rulerText = `Edges: ${memoryData.edges.size}\t` + rulerText;
-		rulerText = `Vertices: ${memoryData.vertices.size}\t` + rulerText;
+		const d = new Date(memoryData.timestamp);
+		const dText = `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`;
+		bottomRightInfo.push(`Last updated: ${dText}`);
+		bottomRightInfo.push(`Vertices: ${memoryData.vertices.size}`);
+		bottomRightInfo.push(`Edges: ${memoryData.edges.size}`);
 		if (mouseHasMoved)
-			rulerText = `FXY: ${FXYtoString(CURSOR.fxy)}\t` + rulerText;
+			bottomRightInfo.push(`FXY: ${FXYtoString(CURSOR.fxy)}`);
 	}
-	var rulerTextLeftX = rulerLeftX - 5 - textWidth(rulerText);
+	bottomRightInfo.push(`${VIEW.rulerInMeters} m`);
+
+	const bottomRightText = bottomRightInfo.join('\t');
+	var bottomRightTextLeftX = rulerLeftX - 5 - textWidth(bottomRightText);
 
 	fill(255, 192);
-	rect(rulerTextLeftX - 5, height - 20, width, 20);
+	rect(bottomRightTextLeftX - 5, height - 20, width, 20);
 
 	noStroke();
 	fill(0);
@@ -567,7 +573,7 @@ function showRuler() {
 	rect(rulerLeftX, height - 7, VIEW.rulerInPixels(), 2);
 	rect(rulerLeftX + VIEW.rulerInPixels() - 2, height - 15, 2, 10);
 	textAlign(LEFT, CENTER);
-	text(rulerText, rulerTextLeftX, height - 10);
+	text(bottomRightText, bottomRightTextLeftX, height - 10);
 }
 
 function draw() {
