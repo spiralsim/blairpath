@@ -225,26 +225,45 @@ function windowResized() {
 function keyPressed() {
 	if (!showingDevTools) return;
 	const activeType = blairpathObjectType(activeObject);
-	if (key == 's') {
+	if (key == 'p' || key == 'b') {
+		activeObject = {
+			fxy: CURSOR.fxy,
+			section: key == 'p' ? "path" : "border"
+		};
+		memoryData.vertices.add(activeObject);
+		stringToVertex[FXYtoString(CURSOR.fxy)] = activeObject;
+	} else if (key == 's') {
 		if (activeType == "border")
 			activeObject.section = "path";
 		else if (activeType == "path")
 			activeObject.section = "border";
 	} else if (keyCode == BACKSPACE) {
-		if (activeType == "edge") {
+		if (activeType == "edge")
 			memoryData.edges.delete(activeObject);
-		} else {
-			
+		else {
+			const fxyString = FXYtoString(activeObject.fxy);
+			memoryData.edges.forEach(e => {
+				if (edgeToString(e).includes(fxyString))
+					memoryData.edges.delete(e);
+			});
+			memoryData.vertices.delete(activeObject);
+			delete stringToVertex[fxyString];
 		}
 		activeObject = null;
 	}
 };
 
 function mousePressed() {
-	switch (blairpathObjectType(hoveredObject)) {
-		case null:
-			break;
-		case "place":
+	if (hoveredObject == null)
+		return;
+	if (hoveredObject == activeObject) {
+		activeObject = null;
+		return;
+	}
+	const hoveredType = blairpathObjectType(hoveredObject);
+	const activeType = blairpathObjectType(activeObject);
+	if (hoveredType != "edge") {
+		if (hoveredType == "place") {
 			// Handle edge case where there are no rows to begin with
 			if (!rows.length) addPlaceInput();
 			// Find the number of the first empty point input
@@ -256,10 +275,14 @@ function mousePressed() {
 			}
 			addPlaceInput();
 			setPointValue(rows.length, hoveredObject.id);
-			break;
-		default:
-			activeObject = hoveredObject;
+		} else if (hoveredType == activeType) {
+			console.log(activeObject);
+			console.log(hoveredObject);
+			memoryData.edges.add([activeObject.fxy, hoveredObject.fxy]);
+		}
 	}
+	if (hoveredType != "place")
+		activeObject = hoveredObject;
 };
 
 function mouseDragged() {
@@ -412,7 +435,8 @@ function toggleDevTools() {
 	showingDevTools = !showingDevTools;
 	document.getElementById('outputDiv').hidden = !showingDevTools;
 }
-function showDevTools() {
+
+function showVertices() {
 	noFill();
 	strokeWeight(2 / VIEW.zoom);
 	memoryData.vertices.forEach(v => {
@@ -469,8 +493,12 @@ function showRuler() {
 	rectMode(CORNER);
 
 	var rulerText = `${VIEW.rulerInMeters} m`;
-	if (showingDevTools && mouseHasMoved)
-		rulerText = `FXY: ${FXYtoString(CURSOR.fxy)} ` + rulerText;
+	if (showingDevTools) {
+		rulerText = `Edges: ${memoryData.edges.size}\t` + rulerText;
+		rulerText = `Vertices: ${memoryData.vertices.size}\t` + rulerText;
+		if (mouseHasMoved)
+			rulerText = `FXY: ${FXYtoString(CURSOR.fxy)}\t` + rulerText;
+	}
 	var rulerTextLeftX = rulerLeftX - 5 - textWidth(rulerText);
 
 	fill(255, 192);
@@ -509,7 +537,7 @@ function draw() {
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
 	showEdges();
-	if (showingDevTools) showDevTools();
+	if (showingDevTools) showVertices();
 	if (showOptions[`show-labels`]) showLabels();
 
 	pop();
