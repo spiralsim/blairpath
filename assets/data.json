@@ -5997,6 +5997,7 @@
         {
             "id": "P1",
             "section": "Academic Classrooms",
+            "angle": 0,
             "fxy": {
                 "floor": 1,
                 "x": 978,
@@ -6006,6 +6007,7 @@
         {
             "id": "P2",
             "section": "Academic Classrooms",
+            "angle": 0,
             "fxy": {
                 "floor": 1,
                 "x": 968,
@@ -6015,6 +6017,7 @@
         {
             "id": "P3",
             "section": "Academic Classrooms",
+            "angle": 0,
             "fxy": {
                 "floor": 1,
                 "x": 968,
@@ -6024,6 +6027,7 @@
         {
             "id": "P4",
             "section": "Academic Classrooms",
+            "angle": 0,
             "fxy": {
                 "floor": 1,
                 "x": 968,
@@ -6033,6 +6037,7 @@
         {
             "id": "P5",
             "section": "Academic Classrooms",
+            "angle": 0,
             "fxy": {
                 "floor": 1,
                 "x": 1039,
@@ -6042,6 +6047,7 @@
         {
             "id": "P6",
             "section": "Academic Classrooms",
+            "angle": 0,
             "fxy": {
                 "floor": 1,
                 "x": 1039,
@@ -6051,6 +6057,7 @@
         {
             "id": "P7",
             "section": "Academic Classrooms",
+            "angle": 0,
             "fxy": {
                 "floor": 1,
                 "x": 1039,
@@ -6060,6 +6067,7 @@
         {
             "id": "P8",
             "section": "Academic Classrooms",
+            "angle": 0,
             "fxy": {
                 "floor": 1,
                 "x": 1039,
@@ -6069,6 +6077,7 @@
         {
             "id": "P9",
             "section": "Academic Classrooms",
+            "angle": 0,
             "fxy": {
                 "floor": 1,
                 "x": 1039,

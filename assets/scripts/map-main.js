@@ -20,8 +20,10 @@ function fxy(floor, x, y) {
 /**
  * `FXYtoString({floor: 1, x: 50, y: 100})` evaluates to `1,50,100`
  */
-function FXYtoString({floor, x, y}) {
-	return `${floor},${x},${y}`;
+function FXYtoString(fxy) {
+	if (fxy == null)
+		return null;
+	return `${fxy.floor},${fxy.x},${fxy.y}`;
 }
 
 /**

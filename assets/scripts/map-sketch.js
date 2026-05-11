@@ -145,6 +145,7 @@ var cursorType;
 
 var hoveredObject = null;
 var activeObject = null;
+var activePortables = new Set();
 function blairpathObjectType(object) {
 	if (!object)
 		return null;
@@ -152,6 +153,46 @@ function blairpathObjectType(object) {
 		return "edge";
 	else
 		return vertexType(object);
+}
+
+/**
+ * When a vertex's FXY changes, any edge(s) with that FXY as an endpoint must
+ * also update that FXY. If the vertex is deleted, the edge(s) must be deleted.
+ * 
+ * @param {} vertex The original vertex to move
+ * @param {} changefn A function to be applied to the vertex to change the
+ * vertex (optionally, change its FXY). To delete, set the **argument** to null.
+ */
+function changeAndPropagateVertex(vertex, changefn) {
+	const oldVertex = structuredClone(vertex);
+	const oldFXYstring = FXYtoString(vertex.fxy);
+
+	const edgesWithVertex = Array.from(memoryData.edges)
+		.filter(e => edgeToString(e).includes(oldFXYstring));
+
+	if (changefn == null) {
+		edgesWithVertex.forEach(e => memoryData.edges.delete(e));
+		memoryData.vertices.delete(vertex);
+		return;
+	}
+
+	changefn(vertex);
+	const newFXYstring = FXYtoString(vertex.fxy);
+	if (oldFXYstring == newFXYstring)
+		return;
+
+	delete stringToVertex[oldFXYstring];
+	stringToVertex[newFXYstring] = vertex;
+	edgesWithVertex.forEach(e => {
+		for (let i = 0; i < 2; i++)
+			if (FXYtoString(e[i]) == oldFXYstring)
+				e[i] = vertex.fxy;
+	});
+}
+function transformActivePortables(changefn) {
+	getPlaceInputs()
+		.filter(isPortable)
+		.forEach(id => changeAndPropagateVertex(idToPlace[id], changefn));
 }
 
 function isVisibleBorder(edge) {
@@ -237,17 +278,23 @@ function keyPressed() {
 			activeObject.section = "path";
 		else if (activeType == "path")
 			activeObject.section = "border";
-	} else if (keyCode == BACKSPACE) {
+	} else if (key == '[')
+		transformActivePortables(p => p.angle--);
+	else if (key == ']')
+		transformActivePortables(p => p.angle++);
+	else if (keyCode == LEFT_ARROW)
+		transformActivePortables(p => p.fxy.x--);
+	else if (keyCode == RIGHT_ARROW)
+		transformActivePortables(p => p.fxy.x++);
+	else if (keyCode == UP_ARROW)
+		transformActivePortables(p => p.fxy.y--);
+	else if (keyCode == DOWN_ARROW)
+		transformActivePortables(p => p.fxy.y++);
+	else if (keyCode == BACKSPACE || keyCode == DELETE) {
 		if (activeType == "edge")
 			memoryData.edges.delete(activeObject);
 		else {
-			const fxyString = FXYtoString(activeObject.fxy);
-			memoryData.edges.forEach(e => {
-				if (edgeToString(e).includes(fxyString))
-					memoryData.edges.delete(e);
-			});
-			memoryData.vertices.delete(activeObject);
-			delete stringToVertex[fxyString];
+			changeAndPropagateVertex(activeObject, null);
 		}
 		activeObject = null;
 	}
@@ -275,11 +322,8 @@ function mousePressed() {
 			}
 			addPlaceInput();
 			setPointValue(rows.length, hoveredObject.id);
-		} else if (hoveredType == activeType) {
-			console.log(activeObject);
-			console.log(hoveredObject);
+		} else if (hoveredType == activeType)
 			memoryData.edges.add([activeObject.fxy, hoveredObject.fxy]);
-		}
 	}
 	if (hoveredType != "place")
 		activeObject = hoveredObject;
@@ -364,6 +408,9 @@ function showEdges() {
 	});
 }
 
+function isPortable(id) {
+	return /^P[0-9]+$/.test(id);
+}
 function showFloorPlan() {
 	function showPortables() {
 		stroke(0);
@@ -372,8 +419,7 @@ function showFloorPlan() {
 		rectMode(CENTER);
 		angleMode(DEGREES);
 		Object.values(idToPlace).forEach(place => {
-			const isPortable = /^P[0-9]+$/.test(place.id);
-			if (!isPortable || place.fxy.floor != VIEW.floor)
+			if (!isPortable(place.id) || place.fxy.floor != VIEW.floor)
 				return;
 			push();
 			translate(place.fxy.x, place.fxy.y);
@@ -401,7 +447,8 @@ function showFloorPlan() {
 
 function showLabels() {
 	textAlign(CENTER, CENTER);
-	textSize(14 / VIEW.zoom);
+	const labelTextSize = 14 / VIEW.zoom;
+	textSize(labelTextSize);
 	strokeWeight(2 / VIEW.zoom);
 	const placeValuesSet = new Set(getPlaceInputs());
 	// Display dots for room selection
@@ -412,7 +459,7 @@ function showLabels() {
 		const nameWidth = textWidth(id);
 		if (
 			abs(CURSOR.virtualXY.x - fxy.x) < nameWidth / 2 &&
-			abs(CURSOR.virtualXY.y - fxy.y) < 6 / VIEW.zoom &&
+			abs(CURSOR.virtualXY.y - fxy.y) < labelTextSize / 2 &&
 			!hoveredObject
 		) {
 			hoveredObject = place;
@@ -427,6 +474,15 @@ function showLabels() {
 			fill(place == hoveredObject ? 128 : 255);
 		}
 		text(id, fxy.x, fxy.y);
+
+		stroke(0);
+		fill(255);
+		if (showingDevTools) {
+			var parenthesizedText = FXYtoString(fxy);
+			if (place.angle != undefined)
+				parenthesizedText += ` ${place.angle}°`;
+			text(`(${parenthesizedText})`, fxy.x, fxy.y + labelTextSize);
+		}
 	}
 }
 
