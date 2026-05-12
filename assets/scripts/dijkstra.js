@@ -91,7 +91,7 @@ class WeightedGraph {
     return this.adjacencyList[vertex];
   }
   addEdge(edge) {
-    const weight = edgeLengthInPixels(edge);
+    const weight = lengthInM(edge);
     const FXYs = edge.map(FXYtoString);
     this.getVertex(FXYs[0]).push(new Neighbor(FXYs[1], weight));
     this.getVertex(FXYs[1]).push(new Neighbor(FXYs[0], weight));
@@ -149,7 +149,7 @@ class WeightedGraph {
     }
     return {
       path: path.concat(smallest).reverse(),
-      distance: distances[finishFXY],
+      distanceInM: distances[finishFXY],
     };
   }
 }

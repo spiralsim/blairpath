@@ -82,7 +82,7 @@ nav.main ul li.active a {
 }
 
 #map-controls > div {
-	background-color: rgba(255, 255, 255, 0.75);
+	background-color: white;
 }
 
 div > label {
@@ -94,26 +94,14 @@ div > label {
 
 button {
 	border: 1px solid var(--border);
+	border-radius: var(--button-corner);
 	outline: none;
 	cursor: pointer;
 }
-
-button.white {
-	border-radius: var(--button-corner);
-	background-color: white;
-	color: var(--light-text);
-	font-size: 1em;
-	padding: 0 0.3em;
-	width: var(--button-height);
-	height: var(--button-height);
-}
-button.white:hover {
-	background-color: #efefef;
-}
-button.white:disabled {
+button:disabled {
 	background-color: var(--placeholder);
 }
-button.white:disabled:hover {
+button:disabled:hover {
 	cursor: not-allowed;
 }
 
@@ -142,6 +130,10 @@ button.downward {
 }
 button.upward {
 	background: url("/images/buttons/arrow_upward_24.svg") center;
+}
+
+button.white {
+	background-color: white;
 }
 
 h1 {

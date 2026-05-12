@@ -1,11 +1,8 @@
 /* Data preprocessing */
 var memoryData = null;
 var tableLoaded = false;
-function dist2D(a, b) {
-	return Math.sqrt(Math.pow(b[0] - a[0], 2) + Math.pow(b[1] - a[1], 2));
-}
 
-function edgeLengthInPixels([{floor: f1, x: x1, y: y1}, {floor: f2, x: x2, y: y2}]) {
+function lengthInM([{floor: f1, x: x1, y: y1}, {floor: f2, x: x2, y: y2}]) {
 	return Math.hypot(
 		(f2 - f1) * CONSTANTS.METERS_PER_FLOOR,
 		(x2 - x1) * CONSTANTS.M_PER_PIXEL,
@@ -102,55 +99,50 @@ function edgeType(edge) {
 		return "temporary";
 }
 
-function loadMemoryData() {
-	return new Promise((resolve) => {
-		$.getJSON("/data.json", function(diskData) {
-			if (memoryData != null)
-				resolve(memoryData);
-			memoryData = structuredClone(diskData);
-			
-			["edges", "vertices"].forEach(key => {
-				memoryData[key] = new Set(diskData[key]);
-			});
-
-			var places = [];
-			memoryData.vertices.forEach(v => {
-				stringToVertex[FXYtoString(v.fxy)] = v;
-				if (v.id) {
-					idToPlace[v.id] = v;
-					places.push(v);
-				}
-			});
-
-			// For each place, add a temporary edge from it to the nearest path vertex
-			places.forEach(place => {
-				var minDist = Infinity, tempEdge;
-				memoryData.vertices.forEach(v => {
-					if (v.fxy.floor != place.fxy.floor) return;
-					if (v.section != "path") return;
-					const edge = [place.fxy, v.fxy];
-					const dist = edgeLengthInPixels(edge);
-					if (dist && dist < minDist) {
-						minDist = dist;
-						tempEdge = edge;
-					}
-				});
-				memoryData.edges.add(tempEdge);
-			});
-
-			// Remove placeholder rows
-			for (let i = 1; i <= 2; i++)
-				document.getElementById(`place-placeholder-${i}`).remove();
-
-			// Create 2 initial rows
-			tableLoaded = true;
-			for (let i = 0; i < 2; i++) addPlaceInput();
-
-			resolve(memoryData);
-		});
+$.getJSON("/data.json", function(diskData) {
+	if (memoryData != null)
+		resolve(memoryData);
+	memoryData = structuredClone(diskData);
+	
+	["edges", "vertices"].forEach(key => {
+		memoryData[key] = new Set(diskData[key]);
 	});
-}
-loadMemoryData();
+
+	var places = [];
+	memoryData.vertices.forEach(v => {
+		stringToVertex[FXYtoString(v.fxy)] = v;
+		if (v.id) {
+			idToPlace[v.id] = v;
+			places.push(v);
+		}
+	});
+
+	// For each place, add a temporary edge from it to the nearest path vertex
+	places.forEach(place => {
+		var minDist = Infinity, tempEdge;
+		memoryData.vertices.forEach(v => {
+			if (v.fxy.floor != place.fxy.floor) return;
+			if (v.section != "path") return;
+			const edge = [place.fxy, v.fxy];
+			const dist = lengthInM(edge);
+			if (dist && dist < minDist) {
+				minDist = dist;
+				tempEdge = edge;
+			}
+		});
+		memoryData.edges.add(tempEdge);
+	});
+
+	// Remove placeholder rows
+	for (let i = 1; i <= 2; i++)
+		document.getElementById(`place-placeholder-${i}`).remove();
+
+	// Create 2 initial rows
+	tableLoaded = true;
+	for (let i = 0; i < 2; i++) addPlaceInput();
+
+	resolve(memoryData);
+});
 
 function copyNextDiskData() {
 	var nextDiskData = {
@@ -314,19 +306,26 @@ function addPlaceInput () {
 
 /* Calculate Path */
 const calcButton = document.getElementById("calc-button");
-var totalDistance = 0;
+var totalDistanceInM = 0;
 var lastPathQuery = null;
 
 function clearCalculation() {
-	totalDistance = 0;
+	totalDistanceInM = 0;
 	edgesOnPath = new Set();
 	document.getElementById("calc-result").innerHTML = '';
 }
 
 class PathQuery {
-	constructor(points, allowElevator) {
+	/**
+	 * 
+	 * @param {FXY[]} points 
+	 * @param {boolean} allowElevator 
+	 * @param {number} walkingSpeed Walking speed in m/s
+	 */
+	constructor(points, allowElevator, walkingSpeed) {
 		this.points = points;
 		this.allowElevator = allowElevator;
+		this.walkingSpeed = walkingSpeed;
 	}
 }
 
@@ -348,20 +347,21 @@ function calculatePath(query) {
 
 	/**
 	 * Converts a path length to a human-readable string with meters and estimated
-	 * time based on `walkingSpeed`: `a min b sec (x m)`. Lengths that are negative
+	 * time based on the walk speed: `a min b sec (x m)`. Lengths that are negative
 	 * or undefined are converted to `No path`.
-	 * @param {*} distance Distance in normalized px
+	 * @param {*} distanceInM Distance in normalized px
 	 */
-	function prettifyDistance(distance) {
-		if (distance < 0 || distance == undefined) return `No path`;
-		const lengthInM = distance * CONSTANTS.M_PER_PIXEL;
-		const walkingSpeed = CONSTANTS.WALKING_SPEED_IN_METERS_PER_SECOND;
-		const timeInSec = Math.round(lengthInM / walkingSpeed);
+	function prettifyDistance(distanceInM) {
+		if (distanceInM < 0 || distanceInM == undefined)
+			return "No path";
+		const timeInSec = Math.round(distanceInM / query.walkingSpeed);
 		const min = Math.floor(timeInSec / 60), sec = timeInSec % 60;
 		var res = ``;
-		if (min) res += `${min} min `;
-		if (sec) res += `${sec} s `;
-		return res + `(${Math.round(lengthInM)} m)`;
+		if (min)
+			res += `${min} min `;
+		if (sec)
+			res += `${sec} s `;
+		return res + `(${Math.round(distanceInM)} m)`;
 	}
 
 	// Check that there are enough points
@@ -378,12 +378,12 @@ function calculatePath(query) {
 		const subpathPlaceFXYs = subpathPlaceVertices.map(v => v.fxy);
 		const subpathPlaceFXYStrings = subpathPlaceFXYs.map(FXYtoString);
 
-		var {path: subpathFXYStrings, distance: subpathDistance} =
+		var {path: subpathFXYStrings, distanceInM: subpathDistanceInM} =
 			graph.dijkstra(...subpathPlaceFXYStrings);
 
-		if (subpathDistance == Infinity)
+		if (subpathDistanceInM == Infinity)
 			return finishCalc(`No path from ${subpathIDs.join(' to ')}`, true);
-		const prettifiedDistance = prettifyDistance(subpathDistance);
+		const prettifiedDistance = prettifyDistance(subpathDistanceInM);
 		output +=
 			`<p>${subpathIDs.join(' → ')}\t` +
 			`<span style='color: gray'>${prettifiedDistance}</span></p>`;
@@ -394,28 +394,29 @@ function calculatePath(query) {
 			edgesOnPath.add(direction1.reverse().join(';'));
 		}
 		
-		totalDistance += subpathDistance;
+		totalDistanceInM += subpathDistanceInM;
 	}
 	
-	output = `<p><b>${prettifyDistance(totalDistance)}</b></p>` + output;
+	output = `<p><b>${prettifyDistance(totalDistanceInM)}</b></p>` + output;
 	// Convert output string to HTML and print to website
 	finishCalc(output);
 }
 
-function refreshPointTable() {
+function refreshPathQuery() {
 	var canCalculate = rows.length >= 2;
 	for (let i = 1; i <= rows.length; i++) {
 		const input = getPlaceInput(i);
 		const isValid = input.value in idToPlace;
 		canCalculate &&= isValid;
-		const borderColor = isValid || !input.value ? '--var(border)' : 'red';
+		const borderColor = isValid || !input.value ? "--var(border)" : "red";
 		input.setAttribute("style", `border-color: ${borderColor}`);
 	}
 	
 	// Prevents duplicate calculations
 	const pathQuery = new PathQuery(
 		getPlaceInputs(),
-		document.getElementById('allow-elevator').checked,
+		document.getElementById("allow-elevator").checked,
+		parseFloat(document.getElementById("speed").value),
 	);
 	if (JSON.stringify(pathQuery) == JSON.stringify(lastPathQuery)) return;
 	lastPathQuery = pathQuery;

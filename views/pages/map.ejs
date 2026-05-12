@@ -35,7 +35,17 @@
 					</table>
 		
 					<p style="margin-bottom: 0"><b>Options</b></p>
-					<p style="margin: 0"><input type="checkbox" id="allow-elevator"> Allow use of elevator*</p>
+					<ol>
+						<li><p style="margin: 0"><input type="checkbox" id="allow-elevator"> Allow use of elevator*</p></li>
+						<li>
+							<label for="speed" style="font-size: 16px">Walking Speed:</label>
+							<input type="number" min="0.2" max="2" step="0.1" id="speed">
+							<label for="speed" style="font-size: 16px">m/s</label>
+						</li>
+					</ol>
+					<script>
+						document.getElementById("speed").setAttribute("value", CONSTANTS.DEFAULT_WALKING_SPEED_IN_M_PER_S);
+					</script>
 					<p>* Requires pass from nurse</p>
 				</div>
 
@@ -47,8 +57,8 @@
 		<div style="position: absolute; left: 330px; right: 0; top: 0; bottom: 0; overflow: hidden" id="canvas" oncontextmenu="return false;">
 			<div id="map-placeholder" style="background-color: var(--placeholder)"></div>
 			<div id="map-controls" style="position: absolute; right: var(--map-controls-padding); bottom: 20px">
-				<button class="square add" onclick="VIEW.applyZoom(1.2)" style="position: absolute; right: 0; bottom: 72px; border-radius: var(--button-corner) var(--button-corner) 0 0; border-bottom: 0"></button>
-				<button class="square remove" onclick="VIEW.applyZoom(0.8)" style="position: absolute; right: 0; bottom: 48px; border-radius: 0 0 var(--button-corner) var(--button-corner)"></button>
+				<button class="square add white" onclick="VIEW.applyZoom(1.2)" style="position: absolute; right: 0; bottom: 72px; border-radius: var(--button-corner) var(--button-corner) 0 0; border-bottom: 0"></button>
+				<button class="square remove white" onclick="VIEW.applyZoom(0.8)" style="position: absolute; right: 0; bottom: 48px; border-radius: 0 0 var(--button-corner) var(--button-corner)"></button>
 				<div style="position: absolute; right: var(--map-controls-right); padding-right: var(--map-controls-padding); bottom: 20px; display: flex;">
 					<label for="floor">Floor</label>
 					<input type="number" min="1" max="4" value="1" id="floor" onchange="setFloor(parseInt(this.value))">
@@ -63,8 +73,8 @@
 							setFloor(parseInt(FLOOR_INPUT.value) + delta);
 						}
 					</script>
-					<button class="square downward" onclick="adjustFloor(-1)" style="padding: 0"></button>
-					<button class="square upward" onclick="adjustFloor(1)" style="padding: 0"></button>
+					<button class="square downward white" onclick="adjustFloor(-1)" style="padding: 0"></button>
+					<button class="square upward white" onclick="adjustFloor(1)" style="padding: 0"></button>
 				</div>
 				<div style="position: absolute; right: var(--map-controls-right); padding-right: var(--map-controls-padding); bottom: 0; display: flex;">
 					<input type="checkbox" id="show-site-plan">

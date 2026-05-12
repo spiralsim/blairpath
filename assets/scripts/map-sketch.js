@@ -532,10 +532,12 @@ function showDevStats() {
 	stats.push(`Edges: ${memoryData.edges.size}`);
 	if (mouseHasMoved)
 		stats.push(`FXY: ${FXYtoString(CURSOR.fxy)}`);
+	if (blairpathObjectType(hoveredObject) == "edge")
+		stats.push(`Edge length: ${round(lengthInM(hoveredObject), 2)} m`);
 	const statsText = stats.join('\n');
 
 	const statsY = height - stats.length * 24;
-	fill(255, 192);
+	fill(255);
 	rect(0, statsY, textWidth(statsText) + 10, height);
 
 	noStroke();
@@ -566,7 +568,7 @@ function showTooltip() {
 		tooltipY = labelY + tooltipH * (labelY < height / 2 ? -1 : 1);
 
 	strokeWeight(1);
-	fill(255, 255, 255, 230);
+	fill(255);
 	rectMode(CENTER);
 	rect(tooltipX, tooltipY, tooltipW, tooltipH, LABEL_FONT_SIZE / 2);
 	fill(0);
@@ -588,7 +590,7 @@ function showRuler() {
 
 	var rulerTextLeftX = rulerLeftX - 5 - textWidth(rulerText);
 
-	fill(255, 192);
+	fill(255);
 	rect(rulerTextLeftX - 5, height - 20, width, 20);
 
 	noStroke();
@@ -602,7 +604,7 @@ function showRuler() {
 
 function draw() {
 	// Remove loading message
-	if (!loaded && memoryData != null) {
+	if (!loaded && tableLoaded && memoryData != null) {
 		document.getElementById("map-placeholder").remove();
 		loaded = true;
 	}
@@ -610,7 +612,7 @@ function draw() {
 	if (!loaded)
 		return;
 
-	if (tableLoaded) refreshPointTable();
+	refreshPathQuery();
 
 	background(255);
 
