@@ -1,5 +1,5 @@
 /* Data preprocessing */
-var memoryData = {};
+var memoryData = null;
 var tableLoaded = false;
 function dist2D(a, b) {
 	return Math.sqrt(Math.pow(b[0] - a[0], 2) + Math.pow(b[1] - a[1], 2));
@@ -8,8 +8,8 @@ function dist2D(a, b) {
 function edgeLengthInPixels([{floor: f1, x: x1, y: y1}, {floor: f2, x: x2, y: y2}]) {
 	return Math.hypot(
 		(f2 - f1) * memoryData.constants.METERS_PER_FLOOR,
-		(x2 - x1) * memoryData.constants.METERS_PER_PIXEL,
-		(y2 - y1) * memoryData.constants.METERS_PER_PIXEL,
+		(x2 - x1) * memoryData.constants.M_PER_PIXEL,
+		(y2 - y1) * memoryData.constants.M_PER_PIXEL,
 	);
 }
 
@@ -102,46 +102,51 @@ function edgeType(edge) {
 		return "temporary";
 }
 
-$.getJSON("/data.json", function(diskData) {
-	memoryData = structuredClone(diskData);
-	
-	["edges", "vertices"].forEach(key => {
-		memoryData[key] = new Set(diskData[key]);
-	});
+function loadMemoryData() {
+	$.getJSON("/data.json", function(diskData) {
+		if (memoryData != null)
+			return;
+		memoryData = structuredClone(diskData);
+		
+		["edges", "vertices"].forEach(key => {
+			memoryData[key] = new Set(diskData[key]);
+		});
 
-	var places = [];
-	memoryData.vertices.forEach(v => {
-		stringToVertex[FXYtoString(v.fxy)] = v;
-		if (v.id) {
-			idToPlace[v.id] = v;
-			places.push(v);
-		}
-	});
-
-	// For each place, add a temporary edge from it to the nearest path vertex
-	places.forEach(place => {
-		var minDist = Infinity, tempEdge;
+		var places = [];
 		memoryData.vertices.forEach(v => {
-			if (v.fxy.floor != place.fxy.floor) return;
-			if (v.section != "path") return;
-			const edge = [place.fxy, v.fxy];
-			const dist = edgeLengthInPixels(edge);
-			if (dist && dist < minDist) {
-				minDist = dist;
-				tempEdge = edge;
+			stringToVertex[FXYtoString(v.fxy)] = v;
+			if (v.id) {
+				idToPlace[v.id] = v;
+				places.push(v);
 			}
 		});
-		memoryData.edges.add(tempEdge);
-	});
 
-	// Remove placeholder rows
-	for (let i = 1; i <= 2; i++)
-		document.getElementById(`place-placeholder-${i}`).remove();
+		// For each place, add a temporary edge from it to the nearest path vertex
+		places.forEach(place => {
+			var minDist = Infinity, tempEdge;
+			memoryData.vertices.forEach(v => {
+				if (v.fxy.floor != place.fxy.floor) return;
+				if (v.section != "path") return;
+				const edge = [place.fxy, v.fxy];
+				const dist = edgeLengthInPixels(edge);
+				if (dist && dist < minDist) {
+					minDist = dist;
+					tempEdge = edge;
+				}
+			});
+			memoryData.edges.add(tempEdge);
+		});
 
-	// Create 2 initial rows
-	tableLoaded = true;
-	for (let i = 0; i < 2; i++) addPlaceInput();
-});
+		// Remove placeholder rows
+		for (let i = 1; i <= 2; i++)
+			document.getElementById(`place-placeholder-${i}`).remove();
+
+		// Create 2 initial rows
+		tableLoaded = true;
+		for (let i = 0; i < 2; i++) addPlaceInput();
+	});	
+}
+loadMemoryData();
 
 function copyNextDiskData() {
 	var nextDiskData = {
@@ -345,7 +350,7 @@ function calculatePath(query) {
 	 */
 	function prettifyDistance(distance) {
 		if (distance < 0 || distance == undefined) return `No path`;
-		const lengthInM = distance * memoryData.constants.METERS_PER_PIXEL;
+		const lengthInM = distance * memoryData.constants.M_PER_PIXEL;
 		const walkingSpeed = memoryData.constants.WALKING_SPEED_IN_METERS_PER_SECOND;
 		const timeInSec = Math.round(lengthInM / walkingSpeed);
 		const min = Math.floor(timeInSec / 60), sec = timeInSec % 60;

@@ -1,7 +1,7 @@
 {
     "constants": {
         "METERS_PER_FLOOR": 4.39,
-        "METERS_PER_PIXEL": 0.32512,
+        "M_PER_PIXEL": 0.32512,
         "WALKING_SPEED_IN_METERS_PER_SECOND": 1.35,
         "PORTABLE_LENGTH_IN_PIXELS": 36,
         "PORTABLE_WIDTH_IN_PIXELS": 22,

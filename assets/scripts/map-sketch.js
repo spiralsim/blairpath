@@ -5,6 +5,7 @@ var canvas, images = {
 
 // Loads maps
 function preload () {
+	loadMemoryData();
 	const MAP_PATH = "/maps";
 	for (let i = 1; i <= 4; i++) images.floors.push(loadImage(`${MAP_PATH}/f${i}.png`));
 	images.site = loadImage(`${MAP_PATH}/site.png`);
@@ -53,7 +54,7 @@ const VIEW = {
 	physPos: null,
 	zoom: null,
 	floor: 1,
-	rulerInMeters: 100,
+	rulerInM: 100,
 	get hoverRadius() {
 		return EDGE_WIDTH / this.zoom;
 	},
@@ -64,8 +65,7 @@ const VIEW = {
 		VIEW.physPos.add(delta);
 	},
 	rulerInPixels() {
-		const M_PER_PX = memoryData.constants.METERS_PER_PIXEL ?? 0.32512;
-		return VIEW.rulerInMeters / M_PER_PX * VIEW.zoom;
+		return VIEW.rulerInM / memoryData.constants.M_PER_PIXEL * VIEW.zoom;
 	},
 	calibrateRuler() {
 		// Note that we must have
@@ -74,17 +74,17 @@ const VIEW = {
 		const MIN_RULER_LENGTH_IN_PIXELS = 40;
 		const MAX_RULER_LENGTH_IN_PIXELS = 120;
 		function firstDigit() {
-			return String(VIEW.rulerInMeters)[0];
+			return String(VIEW.rulerInM)[0];
 		}
 		// 1 -> 2 -> 5 -> 10
 		function increment() {
-			if (firstDigit() == '2') VIEW.rulerInMeters *= 5 / 2;
-			else VIEW.rulerInMeters *= 2;
+			if (firstDigit() == '2') VIEW.rulerInM *= 5 / 2;
+			else VIEW.rulerInM *= 2;
 		}
 		// 10 -> 5 -> 2 -> 1
 		function decrement() {
-			if (firstDigit() == '5') VIEW.rulerInMeters /= 5 / 2;
-			else VIEW.rulerInMeters /= 2;
+			if (firstDigit() == '5') VIEW.rulerInM /= 5 / 2;
+			else VIEW.rulerInM /= 2;
 		}
 		while (VIEW.rulerInPixels() < MIN_RULER_LENGTH_IN_PIXELS) increment();
 		while (VIEW.rulerInPixels() > MAX_RULER_LENGTH_IN_PIXELS) decrement();
@@ -585,7 +585,7 @@ function showRuler() {
 	textSize(18);
 	rectMode(CORNER);
 
-	const rulerText = `${VIEW.rulerInMeters} m`;
+	const rulerText = `${VIEW.rulerInM} m`;
 
 	var rulerTextLeftX = rulerLeftX - 5 - textWidth(rulerText);
 
