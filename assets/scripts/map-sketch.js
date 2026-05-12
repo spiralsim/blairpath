@@ -602,10 +602,13 @@ function showRuler() {
 
 function draw() {
 	// Remove loading message
-	if (!loaded) {
+	if (!loaded && memoryData != null) {
 		document.getElementById("map-placeholder").remove();
 		loaded = true;
 	}
+
+	if (!loaded)
+		return;
 
 	if (tableLoaded) refreshPointTable();
 
