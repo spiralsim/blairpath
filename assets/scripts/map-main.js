@@ -99,6 +99,31 @@ function edgeType(edge) {
 		return "temporary";
 }
 
+var places = [];
+/**
+ * For each place, add a temporary edge from it to the nearest path vertex
+ */
+function refreshTemporaryEdges() {
+	memoryData.edges.forEach(e => {
+		if (edgeType(e) == "temporary")
+			memoryData.edges.delete(e);
+	})
+	places.forEach(place => {
+		var minDist = Infinity, tempEdge;
+		memoryData.vertices.forEach(v => {
+			if (v.fxy.floor != place.fxy.floor) return;
+			if (v.section != "path") return;
+			const candidateEdge = [place.fxy, v.fxy];
+			const candidateDist = lengthInM(candidateEdge);
+			if (candidateDist && candidateDist < minDist) {
+				minDist = candidateDist;
+				tempEdge = candidateEdge;
+			}
+		});
+		memoryData.edges.add(tempEdge);
+	});
+}
+
 $.getJSON("/data.json", function(diskData) {
 	if (memoryData != null)
 		resolve(memoryData);
@@ -108,7 +133,6 @@ $.getJSON("/data.json", function(diskData) {
 		memoryData[key] = new Set(diskData[key]);
 	});
 
-	var places = [];
 	memoryData.vertices.forEach(v => {
 		stringToVertex[FXYtoString(v.fxy)] = v;
 		if (v.id) {
@@ -117,21 +141,7 @@ $.getJSON("/data.json", function(diskData) {
 		}
 	});
 
-	// For each place, add a temporary edge from it to the nearest path vertex
-	places.forEach(place => {
-		var minDist = Infinity, tempEdge;
-		memoryData.vertices.forEach(v => {
-			if (v.fxy.floor != place.fxy.floor) return;
-			if (v.section != "path") return;
-			const edge = [place.fxy, v.fxy];
-			const dist = lengthInM(edge);
-			if (dist && dist < minDist) {
-				minDist = dist;
-				tempEdge = edge;
-			}
-		});
-		memoryData.edges.add(tempEdge);
-	});
+	refreshTemporaryEdges();
 
 	// Remove placeholder rows
 	for (let i = 1; i <= 2; i++)
@@ -146,7 +156,6 @@ $.getJSON("/data.json", function(diskData) {
 
 function copyNextDiskData() {
 	var nextDiskData = {
-		constants: CONSTANTS,
 		timestamp: new Date().toUTCString(),
 	};
 
@@ -177,18 +186,19 @@ function autocomplete (input) {
 		a.setAttribute("style", "max-height: 120px; overflow-y: auto");
 		this.parentNode.appendChild(a);
 
-		for (let id in memoryData.places) {
-			const place = memoryData.places[id];
-			var name = id;
+		for (let id in idToPlace) {
+			const place = idToPlace[id];
+			var idWithUse = id;
 			if (place.use && !id.includes(place.use))
-				name += ` (${place.use})`;
-			if (name.toUpperCase().indexOf(val.toUpperCase()) == -1)
+				idWithUse += ` (${place.use})`;
+			if (idWithUse.toUpperCase().indexOf(val.toUpperCase()) == -1)
 				continue;
 
 			b = document.createElement("div");
-			b.innerHTML = name.replace(new RegExp(`(${val})`, "gi"), "<b>$1</b>");
-			b.innerHTML += `<span class="section-text" style="float: right">Floor ${place.floor}</span>`;
-			b.innerHTML += `<input type="hidden" value="${place.id}">`;
+			b.innerHTML =
+				idWithUse.replace(new RegExp(`(${val})`, "gi"), "<b>$1</b>") +
+				`<span class="section-text">Floor ${place.fxy.floor}</span>` +
+				`<input type="hidden" value="${place.id}">`;
 			a.appendChild(b);
 			b.addEventListener("click", function (e) {
 				input.value = this.getElementsByTagName("input")[0].value;
@@ -248,7 +258,7 @@ function getPlaceInputs() {
 	return values;
 }
 function setPointValue(index, value) {
-	return document.getElementById(`point-${index}`).value = value;
+	return getPlaceInput(index).value = value;
 }
 
 function addPlaceToTable(id) {
@@ -280,7 +290,7 @@ function removePlaceInput(id) {
 		row.id = "row-" + rowNum;
 		row.innerHTML = row.innerHTML.replace(new RegExp(rowStr, "g"), rowNum);
 		setPointValue(rowNum, val);
-		autocomplete(document.getElementById("point-" + rowNum), memoryData.places);
+		autocomplete(document.getElementById("point-" + rowNum));
 	}
 };
 // Add a row to the points table
@@ -301,7 +311,7 @@ function addPlaceInput () {
 	row.id = `row-${i}`;
 	rows.push(row);
 	table.insertBefore(row, table.childNodes[i]);
-	autocomplete(document.getElementById(`point-${i}`), memoryData.places);
+	autocomplete(getPlaceInput(i));
 };
 
 /* Calculate Path */

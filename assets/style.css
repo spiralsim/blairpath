@@ -199,6 +199,7 @@ input[type = submit] {
 /* End of adapted code */
 .section-text {
 	color: gray;
+	float: right;
 }
 .autocomplete-active > * {
 	color: white;

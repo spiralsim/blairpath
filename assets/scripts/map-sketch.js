@@ -302,11 +302,11 @@ function keyPressed() {
 	else if (keyCode == BACKSPACE || keyCode == DELETE) {
 		if (activeType == "edge")
 			memoryData.edges.delete(activeObject);
-		else {
+		else
 			changeAndPropagateVertex(activeObject, null);
-		}
 		activeObject = null;
 	}
+	refreshTemporaryEdges();
 };
 
 function mousePressed() {
@@ -334,6 +334,7 @@ function mousePressed() {
 			else
 				activeObject = hoveredObject;
 		}
+		refreshTemporaryEdges();
 	}
 	if (hoveredType != "place")
 		activeObject = hoveredObject;
