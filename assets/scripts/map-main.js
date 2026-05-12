@@ -319,7 +319,7 @@ var lastPathQuery = null;
 
 function clearCalculation() {
 	totalDistance = 0;
-	memoryData.edges.forEach(e => e.onPath = false);
+	edgesOnPath = new Set();
 	document.getElementById("calc-result").innerHTML = '';
 }
 
@@ -371,8 +371,6 @@ function calculatePath(query) {
 	memoryData.edges.forEach(e => {
 		if (!edgeIsElevator(e) || query.allowElevator) graph.addEdge(e);
 	});
-
-	edgesOnPath = new Set();
 
 	for (let i = 0; i < rows.length - 1; i++) {
 		const subpathIDs = query.points.slice(i, i + 2);
