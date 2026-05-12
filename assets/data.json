@@ -1,19 +1,4 @@
 {
-    "constants": {
-        "METERS_PER_FLOOR": 4.39,
-        "M_PER_PIXEL": 0.32512,
-        "WALKING_SPEED_IN_METERS_PER_SECOND": 1.35,
-        "PORTABLE_LENGTH_IN_PIXELS": 36,
-        "PORTABLE_WIDTH_IN_PIXELS": 22,
-        "SITE_PLAN_OFFSET_IN_PIXELS": [
-            -525,
-            -248
-        ],
-        "ELEVATOR_X_AND_Y": [
-            528,
-            293
-        ]
-    },
     "timestamp": "Mon, 11 May 2026 21:31:54 GMT",
     "edges": [
         [

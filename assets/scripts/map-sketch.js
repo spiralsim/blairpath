@@ -5,7 +5,6 @@ var canvas, images = {
 
 // Loads maps
 function preload () {
-	loadMemoryData();
 	const MAP_PATH = "/maps";
 	for (let i = 1; i <= 4; i++) images.floors.push(loadImage(`${MAP_PATH}/f${i}.png`));
 	images.site = loadImage(`${MAP_PATH}/site.png`);
@@ -65,7 +64,7 @@ const VIEW = {
 		VIEW.physPos.add(delta);
 	},
 	rulerInPixels() {
-		return VIEW.rulerInM / memoryData.constants.M_PER_PIXEL * VIEW.zoom;
+		return VIEW.rulerInM / CONSTANTS.M_PER_PIXEL * VIEW.zoom;
 	},
 	calibrateRuler() {
 		// Note that we must have
@@ -399,7 +398,7 @@ function drawEdge(e) {
 }
 
 function showSitePlan() {
-	const OFFSET = memoryData.constants["SITE_PLAN_OFFSET_IN_PIXELS"];
+	const OFFSET = CONSTANTS["SITE_PLAN_OFFSET_IN_PIXELS"];
 	image(images.site, ...OFFSET);
 	if (!showingDevTools) return;
 	strokeWeight(EDGE_WIDTH / VIEW.zoom);
@@ -438,8 +437,8 @@ function showFloorPlan() {
 			rect(
 				0,
 				0,
-				memoryData.constants.PORTABLE_LENGTH_IN_PIXELS,
-				memoryData.constants.PORTABLE_WIDTH_IN_PIXELS
+				CONSTANTS.PORTABLE_LENGTH_IN_PIXELS,
+				CONSTANTS.PORTABLE_WIDTH_IN_PIXELS
 			);
 			pop();
 		});
