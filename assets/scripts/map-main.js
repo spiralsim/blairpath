@@ -125,8 +125,6 @@ function refreshTemporaryEdges() {
 }
 
 $.getJSON("/data.json", function(diskData) {
-	if (memoryData != null)
-		resolve(memoryData);
 	memoryData = structuredClone(diskData);
 	
 	["edges", "vertices"].forEach(key => {
@@ -150,8 +148,6 @@ $.getJSON("/data.json", function(diskData) {
 	// Create 2 initial rows
 	tableLoaded = true;
 	for (let i = 0; i < 2; i++) addPlaceInput();
-
-	resolve(memoryData);
 });
 
 function copyNextDiskData() {

@@ -49,22 +49,26 @@ function mouseMoved() {
 	on the screen)
  */
 const VIEW = {
-	// Physical position of the floor plan's top-left corner
-	physPos: null,
-	zoom: null,
+	// Canvas position of the floor plan's top-left corner
+	offset: null,
+	scale: null,
 	floor: 1,
 	rulerInM: 100,
 	get hoverRadius() {
-		return EDGE_WIDTH / this.zoom;
+		return EDGE_WIDTH / this.scale;
 	},
 	get vertexDiameter() {
 		return this.hoverRadius * 3;
 	},
 	pan(delta) {
-		VIEW.physPos.add(delta);
+		VIEW.offset.add(delta);
+	},
+	panArrow(xDirection, yDirection) {
+		const INCREMENT = 10;
+		this.pan(createVector(xDirection, yDirection).mult(INCREMENT));
 	},
 	rulerInPixels() {
-		return VIEW.rulerInM / CONSTANTS.M_PER_PIXEL * VIEW.zoom;
+		return VIEW.rulerInM / CONSTANTS.M_PER_PIXEL * VIEW.scale;
 	},
 	calibrateRuler() {
 		// Note that we must have
@@ -89,23 +93,29 @@ const VIEW = {
 		while (VIEW.rulerInPixels() > MAX_RULER_LENGTH_IN_PIXELS) decrement();
 	},
 	applyZoom(scaleFactor, center = createVector(width / 2, height / 2)) {
-		var nextZoom = VIEW.zoom * scaleFactor;
+		var nextZoom = VIEW.scale * scaleFactor;
 		if (nextZoom < MIN_ZOOM || nextZoom > MAX_ZOOM)
 			return;
 
-		VIEW.physPos = p5.Vector.add(
-			center, p5.Vector.sub(VIEW.physPos, center).mult(scaleFactor)
+		VIEW.offset = p5.Vector.add(
+			center, p5.Vector.sub(VIEW.offset, center).mult(scaleFactor)
 		);
-		VIEW.zoom *= scaleFactor;
+		VIEW.scale *= scaleFactor;
 		VIEW.calibrateRuler();
 	},
+	zoomIn() {
+		this.applyZoom(1.2);
+	},
+	zoomOut() {
+		this.applyZoom(0.8);
+	},
 	reset() {
-		VIEW.zoom = DEFAULT_ZOOM;
+		VIEW.scale = DEFAULT_ZOOM;
 		const CANVAS_CENTER = createVector(width / 2, height / 2);
 		const IMAGE_0 = images.floors[0];
 		const FLOOR_SIZE_VECTOR = createVector(IMAGE_0.width, IMAGE_0.height);
-		VIEW.physPos = CANVAS_CENTER.sub(
-			p5.Vector.mult(FLOOR_SIZE_VECTOR, VIEW.zoom / 2)
+		VIEW.offset = CANVAS_CENTER.sub(
+			p5.Vector.mult(FLOOR_SIZE_VECTOR, VIEW.scale / 2)
 		);
 		VIEW.calibrateRuler();
 	}
@@ -116,7 +126,7 @@ const CURSOR = {
 		return createVector(mouseX, mouseY);
 	},
 	get virtualXY() {
-		return p5.Vector.sub(CURSOR.canvasXY, VIEW.physPos).div(VIEW.zoom);
+		return p5.Vector.sub(CURSOR.canvasXY, VIEW.offset).div(VIEW.scale);
 	},
 	get fxy() {
 		return fxy(VIEW.floor, this.virtualXY.x, this.virtualXY.y);
@@ -249,8 +259,10 @@ const LABEL_FONT_SIZE = 14;
 /*
 	p5.js Event Functions
 */
+var lastWidth, lastHeight;
 function setup() {
 	canvas = createCanvas(getCanvasDivWidth(), windowHeight);
+	lastWidth = width, lastHeight = height;
 	canvas.parent("canvas");
 
 	textFont('Roboto');
@@ -261,19 +273,25 @@ function setup() {
 
 function windowResized() {
 	resizeCanvas(getCanvasDivWidth(), windowHeight);
+	VIEW.pan(createVector(width - lastWidth, height - lastHeight).div(2));
+	lastWidth = width, lastHeight = height;
 }
 
 var dataLastCopied = null;
 function keyPressed() {
-	if (key == 'd')
+	if (key == 't')
 		toggleDevTools();
-	if (key == 'c') {
+	else if (key == 'c') {
 		copyNextDiskData();
 		dataLastCopied = new Date();
-	}
+	} else if (key == '=' || key == '+')
+		VIEW.zoomIn();
+	else if (key == '-' || key == '_')
+		VIEW.zoomOut();
 
 	if (!showingDevTools)
 		return;
+
 	const activeType = blairpathObjectType(activeObject);
 	if (key == 'p' || key == 'b') {
 		activeObject = {
@@ -291,13 +309,13 @@ function keyPressed() {
 		transformActivePortables(p => p.angle--);
 	else if (key == ']')
 		transformActivePortables(p => p.angle++);
-	else if (keyCode == LEFT_ARROW)
+	else if (key == 'a')
 		transformActivePortables(p => p.fxy.x--);
-	else if (keyCode == RIGHT_ARROW)
+	else if (key == 'd')
 		transformActivePortables(p => p.fxy.x++);
-	else if (keyCode == UP_ARROW)
+	else if (key == 'w')
 		transformActivePortables(p => p.fxy.y--);
-	else if (keyCode == DOWN_ARROW)
+	else if (key == 's')
 		transformActivePortables(p => p.fxy.y++);
 	else if (keyCode == BACKSPACE || keyCode == DELETE) {
 		if (activeType == "edge")
@@ -367,9 +385,9 @@ function drawEdge(e) {
 	function drawArrow(a, b) {
 		const dir = a.floor == VIEW.floor ? b.floor - VIEW.floor : a.floor - VIEW.floor;
 		triangle(
-			a.x - 5 / VIEW.zoom, a.y,
-			a.x + 5 / VIEW.zoom, a.y,
-			a.x, a.y - dir * 10 / VIEW.zoom,
+			a.x - 5 / VIEW.scale, a.y,
+			a.x + 5 / VIEW.scale, a.y,
+			a.x, a.y - dir * 10 / VIEW.scale,
 		);
 	}
 
@@ -380,7 +398,7 @@ function drawEdge(e) {
 	 */
 	function drawDottedEdge(a, b) {
 		const length = dist(a.x, a.y, b.x, b.y);
-		for (let i = 0; i < length; i += 5 / VIEW.zoom)
+		for (let i = 0; i < length; i += 5 / VIEW.scale)
 			point(lerp(a.x, b.x, i / length), lerp(a.y, b.y, i / length));
 	}
 
@@ -389,7 +407,7 @@ function drawEdge(e) {
 	var strokeWeightBeforeZoom = EDGE_WIDTH;
 	if (edgeType(e) == "border")
 		strokeWeightBeforeZoom /= 2;
-	strokeWeight(strokeWeightBeforeZoom / VIEW.zoom);
+	strokeWeight(strokeWeightBeforeZoom / VIEW.scale);
 
 	const a = e[0], b = e[1];
 	if (a.floor == b.floor) {
@@ -402,7 +420,7 @@ function showSitePlan() {
 	const OFFSET = CONSTANTS["SITE_PLAN_OFFSET_IN_PIXELS"];
 	image(images.site, ...OFFSET);
 	if (!showingDevTools) return;
-	strokeWeight(EDGE_WIDTH / VIEW.zoom);
+	strokeWeight(EDGE_WIDTH / VIEW.scale);
 	stroke(0, 0, 255);
 	rect(...OFFSET, images.site.width, images.site.height);
 }
@@ -426,7 +444,7 @@ function showFloorPlan() {
 	function showPortables() {
 		stroke(0);
 		fill(204, 30, 30);
-		strokeWeight(2 / VIEW.zoom);
+		strokeWeight(2 / VIEW.scale);
 		rectMode(CENTER);
 		angleMode(DEGREES);
 		Object.values(idToPlace).forEach(place => {
@@ -449,7 +467,7 @@ function showFloorPlan() {
 	showPortables();
 	showEdges();
 	if (showingDevTools) {
-		strokeWeight(EDGE_WIDTH / VIEW.zoom);
+		strokeWeight(EDGE_WIDTH / VIEW.scale);
 		stroke(255, 0, 0);
 		noFill();
 		rect(0, 0, images.floors[0].width, images.floors[0].height);
@@ -458,9 +476,9 @@ function showFloorPlan() {
 
 function showLabels() {
 	textAlign(CENTER, CENTER);
-	const labelTextSize = 14 / VIEW.zoom;
+	const labelTextSize = 14 / VIEW.scale;
 	textSize(labelTextSize);
-	strokeWeight(2 / VIEW.zoom);
+	strokeWeight(2 / VIEW.scale);
 	const placeValuesSet = new Set(getPlaceInputs());
 	// Display dots for room selection
 	for (let id in idToPlace) {
@@ -505,7 +523,7 @@ function toggleDevTools() {
 
 function showVertices() {
 	noFill();
-	strokeWeight(2 / VIEW.zoom);
+	strokeWeight(2 / VIEW.scale);
 	memoryData.vertices.forEach(v => {
 		if (v.fxy.floor != VIEW.floor)
 			return;
@@ -559,8 +577,8 @@ function showTooltip() {
 
 	var bottomText = hoveredObject.section;
 
-	const labelX = VIEW.physPos.x + hoveredObject.fxy.x * VIEW.zoom;
-	const labelY = VIEW.physPos.y + hoveredObject.fxy.y * VIEW.zoom;
+	const labelX = VIEW.offset.x + hoveredObject.fxy.x * VIEW.scale;
+	const labelY = VIEW.offset.y + hoveredObject.fxy.y * VIEW.scale;
 	const maxW = max(textWidth(topText), textWidth(bottomText));
 	const
 		tooltipW = maxW + LABEL_FONT_SIZE,
@@ -619,8 +637,8 @@ function draw() {
 
 	// Map Display
 	push();
-	translate(VIEW.physPos);
-	scale(VIEW.zoom);
+	translate(VIEW.offset);
+	scale(VIEW.scale);
 
 	// images
 	noFill();
@@ -643,4 +661,13 @@ function draw() {
 
 	showRuler();
 	if (showingDevTools) showDevStats();
+
+	if (keyIsDown(LEFT_ARROW))
+		VIEW.panArrow(1, 0);
+	else if (keyIsDown(RIGHT_ARROW))
+		VIEW.panArrow(-1, 0);
+	else if (keyIsDown(UP_ARROW))
+		VIEW.panArrow(0, 1);
+	else if (keyIsDown(DOWN_ARROW))
+		VIEW.panArrow(0, -1);
 };
