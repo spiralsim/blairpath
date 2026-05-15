@@ -365,10 +365,13 @@ function mouseDragged() {
 };
 
 var lastTouchX = null, lastTouchY = null;
+var touchPans = '';
 function touchMoved() {
 	touches.forEach(({x, y}) => {
-		if (lastTouchX != null)
+		if (lastTouchX != null) {
+			touchPans += `${touchX - lastTouchX},${touchY - lastTouchY} `;
 			VIEW.pan(createVector(touchX - lastTouchX, touchY - lastTouchY));
+		}
 		lastTouchX = x, lastTouchY = y;
 	});
 }
@@ -561,6 +564,7 @@ function showDevStats() {
 		stats.push(`FXY: ${FXYtoString(CURSOR.fxy)}`);
 	if (blairpathObjectType(hoveredObject) == "edge")
 		stats.push(`Edge length: ${round(lengthInM(hoveredObject), 2)} m`);
+	stats.push(`Touch pans: ${touchPans}`);
 	const statsText = stats.join('\n');
 
 	const statsY = height - stats.length * 24;
