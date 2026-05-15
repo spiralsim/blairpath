@@ -300,7 +300,7 @@ function keyPressed() {
 		};
 		memoryData.vertices.add(activeObject);
 		stringToVertex[FXYtoString(CURSOR.fxy)] = activeObject;
-	} else if (key == 's') {
+	} else if (key == 'v') {
 		if (activeType == "border")
 			activeObject.section = "path";
 		else if (activeType == "path")
@@ -523,7 +523,6 @@ function showLabels() {
 var showingDevTools = false;
 function toggleDevTools() {
 	showingDevTools = !showingDevTools;
-	document.getElementById('outputDiv').hidden = !showingDevTools;
 }
 
 function showVertices() {
