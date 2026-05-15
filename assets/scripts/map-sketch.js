@@ -364,6 +364,11 @@ function mouseDragged() {
 	VIEW.pan(createVector(movedX, movedY));
 };
 
+var allTouches = [];
+function touchMoved() {
+	allTouches.push(touches.map(t => `${t.x},${t.y}`).join(';'));
+}
+
 function mouseWheel({ delta }) {
 	if (!inCanvas()) return;
 	VIEW.applyZoom(SCROLL_ZOOM_RATE ** -delta, CURSOR.canvasXY); // Uses negative sign to conform to Google Maps' zoom
@@ -553,6 +558,8 @@ function showDevStats() {
 		stats.push(`FXY: ${FXYtoString(CURSOR.fxy)}`);
 	if (blairpathObjectType(hoveredObject) == "edge")
 		stats.push(`Edge length: ${round(lengthInM(hoveredObject), 2)} m`);
+	if (allTouches.length)
+		stats.push(allTouches.join(' '));
 	const statsText = stats.join('\n');
 
 	const statsY = height - stats.length * 24;
