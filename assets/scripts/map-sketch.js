@@ -359,13 +359,16 @@ function mousePressed() {
 };
 
 function mouseDragged() {
-	if (!inCanvas()) return;
+	if (!inCanvas())
+		return;
 	cursorType = MOVE;
 	VIEW.pan(createVector(movedX, movedY));
 };
 
 var lastTouchX = null, lastTouchY = null;
 function touchMoved() {
+	if (!inCanvas())
+		return;
 	touches.forEach(({x, y}) => {
 		if (lastTouchX != null)
 			VIEW.pan(createVector(x - lastTouchX, y - lastTouchY));
@@ -374,8 +377,10 @@ function touchMoved() {
 }
 
 function mouseWheel({ delta }) {
-	if (!inCanvas()) return;
-	VIEW.applyZoom(SCROLL_ZOOM_RATE ** -delta, CURSOR.canvasXY); // Uses negative sign to conform to Google Maps' zoom
+	if (!inCanvas())
+		return;
+	// Uses negative sign to conform to Google Maps' zoom
+	VIEW.applyZoom(SCROLL_ZOOM_RATE ** -delta, CURSOR.canvasXY);
 };
 
 const EDGE_WIDTH = 4;
