@@ -364,9 +364,13 @@ function mouseDragged() {
 	VIEW.pan(createVector(movedX, movedY));
 };
 
-var allTouches = [];
+var lastTouchX = null, lastTouchY = null;
 function touchMoved() {
-	allTouches.push(touches.map(t => `${t.x},${t.y}`).join(';'));
+	touches.forEach(({x, y}) => {
+		if (lastTouchX != null)
+			VIEW.pan(createVector(touchX - lastTouchX, touchY - lastTouchY));
+		lastTouchX = x, lastTouchY = y;
+	});
 }
 
 function mouseWheel({ delta }) {
@@ -557,7 +561,6 @@ function showDevStats() {
 		stats.push(`FXY: ${FXYtoString(CURSOR.fxy)}`);
 	if (blairpathObjectType(hoveredObject) == "edge")
 		stats.push(`Edge length: ${round(lengthInM(hoveredObject), 2)} m`);
-	stats.push(`All touches: ${allTouches.join(' ')}`);
 	const statsText = stats.join('\n');
 
 	const statsY = height - stats.length * 24;
