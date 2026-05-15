@@ -558,8 +558,7 @@ function showDevStats() {
 		stats.push(`FXY: ${FXYtoString(CURSOR.fxy)}`);
 	if (blairpathObjectType(hoveredObject) == "edge")
 		stats.push(`Edge length: ${round(lengthInM(hoveredObject), 2)} m`);
-	if (allTouches.length)
-		stats.push(allTouches.join(' '));
+	stats.push(`All touches: ${allTouches.join(' ')}`);
 	const statsText = stats.join('\n');
 
 	const statsY = height - stats.length * 24;
