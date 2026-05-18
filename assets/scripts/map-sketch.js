@@ -375,6 +375,10 @@ function touchMoved() {
 		lastTouchX = x, lastTouchY = y;
 	});
 }
+function touchEnded() {
+	lastTouchX = null;
+	lastTouchY = null;
+}
 
 function mouseWheel({ delta }) {
 	if (!inCanvas())
