@@ -60,6 +60,9 @@ const VIEW = {
 	get vertexDiameter() {
 		return this.hoverRadius * 3;
 	},
+	get labelTextSize() {
+		return 14 / this.scale;
+	},
 	pan(delta) {
 		VIEW.offset.add(delta);
 	},
@@ -226,7 +229,7 @@ function blairpathObjectColor(object) {
 
 function refreshHoveredObject() {
 	hoveredObject = null;
-	if (!showingDevTools)
+	if (!showingDevTools || !inCanvas())
 		return;
 	const verticesArray = Array.from(memoryData.vertices);
 	for (let i = 0; i < verticesArray.length; i++) {
@@ -492,21 +495,32 @@ function showFloorPlan() {
 	}
 }
 
+function parenthesizedText(fxy, angle) {
+	stroke(0);
+	fill(255);
+	textAlign(CENTER, CENTER);
+	textSize(VIEW.labelTextSize);
+	var message = FXYtoString(fxy);
+	if (angle != undefined)
+		message += ` ${angle}°`;
+
+	text(`(${message})`, fxy.x, fxy.y + VIEW.labelTextSize);
+}
+
 function showLabels() {
 	textAlign(CENTER, CENTER);
-	const labelTextSize = 14 / VIEW.scale;
-	textSize(labelTextSize);
+	textSize(VIEW.labelTextSize);
 	strokeWeight(2 / VIEW.scale);
 	const placeValuesSet = new Set(getPlaceInputs());
-	// Display dots for room selection
 	for (let id in idToPlace) {
 		const place = idToPlace[id], fxy = place.fxy;
 		if (fxy.floor != VIEW.floor) continue;
 		// Display the point and detect hovering if applicable
 		const nameWidth = textWidth(id);
 		if (
+			inCanvas() && 
 			abs(CURSOR.virtualXY.x - fxy.x) < nameWidth / 2 &&
-			abs(CURSOR.virtualXY.y - fxy.y) < labelTextSize / 2 &&
+			abs(CURSOR.virtualXY.y - fxy.y) < VIEW.labelTextSize / 2 &&
 			!hoveredObject
 		) {
 			hoveredObject = place;
@@ -524,12 +538,8 @@ function showLabels() {
 
 		stroke(0);
 		fill(255);
-		if (showingDevTools) {
-			var parenthesizedText = FXYtoString(fxy);
-			if (place.angle != undefined)
-				parenthesizedText += ` ${place.angle}°`;
-			text(`(${parenthesizedText})`, fxy.x, fxy.y + labelTextSize);
-		}
+		if (showingDevTools)
+			parenthesizedText(fxy, place.angle);
 	}
 }
 
@@ -551,6 +561,8 @@ function showVertices() {
 		rectMode(CENTER);
 		const shapeFunction = vertexType(v) == "path" ? circle : square;
 		shapeFunction(v.fxy.x, v.fxy.y, VIEW.vertexDiameter);
+		if (showOptions[`show-labels`])
+			parenthesizedText(v.fxy);
 	});
 }
 
