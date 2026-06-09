@@ -183,7 +183,7 @@ function autocomplete (input) {
 		this.parentNode.appendChild(a);
 
 		for (let id in places) {
-			const place = idToPlace[id];
+			const place = places[id];
 			var idWithUse = id;
 			if (place.use && !id.includes(place.use))
 				idWithUse += ` (${place.use})`;

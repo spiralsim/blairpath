@@ -377,7 +377,7 @@ function mouseWheel({ delta }) {
 };
 
 const EDGE_WIDTH = 4;
-const TRIANGLE_WIDTH = 20;
+const TRIANGLE_WIDTH = 12;
 /**
  * Draws an edge (segment, dotted, or arrow).
  * 
@@ -705,6 +705,8 @@ function draw() {
 	showRuler();
 	if (showingDevTools) showDevStats();
 
+	if (!inCanvas())
+		return;
 	if (keyIsDown(LEFT_ARROW))
 		respondToArrow(1, 0);
 	else if (keyIsDown(RIGHT_ARROW))
