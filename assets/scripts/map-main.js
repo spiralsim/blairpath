@@ -182,7 +182,7 @@ function autocomplete (input) {
 		a.setAttribute("style", "max-height: 120px; overflow-y: auto");
 		this.parentNode.appendChild(a);
 
-		for (let id in idToPlace) {
+		for (let id in places) {
 			const place = idToPlace[id];
 			var idWithUse = id;
 			if (place.use && !id.includes(place.use))
