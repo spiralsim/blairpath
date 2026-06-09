@@ -247,7 +247,7 @@ function getPlaceInput(index) {
 function getPointValue(index) {
 	return getPlaceInput(index).value;
 }
-function getPlaceInputs() {
+function getPointValues() {
 	var values = [];
 	for (let i = 1; i <= rows.length; i++)
 		values.push(getPointValue(i));
@@ -418,7 +418,7 @@ function refreshPathQuery() {
 	
 	// Prevents duplicate calculations
 	const pathQuery = new PathQuery(
-		getPlaceInputs(),
+		getPointValues(),
 		document.getElementById("allow-elevator").checked,
 		parseFloat(document.getElementById("speed").value),
 	);

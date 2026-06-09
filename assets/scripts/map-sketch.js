@@ -335,7 +335,7 @@ function mousePressed() {
 	const activeType = blairpathObjectType(activeObject);
 	if (hoveredType != "edge") {
 		if (hoveredType == "place") {
-			if (!showingDevTools)
+			if (!showingDevTools && hoveredObject.id != getPointValues().at(-1))
 				addPlaceToTable(hoveredObject.id);
 		} else if (hoveredType == activeType) {
 			const newEdge = [activeObject.id, hoveredObject.id];
@@ -345,7 +345,8 @@ function mousePressed() {
 		}
 		refreshTemporaryEdges();
 	}
-	activeObject = hoveredObject;
+	if (showingDevTools)
+		activeObject = hoveredObject;
 };
 
 function mouseDragged() {
@@ -378,7 +379,7 @@ function mouseWheel({ delta }) {
 };
 
 const EDGE_WIDTH = 4;
-const TRIANGLE_WIDTH = 12;
+const TRIANGLE_WIDTH = 16;
 /**
  * Draws an edge (segment, dotted, or arrow).
  * 
@@ -489,7 +490,7 @@ function showLabels() {
 	textAlign(CENTER, CENTER);
 	textSize(VIEW.labelTextSize);
 	strokeWeight(2 / VIEW.scale);
-	const placeValuesSet = new Set(getPlaceInputs());
+	const placeValuesSet = new Set(getPointValues());
 	for (let id in places) {
 		const place = places[id], fxy = place.fxy;
 		if (fxy.floor != VIEW.floor) continue;
