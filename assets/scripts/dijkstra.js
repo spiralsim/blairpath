@@ -91,21 +91,19 @@ class WeightedGraph {
     return this.adjacencyList[vertex];
   }
   addEdge(edge) {
-    const weight = lengthInM(edge);
-    const FXYs = edge.map(FXYtoString);
-    this.getVertex(FXYs[0]).push(new Neighbor(FXYs[1], weight));
-    this.getVertex(FXYs[1]).push(new Neighbor(FXYs[0], weight));
+    const weight = edgeLengthInM(edge);
+    this.getVertex(edge[0]).push(new Neighbor(edge[1], weight));
+    this.getVertex(edge[1]).push(new Neighbor(edge[0], weight));
   }
-  dijkstra(startFXY, finishFXY) {
+  dijkstra(start, finish) {
     const pq = new PriorityQueue();
     const distances = {};
     const previous = {};
     let path = []; //to return at end
     let smallest;
-    // console.log(start, finish);
     //build up initial state
     for (let vertex in this.adjacencyList) {
-      if (vertex === startFXY) {
+      if (vertex === start) {
         distances[vertex] = 0;
         pq.enqueue(vertex, 0);
       } else {
@@ -116,10 +114,9 @@ class WeightedGraph {
     }
     // as long as there is something to visit
     while (pq.values.length) {
-      smallest = pq.dequeue().value;
-      if (smallest === finishFXY) {
-        //WE ARE DONE
-        //BUILD UP PATH TO RETURN AT END
+      const top = pq.dequeue();
+      smallest = top.value;
+      if (smallest === finish) {
         while (previous[smallest]) {
           path.push(smallest);
           smallest = previous[smallest];
@@ -128,20 +125,12 @@ class WeightedGraph {
       }
       if (smallest || distances[smallest] !== Infinity) {
         for (let neighbor in this.adjacencyList[smallest]) {
-          //find neighboring node
           let nextNode = this.adjacencyList[smallest][neighbor];
-          //calculate new distance to neighboring node
           let candidate = distances[smallest] + nextNode.weight;
           let nextNeighbor = nextNode.vertex;
-          // console.log("candidate: " + candidate);
-          // console.log("neighbor: " + nextNeighbor);
-          // console.log("dist: " + distances[]);
           if (candidate < distances[nextNeighbor]) {
-            //updating new smallest distance to neighbor
             distances[nextNeighbor] = candidate;
-            //updating previous - How we got to neighbor
             previous[nextNeighbor] = smallest;
-            //enqueue in priority queue with new priority
             pq.enqueue(nextNeighbor, candidate);
           }
         }
@@ -149,7 +138,7 @@ class WeightedGraph {
     }
     return {
       path: path.concat(smallest).reverse(),
-      distanceInM: distances[finishFXY],
+      distance: distances[finish],
     };
   }
 }

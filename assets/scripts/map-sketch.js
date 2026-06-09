@@ -63,6 +63,9 @@ const VIEW = {
 	get labelTextSize() {
 		return 14 / this.scale;
 	},
+	get triangleWidth() {
+		return TRIANGLE_WIDTH / this.scale;
+	},
 	pan(delta) {
 		VIEW.offset.add(delta);
 	},
@@ -168,46 +171,6 @@ function blairpathObjectType(object) {
 		return vertexType(object);
 }
 
-/**
- * When a vertex's FXY changes, any edge(s) with that FXY as an endpoint must
- * also update that FXY. If the vertex is deleted, the edge(s) must be deleted.
- * 
- * @param {} vertex The original vertex to move
- * @param {} changefn A function to be applied to the vertex to change the
- * vertex (optionally, change its FXY). To delete, set the **argument** to null.
- */
-function changeAndPropagateVertex(vertex, changefn) {
-	const oldVertex = structuredClone(vertex);
-	const oldFXYstring = FXYtoString(vertex.fxy);
-
-	const edgesWithVertex = Array.from(memoryData.edges)
-		.filter(e => edgeToString(e).includes(oldFXYstring));
-
-	if (changefn == null) {
-		edgesWithVertex.forEach(e => memoryData.edges.delete(e));
-		memoryData.vertices.delete(vertex);
-		return;
-	}
-
-	changefn(vertex);
-	const newFXYstring = FXYtoString(vertex.fxy);
-	if (oldFXYstring == newFXYstring)
-		return;
-
-	delete stringToVertex[oldFXYstring];
-	stringToVertex[newFXYstring] = vertex;
-	edgesWithVertex.forEach(e => {
-		for (let i = 0; i < 2; i++)
-			if (FXYtoString(e[i]) == oldFXYstring)
-				e[i] = vertex.fxy;
-	});
-}
-function transformActivePortables(changefn) {
-	getPlaceInputs()
-		.filter(isPortable)
-		.forEach(id => changeAndPropagateVertex(idToPlace[id], changefn));
-}
-
 function isVisibleBorder(edge) {
 	return edgeType(edge) == "border" && VIEW.floor == 1;
 }
@@ -231,7 +194,7 @@ function refreshHoveredObject() {
 	hoveredObject = null;
 	if (!showingDevTools || !inCanvas())
 		return;
-	const verticesArray = Array.from(memoryData.vertices);
+	const verticesArray = Object.values(memoryData.vertices);
 	for (let i = 0; i < verticesArray.length; i++) {
 		const v = verticesArray[i];
 		const fxy = v.fxy;
@@ -243,14 +206,31 @@ function refreshHoveredObject() {
 			return;
 		}
 	}
+	
 	const edgesArray = Array.from(memoryData.edges);
 	for (let i = 0; i < edgesArray.length; i++) {
 		const e = edgesArray[i];
-		if (!e.some(fxy => fxy.floor == VIEW.floor))
+		const fxys = e.map(idToFXY);
+		if (!fxys.some(fxy => fxy.floor == VIEW.floor))
 			continue;
 		if (edgeType(e) == "temporary")
 			continue;
-		if (distToLine(CURSOR.virtualXY, ...e) < VIEW.hoverRadius) {
+
+		var triangleDirection = 0;
+		if (fxys[0].floor < VIEW.floor || fxys[1].floor < VIEW.floor)
+			// Points to lower floor
+			triangleDirection = -1;
+		else if (fxys[0].floor > VIEW.floor || fxys[1].floor > VIEW.floor)
+			// Points to higher floor
+			triangleDirection = 1;
+		const deltaX = CURSOR.virtualXY.x - fxys[0].x;
+		const deltaY = (CURSOR.virtualXY.y - fxys[0].y) * triangleDirection;
+		const w = VIEW.triangleWidth;
+		const inTriangle = deltaY < 0 && deltaY > w * (abs(deltaX / w * 2) - 1);
+		
+		const onLine = distToLine(CURSOR.virtualXY, ...fxys) < VIEW.hoverRadius;
+
+		if (inTriangle || onLine) {
 			hoveredObject = e;
 			return;
 		}
@@ -297,34 +277,47 @@ function keyPressed() {
 
 	const activeType = blairpathObjectType(activeObject);
 	if (key == 'p' || key == 'b') {
+		const id = String(new Date().getTime());
 		activeObject = {
+			id: id,
+			section: key == 'p' ? "path" : "border",
 			fxy: CURSOR.fxy,
-			section: key == 'p' ? "path" : "border"
 		};
-		memoryData.vertices.add(activeObject);
-		stringToVertex[FXYtoString(CURSOR.fxy)] = activeObject;
+		memoryData.vertices[id] = activeObject;
 	} else if (key == 'v') {
 		if (activeType == "border")
 			activeObject.section = "path";
 		else if (activeType == "path")
 			activeObject.section = "border";
-	} else if (key == '[')
-		transformActivePortables(p => p.angle--);
-	else if (key == ']')
-		transformActivePortables(p => p.angle++);
-	else if (key == 'a')
-		transformActivePortables(p => p.fxy.x--);
-	else if (key == 'd')
-		transformActivePortables(p => p.fxy.x++);
-	else if (key == 'w')
-		transformActivePortables(p => p.fxy.y--);
-	else if (key == 's')
-		transformActivePortables(p => p.fxy.y++);
-	else if (keyCode == BACKSPACE || keyCode == DELETE) {
+	} else if (key == '[') {
+		if (activeObject.angle !== undefined)
+			activeObject.angle--;
+	} else if (key == ']') {
+		if (activeObject.angle !== undefined)
+			activeObject.angle++;
+	} else if (key == 'a') {
+		if (activeType != "edge")
+			activeObject.fxy.x--;
+	} else if (key == 'd') {
+		if (activeType != "edge")
+			activeObject.fxy.x++;
+	} else if (key == 'w') {
+		if (activeType != "edge")
+			activeObject.fxy.y--;
+	} else if (key == 's') {
+		if (activeType != "edge")
+			activeObject.fxy.y++;
+	} else if (keyCode == BACKSPACE || keyCode == DELETE) {
 		if (activeType == "edge")
 			memoryData.edges.delete(activeObject);
-		else
-			changeAndPropagateVertex(activeObject, null);
+		else {
+			const id = activeObject.id;
+			memoryData.edges.forEach(e => {
+				if (e.includes(id))
+					memoryData.edges.delete(e);
+			});
+			delete memoryData.vertices[activeObject.id];
+		}
 		activeObject = null;
 	}
 	refreshTemporaryEdges();
@@ -340,25 +333,18 @@ function mousePressed() {
 	const hoveredType = blairpathObjectType(hoveredObject);
 	const activeType = blairpathObjectType(activeObject);
 	if (hoveredType != "edge") {
-		if (hoveredType == "place")
-			addPlaceToTable(hoveredObject.id);
-		else if (hoveredType == activeType) {
-			const newEdge = [activeObject.fxy, hoveredObject.fxy];
+		if (hoveredType == "place") {
+			if (!showingDevTools)
+				addPlaceToTable(hoveredObject.id);
+		} else if (hoveredType == activeType) {
+			const newEdge = [activeObject.id, hoveredObject.id];
 			const s = edgeToString(newEdge);
-			var isDuplicate = false;
-			memoryData.edges.forEach(e => {
-				if (edgeToString(e) == s || edgeToString(e.reverse()) == s)
-					isDuplicate = true;
-			});
-			if (!isDuplicate)
-				memoryData.edges.add([activeObject.fxy, hoveredObject.fxy]);
-			else
-				activeObject = hoveredObject;
+			if (!Array.from(memoryData.edges).map(edgeToString).includes(s))
+				memoryData.edges.add(newEdge);
 		}
 		refreshTemporaryEdges();
 	}
-	if (hoveredType != "place")
-		activeObject = hoveredObject;
+	activeObject = hoveredObject;
 };
 
 function mouseDragged() {
@@ -391,12 +377,21 @@ function mouseWheel({ delta }) {
 };
 
 const EDGE_WIDTH = 4;
+const TRIANGLE_WIDTH = 20;
 /**
  * Draws an edge (segment, dotted, or arrow).
  * 
  * @param {} edge
  */
 function drawEdge(e) {
+	const fxy1 = idToFXY(e[0]), fxy2 = idToFXY(e[1]);
+
+	if (fxy1.floor != VIEW.floor && fxy2.floor != VIEW.floor)
+		return;
+
+	if (!isPathEdge(e) && !showingDevTools && !isVisibleBorder(e))
+		return;
+
 	/**
 	 * Draws an arrow representing the vertical edge between `a` and `b`, pointing
 	 * in the direction of the endpoint not on the current floor.
@@ -406,9 +401,9 @@ function drawEdge(e) {
 	function drawArrow(a, b) {
 		const dir = a.floor == VIEW.floor ? b.floor - VIEW.floor : a.floor - VIEW.floor;
 		triangle(
-			a.x - 5 / VIEW.scale, a.y,
-			a.x + 5 / VIEW.scale, a.y,
-			a.x, a.y - dir * 10 / VIEW.scale,
+			a.x - VIEW.triangleWidth / 2, a.y,
+			a.x + VIEW.triangleWidth / 2, a.y,
+			a.x, a.y - dir * VIEW.triangleWidth,
 		);
 	}
 
@@ -430,11 +425,12 @@ function drawEdge(e) {
 		strokeWeightBeforeZoom /= 2;
 	strokeWeight(strokeWeightBeforeZoom / VIEW.scale);
 
-	const a = e[0], b = e[1];
-	if (a.floor == b.floor) {
-		if (edgeType(e) == "temporary") drawDottedEdge(a, b);
-		else line(a.x, a.y, b.x, b.y);
-	} else drawArrow(a, b);
+	if (fxy1.floor == fxy2.floor) {
+		if (edgeType(e) == "temporary")
+			drawDottedEdge(fxy1, fxy2);
+		else
+			line(fxy1.x, fxy1.y, fxy2.x, fxy2.y);
+	} else drawArrow(fxy1, fxy2);
 }
 
 function showSitePlan() {
@@ -447,15 +443,7 @@ function showSitePlan() {
 }
 
 function showEdges() {
-	memoryData.edges.forEach(e => {
-		if (!e.map(fxy => fxy.floor).includes(VIEW.floor))
-			return;
-
-		if (!isPathEdge(e) && !showingDevTools && !isVisibleBorder(e))
-			return;
-
-		drawEdge(e);
-	});
+	memoryData.edges.forEach(drawEdge);
 }
 
 function isPortable(id) {
@@ -468,9 +456,10 @@ function showFloorPlan() {
 		strokeWeight(2 / VIEW.scale);
 		rectMode(CENTER);
 		angleMode(DEGREES);
-		Object.values(idToPlace).forEach(place => {
-			if (!isPortable(place.id) || place.fxy.floor != VIEW.floor)
-				return;
+		for (let id in places) {
+			const place = places[id];
+			if (!isPortable(id) || place.fxy.floor != VIEW.floor)
+				continue;
 			push();
 			translate(place.fxy.x, place.fxy.y);
 			rotate(place.angle ?? 0);
@@ -481,7 +470,7 @@ function showFloorPlan() {
 				CONSTANTS.PORTABLE_WIDTH_IN_PIXELS
 			);
 			pop();
-		});
+		}
 		rectMode(CORNERS);
 	}
 	image(images.floors[VIEW.floor - 1], 0, 0);
@@ -495,25 +484,13 @@ function showFloorPlan() {
 	}
 }
 
-function parenthesizedText(fxy, angle) {
-	stroke(0);
-	fill(255);
-	textAlign(CENTER, CENTER);
-	textSize(VIEW.labelTextSize);
-	var message = FXYtoString(fxy);
-	if (angle != undefined)
-		message += ` ${angle}°`;
-
-	text(`(${message})`, fxy.x, fxy.y + VIEW.labelTextSize);
-}
-
 function showLabels() {
 	textAlign(CENTER, CENTER);
 	textSize(VIEW.labelTextSize);
 	strokeWeight(2 / VIEW.scale);
 	const placeValuesSet = new Set(getPlaceInputs());
-	for (let id in idToPlace) {
-		const place = idToPlace[id], fxy = place.fxy;
+	for (let id in places) {
+		const place = places[id], fxy = place.fxy;
 		if (fxy.floor != VIEW.floor) continue;
 		// Display the point and detect hovering if applicable
 		const nameWidth = textWidth(id);
@@ -533,25 +510,27 @@ function showLabels() {
 		} else {
 			stroke(0);
 			fill(place == hoveredObject ? 128 : 255);
+			if (place == activeObject)
+				fill(0, 192, 0);
 		}
 		text(id, fxy.x, fxy.y);
 
 		stroke(0);
 		fill(255);
-		if (showingDevTools)
-			parenthesizedText(fxy, place.angle);
 	}
 }
 
 var showingDevTools = false;
 function toggleDevTools() {
 	showingDevTools = !showingDevTools;
+	if (!showingDevTools)
+		activeObject = null;
 }
 
 function showVertices() {
 	noFill();
 	strokeWeight(2 / VIEW.scale);
-	memoryData.vertices.forEach(v => {
+	Object.values(memoryData.vertices).forEach(v => {
 		if (v.fxy.floor != VIEW.floor)
 			return;
 		if (vertexType(v) == "place")
@@ -561,8 +540,6 @@ function showVertices() {
 		rectMode(CENTER);
 		const shapeFunction = vertexType(v) == "path" ? circle : square;
 		shapeFunction(v.fxy.x, v.fxy.y, VIEW.vertexDiameter);
-		if (showOptions[`show-labels`])
-			parenthesizedText(v.fxy);
 	});
 }
 
@@ -576,12 +553,41 @@ function showDevStats() {
 	stats.push(`Disk last updated: ${localeFullString(memoryData.timestamp)}`);
 	if (dataLastCopied != null)
 		stats.push(`Data last copied: ${localeFullString(dataLastCopied)}`);
-	stats.push(`Vertices: ${memoryData.vertices.size}`);
-	stats.push(`Edges: ${memoryData.edges.size}`);
+
+	var vertexTypeCounts = {
+		"place": 0,
+		"path": 0,
+		"border": 0,
+	};
+	const verticesArray = Object.values(memoryData.vertices);
+	verticesArray.forEach(v => vertexTypeCounts[vertexType(v)]++);
+	var verticesString = `Vertices: ${verticesArray.length} total`;
+	Object.entries(vertexTypeCounts).map(([type, count]) => {
+		verticesString += `, ${count} ${type}`;
+	});
+	stats.push(verticesString);
+
+	var edgeTypeCounts = {
+		"border": 0,
+		"path": 0,
+		"temporary": 0,
+	};
+	memoryData.edges.forEach(v => edgeTypeCounts[edgeType(v)]++);
+	var edgesString = `Edges: ${memoryData.edges.size} total`;
+	Object.entries(edgeTypeCounts).map(([type, count]) => {
+		edgesString += `, ${count} ${type}`;
+	});
+	stats.push(edgesString);
+
 	if (mouseHasMoved)
 		stats.push(`FXY: ${FXYtoString(CURSOR.fxy)}`);
+	
 	if (blairpathObjectType(hoveredObject) == "edge")
-		stats.push(`Edge length: ${round(lengthInM(hoveredObject), 2)} m`);
+		stats.push(`Edge length: ${round(edgeLengthInM(hoveredObject), 2)} m`);
+
+	if (activeObject)
+		stats.push(`Active object: ${JSON.stringify(activeObject)}`);
+
 	const statsText = stats.join('\n');
 
 	const statsY = height - stats.length * 24;
@@ -650,15 +656,23 @@ function showRuler() {
 	text(rulerText, rulerTextLeftX, height - 10);
 }
 
+function respondToArrow(dx, dy) {
+	if (!showingDevTools)
+		VIEW.panArrow(dx, dy);
+	else {
+		activeObject.fxy.x += dx;
+		activeObject.fxy.y += dy;
+	}
+}
+
 function draw() {
 	// Remove loading message
-	if (!loaded && tableLoaded && memoryData != null) {
-		document.getElementById("map-placeholder").remove();
-		loaded = true;
+	if (!loaded) {
+		if (tableLoaded && memoryData != null) {
+			document.getElementById("map-placeholder").remove();
+			loaded = true;
+		} else return;
 	}
-
-	if (!loaded)
-		return;
 
 	refreshPathQuery();
 
@@ -692,11 +706,11 @@ function draw() {
 	if (showingDevTools) showDevStats();
 
 	if (keyIsDown(LEFT_ARROW))
-		VIEW.panArrow(1, 0);
+		respondToArrow(1, 0);
 	else if (keyIsDown(RIGHT_ARROW))
-		VIEW.panArrow(-1, 0);
+		respondToArrow(-1, 0);
 	else if (keyIsDown(UP_ARROW))
-		VIEW.panArrow(0, 1);
+		respondToArrow(0, 1);
 	else if (keyIsDown(DOWN_ARROW))
-		VIEW.panArrow(0, -1);
+		respondToArrow(0, -1);
 };

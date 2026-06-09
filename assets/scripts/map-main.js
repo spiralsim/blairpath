@@ -2,14 +2,6 @@
 var memoryData = null;
 var tableLoaded = false;
 
-function lengthInM([{floor: f1, x: x1, y: y1}, {floor: f2, x: x2, y: y2}]) {
-	return Math.hypot(
-		(f2 - f1) * CONSTANTS.METERS_PER_FLOOR,
-		(x2 - x1) * CONSTANTS.M_PER_PIXEL,
-		(y2 - y1) * CONSTANTS.M_PER_PIXEL,
-	);
-}
-
 function fxy(floor, x, y) {
 	return {floor: floor, x: Math.round(x), y: Math.round(y)};
 }
@@ -22,40 +14,35 @@ function FXYtoString(fxy) {
 		return null;
 	return `${fxy.floor},${fxy.x},${fxy.y}`;
 }
-
-/**
- * `edgeToString({floor: 1, x: 50, y: 100}, {floor: 2, x: 300, y: 400})`
- *  evaluates to `1,50,100;2,300,400`
- */
-function edgeToString(e) {
-	return e.map(fxy => FXYtoString(fxy)).join(';');
+function stringToFXY(string) {
+	if (string == null)
+		return null;
+	const coordinates = string.split(',').map(s => parseInt(s));
+	return {
+		floor: coordinates[0],
+		x: coordinates[1],
+		y: coordinates[2],
+	};
+}
+function idToFXY(id) {
+	return memoryData.vertices[id].fxy;
 }
 
-/**
- * A mapping from a vertex position's string form to the vertex itself
- * 
- * Example:
- * 
- * Suppose vertex V has FXY floor 2, x 50, y 100.
- * 
- * `stringToVertex['2,50,100']` evaluates to V.
- */
-var stringToVertex = {};
-
-function fxyToVertex(fxy) {
-	return stringToVertex[FXYtoString(fxy)];
+function edgeLengthInM([id1, id2]) {
+	const fxy1 = idToFXY(id1), fxy2 = idToFXY(id2);
+	return Math.hypot(
+		(fxy2.floor - fxy1.floor) * CONSTANTS.METERS_PER_FLOOR,
+		(fxy2.x - fxy1.x) * CONSTANTS.M_PER_PIXEL,
+		(fxy2.y - fxy1.y) * CONSTANTS.M_PER_PIXEL,
+	);
 }
 
-/**
- * A mapping from a place's ID to the place vertex itself
- * 
- * Example:
- * 
- * Suppose place P has ID 101.
- * 
- * `idToPlace['101']` evaluates to P.
- */
-var idToPlace = {};
+function edgeToString([id1, id2]) {
+	return id1 < id2 ? `${id1};${id2}` : `${id2};${id1}`;
+}
+function stringToEdge(s) {
+	return s.split(';');
+}
 
 /**
  * In `data.json`, each vertex is stored with a `section` key.
@@ -88,8 +75,8 @@ function edgeType(edge) {
 		"path": 0,
 		"place": 0,
 	};
-	edge.map(fxyToVertex).forEach(v => {
-		vertexTypeCounts[vertexType(v)]++;
+	edge.forEach(id => {
+		vertexTypeCounts[vertexType(memoryData.vertices[id])]++;
 	});
 	if (vertexTypeCounts["border"] == 2)
 		return "border";
@@ -97,9 +84,12 @@ function edgeType(edge) {
 		return "path";
 	else if (vertexTypeCounts["path"] == 1 && vertexTypeCounts["place"] == 1)
 		return "temporary";
+	else
+		throw `Invalid vertex type counts for edge ${edgeToString(edge)}: ` +
+		`${JSON.stringify(vertexTypeCounts)}`;
 }
 
-var places = [];
+var places = {};
 /**
  * For each place, add a temporary edge from it to the nearest path vertex
  */
@@ -107,36 +97,44 @@ function refreshTemporaryEdges() {
 	memoryData.edges.forEach(e => {
 		if (edgeType(e) == "temporary")
 			memoryData.edges.delete(e);
-	})
-	places.forEach(place => {
+	});
+	for (let id in places) {
+		const place = places[id];
 		var minDist = Infinity, tempEdge;
-		memoryData.vertices.forEach(v => {
+		Object.values(memoryData.vertices).forEach(v => {
 			if (v.fxy.floor != place.fxy.floor) return;
 			if (v.section != "path") return;
-			const candidateEdge = [place.fxy, v.fxy];
-			const candidateDist = lengthInM(candidateEdge);
+			const candidateEdge = [id, v.id];
+			const candidateDist = edgeLengthInM(candidateEdge);
 			if (candidateDist && candidateDist < minDist) {
 				minDist = candidateDist;
 				tempEdge = candidateEdge;
 			}
 		});
 		memoryData.edges.add(tempEdge);
-	});
+	}
 }
 
 $.getJSON("/data.json", function(diskData) {
 	memoryData = structuredClone(diskData);
-	
-	["edges", "vertices"].forEach(key => {
-		memoryData[key] = new Set(diskData[key]);
+
+	Object.values(memoryData.vertices).forEach(v => {
+		v.fxy = stringToFXY(v.fxy);
+		if (vertexType(v) == "place")
+			places[v.id] = v;
 	});
 
-	memoryData.vertices.forEach(v => {
-		stringToVertex[FXYtoString(v.fxy)] = v;
-		if (v.id) {
-			idToPlace[v.id] = v;
-			places.push(v);
-		}
+	// Filters out invalid/duplicate edges
+	var addedEdgeStrings = new Set();
+	memoryData.edges = new Set();
+	diskData.edges.forEach(e => {
+		try {
+			const edgeArray = stringToEdge(e);
+			if (!addedEdgeStrings.has(e) && edgeType(edgeArray)) {
+				addedEdgeStrings.add(e);
+				memoryData.edges.add(edgeArray);
+			}
+		} catch (err) {}
 	});
 
 	refreshTemporaryEdges();
@@ -147,21 +145,23 @@ $.getJSON("/data.json", function(diskData) {
 
 	// Create 2 initial rows
 	tableLoaded = true;
-	for (let i = 0; i < 2; i++) addPlaceInput();
+	for (let i = 0; i < 2; i++)
+		addPlaceInput();
 });
 
 function copyNextDiskData() {
 	var nextDiskData = {
 		timestamp: new Date().toUTCString(),
+		vertices: structuredClone(memoryData.vertices),
+		edges:
+			Array.from(memoryData.edges)
+			.filter(e => edgeType(e) != "temporary")
+			.map(edgeToString)
+			.sort(),
 	};
 
-	["edges", "vertices"].forEach(key => {
-		nextDiskData[key] = Array.from(memoryData[key]);
-	});
-
-	nextDiskData.edges = nextDiskData.edges.filter(
-		e => edgeType(e) != "temporary"
-	);
+	Object.values(nextDiskData.vertices)
+		.forEach(v => v.fxy = FXYtoString(v.fxy));
 	
 	const output = JSON.stringify(nextDiskData, null, 4);
 	navigator.clipboard.writeText(output);
@@ -348,57 +348,56 @@ function calculatePath(query) {
 
 	function edgeIsElevator(e) {
 		const xy = CONSTANTS.ELEVATOR_X_AND_Y;
-		return e.every(position => position.x == xy[0] && position.y == xy[1]);
+		return e.every(id => {
+			const fxy = idToFXY(id);
+			return fxy.x == xy[0] && fxy.y == xy[1];
+		});
 	}
 
 	/**
 	 * Converts a path length to a human-readable string with meters and estimated
 	 * time based on the walk speed: `a min b sec (x m)`. Lengths that are negative
 	 * or undefined are converted to `No path`.
-	 * @param {*} distanceInM Distance in normalized px
+	 * @param {*} distanceInM Distance in meters
 	 */
 	function prettifyDistance(distanceInM) {
 		if (distanceInM < 0 || distanceInM == undefined)
 			return "No path";
 		const timeInSec = Math.round(distanceInM / query.walkingSpeed);
 		const min = Math.floor(timeInSec / 60), sec = timeInSec % 60;
-		var res = ``;
+		var strings = [];
 		if (min)
-			res += `${min} min `;
+			strings.push(`${min} min`);
 		if (sec)
-			res += `${sec} s `;
-		return res + `(${Math.round(distanceInM)} m)`;
+			strings.push(`${sec} s`);
+		return `${strings.join(' ')} (${Math.round(distanceInM)} m)`;
 	}
 
-	// Check that there are enough points
 	var output = "";
 	
 	const graph = new WeightedGraph();
 	memoryData.edges.forEach(e => {
-		if (!edgeIsElevator(e) || query.allowElevator) graph.addEdge(e);
+		if (!edgeIsElevator(e) || query.allowElevator)
+			graph.addEdge(e);
 	});
 
+	// Iterates through subpaths (paths between consecutive places in table)
 	for (let i = 0; i < rows.length - 1; i++) {
-		const subpathIDs = query.points.slice(i, i + 2);
-		const subpathPlaceVertices = subpathIDs.map(id => idToPlace[id]);
-		const subpathPlaceFXYs = subpathPlaceVertices.map(v => v.fxy);
-		const subpathPlaceFXYStrings = subpathPlaceFXYs.map(FXYtoString);
+		const start = query.points[i], finish = query.points[i + 1];
 
-		var {path: subpathFXYStrings, distanceInM: subpathDistanceInM} =
-			graph.dijkstra(...subpathPlaceFXYStrings);
+		var {path: subpath, distance: subpathDistanceInM} =
+			graph.dijkstra(start, finish);
 
 		if (subpathDistanceInM == Infinity)
-			return finishCalc(`No path from ${subpathIDs.join(' to ')}`, true);
+			return finishCalc(`No path from ${start} to ${finish}`, true);
+
 		const prettifiedDistance = prettifyDistance(subpathDistanceInM);
 		output +=
-			`<p>${subpathIDs.join(' → ')}\t` +
+			`<p>${start} → ${finish}\t` +
 			`<span style='color: gray'>${prettifiedDistance}</span></p>`;
 
-		for (let i = 0; i < subpathFXYStrings.length - 1; i++) {
-			const direction1 = subpathFXYStrings.slice(i, i + 2);
-			edgesOnPath.add(direction1.join(';'));
-			edgesOnPath.add(direction1.reverse().join(';'));
-		}
+		for (let i = 0; i < subpath.length - 1; i++)
+			edgesOnPath.add(edgeToString(subpath.slice(i, i + 2)));
 		
 		totalDistanceInM += subpathDistanceInM;
 	}
@@ -412,7 +411,7 @@ function refreshPathQuery() {
 	var canCalculate = rows.length >= 2;
 	for (let i = 1; i <= rows.length; i++) {
 		const input = getPlaceInput(i);
-		const isValid = input.value in idToPlace;
+		const isValid = input.value in places;
 		canCalculate &&= isValid;
 		const borderColor = isValid || !input.value ? "--var(border)" : "red";
 		input.setAttribute("style", `border-color: ${borderColor}`);
@@ -424,7 +423,8 @@ function refreshPathQuery() {
 		document.getElementById("allow-elevator").checked,
 		parseFloat(document.getElementById("speed").value),
 	);
-	if (JSON.stringify(pathQuery) == JSON.stringify(lastPathQuery)) return;
+	if (JSON.stringify(pathQuery) == JSON.stringify(lastPathQuery))
+		return;
 	lastPathQuery = pathQuery;
 
 	clearCalculation();

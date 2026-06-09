@@ -19,9 +19,9 @@
 					<div class="right">
 						<h3>Statistics</h3>
 						<ul>
-							<li><b><%-diskData.vertices.filter(v => v.id).length%></b> places</li>
-							<li><b><%-new Set(diskData.vertices.map(v => v.fxy.floor)).size%></b> floors</li>
-							<li><b><%-diskData.vertices.length%></b> vertices</li>
+							<li><b><%-verticesArray.filter(v => v.section != "border" && v.section != "path").length%></b> places</li>
+							<li><b><%-new Set(verticesArray.map(v => v.fxy.split(',')[0])).size%></b> floors</li>
+							<li><b><%-verticesArray.length%></b> vertices</li>
 							<li><b><%-diskData.edges.length%></b> edges</li>
 						</ul>
 					</div>
