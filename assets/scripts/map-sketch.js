@@ -115,6 +115,15 @@ const VIEW = {
 	zoomOut() {
 		this.applyZoom(0.8);
 	},
+	setFloor(newFloor) {
+		if (newFloor < 1 || newFloor > images.floors.length)
+			return;
+		FLOOR_INPUT.value = String(newFloor);
+		VIEW.floor = newFloor;
+	},
+	adjustFloor(delta) {
+		this.setFloor(VIEW.floor + delta);
+	},
 	reset() {
 		VIEW.scale = DEFAULT_ZOOM;
 		const CANVAS_CENTER = createVector(width / 2, height / 2);
@@ -271,6 +280,10 @@ function keyPressed() {
 		VIEW.zoomIn();
 	else if (key == '-' || key == '_')
 		VIEW.zoomOut();
+	else if (keyCode == UP_ARROW)
+		VIEW.adjustFloor(1);
+	else if (keyCode == DOWN_ARROW)
+		VIEW.adjustFloor(-1);
 
 	if (!showingDevTools)
 		return;
@@ -295,15 +308,7 @@ function keyPressed() {
 	} else if (key == ']') {
 		if (activeObject.angle !== undefined)
 			activeObject.angle++;
-	} else if (key == 'a')
-		respondToArrow(1, 0);
-	else if (key == 'd')
-		respondToArrow(-1, 0);
-	else if (key == 'w')
-		respondToArrow(0, 1);
-	else if (key == 's')
-		respondToArrow(0, -1);
-	else if (keyCode == BACKSPACE || keyCode == DELETE) {
+	} else if (keyCode == BACKSPACE || keyCode == DELETE) {
 		if (activeType == "edge")
 			memoryData.edges.delete(activeObject);
 		else {
@@ -652,12 +657,21 @@ function showRuler() {
 	text(rulerText, rulerTextLeftX, height - 10);
 }
 
-function respondToArrow(dx, dy) {
+function respondToWASD(key) {
+	var dx = 0, dy = 0;
+	if (key == 'a')
+		dx = -1;
+	if (key == 'd')
+		dx = 1;
+	if (key == 'w')
+		dy = -1;
+	if (key == 's')
+		dy = 1;
 	if (showingDevTools && activeObject != null && activeObject.fxy) {
-		activeObject.fxy.x -= dx;
-		activeObject.fxy.y -= dy;
+		activeObject.fxy.x += dx;
+		activeObject.fxy.y += dy;
 	} else
-		VIEW.panArrow(dx, dy);
+		VIEW.panArrow(-dx, -dy);
 }
 
 function draw() {
@@ -702,12 +716,14 @@ function draw() {
 
 	if (!inCanvas())
 		return;
-	if (keyIsDown(LEFT_ARROW))
-		respondToArrow(1, 0);
-	else if (keyIsDown(RIGHT_ARROW))
-		respondToArrow(-1, 0);
-	else if (keyIsDown(UP_ARROW))
-		respondToArrow(0, 1);
-	else if (keyIsDown(DOWN_ARROW))
-		respondToArrow(0, -1);
+	const keyToCode = {
+		'w': 87,
+		'a': 65,
+		's': 83,
+		'd': 68,
+	};
+	[..."wasd"].forEach(key => {
+		if (keyIsDown(keyToCode[key]))
+			respondToWASD(key);
+	});
 };

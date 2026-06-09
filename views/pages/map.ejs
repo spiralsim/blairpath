@@ -61,20 +61,12 @@
 				<button class="square remove white" onclick="VIEW.zoomOut()" style="position: absolute; right: 0; bottom: 48px; border-radius: 0 0 var(--button-corner) var(--button-corner)"></button>
 				<div style="position: absolute; right: var(--map-controls-right); padding-right: var(--map-controls-padding); bottom: 20px; display: flex;">
 					<label for="floor">Floor</label>
-					<input type="number" min="1" max="4" value="1" id="floor" onchange="setFloor(parseInt(this.value))">
+					<input type="number" min="1" max="4" value="1" id="floor" onchange="VIEW.setFloor(parseInt(this.value))">
 					<script>
 						const FLOOR_INPUT = document.getElementById('floor');
-						function setFloor(newFloor) {
-							if (Number.isNaN(newFloor) || newFloor < 1 || newFloor > 4) return;
-							FLOOR_INPUT.value = String(newFloor);
-							VIEW.floor = newFloor;
-						}
-						function adjustFloor(delta) {
-							setFloor(parseInt(FLOOR_INPUT.value) + delta);
-						}
 					</script>
-					<button class="square downward white" onclick="adjustFloor(-1)" style="padding: 0"></button>
-					<button class="square upward white" onclick="adjustFloor(1)" style="padding: 0"></button>
+					<button class="square downward white" onclick="VIEW.adjustFloor(-1)" style="padding: 0"></button>
+					<button class="square upward white" onclick="VIEW.adjustFloor(1)" style="padding: 0"></button>
 				</div>
 				<div style="position: absolute; right: var(--map-controls-right); padding-right: var(--map-controls-padding); bottom: 0; display: flex;">
 					<input type="checkbox" id="show-site-plan">
