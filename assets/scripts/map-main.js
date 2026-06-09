@@ -313,7 +313,6 @@ function addPlaceInput () {
 /* Calculate Path */
 const calcButton = document.getElementById("calc-button");
 var totalDistanceInM = 0;
-var lastPathQuery = null;
 
 function clearCalculation() {
 	totalDistanceInM = 0;
@@ -423,10 +422,8 @@ function refreshPathQuery() {
 		document.getElementById("allow-elevator").checked,
 		parseFloat(document.getElementById("speed").value),
 	);
-	if (JSON.stringify(pathQuery) == JSON.stringify(lastPathQuery))
-		return;
-	lastPathQuery = pathQuery;
 
 	clearCalculation();
-	if (canCalculate) calculatePath(pathQuery);
+	if (canCalculate)
+		calculatePath(pathQuery);
 }

@@ -295,19 +295,15 @@ function keyPressed() {
 	} else if (key == ']') {
 		if (activeObject.angle !== undefined)
 			activeObject.angle++;
-	} else if (key == 'a') {
-		if (activeType != "edge")
-			activeObject.fxy.x--;
-	} else if (key == 'd') {
-		if (activeType != "edge")
-			activeObject.fxy.x++;
-	} else if (key == 'w') {
-		if (activeType != "edge")
-			activeObject.fxy.y--;
-	} else if (key == 's') {
-		if (activeType != "edge")
-			activeObject.fxy.y++;
-	} else if (keyCode == BACKSPACE || keyCode == DELETE) {
+	} else if (key == 'a')
+		respondToArrow(1, 0);
+	else if (key == 'd')
+		respondToArrow(-1, 0);
+	else if (key == 'w')
+		respondToArrow(0, 1);
+	else if (key == 's')
+		respondToArrow(0, -1);
+	else if (keyCode == BACKSPACE || keyCode == DELETE) {
 		if (activeType == "edge")
 			memoryData.edges.delete(activeObject);
 		else {
@@ -657,12 +653,11 @@ function showRuler() {
 }
 
 function respondToArrow(dx, dy) {
-	if (!showingDevTools)
+	if (showingDevTools && activeObject != null && activeObject.fxy) {
+		activeObject.fxy.x -= dx;
+		activeObject.fxy.y -= dy;
+	} else
 		VIEW.panArrow(dx, dy);
-	else {
-		activeObject.fxy.x += dx;
-		activeObject.fxy.y += dy;
-	}
 }
 
 function draw() {
