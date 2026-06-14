@@ -582,7 +582,7 @@ function showDevStats() {
 	stats.push(edgesString);
 
 	if (mouseHasMoved)
-		stats.push(`FXY: ${FXYtoString(CURSOR.fxy)}`);
+		stats.push(`Cursor FXY: ${FXYtoString(CURSOR.fxy)}`);
 	
 	if (blairpathObjectType(hoveredObject) == "edge")
 		stats.push(`Edge length: ${round(edgeLengthInM(hoveredObject), 2)} m`);
