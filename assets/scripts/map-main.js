@@ -416,11 +416,15 @@ function refreshPathQuery() {
 		input.setAttribute("style", `border-color: ${borderColor}`);
 	}
 	
+	const speedField = document.getElementById("speed");
+	const speedFloat = parseFloat(speedField.value);
+	speedField.value = speedFloat.toFixed(1);
+
 	// Prevents duplicate calculations
 	const pathQuery = new PathQuery(
 		getPointValues(),
 		document.getElementById("allow-elevator").checked,
-		parseFloat(document.getElementById("speed").value),
+		speedFloat,
 	);
 
 	clearCalculation();
