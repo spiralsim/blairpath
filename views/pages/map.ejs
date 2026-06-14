@@ -34,19 +34,18 @@
 						</tr>
 					</table>
 		
-					<p style="margin-bottom: 0"><b>Options</b></p>
-					<ol>
-						<li><p style="margin: 0"><input type="checkbox" id="allow-elevator"> Allow use of elevator*</p></li>
-						<li>
-							<label for="speed" style="font-size: 16px">Walking Speed:</label>
-							<input type="number" min="0.2" max="4" step="0.1" id="speed">
-							<label for="speed" style="font-size: 16px">m/s</label>
-						</li>
-					</ol>
+					<p style="margin: 0">
+						<input type="checkbox" id="allow-elevator">
+						<span style="margin: 0">Allow elevator (requires nurse pass)</span>
+					</p>
+					<p style="margin: 0; margin-top: 4px">
+						<span for="speed" style="font-size: 16px">Walking speed:</span>
+						<input type="number" min="0.2" max="4" step="0.1" id="speed">
+						<span for="speed" style="font-size: 16px">m/s</span>
+					</p>
 					<script>
 						document.getElementById("speed").setAttribute("value", CONSTANTS.DEFAULT_WALKING_SPEED_IN_M_PER_S);
 					</script>
-					<p>* Requires pass from nurse</p>
 				</div>
 
 				<hr>
