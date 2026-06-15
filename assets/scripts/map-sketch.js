@@ -647,7 +647,7 @@ function showRuler() {
 	var rulerTextLeftX = rulerLeftX - 5 - textWidth(rulerText);
 
 	fill(255);
-	rect(rulerTextLeftX - 5, height - 20, width, 20);
+	rect(rulerTextLeftX - 5, height - 20, width - 17 - rulerTextLeftX, 20);
 
 	noStroke();
 	fill(0);

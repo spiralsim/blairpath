@@ -59,7 +59,7 @@
 				<button class="square add white" onclick="VIEW.zoomIn()" style="position: absolute; right: 0; bottom: 74px; border-radius: var(--button-corner) var(--button-corner) 0 0; border-bottom: 0"></button>
 				<button class="square remove white" onclick="VIEW.zoomOut()" style="position: absolute; right: 0; bottom: 50px; border-radius: 0 0 var(--button-corner) var(--button-corner)"></button>
 				<div style="position: absolute; right: var(--map-controls-right); padding-right: var(--map-controls-padding); bottom: 22px; display: flex;">
-					<label for="floor">Floor</label>
+					<label for="floor" style="background-color: white">Floor</label>
 					<input type="number" min="1" max="4" value="1" id="floor" onchange="VIEW.setFloor(parseInt(this.value))" style="width: 10px; text-align: center">
 					<script>
 						const FLOOR_INPUT = document.getElementById('floor');
@@ -67,7 +67,7 @@
 					<button class="square downward white" onclick="VIEW.adjustFloor(-1)" style="padding: 0"></button>
 					<button class="square upward white" onclick="VIEW.adjustFloor(1)" style="padding: 0"></button>
 				</div>
-				<div style="position: absolute; right: var(--map-controls-right); padding-right: var(--map-controls-padding); bottom: 0; display: flex;">
+				<div style="position: absolute; right: var(--map-controls-right); margin-right: var(--map-controls-padding); bottom: 0; display: flex; background-color: white;">
 					<input type="checkbox" id="show-site-plan">
 					<label for="show-site-plan">Site Plan</label>
 					<input type="checkbox" id="show-floor-plan" checked>
