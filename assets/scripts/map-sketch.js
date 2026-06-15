@@ -4,9 +4,10 @@ var canvas, images = {
 };
 
 // Loads maps
+const NUM_FLOORS = 4;
 function preload () {
 	const MAP_PATH = "/maps";
-	for (let i = 1; i <= 4; i++) images.floors.push(loadImage(`${MAP_PATH}/f${i}.png`));
+	for (let i = 1; i <= NUM_FLOORS; i++) images.floors.push(loadImage(`${MAP_PATH}/f${i}.png`));
 	images.site = loadImage(`${MAP_PATH}/site.png`);
 }
 
@@ -95,19 +96,26 @@ const VIEW = {
 			if (firstDigit() == '5') VIEW.rulerInM /= 5 / 2;
 			else VIEW.rulerInM /= 2;
 		}
-		while (VIEW.rulerInPixels() < MIN_RULER_LENGTH_IN_PIXELS) increment();
-		while (VIEW.rulerInPixels() > MAX_RULER_LENGTH_IN_PIXELS) decrement();
+		while (VIEW.rulerInPixels() < MIN_RULER_LENGTH_IN_PIXELS)
+			increment();
+		while (VIEW.rulerInPixels() > MAX_RULER_LENGTH_IN_PIXELS)
+			decrement();
 	},
 	applyZoom(scaleFactor, center = createVector(width / 2, height / 2)) {
-		var nextZoom = VIEW.scale * scaleFactor;
-		if (nextZoom < MIN_ZOOM || nextZoom > MAX_ZOOM)
-			return;
+		scaleFactor = constrain(
+			scaleFactor,
+			MIN_ZOOM / VIEW.scale,
+			MAX_ZOOM / VIEW.scale
+		);
 
 		VIEW.offset = p5.Vector.add(
 			center, p5.Vector.sub(VIEW.offset, center).mult(scaleFactor)
 		);
 		VIEW.scale *= scaleFactor;
 		VIEW.calibrateRuler();
+		
+		document.getElementById("zoom-in").disabled = VIEW.scale == MAX_ZOOM;
+		document.getElementById("zoom-out").disabled = VIEW.scale == MIN_ZOOM;
 	},
 	zoomIn() {
 		this.applyZoom(1.2);
@@ -116,8 +124,12 @@ const VIEW = {
 		this.applyZoom(0.8);
 	},
 	setFloor(newFloor) {
-		if (newFloor < 1 || newFloor > images.floors.length)
+		if (newFloor < 1 || newFloor > NUM_FLOORS) {
+			FLOOR_INPUT.value = String(VIEW.floor);
 			return;
+		}
+		document.getElementById("downward").disabled = newFloor == 1;
+		document.getElementById("upward").disabled = newFloor == NUM_FLOORS;
 		FLOOR_INPUT.value = String(newFloor);
 		VIEW.floor = newFloor;
 	},

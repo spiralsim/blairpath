@@ -94,12 +94,6 @@ button {
 	outline: none;
 	cursor: pointer;
 }
-button:disabled {
-	background-color: var(--placeholder);
-}
-button:disabled:hover {
-	cursor: not-allowed;
-}
 
 button.square {
 	width: 24px;
@@ -301,4 +295,11 @@ img#map {
 	background-image: url("./images/wordmark.svg");
 	background-size: cover;
 	border: none;
+}
+
+button:disabled {
+	background-color: var(--placeholder);
+}
+button:disabled:hover {
+	cursor: not-allowed;
 }
