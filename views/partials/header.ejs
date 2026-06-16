@@ -24,9 +24,10 @@
 <link rel="shortcut icon" href="/logo-square.svg">
 <script>
 	const PAGES = [
-		{name: `Map`, path: `/`},
-		{name: `Tutorial`, path: `/tutorial`},
-		{name: `About`, path: `/about`}
+		{name: "Map", path: "/"},
+		{name: "Tutorial", path: "/tutorial"},
+		{name: "About", path: "/about"},
+		{name: "Dev Tools Tutorial", path: `/devtutorial`},
 	];
 	const getPath = name => '/' + name.toLowerCase();
 	PAGES.forEach(({ name, path }) => {

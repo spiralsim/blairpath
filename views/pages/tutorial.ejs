@@ -12,10 +12,10 @@
 				<h3>General</h3>
 				<p>Overall, Blairpath's map interface is designed similarly to Google Maps, Apple Maps, and OpenStreetMap.</p>
 
-				<p>Because Blairpath covers multiple floors, the up or down arrow keys are used to change the floor. Use the mouse or <code>WASD</code> to move the map.</p>
+				<p>Because Blairpath covers multiple floors, the <b>up/down keys are used to change the floor</b>. Use the mouse or <code>WASD</code> to move the map.</p>
 
 				<h3>Special Place Names</h3>
-				<p>Two types of places have special naming conventions:</p>
+				<p>Two types of places have special naming patterns:</p>
 				<ol>
 					<li>
 						Portables are named <code>P[number]</code>.
@@ -26,58 +26,14 @@
 					<li>
 						Bathrooms are named <code>[gender]s' Bathroom [floor][side]</code>.
 						<ul>
-							<li>Example 1: <code>Boys' Bathroom 2L</code> is the boys' bathroom on the left side of Floor 2.</li>
-							<li>Example 2: <code>Girls' Bathroom 3R</code> is the girls' bathroom on the right side of Floor 3.</li>
+							<li><b>Example 1:</b> <code>Boys' Bathroom 2L</code> is the boys' bathroom on the left side of Floor 2.</li>
+							<li><b>Example 2:</b> <code>Girls' Bathroom 3R</code> is the girls' bathroom on the right side of Floor 3.</li>
 						</ul>
 					</li>
 				</ol>
 				
-				<h3>Developer Tools (for contributors)</h3>
-				<h4>Activating Dev Tools</h4>
-				
-				<ol style="margin: 0; margin-left: -15px">
-					<li>Press <code>T</code> to toggle dev tools.</li>
-				</ol>
-				
-				<h4>All Object Types</h4>
-				
-				<ol style="margin: 0; margin-left: -15px">
-					<li>Click a vertex or edge to activate it. Path vertices are circles, while border vertices are squares.</li>
-					<li>Click an active object again to deactivate it.</li>
-					<li>Press <code>BACKSPACE</code> or <code>DELETE</code> to delete.</li>
-				</ol>
-
-				<h4>Vertices</h4>
-				
-				<ol style="margin: 0; margin-left: -15px">
-					<li>Press <code>P</code> to add a new path vertex at the cursor.</li>
-					<li>Press <code>B</code> to add a new border vertex at the cursor.</li>
-					<li>Press <code>S</code> while a path/border vertex is active to switch between path and border vertex types.</li>
-				</ol>
-
-				<h4>Edges</h4>
-
-				<ol style="margin: 0; margin-left: -15px">
-					<li>Activate a vertex as the first endpoint.</li>
-					<li>Click another vertex as the second endpoint.</li>
-				</ol>
-
-				<h4>Transformations</h4>
-				
-				<ol style="margin: 0; margin-left: -15px">
-					<li>Click on a vertex to activate it.</li>
-					<ol>
-						<li>Press <code>[</code> or <code>]</code> to rotate a portable counterclockwise or clockwise by 1 degree.</li>
-						<li>Press <code>W</code>, <code>A</code>, <code>S</code>, or <code>D</code> to shift up, left, down, or right.</li>
-					</ol>
-				</ol>
-				
-				<h4>Saving</h4>
-				
-				<ol style="margin: 0; margin-left: -15px">
-					<li>Press <code>C</code> to copy all map data to your clipboard.</li>
-					<li>Paste this into <code>blairpath/assets/data.json</code>.</li>
-				</ol>
+				<h3>For Contributors</h3>
+				<p>If you want to contribute to Blairpath's map (which is appreciated!), you'll need to use the Blairpath developer tools (you do <b>not</b> need to write code.) <a href="/devtutorial">This page</a> is a tutorial for them.</p>
 			</div>
 		</section>
 	</body>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<%-include("../partials/header.ejs")%>
+	</head>
+	<body>
+		<%-include("../partials/menu.ejs")%>
+		<section class="main">
+			<div class="scrollable">
+				<h1>Dev Tools Tutorial</h1>
+				
+				<h3>Activating Dev Tools</h3>
+				
+				<ol style="margin: 0; margin-left: -15px">
+					<li>Press <code>T</code> to toggle dev tools.</li>
+				</ol>
+				
+				<h3>Instructions for All Object Types</h3>
+				
+				<ol style="margin: 0; margin-left: -15px">
+					<li>Click a vertex or edge to activate it. (Temporary edges, which are the edges connected to places, cannot be activated.)</li>
+					<li>Press <code>BACKSPACE</code>/<code>DELETE</code> to delete the active object.</li>
+					<li>Click the active object again to deactivate it.</li>
+				</ol>
+
+				<h3>Vertices</h3>
+
+				<p>Blairpath supports 3 types of vertices:</p>
+
+				<table>
+					<thead>
+						<td>Type</td>
+						<td>How it's displayed</td>
+						<td>How to create it</td>
+					</thead>
+					<tr>
+						<td>Place</td>
+						<td>Place name</td>
+						<td>Must be added through text in <code>data.json</code></td>
+					</tr>
+					<tr>
+						<td>Path</td>
+						<td>Circle</td>
+						<td>Press <code>P</code> to add at the cursor</td>
+					</tr>
+					<tr>
+						<td>Border</td>
+						<td>Square</td>
+						<td>Press <code>B</code> to add at the cursor</td>
+					</tr>
+				</table>
+
+				<h3>Edges</h3>
+
+				<p>You can create an edge as follows:</p>
+
+				<ol style="margin: 0; margin-left: -15px">
+					<li>Activate a vertex. This becomes the first endpoint.</li>
+					<li>Activate another vertex. This becomes the second endpoint and creates an edge.</li>
+				</ol>
+
+				<h3>Transformations</h3>
+				
+				<ol style="margin: 0; margin-left: -15px">
+					<li>Activate the vertex you want to transform.</li>
+					<ol>
+						<li><b>Translations (path/border vertices only):</b> Press <code>W</code>, <code>A</code>, <code>S</code>, or <code>D</code> to shift up, left, down, or right.</li>
+						<li><b>Rotations (portables only):</b> Press <code>[</code> or <code>]</code> to rotate counterclockwise or clockwise by 1 degree.</li>
+					</ol>
+				</ol>
+				
+				<h3>Saving</h3>
+				
+				<ol style="margin: 0; margin-left: -15px">
+					<li>Press <code>C</code> to copy all map data to your clipboard.</li>
+					<li>Paste the map data into <code>data.json</code>.</li>
+				</ol>
+			</div>
+		</section>
+	</body>
+</html>

@@ -18,10 +18,12 @@ const OPTIONS = {
 };
 app.get(/.*/, (request, response) => {
 	const path = request.path;
-	if (path == "/") response.render(`pages/map`, OPTIONS);
+	if (path == "/")
+		response.render(`pages/map`, OPTIONS);
 	else if (fs.existsSync(`${__dirname}/views/pages/${path}.ejs`)) 
 		response.render(`pages/${path}`, OPTIONS);
-	else response.render("pages/404");
+	else
+		response.render(`pages/404`);
 });
 
 // Ping the website every 15 minutes to keep the dyno up

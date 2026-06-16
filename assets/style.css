@@ -88,6 +88,11 @@ div > label {
 	font-size: 18px;
 }
 
+thead {
+	background-color: lightgray;
+	font-weight: bold;
+}
+
 button {
 	border: 1px solid var(--border);
 	border-radius: var(--button-corner);

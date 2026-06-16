@@ -8,7 +8,8 @@
 	</nav>
 	<script>
 		PAGES.forEach(({ name, path }) => {
-			if (name == 'Map') return;
+			if (name == "Map" || name == "Dev Tools Tutorial")
+				return;
 			var liHTML = `<li><a href="${path}">${name}</a></li>`;
 			if (window.location.pathname == path)
 				liHTML = liHTML.replace('<li>', '<li class=\"active\">');
