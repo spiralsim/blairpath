@@ -417,14 +417,16 @@ function refreshPathQuery() {
 	}
 	
 	const speedField = document.getElementById("speed");
-	const speedFloat = parseFloat(speedField.value);
-	speedField.value = speedFloat.toFixed(1);
+	const speedFloatInMilesPerHour = parseFloat(speedField.value);
+	speedField.value = speedFloatInMilesPerHour.toFixed(1);
+
+	const speedFloatInMetersPerSecond = speedFloatInMilesPerHour * 1600 / 3600;
 
 	// Prevents duplicate calculations
 	const pathQuery = new PathQuery(
 		getPointValues(),
 		document.getElementById("allow-elevator").checked,
-		speedFloat,
+		speedFloatInMetersPerSecond,
 	);
 
 	clearCalculation();
