@@ -1,14 +1,15 @@
-![Blairpath Wordmark](/assets/images/wordmark.svg)
-
-# NOTE
-I've only tested the development cycle on my own machine.
-
-I previously set up a Heroku app and Google Domains domain separately.
+README last updated July 15, 2026
 
 # Requirements
 Node.js >= 18.15.0
 
 # Installation
+1. Download the Blairpath repository
+```
+git clone https://github.com/spiralsim/blairpath.git
+```
+
+2. Use npm to install all dependencies
 ```
 npm i
 ```
@@ -29,12 +30,6 @@ Copy the pid, then run
 kill <pid>
 ```
 
-# Dev Tools
-In the JavaScript console, call 
-```
-toggleDevTools()
-```
-
 # Deployment
 ```
 git push origin master
@@ -43,4 +38,4 @@ git push origin master
 (I preconfigured Blairpath's Heroku app to auto-deploy from its GitHub repo's master branch.)
 
 # Icons
-The icons are taken from [Google Fonts Material Symbols & Icons](https://fonts.google.com/icons?selected=Material+Symbols+Outlined).
+Some icons are taken from [Google Fonts Material Symbols & Icons](https://fonts.google.com/icons?selected=Material+Symbols+Outlined).
