@@ -1,5 +1,8 @@
 README last updated July 15, 2026
 
+# Hosting
+Blairpath uses Cloudflare as the registrar and for DNS services.
+
 # Requirements
 Node.js >= 18.15.0
 

@@ -1,4 +1,4 @@
-const express = require("express"), http = require("http"), fs = require("fs");
+const express = require("express"), fs = require("fs");
 
 // Setup
 const app = express();
@@ -27,6 +27,3 @@ app.get(/.*/, (request, response) => {
 	else
 		response.render(`pages/404`);
 });
-
-// Ping the website every 15 minutes to keep the dyno up
-setInterval(() => http.get("http://www.blairpath.org/"), 15 * 60 * 1000);
