@@ -1,4 +1,4 @@
-const express = require("express"), fs = require("fs");
+const express = require("express"), http = require("http"), fs = require("fs");
 
 // Setup
 const app = express();
@@ -27,3 +27,7 @@ app.get(/.*/, (request, response) => {
 	else
 		response.render(`pages/404`);
 });
+
+// Pings the website every 15 minutes to keep the dyno in the `up` state
+// I tried removing this once, but that made a GET request take 7 s to serve
+setInterval(() => http.get("http://www.blairpath.org/"), 15 * 60 * 1000);
