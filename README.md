@@ -1,7 +1,20 @@
-README last updated July 15, 2026
+README last updated July 16, 2026
 
 # Hosting
-Blairpath uses Cloudflare as the registrar and for DNS services.
+## Heroku
+Blairpath is hosted as a web app on Heroku using an eco dyno.
+
+The domain names `blairpath.org` and `www.blairpath.org` each have their own DNS Target added through Heroku:
+
+| Domain Name | DNS Target |
+| --- | --- |
+| blairpath.org | stormy-pomelo-m35s89a7cbphvotoyxygza4h.herokudns.com |
+| www.blairpath.org | primal-puma-xapp0ceo5eyw8zsnix2on6zl.herokudns.com |
+
+## Cloudflare
+The domain `blairpath.org` is rented through Cloudflare.
+
+To allow users to access the domains, each has a CNAME DNS record added through Cloudflare, pointing to their corresponding Heroku DNS Target.
 
 # Requirements
 Node.js >= 18.15.0
@@ -12,7 +25,7 @@ Node.js >= 18.15.0
 git clone https://github.com/spiralsim/blairpath.git
 ```
 
-2. Use npm to install all dependencies
+2. Use [npm](https://www.npmjs.com/) to install all dependencies
 ```
 npm i
 ```
@@ -38,7 +51,7 @@ kill <pid>
 git push origin master
 ```
 
-(I preconfigured Blairpath's Heroku app to auto-deploy from its GitHub repo's master branch.)
+(Blairpath's Heroku app is configured to auto-deploy from its GitHub repo's master branch.)
 
 # Icons
 Some icons are taken from [Google Fonts Material Symbols & Icons](https://fonts.google.com/icons?selected=Material+Symbols+Outlined).
