@@ -1,4 +1,6 @@
-README last updated July 16, 2026
+This README serves as technical documentation for developers. Map contributors don't need this.
+
+**Last updated July 16, 2026**
 
 # Hosting
 ## Heroku
