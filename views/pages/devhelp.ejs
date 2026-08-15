@@ -7,13 +7,11 @@
 		<%-include("../partials/menu.ejs")%>
 		<section class="main">
 			<div class="scrollable">
-				<h1>Dev Help</h1>
+				<h1>Blairpath Dev Tools Tutorial</h1>
 				
 				<h3>Activating Dev Tools</h3>
 				
-				<ol style="margin: 0; margin-left: -15px">
-					<li>Press <code>T</code> to toggle dev tools.</li>
-				</ol>
+				<p>While on the map page, press <code>T</code> to toggle dev tools.</p>
 				
 				<h3>Instructions for All Object Types</h3>
 				
@@ -23,41 +21,42 @@
 					<li>Click the active object again to deactivate it.</li>
 				</ol>
 
-				<h3>Vertices</h3>
+				<section style="display: table; width: 100%">
+					<div class="left">
+						<h3>Vertices</h3>
+						<table>
+							<thead>
+								<td>Type</td>
+								<td>How it's displayed</td>
+								<td>How to create it</td>
+							</thead>
+							<tr>
+								<td>Place</td>
+								<td>Place name</td>
+								<td>Must be added through text in <code>data.json</code></td>
+							</tr>
+							<tr>
+								<td>Path</td>
+								<td>Circle</td>
+								<td>Press <code>P</code> to add at the cursor</td>
+							</tr>
+							<tr>
+								<td>Border</td>
+								<td>Square</td>
+								<td>Press <code>B</code> to add at the cursor</td>
+							</tr>
+						</table>
+					</div>
+					<div class="right">
+						<h3>Edges</h3>
+						<p>You can create an edge as follows:</p>
 
-				<p>Blairpath supports 3 types of vertices:</p>
-
-				<table>
-					<thead>
-						<td>Type</td>
-						<td>How it's displayed</td>
-						<td>How to create it</td>
-					</thead>
-					<tr>
-						<td>Place</td>
-						<td>Place name</td>
-						<td>Must be added through text in <code>data.json</code></td>
-					</tr>
-					<tr>
-						<td>Path</td>
-						<td>Circle</td>
-						<td>Press <code>P</code> to add at the cursor</td>
-					</tr>
-					<tr>
-						<td>Border</td>
-						<td>Square</td>
-						<td>Press <code>B</code> to add at the cursor</td>
-					</tr>
-				</table>
-
-				<h3>Edges</h3>
-
-				<p>You can create an edge as follows:</p>
-
-				<ol style="margin: 0; margin-left: -15px">
-					<li>Activate a vertex. This becomes the first endpoint.</li>
-					<li>Activate another vertex. This becomes the second endpoint and creates an edge.</li>
-				</ol>
+						<ol style="margin: 0; margin-left: -15px">
+							<li>Activate a vertex. This becomes the first endpoint.</li>
+							<li>Activate another vertex. This becomes the second endpoint and creates an edge.</li>
+						</ol>
+					</div>
+				</section>
 
 				<h3>Transformations</h3>
 				
@@ -73,7 +72,7 @@
 				
 				<ol style="margin: 0; margin-left: -15px">
 					<li>Press <code>C</code> to copy all map data to your clipboard.</li>
-					<li>Paste the map data into <code>data.json</code>.</li>
+					<li>Paste the map data into <code>blairpath/assets/data.json</code>.</li>
 				</ol>
 			</div>
 		</section>

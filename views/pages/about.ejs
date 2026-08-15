@@ -19,6 +19,7 @@
 					</div>
 					<div class="right">
 						<h3>Statistics</h3>
+						<p>Curious what Blairpath means by vertices and edges? Learn <a href="https://en.wikipedia.org/wiki/Graph_theory">graph theory</a>.</p>
 						<ul>
 							<li><b><%-verticesArray.filter(v => v.section != "border" && v.section != "path").length%></b> places</li>
 							<li><b><%-new Set(verticesArray.map(v => v.fxy.split(',')[0])).size%></b> floors</li>
@@ -34,8 +35,13 @@
 				<p><b>2019</b>: Jeffrey developed Blairpath as <a href="/demonstration">a project for a MBHS computer science class</a>, with most of the branding inspired by <a href="https://blairbash.org">Blairbash</a>. <a href="https://github.com/generalpoxter">Jason</a>, another student in the class, designed the 4th floor.</p>
 				<p><b>2021</b>: Jeffrey started renting the domain www.blairpath.org. MBHS teacher Mr. Schwartz showed Blairpath to his 9th grade students to introduce them to campus.</li>
 
-				<h3>Technical</h3>
-				<p>Blairpath is open-source on GitHub at <a href="https://github.com/spiralsim/blairpath">spiralsim / <b>blairpath</b></a>.</p>
+				<h3>Contributing</h3>
+				<p>You can suggest changes to Blairpath's map by contacting a developer.</p>
+				<p>If you're familiar with GitHub, you can submit new maps directly through a pull request:</p>
+				<ol>
+					<li>To learn how to edit the map, read the <a href="/devhelp">Blairpath Dev Tools Tutorial</a>.</li>
+					<li>Submit a pull request to <a href="https://github.com/spiralsim/blairpath">spiralsim / <b>blairpath</b></a>.</li>
+				</ol>
 			</div>
 		</section>
 	</body>
