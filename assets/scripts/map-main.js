@@ -393,7 +393,7 @@ function calculatePath(query) {
 		const prettifiedDistance = prettifyDistance(subpathDistanceInM);
 		output +=
 			`<p>${start} → ${finish}\t` +
-			`<span style='color: gray'>${prettifiedDistance}</span></p>`;
+			`<br><span style='color: gray'>${prettifiedDistance}</span></p>`;
 
 		for (let i = 0; i < subpath.length - 1; i++)
 			edgesOnPath.add(edgeToString(subpath.slice(i, i + 2)));
