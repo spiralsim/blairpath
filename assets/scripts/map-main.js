@@ -317,7 +317,7 @@ var totalDistanceInM = 0;
 function clearCalculation() {
 	totalDistanceInM = 0;
 	edgesOnPath = new Set();
-	document.getElementById("calc-result").innerHTML = '';
+	// document.getElementById("calc-result").innerHTML = '';
 }
 
 class PathQuery {
@@ -338,13 +338,16 @@ class PathQuery {
  * Set of **directed** edges on the current computed path (for each edge, its opposite is also included)
  */
 var edgesOnPath = new Set();
-function calculatePath(query) {
+function finishCalc(msg, err) {
+	if (err)
+		memoryData.edges.forEach(e => e.isPath = false);
+	var newInnerHTML = err ? `<p style="color: red">${msg}</p>` : msg;
 	const calcResult = document.getElementById("calc-result");
-	function finishCalc (msg, err) {
-		if (err) memoryData.edges.forEach(e => e.isPath = false);
-		calcResult.innerHTML = `<p style="color: ${err ? "red" : "black"}">${msg}</p>`;
-	}
+	if (calcResult.innerHTML != newInnerHTML)
+		calcResult.innerHTML = newInnerHTML;
+}
 
+function calculatePath(query) {
 	function edgeIsElevator(e) {
 		const xy = CONSTANTS.ELEVATOR_X_AND_Y;
 		return e.every(id => {
@@ -392,8 +395,8 @@ function calculatePath(query) {
 
 		const prettifiedDistance = prettifyDistance(subpathDistanceInM);
 		output +=
-			`<p>${start} → ${finish}\t` +
-			`<br><span style='color: gray'>${prettifiedDistance}</span></p>`;
+			`<p>${start} → ${finish}<br>` +
+			`<span style="color: gray">${prettifiedDistance}</span></p>`;
 
 		for (let i = 0; i < subpath.length - 1; i++)
 			edgesOnPath.add(edgeToString(subpath.slice(i, i + 2)));
@@ -432,4 +435,6 @@ function refreshPathQuery() {
 	clearCalculation();
 	if (canCalculate)
 		calculatePath(pathQuery);
+	else
+		finishCalc("", false);
 }
