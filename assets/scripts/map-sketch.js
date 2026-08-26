@@ -11,8 +11,8 @@ function preload () {
 	images.site = loadImage(`${MAP_PATH}/site.png`);
 }
 
-function getCanvasDivWidth() {
-	return document.getElementById('canvas').getBoundingClientRect().width;
+function getCanvasRect() {
+	return document.getElementById('canvas').getBoundingClientRect();
 }
 
 function inCanvas () {
@@ -265,7 +265,7 @@ const LABEL_FONT_SIZE = 14;
 */
 var lastWidth, lastHeight;
 function setup() {
-	canvas = createCanvas(getCanvasDivWidth(), windowHeight);
+	canvas = createCanvas(getCanvasRect().width, getCanvasRect().height);
 	lastWidth = width, lastHeight = height;
 	canvas.parent("canvas");
 
@@ -276,7 +276,7 @@ function setup() {
 };
 
 function windowResized() {
-	resizeCanvas(getCanvasDivWidth(), windowHeight);
+	resizeCanvas(getCanvasRect().width, getCanvasRect().height);
 	VIEW.pan(createVector(width - lastWidth, height - lastHeight).div(2));
 	lastWidth = width, lastHeight = height;
 }
