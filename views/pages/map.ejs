@@ -43,7 +43,10 @@
 						<span for="speed" style="font-size: 16px">mph</span>
 					</p>
 					<script>
-						document.getElementById("speed").setAttribute("value", CONSTANTS.DEFAULT_WALKING_SPEED_IN_MPH);
+						document.getElementById("speed").setAttribute(
+							"value",
+							CONSTANTS.DEFAULT_WALKING_SPEED_IN_MPH.toFixed(1)
+						);
 					</script>
 				</div>
 
