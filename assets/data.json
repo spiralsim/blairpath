@@ -1,5 +1,5 @@
 {
-    "timestamp": "Sat, 01 Aug 2026 23:48:54 GMT",
+    "timestamp": "Mon, 07 Sep 2026 03:41:16 GMT",
     "vertices": {
         "101": {
             "id": "101",
@@ -1481,76 +1481,6 @@
             "section": "path",
             "id": "1131"
         },
-        "1132": {
-            "fxy": "4,528,293",
-            "section": "path",
-            "id": "1132"
-        },
-        "1133": {
-            "fxy": "4,320,385",
-            "section": "path",
-            "id": "1133"
-        },
-        "1134": {
-            "fxy": "4,320,283",
-            "section": "path",
-            "id": "1134"
-        },
-        "1135": {
-            "fxy": "4,458,407",
-            "section": "path",
-            "id": "1135"
-        },
-        "1136": {
-            "fxy": "4,363,283",
-            "section": "path",
-            "id": "1136"
-        },
-        "1137": {
-            "fxy": "4,363,273",
-            "section": "path",
-            "id": "1137"
-        },
-        "1138": {
-            "fxy": "4,454,299",
-            "section": "path",
-            "id": "1138"
-        },
-        "1139": {
-            "fxy": "4,458,321",
-            "section": "path",
-            "id": "1139"
-        },
-        "1140": {
-            "fxy": "4,478,303",
-            "section": "path",
-            "id": "1140"
-        },
-        "1141": {
-            "fxy": "4,475,324",
-            "section": "path",
-            "id": "1141"
-        },
-        "1142": {
-            "fxy": "4,561,407",
-            "section": "path",
-            "id": "1142"
-        },
-        "1143": {
-            "fxy": "4,485,315",
-            "section": "path",
-            "id": "1143"
-        },
-        "1144": {
-            "fxy": "4,528,320",
-            "section": "path",
-            "id": "1144"
-        },
-        "1145": {
-            "fxy": "4,554,326",
-            "section": "path",
-            "id": "1145"
-        },
         "1438": {
             "fxy": "1,794,401",
             "section": "border",
@@ -2767,154 +2697,6 @@
             "use": "Bathroom",
             "section": "Bathrooms / Building Services",
             "fxy": "3,565,380"
-        },
-        "5-star Turkish Restaurant": {
-            "id": "5-star Turkish Restaurant",
-            "use": "Restaurant",
-            "section": "Dining",
-            "fxy": "4,640,454"
-        },
-        "McDonald's": {
-            "id": "McDonald's",
-            "use": "Restaurant",
-            "section": "Dining",
-            "fxy": "4,488,440"
-        },
-        "Restaurant Kitchen": {
-            "id": "Restaurant Kitchen",
-            "use": "Kitchen",
-            "section": "Dining",
-            "fxy": "4,580,459"
-        },
-        "Turkish Delight Parlor": {
-            "id": "Turkish Delight Parlor",
-            "use": "Restaurant",
-            "section": "Dining",
-            "fxy": "4,536,440"
-        },
-        "Blair Bocce Field": {
-            "id": "Blair Bocce Field",
-            "use": "Park",
-            "section": "Recreation",
-            "fxy": "4,342,344"
-        },
-        "Blair Park": {
-            "id": "Blair Park",
-            "use": "Park",
-            "section": "Recreation",
-            "fxy": "4,351,310"
-        },
-        "Blair River": {
-            "id": "Blair River",
-            "use": "River",
-            "section": "Recreation",
-            "fxy": "4,329,332"
-        },
-        "Daniel Zhu Memorial Park": {
-            "id": "Daniel Zhu Memorial Park",
-            "use": "Park",
-            "section": "Recreation",
-            "fxy": "4,414,374"
-        },
-        "Grande Plaza de Blair": {
-            "id": "Grande Plaza de Blair",
-            "use": "Plaza",
-            "section": "Recreation",
-            "fxy": "4,341,377"
-        },
-        "Inconspicuous Patch of Grass": {
-            "id": "Inconspicuous Patch of Grass",
-            "use": "Park",
-            "section": "Recreation",
-            "fxy": "4,365,288"
-        },
-        "Other Plaza": {
-            "id": "Other Plaza",
-            "use": "Plaza",
-            "section": "Recreation",
-            "fxy": "4,341,289"
-        },
-        "Zhu Croquet Field": {
-            "id": "Zhu Croquet Field",
-            "use": "Park",
-            "section": "Recreation",
-            "fxy": "4,370,375"
-        },
-        "Zhu River": {
-            "id": "Zhu River",
-            "use": "River",
-            "section": "Recreation",
-            "fxy": "4,391,383"
-        },
-        "Blair Exclusive Ultra-Chic Lounge": {
-            "id": "Blair Exclusive Ultra-Chic Lounge",
-            "use": "Lounge",
-            "section": "Learning and Relaxation",
-            "fxy": "4,380,420"
-        },
-        "Center for Higher Study and Philosophy": {
-            "id": "Center for Higher Study and Philosophy",
-            "use": "Center for Higher Study and Philosophy",
-            "section": "Learning and Relaxation",
-            "fxy": "4,300,268"
-        },
-        "Lockers": {
-            "id": "Lockers",
-            "use": "Lockers",
-            "section": "Learning and Relaxation",
-            "fxy": "4,292,396"
-        },
-        "Security Booth/Lounge": {
-            "id": "Security Booth/Lounge",
-            "use": "Lounge",
-            "section": "Learning and Relaxation",
-            "fxy": "4,291,364"
-        },
-        "Helicopter Pad": {
-            "id": "Helicopter Pad",
-            "use": "Helicopter Pad",
-            "section": "Outdoor Areas",
-            "fxy": "4,131,372"
-        },
-        "Infinity Hot Tub/Jacuzzi": {
-            "id": "Infinity Hot Tub/Jacuzzi",
-            "use": "Jacuzzi",
-            "section": "Outdoor Areas",
-            "fxy": "4,256,397"
-        },
-        "Pool": {
-            "id": "Pool",
-            "use": "Pool",
-            "section": "Outdoor Areas",
-            "fxy": "4,211,373"
-        },
-        "Turkish Restaurant, Outdoor Patio": {
-            "id": "Turkish Restaurant, Outdoor Patio",
-            "use": "Patio",
-            "section": "Outdoor Areas",
-            "fxy": "4,689,468"
-        },
-        "La Fondue": {
-            "id": "La Fondue",
-            "use": "Fountain",
-            "section": "Commercial Facilities",
-            "fxy": "4,467,314"
-        },
-        "Luxury Goods Bazaar": {
-            "id": "Luxury Goods Bazaar",
-            "section": "Commercial Facilities",
-            "fxy": "4,458,359"
-        },
-        "Premium Texas Instruments Store": {
-            "id": "Premium Texas Instruments Store",
-            "section": "Commercial Facilities",
-            "fxy": "4,435,317"
-        },
-        "Non-gambling Casino": {
-            "id": "Non-gambling Casino",
-            "use": "Casino",
-            "section": "Entertainment",
-            "fxy": "4,593,382"
         }
     },
     "edges": [
@@ -3050,7 +2832,6 @@
         "1103;1120",
         "1104;1122",
         "1105;1124",
-        "1105;1132",
         "1106;1131",
         "1107;1128",
         "1108;1110",
@@ -3077,21 +2858,6 @@
         "1127;1129",
         "1128;1130",
         "1129;1131",
-        "1132;1144",
-        "1133;1134",
-        "1133;1135",
-        "1134;1136",
-        "1135;1139",
-        "1135;1142",
-        "1136;1137",
-        "1137;1138",
-        "1138;1139",
-        "1138;1140",
-        "1139;1141",
-        "1140;1143",
-        "1141;1143",
-        "1143;1144",
-        "1144;1145",
         "1438;1527",
         "1439;1440",
         "1439;1525",

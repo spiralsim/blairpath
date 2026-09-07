@@ -4,10 +4,13 @@ var canvas, images = {
 };
 
 // Loads maps
-const NUM_FLOORS = 4;
+const NUM_FLOORS = 3;
 function preload () {
 	const MAP_PATH = "/maps";
-	for (let i = 1; i <= NUM_FLOORS; i++) images.floors.push(loadImage(`${MAP_PATH}/f${i}.png`));
+	for (let i = 1; i <= NUM_FLOORS; i++) {
+		var floorImage = loadImage(`${MAP_PATH}/f${i}.png`);
+		images.floors.push(floorImage);
+	}
 	images.site = loadImage(`${MAP_PATH}/site.png`);
 }
 
