@@ -300,7 +300,7 @@ function addPlaceInput () {
 			</button>
 		</td>
 		<td style="display: flex">
-			<input type="text" id="point-${i}" value="" class="point-input">
+			<input type="text" id="point-${i}" value="" class="point-input" autocomplete="off">
 			</input>
 		</td>
 	</tr>`;
