@@ -652,19 +652,17 @@ function showTooltip() {
 }
 
 function showRuler() {
-	var rulerLeftX = width - VIEW.rulerInPixels() - 22;
-
 	textSize(18);
 	rectMode(CORNER);
+	noStroke();
+
+	var rulerLeftX = width - VIEW.rulerInPixels() - 22;
 
 	const rulerText = `${VIEW.rulerInM} m`;
-
 	var rulerTextLeftX = rulerLeftX - 5 - textWidth(rulerText);
-
 	fill(255);
 	rect(rulerTextLeftX - 5, height - 20, width - 17 - rulerTextLeftX, 20);
 
-	noStroke();
 	fill(0);
 	rect(rulerLeftX, height - 15, 2, 10);
 	rect(rulerLeftX, height - 7, VIEW.rulerInPixels(), 2);
