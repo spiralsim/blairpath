@@ -12,7 +12,7 @@
 	<body>
 		<%-include("../partials/menu.ejs")%>
 		<section class="main" style="width: 300px">
-			<div class="scrollable">
+			<div class="scrollable" style="overflow-x: hidden">
 				<div>
 					<div class="banner gray">
 						<p>Map updated <%-diskData.timestamp.split(' ').slice(2, 4).join(' ')%></p>
