@@ -182,13 +182,24 @@ function autocomplete (input) {
 		a.setAttribute("style", "max-height: 120px; overflow-y: auto");
 		this.parentNode.appendChild(a);
 
-		for (let id in places) {
+		/**
+		 * 
+		 * @param {string} id1 
+		 * @param {string} id2 
+		 * @returns How the two places should be compared in the sorted list
+		 */
+		function placeIdCompareFn(id1, id2) {
+			const idCompareResult = id1 < id2 ? -1 : (id1 == id2 ? 0 : 1);
+			return (idToFXY(id1).floor - idToFXY(id2).floor) * 10 + idCompareResult;
+		}
+		var sortedPlaceIDsList = Object.keys(places).sort(placeIdCompareFn);
+		sortedPlaceIDsList.forEach(id => {
 			const place = places[id];
 			var idWithUse = id;
 			if (place.use && !id.includes(place.use))
 				idWithUse += ` (${place.use})`;
 			if (idWithUse.toUpperCase().indexOf(val.toUpperCase()) == -1)
-				continue;
+				return;
 
 			b = document.createElement("div");
 			b.innerHTML =
@@ -200,7 +211,7 @@ function autocomplete (input) {
 				input.value = this.getElementsByTagName("input")[0].value;
 				closeAllLists();
 			});
-		}
+		});
 	});
 	input.addEventListener("keydown", function (e) {
 		var x = document.getElementById(this.id + "autocomplete-list");
