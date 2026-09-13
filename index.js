@@ -20,8 +20,8 @@ app.get(/.*/, (request, response) => {
 	const path = request.path;
 	if (path == "/")
 		response.render(`pages/map`, OPTIONS);
-	else if (path == "/demonstration")
-		response.sendFile(`${__dirname}/assets/demonstration.mp4`)
+	else if (path == "/agenda-map.jpg")
+		response.sendFile(`${__dirname}/assets/agenda-map.jpg`)
 	else if (fs.existsSync(`${__dirname}/views/pages/${path}.ejs`)) 
 		response.render(`pages/${path}`, OPTIONS);
 	else
