@@ -459,10 +459,6 @@ function showSitePlan() {
 	rect(...OFFSET, images.site.width, images.site.height);
 }
 
-function showEdges() {
-	memoryData.edges.forEach(drawEdge);
-}
-
 function isPortable(id) {
 	return /^P[0-9]+$/.test(id);
 }
@@ -492,7 +488,9 @@ function showFloorPlan() {
 	}
 	image(images.floors[VIEW.floor - 1], 0, 0);
 	showPortables();
-	showEdges();
+
+	memoryData.edges.forEach(drawEdge);
+
 	if (showingDevTools) {
 		strokeWeight(EDGE_WIDTH / VIEW.scale);
 		stroke(255, 0, 0);
@@ -763,7 +761,6 @@ function draw() {
 	refreshHoveredObject();
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
-	showEdges();
 	if (showingDevTools) showVertices();
 	if (showOptions[`show-labels`]) showLabels();
 
