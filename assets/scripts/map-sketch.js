@@ -669,6 +669,56 @@ function showRuler() {
 	rect(rulerLeftX + VIEW.rulerInPixels() - 2, height - 15, 2, 10);
 	textAlign(LEFT, CENTER);
 	text(rulerText, rulerTextLeftX, height - 10);
+
+	function showColorCode() {
+		const sections = [
+			{
+				name: "Fine Arts Complex",
+				color: color(69, 96, 167),
+			},
+			{
+				name: "Media/Reference Complex",
+				color: color(242, 168, 41),
+			},
+			{
+				name: "Administration Complex",
+				color: color(126, 119, 168),
+			},
+			{
+				name: "Gymnasium Complex",
+				color: color(240, 239, 61),
+			},
+			{
+				name: "Academic Classrooms",
+				color: color(204, 30, 30),
+			},
+			{
+				name: "Dining Facilities",
+				color: color(139, 203, 62),
+			},
+		];
+		const heightPerEntry = 20;
+		const boxSideLength = 16;
+		
+		const padding = heightPerEntry - boxSideLength;
+		const firstEntryTopYcoordinate = height - sections.length * heightPerEntry;
+		
+		const colorCodeTextStartX = boxSideLength + 2 * padding;
+		var maxEntryTextWidth = Math.max(...sections.map(({ name }) => textWidth(name)));
+		noStroke();
+		fill(255);
+		const colorCodeWidth = colorCodeTextStartX + maxEntryTextWidth + padding;
+		rect(0, firstEntryTopYcoordinate - padding, colorCodeWidth, height);
+		textAlign(LEFT, CENTER);
+		sections.forEach(({ name, color }, index) => {
+			var entryTopYcoordinate = firstEntryTopYcoordinate + index * heightPerEntry;
+			fill(color);
+			square(padding, entryTopYcoordinate, boxSideLength);
+			fill(0);
+			text(name, colorCodeTextStartX, entryTopYcoordinate + heightPerEntry / 2);
+		});
+	}
+	showColorCode();
 }
 
 function respondToWASD(key) {
