@@ -1,4 +1,6 @@
-const express = require("express"), http = require("http"), fs = require("fs");
+const express = require("express");
+const http = require("http")
+const fs = require("fs");
 
 // Setup
 const app = express();
@@ -25,7 +27,7 @@ app.get(/.*/, (request, response) => {
 	else if (fs.existsSync(`${__dirname}/views/pages/${path}.ejs`)) 
 		response.render(`pages/${path}`, OPTIONS);
 	else
-		response.render(`pages/404`);
+		response.status(404).send("<p>Requested resource not found</p>");
 });
 
 // Pings the website every 15 minutes to keep the dyno in the `up` state
