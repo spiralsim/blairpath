@@ -169,7 +169,6 @@ const CURSOR = {
 var showOptions = {
 	'show-site-plan': null,
 	'show-floor-plan': null,
-	'show-labels': null,
 };
 for (let option in showOptions) {
 	const checkbox = document.querySelector(`#${option}`);
@@ -486,10 +485,11 @@ function showFloorPlan() {
 		}
 		rectMode(CORNERS);
 	}
+
 	image(images.floors[VIEW.floor - 1], 0, 0);
 	showPortables();
-
 	memoryData.edges.forEach(drawEdge);
+	showLabels();
 
 	if (showingDevTools) {
 		strokeWeight(EDGE_WIDTH / VIEW.scale);
@@ -763,7 +763,6 @@ function draw() {
 	if (showOptions[`show-site-plan`]) showSitePlan();
 	if (showOptions[`show-floor-plan`]) showFloorPlan();
 	if (showingDevTools) showVertices();
-	if (showOptions[`show-labels`]) showLabels();
 
 	pop();
 
