@@ -716,7 +716,8 @@ function showRuler() {
 			text(name, colorCodeTextStartX, entryTopYcoordinate + heightPerEntry / 2);
 		});
 	}
-	showColorCode();
+	if (width >= 550)
+		showColorCode();
 }
 
 function respondToWASD(key) {
