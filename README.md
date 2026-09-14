@@ -33,20 +33,26 @@ npm i
 ```
 
 # Testing
+Heroku provides this command to build and run the app locally (`4000` is a placeholder port you can change):
+
 ```
-heroku local web
+heroku local web -p 4000
 ```
 
-Then open `localhost:<port>`.
+Then open `localhost:4000` .
 
 ## In case of the localhost being already in use from a previous Node.js run:
+Run this command (you may need to change `5000` to a different port number):
 ```
-sudo lsof -n -i :<port> | grep LISTEN
+sudo lsof -n -i :5000 | grep LISTEN
 ```
-Copy the pid, then run
+
+Copy the pid (in the second column of the output), then run
 ```
-kill <pid>
+kill -9 <pid>
 ```
+
+You can now try running `heroku local web` again.
 
 # Deployment
 ```

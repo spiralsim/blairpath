@@ -4,12 +4,14 @@ const fs = require("fs");
 
 // Setup
 const app = express();
-const PORT = process.env.PORT || 5006;
-app
-	.use(express.static(`${__dirname}/assets`))
-	.set("views", `${__dirname}/views`)
-	.set("view engine", "ejs")
-	.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+function runAppWithPort(port) {
+	app
+		.use(express.static(`${__dirname}/assets`))
+		.set("views", `${__dirname}/views`)
+		.set("view engine", "ejs")
+		.listen(port, () => console.log(`Listening on port ${port}`));
+}
+runAppWithPort(process.env.PORT);
 
 // Handle all asset and page requests
 const DISK_DATA = JSON.parse(fs.readFileSync(`./assets/data.json`));

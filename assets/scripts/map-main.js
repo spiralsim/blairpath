@@ -167,8 +167,13 @@ function copyNextDiskData() {
 	navigator.clipboard.writeText(output);
 }
 
-/* Search bar adapted from https://www.w3schools.com/howto/howto_js_autocomplete.asp */
-function autocomplete (input) {
+/**
+ * Search bar adapted from
+ * https://www.w3schools.com/howto/howto_js_autocomplete.asp
+ * 
+ * Accessed 2019
+ * */
+function autocomplete(input) {
 	var currentFocus;
 	input.addEventListener("input", function (e) {
 		var a, b, i, val = this.value;
@@ -198,14 +203,26 @@ function autocomplete (input) {
 			var idWithUse = id;
 			if (place.use && !id.includes(place.use))
 				idWithUse += ` (${place.use})`;
-			if (idWithUse.toUpperCase().indexOf(val.toUpperCase()) == -1)
+
+			var matchesWildcard = val == "*"; // * is a wildcard (shows all IDs)
+			if (
+				!matchesWildcard &&
+				!idWithUse.toUpperCase().includes(val.toUpperCase())
+			)
 				return;
 
-			b = document.createElement("div");
-			b.innerHTML =
-				idWithUse.replace(new RegExp(`(${val})`, "gi"), "<b>$1</b>") +
-				`<span class="section-text">Floor ${place.fxy.floor}</span>` +
+			var idComponent = (
+				matchesWildcard ?
+				idWithUse :
+				idWithUse.replace(new RegExp(`(${val})`, "gi"), "<b>$1</b>")
+			);
+			var floorComponent = 
+				`<span class="section-text">Floor ${place.fxy.floor}</span>`;
+			var hiddenInputComponent =
 				`<input type="hidden" value="${place.id}">`;
+
+			b = document.createElement("div");
+			b.innerHTML = idComponent + floorComponent + hiddenInputComponent;
 			a.appendChild(b);
 			b.addEventListener("click", function (e) {
 				input.value = this.getElementsByTagName("input")[0].value;
@@ -237,13 +254,14 @@ function autocomplete (input) {
 		x[currentFocus].classList.add("autocomplete-active");
 	}
 	function removeActive (x) {
-		for (var i = 0; i < x.length; i++) x[i].classList.remove("autocomplete-active");
+		for (var i = 0; i < x.length; i++)
+			x[i].classList.remove("autocomplete-active");
 	}
 	function closeAllLists (element) {
 		var x = document.getElementsByClassName("autocomplete-items");
-		for (var i = 0; i < x.length; i++) {
-			if (element != x[i] && element != input) x[i].parentNode.removeChild(x[i]);
-		}
+		for (var i = 0; i < x.length; i++)
+			if (element != x[i] && element != input)
+				x[i].parentNode.removeChild(x[i]);
 	}
 	document.addEventListener("click", function (e) {
 		closeAllLists(e.target);
