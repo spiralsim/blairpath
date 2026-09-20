@@ -15,10 +15,13 @@ runAppWithPort(process.env.PORT);
 
 // Handle all asset and page requests
 const DISK_DATA = JSON.parse(fs.readFileSync(`./assets/data.json`));
+const VERTICES_ARRAY = Object.values(DISK_DATA.vertices);
 const OPTIONS = {
 	diskData: DISK_DATA,
-	verticesArray: Object.values(DISK_DATA.vertices),
+	verticesArray: VERTICES_ARRAY,
 	edges: DISK_DATA.edges,
+	numPlaces: VERTICES_ARRAY.filter(v => v.section != "border" && v.section != "path").length,
+	numFloors: new Set(VERTICES_ARRAY.map(v => v.fxy.split(',')[0])).size,
 };
 app.get(/.*/, (request, response) => {
 	const path = request.path;

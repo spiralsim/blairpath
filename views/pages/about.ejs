@@ -15,25 +15,15 @@
 					<p><b>Disclaimer:</b> Every few years, the MBHS campus adds or removes some portables, which must be manually registered by a Blairpath developer. Some parts of the map might be outdated.</p>
 				</div>
 
-				<section style="display: table; width: 100%">
-					<div class="left">
-						<h3>Team</h3>
-						<p><a href="https://github.com/spiralsim"><b>Jeffrey Tong</b></a> (MBHS Class of 2022) founded and developed Blairpath.</p>
-					</div>
-					<div class="right">
-						<h3>Statistics</h3>
-						<ul>
-							<li><b><%-verticesArray.filter(v => v.section != "border" && v.section != "path").length%></b> places</li>
-							<li><b><%-new Set(verticesArray.map(v => v.fxy.split(',')[0])).size%></b> floors</li>
-							<li><b><%-verticesArray.length%></b> vertices</li>
-							<li><b><%-diskData.edges.length%></b> edges</li>
-						</ul>
-					</div>
-				</section>
+				<h3>Team</h3>
+				<p><a href="https://github.com/spiralsim"><b>Jeffrey Tong</b></a> (MBHS Class of 2022) founded and developed Blairpath.</p>
+
+				<h3>Statistics</h3>
+				<p>Blairpath has registered <b><%-numPlaces%></b> places across <b><%-numFloors%></b> floors.</p>
 
 				<h3>History</h3>
 				<p><b>1998</b>: The present-day MBHS campus was completed. The architect wrote a <a href="https://web.archive.org/web/20200222231349/http://www.designshare.com/HighSchoolLibrary/HSBlair/Blair2_Prog.htm">program summary</a> and shared their floor plans, which Blairpath's maps are based on: <a href="https://web.archive.org/web/20120205151339im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/BlairSite.jpg">Site</a>, <a href="https://web.archive.org/web/20160505145914im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/blairpl1.jpg">Floor 1</a>, <a href="https://web.archive.org/web/20160505225805im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/blairpl2.gif">Floor 2</a>, <a href="https://web.archive.org/web/20120205151407im_/http://www.designshare.com/HighSchoolLibrary/HSBlair/blairpl3.gif">Floor 3</a>.</p>
-				<p><b>2019</b>: Jeffrey developed a Blairpath prototype for an MBHS computer science class, largely inspired by <a href="https://github.com/blairsec/blairbash">Blairbash.org</a>. To get the place names, he used his <a href="/agenda-map.jpg">MBHS agenda book</a> and walked around campus.</p>
+				<p><b>2019</b>: Jeffrey developed Blairpath as a project for a MBHS computer science class, largely inspired by <a href="https://github.com/blairsec/blairbash">Blairbash.org</a>. To get the place names, he used a <a href="/agenda-map.jpg">MBHS agenda book</a> and walked around campus.</p>
 				<p><b>2021</b>: Jeffrey started renting the domain <code>blairpath.org</code>. MBHS teacher Mr. Jeremy Schwartz showed Blairpath to 9th grade students to introduce them to campus.</p>
 
 				<h3>Contributing</h3>
