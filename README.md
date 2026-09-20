@@ -1,6 +1,4 @@
-This README serves as technical documentation for developers. Map contributors don't need this.
-
-**Last updated July 16, 2026**
+This README serves as technical documentation for developers.
 
 # Hosting
 ## Heroku
@@ -10,13 +8,18 @@ The domain names `blairpath.org` and `www.blairpath.org` each have their own DNS
 
 | Domain Name | DNS Target |
 | --- | --- |
-| blairpath.org | stormy-pomelo-m35s89a7cbphvotoyxygza4h.herokudns.com |
-| www.blairpath.org | primal-puma-xapp0ceo5eyw8zsnix2on6zl.herokudns.com |
+| `blairpath.org` | `stormy-pomelo-m35s89a7cbphvotoyxygza4h.herokudns.com` |
+| `www.blairpath.org` | `primal-puma-xapp0ceo5eyw8zsnix2on6zl.herokudns.com` |
 
 ## Cloudflare
 The domain `blairpath.org` is rented through Cloudflare.
 
 To allow users to access the domains, each has a CNAME DNS record added through Cloudflare, pointing to their corresponding Heroku DNS Target.
+
+## Finances
+Blairpath costs $77/year to operate:
+1. $17/year for the domain (through Cloudflare)
+2. $5/month for the application container (through Heroku)
 
 # Requirements
 Node.js >= 18.15.0
