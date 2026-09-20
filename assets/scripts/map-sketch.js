@@ -560,7 +560,7 @@ function showVertices() {
 
 function showDevStats() {
 	function localeFullString(date) {
-		const d = new Date(date)
+		const d = new Date(date);
 		return `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`;
 	}
 
@@ -569,30 +569,26 @@ function showDevStats() {
 	if (dataLastCopied != null)
 		stats.push(`Data last copied: ${localeFullString(dataLastCopied)}`);
 
-	var vertexTypeCounts = {
+	function countsObjectToString(counts) {
+		return Object.entries(counts).map(([type, count]) => `${count} ${type}`).join(' | ');
+	}
+
+	var vertexCounts = {
 		"place": 0,
 		"path": 0,
 		"border": 0,
 	};
 	const verticesArray = Object.values(memoryData.vertices);
-	verticesArray.forEach(v => vertexTypeCounts[vertexType(v)]++);
-	var verticesString = `Vertices: ${verticesArray.length} total`;
-	Object.entries(vertexTypeCounts).map(([type, count]) => {
-		verticesString += `, ${count} ${type}`;
-	});
-	stats.push(verticesString);
+	verticesArray.forEach(v => vertexCounts[vertexType(v)]++);
+	stats.push(`Vertices: ${verticesArray.length} total (${countsObjectToString(vertexCounts)})`);
 
-	var edgeTypeCounts = {
+	var edgeCounts = {
 		"border": 0,
 		"path": 0,
 		"temporary": 0,
 	};
-	memoryData.edges.forEach(v => edgeTypeCounts[edgeType(v)]++);
-	var edgesString = `Edges: ${memoryData.edges.size} total`;
-	Object.entries(edgeTypeCounts).map(([type, count]) => {
-		edgesString += `, ${count} ${type}`;
-	});
-	stats.push(edgesString);
+	memoryData.edges.forEach(v => edgeCounts[edgeType(v)]++);
+	stats.push(`Edges: ${memoryData.edges.size} total (${countsObjectToString(edgeCounts)})`);
 
 	if (mouseHasMoved)
 		stats.push(`Cursor FXY: ${FXYtoString(CURSOR.fxy)}`);
