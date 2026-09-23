@@ -712,7 +712,7 @@ function showRuler() {
 			text(name, colorCodeTextStartX, entryTopYcoordinate + heightPerEntry / 2);
 		});
 	}
-	if (width >= 550)
+	if (width >= 480)
 		showColorCode();
 }
 
