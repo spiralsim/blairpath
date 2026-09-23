@@ -65,4 +65,6 @@ git push origin master
 (Blairpath's Heroku app is configured to auto-deploy from its GitHub repo's master branch.)
 
 # Icons
-Some icons are taken from [Google Fonts Material Symbols & Icons](https://fonts.google.com/icons?selected=Material+Symbols+Outlined).
+The [button icons](/assets/images/buttons) were downloaded from [Google Fonts Material Symbols & Icons](https://fonts.google.com/icons).
+
+The [wheelchair icon](/assets/images/wheelchair.svg) is the [International Symbol of Access](https://en.wikipedia.org/wiki/International_Symbol_of_Access).

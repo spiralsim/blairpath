@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<%-include("../partials/menu.ejs")%>
-		<section class="main" style="width: 300px">
+		<section class="main" style="width: 320px">
 			<div class="scrollable" style="overflow-x: hidden">
 				<div>
 					<div class="banner gray">
@@ -35,7 +35,10 @@
 		
 					<p style="margin: 0">
 						<input type="checkbox" id="allow-elevator">
-						<span style="margin: 0">Allow elevator (requires nurse pass)</span>
+						<span style="position: relative; margin: 0; left: -4px">
+							<img src="/images/wheelchair.svg" style="width: 18px; position: relative; top: 2px"/>
+							<span>Allow elevator (requires nurse pass)</span>
+						</span>
 					</p>
 					<p style="margin: 0; margin-top: 4px">
 						<span for="speed" style="font-size: 16px">Walking speed:</span>
@@ -55,7 +58,7 @@
 				<div id="calc-result"></div>
 			</div>
 		</section>
-		<div style="position: absolute; left: 330px; right: 0; top: 40px; bottom: 0; overflow: hidden" id="canvas" oncontextmenu="return false;">
+		<div style="position: absolute; left: 350px; right: 0; top: 40px; bottom: 0; overflow: hidden" id="canvas" oncontextmenu="return false;">
 			<div id="map-placeholder" style="background-color: var(--placeholder)"></div>
 			<div id="map-controls" style="position: absolute; right: var(--map-controls-padding); bottom: 20px">
 				<button class="square add white" id="zoom-in" onclick="VIEW.zoomIn()" style="position: absolute; right: 0; bottom: 74px; border-radius: var(--button-corner) var(--button-corner) 0 0; border-bottom: 0"></button>
