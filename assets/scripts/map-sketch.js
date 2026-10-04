@@ -336,6 +336,8 @@ function keyPressed() {
 		activeObject = null;
 	}
 	refreshTemporaryEdges();
+
+	respondToWASD(key);
 };
 
 function mousePressed() {
@@ -716,16 +718,16 @@ function showRuler() {
 		showColorCode();
 }
 
-function respondToWASD(key) {
-	var dx = 0, dy = 0;
-	if (key == 'a')
-		dx = -1;
-	if (key == 'd')
-		dx = 1;
-	if (key == 'w')
-		dy = -1;
-	if (key == 's')
-		dy = 1;
+const WASD_DATA = {
+	'w': {code: 87, dx: 0, dy: -1},
+	'a': {code: 65, dx: -1, dy: 0},
+	's': {code: 83, dx: 0, dy: 1},
+	'd': {code: 68, dx: 1, dy: 0},
+};
+function respondToWASD(letter) {
+	if (!inCanvas())
+		return;
+	const { dx, dy } = WASD_DATA[letter];
 	if (showingDevTools && activeObject != null && activeObject.fxy) {
 		activeObject.fxy.x += dx;
 		activeObject.fxy.y += dy;
@@ -769,18 +771,12 @@ function draw() {
 	showTooltip();
 
 	showRuler();
-	if (showingDevTools) showDevStats();
-
-	if (!inCanvas())
+	if (showingDevTools) {
+		showDevStats();
 		return;
-	const keyToCode = {
-		'w': 87,
-		'a': 65,
-		's': 83,
-		'd': 68,
-	};
-	[..."wasd"].forEach(key => {
-		if (keyIsDown(keyToCode[key]))
-			respondToWASD(key);
-	});
+	}
+
+	for (let letter in WASD_DATA)
+		if (keyIsDown(WASD_DATA[letter].code))
+			respondToWASD(letter);
 };
