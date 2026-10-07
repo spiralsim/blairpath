@@ -285,6 +285,8 @@ function windowResized() {
 
 var dataLastCopied = null;
 function keyPressed() {
+	if (mouseX < 0 || mouseY < 0)
+		return;
 	if (key == 't')
 		toggleDevTools();
 	else if (key == 'c') {
