@@ -95,7 +95,37 @@ class WeightedGraph {
     this.getVertex(edge[0]).push(new Neighbor(edge[1], weight));
     this.getVertex(edge[1]).push(new Neighbor(edge[0], weight));
   }
-  dijkstra(start, finish) {
+  toString() {
+    var vertices = [];
+    for (let vertex in this.adjacencyList)
+      vertices.push(vertex);
+    vertices.sort();
+    var result = "";
+    vertices.forEach(vertex => {
+      var neighborStrings = [];
+      this.adjacencyList[vertex].forEach(neighbor => {
+        neighborStrings.push(`${neighbor.vertex},${neighbor.weight}`);
+      });
+      neighborStrings.sort();
+      result += `${vertex}:${neighborStrings.join(";")}\n`;
+    });
+    return result;
+  }
+  /**
+   * Tests whether `other` is equivalent to this graph
+   * @param {WeightedGraph} other 
+   * @returns {boolean} `true` if the graphs are equivalent, otherwise `false`
+   */
+  equals(other) {
+    return this.toString() == other.toString();
+  }
+  /**
+   * Runs Dijkstra's from start to finish
+   * @param {string} startID 
+   * @param {string} finishID 
+   * @returns 
+   */
+  dijkstra(startID, finishID) {
     const pq = new PriorityQueue();
     const distances = {};
     const previous = {};
@@ -103,7 +133,7 @@ class WeightedGraph {
     let smallest;
     //build up initial state
     for (let vertex in this.adjacencyList) {
-      if (vertex === start) {
+      if (vertex === startID) {
         distances[vertex] = 0;
         pq.enqueue(vertex, 0);
       } else {
@@ -116,7 +146,7 @@ class WeightedGraph {
     while (pq.values.length) {
       const top = pq.dequeue();
       smallest = top.value;
-      if (smallest === finish) {
+      if (smallest === finishID) {
         while (previous[smallest]) {
           path.push(smallest);
           smallest = previous[smallest];
@@ -138,7 +168,7 @@ class WeightedGraph {
     }
     return {
       path: path.concat(smallest).reverse(),
-      distance: distances[finish],
+      distance: distances[finishID],
     };
   }
 }

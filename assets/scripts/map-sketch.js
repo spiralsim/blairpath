@@ -515,6 +515,7 @@ function showLabels() {
 	textSize(VIEW.labelTextSize);
 	strokeWeight(2 / VIEW.scale);
 	const placeValuesSet = new Set(getPointValues());
+	GRAPH_CACHE.updateIfGraphChanged(false);
 	for (let id in places) {
 		const place = places[id], fxy = place.fxy;
 		if (fxy.floor != VIEW.floor) continue;
@@ -541,7 +542,7 @@ function showLabels() {
 		}
 		if (showingDevTools) {
 			const TEST_VERTEX_ID = "1014";
-			if (dijkstra(id, TEST_VERTEX_ID, false).distance == Infinity)
+			if (GRAPH_CACHE.calculateOrRetrievePath(id, TEST_VERTEX_ID).distance == Infinity)
 				stroke(255, 0, 0);
 		}
 		text(id, fxy.x, fxy.y);

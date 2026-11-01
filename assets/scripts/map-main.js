@@ -344,21 +344,34 @@ function finishCalc(msg, err) {
 		calcResult.innerHTML = newInnerHTML;
 }
 
-function dijkstra(startID, finishID, allowElevator) {
-	function edgeIsElevator(e) {
-		const xy = CONSTANTS.ELEVATOR_X_AND_Y;
-		return e.every(id => {
-			const fxy = idToFXY(id);
-			return fxy.x == xy[0] && fxy.y == xy[1];
+const GRAPH_CACHE = {
+	graph: new WeightedGraph(),
+	paths: {},
+	updateIfGraphChanged: function(allowElevator) {
+		function edgeIsElevator(e) {
+			const xy = CONSTANTS.ELEVATOR_X_AND_Y;
+			return e.every(id => {
+				const fxy = idToFXY(id);
+				return fxy.x == xy[0] && fxy.y == xy[1];
+			});
+		}
+		const newGraph = new WeightedGraph();
+		memoryData.edges.forEach(e => {
+			if (!edgeIsElevator(e) || allowElevator)
+				newGraph.addEdge(e);
 		});
-	}
-	const graph = new WeightedGraph();
-	memoryData.edges.forEach(e => {
-		if (!edgeIsElevator(e) || allowElevator)
-			graph.addEdge(e);
-	});
-	return graph.dijkstra(startID, finishID);
-}
+		if (GRAPH_CACHE.graph.equals(newGraph))
+			return;
+		GRAPH_CACHE.graph = newGraph;
+		GRAPH_CACHE.paths = {};
+	},
+	calculateOrRetrievePath: function(startID, finishID) {
+		const queryString = `${startID};${finishID}`;
+		if (!(queryString in GRAPH_CACHE.paths))
+			GRAPH_CACHE.paths[queryString] = GRAPH_CACHE.graph.dijkstra(startID, finishID);
+		return GRAPH_CACHE.paths[queryString];
+	},
+};
 
 function calculatePath(query) {
 	/**
@@ -382,18 +395,20 @@ function calculatePath(query) {
 
 	var output = "";
 
+	GRAPH_CACHE.updateIfGraphChanged(query.allowElevator);
+
 	// Iterates through subpaths (paths between consecutive places in table)
 	for (let i = 0; i < rows.length - 1; i++) {
-		const start = query.points[i], finish = query.points[i + 1];
+		const startID = query.points[i], finishID = query.points[i + 1];
 
-		var {path: subpath, distance: subpathInMeters} = dijkstra(start, finish, query.allowElevator);
+		var {path: subpath, distance: subpathInMeters} = GRAPH_CACHE.calculateOrRetrievePath(startID, finishID);
 
 		if (subpathInMeters == Infinity)
-			return finishCalc(`No path from ${start} to ${finish}`, true);
+			return finishCalc(`No path from ${startID} to ${finishID}`, true);
 
 		const prettifiedDistance = prettifyDistance(subpathInMeters);
 		output +=
-			`<p>${start} → ${finish}<br>` +
+			`<p>${startID} → ${finishID}<br>` +
 			`<span style="color: gray">${prettifiedDistance}</span></p>`;
 
 		for (let i = 0; i < subpath.length - 1; i++)
