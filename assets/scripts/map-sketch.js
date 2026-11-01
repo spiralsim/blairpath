@@ -447,14 +447,17 @@ function drawEdge(e) {
 
 	blairpathObjectColor(e);
 
-	var strokeWeightBeforeZoom = EDGE_WIDTH;
-
 	if (fxy1.floor == fxy2.floor) {
-		if (edgeType(e) == "path")
+		var weight = EDGE_WIDTH / VIEW.scale;
+		if (edgeType(e) == "border")
+			weight /= 2;
+		strokeWeight(weight);
+		if (showingDevTools && edgeType(e) == "path")
 			drawDottedEdge(fxy1, fxy2);
 		else
 			line(fxy1.x, fxy1.y, fxy2.x, fxy2.y);
-	} else drawArrow(fxy1, fxy2);
+	} else
+		drawArrow(fxy1, fxy2);
 }
 
 function showSitePlan() {
@@ -535,6 +538,11 @@ function showLabels() {
 			fill(place == hoveredObject ? 128 : 255);
 			if (place == activeObject)
 				fill(0, 192, 0);
+		}
+		if (showingDevTools) {
+			const TEST_VERTEX_ID = "1014";
+			if (dijkstra(id, TEST_VERTEX_ID, false).distance == Infinity)
+				stroke(255, 0, 0);
 		}
 		text(id, fxy.x, fxy.y);
 

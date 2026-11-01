@@ -344,7 +344,7 @@ function finishCalc(msg, err) {
 		calcResult.innerHTML = newInnerHTML;
 }
 
-function calculatePath(query) {
+function dijkstra(startID, finishID, allowElevator) {
 	function edgeIsElevator(e) {
 		const xy = CONSTANTS.ELEVATOR_X_AND_Y;
 		return e.every(id => {
@@ -352,7 +352,15 @@ function calculatePath(query) {
 			return fxy.x == xy[0] && fxy.y == xy[1];
 		});
 	}
+	const graph = new WeightedGraph();
+	memoryData.edges.forEach(e => {
+		if (!edgeIsElevator(e) || allowElevator)
+			graph.addEdge(e);
+	});
+	return graph.dijkstra(startID, finishID);
+}
 
+function calculatePath(query) {
 	/**
 	 * Converts a path length to a human-readable string with meters and estimated
 	 * time based on the walk speed: `a min b sec (x m)`. Lengths that are negative
@@ -373,24 +381,17 @@ function calculatePath(query) {
 	}
 
 	var output = "";
-	
-	const graph = new WeightedGraph();
-	memoryData.edges.forEach(e => {
-		if (!edgeIsElevator(e) || query.allowElevator)
-			graph.addEdge(e);
-	});
 
 	// Iterates through subpaths (paths between consecutive places in table)
 	for (let i = 0; i < rows.length - 1; i++) {
 		const start = query.points[i], finish = query.points[i + 1];
 
-		var {path: subpath, distance: subpathDistanceInM} =
-			graph.dijkstra(start, finish);
+		var {path: subpath, distance: subpathInMeters} = dijkstra(start, finish, query.allowElevator);
 
-		if (subpathDistanceInM == Infinity)
+		if (subpathInMeters == Infinity)
 			return finishCalc(`No path from ${start} to ${finish}`, true);
 
-		const prettifiedDistance = prettifyDistance(subpathDistanceInM);
+		const prettifiedDistance = prettifyDistance(subpathInMeters);
 		output +=
 			`<p>${start} → ${finish}<br>` +
 			`<span style="color: gray">${prettifiedDistance}</span></p>`;
@@ -398,7 +399,7 @@ function calculatePath(query) {
 		for (let i = 0; i < subpath.length - 1; i++)
 			edgesOnPath.add(edgeToString(subpath.slice(i, i + 2)));
 		
-		totalDistanceInM += subpathDistanceInM;
+		totalDistanceInM += subpathInMeters;
 	}
 	
 	output = `<p><b>${prettifyDistance(totalDistanceInM)}</b></p>` + output;
