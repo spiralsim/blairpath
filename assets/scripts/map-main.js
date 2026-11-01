@@ -48,26 +48,26 @@ function stringToEdge(s) {
  * In `data.json`, each vertex is stored with a `section` key.
  * 
  * Vertices are divided into 3 types:
- * 1. Place-type vertices have a section starting with an uppercase letter
- * 2. Path-type vertices have a section of "path"
- * 3. Border-type vertices have a section of "border"
+ * 1. Path-type vertices have a section of "path"
+ * 2. Border-type vertices have a section of "border"
+ * 3. Place-type vertices have a different section
  */
 function vertexType(vertex) {
 	switch (vertex.section) {
-		case 'border':
-			return 'border';
-		case 'path':
-			return 'path';
+		case "border":
+			return "border";
+		case "path":
+			return "path";
 		default:
-			return 'place';
+			return "place";
 	}
 }
 
 /**
- * Edges are also divided into 3 types:
- * 1. Path-type edges connect two path-type vertices
- * 2. Border-type edges connect two border-type vertices
- * 3. Temporary-type edges connect a place-type and path-type vertex 
+ * Edges are divided into 2 types:
+ * 1. Border-type edges connect two border-type vertices
+ * 2. Path-type edges connect a path-type vertex with either another path-type
+ *    vertex or a place-type vertex
  */
 function edgeType(edge) {
 	var vertexTypeCounts = {
@@ -80,40 +80,14 @@ function edgeType(edge) {
 	});
 	if (vertexTypeCounts["border"] == 2)
 		return "border";
-	else if (vertexTypeCounts["path"] == 2)
+	else if (vertexTypeCounts["path"] + vertexTypeCounts["place"] == 2)
 		return "path";
-	else if (vertexTypeCounts["path"] == 1 && vertexTypeCounts["place"] == 1)
-		return "temporary";
 	else
 		throw `Invalid vertex type counts for edge ${edgeToString(edge)}: ` +
 		`${JSON.stringify(vertexTypeCounts)}`;
 }
 
 var places = {};
-/**
- * For each place, add a temporary edge from it to the nearest path vertex
- */
-function refreshTemporaryEdges() {
-	memoryData.edges.forEach(e => {
-		if (edgeType(e) == "temporary")
-			memoryData.edges.delete(e);
-	});
-	for (let id in places) {
-		const place = places[id];
-		var minDist = Infinity, tempEdge;
-		Object.values(memoryData.vertices).forEach(v => {
-			if (v.fxy.floor != place.fxy.floor) return;
-			if (v.section != "path") return;
-			const candidateEdge = [id, v.id];
-			const candidateDist = edgeLengthInM(candidateEdge);
-			if (candidateDist && candidateDist < minDist) {
-				minDist = candidateDist;
-				tempEdge = candidateEdge;
-			}
-		});
-		memoryData.edges.add(tempEdge);
-	}
-}
 
 $.getJSON("/data.json", function(diskData) {
 	memoryData = structuredClone(diskData);
@@ -137,8 +111,6 @@ $.getJSON("/data.json", function(diskData) {
 		} catch (err) {}
 	});
 
-	refreshTemporaryEdges();
-
 	// Remove placeholder rows
 	for (let i = 1; i <= 2; i++)
 		document.getElementById(`place-placeholder-${i}`).remove();
@@ -153,11 +125,7 @@ function copyNextDiskData() {
 	var nextDiskData = {
 		timestamp: new Date().toUTCString(),
 		vertices: structuredClone(memoryData.vertices),
-		edges:
-			Array.from(memoryData.edges)
-			.filter(e => edgeType(e) != "temporary")
-			.map(edgeToString)
-			.sort(),
+		edges: Array.from(memoryData.edges).map(edgeToString).sort(),
 	};
 
 	Object.values(nextDiskData.vertices)

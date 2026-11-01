@@ -236,8 +236,6 @@ function refreshHoveredObject() {
 		const fxys = e.map(idToFXY);
 		if (!fxys.some(fxy => fxy.floor == VIEW.floor))
 			continue;
-		if (edgeType(e) == "temporary")
-			continue;
 
 		var triangleDirection = 0;
 		if (fxys[0].floor < VIEW.floor || fxys[1].floor < VIEW.floor)
@@ -337,11 +335,30 @@ function keyPressed() {
 		}
 		activeObject = null;
 	}
-	refreshTemporaryEdges();
 
 	respondToWASD(key);
 };
 
+function vertexPressed(hoveredType, activeType) {
+	if (hoveredType == "place")
+		if (!showingDevTools && hoveredObject.id != getPointValues().at(-1))
+			addPlaceToTable(hoveredObject.id);
+	function isP(type) {
+		return ["place", "path"].includes(type);
+	}
+	function isB(type) {
+		return type == "border";
+	}
+	if (
+		isP(hoveredType) && isP(activeType) ||
+		isB(hoveredType) && isB(activeType)
+	) {
+		const newEdge = [activeObject.id, hoveredObject.id];
+		const s = edgeToString(newEdge);
+		if (!Array.from(memoryData.edges).map(edgeToString).includes(s))
+			memoryData.edges.add(newEdge);
+	}
+}
 function mousePressed() {
 	if (hoveredObject == null)
 		return;
@@ -351,18 +368,8 @@ function mousePressed() {
 	}
 	const hoveredType = blairpathObjectType(hoveredObject);
 	const activeType = blairpathObjectType(activeObject);
-	if (hoveredType != "edge") {
-		if (hoveredType == "place") {
-			if (!showingDevTools && hoveredObject.id != getPointValues().at(-1))
-				addPlaceToTable(hoveredObject.id);
-		} else if (hoveredType == activeType) {
-			const newEdge = [activeObject.id, hoveredObject.id];
-			const s = edgeToString(newEdge);
-			if (!Array.from(memoryData.edges).map(edgeToString).includes(s))
-				memoryData.edges.add(newEdge);
-		}
-		refreshTemporaryEdges();
-	}
+	if (hoveredType != "edge")
+		vertexPressed(hoveredType, activeType);
 	if (showingDevTools)
 		activeObject = hoveredObject;
 };
@@ -441,12 +448,9 @@ function drawEdge(e) {
 	blairpathObjectColor(e);
 
 	var strokeWeightBeforeZoom = EDGE_WIDTH;
-	if (edgeType(e) == "border")
-		strokeWeightBeforeZoom /= 2;
-	strokeWeight(strokeWeightBeforeZoom / VIEW.scale);
 
 	if (fxy1.floor == fxy2.floor) {
-		if (edgeType(e) == "temporary")
+		if (edgeType(e) == "path")
 			drawDottedEdge(fxy1, fxy2);
 		else
 			line(fxy1.x, fxy1.y, fxy2.x, fxy2.y);
@@ -589,7 +593,6 @@ function showDevStats() {
 	var edgeCounts = {
 		"border": 0,
 		"path": 0,
-		"temporary": 0,
 	};
 	memoryData.edges.forEach(v => edgeCounts[edgeType(v)]++);
 	stats.push(`Edges: ${memoryData.edges.size} total (${countsObjectToString(edgeCounts)})`);
@@ -728,6 +731,9 @@ const WASD_DATA = {
 };
 function respondToWASD(letter) {
 	if (!inCanvas())
+		return;
+	const LETTER_DATA = WASD_DATA[letter];
+	if (!LETTER_DATA)
 		return;
 	const { dx, dy } = WASD_DATA[letter];
 	if (showingDevTools && activeObject != null && activeObject.fxy) {

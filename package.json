@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/spiralsim/blairpath#readme",
   "dependencies": {
-    "ejs": "^3.1.6",
+    "ejs": "^7.0.2",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "http": "0.0.1-security"
