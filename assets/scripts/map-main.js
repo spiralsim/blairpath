@@ -36,6 +36,20 @@ function edgeLengthInM([id1, id2]) {
 		(fxy2.y - fxy1.y) * CONSTANTS.M_PER_PIXEL,
 	);
 }
+/**
+ * Same as `edgeLengthInM` but adds a severe penalty to edges incident to places,
+ * which forces Dijkstra's algorithm to minimize the number of rooms each subpath
+ * passes through.
+ */
+const PLACE_WEIGHT_PENALTY = 10 ** 9;
+function edgeWeight([id1, id2]) {
+	var result = edgeLengthInM([id1, id2]);
+	[id1, id2].forEach(id => {
+		if (id in places)
+			result += PLACE_WEIGHT_PENALTY;
+	});
+	return result;
+}
 
 function edgeToString([id1, id2]) {
 	return id1 < id2 ? `${id1};${id2}` : `${id2};${id1}`;
