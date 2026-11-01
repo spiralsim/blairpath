@@ -168,7 +168,8 @@ class WeightedGraph {
     }
     return {
       path: path.concat(smallest).reverse(),
-      distance: distances[finishID], // % PLACE_WEIGHT_PENALTY,
+      // Removes place weight penalty when reporting distance to user
+      distance: distances[finishID] % PLACE_WEIGHT_PENALTY,
     };
   }
 }
